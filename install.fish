@@ -1,11 +1,14 @@
-#!/bin/bash
+#!/bin/fish
+
+echo "Installing lean theme..."
+
 # -------------------Download Files-------------------
 set fileDestination $__fish_config_dir/functions
 set githubLocation "https://raw.githubusercontent.com/IlanCosman/lean/master/"
 
-wget -P $fileDestination $githubLocation/fish_prompt.fish
-wget -P $fileDestination $githubLocation/lean_pwd.fish
-wget -P $fileDestination $githubLocation/lean_git_prompt.fish
+wget -q -P $fileDestination $githubLocation/fish_prompt.fish
+wget -q -P $fileDestination $githubLocation/lean_pwd.fish
+wget -q -P $fileDestination $githubLocation/lean_git_prompt.fish
 
 # ----------------Set Theme Variables----------------
 # ---------------Pwd---------------
@@ -33,3 +36,5 @@ set -U __fish_git_prompt_color_stagedstate D7AF00
 set -U __fish_git_prompt_color_dirtystate D7AF00
 set -U __fish_git_prompt_color_untrackedfiles 00AFFF
 set -U __fish_git_prompt_color_stashstate 5FD700
+
+echo "Lean theme installed! Restart fish to see your new prompt."
