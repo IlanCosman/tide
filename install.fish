@@ -1,5 +1,3 @@
-#!/bin/fish
-
 echo "Installing lean theme..."
 
 # -------------------Download Files-------------------
