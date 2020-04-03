@@ -1,12 +1,12 @@
 echo "Installing lean theme..."
 
 # -------------------Download Files-------------------
-set fileDestination $__fish_config_dir/functions
-set githubLocation "https://raw.githubusercontent.com/IlanCosman/lean/master/"
+set fishFunctionsFolder $__fish_config_dir/functions
+set githubFunctionsFolder "https://raw.githubusercontent.com/IlanCosman/lean/master/functions/"
 
-wget -q -P $fileDestination $githubLocation/fish_prompt.fish
-wget -q -P $fileDestination $githubLocation/lean_pwd.fish
-wget -q -P $fileDestination $githubLocation/lean_git_prompt.fish
+wget -q -P $fishFunctionsFolder $githubFunctionsFolder/fish_prompt.fish
+wget -q -P $fishFunctionsFolder $githubFunctionsFolder/lean_pwd.fish
+wget -q -P $fishFunctionsFolder $githubFunctionsFolder/lean_git_prompt.fish
 
 # ----------------Set Theme Variables----------------
 # ---------------Pwd---------------
