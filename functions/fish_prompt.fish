@@ -7,7 +7,7 @@ function fish_prompt --description 'Write out the prompt'
     # Prompt character
     set_color $fish_color_normal
     if test $last_status -eq 0
-        set_color $lean_color_prompt_character
+        set_color $lean_green
     else
         set_color $fish_color_error
     end
