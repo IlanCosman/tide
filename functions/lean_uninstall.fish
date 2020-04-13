@@ -35,7 +35,8 @@ function lean_uninstall
                     set -e $var
                 end
 
-                echo "Lean theme uninstalled! Exiting fish."
+                echo "Lean theme uninstalled. Exiting fish."
+                sleep 1
                 exit
             case N n ''
                 echo "Aborted uninstall."

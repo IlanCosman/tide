@@ -1,6 +1,6 @@
 function lean_pwd
-    set pwdSplit (string split "/" (_shorten_pwd))
-    set pwdSplitLength (count $pwdSplit)
+    set -l pwdSplit (string split "/" (_shorten_pwd))
+    set -l pwdSplitLength (count $pwdSplit)
 
     if test $pwdSplit[1] != "~"
         set_color -o $lean_light_blue
@@ -33,28 +33,28 @@ function lean_pwd
 end
 
 function _shorten_pwd
-    set fish_prompt_pwd_dir_length 0
-    set lengthPromptPwd (string length (prompt_pwd))
-    set shortenPwdLength (math $COLUMNS-$lean_shorten_pwd_margin)
+    set -l fish_prompt_pwd_dir_length 0
+    set -l lengthPromptPwd (string length (prompt_pwd))
+    set -l shortenPwdLength (math $COLUMNS-$lean_shorten_pwd_margin)
 
     if test $lengthPromptPwd -gt $shortenPwdLength
-        set smallestAbsoluteDiff $lengthPromptPwd
+        set -l smallestAbsoluteDiff $lengthPromptPwd
 
         for promptPwdDirLength in 4 5 6 7 8 9 10 0
-            set fish_prompt_pwd_dir_length $promptPwdDirLength
-            set lengthPromptPwd (string length (prompt_pwd))
+            set -l fish_prompt_pwd_dir_length $promptPwdDirLength
+            set -l lengthPromptPwd (string length (prompt_pwd))
 
             if test $lengthPromptPwd -lt $shortenPwdLength
-                set absoluteDiff (math "abs($shortenPwdLength-$lengthPromptPwd)")
+                set -l absoluteDiff (math "abs($shortenPwdLength-$lengthPromptPwd)")
 
                 if test $absoluteDiff -lt $smallestAbsoluteDiff
-                    set smallestAbsoluteDiff $absoluteDiff
-                    set bestPromptPwdDirLength $promptPwdDirLength
+                    set -l smallestAbsoluteDiff $absoluteDiff
+                    set -l bestPromptPwdDirLength $promptPwdDirLength
                 end
             end
         end
 
-        set fish_prompt_pwd_dir_length $bestPromptPwdDirLength
+        set -l fish_prompt_pwd_dir_length $bestPromptPwdDirLength
     end
 
     echo (prompt_pwd)
