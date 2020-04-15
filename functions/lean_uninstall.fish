@@ -1,13 +1,12 @@
 function lean_uninstall
-    if user_confirm "Unininstall lean theme?" y/N
+    if user_ask "Unininstall lean theme?" y/N
         echo "Uninstalling lean theme..."
-
+        
         # ------------------Remove Functions------------------
-        set fns fish_prompt lean_pwd lean_git_prompt lean_uninstall
-        set fishFnsDir "$__fish_config_dir/functions"
+        set fns fish_prompt lean_git_prompt lean_pwd lean_uninstall user_ask
 
         for fn in $fns
-            rm "$fishFnsDir/$fn.fish"
+            rm "$__fish_config_dir/functions/$fn.fish"
         end
 
         # ---------------Erase Theme Variables---------------

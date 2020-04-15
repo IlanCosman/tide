@@ -1,12 +1,11 @@
 echo "Installing lean theme..."
 
 # -----------------Download Functions-----------------
-set fns fish_prompt lean_git_prompt lean_pwd lean_uninstall user_confirm
-set fishFnsDir "$__fish_config_dir/functions"
-set ghubFnsDir "https://raw.githubusercontent.com/IlanCosman/lean/master/functions"
+set fns fish_prompt lean_git_prompt lean_pwd lean_uninstall user_ask
+set githubFnsDir "https://raw.githubusercontent.com/IlanCosman/lean/master/functions"
 
 for fn in $fns
-    wget --quiet "$ghubFnsDir/$fn.fish" --output-document="$fishFnsDir/$fn.fish"
+    wget -q "$githubFnsDir/$fn.fish" -O "$__fish_config_dir/functions/$fn.fish"
 end
 
 # ----------------Set Theme Variables----------------
