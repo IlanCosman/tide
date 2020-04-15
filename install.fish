@@ -1,7 +1,7 @@
 echo "Installing lean theme..."
 
 # -----------------Download Functions-----------------
-set fns fish_prompt lean_pwd lean_git_prompt lean_uninstall
+set fns fish_prompt lean_git_prompt lean_pwd lean_uninstall user_confirm
 set fishFnsDir "$__fish_config_dir/functions"
 set ghubFnsDir "https://raw.githubusercontent.com/IlanCosman/lean/master/functions"
 
