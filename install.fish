@@ -2,14 +2,21 @@ echo "Installing lean theme..."
 
 # -----------------Download Functions-----------------
 set tempDir "/tmp/lean_theme"
-set deleteThese install.fish README.md
 
-rm -rf $tempDir
-git clone -q --depth=1 https://github.com/IlanCosman/lean.git $tempDir
-for file in $deleteThese
-    rm "$tempDir/$file"
+# Clone repository into $tempDir
+if test -e $tempDir
+    rm -rf $tempDir
 end
-cp -r $tempDir $__fish_config_dir
+git clone -q https://github.com/IlanCosman/lean.git $tempDir
+
+# Remove unnecessary files
+rm "$tempDir/install.fish"
+rm "$tempDir/README.md"
+rm -rf "$tempDir/.git/"
+
+# Copy directory contents into $__fish_config_dir and cleanup
+cp -rf "$tempDir/." $__fish_config_dir
+rm -rf $tempDir
 
 # ----------------Set Theme Variables----------------
 # --------------Colors--------------
