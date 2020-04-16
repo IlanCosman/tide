@@ -28,6 +28,6 @@ function user_ask --argument-names question options
     end
 end
 
-function _indexMinusOne
-    echo (math (contains -i $argv[1] $argv[2..-1])-1)
+function _indexMinusOne --argument-names item
+    echo (math (contains -i $item $argv[2..-1])-1)
 end

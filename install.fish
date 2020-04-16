@@ -1,13 +1,13 @@
 echo "Installing lean theme..."
 
 # -----------------Download Functions-----------------
-set tempDir "/tmp/lean_theme"
+set -l tempDir "/tmp/lean_theme"
 
 # Clone repository into $tempDir
 if test -e $tempDir
     rm -rf $tempDir
 end
-git clone -q https://github.com/IlanCosman/lean.git $tempDir
+git clone -q --depth=1 https://github.com/IlanCosman/lean.git $tempDir
 
 # Remove unnecessary files
 rm "$tempDir/install.fish"
