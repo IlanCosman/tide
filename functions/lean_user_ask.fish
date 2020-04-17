@@ -1,4 +1,4 @@
-function user_ask --argument-names question options
+function lean_user_ask --argument-names question options
     set -l optionList (string split "/" $options)
 
     for option in $optionList

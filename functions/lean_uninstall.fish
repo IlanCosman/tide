@@ -3,6 +3,7 @@ function lean_uninstall
         echo "Uninstalling lean theme..."
 
         # ------------------Remove Functions------------------
+        rm "$__fish_config_dir/functions/fish_prompt.fish"
         rm "$__fish_config_dir/functions/lean*"
 
         # ---------------Erase Theme Variables---------------

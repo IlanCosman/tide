@@ -1,1 +1,15 @@
-source "$__fish_config_dir/functions/lean_fish_prompt.fish"
+function fish_prompt --description 'Write out the prompt'
+    set -l last_status $status
+    echo
+
+    echo (lean_pwd)(lean_git_prompt)
+
+    # Prompt character
+    if test $last_status -eq 0
+        set_color $lean_green
+    else
+        set_color $fish_color_error
+    end
+    echo -n "❯ "
+    set_color $fish_color_normal
+end
