@@ -1,0 +1,1 @@
+source "$__fish_config_dir/functions/lean_fish_prompt.fish"
