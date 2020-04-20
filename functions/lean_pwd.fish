@@ -3,29 +3,29 @@ function lean_pwd
     set -l pwdSplitLength (count $pwdSplit)
 
     if test $pwdSplit[1] != "~"
-        set_color -o $lean_light_blue
+        set_color -o $lean_color_light_blue
         echo -n "/"
         set_color $fish_color_normal
     else
-        set_color -o $lean_light_blue
+        set_color -o $lean_color_light_blue
         echo -n $pwdSplit[1]
         set_color $fish_color_normal
 
         if test $pwdSplitLength -gt 1
-            set_color $lean_dark_blue
+            set_color $lean_color_dark_blue
             echo -n "/"
             set_color $fish_color_normal
         end
     end
 
-    set_color $lean_dark_blue
+    set_color $lean_color_dark_blue
     echo -n (string join "/" $pwdSplit[2..-2])
     if test $pwdSplitLength -gt 2
         echo -n "/"
     end
     set_color $fish_color_normal
 
-    set_color -o $lean_light_blue
+    set_color -o $lean_color_light_blue
     if test $pwdSplitLength -gt 1
         echo -n $pwdSplit[-1]
     end

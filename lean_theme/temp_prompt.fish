@@ -1,5 +1,6 @@
 function fish_prompt --description 'Write out the prompt'
     set -l last_status $status
+    echo
     if test (math $CMD_DURATION/1000) -gt $lean_timer_duration
         for i in (seq (math $COLUMNS-(string length (echo -n " "(math --scale=$lean_timer_decimals $CMD_DURATION/1000)"s"))-1))
             set_color $lean_prompt_connection_color

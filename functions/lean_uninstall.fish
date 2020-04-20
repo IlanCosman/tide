@@ -8,7 +8,9 @@ function lean_uninstall
 
         # ---------------Erase Theme Variables---------------
         # --------------Colors--------------
-        set -l vars $vars lean_green lean_light_blue lean_dark_blue lean_gold
+        set -l vars $vars lean_color_green lean_color_light_blue lean_color_dark_blue lean_color_gold
+        # --------------Timer--------------
+        set -l vars $vars lean_timer_color lean_timer_decimals lean_timer_duration
         # ---------------Pwd---------------
         set -l vars $vars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
         # ------------Git prompt------------

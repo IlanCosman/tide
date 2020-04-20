@@ -1,5 +1,3 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_status $status
     if test (math $CMD_DURATION/1000) -gt $lean_timer_duration
         for i in (seq (math $COLUMNS-(string length (echo -n " "(math --scale=$lean_timer_decimals $CMD_DURATION/1000)"s"))-1))
             set_color $lean_prompt_connection_color
@@ -17,12 +15,3 @@ function fish_prompt --description 'Write out the prompt'
         end
     end
     echo -e "\r"(lean_pwd)(lean_git_prompt)" "
-    # Prompt character
-    if test $last_status -eq 0
-        set_color $lean_green
-    else
-        set_color $fish_color_error
-    end
-    echo -n "❯ "
-    set_color $fish_color_normal
-end
