@@ -71,7 +71,7 @@ function _promptConnection
         case 1
             set -U lean_prompt_connection " "
             set -g lean_prompt_connection " "
-            _promptConnectionColor
+            _promptSpacing
         case 2
             set -U lean_prompt_connection "·"
             set -g lean_prompt_connection "·"
