@@ -55,6 +55,6 @@ function lean_install
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     set_color $lean_color_green
-    echo "Lean theme installed! Run 'lean_wizard' to configure your prompt."
+    echo "Lean theme installed! Run lean_wizard to configure your prompt."
     set_color $fish_color_normal
 end
