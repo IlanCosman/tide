@@ -4,11 +4,8 @@ function lean_wizard
         return 1
     end
 
-    set -g leanTimerDurationSave $lean_timer_duration
-    set -U lean_timer_duration 0
-    set -g tempPrompt "$__fish_config_dir/lean_theme/temp_prompt.fish"
-    set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules"
     set -g fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
+    set -g tempPrompt "$__fish_config_dir/lean_theme/temp_prompt.fish"
     set -g columns $COLUMNS
     set -g lines $LINES
 
@@ -23,8 +20,8 @@ end
 
 function _setDefaults
     set -g newline true
-    set -g lean_prompt_connection " "
-    set -g lean_prompt_connection_color 6C6C6C
+    set -g fake_lean_prompt_connection " "
+    set -g fake_lean_prompt_connection_color 6C6C6C
 end
 
 function _promptHeight
@@ -57,28 +54,25 @@ function _promptConnection
     _title "Prompt Connection"
 
     echo "(1)  Disconnected"
-    _displayPrompt lean_prompt_connection " "
+    _displayPrompt fake_lean_prompt_connection " "
 
     echo "(2)  Dotted"
-    _displayPrompt lean_prompt_connection "·"
+    _displayPrompt fake_lean_prompt_connection "·"
 
     echo "(3)  Solid"
-    _displayPrompt lean_prompt_connection "─"
+    _displayPrompt fake_lean_prompt_connection "─"
 
     _displayRestartAndQuit
 
     switch (lean_user_ask "Choice" 1/2/3/r/q)
         case 1
-            set -U lean_prompt_connection " "
-            set -g lean_prompt_connection " "
+            set -g fake_lean_prompt_connection " "
             _promptSpacing
         case 2
-            set -U lean_prompt_connection "·"
-            set -g lean_prompt_connection "·"
+            set -g fake_lean_prompt_connection "·"
             _promptConnectionColor
         case 3
-            set -U lean_prompt_connection "─"
-            set -g lean_prompt_connection "─"
+            set -g fake_lean_prompt_connection "─"
             _promptConnectionColor
         case r
             _begin
@@ -92,35 +86,31 @@ function _promptConnectionColor
     _title "Connection Color"
 
     echo "(1) Lightest"
-    _displayPrompt lean_prompt_connection_color 808080
+    _displayPrompt fake_lean_prompt_connection_color 808080
 
     echo "(2) Light"
-    _displayPrompt lean_prompt_connection_color 6C6C6C
+    _displayPrompt fake_lean_prompt_connection_color 6C6C6C
 
     echo "(3) Dark"
-    _displayPrompt lean_prompt_connection_color 585858
+    _displayPrompt fake_lean_prompt_connection_color 585858
 
     echo "(4) Darkest"
-    _displayPrompt lean_prompt_connection_color 444444
+    _displayPrompt fake_lean_prompt_connection_color 444444
 
     _displayRestartAndQuit
 
     switch (lean_user_ask "Choice" 1/2/3/4/r/q)
         case 1
-            set -U lean_prompt_connection_color 808080
-            set -g lean_prompt_connection_color 808080
+            set -g fake_lean_prompt_connection_color 808080
             _promptSpacing
         case 2
-            set -U lean_prompt_connection_color 6C6C6C
-            set -g lean_prompt_connection_color 6C6C6C
+            set -g fake_lean_prompt_connection_color 6C6C6C
             _promptSpacing
         case 3
-            set -U lean_prompt_connection_color 585858
-            set -g lean_prompt_connection_color 585858
+            set -g fake_lean_prompt_connection_color 585858
             _promptSpacing
         case 4
-            set -U lean_prompt_connection_color 444444
-            set -g lean_prompt_connection_color 444444
+            set -g fake_lean_prompt_connection_color 444444
             _promptSpacing
         case r
             _begin
@@ -157,8 +147,16 @@ function _promptSpacing
     end
 end
 
-function _assemble_prompt
-    echo -n >$tempPrompt
+function _assemblePrompt --argument-names which
+    set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$which""_prompt"
+
+    if test $which = "fish"
+        set -g promptDir "$__fish_config_dir/functions/fish_prompt.fish"
+    else
+        set -g promptDir "$__fish_config_dir/lean_theme/temp_prompt.fish"
+    end
+
+    echo -n >$promptDir
 
     _addMod 1_initial
     if test $newline = "true"
@@ -169,7 +167,8 @@ function _assemble_prompt
 end
 
 function _addMod --argument-names file
-    cat "$moduleDir/$file" >>$tempPrompt
+    cat "$moduleDir/$file" >>$promptDir
+    printf "\n\n" >>$promptDir
 end
 
 function _title --argument-names title
@@ -184,9 +183,9 @@ end
 
 function _displayPrompt --argument-names var_name var_value
     set -g $var_name $var_value
-    _assemble_prompt
-    source $tempPrompt
-    fish_prompt
+    _assemblePrompt fake
+    source $promptDir
+    fake_prompt
     echo
     echo
 end
@@ -197,16 +196,13 @@ function _displayRestartAndQuit
 end
 
 function _quit
-    set -U lean_timer_duration $leanTimerDurationSave
     source $fishPrompt
-    fish_prompt
     clear
 end
 
 function _finish
-    set -U lean_timer_duration $leanTimerDurationSave
-    _assemble_prompt
-    cat $tempPrompt >$fishPrompt
-    source $fishPrompt
-    clear
+    _assemblePrompt fish
+    set -U lean_prompt_connection $fake_lean_prompt_connection
+    set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
+    _quit
 end

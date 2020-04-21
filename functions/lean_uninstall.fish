@@ -7,6 +7,8 @@ function lean_uninstall
         rm "$__fish_config_dir/functions/lean*"
 
         # ---------------Erase Theme Variables---------------
+        # --------------Prompt--------------
+        set -l vars $vars lean_prompt_connection lean_prompt_connection_color
         # --------------Colors--------------
         set -l vars $vars lean_color_green lean_color_light_blue lean_color_dark_blue lean_color_gold
         # --------------Timer--------------
