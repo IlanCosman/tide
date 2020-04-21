@@ -8,4 +8,14 @@
     set_color $lean_timer_color
     echo -n $timerOutput
     set_color $fish_color_normal
-    echo -e "\r"(lean_pwd)(lean_git_prompt)" "
+    
+    echo -ne "\r"
+    
+    set -l Lblue (set_color -o $lean_color_light_blue)
+    set -l Dblue (set_color $lean_color_dark_blue)
+    set -l n (set_color $fish_color_normal)
+    echo -n $Lblue"~"$n$Dblue"/"$n$Lblue"src "$n
+    
+    set_color $lean_color_green
+    echo "master "
+    set_color $fish_color_normal

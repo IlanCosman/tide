@@ -27,10 +27,10 @@ end
 function _promptHeight
     _title "Prompt Height"
 
-    echo "(1)  One line"
+    _option 1 "One line"
     _displayPrompt prompt_height 1
 
-    echo "(2)  Two lines"
+    _option 2 "Two lines"
     _displayPrompt prompt_height 2
 
     _displayRestartAndQuit
@@ -38,7 +38,7 @@ function _promptHeight
     switch (lean_user_ask "Choice" 1/2/r/q)
         case 1
             set -g prompt_height 1
-            _finish
+            _promptSpacing
         case 2
             set -g prompt_height 2
             _promptConnection
@@ -53,13 +53,13 @@ function _promptConnection
     clear
     _title "Prompt Connection"
 
-    echo "(1)  Disconnected"
+    _option 1 "Disconnected"
     _displayPrompt fake_lean_prompt_connection " "
 
-    echo "(2)  Dotted"
+    _option 2 "Dotted"
     _displayPrompt fake_lean_prompt_connection "·"
 
-    echo "(3)  Solid"
+    _option 3 "Solid"
     _displayPrompt fake_lean_prompt_connection "─"
 
     _displayRestartAndQuit
@@ -85,16 +85,16 @@ function _promptConnectionColor
     clear
     _title "Connection Color"
 
-    echo "(1) Lightest"
+    _option 1 "Lightest"
     _displayPrompt fake_lean_prompt_connection_color 808080
 
-    echo "(2) Light"
+    _option 2 "Light"
     _displayPrompt fake_lean_prompt_connection_color 6C6C6C
 
-    echo "(3) Dark"
+    _option 3 "Dark"
     _displayPrompt fake_lean_prompt_connection_color 585858
 
-    echo "(4) Darkest"
+    _option 4 "Darkest"
     _displayPrompt fake_lean_prompt_connection_color 444444
 
     _displayRestartAndQuit
@@ -123,12 +123,14 @@ function _promptSpacing
     clear
     _title "Prompt Spacing"
 
-    echo "(1) Compact"
+    _option 1 "Compact"
     _displayPrompt newline false
+    echo -ne "\r\033[1A"
     _displayPrompt newline false
 
-    echo "(2) Sparse"
+    _option 2 "Sparse"
     _displayPrompt newline true
+    echo -ne "\r\033[1A"
     _displayPrompt newline true
 
     _displayRestartAndQuit
@@ -164,10 +166,16 @@ function _assemblePrompt --argument-names which
     end
     _addMod "3_"$prompt_height"Line"
     _addMod 4_final
+    if test $prompt_height -eq 1
+        # breakpoint
+        _addMod 5_rightPrompt
+    else
+        _addMod 5_rPromptNoColor
+    end
 end
 
 function _addMod --argument-names file
-    cat "$moduleDir/$file" >>$promptDir
+    cat "$moduleDir/$file.fish" >>$promptDir
     printf "\n\n" >>$promptDir
 end
 
@@ -178,13 +186,22 @@ function _title --argument-names title
     for i in (seq (math $midCols-$midTitle))
         echo -n " "
     end
+    set_color -o
     echo $title
+    set_color normal
+end
+
+function _option --argument-names number text
+    set_color -o
+    echo "($number) $text"
+    set_color normal
 end
 
 function _displayPrompt --argument-names var_name var_value
     set -g $var_name $var_value
     _assemblePrompt fake
     source $promptDir
+    
     fake_prompt
     echo
     echo
