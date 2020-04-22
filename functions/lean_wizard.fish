@@ -167,7 +167,6 @@ function _assemblePrompt --argument-names which
     _addMod "3_"$prompt_height"Line"
     _addMod 4_final
     if test $prompt_height -eq 1
-        # breakpoint
         _addMod 5_rightPrompt
     else
         _addMod 5_rPromptNoColor
@@ -203,8 +202,7 @@ function _displayPrompt --argument-names var_name var_value
     source $promptDir
     
     fake_prompt
-    echo
-    echo
+    printf "\n\n"
 end
 
 function _displayRestartAndQuit
@@ -213,6 +211,7 @@ function _displayRestartAndQuit
 end
 
 function _quit
+    functions -e fish_right_prompt
     source $fishPrompt
     clear
 end
