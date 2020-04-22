@@ -225,9 +225,11 @@ end
 
 function _menu --argument-names question options
     set -l optionList (string split "/" $options)
-
+    set -l bold (set_color -o)
+    set -l norm (set_color normal)
+    
     while true
-        read -P "$question [$options] " input
+        read -P $bold"$question [$options] "$norm input
 
         if contains $input $optionList
             echo $input
