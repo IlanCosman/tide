@@ -55,6 +55,27 @@ function lean_install
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     set_color $lean_color_green
-    echo "Lean theme installed! Run lean_wizard to configure your prompt."
+    echo "Lean theme installed!"
     set_color $fish_color_normal
+
+    if _user_confirm_defaultYes "Configure prompt?"
+        lean_wizard
+    else
+        echo -e "\n""Run lean_wizard to configure your prompt."
+    end
+end
+
+function _user_confirm_defaultYes --argument-names question
+    while true
+        read -P "$question [Y/n] " input
+
+        switch $input
+            case y Y yes Yes
+                return 0
+            case n N no No
+                return 1
+            case ''
+                return 0
+        end
+    end
 end

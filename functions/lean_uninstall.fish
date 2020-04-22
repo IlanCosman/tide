@@ -1,5 +1,5 @@
 function lean_uninstall
-    if lean_user_ask "Unininstall lean theme?" y/N
+    if _user_confirm_defaultNo "Unininstall lean theme?"
         echo "Uninstalling lean theme..."
 
         # ------------------Remove Files------------------
@@ -37,5 +37,20 @@ function lean_uninstall
         exit
     else
         echo "Aborted uninstall."
+    end
+end
+
+function _user_confirm_defaultNo --argument-names question
+    while true
+        read -P "$question [y/N] " input
+
+        switch $input
+            case y Y yes Yes
+                return 0
+            case n N no No
+                return 1
+            case ''
+                return 1
+        end
     end
 end

@@ -35,7 +35,7 @@ function _promptHeight
 
     _displayRestartAndQuit
 
-    switch (lean_user_ask "Choice" 1/2/r/q)
+    switch (_menu "Choice" 1/2/r/q)
         case 1
             set -g prompt_height 1
             _promptSpacing
@@ -64,7 +64,7 @@ function _promptConnection
 
     _displayRestartAndQuit
 
-    switch (lean_user_ask "Choice" 1/2/3/r/q)
+    switch (_menu "Choice" 1/2/3/r/q)
         case 1
             set -g fake_lean_prompt_connection " "
             _promptSpacing
@@ -99,7 +99,7 @@ function _promptConnectionColor
 
     _displayRestartAndQuit
 
-    switch (lean_user_ask "Choice" 1/2/3/4/r/q)
+    switch (_menu "Choice" 1/2/3/4/r/q)
         case 1
             set -g fake_lean_prompt_connection_color 808080
             _promptSpacing
@@ -135,7 +135,7 @@ function _promptSpacing
 
     _displayRestartAndQuit
 
-    switch (lean_user_ask "Choice" 1/2/r/q)
+    switch (_menu "Choice" 1/2/r/q)
         case 1
             set -g newline false
             _finish
@@ -221,4 +221,17 @@ function _finish
     set -U lean_prompt_connection $fake_lean_prompt_connection
     set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
     _quit
+end
+
+function _menu --argument-names question options
+    set -l optionList (string split "/" $options)
+
+    while true
+        read -P "$question [$options] " input
+
+        if contains $input $optionList
+            echo $input
+            break
+        end
+    end
 end
