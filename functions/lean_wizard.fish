@@ -124,7 +124,7 @@ function _promptSpacing
     _title "Prompt Spacing"
 
     _option 1 "Compact"
-    _displayPrompt newline false
+    _displayPrompt newline true
     echo -ne "\r\033[1A"
     _displayPrompt newline false
 
@@ -190,9 +190,9 @@ function _title --argument-names title
     set_color normal
 end
 
-function _option --argument-names number text
+function _option --argument-names symbol text
     set_color -o
-    echo "($number) $text"
+    echo "($symbol) $text"
     set_color normal
 end
 
@@ -200,7 +200,6 @@ function _displayPrompt --argument-names var_name var_value
     set -g $var_name $var_value
     _assemblePrompt fake
     source $promptDir
-    
     fake_prompt
     printf "\n\n"
 end
@@ -217,9 +216,23 @@ function _quit
 end
 
 function _finish
-    _assemblePrompt fish
-    set -U lean_prompt_connection $fake_lean_prompt_connection
-    set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
+    clear
+    _title "Overwrite fish_prompt?"
+
+    _option y "Yes"
+    printf "\n\n"
+
+    _option n "No"
+    printf "\n\n"
+
+    switch (_menu "Choice" y/n)
+        case y
+            _assemblePrompt fish
+            set -U lean_prompt_connection $fake_lean_prompt_connection
+            set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
+        case n
+    end
+
     _quit
 end
 
@@ -227,7 +240,7 @@ function _menu --argument-names question options
     set -l optionList (string split "/" $options)
     set -l bold (set_color -o)
     set -l norm (set_color normal)
-    
+
     while true
         read -P $bold"$question [$options] "$norm input
 
