@@ -1,5 +1,4 @@
 function lean_load_right_prompt_modules
-    set -g lean_right_prompt_modules_order leanTimer
     set -g leanTimer (_lean_timer)
 end
 
