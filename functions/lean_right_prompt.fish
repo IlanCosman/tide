@@ -1,15 +1,14 @@
 function lean_right_prompt
     echo -n " "
-    if test -n "$leanTimer"
-        set_color $lean_timer_color
-        echo -n $leanTimer
-        set_color normal
-        echo -n " "
-    end
-    if test -n "$leanSSH"
-        set_color $lean_ssh_color
-        echo -n $leanSSH
-        set_color normal
-        echo -n " "
+    
+    for module in lean_{$lean_right_prompt_modules}
+        if test -n "$$module"
+            set -l colorName "$module"_color
+            
+            set_color "$$colorName"
+            echo -n "$$module"
+            echo -n " "
+            set_color normal
+        end
     end
 end

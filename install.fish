@@ -20,17 +20,6 @@ function lean_install
     rm -rf $tempDir
 
     # ----------------Set Theme Variables----------------
-    # --------------Colors--------------
-    set -U lean_color_green 5FD700
-    set -U lean_color_light_blue 00AFFF
-    set -U lean_color_dark_blue 0087AF
-    set -U lean_color_gold D7AF00
-    # --------------Timer--------------
-    set -U lean_timer_color 87875F
-    set -U lean_timer_decimals 0
-    set -U lean_timer_duration 3
-    # ---------------SSH---------------
-    set -U lean_ssh_color D7AF87
     # ---------------Pwd---------------
     set -U fish_prompt_pwd_dir_length 0
     set -U lean_shorten_pwd_margin 5
@@ -54,6 +43,16 @@ function lean_install
     set -U __fish_git_prompt_color_untrackedfiles $lean_color_light_blue
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
+    # ----------------Right Prompt Modules----------------
+    set -U lean_right_prompt_modules timer ssh
+    # --------------Timer--------------
+    set -U lean_timer_color 87875F
+    set -U lean_timer_decimals 0
+    set -U lean_timer_duration 3
+    # ---------------SSH---------------
+    set -U lean_ssh_color D7AF87
+
+    # -----------------------Finish-----------------------
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     set_color $lean_color_green
