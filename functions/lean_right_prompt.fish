@@ -6,4 +6,10 @@ function lean_right_prompt
         set_color normal
         echo -n " "
     end
+    if test -n "$leanSSH"
+        set_color $lean_ssh_color
+        echo -n $leanSSH
+        set_color normal
+        echo -n " "
+    end
 end

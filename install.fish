@@ -29,6 +29,8 @@ function lean_install
     set -U lean_timer_color 87875F
     set -U lean_timer_decimals 0
     set -U lean_timer_duration 3
+    # ---------------SSH---------------
+    set -U lean_ssh_color D7AF87
     # ---------------Pwd---------------
     set -U fish_prompt_pwd_dir_length 0
     set -U lean_shorten_pwd_margin 5

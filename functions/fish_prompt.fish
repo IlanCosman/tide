@@ -30,6 +30,10 @@ function _lean_right_prompt_nocolor
         echo -n $leanTimer
         echo -n " "
     end
+    if test -n "$leanSSH"
+        echo -n $leanSSH
+        echo -n " "
+    end
 end
 
 
