@@ -20,6 +20,11 @@ function lean_install
     rm -rf $tempDir
 
     # ----------------Set Theme Variables----------------
+    # --------------Colors--------------
+    set -U lean_color_green 5FD700
+    set -U lean_color_light_blue 00AFFF
+    set -U lean_color_dark_blue 0087AF
+    set -U lean_color_gold D7AF00
     # ---------------Pwd---------------
     set -U fish_prompt_pwd_dir_length 0
     set -U lean_shorten_pwd_margin 5

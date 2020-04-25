@@ -7,26 +7,27 @@ function lean_uninstall
         rm "$__fish_config_dir/functions/lean"*
         rm -r "$__fish_config_dir/lean_theme"
 
-        # ---------------Erase Theme Variables---------------
+        # --------------Erase Theme Variables--------------
         # --------------Prompt--------------
-        set -l vars $vars lean_prompt_connection lean_prompt_connection_color
+        set -a vars lean_prompt_connection lean_prompt_connection_color
         # --------------Colors--------------
-        set -l vars $vars lean_color_green lean_color_light_blue lean_color_dark_blue lean_color_gold
-        # --------------Timer--------------
-        set -l vars $vars lean_timer_color lean_timer_decimals lean_timer_duration
+        set -a vars lean_color_{green, light_blue, dark_blue, gold}
         # ---------------Pwd---------------
-        set -l vars $vars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
+        set -a vars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
         # ------------Git prompt------------
-        set -l vars $vars __fish_git_prompt_show_informative_status __fish_git_prompt_showstashstate
+        set -a vars __fish_git_prompt_{show_informative_status, showstashstate}
         # -------Symbols-------
-        set -l vars $vars __fish_git_prompt_char_stateseparator __fish_git_prompt_char_cleanstate
-        set -l vars $vars __fish_git_prompt_char_upstream_ahead __fish_git_prompt_char_upstream_behind
-        set -l vars $vars __fish_git_prompt_char_stagedstate __fish_git_prompt_char_dirtystate
-        set -l vars $vars __fish_git_prompt_char_untrackedfiles __fish_git_prompt_char_stashstate
+        set -a vars __fish_git_prompt_char_{stateseparator, cleanstate, upstream_ahead, upstream_behind}
+        set -a vars __fish_git_prompt_char_{stagedstate, dirtystate, untrackedfiles, stashstate}
         # --------Colors--------
-        set -l vars $vars __fish_git_prompt_color_branch __fish_git_prompt_color_upstream
-        set -l vars $vars __fish_git_prompt_color_stagedstate __fish_git_prompt_color_dirtystate
-        set -l vars $vars __fish_git_prompt_color_untrackedfiles __fish_git_prompt_color_stashstate
+        set -a vars __fish_git_prompt_color_{branch, upstream, stagedstate, dirtystate, untrackedfiles, stashstate}
+
+        # ----------------Right Prompt Modules----------------
+        set -a vars lean_right_prompt_modules
+        # --------------Timer--------------
+        set -a vars lean_timer_{color, decimals, duration}
+        # ---------------SSH---------------
+        set -a vars lean_ssh_color
 
         for var in $vars
             set -e $var
