@@ -149,10 +149,10 @@ function _promptSpacing
     end
 end
 
-function _assemblePrompt --argument-names which
-    set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$which""_prompt"
+function _assemblePrompt -a whichPrompt
+    set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$whichPrompt""_prompt"
 
-    if test $which = "fish"
+    if test $whichPrompt = "fish"
         set -g promptDir "$__fish_config_dir/functions/fish_prompt.fish"
     else
         set -g promptDir "$__fish_config_dir/lean_theme/temp_prompt.fish"
@@ -173,12 +173,12 @@ function _assemblePrompt --argument-names which
     end
 end
 
-function _addMod --argument-names file
+function _addMod -a file
     cat "$moduleDir/$file.fish" >>$promptDir
     printf "\n\n" >>$promptDir
 end
 
-function _title --argument-names title
+function _title -a title
     set -l midCols (math $columns/2)
     set -l midTitle (math (string length $title)/2)
 
@@ -190,13 +190,13 @@ function _title --argument-names title
     set_color normal
 end
 
-function _option --argument-names symbol text
+function _option -a symbol text
     set_color -o
     echo "($symbol) $text"
     set_color normal
 end
 
-function _displayPrompt --argument-names var_name var_value
+function _displayPrompt -a var_name var_value
     set -g $var_name $var_value
     _assemblePrompt fake
     source $promptDir
@@ -236,7 +236,7 @@ function _finish
     _quit
 end
 
-function _menu --argument-names question options
+function _menu -a question options
     set -l optionList (string split "/" $options)
     set -l bold (set_color -o)
     set -l norm (set_color normal)

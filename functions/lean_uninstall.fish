@@ -3,33 +3,41 @@ function lean_uninstall
         echo "Uninstalling lean theme..."
 
         # ------------------Remove Files------------------
-        rm "$__fish_config_dir/functions/fish_prompt.fish"
-        rm "$__fish_config_dir/functions/lean"*
         rm -r "$__fish_config_dir/lean_theme"
+
+        set -l fishPromptFirstLine (head -n 1 "$__fish_config_dir/functions/fish_prompt.fish")
+        if test $fishPromptFirstLine = "# Created by lean_wizard"
+            rm "$__fish_config_dir/functions/fish_prompt.fish"
+        end
+
+        set -l leanFunctions git_prompt load_right_prompt_modules pwd right_prompt uninstall wizard
+        for func in $leanFunctions
+            rm "$__fish_config_dir/functions/lean_$func.fish"
+        end
 
         # --------------Erase Theme Variables--------------
         # --------------Prompt--------------
-        set -a vars lean_prompt_connection lean_prompt_connection_color
+        set -a rmVars lean_prompt_connection lean_prompt_connection_color
         # --------------Colors--------------
-        set -a vars lean_color_{green, light_blue, dark_blue, gold}
+        set -a rmVars lean_color_{green, light_blue, dark_blue, gold}
         # ---------------Pwd---------------
-        set -a vars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
+        set -a rmVars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
         # ------------Git prompt------------
-        set -a vars __fish_git_prompt_{show_informative_status, showstashstate}
+        set -a rmVars __fish_git_prompt_{show_informative_status, showstashstate}
         # -------Symbols-------
-        set -a vars __fish_git_prompt_char_{stateseparator, cleanstate, upstream_ahead, upstream_behind}
-        set -a vars __fish_git_prompt_char_{stagedstate, dirtystate, untrackedfiles, stashstate}
+        set -a rmVars __fish_git_prompt_char_{stateseparator, cleanstate, upstream_ahead, upstream_behind}
+        set -a rmVars __fish_git_prompt_char_{stagedstate, dirtystate, untrackedfiles, stashstate}
         # --------Colors--------
-        set -a vars __fish_git_prompt_color_{branch, upstream, stagedstate, dirtystate, untrackedfiles, stashstate}
+        set -a rmVars __fish_git_prompt_color_{branch, upstream, stagedstate, dirtystate, untrackedfiles, stashstate}
 
         # ----------------Right Prompt Modules----------------
-        set -a vars lean_right_prompt_modules
+        set -a rmVars lean_right_prompt_modules
         # --------------Timer--------------
-        set -a vars lean_timer_{color, decimals, duration}
+        set -a rmVars lean_timer_{color, decimals, duration}
         # ---------------SSH---------------
-        set -a vars lean_ssh_color
+        set -a rmVars lean_ssh_color
 
-        for var in $vars
+        for var in $rmVars
             set -e $var
         end
 
@@ -41,7 +49,7 @@ function lean_uninstall
     end
 end
 
-function _user_confirm_defaultNo --argument-names question
+function _user_confirm_defaultNo -a question
     while true
         read -P "$question [y/N] " input
 

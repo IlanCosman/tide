@@ -71,7 +71,7 @@ function lean_install
     end
 end
 
-function _user_confirm_defaultYes --argument-names question
+function _user_confirm_defaultYes -a question
     while true
         read -P "$question [Y/n] " input
 
