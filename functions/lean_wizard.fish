@@ -19,7 +19,11 @@ function _begin
 end
 
 function _setDefaults
-    set -g newline true
+    if test $lines -ge 26
+        set -g newline true
+    else
+        set -g newline false
+    end
     set -g fake_lean_prompt_connection " "
     set -g fake_lean_prompt_connection_color 6C6C6C
 end
@@ -198,9 +202,11 @@ end
 
 function _displayPrompt -a var_name var_value
     set -g $var_name $var_value
+
     _assemblePrompt fake
     source $promptDir
     fake_prompt
+
     printf "\n\n"
 end
 
