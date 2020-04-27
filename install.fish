@@ -48,8 +48,8 @@ function lean_install
     set -U __fish_git_prompt_color_untrackedfiles $lean_color_light_blue
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
-    # ----------------Right Prompt Modules----------------
-    set -U lean_right_prompt_modules timer ssh
+    # ----------------Right Prompt Items----------------
+    set -U lean_right_prompt_items timer ssh
     # --------------Timer--------------
     set -U lean_timer_color 87875F
     set -U lean_timer_decimals 0

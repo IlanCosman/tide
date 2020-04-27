@@ -10,7 +10,7 @@ function fish_prompt --description 'Write out the prompt'
 
     echo -ne "\r"(lean_pwd)(lean_git_prompt)" "
 
-    lean_load_right_prompt_modules
+    lean_load_right_prompt_items
     set -l leanRightPromptStartLocation (math $COLUMNS-(string length (_lean_right_prompt_nocolor)))
     printf "\r\033["$leanRightPromptStartLocation"C"
     echo -e (lean_right_prompt)
@@ -28,9 +28,9 @@ end
 function _lean_right_prompt_nocolor
     echo -n " "
     
-    for module in lean_{$lean_right_prompt_modules}
-        if test -n "$$module"
-            echo -n "$$module"
+    for item in lean_{$lean_right_prompt_items}
+        if test -n "$$item"
+            echo -n "$$item"
             echo -n " "
         end
     end

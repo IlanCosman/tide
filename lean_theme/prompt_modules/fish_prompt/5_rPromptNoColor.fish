@@ -1,9 +1,9 @@
 function _lean_right_prompt_nocolor
     echo -n " "
     
-    for module in lean_{$lean_right_prompt_modules}
-        if test -n "$$module"
-            echo -n "$$module"
+    for item in lean_{$lean_right_prompt_items}
+        if test -n "$$item"
+            echo -n "$$item"
             echo -n " "
         end
     end

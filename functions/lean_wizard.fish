@@ -6,7 +6,11 @@ function lean_wizard
 
     set -g fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
     set -g fakePrompt "$__fish_config_dir/lean_theme/fake_prompt.fish"
+
     set -g columns $COLUMNS
+    if test $columns -gt 100
+        set -g columns 100
+    end
     set -g lines $LINES
 
     _begin

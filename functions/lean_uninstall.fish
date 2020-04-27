@@ -10,7 +10,7 @@ function lean_uninstall
             rm "$__fish_config_dir/functions/fish_prompt.fish"
         end
 
-        set -l leanFunctions git_prompt load_right_prompt_modules pwd right_prompt uninstall wizard
+        set -l leanFunctions git_prompt load_right_prompt_items pwd right_prompt uninstall wizard
         for func in $leanFunctions
             rm "$__fish_config_dir/functions/lean_$func.fish"
         end
@@ -30,8 +30,8 @@ function lean_uninstall
         # --------Colors--------
         set -a rmVars __fish_git_prompt_color_{branch, upstream, stagedstate, dirtystate, untrackedfiles, stashstate}
 
-        # ----------------Right Prompt Modules----------------
-        set -a rmVars lean_right_prompt_modules
+        # ----------------Right Prompt Items----------------
+        set -a rmVars lean_right_prompt_items
         # --------------Timer--------------
         set -a rmVars lean_timer_{color, decimals, duration}
         # ---------------SSH---------------

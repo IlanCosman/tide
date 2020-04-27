@@ -1,12 +1,12 @@
 function lean_right_prompt
     echo -n " "
     
-    for module in lean_{$lean_right_prompt_modules}
-        if test -n "$$module"
-            set -l colorName "$module"_color
+    for item in lean_{$lean_right_prompt_items}
+        if test -n "$$item"
+            set -l colorName "$item"_color
             
             set_color "$$colorName"
-            echo -n "$$module"
+            echo -n "$$item"
             echo -n " "
             set_color normal
         end

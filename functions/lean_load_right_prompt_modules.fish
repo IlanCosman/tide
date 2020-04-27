@@ -1,6 +1,6 @@
-function lean_load_right_prompt_modules
-    for module in lean_{$lean_right_prompt_modules}
-        set -g $module (eval "_$module")
+function lean_load_right_prompt_items
+    for item in lean_{$lean_right_prompt_items}
+        set -g $item (eval "_$item")
     end
 end
 
