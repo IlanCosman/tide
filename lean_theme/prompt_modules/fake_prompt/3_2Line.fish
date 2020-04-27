@@ -1,9 +1,9 @@
     set_color $fake_lean_prompt_connection_color
-    printf "%.s$fake_lean_prompt_connection" (seq (math $COLUMNS-1))
+    printf "%.s$fake_lean_prompt_connection" (seq $columns)
     set_color $fish_color_normal
     
     set -l timerOutput " 5s "
-    set -l timerStartLocation (math $COLUMNS-(string length $timerOutput))
+    set -l timerStartLocation (math $columns-(string length $timerOutput))
     printf "\r\033["$timerStartLocation"C"
     set_color $lean_timer_color
     echo -n $timerOutput

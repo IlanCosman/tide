@@ -17,7 +17,6 @@ function lean_wizard
 end
 
 function _begin
-    clear
     _setDefaults
     _promptHeight
 end
@@ -58,7 +57,6 @@ function _promptHeight
 end
 
 function _promptConnection
-    clear
     _title "Prompt Connection"
 
     _option 1 "Disconnected"
@@ -90,7 +88,6 @@ function _promptConnection
 end
 
 function _promptConnectionColor
-    clear
     _title "Connection Color"
 
     _option 1 "Lightest"
@@ -128,7 +125,6 @@ function _promptConnectionColor
 end
 
 function _promptSpacing
-    clear
     _title "Prompt Spacing"
 
     _option 1 "Compact"
@@ -187,6 +183,7 @@ function _addMod -a file
 end
 
 function _title -a title
+    clear
     set -l midCols (math $columns/2)
     set -l midTitle (math (string length $title)/2)
 
@@ -226,7 +223,6 @@ function _quit
 end
 
 function _finish
-    clear
     _title "Overwrite fish_prompt?"
 
     _option y "Yes"
