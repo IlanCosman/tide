@@ -64,7 +64,7 @@ function lean_install
     echo "Lean theme installed!"
     set_color $fish_color_normal
 
-    if _user_confirm_defaultYes "Configure prompt?"
+    if _user_confirm_defaultYes "Configure lean prompt?"
         lean_wizard
     else
         echo -e "\n""Run lean_wizard to configure your prompt."
