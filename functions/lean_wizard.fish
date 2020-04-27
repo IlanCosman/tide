@@ -5,7 +5,7 @@ function lean_wizard
     end
 
     set -g fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
-    set -g tempPrompt "$__fish_config_dir/lean_theme/temp_prompt.fish"
+    set -g fakePrompt "$__fish_config_dir/lean_theme/fake_prompt.fish"
     set -g columns $COLUMNS
     set -g lines $LINES
 
@@ -156,16 +156,16 @@ end
 function _assemblePrompt -a whichPrompt
     set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$whichPrompt""_prompt"
 
-    if test $whichPrompt = "fish"
-        set -g promptDir "$__fish_config_dir/functions/fish_prompt.fish"
+    if test "$whichPrompt" = "fish"
+        set -g promptDir $fishPrompt
     else
-        set -g promptDir "$__fish_config_dir/lean_theme/temp_prompt.fish"
+        set -g promptDir $fakePrompt
     end
 
     echo -n >$promptDir
 
     _addMod 1_initial
-    if test $newline = "true"
+    if test "$newline" = "true"
         _addMod 2_newline
     end
     _addMod "3_"$prompt_height"Line"

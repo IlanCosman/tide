@@ -6,7 +6,7 @@ function lean_uninstall
         rm -r "$__fish_config_dir/lean_theme"
 
         set -l fishPromptFirstLine (head -n 1 "$__fish_config_dir/functions/fish_prompt.fish")
-        if test $fishPromptFirstLine = "# Created by lean_wizard"
+        if test "$fishPromptFirstLine" = "# Created by lean_wizard"
             rm "$__fish_config_dir/functions/fish_prompt.fish"
         end
 
