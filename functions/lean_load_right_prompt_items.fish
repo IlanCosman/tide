@@ -14,11 +14,13 @@ end
 function _lean_context
     if set -q SSH_TTY
         set -g lean_context_color $lean_context_ssh_color
-
+        set -g lean_context_color_bold false
+        
         set -l lean_context_output $USER'@'(prompt_hostname)
         echo -n $lean_context_output
     else if test $USER = "root"
         set -g lean_context_color $lean_context_root_color
+        set -g lean_context_color_bold true
 
         set -l lean_context_output $USER'@'(prompt_hostname)
         echo -n $lean_context_output
