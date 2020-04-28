@@ -11,9 +11,16 @@ function _lean_timer
     end
 end
 
-function _lean_ssh
+function _lean_context
     if set -q SSH_TTY
-        set -l lean_ssh_output $USER'@'(prompt_hostname)
-        echo -n $lean_ssh_output
+        set -g lean_context_color $lean_context_ssh_color
+
+        set -l lean_context_output $USER'@'(prompt_hostname)
+        echo -n $lean_context_output
+    else if test $USER = "root"
+        set -g lean_context_color $lean_context_root_color
+
+        set -l lean_context_output $USER'@'(prompt_hostname)
+        echo -n $lean_context_output
     end
 end

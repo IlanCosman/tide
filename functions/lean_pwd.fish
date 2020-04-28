@@ -2,6 +2,12 @@ function lean_pwd
     set -l pwdSplit (string split --no-empty "/" (_shorten_pwd))
     set -l pwdSplitLength (count $pwdSplit)
 
+    if not test -w $PWD
+        set_color $lean_color_dark_blue
+        echo -n " " # Lock icon
+        set_color $fish_color_normal
+    end
+
     if test "$pwdSplit[1]" != "~"
         set_color $lean_color_dark_blue
         echo -n "/"

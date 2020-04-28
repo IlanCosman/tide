@@ -49,13 +49,14 @@ function lean_install
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
     # ----------------Right Prompt Items----------------
-    set -U lean_right_prompt_items timer ssh
+    set -U lean_right_prompt_items timer context
     # --------------Timer--------------
     set -U lean_timer_color 87875F
     set -U lean_timer_decimals 0
     set -U lean_timer_duration 3
-    # ---------------SSH---------------
-    set -U lean_ssh_color D7AF87
+    # -------------Context-------------
+    set -U lean_context_ssh_color D7AF87
+    set -U lean_context_root_color D7AF00
 
     # -----------------------Finish-----------------------
     source "$__fish_config_dir/functions/fish_prompt.fish"

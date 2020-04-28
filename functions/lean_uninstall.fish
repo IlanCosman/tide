@@ -38,7 +38,7 @@ function lean_uninstall
         # --------------Timer--------------
         set -a rmVars lean_timer_{color, decimals, duration}
         # ---------------SSH---------------
-        set -a rmVars lean_ssh_color
+        set -a rmVars lean_context_{ssh_color, root_color}
 
         for var in $rmVars
             set -e $var
