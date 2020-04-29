@@ -12,6 +12,7 @@ function lean_install
 
     # Remove unnecessary files
     rm "$tempDir/install.fish"
+    rm "$tempDir/LICENSE"
     rm "$tempDir/README.md"
     rm -rf "$tempDir/.git/"
 
