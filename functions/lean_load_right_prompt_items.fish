@@ -6,23 +6,22 @@ end
 
 function _lean_timer
     if test (math $CMD_DURATION/1000) -gt $lean_timer_duration
-        set -l lean_timer_output (math --scale=$lean_timer_decimals $CMD_DURATION/1000)"s"
-        echo -n $lean_timer_output
+        echo -n (math --scale=$lean_timer_decimals $CMD_DURATION/1000)"s"
     end
 end
 
 function _lean_context
     if set -q SSH_TTY
         set -g lean_context_color $lean_context_ssh_color
-        set -g lean_context_color_bold false
-        
-        set -l lean_context_output $USER'@'(prompt_hostname)
-        echo -n $lean_context_output
+        echo -n $USER'@'(prompt_hostname)
     else if test $USER = "root"
         set -g lean_context_color $lean_context_root_color
-        set -g lean_context_color_bold true
+        echo -n $USER'@'(prompt_hostname)
+    end
+end
 
-        set -l lean_context_output $USER'@'(prompt_hostname)
-        echo -n $lean_context_output
+function _lean_jobs
+    if jobs -q
+        echo -n $lean_jobs_icon # Gear icon
     end
 end

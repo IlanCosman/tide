@@ -26,8 +26,8 @@ function lean_install
     set -U lean_color_dark_blue 0087AF
     set -U lean_color_gold D7AF00
     # ---------------Pwd---------------
-    set -U fish_prompt_pwd_dir_length 0
-    set -U lean_shorten_pwd_margin 5
+    set -U lean_pwd_shorten_margin 5
+    set -U lean_pwd_unwritable_icon  # Lock
     # ------------Git prompt------------
     set -U __fish_git_prompt_show_informative_status true
     set -U __fish_git_prompt_showstashstate true
@@ -49,7 +49,7 @@ function lean_install
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
     # ----------------Right Prompt Items----------------
-    set -U lean_right_prompt_items timer context
+    set -U lean_right_prompt_items timer context jobs
     # --------------Timer--------------
     set -U lean_timer_color 87875F
     set -U lean_timer_decimals 0
@@ -57,6 +57,9 @@ function lean_install
     # -------------Context-------------
     set -U lean_context_ssh_color D7AF87
     set -U lean_context_root_color D7AF00
+    # ---------------Jobs---------------
+    set -U lean_jobs_icon  # Gear
+    set -U lean_jobs_color 5FAF00
 
     # -----------------------Finish-----------------------
     source "$__fish_config_dir/functions/fish_prompt.fish"

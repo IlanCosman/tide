@@ -234,7 +234,7 @@ function _finish
     switch (_menu "Choice" y/n)
         case y
             _assemblePrompt fish
-            set -U lean_prompt_connection $fake_lean_prompt_connection
+            set -U lean_prompt_connection_icon $fake_lean_prompt_connection
             set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
         case n
     end

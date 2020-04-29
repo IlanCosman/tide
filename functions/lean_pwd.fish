@@ -4,7 +4,7 @@ function lean_pwd
 
     if not test -w $PWD
         set_color $lean_color_dark_blue
-        echo -n " " # Lock icon
+        echo -n "$lean_pwd_unwritable_icon "
         set_color $fish_color_normal
     end
 
@@ -49,7 +49,7 @@ function _shorten_pwd
     set -g fish_prompt_pwd_dir_length 0
     set -l pwd (prompt_pwd)
     set -l lengthPromptPwd (string length $pwd)
-    set -l shortenPwdLength (math $COLUMNS-$lean_shorten_pwd_margin)
+    set -l shortenPwdLength (math $COLUMNS-$lean_pwd_shorten_margin)
 
     set -l promptPwdDirLength 8
     while test $lengthPromptPwd -gt $shortenPwdLength -a $promptPwdDirLength -gt 0

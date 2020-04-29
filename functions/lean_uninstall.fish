@@ -1,9 +1,9 @@
 function lean_uninstall
     if _user_confirm_defaultNo "Unininstall lean theme?"
         set -l fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
-        
+
         echo "Uninstalling lean theme..."
-        
+
         # ------------------Remove Files------------------
         rm -r "$__fish_config_dir/lean_theme"
 
@@ -20,11 +20,11 @@ function lean_uninstall
 
         # --------------Erase Theme Variables--------------
         # --------------Prompt--------------
-        set -a rmVars lean_prompt_connection lean_prompt_connection_color
+        set -a rmVars lean_prompt_connection_{icon, color}
         # --------------Colors--------------
         set -a rmVars lean_color_{green, light_blue, dark_blue, gold}
         # ---------------Pwd---------------
-        set -a rmVars fish_prompt_pwd_dir_length lean_shorten_pwd_margin
+        set -a rmVars lean_pwd_{shorten_margin, unwritable_icon}
         # ------------Git prompt------------
         set -a rmVars __fish_git_prompt_{show_informative_status, showstashstate}
         # -------Symbols-------
@@ -39,6 +39,8 @@ function lean_uninstall
         set -a rmVars lean_timer_{color, decimals, duration}
         # ---------------SSH---------------
         set -a rmVars lean_context_{ssh_color, root_color}
+        # ---------------Jobs---------------
+        set -U lean_jobs_{icon, color}
 
         for var in $rmVars
             set -e $var
