@@ -4,6 +4,6 @@
     else
         set_color $fish_color_error
     end
-    echo -n "❯ "
+    echo -n '❯ '
     set_color $fish_color_normal
 end

@@ -1,14 +1,14 @@
 function lean_uninstall
-    if _user_confirm_defaultNo "Unininstall lean theme?"
+    if _user_confirm_defaultNo 'Unininstall lean theme?'
         set -l fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
 
-        echo "Uninstalling lean theme..."
+        echo 'Uninstalling lean theme...'
 
         # ------------------Remove Files------------------
         rm -r "$__fish_config_dir/lean_theme"
 
         set -l fishPromptFirstLine (head -n 1 $fishPrompt)
-        if test "$fishPromptFirstLine" = "# Created by lean_wizard"
+        if test "$fishPromptFirstLine" = '# Created by lean_wizard'
             rm $fishPrompt
             source "$__fish_data_dir/functions/fish_prompt.fish"
         end
@@ -48,9 +48,9 @@ function lean_uninstall
             set -e $var
         end
 
-        echo "Lean theme uninstalled."
+        echo 'Lean theme uninstalled.'
     else
-        echo "Aborted uninstall."
+        echo 'Aborted uninstall.'
     end
 end
 

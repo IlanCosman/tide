@@ -1,6 +1,6 @@
 function lean_wizard
     if test $COLUMNS -lt 55 || test $LINES -lt 21
-        echo "Terminal size too small; must be at least 55 x 21"
+        echo 'Terminal size too small; must be at least 55 x 21'
         return 1
     end
 
@@ -27,22 +27,22 @@ function _setDefaults
     else
         set -g newline false
     end
-    set -g fake_lean_prompt_connection " "
+    set -g fake_lean_prompt_connection ' '
     set -g fake_lean_prompt_connection_color 6C6C6C
 end
 
 function _promptHeight
-    _title "Prompt Height"
+    _title 'Prompt Height'
 
-    _option 1 "One line"
+    _option 1 'One line'
     _displayPrompt prompt_height 1
 
-    _option 2 "Two lines"
+    _option 2 'Two lines'
     _displayPrompt prompt_height 2
 
     _displayRestartAndQuit
 
-    switch (_menu "Choice" 1/2/r/q)
+    switch (_menu 'Choice' 1/2/r/q)
         case 1
             set -g prompt_height 1
             _promptSpacing
@@ -57,28 +57,28 @@ function _promptHeight
 end
 
 function _promptConnection
-    _title "Prompt Connection"
+    _title 'Prompt Connection'
 
-    _option 1 "Disconnected"
-    _displayPrompt fake_lean_prompt_connection " "
+    _option 1 'Disconnected'
+    _displayPrompt fake_lean_prompt_connection ' '
 
-    _option 2 "Dotted"
-    _displayPrompt fake_lean_prompt_connection "·"
+    _option 2 'Dotted'
+    _displayPrompt fake_lean_prompt_connection '·'
 
-    _option 3 "Solid"
-    _displayPrompt fake_lean_prompt_connection "─"
+    _option 3 'Solid'
+    _displayPrompt fake_lean_prompt_connection '─'
 
     _displayRestartAndQuit
 
-    switch (_menu "Choice" 1/2/3/r/q)
+    switch (_menu 'Choice' 1/2/3/r/q)
         case 1
-            set -g fake_lean_prompt_connection " "
+            set -g fake_lean_prompt_connection ' '
             _promptSpacing
         case 2
-            set -g fake_lean_prompt_connection "·"
+            set -g fake_lean_prompt_connection '·'
             _promptConnectionColor
         case 3
-            set -g fake_lean_prompt_connection "─"
+            set -g fake_lean_prompt_connection '─'
             _promptConnectionColor
         case r
             _begin
@@ -88,23 +88,23 @@ function _promptConnection
 end
 
 function _promptConnectionColor
-    _title "Connection Color"
+    _title 'Connection Color'
 
-    _option 1 "Lightest"
+    _option 1 'Lightest'
     _displayPrompt fake_lean_prompt_connection_color 808080
 
-    _option 2 "Light"
+    _option 2 'Light'
     _displayPrompt fake_lean_prompt_connection_color 6C6C6C
 
-    _option 3 "Dark"
+    _option 3 'Dark'
     _displayPrompt fake_lean_prompt_connection_color 585858
 
-    _option 4 "Darkest"
+    _option 4 'Darkest'
     _displayPrompt fake_lean_prompt_connection_color 444444
 
     _displayRestartAndQuit
 
-    switch (_menu "Choice" 1/2/3/4/r/q)
+    switch (_menu 'Choice' 1/2/3/4/r/q)
         case 1
             set -g fake_lean_prompt_connection_color 808080
             _promptSpacing
@@ -125,21 +125,21 @@ function _promptConnectionColor
 end
 
 function _promptSpacing
-    _title "Prompt Spacing"
+    _title 'Prompt Spacing'
 
-    _option 1 "Compact"
+    _option 1 'Compact'
     _displayPrompt newline true
-    echo -ne "\r\033[1A"
+    echo -ne '\r\033[1A'
     _displayPrompt newline false
 
-    _option 2 "Sparse"
+    _option 2 'Sparse'
     _displayPrompt newline true
-    echo -ne "\r\033[1A"
+    echo -ne '\r\033[1A'
     _displayPrompt newline true
 
     _displayRestartAndQuit
 
-    switch (_menu "Choice" 1/2/r/q)
+    switch (_menu 'Choice' 1/2/r/q)
         case 1
             set -g newline false
             _finish
@@ -156,7 +156,7 @@ end
 function _assemblePrompt -a whichPrompt
     set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$whichPrompt""_prompt"
 
-    if test "$whichPrompt" = "fish"
+    if test "$whichPrompt" = 'fish'
         set -g promptDir $fishPrompt
     else
         set -g promptDir $fakePrompt
@@ -165,10 +165,10 @@ function _assemblePrompt -a whichPrompt
     echo -n >$promptDir
 
     _addMod 1_initial
-    if test "$newline" = "true"
+    if test "$newline" = 'true'
         _addMod 2_newline
     end
-    _addMod "3_"$prompt_height"Line"
+    _addMod '3_'$prompt_height'Line'
     _addMod 4_final
     if test $prompt_height -eq 1
         _addMod 5_rightPrompt
@@ -179,7 +179,7 @@ end
 
 function _addMod -a file
     cat "$moduleDir/$file.fish" >>$promptDir
-    printf "\n\n" >>$promptDir
+    printf '\n\n' >>$promptDir
 end
 
 function _title -a title
@@ -188,7 +188,7 @@ function _title -a title
     set -l midTitle (math (string length $title)/2)
 
     for i in (seq (math $midCols-$midTitle))
-        echo -n " "
+        echo -n ' '
     end
     set_color -o
     echo $title
@@ -208,12 +208,12 @@ function _displayPrompt -a var_name var_value
     source $promptDir
     fake_prompt
 
-    printf "\n\n"
+    printf '\n\n'
 end
 
 function _displayRestartAndQuit
-    echo -e "(r)  Restart from the beginning\n"
-    echo -e "(q)  Quit and do nothing\n"
+    echo -e '(r)  Restart from the beginning\n'
+    echo -e '(q)  Quit and do nothing\n'
 end
 
 function _quit
@@ -223,15 +223,15 @@ function _quit
 end
 
 function _finish
-    _title "Overwrite fish_prompt?"
+    _title 'Overwrite fish_prompt?'
 
-    _option y "Yes"
-    printf "\n\n"
+    _option y 'Yes'
+    printf '\n\n'
 
-    _option n "No"
-    printf "\n\n"
+    _option n 'No'
+    printf '\n\n'
 
-    switch (_menu "Choice" y/n)
+    switch (_menu 'Choice' y/n)
         case y
             _assemblePrompt fish
             set -U lean_prompt_connection_icon $fake_lean_prompt_connection
@@ -243,7 +243,7 @@ function _finish
 end
 
 function _menu -a question options
-    set -l optionList (string split "/" $options)
+    set -l optionList (string split '/' $options)
     set -l bold (set_color -o)
     set -l norm (set_color normal)
 

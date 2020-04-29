@@ -1,1 +1,1 @@
-    echo -n (lean_pwd)(lean_git_prompt)" "
+    echo -n (lean_pwd)(lean_git_prompt)' '

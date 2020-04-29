@@ -9,11 +9,11 @@ function fish_prompt --description 'Write out the prompt'
     printf "%.s$lean_prompt_connection_icon" (seq $COLUMNS)
     set_color $fish_color_normal
 
-    echo -ne "\r"(lean_pwd)(lean_git_prompt)" "
+    echo -ne '\r'(lean_pwd)(lean_git_prompt)' '
 
     lean_load_right_prompt_items
     set -l leanRightPromptStartLocation (math $COLUMNS-(string length (_lean_right_prompt_nocolor)))
-    printf "\r\033["$leanRightPromptStartLocation"C"
+    printf '\r\033['$leanRightPromptStartLocation'C'
     echo -e (lean_right_prompt)
 
     # Prompt character
@@ -22,17 +22,17 @@ function fish_prompt --description 'Write out the prompt'
     else
         set_color $fish_color_error
     end
-    echo -n "❯ "
+    echo -n '❯ '
     set_color $fish_color_normal
 end
 
 function _lean_right_prompt_nocolor
-    echo -n " "
+    echo -n ' '
 
     for item in lean_{$lean_right_prompt_items}
         if test -n "$$item"
             echo -n "$$item"
-            echo -n " "
+            echo -n ' '
         end
     end
 end

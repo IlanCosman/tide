@@ -1,16 +1,16 @@
 function lean_pwd
-    set -l pwdSplit (string split --no-empty "/" (_shorten_pwd))
+    set -l pwdSplit (string split --no-empty '/' (_shorten_pwd))
     set -l pwdSplitLength (count $pwdSplit)
 
     if not test -w $PWD
         set_color $lean_color_dark_blue
-        echo -n "$lean_pwd_unwritable_icon "
+        echo -n $lean_pwd_unwritable_icon' '
         set_color $fish_color_normal
     end
 
-    if test "$pwdSplit[1]" != "~"
+    if test "$pwdSplit[1]" != '~'
         set_color $lean_color_dark_blue
-        echo -n "/"
+        echo -n '/'
         set_color $fish_color_normal
     end
 
@@ -20,14 +20,14 @@ function lean_pwd
 
     if test $pwdSplitLength -gt 1
         set_color $lean_color_dark_blue
-        echo -n "/"
+        echo -n '/'
         set_color $fish_color_normal
     end
 
     if test $pwdSplitLength -gt 2
         set_color $lean_color_dark_blue
-        echo -n (string join "/" $pwdSplit[2..-2])
-        echo -n "/"
+        echo -n (string join '/' $pwdSplit[2..-2])
+        echo -n '/'
         set_color $fish_color_normal
     end
 

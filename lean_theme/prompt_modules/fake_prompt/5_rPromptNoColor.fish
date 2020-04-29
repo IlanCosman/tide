@@ -1,7 +1,7 @@
 function _lean_right_prompt_nocolor
-    echo -n " "
+    echo -n ' '
     if test -n "$leanTimer"
         echo -n $leanTimer
-        echo -n " "
+        echo -n ' '
     end
 end
