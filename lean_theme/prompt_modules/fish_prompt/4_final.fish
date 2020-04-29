@@ -1,5 +1,5 @@
     # Prompt character
-    if test $lastExitCode -eq 0
+    if test $last_status -eq 0
         set_color $lean_color_green
     else
         set_color $fish_color_error

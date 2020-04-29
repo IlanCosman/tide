@@ -28,7 +28,7 @@ function lean_install
     set -U lean_color_gold D7AF00
     # ---------------Pwd---------------
     set -U lean_pwd_shorten_margin 5
-    set -U lean_pwd_unwritable_icon  # Lock
+    set -U lean_pwd_unwritable_icon "" # Lock
     # ------------Git prompt------------
     set -U __fish_git_prompt_show_informative_status true
     set -U __fish_git_prompt_showstashstate true
@@ -38,8 +38,8 @@ function lean_install
     set -U __fish_git_prompt_char_upstream_ahead " ⇡"
     set -U __fish_git_prompt_char_upstream_behind " ⇣"
     set -U __fish_git_prompt_char_stagedstate " +"
-    set -U __fish_git_prompt_char_dirtystate ' !'
-    set -U __fish_git_prompt_char_untrackedfiles ' ?'
+    set -U __fish_git_prompt_char_dirtystate " !"
+    set -U __fish_git_prompt_char_untrackedfiles " ?"
     set -U __fish_git_prompt_char_stashstate " *"
     # --------Colors--------
     set -U __fish_git_prompt_color_branch $lean_color_green
@@ -50,7 +50,12 @@ function lean_install
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
     # ----------------Right Prompt Items----------------
-    set -U lean_right_prompt_items timer context jobs
+    set -U lean_right_prompt_items "status" "timer" "context" "jobs"
+    # --------------Status--------------
+    set -U lean_status_success_icon "✔"
+    set -U lean_status_success_color 5FAF00
+    set -U lean_status_failure_icon "✘"
+    set -U lean_status_failure_color D70000
     # --------------Timer--------------
     set -U lean_timer_color 87875F
     set -U lean_timer_decimals 0
@@ -59,7 +64,7 @@ function lean_install
     set -U lean_context_ssh_color D7AF87
     set -U lean_context_root_color D7AF00
     # ---------------Jobs---------------
-    set -U lean_jobs_icon  # Gear
+    set -U lean_jobs_icon "" # Gear
     set -U lean_jobs_color 5FAF00
 
     # -----------------------Finish-----------------------
@@ -85,7 +90,7 @@ function _user_confirm_defaultYes -a question
                 return 0
             case n N no No
                 return 1
-            case ''
+            case ""
                 return 0
         end
     end

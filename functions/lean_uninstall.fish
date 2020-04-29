@@ -35,6 +35,8 @@ function lean_uninstall
 
         # ----------------Right Prompt Items----------------
         set -a rmVars lean_right_prompt_items
+        # --------------Status--------------
+        set -a rmVars lean_status_{success_icon, success_color, failure_icon, failure_color}
         # --------------Timer--------------
         set -a rmVars lean_timer_{color, decimals, duration}
         # ---------------SSH---------------

@@ -1,6 +1,7 @@
 # Created by lean_wizard
 function fish_prompt --description 'Write out the prompt'
-    set -l lastExitCode $status
+    set -g last_pipestatus $pipestatus
+    set -g last_status $status
 
     echo
 
@@ -16,7 +17,7 @@ function fish_prompt --description 'Write out the prompt'
     echo -e (lean_right_prompt)
 
     # Prompt character
-    if test $lastExitCode -eq 0
+    if test $last_status -eq 0
         set_color $lean_color_green
     else
         set_color $fish_color_error
@@ -27,7 +28,7 @@ end
 
 function _lean_right_prompt_nocolor
     echo -n " "
-    
+
     for item in lean_{$lean_right_prompt_items}
         if test -n "$$item"
             echo -n "$$item"
@@ -35,5 +36,4 @@ function _lean_right_prompt_nocolor
         end
     end
 end
-
 

@@ -1,2 +1,4 @@
+# Created by lean_wizard
 function fake_prompt --description 'Write out the prompt'
-    set -l lastExitCode $status
+    set -g last_pipestatus $pipestatus
+    set -g last_status $status
