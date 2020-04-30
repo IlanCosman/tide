@@ -43,6 +43,8 @@ function lean_uninstall
         set -a rmVars lean_context_{ssh_color, root_color}
         # ---------------Jobs---------------
         set -a rmVars lean_jobs_{icon, color}
+        # ---------------Time---------------
+        set -a rmVars lean_time_{format, color}
 
         for var in $rmVars
             set -e $var

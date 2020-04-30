@@ -1,7 +1,9 @@
 function _lean_right_prompt_nocolor
     echo -n ' '
-    if test -n "$leancmd_duration"
-        echo -n $leancmd_duration
-        echo -n ' '
+
+    for item in lean_{$lean_right_prompt_items}
+        if test -n "$$item"
+            echo -n "$$item"' '
+        end
     end
 end

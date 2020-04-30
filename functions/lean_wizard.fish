@@ -270,7 +270,9 @@ function _finish
             set -U lean_prompt_connection_icon $fake_lean_prompt_connection
             set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
             if test $fake_lean_time_format = ''
-                set -e lean_right_prompt_items[-1]
+                if contains 'time' $lean_right_prompt_items
+                    set -e lean_right_prompt_items[(contains -i 'time' $lean_right_prompt_items)]
+                end
                 set -e lean_time_format
             else
                 set -a lean_right_prompt_items 'time'

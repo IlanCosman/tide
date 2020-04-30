@@ -4,7 +4,7 @@ function lean_pwd
 
     if not test -w $PWD
         set_color $lean_color_dark_blue
-        echo -n $lean_pwd_unwritable_icon' '
+        echo -n {$lean_pwd_unwritable_icon}' '
         set_color $fish_color_normal
     end
 
@@ -26,8 +26,7 @@ function lean_pwd
 
     if test $pwdSplitLength -gt 2
         set_color $lean_color_dark_blue
-        echo -n (string join '/' $pwdSplit[2..-2])
-        echo -n '/'
+        echo -n (string join '/' $pwdSplit[2..-2])'/'
         set_color $fish_color_normal
     end
 
