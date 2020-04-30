@@ -21,9 +21,9 @@ function _lean_status
     end
 end
 
-function _lean_timer
-    if test (math $CMD_DURATION/1000) -gt $lean_timer_duration
-        echo -n (math --scale=$lean_timer_decimals $CMD_DURATION/1000)'s'
+function _lean_cmd_duration
+    if test (math $CMD_DURATION/1000) -gt $lean_cmd_duration_threshold
+        echo -n (math --scale=$lean_cmd_duration_decimals $CMD_DURATION/1000)'s'
     end
 end
 

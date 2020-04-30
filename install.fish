@@ -50,16 +50,16 @@ function lean_install
     set -U __fish_git_prompt_color_stashstate $lean_color_green
 
     # ----------------Right Prompt Items----------------
-    set -U lean_right_prompt_items 'status' 'timer' 'context' 'jobs'
+    set -U lean_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
     # --------------Status--------------
     set -U lean_status_success_icon '✔'
     set -U lean_status_success_color 5FAF00
     set -U lean_status_failure_icon '✘'
     set -U lean_status_failure_color D70000
-    # --------------Timer--------------
-    set -U lean_timer_color 87875F
-    set -U lean_timer_decimals 0
-    set -U lean_timer_duration 3
+    # --------------Cmd_Duration--------------
+    set -U lean_cmd_duration_color 87875F
+    set -U lean_cmd_duration_decimals 0
+    set -U lean_cmd_duration_threshold 3
     # -------------Context-------------
     set -U lean_context_ssh_color D7AF87
     set -U lean_context_root_color D7AF00

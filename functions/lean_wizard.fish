@@ -18,17 +18,50 @@ end
 
 function _begin
     _setDefaults
-    _promptHeight
+    _promptTime
 end
 
 function _setDefaults
     if test $lines -ge 26
-        set -g newline true
+        set -g new_line true
     else
-        set -g newline false
+        set -g new_line false
     end
+    set -g prompt_height 2
+    set -g fake_lean_time_format ''
     set -g fake_lean_prompt_connection ' '
     set -g fake_lean_prompt_connection_color 6C6C6C
+end
+
+function _promptTime
+    _title 'Show current time?'
+
+    _option 1 'No'
+    _displayPrompt fake_lean_time_format ''
+
+    _option 2 '24-hour format'
+    _displayPrompt fake_lean_time_format '%T'
+
+    _option 3 '12-hour format'
+    _displayPrompt fake_lean_time_format '%r'
+
+    _displayRestartAndQuit
+
+    switch (_menu 'Choice' 1/2/3/r/q)
+        case 1
+            set -g fake_lean_time_format ''
+            _promptHeight
+        case 2
+            set -g fake_lean_time_format '%T'
+            _promptHeight
+        case 3
+            set -g fake_lean_time_format '%r'
+            _promptHeight
+        case r
+            _begin
+        case q
+            _quit
+    end
 end
 
 function _promptHeight
@@ -128,23 +161,23 @@ function _promptSpacing
     _title 'Prompt Spacing'
 
     _option 1 'Compact'
-    _displayPrompt newline true
+    _displayPrompt new_line true
     echo -ne '\r\033[1A'
-    _displayPrompt newline false
+    _displayPrompt new_line false
 
     _option 2 'Sparse'
-    _displayPrompt newline true
+    _displayPrompt new_line true
     echo -ne '\r\033[1A'
-    _displayPrompt newline true
+    _displayPrompt new_line true
 
     _displayRestartAndQuit
 
     switch (_menu 'Choice' 1/2/r/q)
         case 1
-            set -g newline false
+            set -g new_line false
             _finish
         case 2
-            set -g newline true
+            set -g new_line true
             _finish
         case r
             _begin
@@ -165,7 +198,7 @@ function _assemblePrompt -a whichPrompt
     echo -n >$promptDir
 
     _addMod 1_initial
-    if test "$newline" = 'true'
+    if test "$new_line" = 'true'
         _addMod 2_newline
     end
     _addMod '3_'$prompt_height'Line'
@@ -236,6 +269,13 @@ function _finish
             _assemblePrompt fish
             set -U lean_prompt_connection_icon $fake_lean_prompt_connection
             set -U lean_prompt_connection_color $fake_lean_prompt_connection_color
+            if test $fake_lean_time_format = ''
+                set -e lean_right_prompt_items[-1]
+                set -e lean_time_format
+            else
+                set -a lean_right_prompt_items 'time'
+                set -U lean_time_format $fake_lean_time_format
+            end
         case n
     end
 

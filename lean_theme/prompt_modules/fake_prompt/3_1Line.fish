@@ -1,10 +1,10 @@
     printf '%.s ' (seq $columns)
     
-    set -l timerOutput ' 5s '
-    set -l timerStartLocation (math $columns-(string length $timerOutput))
-    printf '\r\033['$timerStartLocation'C'
-    set_color $lean_timer_color
-    echo -n $timerOutput
+    set -l cmd_durationOutput ' 5s '
+    set -l cmd_durationStartLocation (math $columns-(string length $cmd_durationOutput))
+    printf '\r\033['$cmd_durationStartLocation'C'
+    set_color $lean_cmd_duration_color
+    echo -n $cmd_durationOutput
     set_color $fish_color_normal
     
     echo -ne '\r'
