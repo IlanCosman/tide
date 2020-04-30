@@ -66,6 +66,8 @@ function lean_install
     # ---------------Jobs---------------
     set -U lean_jobs_icon '' # Gear
     set -U lean_jobs_color 5FAF00
+    # ---------------Time---------------
+    set -U lean_time_color 5F8787
 
     # -----------------------Finish-----------------------
     source "$__fish_config_dir/functions/fish_prompt.fish"

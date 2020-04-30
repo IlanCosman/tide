@@ -2,11 +2,14 @@
     printf "%.s$fake_lean_prompt_connection" (seq $columns)
     set_color $fish_color_normal
     
-    set -l cmd_durationOutput ' 5s '
-    set -l cmd_durationStartLocation (math $columns-(string length $cmd_durationOutput))
-    printf '\r\033['$cmd_durationStartLocation'C'
+    set -l rightPrompt ' 5s '(date +$fake_lean_time_format)
+    set -l rightPromptStartLocation (math $columns-(string length $rightPrompt))
+    printf '\r\033['$rightPromptStartLocation'C'
     set_color $lean_cmd_duration_color
-    echo -n $cmd_durationOutput
+    echo -n ' 5s '
+    set_color $fish_color_normal
+    set_color $lean_time_color
+    echo -n (date +$fake_lean_time_format)
     set_color $fish_color_normal
     
     echo -ne '\r'
