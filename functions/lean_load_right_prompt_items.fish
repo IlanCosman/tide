@@ -1,6 +1,6 @@
 function lean_load_right_prompt_items
     for item in lean_{$lean_right_prompt_items}
-        set -g $item (eval '_'$item)
+        set -g $item (_$item)
     end
 end
 
@@ -41,4 +41,8 @@ function _lean_jobs
     if jobs -q
         echo -n $lean_jobs_icon # Gear icon
     end
+end
+
+function _lean_time
+    date +$lean_time_format
 end
