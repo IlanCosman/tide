@@ -38,19 +38,23 @@ function lean_pwd
 end
 
 function _shorten_pwd
-    set -l pwd (string replace $HOME '~' (pwd))
+    set -l pwd (string replace $HOME '~' $PWD)
+    set -l colorPwd $pwd
     set -l splitPwd (string split --no-empty '/' $pwd)
+    set -l targetLength (math $COLUMNS-$lean_pwd_shorten_margin)
 
-    set -l pwdLength (string length $pwd)
-    set -l shortenPwdLength (math $COLUMNS-$lean_pwd_shorten_margin)
+    set -l index 2
+    while test (string length $pwd) -gt $targetLength
+        set -l currentPart $splitPwd[$index]
+        set -l currentPartFirstLetter (string sub -l 1 $currentPart)
+        set pwd (string replace $currentPart $currentPartFirstLetter $pwd)
 
-    set -l index 1
-    while test $pwdLength -gt $shortenPwdLength
-        set splitPwd[$index] (string sub -l 1 $splitPwd[$index])
-        set pwd (string join '/' $splitPwd)
-        set pwdLength (string length $pwd)
+        set -l lilac (set_color $lean_color_lilac)
+        set -l dBlue (set_color $lean_color_dark_blue)
+        set colorPwd (string replace $currentPart "$lilac"$currentPartFirstLetter"$dBlue" $colorPwd)
+
         set index (math $index+1)
     end
 
-    echo $pwd
+    echo $colorPwd
 end

@@ -26,6 +26,7 @@ function lean_install
     set -U lean_color_light_blue 00AFFF
     set -U lean_color_dark_blue 0087AF
     set -U lean_color_gold D7AF00
+    set -U lean_color_lilac 8787AF
     # ---------------Pwd---------------
     set -U lean_pwd_shorten_margin 5
     set -U lean_pwd_unwritable_icon '' # Lock
