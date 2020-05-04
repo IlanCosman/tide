@@ -1,4 +1,4 @@
-function lean_wizard
+function lean_configure
     if test $COLUMNS -lt 55 || test $LINES -lt 21
         echo 'Terminal size too small; must be at least 55 x 21'
         return 1

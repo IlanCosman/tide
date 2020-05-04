@@ -1,5 +1,5 @@
 function lean_uninstall
-    if _user_confirm_defaultNo 'Unininstall lean theme?'
+    if _user_confirm_defaultNo 'Uninstall lean theme?'
         set -l fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
 
         echo 'Uninstalling lean theme...'

@@ -78,9 +78,9 @@ function lean_install
     set_color $fish_color_normal
 
     if _user_confirm_defaultYes 'Configure lean prompt?'
-        lean_wizard
+        lean configure
     else
-        echo -e '\n''Run lean_wizard to configure your prompt.'
+        echo -e '\n''Run lean configure to configure your prompt.'
     end
 end
 
