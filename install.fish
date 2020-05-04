@@ -11,12 +11,15 @@ function lean_install
     git clone -q --depth=1 https://github.com/IlanCosman/lean.git $tempDir
 
     # Remove unnecessary files
-    rm "$tempDir/install.fish"
-    rm "$tempDir/LICENSE"
-    rm "$tempDir/README.md"
-    rm -rf "$tempDir/.git/"
+    rm -rf "$tempDir/"{ \
+        'install.fish', \
+        'LICENSE', \
+        'README.md', \
+        'dev/', \
+        '.git/'
+    }
 
-    # Copy directory contents into $__fish_config_dir and cleanup
+    # Copy remaining directory contents into $__fish_config_dir and cleanup
     cp -rf "$tempDir/." $__fish_config_dir
     rm -rf $tempDir
 

@@ -5,12 +5,10 @@ function lean_help -a subcommand
 
     set -g subcommandList \
         'configure' \
-        'test' \
         'uninstall' \
         'help'
     set -g descriptionList \
         'run interactive configuration wizard' \
-        'perform diagnostics on lean theme' \
         'uninstall lean theme' \
         'print this help message'
 

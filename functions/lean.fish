@@ -1,6 +1,6 @@
 function lean -a subcommand
     set -l leanSubcommand "lean_$subcommand"
-    set -l leanCommands 'configure' 'test' 'uninstall' 'help'
+    set -l leanCommands 'configure' 'uninstall' 'help'
 
     if contains $subcommand $leanCommands
         source "$lean_dir/functions/$subcommand.fish"
