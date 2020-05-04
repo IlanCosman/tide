@@ -21,6 +21,7 @@ function lean_install
     rm -rf $tempDir
 
     # ----------------Set Theme Variables----------------
+    set -U lean_dir "$__fish_config_dir/lean_theme"
     # --------------Colors--------------
     set -U lean_color_green 5FD700
     set -U lean_color_light_blue 00AFFF

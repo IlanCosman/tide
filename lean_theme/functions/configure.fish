@@ -5,7 +5,7 @@ function lean_configure
     end
 
     set -g fishPrompt "$__fish_config_dir/functions/fish_prompt.fish"
-    set -g fakePrompt "$__fish_config_dir/lean_theme/fake_prompt.fish"
+    set -g fakePrompt "$lean_dir/fake_prompt.fish"
 
     set -g columns $COLUMNS
     if test $columns -gt 100
@@ -187,7 +187,7 @@ function _promptSpacing
 end
 
 function _assemblePrompt -a whichPrompt
-    set -g moduleDir "$__fish_config_dir/lean_theme/prompt_modules/$whichPrompt""_prompt"
+    set -g moduleDir "$lean_dir/prompt_modules/$whichPrompt""_prompt"
 
     if test "$whichPrompt" = 'fish'
         set -g promptDir $fishPrompt
