@@ -22,8 +22,23 @@ function _lean_status
 end
 
 function _lean_cmd_duration
-    if test (math $CMD_DURATION/1000) -gt $lean_cmd_duration_threshold
-        echo -n (math --scale=$lean_cmd_duration_decimals $CMD_DURATION/1000)'s'
+    set -l seconds (math --scale=$lean_cmd_duration_decimals $CMD_DURATION/1000)
+
+    if test $seconds -gt $lean_cmd_duration_threshold
+        set -l secondsMod (math $seconds % 60)
+
+        set -l minutes (math -s0 $seconds/60)
+        set -l minutesMod (math $minutes % 60)
+
+        set -l hours (math -s0 $minutes/60)
+
+        for time in hours minutesMod secondsMod
+            if test $$time -eq 0
+                set -e $time
+            end
+        end
+
+        echo {$hours}'h' {$minutesMod}'m' {$secondsMod}'s'
     end
 end
 
