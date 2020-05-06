@@ -29,8 +29,6 @@ function test_pwd
     end
     _comparePwd $longDir $longDirAnswer
     rm -r $longDir
-
-    cd
 end
 
 function _comparePwd -a dir answer

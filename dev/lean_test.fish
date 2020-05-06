@@ -4,8 +4,17 @@ function lean_test -a test
         return 1
     end
 
-    clear
-    source "$__fish_config_dir/tests/test_$test.fish"
+    set -l testFile "$__fish_config_dir/tests/$test.fish"
+    set -l testFileFirstLine (head -n 1 $testFile)
+
+    if test "$testFileFirstLine" = '# Fishtape test'
+        fishtape $testFile
+        return 0
+    end
+
+    pushd .
+    source $testFile
     test_$test $argv[2..-1]
     functions -e test_$test
+    popd
 end
