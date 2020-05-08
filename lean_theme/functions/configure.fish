@@ -205,8 +205,6 @@ function _assemblePrompt -a whichPrompt
     _addMod 4_final
     if test $prompt_height -eq 1
         _addMod 5_rightPrompt
-    else
-        _addMod 5_rPromptNoColor
     end
 end
 

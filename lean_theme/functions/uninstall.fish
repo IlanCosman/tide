@@ -18,38 +18,39 @@ function lean_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    set -l leanFunctions lean lean_{git_prompt, load_right_prompt_items, pwd, right_prompt}
+    set -l leanFunctions 'lean' 'lean_'{'decolor', 'git_prompt', 'pwd', 'right_prompt'}
     for func in $leanFunctions
         rm "$__fish_config_dir/functions/$func.fish"
     end
 
     # -----------------------------Erase Theme Variables------------------------------
     set -l rmVars \
+        'lean_dir' \
         # --------------Prompt--------------
-        lean_prompt_connection_{icon, color} \
+        'lean_prompt_connection_'{'icon', 'color'} \
         # --------------Colors--------------
-        lean_color_{green, light_blue, dark_blue, gold, lilac} \
+        'lean_color_'{'green', 'light_blue', 'dark_blue', 'gold', 'lilac'} \
         # ---------------Pwd---------------
-        lean_pwd_{shorten_margin, unwritable_icon} \
+        'lean_pwd_'{'shorten_margin', 'unwritable_icon'} \
         # ------------Git prompt------------
-        __fish_git_prompt_{show_informative_status, showstashstate} \
+        '__fish_git_prompt_'{'show_informative_status', 'showstashstate'} \
         # -------Symbols-------
-        __fish_git_prompt_char_{stateseparator, cleanstate, upstream_ahead, upstream_behind} \
-        __fish_git_prompt_char_{stagedstate, dirtystate, untrackedfiles, stashstate} \
+        '__fish_git_prompt_char_'{'stateseparator', 'cleanstate', 'upstream_ahead', 'upstream_behind'} \
+        '__fish_git_prompt_char_'{'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
         # --------Colors--------
-        __fish_git_prompt_color_{branch, upstream, stagedstate, dirtystate, untrackedfiles, stashstate} \
-        # -----------------Right Prompt Items-----------------
-        lean_right_prompt_items \
+        '__fish_git_prompt_color_'{'branch', 'upstream', 'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
+        # -----------------Right Prompt-----------------
+        'lean_right_prompt' \
         # --------------Status--------------
-        lean_status_{success_icon, success_color, failure_icon, failure_color} \
+        'lean_status_'{'success_icon', 'success_color', 'failure_icon', 'failure_color'} \
         # ------------Cmd_Duration-----------
-        lean_cmd_duration_{color, decimals, threshold} \
+        'lean_cmd_duration_'{'color', 'decimals', 'threshold'} \
         # ----------------SSH----------------
-        lean_context_{ssh_color, root_color} \
+        'lean_context_'{'ssh_color', 'root_color'} \
         # ---------------Jobs---------------
-        lean_jobs_{icon, color} \
+        'lean_jobs_'{'icon', 'color'} \
         # ---------------Time---------------
-        lean_time_{format, color}
+        'lean_time_'{'format', 'color'}
 
     for var in $rmVars
         set -e $var

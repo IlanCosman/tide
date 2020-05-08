@@ -1,5 +1,5 @@
 # Fishtape test
-source "$__fish_config_dir/functions/lean_load_right_prompt_items.fish"
+source "$__fish_config_dir/functions/lean_right_prompt.fish"
 
 function _case
     set -g last_pipestatus $pipestatus
