@@ -1,4 +1,6 @@
 # Fishtape test
+@mesg '-------------pwd-------------'
+
 function _pwd -a dir
     cd $dir
     lean_decolor (lean_pwd)

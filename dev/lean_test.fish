@@ -1,20 +1,72 @@
-function lean_test -a test
-    if test $COLUMNS -ne 80 -o $LINES -ne 24
-        echo 'Terminal must be exactly 80x24'
-        return 1
-    end
+function lean_test
+    argparse 'h/help' 'v/verbose' 'a/all' -- $argv
 
-    set -l testFile "$__fish_config_dir/tests/$test.fish"
-    set -l testFileFirstLine (head -n 1 $testFile)
-
-    if test "$testFileFirstLine" = '# Fishtape test'
-        fishtape $testFile
+    if set -q _flag_help
+        _help
         return 0
     end
 
-    pushd .
-    source $testFile
-    test_$test $argv[2..-1]
-    functions -e test_$test
-    popd
+    set -l testsDir "$__fish_config_dir/tests"
+
+    set -l pending '/tmp/lean_test'
+    set -l failed '/tmp/lean_test_failed'
+    set -l passed '/tmp/lean_test_passed'
+
+    if set -q _flag_all
+        set argv (basename -s '.fish' $testsDir/*)
+    end
+
+    for test in $argv
+        fishtape "$testsDir/$test.fish" >$pending
+
+        if test $status -eq 0
+            if set -q _flag_verbose
+                cat $pending >>$passed
+            else
+                echo "$test - PASSED $lean_status_success_icon" >>$passed
+            end
+        else
+            cat $pending >>$failed
+        end
+    end
+
+    if test -e $passed
+        echo '--------PASSED--------'
+        cat $passed
+        rm $passed
+    end
+    if test -e $failed
+        echo '--------FAILED--------'
+        cat $failed
+        rm $failed
+    end
+    if test -e $pending
+        rm $pending
+    end
+end
+
+function _help
+    set -l b (set_color -o)
+    set -l n (set_color normal)
+    set -l g (set_color $lean_color_green)
+
+    set -l optionList \
+        'v or --verbose' \
+        'a or --all' \
+        'h or --help'
+    set -l descriptionList \
+        'display test output even if passed' \
+        'run all available tests' \
+        'print this help message'
+
+    echo 'Usage: '$g'lean_test '$n'[options] '$b'[TESTS...]'$n
+    echo
+    echo 'Options:'
+    echo
+    for option in $optionList
+        echo -n '  -'$option
+        printf '\r\033[20C'
+        set -l descriptionIndex (contains -i $option $optionList)
+        echo $descriptionList[$descriptionIndex]
+    end
 end

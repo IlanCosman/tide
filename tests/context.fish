@@ -1,4 +1,6 @@
 # Fishtape test
+@mesg '-----------context-----------'
+
 set -l sourceFile "$__fish_config_dir/functions/lean_right_prompt.fish"
 source $sourceFile
 

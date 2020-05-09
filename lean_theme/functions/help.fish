@@ -55,7 +55,3 @@ function _generic_help_sub -a subcommand
     echo
     string replace $descriptionFirstLetter $upperDescriptionFirstLetter $description
 end
-
-function _help_help
-    lean help
-end
