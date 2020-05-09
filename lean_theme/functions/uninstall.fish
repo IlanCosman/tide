@@ -40,7 +40,7 @@ function lean_uninstall
         # --------Colors--------
         '__fish_git_prompt_color_'{'branch', 'upstream', 'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
         # -----------------Right Prompt-----------------
-        'lean_right_prompt' \
+        'lean_right_prompt_items' \
         # --------------Status--------------
         'lean_status_'{'success_icon', 'success_color', 'failure_icon', 'failure_color'} \
         # ------------Cmd_Duration-----------
