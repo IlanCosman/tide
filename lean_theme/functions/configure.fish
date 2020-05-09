@@ -247,7 +247,7 @@ function _displayRestartAndQuit
     echo -e '(q)  Quit and do nothing\n'
 end
 
-function _quit
+function _quit --on-signal INT
     functions -e fish_right_prompt
     source $fishPrompt
     clear

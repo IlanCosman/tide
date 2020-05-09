@@ -64,7 +64,7 @@ function lean_install
     # --------------Cmd_Duration--------------
     set -U lean_cmd_duration_color 87875F
     set -U lean_cmd_duration_decimals 0
-    set -U lean_cmd_duration_threshold 3
+    set -U lean_cmd_duration_threshold 3000
     # -------------Context-------------
     set -U lean_context_ssh_color D7AF87
     set -U lean_context_root_color D7AF00
