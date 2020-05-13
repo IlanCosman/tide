@@ -1,7 +1,4 @@
-# Fishtape test
 @mesg '-------------jobs-------------'
-
-source "$__fish_config_dir/functions/lean_right_prompt.fish"
 
 function _jobs
     lean_decolor (_lean_jobs)

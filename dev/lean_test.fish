@@ -23,7 +23,7 @@ function lean_test
             if set -q _flag_verbose
                 cat $pending >>$passed
             else
-                echo "$test - PASSED $lean_status_success_icon" >>$passed
+                echo "$test - ✔" >>$passed
             end
         else
             cat $pending >>$failed

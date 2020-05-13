@@ -1,7 +1,4 @@
-# Fishtape test
 @mesg '------------status------------'
-
-source "$__fish_config_dir/functions/lean_right_prompt.fish"
 
 function _status
     set -g last_pipestatus $pipestatus

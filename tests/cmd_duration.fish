@@ -1,7 +1,4 @@
-# Fishtape test
 @mesg '---------cmd_duration---------'
-
-source "$__fish_config_dir/functions/lean_right_prompt.fish"
 
 function _cmd_duration -a duration threshold decimals
     set -g CMD_DURATION $duration

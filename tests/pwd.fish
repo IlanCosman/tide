@@ -1,9 +1,8 @@
-# Fishtape test
 @mesg '-------------pwd-------------'
 
 function _pwd -a dir
     cd $dir
-    lean_decolor (lean_pwd)
+    lean_decolor (_lean_pwd)
 end
 
 set -l unwr "$lean_pwd_unwritable_icon "
