@@ -18,19 +18,24 @@ function lean_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    set -l leanFunctions 'lean' 'lean_'{'decolor', 'git_prompt', 'pwd', 'right_prompt'}
+    set -a leanFunctions 'lean'
+    set -a leanFunctions 'lean_'{'decolor', 'left_prompt', 'right_prompt'}
+    set -a leanFunctions '_lean_'{'cmd_duration', 'context', 'git_prompt', 'jobs', 'pwd', 'status', 'time'}
     for func in $leanFunctions
         rm "$__fish_config_dir/functions/$func.fish"
     end
 
     # -----------------------------Erase Theme Variables------------------------------
     set -l rmVars \
+        # ---------------General Theme Variables---------------
         'lean_dir' \
-        # --------------Prompt--------------
-        'lean_prompt_connection_'{'icon', 'color'} \
         # --------------Colors--------------
         'lean_color_'{'green', 'light_blue', 'dark_blue', 'gold', 'lilac'} \
-        # ---------------Pwd---------------
+        # ---------Prompt Connection---------
+        'lean_prompt_connection_'{'icon', 'color'} \
+        # --------------------Prompt Items--------------------
+        'lean_'{'right_prompt_items', 'left_prompt_items'} \
+        # ----------------Pwd----------------
         'lean_pwd_'{'shorten_margin', 'unwritable_icon'} \
         # ------------Git prompt------------
         '__fish_git_prompt_'{'show_informative_status', 'showstashstate'} \
@@ -39,8 +44,6 @@ function lean_uninstall
         '__fish_git_prompt_char_'{'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
         # --------Colors--------
         '__fish_git_prompt_color_'{'branch', 'upstream', 'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
-        # -----------------Right Prompt-----------------
-        'lean_right_prompt_items' \
         # --------------Status--------------
         'lean_status_'{'success_icon', 'success_color', 'failure_icon', 'failure_color'} \
         # ------------Cmd_Duration-----------
