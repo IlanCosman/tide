@@ -1,4 +1,4 @@
-function lean_pwd
+function _lean_pwd
     set -l splitPwd (string split --no-empty '/' (_shorten_pwd))
     set -l splitPwdLength (count $splitPwd)
 
