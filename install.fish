@@ -24,6 +24,7 @@ function lean_install
     rm -rf $tempDir
 
     # ----------------Set Theme Variables----------------
+    # -----------------Left Prompt Items-----------------
     set -U lean_dir "$__fish_config_dir/lean_theme"
     # --------------Colors--------------
     set -U lean_color_green 5FD700
@@ -31,7 +32,7 @@ function lean_install
     set -U lean_color_dark_blue 0087AF
     set -U lean_color_gold D7AF00
     set -U lean_color_lilac 8787AF
-    # ---------------Pwd---------------
+    # ----------------Pwd----------------
     set -U lean_pwd_shorten_margin 5
     set -U lean_pwd_unwritable_icon '' # Lock
     # ------------Git prompt------------
@@ -53,6 +54,10 @@ function lean_install
     set -U __fish_git_prompt_color_dirtystate $lean_color_gold
     set -U __fish_git_prompt_color_untrackedfiles $lean_color_light_blue
     set -U __fish_git_prompt_color_stashstate $lean_color_green
+    # ---------Prompt Connection---------
+    set -U lean_prompt_connection_color 6C6C6C
+    set -U lean_prompt_connection_icon ' '
+
 
     # ----------------Right Prompt Items----------------
     set -U lean_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
