@@ -10,7 +10,7 @@ function _lean_status
                 set_color $lean_status_failure_color
                 echo -n {$lean_status_failure_icon}' '
             end
-            string join '|' (string replace 'SIG' '' $fishPipestatusWithSignal)
+            echo -n (string join '|' (string replace 'SIG' '' $fishPipestatusWithSignal))' '
         end
     end
 end
