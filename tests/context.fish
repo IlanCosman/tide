@@ -7,5 +7,5 @@ function _context
 end
 
 @test 'None' (_context) -z
-@test 'SSH' (set -g SSH_TTY 'true'; _context) = $USER'@'(prompt_hostname)
-@test 'Root' (lean_decolor (su -c "fish -c 'source $sourceFile;_lean_context'")) = 'root@'(prompt_hostname)
+@test 'SSH' (set -g SSH_TTY 'true'; _context) = $USER'@'(prompt_hostname)' '
+@test 'Root' (lean_decolor (su -c "fish -c 'source $sourceFile;_lean_context'")) = 'root@'(prompt_hostname)' '

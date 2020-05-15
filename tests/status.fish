@@ -8,7 +8,7 @@ end
 
 @test 'true' (true; _status) -z
 @test 'false' (false; _status) -z
-@test 'true|false' (true|false; _status) = "$lean_status_failure_icon 0|1"
+@test 'true|false' (true|false; _status) = "$lean_status_failure_icon 0|1 "
 @test 'true|true' (true|true; _status) -z
-@test 'false|true' (false|true; _status) = "$lean_status_success_icon 1|0"
-@test 'false|false' (false|false; _status) = "$lean_status_failure_icon 1|1"
+@test 'false|true' (false|true; _status) = "$lean_status_success_icon 1|0 "
+@test 'false|false' (false|false; _status) = "$lean_status_failure_icon 1|1 "
