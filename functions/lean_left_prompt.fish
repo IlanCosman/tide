@@ -1,6 +1,6 @@
 function lean_left_prompt
-    set -U leftPromptHeight 1
-    
+    set -U lean_left_prompt_height 1
+
     for item in lean_{$lean_left_prompt_items}
         set -l itemOutput (_$item)
 
@@ -8,7 +8,7 @@ function lean_left_prompt
             echo -ne $itemOutput
         end
         if test $item = 'lean_newline'
-            set -U leftPromptHeight (math $leftPromptHeight+1)
+            set -U lean_left_prompt_height (math $lean_left_prompt_height+1)
         end
 
         set_color normal

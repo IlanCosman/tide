@@ -3,7 +3,7 @@ function lean_right_prompt
     for thing in $splitText[1..-2]
         _print_at_end $thing
     end
-    if test (count $splitText) -eq $leftPromptHeight
+    if test (count $splitText) -eq $lean_left_prompt_height
         set -g fishRightPromptRun $splitText[-1]
     else
         _print_at_end $splitText[-1]

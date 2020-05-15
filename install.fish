@@ -44,6 +44,7 @@ end
 function _set_lean_defaults
     # ---------------General Theme Variables---------------
     set -U lean_dir "$__fish_config_dir/lean_theme"
+    set -U lean_newline 'true'
     # --------------Colors--------------
     set -U lean_color_green 5FD700
     set -U lean_color_light_blue 00AFFF
@@ -55,7 +56,7 @@ function _set_lean_defaults
     set -U lean_prompt_connection_icon ' '
 
     # --------------------Prompt Items--------------------
-    set -U lean_left_prompt_items 'pwd' 'git_prompt'
+    set -U lean_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
     set -U lean_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
     # ----------------Pwd----------------
     set -U lean_pwd_shorten_margin 5
