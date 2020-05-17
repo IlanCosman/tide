@@ -4,7 +4,7 @@ function fish_prompt --description 'Write out the prompt'
     set -g last_status $status
 
     if test "$lean_newline" = 'true'
-        echo
+        printf '\n'
     end
 
     set_color $lean_prompt_connection_color

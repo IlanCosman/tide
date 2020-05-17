@@ -11,15 +11,15 @@ function lean_right_prompt
         set -g lean_right_prompt_fish ''
     end
 
-    _cursor_up (math $lean_left_prompt_height-1)
+    printf '\033['(math $lean_left_prompt_height-1)'A'
 end
 
 function fish_right_prompt
-    echo $lean_right_prompt_fish
+    printf $lean_right_prompt_fish
 end
 
 function _fetch_right_prompt_items
-    echo -n ' '
+    printf ' '
 
     for item in lean_{$lean_right_prompt_items}
         set -l itemOutput (_$item)
@@ -31,8 +31,8 @@ end
 
 function _print_at_end -a text
     set -l startLocation (math $COLUMNS-(string length (lean_decolor $text)))
-    _cursor_right $startLocation
-    echo -n $text
+    printf '\033['$startLocation'C'
+    printf $text
 
     printf '\v'
     printf '\r'

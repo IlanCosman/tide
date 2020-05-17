@@ -5,12 +5,12 @@ function _lean_status
         if test (count $last_pipestatus) -gt 1 || string match -qe 'SIG' $fishPipestatusWithSignal
             if test $last_status -eq 0
                 set_color $lean_status_success_color
-                echo -n {$lean_status_success_icon}' '
+                printf {$lean_status_success_icon}' '
             else
                 set_color $lean_status_failure_color
-                echo -n {$lean_status_failure_icon}' '
+                printf {$lean_status_failure_icon}' '
             end
-            echo -n (string join '|' (string replace 'SIG' '' $fishPipestatusWithSignal))' '
+            printf (string join '|' (string replace 'SIG' '' $fishPipestatusWithSignal))' '
         end
     end
 end

@@ -1,3 +1,3 @@
 function _lean_newline
-    echo -n '\n'
+    printf '%s' '\n'
 end
