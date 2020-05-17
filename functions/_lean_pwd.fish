@@ -35,6 +35,7 @@ function _lean_pwd
         echo -n $splitPwd[-1]
         set_color $fish_color_normal
     end
+    
     echo -n ' '
 end
 

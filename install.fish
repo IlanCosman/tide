@@ -11,7 +11,7 @@ function lean_install
     git clone -q --depth=1 https://github.com/IlanCosman/lean.git $tempDir
 
     # Remove all files/dirs except functions and lean_theme
-    set -l keepFiles "$tempDir/"{'functions', 'lean_theme'}
+    set -l keepFiles "$tempDir/"{'conf.d', 'functions', 'lean_theme'}
     for file in $tempDir/*
         if not contains $file $keepFiles
             rm -rf $file
