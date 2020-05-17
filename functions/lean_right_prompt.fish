@@ -23,10 +23,7 @@ function _fetch_right_prompt_items
 
     for item in lean_{$lean_right_prompt_items}
         set -l itemOutput (_$item)
-
-        if test -n "$itemOutput"
-            echo -n $itemOutput
-        end
+        printf "$itemOutput"
 
         set_color normal
     end
