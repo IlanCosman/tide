@@ -13,7 +13,6 @@ function fish_prompt --description 'Write out the prompt'
 
     printf '\r'
     lean_right_prompt
-    _up $lean_left_prompt_height
 
     printf '\r'
     lean_left_prompt

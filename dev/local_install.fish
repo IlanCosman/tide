@@ -1,6 +1,7 @@
 function local_install -a localRepo
     source "$localRepo/install.fish"; and _set_lean_defaults
 
+    cp -r "$localRepo/conf.d" $__fish_config_dir
     cp -r "$localRepo/functions" $__fish_config_dir
     cp -r "$localRepo/lean_theme" $__fish_config_dir
     cp -r "$localRepo/tests" $__fish_config_dir

@@ -5,7 +5,7 @@ function lean_left_prompt
         set -l itemOutput (_$item)
 
         if test -n "$itemOutput"
-            echo -ne $itemOutput
+            printf $itemOutput
         end
         if test $item = 'lean_newline'
             set -U lean_left_prompt_height (math $lean_left_prompt_height+1)
