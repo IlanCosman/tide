@@ -27,8 +27,7 @@ function lean_install
     _set_lean_defaults
 
     # -----------------------Finish-----------------------
-    source "$__fish_config_dir/conf.d/lean_cursor_movement.fish"
-    source "$__fish_config_dir/functions/fish_prompt.fish"
+    _source_lean_functions
 
     set_color $lean_color_green
     echo 'Lean theme installed!'
@@ -98,6 +97,14 @@ function _set_lean_defaults
     set -U lean_jobs_color 5FAF00
     # ---------------Time---------------
     set -U lean_time_color 5F8787
+end
+
+function _source_lean_functions
+    source "$__fish_config_dir/conf.d/lean_count_left_prompt_height.fish"
+    source "$__fish_config_dir/conf.d/lean_cursor_movement.fish"
+    source "$__fish_config_dir/functions/fish_prompt.fish"
+
+    lean_count_left_prompt_height
 end
 
 function _user_confirm_defaultYes -a question
