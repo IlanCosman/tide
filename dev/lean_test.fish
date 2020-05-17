@@ -65,7 +65,7 @@ function _help
     echo
     for option in $optionList
         echo -n '  -'$option
-        printf '\r\033[20C'
+        _cursor_right 20
         set -l descriptionIndex (contains -i $option $optionList)
         echo $descriptionList[$descriptionIndex]
     end

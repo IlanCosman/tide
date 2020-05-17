@@ -27,7 +27,7 @@ function lean_help -a subcommand
     echo
     for sub in $subcommandList
         echo -n '  '$b$sub$n
-        printf '\r\033[14C'
+        _cursor_right 14
         _getDescription $sub
     end
     echo

@@ -27,6 +27,7 @@ function lean_install
     _set_lean_defaults
 
     # -----------------------Finish-----------------------
+    source "$__fish_config_dir/conf.d/lean_cursor_movement.fish"
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     set_color $lean_color_green
