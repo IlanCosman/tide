@@ -1,1 +1,0 @@
-    lean_left_prompt
