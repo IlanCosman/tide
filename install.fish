@@ -101,6 +101,7 @@ end
 
 function _source_lean_functions
     source "$__fish_config_dir/conf.d/lean_count_left_prompt_height.fish"
+    source "$__fish_config_dir/conf.d/lean_cursor_movement.fish"
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     lean_count_left_prompt_height

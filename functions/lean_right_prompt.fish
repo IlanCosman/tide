@@ -17,15 +17,15 @@ function lean_right_prompt
 end
 
 function fish_right_prompt
-    printf $lean_right_prompt_fish
+    printf '%s' $lean_right_prompt_fish
 end
 
 function _fetch_right_prompt_items
-    printf ' '
+    printf '%s' ' '
 
     for item in lean_{$lean_right_prompt_items}
         set -l itemOutput (_$item)
-        printf "$itemOutput"
+        printf '%s' "$itemOutput"
 
         set_color normal
     end
@@ -34,8 +34,8 @@ end
 function _print_at_end -a text
     set -l startLocation (math $COLUMNS -(string length (lean_decolor $text)))
     _cursor_right $startLocation
-    printf $text
+    printf '%s' $text
 
-    printf '\v'
-    printf '\r'
+    printf '%b' '\v'
+    printf '%b' '\r'
 end

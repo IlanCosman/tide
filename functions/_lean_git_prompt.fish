@@ -4,6 +4,6 @@ function _lean_git_prompt
         set -l gitPrompt (string replace '(' '' $gitPrompt)
         set -l gitPrompt (string replace ')' '' $gitPrompt)
 
-        printf (string trim $gitPrompt)' '
+        printf '%s ' (string trim $gitPrompt)
     end
 end

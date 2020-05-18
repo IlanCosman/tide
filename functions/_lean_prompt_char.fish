@@ -4,5 +4,5 @@ function _lean_prompt_char
     else
         set_color $fish_color_error
     end
-    printf '❯ '
+    printf '%s ' '❯'
 end

@@ -15,6 +15,6 @@ function _lean_cmd_duration
         end
 
         set_color $lean_cmd_duration_color
-        echo -n {$hours}'h' {$minutes}'m' {$seconds}'s '
+        printf '%s ' {$hours}'h' {$minutes}'m' {$seconds}'s'
     end
 end

@@ -4,39 +4,39 @@ function _lean_pwd
 
     if not test -w $PWD
         set_color $lean_color_dark_blue
-        printf {$lean_pwd_unwritable_icon}' '
+        printf '%s' {$lean_pwd_unwritable_icon}' '
         set_color $fish_color_normal
     end
 
     if test "$splitPwd[1]" != '~'
         set_color $lean_color_dark_blue
-        printf '/'
+        printf '%s' '/'
         set_color $fish_color_normal
     end
 
     set_color -o $lean_color_light_blue
-    printf "$splitPwd[1]"
+    printf '%s' "$splitPwd[1]"
     set_color $fish_color_normal
 
     if test $splitPwdLength -gt 1
         set_color $lean_color_dark_blue
-        printf '/'
+        printf '%s' '/'
         set_color $fish_color_normal
     end
 
     if test $splitPwdLength -gt 2
         set_color $lean_color_dark_blue
-        printf (string join '/' $splitPwd[2..-2])'/'
+        printf '%s' (string join '/' $splitPwd[2..-2])'/'
         set_color $fish_color_normal
     end
 
     if test $splitPwdLength -gt 1
         set_color -o $lean_color_light_blue
-        printf "$splitPwd[-1]"
+        printf '%s' "$splitPwd[-1]"
         set_color $fish_color_normal
     end
 
-    printf ' '
+    printf '%s' ' '
 end
 
 function _shorten_pwd
@@ -58,5 +58,5 @@ function _shorten_pwd
         set index (math $index+1)
     end
 
-    printf "$colorPwd"
+    printf '%s' "$colorPwd"
 end
