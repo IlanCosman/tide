@@ -1,17 +1,18 @@
 function lean_right_prompt
     set -l splitText (string split '\n' (_fetch_right_prompt_items))
+    set -l lean_right_prompt_height (count $splitText)
 
     for thing in $splitText[1..-2]
         _print_at_end $thing
     end
-    if test (count $splitText) -eq $lean_left_prompt_height
+    if test $lean_right_prompt_height -eq $lean_left_prompt_height
         set -g lean_right_prompt_fish $splitText[-1]
     else
         _print_at_end $splitText[-1]
         set -g lean_right_prompt_fish ''
     end
 
-    printf '\033['(math $lean_left_prompt_height-1)'A'
+    printf '\033['$lean_right_prompt_height'A'
 end
 
 function fish_right_prompt
@@ -30,8 +31,8 @@ function _fetch_right_prompt_items
 end
 
 function _print_at_end -a text
-    set -l startLocation (math $COLUMNS-(string length (lean_decolor $text)))
-    printf '\033['$startLocation'C'
+    set -l startLocation (math $COLUMNS -(string length (lean_decolor $text)))
+    printf '%b' '\033['"$startLocation"'C'
     printf $text
 
     printf '\v'
