@@ -58,13 +58,16 @@ function _set_tide_defaults
     # --------------------Prompt Items--------------------
     set -U tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
     set -U tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
-    # ----------------Prompt Char----------------
+    # ------------Prompt Char------------
     set -U tide_prompt_char_success_color $tide_color_green
     set -U tide_prompt_char_failure_color FF0000
     set -U tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
     set -U tide_pwd_shorten_margin 5
     set -U tide_pwd_unwritable_icon '' # Lock
+    set -U tide_pwd_color_end_dirs $tide_color_light_blue
+    set -U tide_pwd_color_mid_dirs $tide_color_dark_blue
+    set -U tide_pwd_color_truncated_dirs $tide_color_lilac
     # ------------Git prompt------------
     set -U __fish_git_prompt_show_informative_status true
     set -U __fish_git_prompt_showstashstate true
