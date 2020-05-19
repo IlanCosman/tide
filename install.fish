@@ -66,7 +66,7 @@ function _set_tide_defaults
     set -U __fish_git_prompt_showstashstate true
     # -------Symbols-------
     set -U __fish_git_prompt_char_stateseparator ''
-    set -U __fish_git_prompt_char_ctidestate ''
+    set -U __fish_git_prompt_char_cleanstate ''
     set -U __fish_git_prompt_char_upstream_ahead ' ⇡'
     set -U __fish_git_prompt_char_upstream_behind ' ⇣'
     set -U __fish_git_prompt_char_stagedstate ' +'

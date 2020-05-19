@@ -1,4 +1,4 @@
-# Tide
+# Tide ![Fish_Version_Shield](https://img.shields.io/badge/fish-3.1.0-blue)
 
 A Fish theme based on [Powerlevel10k](https://github.com/romkatv/powerlevel10k/).
 
