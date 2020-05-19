@@ -106,7 +106,7 @@ function _set_tide_defaults
     _set tide_context_root_color $tideColorGold
     # ---------------Jobs---------------
     _set tide_jobs_icon '' # Gear
-    _set tide_jobs_color $tideColorDarkerGrxeen
+    _set tide_jobs_color $tideColorDarkerGreen
     # ---------------Time---------------
     _set tide_time_color 5F8787
     _set tide_time_format '%T'
