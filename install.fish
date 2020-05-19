@@ -41,79 +41,85 @@ function tide_install
     end
 end
 
-function _set_tide_defaults
+function setTide
+    set -U tide_var_list
+
     # -------------------Local Variables-------------------
     set -l tideColorGold D7AF00
+    set -l tideColorDarkerGreen 5FAF00
 
     # ---------------General Theme Variables---------------
-    set -U tide_dir "$__fish_config_dir/tide_theme"
-    set -U tide_newline 'true'
+    _set tide_dir "$__fish_config_dir/tide_theme"
+    _set tide_newline 'true'
     # --------------Colors--------------
-    set -U tide_color_green 5FD700
-    set -U tide_color_light_blue 00AFFF
-    set -U tide_color_dark_blue 0087AF
+    _set tide_color_green 5FD700
+    _set tide_color_light_blue 00AFFF
+    _set tide_color_dark_blue 0087AF
     # ---------Prompt Connection---------
-    set -U tide_prompt_connection_color 6C6C6C
-    set -U tide_prompt_connection_icon ' '
+    _set tide_prompt_connection_color 6C6C6C
+    _set tide_prompt_connection_icon ' '
 
     # --------------------Prompt Items--------------------
-    set -U tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
-    set -U tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
+    _set tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
+    _set tide_left_prompt_height 2
+    _set tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
     # ------------Prompt Char------------
-    set -U tide_prompt_char_success_color $tide_color_green
-    set -U tide_prompt_char_failure_color FF0000
-    set -U tide_prompt_char_icon '❯'
+    _set tide_prompt_char_success_color $tide_color_green
+    _set tide_prompt_char_failure_color FF0000
+    _set tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
-    set -U tide_pwd_shorten_margin 5
-    set -U tide_pwd_unwritable_icon '' # Lock
-    set -U tide_pwd_color_end_dirs $tide_color_light_blue
-    set -U tide_pwd_color_mid_dirs $tide_color_dark_blue
-    set -U tide_pwd_color_truncated_dirs 8787AF
+    _set tide_pwd_shorten_margin 5
+    _set tide_pwd_unwritable_icon '' # Lock
+    _set tide_pwd_color_end_dirs $tide_color_light_blue
+    _set tide_pwd_color_mid_dirs $tide_color_dark_blue
+    _set tide_pwd_color_truncated_dirs 8787AF
     # ------------Git prompt------------
-    set -U __fish_git_prompt_show_informative_status true
-    set -U __fish_git_prompt_showstashstate true
+    _set __fish_git_prompt_show_informative_status true
+    _set __fish_git_prompt_showstashstate true
     # -------Symbols-------
-    set -U __fish_git_prompt_char_stateseparator ''
-    set -U __fish_git_prompt_char_cleanstate ''
-    set -U __fish_git_prompt_char_upstream_ahead ' ⇡'
-    set -U __fish_git_prompt_char_upstream_behind ' ⇣'
-    set -U __fish_git_prompt_char_stagedstate ' +'
-    set -U __fish_git_prompt_char_dirtystate ' !'
-    set -U __fish_git_prompt_char_untrackedfiles ' ?'
-    set -U __fish_git_prompt_char_stashstate ' *'
+    _set __fish_git_prompt_char_stateseparator ''
+    _set __fish_git_prompt_char_cleanstate ''
+    _set __fish_git_prompt_char_upstream_ahead ' ⇡'
+    _set __fish_git_prompt_char_upstream_behind ' ⇣'
+    _set __fish_git_prompt_char_stagedstate ' +'
+    _set __fish_git_prompt_char_dirtystate ' !'
+    _set __fish_git_prompt_char_untrackedfiles ' ?'
+    _set __fish_git_prompt_char_stashstate ' *'
     # --------Colors--------
-    set -U __fish_git_prompt_color_branch $tide_color_green
-    set -U __fish_git_prompt_color_upstream $tide_color_green
-    set -U __fish_git_prompt_color_stagedstate $tideColorGold
-    set -U __fish_git_prompt_color_dirtystate $tideColorGold
-    set -U __fish_git_prompt_color_untrackedfiles $tide_color_light_blue
-    set -U __fish_git_prompt_color_stashstate $tide_color_green
+    _set __fish_git_prompt_color_branch $tide_color_green
+    _set __fish_git_prompt_color_upstream $tide_color_green
+    _set __fish_git_prompt_color_stagedstate $tideColorGold
+    _set __fish_git_prompt_color_dirtystate $tideColorGold
+    _set __fish_git_prompt_color_untrackedfiles $tide_color_light_blue
+    _set __fish_git_prompt_color_stashstate $tide_color_green
     # --------------Status--------------
-    set -U tide_status_success_icon '✔'
-    set -U tide_status_success_color 5FAF00
-    set -U tide_status_failure_icon '✘'
-    set -U tide_status_failure_color D70000
+    _set tide_status_success_icon '✔'
+    _set tide_status_success_color $tideColorDarkerGreen
+    _set tide_status_failure_icon '✘'
+    _set tide_status_failure_color D70000
     # -----------Cmd_Duration-----------
-    set -U tide_cmd_duration_color 87875F
-    set -U tide_cmd_duration_decimals 0
-    set -U tide_cmd_duration_threshold 3000
+    _set tide_cmd_duration_color 87875F
+    _set tide_cmd_duration_decimals 0
+    _set tide_cmd_duration_threshold 3000
     # --------------Context--------------
-    set -U tide_context_ssh_color D7AF87
-    set -U tide_context_root_color D7AF00
+    _set tide_context_ssh_color D7AF87
+    _set tide_context_root_color $tideColorGold
     # ---------------Jobs---------------
-    set -U tide_jobs_icon '' # Gear
-    set -U tide_jobs_color 5FAF00
+    _set tide_jobs_icon '' # Gear
+    _set tide_jobs_color $tideColorDarkerGrxeen
     # ---------------Time---------------
-    set -U tide_time_color 5F8787
-    set -U tide_time_format '%T'
+    _set tide_time_color 5F8787
+    _set tide_time_format '%T'
+end
+
+function _set -a var_name var_value
+    set -U $var_name $var_value
+    set -a tide_var_list $var_name
 end
 
 function _source_tide_functions
-    source "$__fish_config_dir/conf.d/tide_count_left_prompt_height.fish"
     source "$__fish_config_dir/conf.d/tide_cursor_movement.fish"
     source "$__fish_config_dir/functions/fish_prompt.fish"
-
-    tide_count_left_prompt_height
 end
 
 function _user_confirm_defaultYes -a question
