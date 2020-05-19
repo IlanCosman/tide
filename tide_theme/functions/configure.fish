@@ -1,6 +1,6 @@
 function tide_configure
     if test $COLUMNS -lt 55 || test $LINES -lt 21
-        echo 'Terminal size too small; must be at least 55 x 21'
+        printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
         return 1
     end
 
@@ -55,7 +55,7 @@ function _menu -a question options
         read -P $bold"$question [$options] "$norm input
 
         if contains $input $optionList
-            echo $input
+            printf '%s\n' $input
             break
         end
     end
@@ -68,13 +68,13 @@ function _title -a text
 
     _cursor_right (math $midCols-$midTitle)
     set_color -o
-    echo $text
+    printf '%s\n' $text
     set_color normal
 end
 
 function _option -a symbol text
     set_color -o
-    echo "($symbol) $text"
+    printf '%s\n' "($symbol) $text"
     set_color normal
 end
 

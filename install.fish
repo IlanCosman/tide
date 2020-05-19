@@ -1,5 +1,5 @@
 function tide_install
-    echo 'Installing tide theme...'
+    printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Functions-----------------
     set -l tempDir '/tmp/tide_theme'
@@ -30,14 +30,14 @@ function tide_install
     _source_tide_functions
 
     set_color $tide_color_green
-    echo 'Tide theme installed!'
+    printf '%s\n' 'Tide theme installed!'
     set_color $fish_color_normal
 
     if _user_confirm_defaultYes 'Configure tide prompt?'
         tide configure
     else
-        echo
-        echo 'Run tide configure to configure your prompt.'
+        printf '%s\n'
+        printf '%s\n' 'Run tide configure to configure your prompt.'
     end
 end
 

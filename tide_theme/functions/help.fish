@@ -21,20 +21,20 @@ function tide_help -a subcommand
         return 0
     end
 
-    echo 'Usage: '$g'tide '$n$b'subcommand '$n'[options]'
-    echo
-    echo 'Subcommands:'
-    echo
+    printf '%s\n' 'Usage: '$g'tide '$n$b'subcommand '$n'[options]'
+    printf '%s\n'
+    printf '%s\n' 'Subcommands:'
+    printf '%s\n'
     for sub in $subcommandList
-        echo -n '  '$b$sub$n
+        printf '%s' '  '$b$sub$n
         printf '%b' '\r'
         _cursor_right 14
         _getDescription $sub
     end
-    echo
-    echo 'Print help for a specific subcommand:'
-    echo
-    echo '  '$g'tide '$n'help '$b'subcommand'$n
+    printf '%s\n'
+    printf '%s\n' 'Print help for a specific subcommand:'
+    printf '%s\n'
+    printf '%s\n' '  '$g'tide '$n'help '$b'subcommand'$n
 
     set -a rmVars b n g subcommandList descriptionList
     for var in $rmVars
@@ -44,7 +44,7 @@ end
 
 function _getDescription -a subcommand
     set -l descriptionIndex (contains -i $subcommand $subcommandList)
-    echo $descriptionList[$descriptionIndex]
+    printf '%s\n' $descriptionList[$descriptionIndex]
 end
 
 function _generic_help_sub -a subcommand
@@ -52,7 +52,7 @@ function _generic_help_sub -a subcommand
     set -l descriptionFirstLetter (string sub -l 1 $description)
     set -l upperDescriptionFirstLetter (string upper $descriptionFirstLetter)
 
-    echo 'Usage: '$g'tide '$n$b$subcommand$n
-    echo
+    printf '%s\n' 'Usage: '$g'tide '$n$b$subcommand$n
+    printf '%s\n'
     string replace $descriptionFirstLetter $upperDescriptionFirstLetter $description
 end

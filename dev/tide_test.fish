@@ -23,7 +23,7 @@ function tide_test
             if set -q _flag_verbose
                 cat $pending >>$passed
             else
-                echo "$test - ✔" >>$passed
+                printf '%s\n' "$test - ✔" >>$passed
             end
         else
             cat $pending >>$failed
@@ -31,12 +31,12 @@ function tide_test
     end
 
     if test -e $passed
-        echo '--------PASSED--------'
+        printf '%s\n' '--------PASSED--------'
         cat $passed
         rm $passed
     end
     if test -e $failed
-        echo '--------FAILED--------'
+        printf '%s\n' '--------FAILED--------'
         cat $failed
         rm $failed
     end
@@ -59,14 +59,14 @@ function _help
         'run all available tests' \
         'print this help message'
 
-    echo 'Usage: '$g'tide_test '$n'[options] '$b'[TESTS...]'$n
-    echo
-    echo 'Options:'
-    echo
+    printf '%s\n' 'Usage: '$g'tide_test '$n'[options] '$b'[TESTS...]'$n
+    printf '%s\n'
+    printf '%s\n' 'Options:'
+    printf '%s\n'
     for option in $optionList
-        echo -n '  -'$option
+        printf '%s' '  -'$option
         _cursor_right 20
         set -l descriptionIndex (contains -i $option $optionList)
-        echo $descriptionList[$descriptionIndex]
+        printf '%s\n' $descriptionList[$descriptionIndex]
     end
 end

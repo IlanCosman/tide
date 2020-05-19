@@ -1,9 +1,9 @@
 function tide_uninstall
     if not _user_confirm_defaultNo 'Uninstall tide theme?'
-        echo 'Aborted uninstall.'
+        printf '%s\n' 'Aborted uninstall.'
         return 1
     end
-    echo 'Uninstalling tide theme...'
+    printf '%s\n' 'Uninstalling tide theme...'
 
     set -l fishPrompt (functions -D fish_prompt)
 
@@ -36,7 +36,7 @@ function tide_uninstall
     end
     set -e tide_var_list
 
-    echo 'Tide theme uninstalled.'
+    printf '%s\n' 'Tide theme uninstalled.'
 end
 
 function _user_confirm_defaultNo -a question
