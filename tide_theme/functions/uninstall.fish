@@ -31,38 +31,10 @@ function tide_uninstall
     end
 
     # -----------------------------Erase Theme Variables------------------------------
-    set -l rmVars \
-        # ---------------General Theme Variables---------------
-        'tide'{'dir', 'newline'} \
-        # --------------Colors--------------
-        'tide_color_'{'green', 'light_blue', 'dark_blue', 'gold', 'lilac'} \
-        # ---------Prompt Connection---------
-        'tide_prompt_connection_'{'icon', 'color'} \
-        # --------------------Prompt Items--------------------
-        'tide_'{'right_prompt_items', 'left_prompt_items', 'left_prompt_height'} \
-        # ----------------Pwd----------------
-        'tide_pwd_'{'shorten_margin', 'unwritable_icon'} \
-        # ------------Git prompt------------
-        '__fish_git_prompt_'{'show_informative_status', 'showstashstate'} \
-        # -------Symbols-------
-        '__fish_git_prompt_char_'{'stateseparator', 'ctidestate', 'upstream_ahead', 'upstream_behind'} \
-        '__fish_git_prompt_char_'{'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
-        # --------Colors--------
-        '__fish_git_prompt_color_'{'branch', 'upstream', 'stagedstate', 'dirtystate', 'untrackedfiles', 'stashstate'} \
-        # --------------Status--------------
-        'tide_status_'{'success_icon', 'success_color', 'failure_icon', 'failure_color'} \
-        # ------------Cmd_Duration-----------
-        'tide_cmd_duration_'{'color', 'decimals', 'threshold'} \
-        # ----------------SSH----------------
-        'tide_context_'{'ssh_color', 'root_color'} \
-        # ---------------Jobs---------------
-        'tide_jobs_'{'icon', 'color'} \
-        # ---------------Time---------------
-        'tide_time_'{'format', 'color'}
-
-    for var in $rmVars
+    for var in $tide_var_list
         set -e $var
     end
+    set -e tide_var_list
 
     echo 'Tide theme uninstalled.'
 end

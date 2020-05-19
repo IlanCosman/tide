@@ -41,7 +41,7 @@ function tide_install
     end
 end
 
-function setTide
+function _set_tide_defaults
     set -U tide_var_list
 
     # -------------------Local Variables-------------------
@@ -118,6 +118,7 @@ function _set -a var_name var_value
 end
 
 function _source_tide_functions
+    source "$__fish_config_dir/conf.d/tide_count_left_prompt_height.fish"
     source "$__fish_config_dir/conf.d/tide_cursor_movement.fish"
     source "$__fish_config_dir/functions/fish_prompt.fish"
 end
