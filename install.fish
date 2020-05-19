@@ -112,8 +112,8 @@ function _set_tide_defaults
     _set tide_time_format '%T'
 end
 
-function _set -a var_name var_value
-    set -U $var_name $var_value
+function _set -a var_name
+    set -U $var_name $argv[2..-1]
     set -a tide_var_list $var_name
 end
 
