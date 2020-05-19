@@ -20,21 +20,26 @@ function lean_uninstall
 
     set -a leanFunctions 'lean'
     set -a leanFunctions 'lean_'{'decolor', 'left_prompt', 'right_prompt'}
-    set -a leanFunctions '_lean_'{'cmd_duration', 'context', 'git_prompt', 'jobs', 'pwd', 'status', 'time'}
+    set -a leanFunctions '_lean_'{'cmd_duration', 'context', 'git_prompt', 'jobs', 'newline', 'prompt_char', 'pwd', 'status', 'time'}
     for func in $leanFunctions
         rm "$__fish_config_dir/functions/$func.fish"
+    end
+
+    set -a leanConfd 'lean_'{'count_left_prompt_height', 'cursor_movement'}
+    for file in $leanConfd
+        rm "$__fish_config_dir/conf.d/$file.fish"
     end
 
     # -----------------------------Erase Theme Variables------------------------------
     set -l rmVars \
         # ---------------General Theme Variables---------------
-        'lean_dir' \
+        'lean'{'dir', 'newline'} \
         # --------------Colors--------------
         'lean_color_'{'green', 'light_blue', 'dark_blue', 'gold', 'lilac'} \
         # ---------Prompt Connection---------
         'lean_prompt_connection_'{'icon', 'color'} \
         # --------------------Prompt Items--------------------
-        'lean_'{'right_prompt_items', 'left_prompt_items'} \
+        'lean_'{'right_prompt_items', 'left_prompt_items', 'left_prompt_height'} \
         # ----------------Pwd----------------
         'lean_pwd_'{'shorten_margin', 'unwritable_icon'} \
         # ------------Git prompt------------
