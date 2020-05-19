@@ -1,8 +1,8 @@
 function _tide_prompt_char
     if test $last_status -eq 0
-        set_color $tide_color_green
+        set_color $tide_prompt_char_success_color
     else
-        set_color $fish_color_error
+        set_color $tide_prompt_char_failure_color
     end
-    printf '%s ' '❯'
+    printf '%s ' "$tide_prompt_char_icon"
 end

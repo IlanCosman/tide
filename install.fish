@@ -58,6 +58,10 @@ function _set_tide_defaults
     # --------------------Prompt Items--------------------
     set -U tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
     set -U tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
+    # ----------------Prompt Char----------------
+    set -U tide_prompt_char_success_color $tide_color_green
+    set -U tide_prompt_char_failure_color FF0000
+    set -U tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
     set -U tide_pwd_shorten_margin 5
     set -U tide_pwd_unwritable_icon '' # Lock
