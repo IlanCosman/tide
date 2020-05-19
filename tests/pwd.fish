@@ -2,10 +2,10 @@
 
 function _pwd -a dir
     cd $dir
-    lean_decolor (_lean_pwd)
+    tide_decolor (_tide_pwd)
 end
 
-set -l unwr "$lean_pwd_unwritable_icon "
+set -l unwr "$tide_pwd_unwritable_icon "
 
 @test '/' (_pwd '/') = $unwr'/ '
 @test '/usr' (_pwd '/usr') = $unwr'/usr '

@@ -1,8 +1,8 @@
 @mesg '-------------jobs-------------'
 
 function _jobs
-    lean_decolor (_lean_jobs)
+    tide_decolor (_tide_jobs)
 end
 
 @test 'No Jobs' (_jobs) -z
-@test 'Jobs' (sleep 60 &; _jobs) = "$lean_jobs_icon "
+@test 'Jobs' (sleep 60 &; _jobs) = "$tide_jobs_icon "

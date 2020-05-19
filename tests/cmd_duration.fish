@@ -2,10 +2,10 @@
 
 function _cmd_duration -a duration threshold decimals
     set -g CMD_DURATION $duration
-    set -g lean_cmd_duration_threshold $threshold
-    set -g lean_cmd_duration_decimals $decimals
+    set -g tide_cmd_duration_threshold $threshold
+    set -g tide_cmd_duration_decimals $decimals
 
-    lean_decolor (_lean_cmd_duration)
+    tide_decolor (_tide_cmd_duration)
 end
 
 @test 'Less than threshold' (_cmd_duration 2000 3000 0) -z

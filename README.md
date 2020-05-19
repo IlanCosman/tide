@@ -1,6 +1,6 @@
-# Lean
+# Tide
 
-A minimal Fish theme based on [Powerlevel10k](https://github.com/romkatv/powerlevel10k/)'s lean style.
+A Fish theme based on [Powerlevel10k](https://github.com/romkatv/powerlevel10k/).
 
 ![Prompt_Connection](/media/images/Prompt_Connection.png)
 
@@ -9,7 +9,7 @@ A minimal Fish theme based on [Powerlevel10k](https://github.com/romkatv/powerle
 Run the install script:
 
 ```fish
-curl -s https://raw.githubusercontent.com/IlanCosman/lean/master/install.fish | source; and lean_install
+curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
 ```
 
 # Features
@@ -30,7 +30,7 @@ curl -s https://raw.githubusercontent.com/IlanCosman/lean/master/install.fish | 
 
 # Configuration
 
-Note that all lean variables, unless stated otherwise, begin with the string `lean_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `lean_example_variable`.
+Note that all tide variables, unless stated otherwise, begin with the string `tide_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
 ## Colors
 
@@ -45,7 +45,7 @@ Note that all lean variables, unless stated otherwise, begin with the string `le
 
 ### git prompt
 
-Lean's git capabilities are inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure lean's git prompt.
+Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
 
 ### prompt connection
 
