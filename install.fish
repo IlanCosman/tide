@@ -42,6 +42,9 @@ function tide_install
 end
 
 function _set_tide_defaults
+    # -------------------Local Variables-------------------
+    set -l tideColorGold D7AF00
+
     # ---------------General Theme Variables---------------
     set -U tide_dir "$__fish_config_dir/tide_theme"
     set -U tide_newline 'true'
@@ -49,8 +52,6 @@ function _set_tide_defaults
     set -U tide_color_green 5FD700
     set -U tide_color_light_blue 00AFFF
     set -U tide_color_dark_blue 0087AF
-    set -U tide_color_gold D7AF00
-    set -U tide_color_lilac 8787AF
     # ---------Prompt Connection---------
     set -U tide_prompt_connection_color 6C6C6C
     set -U tide_prompt_connection_icon ' '
@@ -67,7 +68,7 @@ function _set_tide_defaults
     set -U tide_pwd_unwritable_icon '' # Lock
     set -U tide_pwd_color_end_dirs $tide_color_light_blue
     set -U tide_pwd_color_mid_dirs $tide_color_dark_blue
-    set -U tide_pwd_color_truncated_dirs $tide_color_lilac
+    set -U tide_pwd_color_truncated_dirs 8787AF
     # ------------Git prompt------------
     set -U __fish_git_prompt_show_informative_status true
     set -U __fish_git_prompt_showstashstate true
@@ -83,8 +84,8 @@ function _set_tide_defaults
     # --------Colors--------
     set -U __fish_git_prompt_color_branch $tide_color_green
     set -U __fish_git_prompt_color_upstream $tide_color_green
-    set -U __fish_git_prompt_color_stagedstate $tide_color_gold
-    set -U __fish_git_prompt_color_dirtystate $tide_color_gold
+    set -U __fish_git_prompt_color_stagedstate $tideColorGold
+    set -U __fish_git_prompt_color_dirtystate $tideColorGold
     set -U __fish_git_prompt_color_untrackedfiles $tide_color_light_blue
     set -U __fish_git_prompt_color_stashstate $tide_color_green
     # --------------Status--------------
@@ -104,6 +105,7 @@ function _set_tide_defaults
     set -U tide_jobs_color 5FAF00
     # ---------------Time---------------
     set -U tide_time_color 5F8787
+    set -U tide_time_format '%T'
 end
 
 function _source_tide_functions
