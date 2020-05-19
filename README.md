@@ -32,9 +32,7 @@ curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | 
 
 Note that all tide variables, unless stated otherwise, begin with the string `tide_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
-## Colors
-
-## Left Prompt Items
+## Prompt Items
 
 ### pwd
 

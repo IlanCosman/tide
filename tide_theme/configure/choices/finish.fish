@@ -19,7 +19,7 @@ function finish
                 newline, \
                 left_prompt_items, \
                 prompt_connection_color, prompt_connection_icon, \
-                time_format, \
+                time_format \
             }
 
             for var in $vars
