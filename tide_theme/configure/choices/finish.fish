@@ -11,7 +11,7 @@ function finish
         case y
 
             set -U tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
-            if test -z $tide_time_format
+            if test -n "$fake_tide_time_format"
                 set -a tide_right_prompt_items 'time'
             end
 
