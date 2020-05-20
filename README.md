@@ -34,7 +34,7 @@ If there isn't a prompt item that fits your needs, make your own!
 
 # Configuration
 
-All tide variables, unless stated otherwise, begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
+Tide variables that the user is encouraged to change begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
 ## General Variables
 

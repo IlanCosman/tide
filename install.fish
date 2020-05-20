@@ -1,4 +1,8 @@
-function tide_install
+function tide_install -a branch
+    if test -z "$branch"
+        set branch 'master'
+    end
+
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Functions-----------------
@@ -8,7 +12,7 @@ function tide_install
     if test -e $tempDir
         rm -rf $tempDir
     end
-    git clone -q --depth=1 https://github.com/IlanCosman/tide.git $tempDir
+    git clone -q --depth=1 -b "$branch" https://github.com/IlanCosman/tide.git $tempDir
 
     # Remove all files/dirs except functions and tide_theme
     set -l keepFiles "$tempDir/"{'conf.d', 'functions', 'tide_theme'}
