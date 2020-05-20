@@ -18,7 +18,7 @@ curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | 
 
 > Fish cant do _that_ yet can it?
 
-![Multiple_Line_Right_Prompt](/media/images/Multiple_Line_Right_Prompt.png)
+![Multi-Line_Right_Prompt](/media/images/Multi-Line_Right_Prompt.png)
 
 ### Configuration Wizard
 
