@@ -38,7 +38,7 @@ All tide variables, unless stated otherwise, begin with the string `tide_`. Thus
 
 ## General Variables
 
-| Name               | Description                                | Default                                    |
+| Variable           | Description                                | Default                                    |
 | ------------------ | ------------------------------------------ | ------------------------------------------ |
 | newline            | add empty line before each prompt          | true                                       |
 | left_prompt_items  | order of the left prompt items to display  | 'pwd' 'git_prompt' 'newline' 'prompt_char' |
@@ -74,14 +74,21 @@ All tide variables, unless stated otherwise, begin with the string `tide_`. Thus
 
 ### context
 
-| Name                    | Description                     | Default |
-| ----------------------- | ------------------------------- | ------- |
-| tide_context_root_color | color of context when root user | D7AF00  |
-| tide_context_ssh_color  | color of context when in SSH    | D7AF87  |
+| Variable           | Description                     | Default |
+| ------------------ | ------------------------------- | ------- |
+| context_root_color | color of context when root user | D7AF00  |
+| context_ssh_color  | color of context when in SSH    | D7AF87  |
 
 ### git_prompt
 
 Tide's git capabilities are currently inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
+
+### jobs
+
+| Variable   | Description                                      | Default |
+| ---------- | ------------------------------------------------ | ------- |
+| jobs_color | color of jobs icon                               | D7AF00  |
+| jobs_icon  | symbol to display when there are background jobs | D7AF87  |
 
 ### pwd
 
