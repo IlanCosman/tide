@@ -53,16 +53,16 @@ All tide variables, unless stated otherwise, begin with the string `tide_`. Thus
 
 ## Prompt Items
 
-| Item                            | Description                      |
-| ------------------------------- | -------------------------------- |
-| [cmd_duration](###cmd_duration) | duration of the last run command |
-| [context](###context)           | user@hostname in ssh or root     |
-| [git_prompt](###git_prompt)     | git repository status            |
-| [jobs](###jobs)                 | presence of background jobs      |
-| [prompt_char](###prompt_char)   | prompt symbol;turns red on error |
-| [pwd](###pwd)                   | current directory                |
-| [status](###status)             | exit code of the last command    |
-| [time](###time)                 | current time                     |
+| Item                          | Description                      |
+| ----------------------------- | -------------------------------- |
+| [cmd_duration](#cmd_duration) | duration of the last run command |
+| [context](#context)           | user@hostname in ssh or root     |
+| [git_prompt](#git_prompt)     | git repository status            |
+| [jobs](#jobs)                 | presence of background jobs      |
+| [prompt_char](#prompt_char)   | prompt symbol;turns red on error |
+| [pwd](#pwd)                   | current directory                |
+| [status](#status)             | exit code of the last command    |
+| [time](#time)                 | current time                     |
 
 ### cmd_duration
 
@@ -71,6 +71,13 @@ All tide variables, unless stated otherwise, begin with the string `tide_`. Thus
 | cmd_duration_color     | color of cmd_duration output                                       | 87875F  |
 | cmd_duration_decimals  | number of decimals to display after seconds place                  | 0       |
 | cmd_duration_threshold | number of milliseconds that duration must exceed to produce output | 3000    |
+
+### context
+
+| Name                    | Description                     | Default |
+| ----------------------- | ------------------------------- | ------- |
+| tide_context_root_color | color of context when root user | D7AF00  |
+| tide_context_ssh_color  | color of context when in SSH    | D7AF87  |
 
 ### git_prompt
 
