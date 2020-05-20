@@ -29,7 +29,7 @@ function tide_install
     # -----------------------Finish-----------------------
     _source_tide_functions
 
-    set_color $tide_color_green
+    set_color $_tide_color_green
     printf '%s\n' 'Tide theme installed!'
     set_color $fish_color_normal
 
@@ -42,36 +42,36 @@ function tide_install
 end
 
 function _set_tide_defaults
-    set -U tide_var_list
+    set -U _tide_var_list
 
     # -------------------Local Variables-------------------
     set -l tideColorGold D7AF00
     set -l tideColorDarkerGreen 5FAF00
 
     # ---------------General Theme Variables---------------
-    _set tide_dir "$__fish_config_dir/tide_theme"
+    _set _tide_dir "$__fish_config_dir/tide_theme"
     _set tide_newline 'true'
     # --------------Colors--------------
-    _set tide_color_green 5FD700
-    _set tide_color_light_blue 00AFFF
-    _set tide_color_dark_blue 0087AF
+    _set _tide_color_green 5FD700
+    _set _tide_color_light_blue 00AFFF
+    _set _tide_color_dark_blue 0087AF
     # ---------Prompt Connection---------
     _set tide_prompt_connection_color 6C6C6C
     _set tide_prompt_connection_icon ' '
 
     # --------------------Prompt Items--------------------
     _set tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
-    _set tide_left_prompt_height 2
+    _set _tide_left_prompt_height 2
     _set tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
     # ------------Prompt Char------------
-    _set tide_prompt_char_success_color $tide_color_green
+    _set tide_prompt_char_success_color $_tide_color_green
     _set tide_prompt_char_failure_color FF0000
     _set tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
     _set tide_pwd_truncate_margin 5
     _set tide_pwd_unwritable_icon '' # Lock
-    _set tide_pwd_color_end_dirs $tide_color_light_blue
-    _set tide_pwd_color_mid_dirs $tide_color_dark_blue
+    _set tide_pwd_color_end_dirs $_tide_color_light_blue
+    _set tide_pwd_color_mid_dirs $_tide_color_dark_blue
     _set tide_pwd_color_truncated_dirs 8787AF
     # ------------Git prompt------------
     _set __fish_git_prompt_show_informative_status true
@@ -86,12 +86,12 @@ function _set_tide_defaults
     _set __fish_git_prompt_char_untrackedfiles ' ?'
     _set __fish_git_prompt_char_stashstate ' *'
     # --------Colors--------
-    _set __fish_git_prompt_color_branch $tide_color_green
-    _set __fish_git_prompt_color_upstream $tide_color_green
+    _set __fish_git_prompt_color_branch $_tide_color_green
+    _set __fish_git_prompt_color_upstream $_tide_color_green
     _set __fish_git_prompt_color_stagedstate $tideColorGold
     _set __fish_git_prompt_color_dirtystate $tideColorGold
-    _set __fish_git_prompt_color_untrackedfiles $tide_color_light_blue
-    _set __fish_git_prompt_color_stashstate $tide_color_green
+    _set __fish_git_prompt_color_untrackedfiles $_tide_color_light_blue
+    _set __fish_git_prompt_color_stashstate $_tide_color_green
     # --------------Status--------------
     _set tide_status_success_icon '✔'
     _set tide_status_success_color $tideColorDarkerGreen
@@ -114,7 +114,7 @@ end
 
 function _set -a var_name
     set -U $var_name $argv[2..-1]
-    set -a tide_var_list $var_name
+    set -a _tide_var_list $var_name
 end
 
 function _source_tide_functions

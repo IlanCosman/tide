@@ -1,7 +1,7 @@
 function tide_help -a subcommand
     set -g b (set_color -o)
     set -g n (set_color normal)
-    set -g g (set_color $tide_color_green)
+    set -g g (set_color $_tide_color_green)
 
     set -g subcommandList \
         'configure' \

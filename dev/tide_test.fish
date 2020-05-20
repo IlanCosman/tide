@@ -48,7 +48,7 @@ end
 function _help
     set -l b (set_color -o)
     set -l n (set_color normal)
-    set -l g (set_color $tide_color_green)
+    set -l g (set_color $_tide_color_green)
 
     set -l optionList \
         'v or --verbose' \

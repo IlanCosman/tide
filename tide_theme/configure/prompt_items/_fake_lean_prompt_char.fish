@@ -1,4 +1,4 @@
 function _fake_tide_prompt_char
-    set_color $tide_color_green
+    set_color $_tide_color_green
     printf '%s ' '❯'
 end

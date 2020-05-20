@@ -8,8 +8,8 @@ function tide_uninstall
     set -l fishPrompt (functions -D fish_prompt)
 
     # ----------------------------------Remove Files----------------------------------
-    if test -e $tide_dir
-        rm -r $tide_dir
+    if test -e $_tide_dir
+        rm -r $_tide_dir
     end
 
     set -l fishPromptFirstLine (head -n 1 $fishPrompt)
@@ -31,10 +31,10 @@ function tide_uninstall
     end
 
     # -----------------------------Erase Theme Variables------------------------------
-    for var in $tide_var_list
+    for var in $_tide_var_list
         set -e $var
     end
-    set -e tide_var_list
+    set -e _tide_var_list
 
     printf '%s\n' 'Tide theme uninstalled.'
 end

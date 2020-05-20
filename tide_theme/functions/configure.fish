@@ -10,10 +10,10 @@ function tide_configure
     end
     set -g fake_lines $LINES
 
-    for fn in $tide_dir/configure/functions/*
+    for fn in $_tide_dir/configure/functions/*
         source "$fn"
     end
-    for promptItem in $tide_dir/configure/prompt_items/*
+    for promptItem in $_tide_dir/configure/prompt_items/*
         source "$promptItem"
     end
 
@@ -42,7 +42,7 @@ function _set_defaults
 end
 
 function _next_choice -a nextChoice
-    source "$tide_dir/configure/choices/$nextChoice.fish"
+    source "$_tide_dir/configure/choices/$nextChoice.fish"
     $nextChoice
 end
 
