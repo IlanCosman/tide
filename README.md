@@ -14,19 +14,19 @@ curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | 
 
 # Features
 
-## Multi-Line Right Prompt
+### Multi-Line Right Prompt
 
 > Fish cant do _that_ yet can it?
 
 ![Multiple_Line_Right_Prompt](/media/images/Multiple_Line_Right_Prompt.png)
 
-## Configuration Wizard
+### Configuration Wizard
 
 Type `tide configure` to open the the wizard in your terminal.
 
 ![Configuration_Wizard](/media/gifs/Configuration_Wizard.gif)
 
-## Extensible
+### Extensible
 
 If there isn't a prompt item that fits your needs, make your own!
 
@@ -34,28 +34,15 @@ If there isn't a prompt item that fits your needs, make your own!
 
 # Configuration
 
-Note that all tide variables, unless stated otherwise, begin with the string `tide_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
+All tide variables, unless stated otherwise, begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
-## Prompt Items
+## General Variables
 
-|     Item     | Display                               |
-| :----------: | ------------------------------------- |
-|    status    | special exit statuses and pipe status |
-| cmd_duration | duration of the last run command      |
-|   context    | user@hostname when using SSH or root  |
-|     jobs     | presence of background jobs           |
-|     time     | current time                          |
-
-### pwd
-
-| Variable            | Description                                                              | Default        |
-| ------------------- | ------------------------------------------------------------------------ | -------------- |
-| pwd_shorten_margin  | number of columns distance to maintain between pwd and edge of terminal  | 5              |
-| pwd_unwritable_icon | symbol to display when the current directory is not writable by the user | '' #Lock icon |
-
-### git prompt
-
-Tide's git capabilities are currently inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
+| Name               | Description                                | Default                                    |
+| ------------------ | ------------------------------------------ | ------------------------------------------ |
+| newline            | add empty line before each prompt          | true                                       |
+| left_prompt_items  | order of the left prompt items to display  | 'pwd' 'git_prompt' 'newline' 'prompt_char' |
+| right_prompt_items | order of the right prompt items to display | 'status' 'cmd_duration' 'context' 'jobs'   |
 
 ### prompt connection
 
@@ -64,11 +51,37 @@ Tide's git capabilities are currently inherited from fish's built-in [fish_git_p
 | prompt_connection_color | color of prompt connection                                            | 6C6C6C  |
 | prompt_connection_icon  | repeated symbol that spans gap between left and right sides of prompt | ' '     |
 
-## Right Prompt Items
+## Prompt Items
 
-| Variable           | Description                                        | Default                                  |
-| ------------------ | -------------------------------------------------- | ---------------------------------------- |
-| right_prompt_items | order of right prompt items that will be displayed | 'status' 'cmd_duration' 'context' 'jobs' |
+| Item                            | Description                      |
+| ------------------------------- | -------------------------------- |
+| [cmd_duration](###cmd_duration) | duration of the last run command |
+| [context](###context)           | user@hostname in ssh or root     |
+| [git_prompt](###git_prompt)     | git repository status            |
+| [jobs](###jobs)                 | presence of background jobs      |
+| [prompt_char](###prompt_char)   | prompt symbol;turns red on error |
+| [pwd](###pwd)                   | current directory                |
+| [status](###status)             | exit code of the last command    |
+| [time](###time)                 | current time                     |
+
+### cmd_duration
+
+| Variable               | Description                                                        | Default |
+| ---------------------- | ------------------------------------------------------------------ | ------- |
+| cmd_duration_color     | color of cmd_duration output                                       | 87875F  |
+| cmd_duration_decimals  | number of decimals to display after seconds place                  | 0       |
+| cmd_duration_threshold | number of milliseconds that duration must exceed to produce output | 3000    |
+
+### git_prompt
+
+Tide's git capabilities are currently inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
+
+### pwd
+
+| Variable            | Description                                                              | Default        |
+| ------------------- | ------------------------------------------------------------------------ | -------------- |
+| pwd_shorten_margin  | number of columns distance to maintain between pwd and edge of terminal  | 5              |
+| pwd_unwritable_icon | symbol to display when the current directory is not writable by the user | '' #Lock icon |
 
 ### status
 
@@ -78,11 +91,3 @@ Tide's git capabilities are currently inherited from fish's built-in [fish_git_p
 | status_success_color | color of successful pipeline's status                          | 5FAF00  |
 | status_failure_icon  | symbol to display when the last command in a pipeline fails    | '✘'     |
 | status_failure_color | color of failed pipeline's status                              | D70000  |
-
-### cmd_duration
-
-| Variable               | Description                                                        | Default |
-| ---------------------- | ------------------------------------------------------------------ | ------- |
-| cmd_duration_color     | color of cmd_duration output                                       | 87875F  |
-| cmd_duration_decimals  | number of decimals to display after seconds place                  | 0       |
-| cmd_duration_threshold | number of milliseconds that duration must exceed to produce output | 3000    |
