@@ -1,4 +1,4 @@
-function _tide_status
+function _tide_item_status
     if string match -q --invert '0' $last_pipestatus
         set -l fishPipestatusWithSignal (__fish_pipestatus_with_signal $last_pipestatus)
 

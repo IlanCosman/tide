@@ -118,8 +118,8 @@ function _set -a var_name
 end
 
 function _source_tide_functions
-    source "$__fish_config_dir/conf.d/tide_count_left_prompt_height.fish"
-    source "$__fish_config_dir/conf.d/tide_cursor_movement.fish"
+    source "$__fish_config_dir/conf.d/_tide_count_left_prompt_height.fish"
+    source "$__fish_config_dir/conf.d/_tide_cursor_movement.fish"
     source "$__fish_config_dir/functions/fish_prompt.fish"
 end
 

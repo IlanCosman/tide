@@ -21,7 +21,7 @@ function _fetch_right_prompt_items
 end
 
 function _print_at_end -a text
-    set -l startLocation (math $fake_columns -(string length (tide_decolor $text)))
+    set -l startLocation (math $fake_columns -(string length (_tide_decolor $text)))
     _cursor_right $startLocation
     printf '%s' $text
 

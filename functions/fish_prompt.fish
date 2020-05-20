@@ -12,8 +12,8 @@ function fish_prompt --description 'Write out the prompt'
     set_color $fish_color_normal
 
     printf '%b' '\r'
-    tide_right_prompt
+    _tide_right_prompt
 
     printf '%b' '\r'
-    tide_left_prompt
+    _tide_left_prompt
 end

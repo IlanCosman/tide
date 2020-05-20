@@ -1,4 +1,4 @@
-function _tide_prompt_char
+function _tide_item_prompt_char
     if test $last_status -eq 0
         set_color $tide_prompt_char_success_color
     else

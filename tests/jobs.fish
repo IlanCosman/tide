@@ -1,7 +1,7 @@
 @mesg '-------------jobs-------------'
 
 function _jobs
-    tide_decolor (_tide_jobs)
+    _tide_decolor (_tide_jobs)
 end
 
 @test 'No Jobs' (_jobs) -z

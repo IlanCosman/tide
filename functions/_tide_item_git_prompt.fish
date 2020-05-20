@@ -1,4 +1,4 @@
-function _tide_git_prompt
+function _tide_item_git_prompt
     if set -l gitPrompt (fish_git_prompt)
 
         set -l gitPrompt (string replace '(' '' $gitPrompt)

@@ -1,4 +1,4 @@
-function _tide_pwd
+function _tide_item_pwd
     set -l splitPwd (string split --no-empty '/' (_truncate_pwd))
     set -l splitPwdLength (count $splitPwd)
 

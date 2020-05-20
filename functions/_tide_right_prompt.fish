@@ -1,4 +1,4 @@
-function tide_right_prompt
+function _tide_right_prompt
     set -l splitText (string split '\n' (_fetch_right_prompt_items))
     set -l printAtEndedRightPromptHeight (count $splitText)
 
@@ -23,8 +23,8 @@ end
 function _fetch_right_prompt_items
     printf '%s' ' '
 
-    for item in tide_{$tide_right_prompt_items}
-        set -l itemOutput (_$item)
+    for item in _tide_item_{$tide_right_prompt_items}
+        set -l itemOutput ($item)
         printf '%s' "$itemOutput"
 
         set_color normal
@@ -32,7 +32,7 @@ function _fetch_right_prompt_items
 end
 
 function _print_at_end -a text
-    set -l startLocation (math $COLUMNS -(string length (tide_decolor $text)))
+    set -l startLocation (math $COLUMNS -(string length (_tide_decolor $text)))
     _cursor_right $startLocation
     printf '%s' $text
 

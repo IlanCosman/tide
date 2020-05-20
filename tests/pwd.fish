@@ -2,7 +2,7 @@
 
 function _pwd -a dir
     cd $dir
-    tide_decolor (_tide_pwd)
+    _tide_decolor (_tide_pwd)
 end
 
 set -l unwr "$tide_pwd_unwritable_icon "

@@ -3,7 +3,7 @@
 function _status
     set -g last_pipestatus $pipestatus
     set -g last_status $status
-    tide_decolor (_tide_status)
+    _tide_decolor (_tide_status)
 end
 
 @test 'true' (true; _status) -z
