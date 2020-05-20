@@ -68,7 +68,7 @@ function _set_tide_defaults
     _set tide_prompt_char_failure_color FF0000
     _set tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
-    _set tide_pwd_shorten_margin 5
+    _set tide_pwd_truncate_margin 5
     _set tide_pwd_unwritable_icon '' # Lock
     _set tide_pwd_color_end_dirs $tide_color_light_blue
     _set tide_pwd_color_mid_dirs $tide_color_dark_blue

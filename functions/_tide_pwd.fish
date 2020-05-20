@@ -1,5 +1,5 @@
 function _tide_pwd
-    set -l splitPwd (string split --no-empty '/' (_shorten_pwd))
+    set -l splitPwd (string split --no-empty '/' (_truncate_pwd))
     set -l splitPwdLength (count $splitPwd)
 
     if not test -w $PWD
@@ -39,11 +39,11 @@ function _tide_pwd
     printf '%s' ' '
 end
 
-function _shorten_pwd
+function _truncate_pwd
     set -l pwd (string replace $HOME '~' $PWD)
     set -l colorPwd $pwd
     set -l splitPwd (string split --no-empty '/' $pwd)
-    set -l targetLength (math $COLUMNS-$tide_pwd_shorten_margin)
+    set -l targetLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
     set -l index 2
     while test (string length $pwd) -gt $targetLength

@@ -81,7 +81,7 @@ All tide variables, unless stated otherwise, begin with the string `tide_`. Thus
 
 ### git_prompt
 
-Tide's git capabilities are currently inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
+Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
 
 ### jobs
 
@@ -90,12 +90,23 @@ Tide's git capabilities are currently inherited from fish's built-in [fish_git_p
 | jobs_color | color of jobs icon                               | D7AF00  |
 | jobs_icon  | symbol to display when there are background jobs | D7AF87  |
 
+### prompt_char
+
+| Variable                  | Description                                           | Default |
+| ------------------------- | ----------------------------------------------------- | ------- |
+| prompt_char_icon          | prompt char symbol                                    | '❯'     |
+| prompt_char_success_color | color of prompt char when last command was successful | 5FD700  |
+| prompt_char_failure_color | color of prompt char when last command failed         | FF0000  |
+
 ### pwd
 
-| Variable            | Description                                                              | Default        |
-| ------------------- | ------------------------------------------------------------------------ | -------------- |
-| pwd_shorten_margin  | number of columns distance to maintain between pwd and edge of terminal  | 5              |
-| pwd_unwritable_icon | symbol to display when the current directory is not writable by the user | '' #Lock icon |
+| Variable                 | Description                                                              | Default        |
+| ------------------------ | ------------------------------------------------------------------------ | -------------- |
+| pwd_truncate_margin      | number of columns distance to maintain between pwd and edge of terminal  | 5              |
+| pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon |
+| pwd_color_end_dirs       | color of first and last directories                                      | 00AFFF         |
+| pwd_color_mid_dirs       | color of directories between first and last                              | 0087AF         |
+| pwd_color_truncated_dirs | color of directories that get truncated when pwd is too long             | 8787AF         |
 
 ### status
 
@@ -105,3 +116,10 @@ Tide's git capabilities are currently inherited from fish's built-in [fish_git_p
 | status_success_color | color of successful pipeline's status                          | 5FAF00  |
 | status_failure_icon  | symbol to display when the last command in a pipeline fails    | '✘'     |
 | status_failure_color | color of failed pipeline's status                              | D70000  |
+
+### time
+
+| Variable    | Description            | Default |
+| ----------- | ---------------------- | ------- |
+| time_color  | color of time display  | 5F8787  |
+| time_format | format of time display | '%T'    |
