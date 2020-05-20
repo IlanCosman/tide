@@ -6,7 +6,7 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
 
 # Installation
 
-Run the install script:
+Source and run the install function:
 
 ```fish
 curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
@@ -34,7 +34,7 @@ If there isn't a prompt item that fits your needs, make your own!
 
 # Configuration
 
-Tide variables that the user is encouraged to change begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
+Tide variables that users are encouraged to modify begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
 ## General Variables
 
