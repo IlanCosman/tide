@@ -1,6 +1,6 @@
 # Tide ![Fish_Version_Shield](https://img.shields.io/badge/fish-3.1.0-blue)
 
-A Fish theme based on [Powerlevel10k](https://github.com/romkatv/powerlevel10k/).
+Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
 
 ![Prompt_Connection](/media/images/Prompt_Connection.png)
 
@@ -14,11 +14,29 @@ curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | 
 
 # Features
 
-- Reactive superior prompt character `❯`
-- Current directory, shortened according to terminal width
-- Git branch and status information
-- Configuration wizard
-- Right Prompt Items:
+## Multi-Line Right Prompt
+
+> Fish cant do _that_ yet can it?
+
+![Multiple_Line_Right_Prompt](/media/images/Multiple_Line_Right_Prompt.png)
+
+## Configuration Wizard
+
+Type `tide configure` to open the the wizard in your terminal.
+
+![Configuration_Wizard](/media/gifs/Configuration_Wizard.gif)
+
+## Extensible
+
+If there isn't a prompt item that fits your needs, make your own!
+
+![Extensible](/media/images/Extensible.png)
+
+# Configuration
+
+Note that all tide variables, unless stated otherwise, begin with the string `tide_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
+
+## Prompt Items
 
 |     Item     | Display                               |
 | :----------: | ------------------------------------- |
@@ -27,12 +45,6 @@ curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | 
 |   context    | user@hostname when using SSH or root  |
 |     jobs     | presence of background jobs           |
 |     time     | current time                          |
-
-# Configuration
-
-Note that all tide variables, unless stated otherwise, begin with the string `tide_`. Thus, for brevity, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
-
-## Prompt Items
 
 ### pwd
 
@@ -43,7 +55,7 @@ Note that all tide variables, unless stated otherwise, begin with the string `ti
 
 ### git prompt
 
-Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
+Tide's git capabilities are currently inherited from fish's built-in [fish_git_prompt](https://fishshell.com/docs/current/cmds/fish_git_prompt.html). Modify those variables to configure tide's git prompt.
 
 ### prompt connection
 
