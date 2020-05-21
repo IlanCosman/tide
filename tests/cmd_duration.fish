@@ -5,7 +5,7 @@ function _cmd_duration -a duration threshold decimals
     set -g tide_cmd_duration_threshold $threshold
     set -g tide_cmd_duration_decimals $decimals
 
-    _tide_decolor (_tide_cmd_duration)
+    _tide_decolor (_tide_item_cmd_duration)
 end
 
 @test 'Less than threshold' (_cmd_duration 2000 3000 0) -z
