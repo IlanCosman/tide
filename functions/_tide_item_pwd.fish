@@ -45,17 +45,19 @@ function _truncate_pwd
     set -l splitPwd (string split --no-empty '/' $pwd)
     set -l targetLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
-    set -l index 2
-    while test (string length $pwd) -gt $targetLength
-        set -l currentPart $splitPwd[$index]
-        set -l currentPartFirstLetter (string sub -l 1 $currentPart)
-        set pwd (string replace $currentPart $currentPartFirstLetter $pwd)
+    if test (string length $pwd) -gt $targetLength
+        for dir in $splitPwd[2..-2]
+            set -l dirFirstLetter (string sub -l 1 $dir)
+            set pwd (string replace $dir $dirFirstLetter $pwd)
 
-        set -l lilac (set_color $tide_pwd_color_truncated_dirs)
-        set -l dBlue (set_color $tide_pwd_color_mid_dirs)
-        set colorPwd (string replace $currentPart "$lilac"$currentPartFirstLetter"$dBlue" $colorPwd)
+            set -l lilac (set_color $tide_pwd_color_truncated_dirs)
+            set -l dBlue (set_color $tide_pwd_color_mid_dirs)
+            set colorPwd (string replace $dir "$lilac"$dirFirstLetter"$dBlue" $colorPwd)
 
-        set index (math $index+1)
+            if test (string length $pwd) -lt $targetLength
+                break
+            end
+        end
     end
 
     printf '%s' "$colorPwd"
