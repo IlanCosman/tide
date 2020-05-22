@@ -9,7 +9,7 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
 Source and run the install function:
 
 ```fish
-curl -L# git.io/tide-fish | source; and tide_install
+curl -sL git.io/tide-fish | source; and tide_install
 ```
 
 # Features
