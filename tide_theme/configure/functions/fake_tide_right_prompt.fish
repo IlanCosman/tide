@@ -1,4 +1,4 @@
-function fake_tide_right_prompt
+function _fake_tide_right_prompt
     set -l splitText (string split '\n' (_fetch_right_prompt_items))
     set -l printAtEndedRightPromptHeight (count $splitText)
 
@@ -12,8 +12,8 @@ end
 function _fetch_right_prompt_items
     printf '%s' ' '
 
-    for item in fake_tide_{$fake_tide_right_prompt_items}
-        set -l itemOutput (_$item)
+    for item in _fake_tide_item_{$fake_tide_right_prompt_items}
+        set -l itemOutput ($item)
         printf '%s' "$itemOutput"
 
         set_color normal

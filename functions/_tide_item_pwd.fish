@@ -54,9 +54,9 @@ function _truncate_pwd
 
             set pwd (string replace $dir $dirTruncated $pwd)
 
-            set -l lilac (set_color $tide_pwd_color_truncated_dirs)
-            set -l dBlue (set_color $tide_pwd_color_mid_dirs)
-            set colorPwd (string replace $dir "$lilac"$dirTruncated"$dBlue" $colorPwd)
+            set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
+            set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
+            set colorPwd (string replace $dir "$colorTruncatedDirs"$dirTruncated"$colorMidDirs" $colorPwd)
 
             if test (string length $pwd) -lt $maxLength
                 break
