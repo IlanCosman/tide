@@ -18,16 +18,8 @@ function tide_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    set -a tideFunctions 'tide'
-    set -a tideFunctions 'tide_'{'decolor', 'left_prompt', 'right_prompt'}
-    set -a tideFunctions '_tide_'{'cmd_duration', 'context', 'git_prompt', 'jobs', 'newline', 'prompt_char', 'pwd', 'status', 'time'}
-    for func in $tideFunctions
-        rm "$__fish_config_dir/functions/$func.fish"
-    end
-
-    set -a tideConfd 'tide_'{'count_left_prompt_height', 'cursor_movement'}
-    for file in $tideConfd
-        rm "$__fish_config_dir/conf.d/$file.fish"
+    for file in $_tide_file_list
+        rm "$__fish_config_dir/$file"
     end
 
     # -----------------------------Erase Theme Variables------------------------------

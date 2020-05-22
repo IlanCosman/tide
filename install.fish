@@ -23,6 +23,15 @@ function tide_install -a branch
     end
     rm -rf "$tempDir/.git"
 
+    # Add contents of conf.d and functions to a list for uninstallation
+    set -U _tide_file_list
+
+    for file in "$tempDir/"{conf.d/*, functions/*}
+        if test "$file" != "$tempDir/functions/fish_prompt.fish"
+            set -a _tide_file_list (string replace "$tempDir/" '' $file)
+        end
+    end
+
     # Copy remaining directory contents into $__fish_config_dir and ctideup
     cp -rf "$tempDir/." $__fish_config_dir
     rm -rf $tempDir
@@ -48,6 +57,7 @@ end
 
 function _set_tide_defaults
     set -U _tide_var_list
+    set -a _tide_var_list _tide_file_list
 
     # -------------------Local Variables-------------------
     set -l tideColorGold D7AF00
