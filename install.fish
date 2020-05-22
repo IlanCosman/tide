@@ -35,13 +35,14 @@ function tide_install -a branch
 
     set_color $_tide_color_green
     printf '%s\n' 'Tide theme installed!'
-    set_color $fish_color_normal
+    set_color normal
+    printf '%s\n'
 
     if _user_confirm_defaultYes 'Configure tide prompt?'
         tide configure
     else
         printf '%s\n'
-        printf '%s\n' 'Run tide configure to configure your prompt.'
+        printf '%s\n' 'Run tide configure to customize your prompt.'
     end
 end
 
