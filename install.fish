@@ -28,6 +28,10 @@ function tide_install
     if set -q _flag_dev
         cp -r "$tempDir/tests" $__fish_config_dir
         cp -r "$tempDir/dev/." "$__fish_config_dir/functions"
+
+        # Install fisher and fishtape for testing
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+        fisher add jorgebucaran/fishtape
     end
 
     # --------------------Set Defaults--------------------
