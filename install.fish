@@ -1,42 +1,45 @@
-function tide_install -a branch
-    if test -z "$branch"
-        set branch 'master'
+function tide_install
+    argparse 'l/local' 'd/dev' -- $argv
+
+    set -l location $argv[1]
+    if test -z "$location"
+        set location 'master'
     end
 
     printf '%s\n' 'Installing tide theme...'
 
-    # -----------------Download Functions-----------------
+    # -----------------Download Files-----------------
     set -l tempDir '/tmp/tide_theme'
 
-    # Clone repository into $tempDir
+    # Copy/clone repository into $tempDir
     if test -e $tempDir
         rm -rf $tempDir
     end
-    git clone -q --depth=1 -b "$branch" https://github.com/IlanCosman/tide.git $tempDir
-
-    # Remove all files/dirs except functions and tide_theme
-    set -l keepFiles "$tempDir/"{'conf.d', 'functions', 'tide_theme'}
-    for file in $tempDir/*
-        if not contains $file $keepFiles
-            rm -rf $file
-        end
+    if set -q _flag_local
+        cp -rf "$location" "$tempDir"
+    else
+        git clone -q --depth=1 -b $location https://github.com/IlanCosman/tide.git $tempDir
     end
-    rm -rf "$tempDir/.git"
 
+    cp -r "$tempDir/conf.d" $__fish_config_dir
+    cp -r "$tempDir/functions" $__fish_config_dir
+    cp -r "$tempDir/tide_theme" $__fish_config_dir
+
+    if set -q _flag_dev
+        cp -r "$tempDir/tests" $__fish_config_dir
+        cp -r "$tempDir/dev/." "$__fish_config_dir/functions"
+    end
+
+    # --------------------Set Defaults--------------------
     # Add contents of conf.d and functions to a list for uninstallation
     set -U _tide_file_list
 
-    for file in "$tempDir/"{conf.d/*, functions/*}
+    for file in $tempDir/{conf.d/*, functions/*}
         if test "$file" != "$tempDir/functions/fish_prompt.fish"
             set -a _tide_file_list (string replace "$tempDir/" '' $file)
         end
     end
 
-    # Copy remaining directory contents into $__fish_config_dir and ctideup
-    cp -rf "$tempDir/." $__fish_config_dir
-    rm -rf $tempDir
-
-    # --------------------Set Defaults--------------------
     _set_tide_defaults
 
     # -----------------------Finish-----------------------
@@ -53,6 +56,8 @@ function tide_install -a branch
         printf '%s\n'
         printf '%s\n' 'Run tide configure to customize your prompt.'
     end
+
+    rm -rf $tempDir
 end
 
 function _set_tide_defaults
@@ -133,8 +138,9 @@ function _set -a var_name
 end
 
 function _source_tide_functions
-    source "$__fish_config_dir/conf.d/_tide_count_left_prompt_height.fish"
-    source "$__fish_config_dir/conf.d/_tide_cursor_movement.fish"
+    for file in $_tide_file_list
+        source "$__fish_config_dir/$file"
+    end
     source "$__fish_config_dir/functions/fish_prompt.fish"
 end
 
