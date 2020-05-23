@@ -10,7 +10,8 @@ function finish
     switch (_menu 'Choice' y/n)
         case y
 
-            set -U tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
+            _set_tide_defaults
+
             if test -n "$fake_tide_time_format"
                 set -a tide_right_prompt_items 'time'
             end
