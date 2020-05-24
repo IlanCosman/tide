@@ -8,4 +8,4 @@ end
 
 @test 'None' (_context) -z
 @test 'SSH' (set -g SSH_TTY 'true'; _context) = $USER'@'(prompt_hostname)' '
-@test 'Root' (_tide_decolor (su -c "fish -c 'source $sourceFile;_tide_item_context'")) = 'root@'(prompt_hostname)' '
+@test 'Root' (_tide_decolor (sudo fish -c "source $sourceFile;_tide_item_context")) = 'root@'(prompt_hostname)' '
