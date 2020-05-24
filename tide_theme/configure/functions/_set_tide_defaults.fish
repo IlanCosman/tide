@@ -68,6 +68,8 @@ function _set_tide_defaults
     # ---------------Time---------------
     _set tide_time_color 5F8787
     _set tide_time_format '%T'
+
+    cat "$_tide_dir/configure/fish_prompt.fish" >>"$__fish_config_dir/functions/fish_prompt.fish"
 end
 
 function _set -a var_name

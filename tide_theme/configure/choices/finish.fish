@@ -1,5 +1,7 @@
 function finish
-    _title 'Overwrite tide config?'
+    set_color red
+    _title 'Overwrite tide config and fish_prompt?'
+    set_color normal
 
     _option y 'Yes'
     printf '%b' '\n\n'
@@ -9,7 +11,6 @@ function finish
 
     switch (_menu 'Choice' y/n)
         case y
-
             _set_tide_defaults
 
             if test -n "$fake_tide_time_format"
