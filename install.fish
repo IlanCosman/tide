@@ -21,6 +21,7 @@ function tide_install
         git clone -q --depth=1 -b $location https://github.com/IlanCosman/tide.git $tempDir
     end
 
+    cp -r "$tempDir/completions" $__fish_config_dir
     cp -r "$tempDir/conf.d" $__fish_config_dir
     cp -r "$tempDir/functions" $__fish_config_dir
     cp -r "$tempDir/tide_theme" $__fish_config_dir
@@ -35,12 +36,9 @@ function tide_install
     end
 
     # --------------------Set Defaults--------------------
-    # Add contents of conf.d and functions to a list for uninstallation
     set -U _tide_file_list
-    for file in $tempDir/{conf.d/*, functions/*}
-        if test "$file" != "$tempDir/functions/fish_prompt.fish"
-            set -a _tide_file_list (string replace "$tempDir/" '' $file)
-        end
+    for file in $tempDir/{completions/*, conf.d/*, functions/*}
+        set -a _tide_file_list (string replace "$tempDir/" '' $file)
     end
 
     source "$__fish_config_dir/tide_theme/configure/functions/_set_tide_defaults.fish"

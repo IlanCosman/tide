@@ -1,6 +1,6 @@
 function tide -a subcommand
     set -l tideSubcommand "tide_$subcommand"
-    set -l tideCommands 'configure' 'uninstall' 'help'
+    set -l tideCommands (basename -a -s '.fish' $_tide_dir/functions/*)
 
     if contains $subcommand $tideCommands
         source "$_tide_dir/functions/$subcommand.fish"

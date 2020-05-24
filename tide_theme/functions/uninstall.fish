@@ -19,7 +19,7 @@ function tide_uninstall
     end
 
     for file in $_tide_file_list
-        rm "$__fish_config_dir/$file"
+        rm -f "$__fish_config_dir/$file"
     end
 
     # -----------------------------Erase Theme Variables------------------------------
