@@ -1,68 +1,42 @@
 function _tide_item_pwd
-    set -l splitPwd (string split --no-empty '/' (_truncate_pwd))
-    set -l splitPwdLength (count $splitPwd)
+    set -l pwd (string replace $HOME '~' $PWD)
+    set -l colorPwd $pwd
+    set -l splitPwd (string split '/' $pwd)
+    set -l splitGitDir (string split '/' (string replace $HOME '~' $git_dir))
+    set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
+
+    set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
+    set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
+    set -l colorEndDirs (set_color -o $tide_pwd_color_end_dirs)
+
+    set -l anchors 1 (count $splitPwd) (count $splitGitDir)
 
     if not test -w $PWD
         set_color $tide_pwd_color_mid_dirs
         printf '%s' {$tide_pwd_unwritable_icon}' '
-        set_color $fish_color_normal
     end
 
-    if test "$splitPwd[1]" != '~'
-        set_color $tide_pwd_color_mid_dirs
-        printf '%s' '/'
-        set_color $fish_color_normal
-    end
+    for dir in $splitPwd
+        set -l index (contains -i $dir $splitPwd)
 
-    set_color -o $tide_pwd_color_end_dirs
-    printf '%s' "$splitPwd[1]"
-    set_color $fish_color_normal
+        if contains $index $anchors
+            set colorPwd (string replace $dir "$colorEndDirs"$dir(set_color normal) $colorPwd)
+        else
+            if test (string length $pwd) -gt $maxLength
+                set -l dirTruncated (string sub -l 1 $dir)
+                if test $dirTruncated = '.'
+                    set dirTruncated (string sub -l 2 $dir)
+                end
 
-    if test $splitPwdLength -gt 1
-        set_color $tide_pwd_color_mid_dirs
-        printf '%s' '/'
-        set_color $fish_color_normal
-    end
+                set pwd (string replace $dir $dirTruncated $pwd)
 
-    if test $splitPwdLength -gt 2
-        set_color $tide_pwd_color_mid_dirs
-        printf '%s' (string join '/' $splitPwd[2..-2])'/'
-        set_color $fish_color_normal
-    end
-
-    if test $splitPwdLength -gt 1
-        set_color -o $tide_pwd_color_end_dirs
-        printf '%s' "$splitPwd[-1]"
-        set_color $fish_color_normal
-    end
-
-    printf '%s' ' '
-end
-
-function _truncate_pwd
-    set -l pwd (string replace $HOME '~' $PWD)
-    set -l colorPwd $pwd
-    set -l splitPwd (string split --no-empty '/' $pwd)
-    set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
-
-    if test (string length $pwd) -gt $maxLength
-        for dir in $splitPwd[2..-2]
-            set -l dirTruncated (string sub -l 1 $dir)
-            if test $dirTruncated = '.'
-                set dirTruncated (string sub -l 2 $dir)
-            end
-
-            set pwd (string replace $dir $dirTruncated $pwd)
-
-            set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
-            set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
-            set colorPwd (string replace $dir "$colorTruncatedDirs"$dirTruncated"$colorMidDirs" $colorPwd)
-
-            if test (string length $pwd) -lt $maxLength
-                break
+                set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
+                set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
+                set colorPwd (string replace $dir "$colorTruncatedDirs"$dirTruncated $colorPwd)
             end
         end
     end
 
-    printf '%s' "$colorPwd"
+    set colorPwd (string replace -a '/' "$colorMidDirs"'/' $colorPwd)
+    printf '%s ' $colorPwd
 end
