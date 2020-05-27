@@ -2,7 +2,7 @@ function _tide_item_pwd
     set -l pwd (string replace $HOME '~' $PWD)
     set -l colorPwd $pwd
     set -l splitPwd (string split '/' $pwd)
-    set -l splitGitDir (string split '/' (string replace $HOME '~' $git_dir))
+    set -l splitGitDir (string replace $HOME '~' $git_dir | string split '/')
     set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
     set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)

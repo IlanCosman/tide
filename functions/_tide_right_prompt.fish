@@ -1,5 +1,5 @@
 function _tide_right_prompt
-    set -l splitText (string split '\n' (_fetch_right_prompt_items))
+    set -l splitText (_fetch_right_prompt_items | string split '\n')
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     for thing in $splitText[1..-2]
@@ -32,8 +32,9 @@ function _fetch_right_prompt_items
 end
 
 function _print_at_end -a text
-    set -l startLocation (math $COLUMNS -(string length (_tide_decolor $text)))
+    set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
     _cursor_right $startLocation
+
     printf '%s' $text
 
     printf '%b' '\v'
