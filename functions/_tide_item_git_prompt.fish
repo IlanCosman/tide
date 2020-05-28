@@ -1,3 +1,5 @@
 function _tide_item_git_prompt
-    fish_git_prompt '%s '
+    if test -n "$git_dir"
+        fish_git_prompt '%s '
+    end
 end
