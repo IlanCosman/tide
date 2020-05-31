@@ -1,4 +1,4 @@
-# Tide ![Fish_Version_Shield](https://img.shields.io/badge/fish-3.1.0-blue)
+# 🌊 Tide ![Fish_Version_Shield](https://img.shields.io/badge/fish-3.1.0-blue)
 
 Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
 
@@ -16,7 +16,7 @@ curl -sL git.io/tide-fish | source; and tide_install
 
 ### Multi-Line Right Prompt
 
-> Fish cant do _that_ yet can it?
+> Fish can't do _that_ yet can it?
 
 ![Multi-Line_Right_Prompt](/media/images/Multi-Line_Right_Prompt.png)
 
@@ -32,6 +32,10 @@ If there isn't a prompt item that fits your needs, make your own!
 
 ![Extensible](/media/images/Extensible.png)
 
+# Contributing
+
+If you're interested in helping contribute to Tide, please take a look at the [Contributing Guide](https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md).
+
 # Configuration
 
 Tide variables that users are encouraged to modify begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
@@ -44,7 +48,7 @@ Tide variables that users are encouraged to modify begin with the string `tide_`
 | left_prompt_items  | order of the left prompt items to display  | 'pwd' 'git_prompt' 'newline' 'prompt_char' |
 | right_prompt_items | order of the right prompt items to display | 'status' 'cmd_duration' 'context' 'jobs'   |
 
-### prompt connection
+### prompt_connection
 
 | Variable                | Description                                                           | Default |
 | ----------------------- | --------------------------------------------------------------------- | ------- |
