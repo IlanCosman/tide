@@ -45,7 +45,10 @@ function tide_install
     _set_tide_defaults
 
     # -----------------------Finish-----------------------
-    _source_tide_functions
+    for file in $_tide_file_list
+        source "$__fish_config_dir/$file"
+    end
+    source "$__fish_config_dir/functions/fish_prompt.fish"
 
     set_color $_tide_color_green
     printf '%s\n' 'Tide theme installed!'
@@ -60,13 +63,6 @@ function tide_install
     end
 
     rm -rf $tempDir
-end
-
-function _source_tide_functions
-    for file in $_tide_file_list
-        source "$__fish_config_dir/$file"
-    end
-    source "$__fish_config_dir/functions/fish_prompt.fish"
 end
 
 function _user_confirm_defaultYes -a question
