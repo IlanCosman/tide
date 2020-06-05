@@ -2,23 +2,21 @@ function _tide_item_pwd
     set -l pwd (string replace $HOME '~' $PWD)
     set -l colorPwd $pwd
     set -l splitPwd (string split '/' $pwd)
-    set -l splitGitDir (string replace $HOME '~' $git_dir | string split '/')
     set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
     set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
-    set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
-    set -l colorEndDirs (set_color -o $tide_pwd_color_end_dirs)
+    set -l colorMidDirs (set_color $tide_pwd_color_dirs)
+    set -l colorEndDirs (set_color -o $tide_pwd_color_anchors)
 
-    set -l anchors 1 (count $splitPwd) (count $splitGitDir)
+    set -l anchors (_parse_anchors $splitPwd)
 
     if not test -w $PWD
-        set_color $tide_pwd_color_mid_dirs
+        set_color $tide_pwd_color_dirs
         printf '%s' {$tide_pwd_unwritable_icon}' '
     end
 
     for dir in $splitPwd
         set -l index (contains -i $dir $splitPwd)
-
         if contains $index $anchors
             set colorPwd (string replace $dir "$colorEndDirs"$dir(set_color normal) $colorPwd)
         else
@@ -31,7 +29,7 @@ function _tide_item_pwd
                 set pwd (string replace $dir $dirTruncated $pwd)
 
                 set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
-                set -l colorMidDirs (set_color $tide_pwd_color_mid_dirs)
+                set -l colorMidDirs (set_color $tide_pwd_color_dirs)
                 set colorPwd (string replace $dir "$colorTruncatedDirs"$dirTruncated $colorPwd)
             end
         end
@@ -39,4 +37,20 @@ function _tide_item_pwd
 
     set colorPwd (string replace -a '/' "$colorMidDirs"'/' $colorPwd)
     printf '%s ' $colorPwd
+end
+
+function _parse_anchors
+    set -l splitGitDir (string replace $HOME '~' $git_dir | string split '/')
+
+    set -l anchors
+    if contains 'first' $tide_pwd_anchors
+        set -a anchors 1
+    end
+    if contains 'last' $tide_pwd_anchors
+        set -a anchors (count $argv)
+    end
+    if contains 'git' $tide_pwd_anchors
+        set -a anchors (count $splitGitDir)
+    end
+    printf '%s\n' $anchors
 end

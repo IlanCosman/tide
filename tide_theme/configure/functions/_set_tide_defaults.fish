@@ -28,8 +28,9 @@ function _set_tide_defaults
     # ----------------Pwd----------------
     _set tide_pwd_truncate_margin 5
     _set tide_pwd_unwritable_icon '' # Lock
-    _set tide_pwd_color_end_dirs $_tide_color_light_blue
-    _set tide_pwd_color_mid_dirs $_tide_color_dark_blue
+    _set tide_pwd_anchors 'first' 'last' 'git'
+    _set tide_pwd_color_anchors $_tide_color_light_blue
+    _set tide_pwd_color_dirs $_tide_color_dark_blue
     _set tide_pwd_color_truncated_dirs 8787AF
     # ------------Git prompt------------
     _set __fish_git_prompt_show_informative_status true
