@@ -35,6 +35,7 @@ function _tide_item_pwd
         end
     end
 
+    set colorPwd $colorMidDirs$colorPwd
     set colorPwd (string replace -a '/' "$colorMidDirs"'/' $colorPwd)
     printf '%s ' $colorPwd
 end
