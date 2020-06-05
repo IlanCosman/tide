@@ -134,7 +134,7 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 
 `Sauce Code Pro`—a nerd-fonts patched version of the legendary Source Code Pro—is the recommended font for Tide.
 
-#### Installation
+### Installation
 
 Download these four ttf files:
 
