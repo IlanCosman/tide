@@ -6,11 +6,13 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
 
 # Installation
 
-Source and run the install function:
+1. Install the [recommended font](#Fonts) _Optional but highly recommended_
 
-```fish
-curl -sL git.io/tide-fish | source; and tide_install
-```
+2. Source and run the install function:
+
+   ```fish
+   curl -sL git.io/tide-fish | source; and tide_install
+   ```
 
 # Features
 
@@ -130,13 +132,15 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 
 # Fonts
 
-The nerd-fonts patched version of Source Code Pro is the recommended font for Tide.
+`Sauce Code Pro`—a nerd-fonts patched version of the legendary Source Code Pro—is the recommended font for Tide.
+
+#### Installation
 
 Download these four ttf files:
 
-- [Source Code Pro Regular.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf)
-- [Source Code Pro Bold.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf)
-- [Source Code Pro Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf)
-- [Source Code Pro Bold-Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf)
+- [Sauce Code Pro Regular.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf)
+- [Sauce Code Pro Bold.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf)
+- [Sauce Code Pro Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf)
+- [Sauce Code Pro Bold-Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf)
 
-Open each file and click "Install". This will make the `Source Code Pro` font available to all applications on your system. Configure your terminal to use this font.
+Open each file and click "Install". This will make the `Sauce Code Pro` font available to all applications on your system. Configure your terminal to use this font.
