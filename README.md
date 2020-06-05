@@ -6,7 +6,7 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
 
 # Installation
 
-1. Install the [recommended font](#Fonts) _Optional but highly recommended_
+1. Install the [recommended font](#Fonts). _Optional but highly recommended_
 
 2. Source and run the install function:
 
