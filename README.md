@@ -127,3 +127,16 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 | ----------- | ---------------------- | ------- |
 | time_color  | color of time display  | 5F8787  |
 | time_format | format of time display | '%T'    |
+
+# Fonts
+
+The nerd-fonts patched version of Source Code Pro is the recommended font for Tide.
+
+Download these four ttf files:
+
+- [Source Code Pro Regular.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf)
+- [Source Code Pro Bold.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf)
+- [Source Code Pro Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf)
+- [Source Code Pro Bold-Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf)
+
+Open each file and click "Install". This will make the `Source Code Pro` font available to all applications on your system. Configure your terminal to use this font.
