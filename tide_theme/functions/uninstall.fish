@@ -18,6 +18,10 @@ function tide_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
+    for func in (cat "$__fish_config_dir/conf.d/_tide_Ω_run.fish")
+        functions -e $func
+    end
+
     for file in $_tide_file_list
         rm -f "$__fish_config_dir/$file"
     end
