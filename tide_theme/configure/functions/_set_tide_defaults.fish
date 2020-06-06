@@ -19,7 +19,6 @@ function _set_tide_defaults
 
     # --------------------Prompt Items--------------------
     _set tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
-    _set _tide_left_prompt_height 2
     _set tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
     # ------------Prompt Char------------
     _set tide_prompt_char_success_color $_tide_color_green
