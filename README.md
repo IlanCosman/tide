@@ -1,4 +1,8 @@
-# 🌊 Tide ![Fish_Version_Shield](https://img.shields.io/badge/fish-3.1.0-blue)
+# 🌊 Tide ![release_shield] ![fish_version_shield] ![license_shield]
+
+[release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
+[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0-blue
+[license_shield]: https://img.shields.io/github/license/IlanCosman/tide
 
 Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
 
