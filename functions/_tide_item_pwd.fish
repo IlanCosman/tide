@@ -4,9 +4,9 @@ function _tide_item_pwd
     set -l splitPwd (string split '/' $pwd)
     set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
-    set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
-    set -l colorMidDirs (set_color $tide_pwd_color_dirs)
-    set -l colorEndDirs (set_color -o $tide_pwd_color_anchors)
+    set -l dirColor (set_color $tide_pwd_color_dirs)
+    set -l truncatedDirColor (set_color $tide_pwd_color_truncated_dirs)
+    set -l anchorColor (set_color -o $tide_pwd_color_anchors)
 
     set -l anchors (_parse_anchors $splitPwd)
 
@@ -18,7 +18,7 @@ function _tide_item_pwd
     for dir in $splitPwd
         set -l index (contains -i $dir $splitPwd)
         if contains $index $anchors
-            set colorPwd (string replace $dir "$colorEndDirs"$dir(set_color normal) $colorPwd)
+            set colorPwd (string replace $dir "$anchorColor"$dir(set_color normal) $colorPwd)
         else
             if test (string length $pwd) -gt $maxLength
                 set -l dirTruncated (string sub -l 1 $dir)
@@ -27,16 +27,13 @@ function _tide_item_pwd
                 end
 
                 set pwd (string replace $dir $dirTruncated $pwd)
-
-                set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs)
-                set -l colorMidDirs (set_color $tide_pwd_color_dirs)
-                set colorPwd (string replace $dir "$colorTruncatedDirs"$dirTruncated $colorPwd)
+                set colorPwd (string replace $dir "$truncatedDirColor"$dirTruncated $colorPwd)
             end
         end
     end
 
-    set colorPwd $colorMidDirs$colorPwd
-    set colorPwd (string replace -a '/' "$colorMidDirs"'/' $colorPwd)
+    set colorPwd $dirColor$colorPwd
+    set colorPwd (string replace -a '/' "$dirColor"'/' $colorPwd)
     printf '%s ' $colorPwd
 end
 
