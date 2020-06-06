@@ -1,7 +1,7 @@
 function _tide_item_pwd
     set -l pwd (string replace $HOME '~' $PWD)
     set -l colorPwd $pwd
-    set -l splitPwd (string split '/' $pwd)
+    set -l splitPwd (string split --no-empty '/' $pwd)
     set -l maxLength (math $COLUMNS-$tide_pwd_truncate_margin)
 
     set -l dirColor (set_color $tide_pwd_color_dirs)
@@ -38,7 +38,7 @@ function _tide_item_pwd
 end
 
 function _parse_anchors
-    set -l splitGitDir (string replace $HOME '~' $git_dir | string split '/')
+    set -l splitGitDir (string replace $HOME '~' $git_dir | string split --no-empty '/')
 
     set -l anchors
     if contains 'first' $tide_pwd_anchors
