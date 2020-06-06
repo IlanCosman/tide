@@ -3,8 +3,6 @@ function fish_prompt --description 'Write out the prompt'
     set -g last_pipestatus $pipestatus
     set -g last_status $status
 
-    set -g git_dir (git rev-parse --show-toplevel 2>/dev/null)
-
     if test "$tide_newline" = 'true'
         printf '%b' '\n'
     end
