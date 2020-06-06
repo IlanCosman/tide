@@ -106,13 +106,14 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 
 ### pwd
 
-| Variable                 | Description                                                              | Default        |
-| ------------------------ | ------------------------------------------------------------------------ | -------------- |
-| pwd_truncate_margin      | number of columns distance to maintain between pwd and edge of terminal  | 5              |
-| pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon |
-| pwd_color_end_dirs       | color of first and last directories                                      | 00AFFF         |
-| pwd_color_mid_dirs       | color of directories between first and last                              | 0087AF         |
-| pwd_color_truncated_dirs | color of directories that get truncated when pwd is too long             | 8787AF         |
+| Variable                 | Description                                                              | Default              |
+| ------------------------ | ------------------------------------------------------------------------ | -------------------- |
+| pwd_anchors              | Directories displayed in bold and immune to truncation                   | 'first' 'last' 'git' |
+| pwd_color_anchors        | color of anchors                                                         | 00AFFF               |
+| pwd_truncate_margin      | number of columns distance to maintain between pwd and edge of terminal  | 10                   |
+| pwd_color_truncated_dirs | color of truncated directories                                           | 8787AF               |
+| pwd_color_dirs           | color of normal directories                                              | 0087AF               |
+| pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon       |
 
 ### status
 

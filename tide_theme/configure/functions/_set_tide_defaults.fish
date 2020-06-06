@@ -26,7 +26,7 @@ function _set_tide_defaults
     _set tide_prompt_char_failure_color FF0000
     _set tide_prompt_char_icon '❯'
     # ----------------Pwd----------------
-    _set tide_pwd_truncate_margin 5
+    _set tide_pwd_truncate_margin 10
     _set tide_pwd_unwritable_icon '' # Lock
     _set tide_pwd_anchors 'first' 'last' 'git'
     _set tide_pwd_color_anchors $_tide_color_light_blue
