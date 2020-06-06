@@ -1,8 +1,8 @@
 @mesg '------------status------------'
 
 function _status
-    set -g last_pipestatus $pipestatus
-    set -g last_status $status
+    set -g _tide_last_pipestatus $pipestatus
+    set -g _tide_last_status $status
     _tide_decolor (_tide_item_status)
 end
 

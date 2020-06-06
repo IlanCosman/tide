@@ -1,7 +1,7 @@
 # Created by tide configure
 function fish_prompt --description 'Write out the prompt'
-    set -g last_pipestatus $pipestatus
-    set -g last_status $status
+    set -g _tide_last_pipestatus $pipestatus
+    set -g _tide_last_status $status
 
     if test "$tide_newline" = 'true'
         printf '%b' '\n'
