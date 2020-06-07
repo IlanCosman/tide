@@ -6,10 +6,12 @@ function tide_help -a subcommand
     set -g subcommandList \
         'configure' \
         'uninstall' \
+        'bug-report' \
         'help'
     set -g descriptionList \
         'run interactive configuration wizard' \
         'uninstall tide theme' \
+        'print tide configuration for use in bug reports' \
         'print this help message'
 
     if contains $subcommand $subcommandList
