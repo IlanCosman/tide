@@ -13,9 +13,7 @@ function _tide_pwd
     set -l truncatedList '.' $_tide_split_pwd
 
     for dir in $_tide_split_pwd
-        set -l index (contains -i $dir $_tide_split_pwd)
-
-        if contains $index $_tide_pwd_anchors
+        if contains $dir $_tide_pwd_anchors
             set _tide_pwd_output (string replace $dir "$_tide_pwd_anchor_color"$dir(set_color normal) $_tide_pwd_output)
         else
             if test (string length $truncatedPwd) -gt $_tide_pwd_max_length
