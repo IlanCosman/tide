@@ -7,6 +7,7 @@ function _set_tide_defaults
     set -l tideColorDarkerGreen 5FAF00
 
     # ---------------General Theme Variables---------------
+    _set _tide_version 1.3.0
     _set _tide_dir "$__fish_config_dir/tide_theme"
     _set tide_newline 'true'
     # --------------Colors--------------
