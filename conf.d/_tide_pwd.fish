@@ -3,7 +3,7 @@ function _tide_pwd
     set -g _tide_pwd_output $_tide_pwd
 
     if not test -w $PWD
-        set _tide_pwd_output $_tide_pwd_dir_color{$tide_pwd_unwritable_icon}' '$_tide_pwd_output
+        set _tide_pwd_output $_tide_pwd_dir_color{$tide_pwd_unwritable_icon} $_tide_pwd_output
     end
 
     set -l truncatedList '.' $_tide_split_pwd
