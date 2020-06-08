@@ -24,10 +24,7 @@ function _fetch_right_prompt_items
     printf '%s' ' '
 
     for item in _tide_item_{$tide_right_prompt_items}
-        set -l itemOutput ($item)
-        printf '%s' "$itemOutput"
-
-        set_color normal
+        printf '%s' ($item)$_tide_color_normal
     end
 end
 

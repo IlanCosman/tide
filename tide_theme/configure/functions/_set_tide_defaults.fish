@@ -14,6 +14,7 @@ function _set_tide_defaults
     _set _tide_color_green 5FD700
     _set _tide_color_light_blue 00AFFF
     _set _tide_color_dark_blue 0087AF
+    _set _tide_color_normal (set_color normal)
     # ---------Prompt Connection---------
     _set tide_prompt_connection_color 6C6C6C
     _set tide_prompt_connection_icon ' '
