@@ -1,6 +1,6 @@
 function _tide_pwd
     set -l truncatedPwd $_tide_pwd
-    set -g _tide_pwd_output $_tide_pwd
+    set -g _tide_pwd_output (set_color $tide_pwd_color_dirs)$_tide_pwd
 
     if not test -w $PWD
         set -p _tide_pwd_output (set_color $tide_pwd_color_dirs){$tide_pwd_unwritable_icon}

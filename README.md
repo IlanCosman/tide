@@ -116,6 +116,7 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 | pwd_color_anchors        | color of anchors                                                         | 00AFFF               |
 | pwd_truncate_margin      | number of columns distance to maintain between pwd and edge of terminal  | 10                   |
 | pwd_color_truncated_dirs | color of truncated directories                                           | 8787AF               |
+| pwd_max_dirs             | max number of directories to display, setting to 0 or less will disable  | 0                    |
 | pwd_color_dirs           | color of normal directories                                              | 0087AF               |
 | pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon       |
 
