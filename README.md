@@ -20,17 +20,17 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
 
 # Features
 
-### Multi-Line Right Prompt
-
-> Fish can't do _that_ yet can it?
-
-![Multi-Line_Right_Prompt](/media/images/Multi-Line_Right_Prompt.png)
-
 ### Configuration Wizard
 
 Type `tide configure` to open the the wizard in your terminal.
 
 ![Configuration_Wizard](/media/gifs/Configuration_Wizard.gif)
+
+### Multi-Line Right Prompt
+
+> Fish can't do _that_ yet can it?
+
+![Multi-Line_Right_Prompt](/media/images/Multi-Line_Right_Prompt.png)
 
 ### Extensible
 

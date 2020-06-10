@@ -32,8 +32,5 @@ function _print_at_end -a text
     set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
     _cursor_right $startLocation
 
-    printf '%s' $text
-
-    printf '%b' '\v'
-    printf '%b' '\r'
+    printf '%s%b' $text '\v\r'
 end

@@ -1,8 +1,8 @@
 function _tide_pwd_var_change -v PWD
-    set -l blah_pwd (string replace $HOME '~' $PWD)
-    set -l blah_split_pwd (string split --no-empty '/' $blah_pwd)
+    set -l preMaxDirsPwd (string replace $HOME '~' $PWD)
+    set -l preMaxDirsPwdSplit (string split --no-empty '/' $preMaxDirsPwd)
 
-    set -g _tide_split_pwd $blah_split_pwd[(math -$tide_pwd_max_dirs)..-1]
+    set -g _tide_split_pwd $preMaxDirsPwdSplit[(math -$tide_pwd_max_dirs)..-1]
     set -g _tide_pwd (string join '/' $_tide_split_pwd)
 
     set -g _tide_git_dir (git rev-parse --show-toplevel 2>/dev/null)

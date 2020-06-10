@@ -10,7 +10,8 @@ function _tide_item_status
                 set_color $tide_status_failure_color
                 printf '%s ' {$tide_status_failure_icon}
             end
-            printf '%s ' (string replace 'SIG' '' $fishPipestatusWithSignal | string join '|')
+            string replace 'SIG' '' $fishPipestatusWithSignal | string join '|'
+            printf '%s' ' '
         end
     end
 end

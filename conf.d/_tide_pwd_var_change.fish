@@ -16,7 +16,7 @@ function _tide_pwd_var_change -v PWD
         set -a _tide_pwd_anchors $_tide_split_pwd[-1]
     end
     if contains 'git' $tide_pwd_anchors
-        set -a _tide_pwd_anchors (string replace $HOME '~' $_tide_git_dir | string split --no-empty -r -m1 '/')[-1]
+        set -a _tide_pwd_anchors (string replace $HOME '~' $_tide_git_dir | string split --no-empty -r -m1 '/')[2]
     end
 
     _tide_pwd
