@@ -1,7 +1,7 @@
 # 🌊 Tide ![release_shield] ![fish_version_shield] ![license_shield]
 
 [release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
-[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0-blue
+[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [license_shield]: https://img.shields.io/github/license/IlanCosman/tide
 
 Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
@@ -116,7 +116,7 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 | pwd_color_anchors        | color of anchors                                                         | 00AFFF               |
 | pwd_truncate_margin      | start truncating when pwd is this many columns from terminal edge        | 10                   |
 | pwd_color_truncated_dirs | color of truncated directories                                           | 8787AF               |
-| pwd_max_dirs             | max number of directories to display, setting to 0 or less will disable  | 0                    |
+| pwd_max_dirs             | max number of directories to display, 0 or less equals unlimited         | 0                    |
 | pwd_color_dirs           | color of normal directories                                              | 0087AF               |
 | pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon       |
 
