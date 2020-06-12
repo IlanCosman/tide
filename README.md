@@ -1,10 +1,12 @@
-# 🌊 Tide ![release_shield] ![fish_version_shield] ![license_shield]
+# 🌊 Tide [![release_shield]][releases] [![fish_version_shield]](#System-Requirements) [![license_shield]][license]
 
 [release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
+[releases]: https://github.com/IlanCosman/tide/releases
 [fish_version_shield]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [license_shield]: https://img.shields.io/github/license/IlanCosman/tide
+[license]: https://github.com/IlanCosman/tide/blob/master/LICENSE
 
-Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
+Tide is a [Fish](https://github.com/fish-shell/fish-shell) theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
 
 ![Prompt_Connection](/media/images/Prompt_Connection.png)
 
@@ -17,6 +19,11 @@ Tide is a Fish theme inspired by [Powerlevel10k](https://github.com/romkatv/powe
    ```fish
    curl -sL git.io/tide-fish | source; and tide_install
    ```
+
+### System Requirements
+
+- [fish](https://github.com/fish-shell/fish-shell) ≥3.1
+- [git](https://github.com/git/git)
 
 # Features
 
