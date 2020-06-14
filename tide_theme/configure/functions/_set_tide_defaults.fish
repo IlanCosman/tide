@@ -1,20 +1,14 @@
 function _set_tide_defaults
     set -U _tide_var_list
-    set -a _tide_var_list _tide_file_list
 
     # -------------------Local Variables-------------------
     set -l tideColorGold D7AF00
     set -l tideColorDarkerGreen 5FAF00
 
     # ---------------General Theme Variables---------------
-    _set _tide_version 1.3.0
-    _set _tide_dir "$__fish_config_dir/tide_theme"
+
     _set tide_newline 'true'
-    # --------------Colors--------------
-    _set _tide_color_green 5FD700
-    _set _tide_color_light_blue 00AFFF
-    _set _tide_color_dark_blue 0087AF
-    _set _tide_color_normal (set_color normal)
+
     # ---------Prompt Connection---------
     _set tide_prompt_connection_color 6C6C6C
     _set tide_prompt_connection_icon ' '

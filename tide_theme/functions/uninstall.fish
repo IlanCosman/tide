@@ -27,6 +27,11 @@ function tide_uninstall
     end
 
     # -----------------------------Erase Theme Variables------------------------------
+    for var in $_tide_var_immutable_list
+        set -e $var
+    end
+    set -e _tide_var_immutable_list
+
     for var in $_tide_var_list
         set -e $var
     end

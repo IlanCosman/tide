@@ -47,6 +47,8 @@ function tide_install
         set -a _tide_file_list (string replace "$tempDir/" '' $file)
     end
 
+    _set_immutables
+
     source "$__fish_config_dir/tide_theme/configure/functions/_set_tide_defaults.fish"
     _set_tide_defaults
 
@@ -69,6 +71,24 @@ function tide_install
     end
 
     rm -rf $tempDir
+end
+
+function _set_immutables
+    set -U _tide_var_immutable_list
+    set -a _tide_var_immutable_list _tide_file_list
+
+    _set_immutable _tide_version 1.3.0
+    _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
+    # --------------Colors--------------
+    _set_immutable _tide_color_green 5FD700
+    _set_immutable _tide_color_light_blue 00AFFF
+    _set_immutable _tide_color_dark_blue 0087AF
+    _set_immutable _tide_color_normal (set_color normal)
+end
+
+function _set_immutable -a var_name
+    set -U $var_name $argv[2..-1]
+    set -a _tide_var_immutable_list $var_name
 end
 
 function _user_confirm_defaultYes -a question
