@@ -22,7 +22,7 @@ end
 
 function _begin
     _set_defaults
-    _next_choice 'show_time'
+    _next_choice 'style'
 end
 
 function _set_defaults

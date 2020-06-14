@@ -17,17 +17,25 @@ function finish
                 set -a tide_right_prompt_items 'time'
             end
 
-            set -l vars tide_{ \
-                newline, \
-                left_prompt_items, \
-                prompt_connection_color, prompt_connection_icon, \
-                time_format \
-            }
 
-            for var in $vars
+            for var in $_tide_var_list
                 set -l fakeVar "fake_$var"
-                set -U $var $$fakeVar
+                if set -q $fakeVar
+                    set -U $var $$fakeVar
+                end
             end
+
+            # set -l vars tide_{ \
+            #     newline, \
+            #     left_prompt_items, \
+            #     prompt_connection_color, prompt_connection_icon, \
+            #     time_format \
+            # }
+
+            # for var in $vars
+            #     set -l fakeVar "fake_$var"
+            #     set -U $var $$fakeVar
+            # end
         case n
     end
 
