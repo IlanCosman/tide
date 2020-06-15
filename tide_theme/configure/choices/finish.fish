@@ -11,32 +11,18 @@ function finish
 
     switch (_menu 'Choice' y/n)
         case y
-            _set_tide_defaults
-
-            if test -n "$fake_tide_time_format"
-                set -a tide_right_prompt_items 'time'
-            end
-
-
             for var in $_tide_var_list
-                set -l fakeVar "fake_$var"
-                if set -q $fakeVar
-                    set -U $var $$fakeVar
-                end
+                set -e $var
+            end
+            set _tide_var_list
+
+            for fakeVar in $fake_tide_var_list
+                set -l normalVar (string replace 'fake_' '' $fakeVar)
+                set -U $normalVar $$fakeVar
+                set -a _tide_var_list $normalVar
             end
 
-            # set -l vars tide_{ \
-            #     newline, \
-            #     left_prompt_items, \
-            #     prompt_connection_color, prompt_connection_icon, \
-            #     time_format \
-            # }
-
-            # for var in $vars
-            #     set -l fakeVar "fake_$var"
-            #     set -U $var $$fakeVar
-            # end
-        case n
+            cd .
     end
 
     _quit

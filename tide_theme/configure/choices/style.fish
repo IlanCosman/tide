@@ -11,7 +11,7 @@ function style
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu 'Choice' 1/2/r/q)
         case 1
             source "$_tide_dir/configure/configs/lean.fish"
             _next_choice 'show_time'
