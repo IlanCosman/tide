@@ -1,4 +1,6 @@
 function show_time
+    set -a fake_tide_right_prompt_items 'time'
+
     _title 'Show current time?'
 
     _option 1 'No'
@@ -15,6 +17,7 @@ function show_time
     switch (_menu 'Choice' 1/2/3/r/q)
         case 1
             set -g fake_tide_time_format ''
+            set -e fake_tide_right_prompt_items[-1]
             _next_choice 'prompt_height'
         case 2
             set -g fake_tide_time_format '%T'
