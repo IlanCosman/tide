@@ -38,14 +38,17 @@ _set fake_tide_pwd_color_truncated_dirs 8787AF
 _set fake___fish_git_prompt_showupstream true
 _set fake___fish_git_prompt_showdirtystate true
 # -------Symbols-------
+_set fake___fish_git_prompt_char_stateseparator ''
+_set fake___fish_git_prompt_char_upstream_equal ''
 _set fake___fish_git_prompt_char_upstream_ahead ' ⇡'
 _set fake___fish_git_prompt_char_upstream_behind ' ⇣'
-_set fake___fish_git_prompt_char_stagedstate ' +'
-_set fake___fish_git_prompt_char_dirtystate '*'
+_set fake___fish_git_prompt_char_upstream_diverged ' ⇡⇣'
+_set fake___fish_git_prompt_char_dirtystate ''
+_set fake___fish_git_prompt_char_stagedstate '*'
 # --------Colors--------
 _set fake___fish_git_prompt_color_branch brblack
 _set fake___fish_git_prompt_color_upstream cyan
-_set fake___fish_git_prompt_color_dirtystate brblack
+_set fake___fish_git_prompt_color_stagedstate brblack
 # --------------Status--------------
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
