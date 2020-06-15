@@ -20,6 +20,7 @@ function finish
                 set -l normalVar (string replace 'fake_' '' $fakeVar)
                 set -U $normalVar $$fakeVar
                 set -a _tide_var_list $normalVar
+                set -e $fakeVar
             end
 
             cd .

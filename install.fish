@@ -49,8 +49,13 @@ function tide_install
 
     _set_immutables
 
-    source "$__fish_config_dir/tide_theme/configure/functions/_set_tide_defaults.fish"
-    _set_tide_defaults
+    source "$_tide_dir/configure/configs/lean.fish"
+    for fakeVar in $fake_tide_var_list
+        set -l normalVar (string replace 'fake_' '' $fakeVar)
+        set -U $normalVar $$fakeVar
+        set -a _tide_var_list $normalVar
+        set -e $fakeVar
+    end
 
     # -----------------------Finish-----------------------
     for file in $_tide_file_list
