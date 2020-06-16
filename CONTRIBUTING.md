@@ -18,7 +18,7 @@ tide_install -ld ~/tide
 
 ## Testing
 
-The `tide_test` command runs tests from the `$__fish_config_dir/tests` folder using [fishtape](https://github.com/jorgebucaran/fishtape). Currently there are unit tests for most prompt items.
+The `tide_test` command runs tests from the `$__fish_config_dir/tests` folder using [fishtape]. Currently there are unit tests for most prompt items.
 
 Example:
 
@@ -31,3 +31,5 @@ tide_test status
 1. Fork this repository
 2. Make some changes, committing them along the way
 3. Create a pull request from your branch to `IlanCosman/tide`
+
+[fishtape]: https://github.com/jorgebucaran/fishtape
