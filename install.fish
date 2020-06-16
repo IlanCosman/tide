@@ -24,7 +24,7 @@ function tide_install
     if set -q _flag_local
         cp -rf "$location" "$tempDir"
     else
-        git clone -q --depth=1 -b $location https://github.com/IlanCosman/tide.git $tempDir
+        git clone -q --depth 1 -b $location https://github.com/IlanCosman/tide.git $tempDir
     end
 
     cp -r "$tempDir/completions" $__fish_config_dir
