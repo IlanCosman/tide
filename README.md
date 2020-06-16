@@ -41,6 +41,8 @@ Tide can produce the same prompt as [Pure]. Type `tide configure` and select the
 
 Tide doesn't recognize Pure configuration parameters, so you'll need to use `tide_cmd_duration_threshold=3000` instead of `pure_threshold_command_duration=3`, etc.
 
+Pure style is an exact replication of the Pure fish theme and therefore displays less information than Lean. It exists only to ease the migration for users of this theme. Unless you are one of them, choose Lean style over Pure.
+
 ### Extensible
 
 If there isn't a prompt item that fits your needs, make your own!
