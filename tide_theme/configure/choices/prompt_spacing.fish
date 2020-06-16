@@ -2,14 +2,13 @@ function prompt_spacing
     _title 'Prompt Spacing'
 
     _option 1 'Compact'
-    _display_prompt fake_tide_newline true
+    _display_prompt
     _cursor_up 1
-    _display_prompt fake_tide_newline false
+    _display_prompt
 
     _option 2 'Sparse'
-    _display_prompt fake_tide_newline true
-    _cursor_up 1
-    _display_prompt fake_tide_newline true
+    _display_prompt
+    _display_prompt
 
     _display_restart_and_quit
 
