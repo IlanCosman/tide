@@ -15,7 +15,7 @@ function tide_install
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Files-----------------
-    set -l tempDir '/tmp/tide_theme'
+    set -g tempDir '/tmp/tide_theme'
 
     # Copy/clone repository into $tempDir
     if test -e $tempDir
@@ -42,13 +42,9 @@ function tide_install
     end
 
     # --------------------Set Defaults--------------------
-    set -U _tide_file_list
-    for file in $tempDir/{completions/*, conf.d/*, functions/*}
-        set -a _tide_file_list (string replace "$tempDir/" '' $file)
-    end
-
     _set_immutables
 
+    set -U _tide_var_list
     source "$_tide_dir/configure/configs/lean.fish"
     for fakeVar in $fake_tide_var_list
         set -l normalVar (string replace 'fake_' '' $fakeVar)
@@ -76,11 +72,16 @@ function tide_install
     end
 
     rm -rf $tempDir
+    set -e tempDir
 end
 
 function _set_immutables
     set -U _tide_var_immutable_list
-    set -a _tide_var_immutable_list _tide_file_list
+
+    _set_immutable _tide_file_list
+    for file in $tempDir/{completions/*, conf.d/*, functions/*}
+        set -a _tide_file_list (string replace "$tempDir/" '' $file)
+    end
 
     _set_immutable _tide_version 1.3.0
     _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
