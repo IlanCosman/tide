@@ -4,7 +4,7 @@ Tide is a [Fish] theme inspired by [Powerlevel10k]. It aims to provide a powerfu
 
 ![Prompt_Connection]
 
-# Installation
+## Installation
 
 1. Install the [recommended font](#Fonts). _Optional but highly recommended_
 
@@ -19,7 +19,7 @@ Tide is a [Fish] theme inspired by [Powerlevel10k]. It aims to provide a powerfu
 - [fish] ≥3.1
 - [git]
 
-# Features
+## Features
 
 ### Configuration Wizard
 
@@ -47,11 +47,11 @@ If there isn't a prompt item that fits your needs, make your own!
 
 ![Extensible]
 
-# Contributing
+## Contributing
 
 If you're interested in helping contribute to Tide, please take a look at the [Contributing Guide][contributing_guide].
 
-# Configuration
+## Configuration
 
 Tide variables that users are encouraged to modify begin with the string `tide_`. Thus, variables in this section will be denoted as `example_variable` but will actually be `tide_example_variable`.
 
@@ -145,11 +145,11 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt]. Mo
 | time_color  | color of time display  | 5F8787  |
 | time_format | format of time display | '%T'    |
 
-# Fonts
+## Fonts
 
 `Sauce Code Pro`—a nerd-fonts patched version of the legendary Source Code Pro—is the recommended font for Tide.
 
-### Installation
+### Font Installation
 
 Download these four ttf files:
 
