@@ -39,6 +39,14 @@ Type `tide configure` to open the the wizard in your terminal.
 
 ![Multi-Line_Right_Prompt](/media/images/Multi-Line_Right_Prompt.png)
 
+### Pure Compatibility
+
+Tide can produce the same prompt as [Pure](https://github.com/rafaelrinaldi/pure). Type `tide configure` and select the Pure style.
+
+![Pure_Compatibility](/media/gifs/Pure_Compatibility.gif)
+
+Tide doesn't recognize Pure configuration parameters, so you'll need to use `tide_cmd_duration_threshold=3000` instead of `pure_threshold_command_duration=3`, etc.
+
 ### Extensible
 
 If there isn't a prompt item that fits your needs, make your own!
