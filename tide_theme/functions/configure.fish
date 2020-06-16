@@ -92,8 +92,8 @@ function _display_restart_and_quit
 end
 
 function _quit --on-signal INT
+    clear
     source "$__fish_config_dir/functions/fish_prompt.fish"
     source "$__fish_config_dir/functions/_tide_left_prompt.fish"
     source "$__fish_config_dir/functions/_tide_right_prompt.fish"
-    clear
 end

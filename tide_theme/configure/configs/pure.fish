@@ -28,7 +28,7 @@ _set fake_tide_prompt_char_failure_color red
 _set fake_tide_prompt_char_icon '❯'
 # ----------------Pwd----------------
 _set fake_tide_pwd_truncate_margin 10
-_set fake_tide_pwd_unwritable_icon '' # Lock
+_set fake_tide_pwd_unwritable_icon
 _set fake_tide_pwd_max_dirs 0
 _set fake_tide_pwd_anchors
 _set fake_tide_pwd_color_anchors $_tide_color_light_blue
