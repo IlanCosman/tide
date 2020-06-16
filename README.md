@@ -1,12 +1,6 @@
 # 🌊 Tide [![release_shield]][releases] [![fish_version_shield]](#System-Requirements) [![license_shield]][license]
 
-[release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
-[releases]: https://github.com/IlanCosman/tide/releases
-[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0%2B-blue
-[license_shield]: https://img.shields.io/github/license/IlanCosman/tide
-[license]: https://github.com/IlanCosman/tide/blob/master/LICENSE
-
-Tide is a [Fish](https://github.com/fish-shell/fish-shell) theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
+Tide is a [Fish] theme inspired by [Powerlevel10k](https://github.com/romkatv/powerlevel10k/). It aims to provide a powerful, flexible, and out-of-the-box experience.
 
 ![Prompt_Connection](/media/images/Prompt_Connection.png)
 
@@ -22,7 +16,7 @@ Tide is a [Fish](https://github.com/fish-shell/fish-shell) theme inspired by [Po
 
 ### System Requirements
 
-- [fish](https://github.com/fish-shell/fish-shell) ≥3.1
+- [fish] ≥3.1
 - [git](https://github.com/git/git)
 
 # Features
@@ -159,9 +153,21 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt](htt
 
 Download these four ttf files:
 
-- [Sauce Code Pro Regular.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf)
-- [Sauce Code Pro Bold.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf)
-- [Sauce Code Pro Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf)
-- [Sauce Code Pro Bold-Italic.ttf](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf)
+- [Sauce Code Pro Regular.ttf]
+- [Sauce Code Pro Bold.ttf]
+- [Sauce Code Pro Italic.ttf]
+- [Sauce Code Pro Bold-Italic.ttf]
 
 Open each file and click "Install". This will make the `Sauce Code Pro` font available to all applications on your system. Configure your terminal to use this font.
+
+[reference links]: ----------------------------------------------------------------------------------------------------
+[release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
+[releases]: https://github.com/IlanCosman/tide/releases
+[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[license_shield]: https://img.shields.io/github/license/IlanCosman/tide
+[license]: https://github.com/IlanCosman/tide/blob/master/LICENSE
+[fish]: https://github.com/fish-shell/fish-shell
+[sauce code pro regular.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
+[sauce code pro italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold-italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
