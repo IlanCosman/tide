@@ -171,10 +171,10 @@ Open each file and click "Install". This will make the `Sauce Code Pro` font ava
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [prompt_connection]: /media/images/Prompt_Connection.png
 [git]: https://github.com/git/git
-[configuration_wizard]: /media/gifs/Configuration_Wizard.gif
+[configuration_wizard]: /media/svgs/Configuration_Wizard.svg
 [multi-line_right_prompt]: /media/images/Multi-Line_Right_Prompt.png
 [pure]: https://github.com/rafaelrinaldi/pure
-[pure_compatibility]: /media/gifs/Pure_Compatibility.gif
+[pure_compatibility]: /media/svgs/Pure_Compatibility.svg
 [extensible]: /media/images/Extensible.png
 [contributing_guide]: https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
