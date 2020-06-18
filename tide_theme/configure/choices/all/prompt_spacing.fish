@@ -15,10 +15,10 @@ function prompt_spacing
     switch (_menu 'Choice' 1/2/r/q)
         case 1
             set -g fake_tide_newline false
-            _next_choice 'finish'
+            _next_choice 'all/finish'
         case 2
             set -g fake_tide_newline true
-            _next_choice 'finish'
+            _next_choice 'all/finish'
         case r
             _begin
         case q

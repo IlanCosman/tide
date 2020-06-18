@@ -1,4 +1,4 @@
-function prompt_connection
+function lean_prompt_connection
     _title 'Prompt Connection'
 
     _option 1 'Disconnected'
@@ -15,13 +15,13 @@ function prompt_connection
     switch (_menu 'Choice' 1/2/3/r/q)
         case 1
             set -g fake_tide_prompt_connection_icon ' '
-            _next_choice 'prompt_spacing'
+            _next_choice 'all/prompt_spacing'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
-            _next_choice 'prompt_connection_color'
+            _next_choice 'lean/lean_prompt_connection_color'
         case 3
             set -g fake_tide_prompt_connection_icon '─'
-            _next_choice 'prompt_connection_color'
+            _next_choice 'lean/lean_prompt_connection_color'
         case r
             _begin
         case q

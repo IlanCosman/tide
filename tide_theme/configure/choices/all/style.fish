@@ -14,10 +14,10 @@ function style
     switch (_menu 'Choice' 1/2/r/q)
         case 1
             source "$_tide_dir/configure/configs/lean.fish"
-            _next_choice 'show_time'
+            _next_choice 'lean/lean_show_time'
         case 2
             source "$_tide_dir/configure/configs/pure.fish"
-            _next_choice 'finish'
+            _next_choice 'pure/pure_nonperm_content_location'
         case r
             _begin
         case q

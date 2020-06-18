@@ -22,7 +22,7 @@ end
 
 function _begin
     _set_defaults
-    _next_choice 'style'
+    _next_choice 'all/style'
 end
 
 function _set_defaults
@@ -43,7 +43,8 @@ end
 
 function _next_choice -a nextChoice
     source "$_tide_dir/configure/choices/$nextChoice.fish"
-    $nextChoice
+    set -l cmd (string split '/' $nextChoice)[2]
+    $cmd
 end
 
 function _menu -a question options

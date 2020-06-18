@@ -1,7 +1,7 @@
 function finish
     set_color red
     _title 'Overwrite tide config and fish_prompt?'
-    set_color normal
+    # set_color normal
 
     _option y 'Yes'
     printf '%b' '\n\n'

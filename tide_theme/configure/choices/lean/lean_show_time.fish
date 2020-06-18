@@ -1,4 +1,4 @@
-function show_time
+function lean_show_time
     set -a fake_tide_right_prompt_items 'time'
 
     _title 'Show current time?'
@@ -18,13 +18,13 @@ function show_time
         case 1
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]
-            _next_choice 'prompt_height'
+            _next_choice 'lean/lean_prompt_height'
         case 2
             set -g fake_tide_time_format '%T'
-            _next_choice 'prompt_height'
+            _next_choice 'lean/lean_prompt_height'
         case 3
             set -g fake_tide_time_format '%r'
-            _next_choice 'prompt_height'
+            _next_choice 'lean/lean_prompt_height'
         case r
             _begin
         case q
