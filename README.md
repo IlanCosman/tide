@@ -1,8 +1,8 @@
-# 🌊 Tide [![release_shield]][releases] [![fish_version_shield]](#System-Requirements) [![license_shield]][license]
+# 🌊 Tide [![release_shield][]][releases] [![fish_version_shield][]](#System-Requirements) [![license_shield][]][license]
 
-Tide is a [Fish] theme inspired by [Powerlevel10k]. It aims to provide a powerful, flexible, and out-of-the-box experience.
+Tide is a [Fish][] theme inspired by [Powerlevel10k][]. It aims to provide a powerful, flexible, and out-of-the-box experience.
 
-![Prompt_Connection]
+![Prompt_Connection][]
 
 ## Installation
 
@@ -16,8 +16,8 @@ Tide is a [Fish] theme inspired by [Powerlevel10k]. It aims to provide a powerfu
 
 ### System Requirements
 
-- [fish] ≥3.1
-- [git]
+- [fish][] ≥3.1
+- [git][]
 
 ## Features
 
@@ -25,19 +25,19 @@ Tide is a [Fish] theme inspired by [Powerlevel10k]. It aims to provide a powerfu
 
 Type `tide configure` to open the the wizard in your terminal.
 
-![Configuration_Wizard]
+![Configuration_Wizard][]
 
 ### Multi-Line Right Prompt
 
 > Fish can't do _that_ yet can it?
 
-![Multi-Line_Right_Prompt]
+![Multi-Line_Right_Prompt][]
 
 ### Pure Compatibility
 
-Tide can produce the same prompt as [Pure]. Type `tide configure` and select the Pure style.
+Tide can produce the same prompt as [Pure][]. Type `tide configure` and select the Pure style.
 
-![Pure_Compatibility]
+![Pure_Compatibility][]
 
 Tide doesn't recognize Pure configuration parameters, so you'll need to use `set tide_cmd_duration_threshold 3000` instead of `set pure_threshold_command_duration 3`, etc.
 
@@ -47,11 +47,11 @@ Pure style is an exact replication of the Pure fish theme and therefore displays
 
 If there isn't a prompt item that fits your needs, make your own!
 
-![Extensible]
+![Extensible][]
 
 ## Contributing
 
-If you're interested in helping contribute to Tide, please take a look at the [Contributing Guide][contributing_guide].
+If you're interested in helping contribute to Tide, please take a look at the [Contributing Guide][].
 
 ## Configuration
 
@@ -102,7 +102,7 @@ Tide variables that users are encouraged to modify begin with the string `tide_`
 
 ### git_prompt
 
-Tide's git capabilities are inherited from fish's built-in [fish_git_prompt]. Modify those variables to configure tide's git prompt.
+Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. Modify those variables to configure tide's git prompt.
 
 ### jobs
 
@@ -155,10 +155,10 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt]. Mo
 
 Download these four ttf files:
 
-- [Sauce Code Pro Regular.ttf][sauce_code_pro_regular.ttf]
-- [Sauce Code Pro Bold.ttf][sauce_code_pro_bold.ttf]
-- [Sauce Code Pro Italic.ttf][sauce_code_pro_italic.ttf]
-- [Sauce Code Pro Bold-Italic.ttf][sauce_code_pro_bold-italic.ttf]
+- [Sauce Code Pro Regular.ttf][]
+- [Sauce Code Pro Bold.ttf][]
+- [Sauce Code Pro Italic.ttf][]
+- [Sauce Code Pro Bold-Italic.ttf][]
 
 Open each file and click "Install". This will make the `Sauce Code Pro` font available to all applications on your system. Configure your terminal to use this font.
 
@@ -176,9 +176,9 @@ Open each file and click "Install". This will make the `Sauce Code Pro` font ava
 [pure]: https://github.com/rafaelrinaldi/pure
 [pure_compatibility]: /resources/svgs/Pure_Compatibility.svg
 [extensible]: /resources/images/Extensible.png
-[contributing_guide]: https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
+[contributing guide]: https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
-[sauce_code_pro_regular.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
-[sauce_code_pro_bold.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
-[sauce_code_pro_italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
-[sauce_code_pro_bold-italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
+[sauce code pro regular.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
+[sauce code pro italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold-italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf

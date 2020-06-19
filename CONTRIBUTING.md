@@ -18,7 +18,7 @@ tide_install -ld ~/tide
 
 ## Testing
 
-The `tide_test` command runs tests from the `$__fish_config_dir/tests` folder using [fishtape]. Currently there are unit tests for most prompt items.
+The `tide_test` command runs tests from the `$__fish_config_dir/tests` folder using [fishtape][]. Currently there are unit tests for most prompt items.
 
 Example:
 
