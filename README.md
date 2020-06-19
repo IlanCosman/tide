@@ -25,19 +25,19 @@ Tide is a [Fish][] theme inspired by [Powerlevel10k][]. It aims to provide a pow
 
 Type `tide configure` to open the the wizard in your terminal.
 
-![Configuration_Wizard][]
+![configuration_wizard][]
 
 ### Multi-Line Right Prompt
 
 > Fish can't do _that_ yet can it?
 
-![Multi-Line_Right_Prompt][]
+![multi-line_right_prompt][]
 
 ### Pure Compatibility
 
 Tide can produce the same prompt as [Pure][]. Type `tide configure` and select the Pure style.
 
-![Pure_Compatibility][]
+![pure_compatibility][]
 
 Tide doesn't recognize Pure configuration parameters, so you'll need to use `set tide_cmd_duration_threshold 3000` instead of `set pure_threshold_command_duration 3`, etc.
 
@@ -47,7 +47,7 @@ Pure style is an exact replication of the Pure fish theme and therefore displays
 
 If there isn't a prompt item that fits your needs, make your own!
 
-![Extensible][]
+![extensible][]
 
 ## Contributing
 
