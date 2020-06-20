@@ -2,7 +2,7 @@
 
 Tide is a [Fish][] theme inspired by [Powerlevel10k][]. It aims to provide a powerful, flexible, and out-of-the-box experience.
 
-![Prompt_Connection][]
+![prompt_connection][]
 
 ## Installation
 
