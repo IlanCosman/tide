@@ -1,14 +1,3 @@
-for var in $fake_tide_var_list
-    set -e $var
-end
-
-set -g fake_tide_var_list
-
-function _set -a var_name
-    set -g $var_name $argv[2..-1]
-    set -a fake_tide_var_list $var_name
-end
-
 # -------------------Local Variables-------------------
 set -l tideColorGold D7AF00
 set -l tideColorDarkerGreen 5FAF00
@@ -71,5 +60,3 @@ _set fake_tide_jobs_color $tideColorDarkerGreen
 # ---------------Time---------------
 _set fake_tide_time_color 5F8787
 _set fake_tide_time_format '%T'
-
-cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"

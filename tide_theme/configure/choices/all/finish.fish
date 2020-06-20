@@ -11,6 +11,8 @@ function finish
 
     switch (_menu 'Choice' y/n)
         case y
+            cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
+
             for var in $_tide_var_list
                 set -e $var
             end

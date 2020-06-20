@@ -44,8 +44,11 @@ function tide_install
     # --------------------Set Defaults--------------------
     _set_immutables
 
+    cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
+
     set -U _tide_var_list
-    source "$_tide_dir/configure/configs/lean.fish"
+    source "$_tide_dir/configure/choices/all/style.fish"
+    _load_config "$_tide_dir/configure/configs/lean.fish"
     for fakeVar in $fake_tide_var_list
         set -l normalVar (string replace 'fake_' '' $fakeVar)
         set -U $normalVar $$fakeVar
