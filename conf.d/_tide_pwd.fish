@@ -12,7 +12,7 @@ function _tide_pwd
 
     for dir in $_tide_split_pwd
         if contains $dir $_tide_pwd_anchors
-            set _tide_pwd_output (string replace $dir (set_color -o $tide_pwd_color_anchors)$dir$_tide_color_normal $_tide_pwd_output)
+            set _tide_pwd_output (string replace $dir (set_color -o $tide_pwd_color_anchors)$dir(set_color normal -b $tide_pwd_bg_color) $_tide_pwd_output)
         else
             if test (string length $truncatedPwd) -gt $_tide_pwd_max_length
                 set -l dirTruncated $dir
