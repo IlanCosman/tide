@@ -1,5 +1,5 @@
 function _tide_left_prompt
-    set lastItemWasNewline # Don't display a separator before first item
+    set lastItemWasNewline # Display prefix instead of separator before first item
     set color normal
 
     for item in $tide_left_prompt_items
@@ -21,6 +21,7 @@ function _tide_left_prompt
             set_color -b $color
 
             if set -q lastItemWasNewline
+                printf '%s' $tide_left_prompt_prefix
                 set -e lastItemWasNewline
             else
                 _print_separator
@@ -54,7 +55,7 @@ function _print_separator --no-scope-shadowing
             case ' '
                 printf '%s' ' '
             case '*'
-                set_color -b $previousColor 2>/dev/null # Piping to null is necessary for newline at the start of prompt items
+                set_color -b $previousColor 2>/dev/null # Piping errors to null is necessary for newline at the start of prompt items
                 printf '%s' ' '(set_color -b $color)(set_color $previousColor)$tide_left_prompt_item_separator_diff_color' '
         end
     end
