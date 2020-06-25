@@ -15,6 +15,6 @@ function _tide_item_cmd_duration
         end
 
         set_color $tide_cmd_duration_color
-        printf '%s ' {$hours}'h' {$minutes}'m' {$seconds}'s'
+        printf '%s' {$hours}'h' {$minutes}'m' {$seconds}'s'
     end
 end

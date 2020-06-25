@@ -4,5 +4,5 @@ function _tide_item_prompt_char
     else
         set_color $tide_prompt_char_failure_color
     end
-    printf '%s ' "$tide_prompt_char_icon"
+    printf '%s' "$tide_prompt_char_icon"
 end

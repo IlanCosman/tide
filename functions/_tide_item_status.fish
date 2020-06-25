@@ -11,7 +11,6 @@ function _tide_item_status
                 printf '%s ' {$tide_status_failure_icon}
             end
             string replace 'SIG' '' $fishPipestatusWithSignal | string join '|'
-            printf '%s' ' '
         end
     end
 end
