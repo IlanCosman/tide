@@ -75,9 +75,9 @@ end
 function _print_right_prompt_separator --no-scope-shadowing
     if test "$color" = "$previousColor"
         if test "$tide_right_prompt_pad_separators" = 'true'
-            printf '%s' ' '$tide_right_prompt_item_separator' '
+            printf '%s' ' '$tide_right_prompt_item_separator_same_color' '
         else
-            printf '%s' $tide_right_prompt_item_separator
+            printf '%s' $tide_right_prompt_item_separator_same_color
         end
     else
         set_color -b $previousColor 2>/dev/null #Neccesary for first item newline
