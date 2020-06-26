@@ -37,7 +37,7 @@ function _fetch_right_prompt_items
                 _print_right_prompt_separator
             end
 
-            printf '%s' '\n'
+            printf '%s' $tide_right_prompt_suffix'\n'
             set lastItemWasNewline
 
             continue
@@ -50,13 +50,8 @@ function _fetch_right_prompt_items
             set -l color $$colorName
 
 
-            if set -q lastItemWasNewline
-                # if test "$item" != 'prompt_char'
-                #     printf '%s' $tide_right_prompt_prefix
-                # end
-                set -e lastItemWasNewline
-            else if set -q dontDisplayNextSeparator
-                set -e dontDisplayNextSeparator
+            if set -e lastItemWasNewline
+            else if set -e dontDisplayNextSeparator
             else
                 _print_right_prompt_separator
             end
@@ -71,6 +66,8 @@ function _fetch_right_prompt_items
             end
         end
     end
+
+    printf '%s' "$tide_right_prompt_suffix"
 
     set_color normal # Prompt won't display a newline at the end without something printed on it
 end

@@ -21,20 +21,18 @@ function _tide_left_prompt
             set -l colorName 'tide_'$item'_bg_color'
             set -l color $$colorName
 
-            if set -q lastItemWasNewline
+            if set -e lastItemWasNewline
                 if test "$item" != 'prompt_char'
                     printf '%s' $tide_left_prompt_prefix
                 end
-                set -e lastItemWasNewline
-            else if set -q dontDisplayNextSeparator
-                set -e dontDisplayNextSeparator
+            else if set -e dontDisplayNextSeparator
             else
                 _print_left_prompt_separator
             end
-            
+
             set_color -b $color
             printf '%b' $output
-           
+
             set previousColor $color
 
             if test "$item" = 'prompt_char'
@@ -54,9 +52,9 @@ end
 function _print_left_prompt_separator --no-scope-shadowing
     if test "$color" = "$previousColor"
         if test "$tide_left_prompt_pad_separators" = 'true'
-            printf '%s' ' '$tide_left_prompt_item_separator' '
+            printf '%s' ' '$tide_left_prompt_item_separator_same_color' '
         else
-            printf '%s' $tide_left_prompt_item_separator
+            printf '%s' $tide_left_prompt_item_separator_same_color
         end
     else
         set_color -b $previousColor 2>/dev/null #Neccesary for first item newline
