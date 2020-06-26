@@ -6,7 +6,7 @@ function _tide_left_prompt
         if test "$item" = 'newline'
             if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
                 set color normal
-                _print_separator
+                _print_left_prompt_separator
             end
 
             printf '%b' '\n'
@@ -21,8 +21,6 @@ function _tide_left_prompt
             set -l colorName 'tide_'$item'_bg_color'
             set -l color $$colorName
 
-            set_color -b $color
-
             if set -q lastItemWasNewline
                 if test "$item" != 'prompt_char'
                     printf '%s' $tide_left_prompt_prefix
@@ -31,10 +29,12 @@ function _tide_left_prompt
             else if set -q dontDisplayNextSeparator
                 set -e dontDisplayNextSeparator
             else
-                _print_separator
+                _print_left_prompt_separator
             end
-
+            
+            set_color -b $color
             printf '%b' $output
+           
             set previousColor $color
 
             if test "$item" = 'prompt_char'
@@ -45,13 +45,13 @@ function _tide_left_prompt
 
     if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
         set color normal
-        _print_separator
+        _print_left_prompt_separator
     end
 
     set_color normal # Prompt won't display a newline at the end without something printed on it
 end
 
-function _print_separator --no-scope-shadowing
+function _print_left_prompt_separator --no-scope-shadowing
     if test "$color" = "$previousColor"
         if test "$tide_left_prompt_pad_separators" = 'true'
             printf '%s' ' '$tide_left_prompt_item_separator' '
