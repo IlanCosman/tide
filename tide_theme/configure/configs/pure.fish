@@ -56,6 +56,10 @@ _set fake_tide_context_root_color $tideColorGold
 # ---------------Jobs---------------
 _set fake_tide_jobs_icon '' # Gear
 _set fake_tide_jobs_color $tideColorDarkerGreen
+# ---------------Virtual_Env---------------
+_set fake_tide_virtual_env_color 00AFAF
+_set fake_tide_virtual_env_display 'projectName'
+_set fake_tide_virtual_env_icon ''
 # ---------------Time---------------
 _set fake_tide_time_color 6C6C6C
 _set fake_tide_time_format '%T'

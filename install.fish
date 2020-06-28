@@ -93,6 +93,8 @@ function _set_immutables
     _set_immutable _tide_color_light_blue 00AFFF
     _set_immutable _tide_color_dark_blue 0087AF
     _set_immutable _tide_color_normal (set_color normal)
+
+    _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
 end
 
 function _set_immutable -a var_name
