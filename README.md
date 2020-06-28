@@ -84,6 +84,7 @@ Tide variables that users are encouraged to modify begin with the string `tide_`
 | [pwd](#pwd)                   | current directory                |
 | [status](#status)             | exit code of the last command    |
 | [time](#time)                 | current time                     |
+| [virtual_env](#virtual_env)   | python virtual environment       |
 
 ### cmd_duration
 
