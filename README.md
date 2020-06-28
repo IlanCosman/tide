@@ -109,7 +109,7 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. 
 | Variable   | Description                                      | Default |
 | ---------- | ------------------------------------------------ | ------- |
 | jobs_color | color of jobs icon                               | D7AF00  |
-| jobs_icon  | symbol to display when there are background jobs | D7AF87  |
+| jobs_icon  | symbol to display when there are background jobs | ''     |
 
 ### prompt_char
 
@@ -121,15 +121,15 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. 
 
 ### pwd
 
-| Variable                 | Description                                                              | Default              |
-| ------------------------ | ------------------------------------------------------------------------ | -------------------- |
-| pwd_anchors              | Directories displayed in bold and immune to truncation                   | 'first' 'last' 'git' |
-| pwd_color_anchors        | color of anchors                                                         | 00AFFF               |
-| pwd_truncate_margin      | start truncating when pwd is this many columns from terminal edge        | 10                   |
-| pwd_color_truncated_dirs | color of truncated directories                                           | 8787AF               |
-| pwd_max_dirs             | max number of directories to display, 0 or less equals unlimited         | 0                    |
-| pwd_color_dirs           | color of normal directories                                              | 0087AF               |
-| pwd_unwritable_icon      | symbol to display when the current directory is not writable by the user | '' #Lock icon       |
+| Variable                 | Description                                                       | Default              |
+| ------------------------ | ----------------------------------------------------------------- | -------------------- |
+| pwd_anchors              | Directories displayed in bold and immune to truncation            | 'first' 'last' 'git' |
+| pwd_color_anchors        | color of anchors                                                  | 00AFFF               |
+| pwd_truncate_margin      | start truncating when pwd is this many columns from terminal edge | 10                   |
+| pwd_color_truncated_dirs | color of truncated directories                                    | 8787AF               |
+| pwd_max_dirs             | max number of directories to display, 0 or less equals unlimited  | 0                    |
+| pwd_color_dirs           | color of normal directories                                       | 0087AF               |
+| pwd_unwritable_icon      | symbol to display when the directory is not writable by the user  | ''                  |
 
 ### status
 
@@ -146,6 +146,14 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. 
 | ----------- | ---------------------- | ------- |
 | time_color  | color of time display  | 5F8787  |
 | time_format | format of time display | '%T'    |
+
+### virtual_env
+
+| Variable            | Description                                                                                                                            | Default     |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| virtual_env_color   | color of virtual_env item                                                                                                              | 00AFAF      |
+| virtual_env_icon    | icon to display in front of virtual_env item                                                                                           | ''         |
+| virtual_env_display | Options are venvName and projectName. venvName is the virtual env directory, most often .venv. projectName is the directory above that | projectName |
 
 ## Fonts
 
