@@ -5,17 +5,17 @@ set -l tideColorDarkerGreen 5FAF00
 # ---------------General Theme Variables---------------
 _set fake_tide_newline 'true'
 # ------------Left Prompt------------
+_set fake_tide_left_prompt_prefix ''
 _set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'newline' 'prompt_char'
 _set fake_tide_left_prompt_item_separator_same_color ' '
 _set fake_tide_left_prompt_item_separator_diff_color ' '
 _set fake_tide_left_prompt_pad_separators false
-_set fake_tide_left_prompt_prefix ''
 # ------------Right Prompt------------
 _set fake_tide_right_prompt_items
 _set fake_tide_right_prompt_item_separator_same_color ' '
 _set fake_tide_right_prompt_item_separator_diff_color ' '
 _set fake_tide_right_prompt_pad_separators false
-_set fake_tide_right_prompt_suffix ''
+_set fake_tide_right_prompt_suffix ' '
 # ---------Prompt Connection---------
 _set fake_tide_prompt_connection_color 6C6C6C
 _set fake_tide_prompt_connection_icon ' '
@@ -77,6 +77,7 @@ _set fake_tide_jobs_bg_color normal
 _set fake_tide_virtual_env_color 00AFAF
 _set fake_tide_virtual_env_display 'projectName'
 _set fake_tide_virtual_env_icon ''
+_set fake_tide_virtual_env_bg_color normal
 # ---------------Time---------------
 _set fake_tide_time_color 6C6C6C
 _set fake_tide_time_format '%T'
