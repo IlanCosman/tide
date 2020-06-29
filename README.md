@@ -11,7 +11,7 @@ Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box 
 2. Source and run the install function:
 
    ```fish
-   curl -sL git.io/tide-fish | source; and tide_install
+   curl -sL git.io/tide | source; and tide_install
    ```
 
 ### System Requirements
