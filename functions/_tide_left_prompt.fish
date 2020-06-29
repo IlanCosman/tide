@@ -1,6 +1,7 @@
 function _tide_left_prompt
     set lastItemWasNewline # Display prefix instead of separator before first item
     set color normal
+    set currentHeight 1
 
     for item in $tide_left_prompt_items
         if test "$item" = 'newline'
@@ -10,16 +11,35 @@ function _tide_left_prompt
             end
 
             printf '%b' '\n'
+
             set lastItemWasNewline
+            set currentHeight (math $currentHeight +1)
 
             continue
+        end
+
+        if set -q lastItemWasNewline
+            if test "$tide_left_prompt_frame_enabled" = 'true'
+                set_color $tide_left_prompt_frame_color
+
+                if test $currentHeight -eq 1
+                    printf '%s' '╭─'
+                else if test $currentHeight -lt $_tide_left_prompt_height
+                    printf '%s' '├─'
+                else
+                    printf '%s' '╰─'
+                end
+            end
         end
 
         set -l output (_tide_item_$item)
 
         if test -n "$output"
+
             set -l colorName 'tide_'$item'_bg_color'
             set -l color $$colorName
+
+            set_color -b $color
 
             if set -e lastItemWasNewline
                 if test "$item" != 'prompt_char'
@@ -30,8 +50,7 @@ function _tide_left_prompt
                 _print_left_prompt_separator
             end
 
-            set_color -b $color
-            printf '%b' $output
+            printf '%s' "$output"
 
             set previousColor $color
 
