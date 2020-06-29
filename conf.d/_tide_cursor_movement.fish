@@ -1,11 +1,7 @@
 function _cursor_up -a number
-    if test $number -gt 0
-        printf '%b' '\033['"$number"'A'
-    end
+    string repeat --count $number --no-newline \e\[1A
 end
 
 function _cursor_right -a number
-    if test $number -gt 0
-        printf '%b' '\033['"$number"'C'
-    end
+    string repeat --count $number --no-newline \e\[1C
 end
