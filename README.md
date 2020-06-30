@@ -1,4 +1,4 @@
-# 🌊 Tide [![release_shield][]][releases] [![fish_version_shield][]](#System-Requirements) [![license_shield][]][license]
+# 🌊 Tide [![release_badge][]][releases] [![fish_version_badge][]](#System-Requirements) [![license_badge][]][license]
 
 Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box experience.
 
@@ -10,7 +10,7 @@ Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box 
 
 2. Source and run the install function:
 
-   ```fish
+   ```console
    curl -sL git.io/tide | source && tide_install
    ```
 
@@ -59,11 +59,11 @@ Tide variables that users are encouraged to modify begin with the string `tide_`
 
 ## General Variables
 
-| Variable           | Description                                | Default                                    |
-| ------------------ | ------------------------------------------ | ------------------------------------------ |
-| newline            | add empty line before each prompt          | true                                       |
-| left_prompt_items  | order of the left prompt items to display  | 'pwd' 'git_prompt' 'newline' 'prompt_char' |
-| right_prompt_items | order of the right prompt items to display | 'status' 'cmd_duration' 'context' 'jobs'   |
+| Variable           | Description                                | Default                                      |
+| ------------------ | ------------------------------------------ | -------------------------------------------- |
+| newline            | add empty line before each prompt          | true                                         |
+| left_prompt_items  | order of the left prompt items to display  | pwd git_prompt newline prompt_char           |
+| right_prompt_items | order of the right prompt items to display | status cmd_duration context jobs virtual_env |
 
 ### prompt_connection
 
@@ -175,10 +175,10 @@ Open each file and click "Install". This will make the `Sauce Code Pro` font ava
 
 Tide was inspired by [Powerlevel10k][]. Powerlevel10k is widely recognized as one of the best Zsh themes—blazing fast, infinitely flexible, and supremely powerful. Tide was created to bring a portion of that greatness to Fish. Though no code is adopted, much of Tide's documentation, ideas, and design elements are borrowed from Powerlevel10k.
 
-[release_shield]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
+[release_badge]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
 [releases]: https://github.com/IlanCosman/tide/releases
-[fish_version_shield]: https://img.shields.io/badge/fish-3.1.0%2B-blue
-[license_shield]: https://img.shields.io/github/license/IlanCosman/tide
+[fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: https://github.com/IlanCosman/tide/blob/master/LICENSE
 [fish]: https://github.com/fish-shell/fish-shell
 [prompt_connection]: /resources/images/Prompt_Connection.png
