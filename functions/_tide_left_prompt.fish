@@ -60,12 +60,17 @@ function _tide_left_prompt
         end
     end
 
-    if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
+    if set -q lastItemWasNewline
+        if test "$tide_left_prompt_frame_enabled" = 'true'
+            set_color $tide_left_prompt_frame_color
+            printf '%s' '╰─'
+        end
+
+        set_color normal # Prompt won't display a newline at the end without something printed on it
+    else if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
         set color normal
         _print_left_prompt_separator
     end
-
-    set_color normal # Prompt won't display a newline at the end without something printed on it
 end
 
 function _print_left_prompt_separator --no-scope-shadowing

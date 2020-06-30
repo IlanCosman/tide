@@ -2,9 +2,23 @@ function _tide_right_prompt
     set -l splitText (_fetch_right_prompt_items | string split '\n')
     set -l printAtEndedRightPromptHeight (count $splitText)
 
-    for thing in $splitText[1..-2]
-        _print_at_end $thing
+    if test "$tide_right_prompt_frame_enabled" = 'true'
+        set -l frameColor (set_color $tide_right_prompt_frame_color -b normal)
+
+        if test $printAtEndedRightPromptHeight -gt 1
+            set splitText[1] $splitText[1]$frameColor'─╮'
+            set splitText[-1] $splitText[-1]$frameColor'─╯'
+
+            if test $printAtEndedRightPromptHeight -gt 2
+                set splitText[2..-2] $splitText[2..-2]$frameColor'─┤'
+            end
+        end
     end
+
+    for lineOfText in $splitText[1..-2]
+        _print_at_end $lineOfText
+    end
+
     if test $printAtEndedRightPromptHeight -eq $_tide_left_prompt_height
         set -g _tide_right_prompt_fish $splitText[-1]
         set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight-1)
