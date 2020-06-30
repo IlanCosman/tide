@@ -1,5 +1,5 @@
 function tide_actual_install
-    argparse 'l/local' 'd/dev' -- $argv
+    argparse 'l/local' 'd/dev' 'u/unattended' -- $argv
 
     set -l location $argv[1]
     if test -z "$location"
@@ -61,11 +61,13 @@ function tide_actual_install
     set_color normal
     printf '%s\n'
 
-    if _user_confirm_defaultYes 'Configure tide prompt?'
-        tide configure
-    else
-        printf '%s\n'
-        printf '%s\n' 'Run tide configure to customize your prompt.'
+    if not set -q _flag_unattended
+        if _user_confirm_defaultYes 'Configure tide prompt?'
+            tide configure
+        else
+            printf '%s\n'
+            printf '%s\n' 'Run tide configure to customize your prompt.'
+        end
     end
 
     rm -rf $tempDir
