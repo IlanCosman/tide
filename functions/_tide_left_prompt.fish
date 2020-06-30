@@ -5,6 +5,8 @@ function _tide_left_prompt
 
     for item in $tide_left_prompt_items
         if test "$item" = 'newline'
+            _print_frame
+
             if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
                 set color normal
                 _print_left_prompt_separator
@@ -18,25 +20,12 @@ function _tide_left_prompt
             continue
         end
 
-        if set -q lastItemWasNewline
-            if test "$tide_left_prompt_frame_enabled" = 'true'
-                set_color $tide_left_prompt_frame_color
-
-                if test $currentHeight -eq 1
-                    printf '%s' '╭─'
-                else if test $currentHeight -lt $_tide_left_prompt_height
-                    printf '%s' '├─'
-                else
-                    printf '%s' '╰─'
-                end
-            end
-        end
-
         set -l output (_tide_item_$item)
 
         if test -n "$output"
+            _print_frame
 
-            set -l colorName 'tide_'$item'_bg_color'
+            set -l colorName tide_"$item"_bg_color
             set -l color $$colorName
 
             set_color -b $color
@@ -87,6 +76,20 @@ function _print_left_prompt_separator --no-scope-shadowing
             printf '%s' ' '(set_color -b $color $previousColor)$tide_left_prompt_item_separator_diff_color' '
         else
             printf '%s' (set_color -b $color $previousColor)$tide_left_prompt_item_separator_diff_color
+        end
+    end
+end
+
+function _print_frame --no-scope-shadowing
+    if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = 'true'
+        set_color $tide_left_prompt_frame_color
+
+        if test $currentHeight -eq 1
+            printf '%s' '╭─'
+        else if test $currentHeight -lt $_tide_left_prompt_height
+            printf '%s' '├─'
+        else
+            printf '%s' '╰─'
         end
     end
 end
