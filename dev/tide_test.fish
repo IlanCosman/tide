@@ -12,6 +12,8 @@ function tide_test
     set -l failed '/tmp/tide_test_failed'
     set -l passed '/tmp/tide_test_passed'
 
+    set -l returnStatement 0
+
     if set -q _flag_all
         set argv (basename -s '.fish' $testsDir/*)
     end
@@ -39,10 +41,15 @@ function tide_test
         printf '%s\n' '--------FAILED--------'
         cat $failed
         rm $failed
+
+        set returnStatement 1
     end
+
     if test -e $pending
         rm $pending
     end
+
+    return $returnStatement
 end
 
 function _help
