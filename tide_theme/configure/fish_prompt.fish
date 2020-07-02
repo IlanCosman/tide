@@ -9,8 +9,13 @@ function fish_prompt --description 'Write out the prompt'
 
     set_color $tide_prompt_connection_color
     string repeat --count $COLUMNS --no-newline $tide_prompt_connection_icon
+    set_color normal
+
     printf '%b' '\r'
 
     _tide_right_prompt
+    set_color normal
+
     _tide_left_prompt
+    set_color normal
 end

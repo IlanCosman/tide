@@ -64,6 +64,8 @@ end
 
 function _print_left_prompt_separator --no-scope-shadowing
     if test "$color" = "$previousColor"
+        set_color $tide_left_prompt_item_separator_same_color_color
+
         if test "$tide_left_prompt_pad_separators" = 'true'
             printf '%s' ' '$tide_left_prompt_item_separator_same_color' '
         else

@@ -3,14 +3,29 @@ function _tide_right_prompt
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     if test "$tide_right_prompt_frame_enabled" = 'true'
-        set -l frameColor (set_color $tide_right_prompt_frame_color -b normal)
+        # The right frame should always look exactly like the left frame would, regardless of how many lines splitText actually has.
+        # In this section we check if each line exist, if so add the frame to it. If not, insert a line containing only the frame
+        # and update printAtEndedRightPromptHeight
 
-        if test $printAtEndedRightPromptHeight -gt 1
+        set -l frameColor (set_color $tide_right_prompt_frame_color)
+
+        if test $_tide_left_prompt_height -gt 1
             set splitText[1] $splitText[1]$frameColor'─╮'
-            set splitText[-1] $splitText[-1]$frameColor'─╯'
 
-            if test $printAtEndedRightPromptHeight -gt 2
-                set splitText[2..-2] $splitText[2..-2]$frameColor'─┤'
+            if test $printAtEndedRightPromptHeight -gt 1
+                set splitText[-1] $splitText[-1]$frameColor'─╯'
+            else
+                set splitText[2] $frameColor'─╯'
+                set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight+1)
+            end
+
+            if test $_tide_left_prompt_height -gt 2
+                if test $printAtEndedRightPromptHeight -gt 2
+                    set splitText[2..-2] $splitText[2..-2]'─┤'
+                else
+                    set splitText $splitText[1] '─┤' $splitText[2]
+                    set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight+1)
+                end
             end
         end
     end
@@ -46,13 +61,8 @@ function _fetch_right_prompt_items
 
     for item in $tide_right_prompt_items
         if test "$item" = 'newline'
-            if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
-                set color normal
-                _print_right_prompt_separator
-            end
-
             printf '%s' $tide_right_prompt_suffix'\n'
-            set lastItemWasNewline
+            set previousColor normal
 
             continue
         end
@@ -64,8 +74,7 @@ function _fetch_right_prompt_items
             set -l color $$colorName
 
 
-            if set -e lastItemWasNewline
-            else if set -e dontDisplayNextSeparator
+            if set -e dontDisplayNextSeparator
             else
                 _print_right_prompt_separator
             end
@@ -88,6 +97,8 @@ end
 
 function _print_right_prompt_separator --no-scope-shadowing
     if test "$color" = "$previousColor"
+        set_color $tide_right_prompt_item_separator_same_color_color
+
         if test "$tide_right_prompt_pad_separators" = 'true'
             printf '%s' ' '$tide_right_prompt_item_separator_same_color' '
         else
