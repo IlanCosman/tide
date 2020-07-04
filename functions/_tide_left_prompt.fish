@@ -7,9 +7,9 @@ function _tide_left_prompt
         if test "$item" = 'newline'
             _print_frame
 
-            if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
-                set color normal
-                _print_left_prompt_separator
+            if not set -q lastItemWasNewline && not set -q lastItemWasPromptChar
+                set_color $previousColor -b normal
+                printf '%s' $tide_left_prompt_suffix
             end
 
             printf '%b' '\n'
@@ -28,23 +28,33 @@ function _tide_left_prompt
             set -l colorName tide_"$item"_bg_color
             set -l color $$colorName
 
-            set_color -b $color
-
-            if set -e lastItemWasNewline
+            if set -e lastItemWasNewline || set -e lastItemWasPromptChar
                 if test "$item" != 'prompt_char'
+                    set_color $color -b normal
                     printf '%s' $tide_left_prompt_prefix
                 end
-            else if set -e dontDisplayNextSeparator
             else
-                _print_left_prompt_separator
+                if test "$color" = "$previousColor"
+                    set_color $tide_left_prompt_item_separator_same_color_color
+                    printf '%s' $tide_left_prompt_item_separator_same_color
+                else
+                    set_color $previousColor -b $color
+                    printf '%s' $tide_left_prompt_item_separator_diff_color
+                end
             end
 
-            printf '%s' "$output"
+            set_color -b $color
+
+            if test "$tide_left_prompt_pad_items" = 'true' -a "$item" != 'prompt_char'
+                printf '%s' " $output"(set_color -b $color)' ' # The set_color is for git_prompt which resets the background color
+            else
+                printf '%s' "$output"
+            end
 
             set previousColor $color
 
             if test "$item" = 'prompt_char'
-                set dontDisplayNextSeparator
+                set lastItemWasPromptChar
             end
         end
     end
@@ -54,37 +64,15 @@ function _tide_left_prompt
             set_color $tide_left_prompt_frame_color
             printf '%s' '╰─'
         end
-
-        set_color normal # Prompt won't display a newline at the end without something printed on it
-    else if not set -q lastItemWasNewline && not set -q dontDisplayNextSeparator
-        set color normal
-        _print_left_prompt_separator
-    end
-end
-
-function _print_left_prompt_separator --no-scope-shadowing
-    if test "$color" = "$previousColor"
-        set_color $tide_left_prompt_item_separator_same_color_color
-
-        if test "$tide_left_prompt_pad_separators" = 'true'
-            printf '%s' ' '$tide_left_prompt_item_separator_same_color' '
-        else
-            printf '%s' $tide_left_prompt_item_separator_same_color
-        end
-    else
-        set_color -b $previousColor 2>/dev/null #Neccesary for first item newline
-
-        if test "$tide_left_prompt_pad_separators" = 'true'
-            printf '%s' ' '(set_color -b $color $previousColor)$tide_left_prompt_item_separator_diff_color' '
-        else
-            printf '%s' (set_color -b $color $previousColor)$tide_left_prompt_item_separator_diff_color
-        end
+    else if not set -q lastItemWasPromptChar
+        set_color $previousColor -b normal
+        printf '%s' $tide_left_prompt_suffix
     end
 end
 
 function _print_frame --no-scope-shadowing
     if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = 'true'
-        set_color $tide_left_prompt_frame_color
+        set_color $tide_left_prompt_frame_color -b normal
 
         if test $currentHeight -eq 1
             printf '%s' '╭─'
