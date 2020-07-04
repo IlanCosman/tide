@@ -8,11 +8,11 @@ The `tide_install` function offers a few flags. `-d` will install Tide as a deve
 
 Examples:
 
-```fish
+```console
 tide_install -d example-branch
 ```
 
-```fish
+```console
 tide_install -ld ~/tide
 ```
 
@@ -22,7 +22,7 @@ The `tide_test` command runs tests from the `$__fish_config_dir/tests` folder us
 
 Example:
 
-```fish
+```console
 tide_test status
 ```
 

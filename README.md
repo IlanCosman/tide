@@ -179,7 +179,7 @@ Tide was inspired by [Powerlevel10k][]. Powerlevel10k is widely recognized as on
 [releases]: https://github.com/IlanCosman/tide/releases
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[license]: https://github.com/IlanCosman/tide/blob/master/LICENSE
+[license]: https://github.com/IlanCosman/tide/blob/master/LICENSE.md
 [fish]: https://github.com/fish-shell/fish-shell
 [prompt_connection]: /resources/images/Prompt_Connection.png
 [git]: https://github.com/git/git
