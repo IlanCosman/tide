@@ -1,5 +1,5 @@
 function _tide_right_prompt
-    set -l splitText (_fetch_right_prompt_items | string split '\n')
+    set -l splitText (_fetch_right_prompt_items | string split '@NEWLINE@')
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     if test "$tide_right_prompt_frame_enabled" = 'true'
@@ -7,7 +7,7 @@ function _tide_right_prompt
         # In this section we check if each line exist, if so add the frame to it. If not, insert a line containing only the frame
         # and update printAtEndedRightPromptHeight
 
-        set -l frameColor (set_color $tide_right_prompt_frame_color)
+        set -l frameColor (set_color $tide_right_prompt_frame_color -b normal)
 
         if test $_tide_left_prompt_height -gt 1
             set splitText[1] $splitText[1]$frameColor'─╮'
@@ -21,9 +21,9 @@ function _tide_right_prompt
 
             if test $_tide_left_prompt_height -gt 2
                 if test $printAtEndedRightPromptHeight -gt 2
-                    set splitText[2..-2] $splitText[2..-2]'─┤'
+                    set splitText[2..-2] $splitText[2..-2]$frameColor'─┤'
                 else
-                    set splitText $splitText[1] '─┤' $splitText[2]
+                    set splitText $splitText[1] $frameColor'─┤' $splitText[2]
                     set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight+1)
                 end
             end
@@ -53,7 +53,7 @@ function _print_at_end -a text
     set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
     _cursor_right $startLocation
 
-    printf '%s%b' $text '\v\r'
+    printf '%s%b' $text (set_color normal)'\v\r'
 end
 
 function _fetch_right_prompt_items
@@ -61,7 +61,7 @@ function _fetch_right_prompt_items
 
     for item in $tide_right_prompt_items
         if test "$item" = 'newline'
-            printf '%s' $tide_right_prompt_suffix'\n'
+            printf '%s' $tide_right_prompt_suffix'@NEWLINE@'
             set previousColor normal
 
             continue
