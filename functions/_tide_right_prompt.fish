@@ -9,9 +9,9 @@ function _tide_right_prompt
 
         set -l frameColor (set_color $tide_right_prompt_frame_color -b normal)
 
-        if test $_tide_left_prompt_height -gt 1
-            set splitText[1] $splitText[1]$frameColor'─╮'
+        set splitText[1] $splitText[1]$frameColor'─╮'
 
+        if test $_tide_left_prompt_height -gt 1
             if test $printAtEndedRightPromptHeight -gt 1
                 set splitText[-1] $splitText[-1]$frameColor'─╯'
             else
@@ -35,34 +35,32 @@ function _tide_right_prompt
     end
 
     if test $printAtEndedRightPromptHeight -eq $_tide_left_prompt_height
-        set -g _tide_right_prompt_fish $splitText[-1]
+        set -g _tide_fish_right_prompt_display $splitText[-1]
         set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight-1)
     else
         _print_at_end $splitText[-1]
-        set -g _tide_right_prompt_fish ''
+        set -g _tide_fish_right_prompt_display ' '
     end
 
     _cursor_up $printAtEndedRightPromptHeight
 end
 
-function fish_right_prompt
-    printf '%s' $_tide_right_prompt_fish
-end
-
-function _print_at_end -a text
-    set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
-    _cursor_right $startLocation
-
-    printf '%s%b' $text (set_color normal)'\v\r'
-end
-
 function _fetch_right_prompt_items
-    set previousColor normal
+    set lastItemWasNewline # Display prefix instead of separator before first item
+    set color normal
+
+    printf '%s' ' ' # Necessary for some reason
 
     for item in $tide_right_prompt_items
         if test "$item" = 'newline'
-            printf '%s' $tide_right_prompt_suffix'@NEWLINE@'
-            set previousColor normal
+            if not set -q lastItemWasNewline
+                set_color $previousColor -b normal
+                printf '%s' $tide_right_prompt_suffix
+            end
+
+            printf '%b' '\n'
+
+            set lastItemWasNewline
 
             continue
         end
@@ -70,47 +68,47 @@ function _fetch_right_prompt_items
         set -l output (_tide_item_$item)
 
         if test -n "$output"
-            set -l colorName 'tide_'$item'_bg_color'
+            set -l colorName tide_"$item"_bg_color
             set -l color $$colorName
 
-
-            if set -e dontDisplayNextSeparator
+            if set -e lastItemWasNewline
+                set_color $color -b normal
+                printf '%s' $tide_right_prompt_prefix
             else
-                _print_right_prompt_separator
+                if test "$color" = "$previousColor"
+                    set_color $tide_right_prompt_item_separator_same_color_color
+                    printf '%s' $tide_right_prompt_item_separator_same_color
+                else
+                    set_color $color -b $previousColor
+                    printf '%s' $tide_right_prompt_item_separator_diff_color
+                end
             end
 
             set_color -b $color
-            printf '%b' $output
+
+            if test "$tide_right_prompt_pad_items" = 'true'
+                printf '%s' ' '$output(set_color -b $color)' ' # The set_color is for git_prompt which resets the background color
+            else
+                printf '%s' "$output"
+            end
 
             set previousColor $color
-
-            if test "$item" = 'prompt_char'
-                set dontDisplayNextSeparator
-            end
         end
     end
 
-    printf '%s' "$tide_right_prompt_suffix"
-
-    set_color normal # Prompt won't display a newline at the end without something printed on it
+    if not set -q lastItemWasNewline
+        set_color $previousColor -b normal
+        printf '%s' $tide_right_prompt_suffix
+    end
 end
 
-function _print_right_prompt_separator --no-scope-shadowing
-    if test "$color" = "$previousColor"
-        set_color $tide_right_prompt_item_separator_same_color_color
+function fish_right_prompt
+    printf '%s' $_tide_fish_right_prompt_display
+end
 
-        if test "$tide_right_prompt_pad_separators" = 'true'
-            printf '%s' ' '$tide_right_prompt_item_separator_same_color' '
-        else
-            printf '%s' $tide_right_prompt_item_separator_same_color
-        end
-    else
-        set_color -b $previousColor 2>/dev/null #Neccesary for first item newline
+function _print_at_end -a text
+    set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
+    _cursor_right $startLocation
 
-        if test "$tide_right_prompt_pad_separators" = 'true'
-            printf '%s' ' '(set_color -b $previousColor $color)$tide_right_prompt_item_separator_diff_color(set_color -b $color)' '
-        else
-            printf '%s' (set_color -b $previousColor $color)$tide_right_prompt_item_separator_diff_color
-        end
-    end
+    printf '%s%b' $text '\v\r' # For some reason \n doesn't work but \v\r does
 end
