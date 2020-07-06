@@ -3,7 +3,7 @@ set -l tideColorGold D7AF00
 set -l tideColorDarkerGreen 5FAF00
 
 # ---------------General Theme Variables---------------
-_set fake_tide_newline 'true'
+_set fake_tide_print_newline_before_prompt 'true'
 # ------------Left Prompt------------
 _set fake_tide_left_prompt_prefix ''
 _set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'

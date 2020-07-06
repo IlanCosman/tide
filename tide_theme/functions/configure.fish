@@ -27,9 +27,9 @@ end
 
 function _set_defaults
     if test $fake_lines -ge 26
-        set -g fake_tide_newline true
+        set -g fake_tide_print_newline_before_prompt true
     else
-        set -g fake_tide_newline false
+        set -g fake_tide_print_newline_before_prompt false
     end
 
     set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
