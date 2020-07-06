@@ -67,7 +67,7 @@ function _title -a text
     set -l midCols (math -s0 $fake_columns/2)
     set -l midTitle (math -s0 (string length $text)/2)
 
-    _cursor_right (math $midCols-$midTitle)
+    _tide_cursor_right (math $midCols-$midTitle)
     set_color -o
     printf '%s\n' $text
     set_color normal

@@ -3,7 +3,7 @@ function prompt_spacing
 
     _option 1 'Compact'
     _display_prompt
-    _cursor_up 1
+    _tide_cursor_up 1
     _display_prompt
 
     _option 2 'Sparse'

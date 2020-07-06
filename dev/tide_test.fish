@@ -72,7 +72,7 @@ function _help
     printf '%s\n'
     for option in $optionList
         printf '%s' '  -'$option
-        _cursor_right 20
+        _tide_cursor_right 20
         set -l descriptionIndex (contains -i $option $optionList)
         printf '%s\n' $descriptionList[$descriptionIndex]
     end

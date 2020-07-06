@@ -30,7 +30,7 @@ function tide_help -a subcommand
     for sub in $subcommandList
         printf '%s' '  '$b$sub$n
         printf '%b' '\r'
-        _cursor_right 14
+        _tide_cursor_right 14
         _getDescription $sub
     end
     printf '%s\n'
