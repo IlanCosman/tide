@@ -175,23 +175,23 @@ Open each file and click "Install". This will make the `Sauce Code Pro` font ava
 
 Tide was inspired by [Powerlevel10k][]. Powerlevel10k is widely recognized as one of the best Zsh themes—blazing fast, infinitely flexible, and supremely powerful. Tide was created to bring a portion of that greatness to Fish. Though no code is adopted, much of Tide's documentation, ideas, and design elements are borrowed from Powerlevel10k.
 
-[release_badge]: img.shields.io/github/v/release/IlanCosman/tide?label=%20
-[releases]: github.com/IlanCosman/tide/releases
-[fish_version_badge]: img.shields.io/badge/fish-3.1.0%2B-blue
-[license_badge]: img.shields.io/github/license/IlanCosman/tide
+[release_badge]: https://img.shields.io/github/v/release/IlanCosman/tide?label=%20
+[releases]: https://github.com/IlanCosman/tide/releases
+[fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: /LICENSE.md
-[fish]: github.com/fish-shell/fish-shell
+[fish]: https://github.com/fish-shell/fish-shell
 [prompt_connection]: /resources/images/Prompt_Connection.png
-[git]: github.com/git/git
+[git]: https://github.com/git/git
 [configuration_wizard]: /resources/svgs/Configuration_Wizard.svg
 [multi-line_right_prompt]: /resources/images/Multi-Line_Right_Prompt.png
-[pure]: github.com/rafaelrinaldi/pure
+[pure]: https://github.com/rafaelrinaldi/pure
 [pure_compatibility]: /resources/svgs/Pure_Compatibility.svg
 [extensible]: /resources/images/Extensible.png
-[contributing guide]: github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
-[fish_git_prompt]: fishshell.com/docs/current/cmds/fish_git_prompt.html
-[sauce code pro regular.ttf]: github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
-[sauce code pro bold.ttf]: github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
-[sauce code pro italic.ttf]: github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
-[sauce code pro bold-italic.ttf]: github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
-[powerlevel10k]: github.com/romkatv/powerlevel10k/
+[contributing guide]: https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
+[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
+[sauce code pro regular.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
+[sauce code pro italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
+[sauce code pro bold-italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
+[powerlevel10k]: https://github.com/romkatv/powerlevel10k/
