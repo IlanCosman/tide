@@ -1,11 +1,11 @@
 function lean_show_time
-    set -a fake_tide_right_prompt_items 'time'
-
     _title 'Show current time?'
 
     _option 1 'No'
-    _display_prompt fake_tide_time_format ''
+    _display_prompt
 
+    set -a fake_tide_right_prompt_items 'time'
+    
     _option 2 '24-hour format'
     _display_prompt fake_tide_time_format '%T'
 

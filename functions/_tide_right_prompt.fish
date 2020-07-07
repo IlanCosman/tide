@@ -49,7 +49,7 @@ function _fetch_right_prompt_items
     set lastItemWasNewline # Display prefix instead of separator before first item
     set color normal
 
-    printf '%s' ' ' # Necessary for some reason
+    set_color normal
 
     for item in $tide_right_prompt_items
         if test "$item" = 'newline'

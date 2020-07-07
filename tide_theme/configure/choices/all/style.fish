@@ -1,22 +1,29 @@
 function style
-    _title 'Style'
+    _title 'Prompt Style'
 
     _option 1 'Lean'
-    _load_config "$_tide_dir/configure/configs/lean.fish"
+    _load_config 'lean'
     _display_prompt
 
-    _option 2 'Pure'
-    _load_config "$_tide_dir/configure/configs/pure.fish"
+    _option 2 'Classic'
+    _load_config 'classic'
+    _display_prompt
+
+    _option 3 'Pure'
+    _load_config 'pure'
     _display_prompt
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/r/q)
+    switch (_menu 'Choice' 1/2/3/r/q)
         case 1
-            _load_config "$_tide_dir/configure/configs/lean.fish"
+            _load_config lean
             _next_choice 'lean/lean_show_time'
         case 2
-            _load_config "$_tide_dir/configure/configs/pure.fish"
+            _load_config classic
+            _next_choice 'classic/classic_prompt_color'
+        case 3
+            _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'
         case r
             _begin
@@ -25,14 +32,14 @@ function style
     end
 end
 
-function _load_config -a file
+function _load_config -a name
     for var in $fake_tide_var_list
         set -e $var
     end
 
     set -g fake_tide_var_list
-    
-    source $file
+
+    source "$_tide_dir/configure/configs/$name.fish"
 end
 
 function _set -a var_name
