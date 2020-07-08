@@ -1,4 +1,4 @@
-function classic_prompt_frame
+function rainbow_prompt_frame
     _title 'Prompt Frame'
 
     _option 1 'No frame'
@@ -32,20 +32,20 @@ function classic_prompt_frame
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
             set -a fake_tide_left_prompt_items prompt_char
-            _next_choice 'classic/classic_prompt_connection_and_frame_color'
+            _next_choice 'all/prompt_spacing'
         case 2
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled false
-            _next_choice 'classic/classic_prompt_connection_and_frame_color'
+            _next_choice 'all/prompt_spacing'
         case 3
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled true
             set -a fake_tide_left_prompt_items prompt_char
-            _next_choice 'classic/classic_prompt_connection_and_frame_color'
+            _next_choice 'all/prompt_spacing'
         case 4
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
-            _next_choice 'classic/classic_prompt_connection_and_frame_color'
+            _next_choice 'all/prompt_spacing'
         case r
             _begin
         case q

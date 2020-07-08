@@ -9,13 +9,17 @@ function style
     _load_config 'classic'
     _display_prompt
 
-    _option 3 'Pure'
+    _option 3 'Rainbow'
+    _load_config 'rainbow'
+    _display_prompt
+
+    _option 4 'Pure'
     _load_config 'pure'
     _display_prompt
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu 'Choice' 1/2/3/4/r/q)
         case 1
             _load_config lean
             _next_choice 'lean/lean_show_time'
@@ -23,6 +27,9 @@ function style
             _load_config classic
             _next_choice 'classic/classic_prompt_color'
         case 3
+            _load_config rainbow
+            _next_choice 'rainbow/rainbow_show_time'
+        case 4
             _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'
         case r

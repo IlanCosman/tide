@@ -5,7 +5,7 @@ set -l tideColorDarkerGreen 5FAF00
 # ---------------General Theme Variables---------------
 _set fake_tide_print_newline_before_prompt 'true'
 # ------------Left Prompt------------
-_set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char' 'virtual_env'
+_set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'virtual_env' 'newline' 'prompt_char'
 _set fake_tide_left_prompt_pad_items false
 
 _set fake_tide_left_prompt_item_separator_same_color ' '
@@ -72,9 +72,10 @@ _set fake___fish_git_prompt_color_stashstate cyan
 # --------------Status--------------
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
+_set fake_tide_status_success_bg_color normal
 _set fake_tide_status_failure_icon '✘'
 _set fake_tide_status_failure_color D70000
-_set fake_tide_status_bg_color normal
+_set fake_tide_status_failure_bg_color normal
 # -----------Cmd_Duration-----------
 _set fake_tide_cmd_duration_color yellow
 _set fake_tide_cmd_duration_decimals 0

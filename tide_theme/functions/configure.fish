@@ -5,8 +5,8 @@ function tide_configure
     end
 
     set -g fake_columns $COLUMNS
-    if test $fake_columns -gt 100
-        set -g fake_columns 100
+    if test $fake_columns -gt 90
+        set -g fake_columns 90
     end
     set -g fake_lines $LINES
 

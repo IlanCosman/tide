@@ -73,9 +73,10 @@ _set fake___fish_git_prompt_color_stashstate $_tide_color_green
 # --------------Status--------------
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
+_set fake_tide_status_success_bg_color normal
 _set fake_tide_status_failure_icon '✘'
 _set fake_tide_status_failure_color D70000
-_set fake_tide_status_bg_color normal
+_set fake_tide_status_failure_bg_color normal
 # -----------Cmd_Duration-----------
 _set fake_tide_cmd_duration_color 87875F
 _set fake_tide_cmd_duration_decimals 0
