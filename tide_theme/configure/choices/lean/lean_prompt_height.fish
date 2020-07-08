@@ -1,22 +1,23 @@
 function lean_prompt_height
-    _title 'Prompt Height?'
+    _title 'Prompt Height'
 
     _option 1 'One line'
-    set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'prompt_char'
+    set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
     _display_prompt
 
     _option 2 'Two lines'
-    set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
+    set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items[1..-2] 'newline' $fake_tide_left_prompt_items[-1]
     _display_prompt
 
     _display_restart_and_quit
 
     switch (_menu 'Choice' 1/2/r/q)
         case 1
-            set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'prompt_char'
+            set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
             _next_choice 'all/prompt_spacing'
         case 2
-            set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
+            set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
+            set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items[1..-2] 'newline' $fake_tide_left_prompt_items[-1]
             _next_choice 'lean/lean_prompt_connection'
         case r
             _begin

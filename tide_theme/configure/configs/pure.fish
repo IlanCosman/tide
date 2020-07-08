@@ -5,21 +5,32 @@ set -l tideColorDarkerGreen 5FAF00
 # ---------------General Theme Variables---------------
 _set fake_tide_print_newline_before_prompt 'true'
 # ------------Left Prompt------------
-_set fake_tide_left_prompt_prefix ''
-_set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'newline' 'prompt_char' 'virtual_env'
+_set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char' 'virtual_env'
+_set fake_tide_left_prompt_pad_items false
+
 _set fake_tide_left_prompt_item_separator_same_color ' '
 _set fake_tide_left_prompt_item_separator_diff_color ' '
-_set fake_tide_left_prompt_pad_items false
+
+_set fake_tide_left_prompt_item_separator_same_color_color 949494
+_set fake_tide_right_prompt_item_separator_same_color_color 949494
+
+_set fake_tide_left_prompt_prefix ''
 _set fake_tide_left_prompt_suffix ' '
+
 _set fake_tide_left_prompt_frame_enabled false
+_set fake_tide_left_prompt_frame_color 6C6C6C
 # ------------Right Prompt------------
-_set fake_tide_right_prompt_prefix ' '
 _set fake_tide_right_prompt_items
+_set fake_tide_right_prompt_pad_items false
+
 _set fake_tide_right_prompt_item_separator_same_color ' '
 _set fake_tide_right_prompt_item_separator_diff_color ' '
-_set fake_tide_right_prompt_pad_items false
+
+_set fake_tide_right_prompt_prefix ' '
 _set fake_tide_right_prompt_suffix ''
+
 _set fake_tide_right_prompt_frame_enabled false
+_set fake_tide_right_prompt_frame_color 6C6C6C
 # ---------Prompt Connection---------
 _set fake_tide_prompt_connection_color 6C6C6C
 _set fake_tide_prompt_connection_icon ' '

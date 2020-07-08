@@ -88,8 +88,8 @@ function _display_prompt -a var_name var_value
 end
 
 function _display_restart_and_quit
-    printf '(r)  Restart from the beginning \n\n'
-    printf '(q)  Quit and do nothing \n\n'
+    printf '%s\n' '(r)  Restart from the beginning'
+    printf '%s\n\n' '(q)  Quit and do nothing'
 end
 
 function _quit --on-signal INT

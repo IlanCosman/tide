@@ -1,5 +1,5 @@
 function pure_prompt_height
-    _title 'Prompt Height?'
+    _title 'Prompt Height'
 
     _option 1 'One line'
     set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]

@@ -23,17 +23,23 @@ function classic_prompt_separators
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu 'Choice' 1/2/3/4/r/q)
         case 1
-            set -g fake_tide_time_format ''
-            set -e fake_tide_right_prompt_items[-1]
-            _next_choice 'classic/classic_prompt_color'
+            set -g fake_tide_left_prompt_item_separator_same_color ''
+            set -g fake_tide_right_prompt_item_separator_same_color ''
+            _next_choice 'classic/classic_prompt_heads'
         case 2
-            set -g fake_tide_time_format '%T'
-            _next_choice 'classic/classic_prompt_color'
+            set -g fake_tide_left_prompt_item_separator_same_color '│'
+            set -g fake_tide_right_prompt_item_separator_same_color '│'
+            _next_choice 'classic/classic_prompt_heads'
         case 3
-            set -g fake_tide_time_format '%r'
-            _next_choice 'classic/classic_prompt_color'
+            set -g fake_tide_left_prompt_item_separator_same_color '╱'
+            set -g fake_tide_right_prompt_item_separator_same_color '╱'
+            _next_choice 'classic/classic_prompt_heads'
+        case 4
+            set -g fake_tide_left_prompt_item_separator_same_color ''
+            set -g fake_tide_right_prompt_item_separator_same_color ''
+            _next_choice 'classic/classic_prompt_heads'
         case r
             _begin
         case q
