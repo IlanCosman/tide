@@ -2,7 +2,7 @@ function lean_prompt_connection
     _title 'Prompt Connection'
 
     _option 1 'Disconnected'
-    _display_prompt fake_tide_prompt_connection_icon ' '
+    _display_prompt fake_tide_prompt_connection_icon ''
 
     _option 2 'Dotted'
     _display_prompt fake_tide_prompt_connection_icon '·'
@@ -14,14 +14,14 @@ function lean_prompt_connection
 
     switch (_menu 'Choice' 1/2/3/r/q)
         case 1
-            set -g fake_tide_prompt_connection_icon ' '
-            _next_choice 'all/prompt_spacing'
+            set -g fake_tide_prompt_connection_icon ''
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
-            _next_choice 'lean/lean_prompt_connection_color'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 3
             set -g fake_tide_prompt_connection_icon '─'
-            _next_choice 'lean/lean_prompt_connection_color'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case r
             _begin
         case q

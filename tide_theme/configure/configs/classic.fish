@@ -33,7 +33,7 @@ _set fake_tide_right_prompt_frame_enabled true
 _set fake_tide_right_prompt_frame_color 6C6C6C
 # ---------Prompt Connection---------
 _set fake_tide_prompt_connection_color 6C6C6C
-_set fake_tide_prompt_connection_icon ' '
+_set fake_tide_prompt_connection_icon ''
 
 # --------------------Prompt Items--------------------
 # ------------Prompt Char------------

@@ -14,7 +14,7 @@ function lean_prompt_height
     switch (_menu 'Choice' 1/2/r/q)
         case 1
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
-            _next_choice 'all/prompt_spacing'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 2
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
             set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items[1..-2] 'newline' $fake_tide_left_prompt_items[-1]

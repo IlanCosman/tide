@@ -32,20 +32,20 @@ function rainbow_prompt_frame
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
             set -a fake_tide_left_prompt_items prompt_char
-            _next_choice 'all/prompt_spacing'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 2
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled false
-            _next_choice 'all/prompt_spacing'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 3
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled true
             set -a fake_tide_left_prompt_items prompt_char
-            _next_choice 'all/prompt_spacing'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case 4
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
-            _next_choice 'all/prompt_spacing'
+            _next_choice 'all/prompt_connection_andor_frame_color'
         case r
             _begin
         case q

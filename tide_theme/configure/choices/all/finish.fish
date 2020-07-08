@@ -25,7 +25,7 @@ function finish
                 set -e $fakeVar
             end
 
-            cd .
+            source "$__fish_config_dir/conf.d/_tide_Ω_run_on_startup.fish" # Reload important startup variables
     end
 
     _quit

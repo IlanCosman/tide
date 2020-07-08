@@ -26,19 +26,19 @@ function _begin
 end
 
 function _set_defaults
-    if test $fake_lines -ge 26
-        set -g fake_tide_print_newline_before_prompt true
-    else
-        set -g fake_tide_print_newline_before_prompt false
-    end
+    # if test $fake_lines -ge 26
+    #     set -g fake_tide_print_newline_before_prompt true
+    # else
+    #     set -g fake_tide_print_newline_before_prompt false
+    # end
 
-    set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
-    set -g fake_tide_right_prompt_items 'cmd_duration' 'time'
+    # set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
+    # set -g fake_tide_right_prompt_items 'cmd_duration' 'time'
 
-    set -g fake_tide_time_format ''
-    set -g fake_tide_time_color 5F8787
-    set -g fake_tide_prompt_connection_icon ' '
-    set -g fake_tide_prompt_connection_color 6C6C6C
+    # set -g fake_tide_time_format ''
+    # set -g fake_tide_time_color 5F8787
+    # set -g fake_tide_prompt_connection_icon ''
+    # set -g fake_tide_prompt_connection_color 6C6C6C
 end
 
 function _next_choice -a nextChoice

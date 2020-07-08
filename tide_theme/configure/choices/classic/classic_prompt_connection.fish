@@ -2,7 +2,7 @@ function classic_prompt_connection
     _title 'Prompt Connection'
 
     _option 1 'Disconnected'
-    _display_prompt fake_tide_prompt_connection_icon ' '
+    _display_prompt fake_tide_prompt_connection_icon ''
 
     _option 2 'Dotted'
     _display_prompt fake_tide_prompt_connection_icon '·'
@@ -14,7 +14,7 @@ function classic_prompt_connection
 
     switch (_menu 'Choice' 1/2/3/r/q)
         case 1
-            set -g fake_tide_prompt_connection_icon ' '
+            set -g fake_tide_prompt_connection_icon ''
             _next_choice 'classic/classic_prompt_frame'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
