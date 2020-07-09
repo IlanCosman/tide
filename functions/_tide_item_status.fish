@@ -13,14 +13,13 @@ function _tide_item_status
         if test $_tide_last_status -eq 0
             set -g tide_status_bg_color $tide_status_success_bg_color
             set_color $tide_status_success_color
-            printf '%s' $tide_status_success_icon
+            printf '%s' {$tide_status_success_icon}' '
         else
             set -g tide_status_bg_color $tide_status_failure_bg_color
             set_color $tide_status_failure_color
-            printf '%s' $tide_status_failure_icon
+            printf '%s' {$tide_status_failure_icon}' '
         end
 
-        printf '%s' ' '
         __fish_pipestatus_with_signal $_tide_last_pipestatus | string replace 'SIG' '' | string join '|'
     else if test "$tide_status_always_display_icon" = 'true'
         set -g tide_status_bg_color $tide_status_success_bg_color
