@@ -3,11 +3,13 @@ function _tide_item_virtual_env
         set_color $tide_virtual_env_color
 
         printf '%s' {$tide_virtual_env_icon}' '
-
+        
+        set -l splitVirtualEnv (string split '/' "$VIRTUAL_ENV")
+        
         if test "$tide_virtual_env_display" = 'projectName'
-            basename (string split -r -m1 '/' "$VIRTUAL_ENV")[1]
+            printf '%s' $splitVirtualEnv[-2]
         else if test "$tide_virtual_env_display" = 'venvName'
-            basename "$VIRTUAL_ENV"
+            printf '%s' $splitVirtualEnv[-1]
         end
     end
 end
