@@ -11,7 +11,7 @@ cd $dir
 
 @test 'nothing' (_virtual_env) -z
 
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate.fish
 
 set -lx tide_virtual_env_display projectName
