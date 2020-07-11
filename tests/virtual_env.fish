@@ -14,10 +14,16 @@ cd $dir
 python3 -m venv .venv
 source .venv/bin/activate.fish
 
+set -lx tide_virtual_env_icon ''
+
 set -lx tide_virtual_env_display projectName
-@test 'projectName' (_virtual_env) = 'python_project'
+@test 'projectName' (_virtual_env) = " python_project"
 
 set -lx tide_virtual_env_display venvName
-@test 'venvName' (_virtual_env) = '.venv'
+@test 'venvName' (_virtual_env) = " .venv"
+
+set -lx tide_virtual_env_icon
+set -lx tide_virtual_env_display projectName
+@test 'No icon' (_virtual_env) = "python_project"
 
 rm -r $dir

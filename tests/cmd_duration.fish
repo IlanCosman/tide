@@ -1,9 +1,9 @@
 @mesg '---------cmd_duration---------'
 
 function _cmd_duration -a duration threshold decimals
-    set -g CMD_DURATION $duration
-    set -g tide_cmd_duration_threshold $threshold
-    set -g tide_cmd_duration_decimals $decimals
+    set -lx CMD_DURATION $duration
+    set -lx tide_cmd_duration_threshold $threshold
+    set -lx tide_cmd_duration_decimals $decimals
 
     _tide_decolor (_tide_item_cmd_duration)
 end

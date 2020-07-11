@@ -4,8 +4,8 @@ function _tide_pwd
 
     set -g _tide_pwd_output $colorDirs$_tide_pwd
 
-    if not test -w $PWD -a -n "$tide_pwd_unwritable_icon"
-        set _tide_pwd_output "$colorDirs$tide_pwd_unwritable_icon "$_tide_pwd_output
+    if not test -w $PWD
+        set _tide_pwd_output $colorDirs{$tide_pwd_unwritable_icon}' ' $_tide_pwd_output
     end
 
     set -l truncatedList '.' $_tide_split_pwd

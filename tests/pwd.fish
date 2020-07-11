@@ -9,11 +9,17 @@ end
 
 sudo mkdir -p /unwritable/dir
 
-set -l unwr "$tide_pwd_unwritable_icon "
+set -lx tide_pwd_unwritable_icon 
 
-@test '/' (_pwd '/') = $unwr'/'
-@test '/unwritable' (_pwd '/unwritable') = $unwr'/unwritable'
-@test '/unwritable/dir' (_pwd '/unwritable/dir') = $unwr'/unwritable/dir'
+@test '/' (_pwd '/') = ' /'
+@test '/unwritable' (_pwd '/unwritable') = ' /unwritable'
+@test '/unwritable/dir' (_pwd '/unwritable/dir') = ' /unwritable/dir'
+
+set -lx tide_pwd_unwritable_icon
+
+@test '/' (_pwd '/') = '/'
+@test '/unwritable' (_pwd '/unwritable') = '/unwritable'
+@test '/unwritable/dir' (_pwd '/unwritable/dir') = '/unwritable/dir'
 
 sudo rm -rf /unwritable
 

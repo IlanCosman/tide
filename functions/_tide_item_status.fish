@@ -4,10 +4,9 @@ function _tide_item_status
             if test "$tide_status_always_display_icon" = 'true'
                 set -g tide_status_bg_color $tide_status_failure_bg_color
                 set_color $tide_status_failure_color
-                printf '%s' "$tide_status_failure_icon 1"
+                printf '%s' {$tide_status_failure_icon}' ' '1'
             end
-
-            return 0
+            return
         end
 
         if test $_tide_last_status -eq 0
