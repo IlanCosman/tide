@@ -6,6 +6,8 @@ function tide_actual_install
         set location 'master'
     end
 
+    set -gx TERM xterm # Necessary for testing purposes, ensures color codes are printed
+
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Files-----------------

@@ -6,6 +6,8 @@ function tide_test
         return 0
     end
 
+    set -lx TERM xterm # Necessary for testing purposes ensures color codes are printed
+
     set -l testsDir "$__fish_config_dir/tests"
 
     set -l pending '/tmp/tide_test'
@@ -32,17 +34,17 @@ function tide_test
         end
     end
 
-    if test -e $passed
-        printf '%s\n' '--------PASSED--------'
-        cat $passed
-        rm $passed
-    end
     if test -e $failed
         printf '%s\n' '--------FAILED--------'
         cat $failed
         rm $failed
 
         set returnStatement 1
+    end
+    if test -e $passed
+        printf '%s\n' '--------PASSED--------'
+        cat $passed
+        rm $passed
     end
 
     if test -e $pending

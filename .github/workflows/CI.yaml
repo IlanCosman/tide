@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt install -y fish curl git
+
+      - name: Install Tide as dev unattended
+        shell: fish {0}
+        run: source "$GITHUB_WORKSPACE/tools/tide_install.fish" && tide_install -ldu "$GITHUB_WORKSPACE"
+
+      - name: Run all tests
+        shell: fish {0}
+        run: tide_test -a
