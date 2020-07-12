@@ -11,22 +11,21 @@ function tide_actual_install
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Files-----------------
-    set -g tempDir '/tmp/tide_theme'
-
-    # Copy/clone repository into $tempDir
+    set -lx tempDir '/tmp/tide_theme'
     if test -e $tempDir
         rm -rf $tempDir
     end
+
+    # Copy/clone repository into $tempDir
     if set -q _flag_local
         cp -rf "$location" "$tempDir"
     else
         git clone -q --depth 1 -b $location https://github.com/IlanCosman/tide.git $tempDir
     end
 
-    cp -r "$tempDir/completions" $__fish_config_dir
-    cp -r "$tempDir/conf.d" $__fish_config_dir
-    cp -r "$tempDir/functions" $__fish_config_dir
-    cp -r "$tempDir/tide_theme" $__fish_config_dir
+    for dir in completions conf.d functions tide_theme
+        cp -r "$tempDir/$dir" $__fish_config_dir
+    end
 
     # --------------------Set Defaults--------------------
     _set_immutables
@@ -68,7 +67,6 @@ function tide_actual_install
     end
 
     rm -rf $tempDir
-    set -e tempDir
 end
 
 function _set_immutables

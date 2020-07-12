@@ -42,7 +42,7 @@ function tide_test
             if set -q _flag_verbose
                 cat $pending >>$passed
             else
-                printf '%s\n' "$test - ✔" >>$passed
+                printf '%s\n' "(✔) $test" >>$passed
             end
         else
             cat $pending >>$failed
