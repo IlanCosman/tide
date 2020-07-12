@@ -1,5 +1,5 @@
 function tide_actual_install
-    argparse 'l/local' 'd/dev' 'u/unattended' -- $argv
+    argparse 'l/local' 'u/unattended' -- $argv
 
     set -l location $argv[1]
     if test -z "$location"
@@ -27,12 +27,6 @@ function tide_actual_install
     cp -r "$tempDir/conf.d" $__fish_config_dir
     cp -r "$tempDir/functions" $__fish_config_dir
     cp -r "$tempDir/tide_theme" $__fish_config_dir
-
-    if set -q _flag_dev
-        # Install fisher and fishtape for testing
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-        fisher add jorgebucaran/fishtape
-    end
 
     # --------------------Set Defaults--------------------
     _set_immutables

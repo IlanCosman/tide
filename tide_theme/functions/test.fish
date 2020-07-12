@@ -1,12 +1,27 @@
 function tide_test
-    argparse 'h/help' 'v/verbose' 'a/all' -- $argv
+    argparse 'h/help' 'v/verbose' 'a/all' 'i/install' -- $argv
 
     if set -q _flag_help
         _help
-        return 0
+        return
     end
 
-    set -lx TERM xterm # Necessary for testing purposes ensures color codes are printed
+    if set -q _flag_install
+        # Install fisher and fishtape for testing
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+        fisher add jorgebucaran/fishtape
+
+        return
+    end
+
+    if not functions -q fishtape
+        set -l b (set_color -o)
+        set -l n (set_color normal)
+        printf '%s' $b'fishtape'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
+        return
+    end
+
+    set -lx TERM xterm # Necessary for testing purposes, ensures color codes are printed
 
     set -l testsDir "$_tide_dir/tests"
 
@@ -62,11 +77,13 @@ function _help
     set -l optionList \
         'v or --verbose' \
         'a or --all' \
-        'h or --help'
+        'h or --help' \
+        'i or --install'
     set -l descriptionList \
         'display test output even if passed' \
         'run all available tests' \
-        'print this help message'
+        'print this help message' \
+        'install fisher and fishtape test dependencies'
 
     printf '%s\n' 'Usage: '$g'tide_test '$n'[options] '$b'[TESTS...]'$n
     printf '%s\n'
@@ -74,6 +91,7 @@ function _help
     printf '%s\n'
     for option in $optionList
         printf '%s' '  -'$option
+        printf '%b' '\r'
         _tide_cursor_right 20
         set -l descriptionIndex (contains -i $option $optionList)
         printf '%s\n' $descriptionList[$descriptionIndex]
