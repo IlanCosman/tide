@@ -1,4 +1,4 @@
-# 🌊 Tide [![release_badge][]][releases] [![fish_version_badge][]](#System-Requirements) [![license_badge][]][license]
+# 🌊 Tide [![release_badge][]][releases] [![ci_badge][]][ci] [![fish_version_badge][]](#System-Requirements) [![license_badge][]][license]
 
 Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box experience.
 
@@ -177,6 +177,8 @@ Open each file and click "Install". This will make the `Sauce Code Pro` font ava
 
 <!-- Alphabetical Reference Links -->
 
+[ci]: https://github.com/IlanCosman/tide/actions?query=workflow%3ACI
+[ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: /resources/svgs/Configuration_Wizard.svg
 [contributing guide]: https://github.com/IlanCosman/tide/blob/master/CONTRIBUTING.md
 [extensible]: /resources/images/Extensible.png
