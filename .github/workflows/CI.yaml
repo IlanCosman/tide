@@ -19,4 +19,4 @@ jobs:
 
       - name: Run all tests
         shell: fish {0}
-        run: tide_test -a
+        run: tide test -a

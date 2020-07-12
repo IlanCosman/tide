@@ -8,7 +8,7 @@ function tide_test
 
     set -lx TERM xterm # Necessary for testing purposes ensures color codes are printed
 
-    set -l testsDir "$__fish_config_dir/tests"
+    set -l testsDir "$_tide_dir/tests"
 
     set -l pending '/tmp/tide_test'
     set -l failed '/tmp/tide_test_failed'

@@ -1,5 +1,5 @@
 function tide
-    argparse 'v/version' -- $argv
+    argparse --stop-nonopt 'v/version' -- $argv
     set -l subcommand $argv[1]
 
     if set -q _flag_version
