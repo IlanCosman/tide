@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: sudo apt install -y fish curl git
+        run: sudo apt-get install -y fish curl git
 
       - name: Install Tide unattended
         shell: fish {0}
@@ -19,7 +19,7 @@ jobs:
 
       - name: Install testing dependencies
         shell: fish {0}
-        run: sudo apt install -y python3 python3-venv
+        run: sudo apt-get install -y python3 python3-venv
 
       - name: Install fisher and fishtape
         shell: fish {0}

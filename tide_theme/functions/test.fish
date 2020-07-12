@@ -85,7 +85,7 @@ function _help
         'print this help message' \
         'install fisher and fishtape test dependencies'
 
-    printf '%s\n' 'Usage: '$g'tide_test '$n'[options] '$b'[TESTS...]'$n
+    printf '%s\n' 'Usage: '$g'tide test '$n'[options] '$b'[TESTS...]'$n
     printf '%s\n'
     printf '%s\n' 'Options:'
     printf '%s\n'
