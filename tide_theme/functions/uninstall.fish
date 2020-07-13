@@ -12,13 +12,12 @@ function tide_uninstall
         rm -r $_tide_dir
     end
 
-    set -l fishPromptFirstLine (head -n 1 $fishPrompt)
-    if test "$fishPromptFirstLine" = '# Created by tide configure'
+    if test (head --lines=1 $fishPrompt) = '# Created by tide configure'
         rm $fishPrompt
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    for func in (cat "$__fish_config_dir/conf.d/_tide_Ω_run.fish")
+    for func in (basename -s '.fish' $_tide_file_list)
         functions -e $func
     end
 
