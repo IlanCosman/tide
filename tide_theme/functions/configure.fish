@@ -17,6 +17,10 @@ function tide_configure
         source "$promptItem"
     end
 
+    _begin
+end
+
+function _begin
     _next_choice 'all/style'
 end
 
