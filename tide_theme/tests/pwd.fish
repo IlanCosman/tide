@@ -5,23 +5,26 @@ function _pwd -a dir
     _tide_decolor (_tide_item_pwd)
 end
 
+# Dont forget that ~ doesn't expand to $HOME in quotes
+
 # Unwritable directories
 
-sudo mkdir -p /unwritable/dir
+sudo mkdir -p ~/unwritable/dir
 
-set -lx tide_pwd_unwritable_icon 
+set -lx tide_pwd_unwritable_icon ''
 
-@test '/' (_pwd '/') = ' /'
-@test '/unwritable' (_pwd '/unwritable') = ' /unwritable'
-@test '/unwritable/dir' (_pwd '/unwritable/dir') = ' /unwritable/dir'
+@test '~/unwritable' (_pwd ~/unwritable) = ' ~/unwritable'
+@test '~/unwritable/dir' (_pwd ~/unwritable/dir) = ' ~/unwritable/dir'
+
+# sudo rm -rf ~/unwritable
+
+# No icon / directories
 
 set -lx tide_pwd_unwritable_icon
 
 @test '/' (_pwd '/') = '/'
-@test '/unwritable' (_pwd '/unwritable') = '/unwritable'
-@test '/unwritable/dir' (_pwd '/unwritable/dir') = '/unwritable/dir'
-
-sudo rm -rf /unwritable
+@test '/usr' (_pwd '/usr') = '/usr'
+@test '/usr/share' (_pwd '/usr/share') = '/usr/share'
 
 # Normal directories
 
@@ -35,7 +38,7 @@ rm -rf ~/normal
 
 # Long directories
 
-set -l longDir "$HOME/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa"
+set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
 mkdir -p $longDir
 
 @test 'Long dir' (_pwd "$longDir") = '~/a/b/c/d/e/f/g/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa'
