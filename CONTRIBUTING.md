@@ -2,28 +2,20 @@
 
 🌊 Thank you for contributing to Tide! 🌊
 
-## Installing for Developers
-
-The `tide_install` function offers a few flags. `-d` will install Tide as a developer which provides extra files for testing. `-l` will install Tide from a local directory. When installing remotely, `tide_install` takes a branch name as an argument, defaulting to master.
-
-Examples:
-
-```console
-tide_install -d example-branch
-```
-
-```console
-tide_install -ld ~/tide
-```
-
 ## Testing
 
-The `tide test` command runs tests from the `$_tide_dir/tests` folder using [fishtape][]. Currently there are unit tests for most prompt items.
+The `tide test` command runs tests from the `$_tide_dir/tests` folder using [fishtape][]. Currently there are unit tests for most prompt items. You can quickly install fisher and fishtape using `tide test -i`
 
 Example:
 
 ```console
 tide test status
+```
+
+You can run all tests with the `-a` flag.
+
+```console
+tide test -a
 ```
 
 ## Git Workflow
