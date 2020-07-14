@@ -16,13 +16,14 @@ jobs:
 
       - name: Install dependencies
         shell: bash
-        run: sudo apt-get install -y fish curl git
+        run: >
+          sudo apt-get install -y 
+          fish git
+          curl
+          python3 python3-venv
 
       - name: Install Tide unattended
         run: source "$GITHUB_WORKSPACE/tools/tide_install.fish" && tide_install -lu "$GITHUB_WORKSPACE"
-
-      - name: Install testing dependencies
-        run: sudo apt-get install -y python3 python3-venv
 
       - name: Install fisher and fishtape
         run: tide test -i

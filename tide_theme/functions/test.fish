@@ -8,7 +8,7 @@ function tide_test
 
     if set -q _flag_install
         # Install fisher and fishtape for testing
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+        curl git.io/fisher --create-dirs -sLo $__fish_config_dir/functions/fisher.fish
         fisher add jorgebucaran/fishtape
 
         return
