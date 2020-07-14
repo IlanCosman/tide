@@ -6,25 +6,26 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
 
+    defaults:
+      run:
+        shell: fish {0}
+
     steps:
       # Checks-out repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
       - name: Install dependencies
+        shell: bash
         run: sudo apt-get install -y fish curl git
 
       - name: Install Tide unattended
-        shell: fish {0}
         run: source "$GITHUB_WORKSPACE/tools/tide_install.fish" && tide_install -lu "$GITHUB_WORKSPACE"
 
       - name: Install testing dependencies
-        shell: fish {0}
         run: sudo apt-get install -y python3 python3-venv
 
       - name: Install fisher and fishtape
-        shell: fish {0}
         run: tide test -i
 
       - name: Run all tests
-        shell: fish {0}
         run: tide test -a
