@@ -19,7 +19,7 @@ function style
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/r/q)
+    switch (_menu)
         case 1
             _load_config lean
             _next_choice 'lean/lean_show_time'

@@ -30,16 +30,18 @@ function _next_choice -a nextChoice
     $cmd
 end
 
-function _menu -a question options
-    set -l optionList (string split '/' $options)
+function _menu
     set -l bold (set_color -o)
     set -l norm (set_color normal)
 
-    while true
-        read -P $bold"$question [$options] "$norm input
+    set -l listWithSlashes (string join '/' $_option_list)
 
-        if contains $input $optionList
+    while true
+        read -P $bold"Choice [$listWithSlashes] "$norm input
+
+        if contains $input $_option_list
             printf '%s\n' $input
+            set -e _option_list
             break
         end
     end
@@ -57,6 +59,8 @@ function _title -a text
 end
 
 function _option -a symbol text
+    set -ga _option_list $symbol
+
     set_color -o
     printf '%s\n' "($symbol) $text"
     set_color normal
@@ -72,7 +76,10 @@ end
 
 function _display_restart_and_quit
     printf '%s\n' '(r)  Restart from the beginning'
-    printf '%s\n\n' '(q)  Quit and do nothing'
+    printf '%s\n' '(q)  Quit and do nothing'
+    printf '%s\n' ''
+    
+    set -ga _option_list r q
 end
 
 function _quit --on-signal INT

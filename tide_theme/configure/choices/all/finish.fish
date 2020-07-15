@@ -1,7 +1,7 @@
 function finish
     set_color red
     _title 'Overwrite tide config and fish_prompt?'
-    # set_color normal
+    set_color normal
 
     _option y 'Yes'
     printf '%b' '\n\n'
@@ -9,7 +9,7 @@ function finish
     _option n 'No'
     printf '%b' '\n\n'
 
-    switch (_menu 'Choice' y/n)
+    switch (_menu)
         case y
             cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
 

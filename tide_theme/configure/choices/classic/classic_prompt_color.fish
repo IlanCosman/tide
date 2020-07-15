@@ -19,7 +19,7 @@ function classic_prompt_color
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/r/q)
+    switch (_menu)
         case 1
             _set_all_items_bg_color 585858
             _next_choice 'classic/classic_show_time'

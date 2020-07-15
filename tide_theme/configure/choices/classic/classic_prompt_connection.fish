@@ -12,7 +12,7 @@ function classic_prompt_connection
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu)
         case 1
             set -g fake_tide_prompt_connection_icon ''
             _next_choice 'classic/classic_prompt_frame'

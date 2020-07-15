@@ -12,7 +12,7 @@ function lean_prompt_connection
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu)
         case 1
             set -g fake_tide_prompt_connection_icon ''
             _next_choice 'all/prompt_connection_andor_frame_color'

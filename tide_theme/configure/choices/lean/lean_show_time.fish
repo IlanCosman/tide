@@ -14,7 +14,7 @@ function lean_show_time
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/r/q)
+    switch (_menu)
         case 1
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]

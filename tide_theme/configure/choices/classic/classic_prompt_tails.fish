@@ -28,7 +28,7 @@ function classic_prompt_tails
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/5/r/q)
+    switch (_menu)
         case 1
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''

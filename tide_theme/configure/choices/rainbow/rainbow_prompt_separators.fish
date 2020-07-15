@@ -23,7 +23,7 @@ function rainbow_prompt_separators
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/r/q)
+    switch (_menu)
         case 1
             set -g fake_tide_left_prompt_item_separator_diff_color ''
             set -g fake_tide_right_prompt_item_separator_diff_color ''

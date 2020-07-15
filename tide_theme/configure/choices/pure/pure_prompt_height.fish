@@ -11,7 +11,7 @@ function pure_prompt_height
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/r/q)
+    switch (_menu)
         case 1
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
             _next_choice 'all/prompt_connection_andor_frame_color'

@@ -27,7 +27,7 @@ function classic_prompt_frame
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/r/q)
+    switch (_menu)
         case 1
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false

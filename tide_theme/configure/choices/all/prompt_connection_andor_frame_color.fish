@@ -37,7 +37,7 @@ function prompt_connection_andor_frame_color
 
     _display_restart_and_quit
 
-    switch (_menu 'Choice' 1/2/3/4/r/q)
+    switch (_menu)
         case 1
             _set_prompt_connection_and_frame_color 808080
             _next_choice 'all/prompt_spacing'
