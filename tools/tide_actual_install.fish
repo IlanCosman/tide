@@ -79,7 +79,6 @@ function _set_immutables
 
     _set_immutable _tide_version 2.0.0
     _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
-    _set_immutable _tide_subcommands (basename -s '.fish' $_tide_dir/functions/*)
     # --------------Colors--------------
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF

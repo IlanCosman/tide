@@ -1,4 +1,4 @@
-function tide_configure
+function _tide_sub_configure
     if test $COLUMNS -lt 55 || test $LINES -lt 21
         printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
         return 1

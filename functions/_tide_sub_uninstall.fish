@@ -1,4 +1,4 @@
-function tide_uninstall
+function _tide_sub_uninstall
     if not _user_confirm_defaultNo 'Uninstall tide theme?'
         printf '%s\n' 'Aborted uninstall.'
         return 1

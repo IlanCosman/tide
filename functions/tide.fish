@@ -7,13 +7,9 @@ function tide
         return 0
     end
 
-    set -l actual_command_name "tide_$subcommand"
-
-    if contains $subcommand $_tide_subcommands
-        source "$_tide_dir/functions/$subcommand.fish"
-        $actual_command_name $argv[2..-1]
+    if functions -q _tide_sub_$subcommand
+        _tide_sub_$subcommand $argv[2..-1]
     else
         tide help
     end
-    functions -e $actual_command_name
 end

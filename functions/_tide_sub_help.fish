@@ -1,4 +1,4 @@
-function tide_help -a subcommand
+function _tide_sub_help -a subcommand
     set -g b (set_color -o)
     set -g n (set_color normal)
     set -g g (set_color $_tide_color_green)

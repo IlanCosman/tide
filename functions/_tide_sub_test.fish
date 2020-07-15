@@ -1,4 +1,4 @@
-function tide_test
+function _tide_sub_test
     argparse 'h/help' 'v/verbose' 'a/all' 'i/install' -- $argv
 
     if set -q _flag_help
