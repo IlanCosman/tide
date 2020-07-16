@@ -18,12 +18,14 @@ function classic_prompt_height
     switch (_menu)
         case 1
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
+            
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
             _next_choice 'all/prompt_connection_andor_frame_color'
         case 2
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
             set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items 'newline'
+            
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
             _next_choice 'classic/classic_prompt_connection'

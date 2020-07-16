@@ -11,5 +11,6 @@ function tide
         _tide_sub_$subcommand $argv[2..-1]
     else
         tide help
+        return 1
     end
 end

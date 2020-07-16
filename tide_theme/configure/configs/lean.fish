@@ -71,6 +71,7 @@ _set fake___fish_git_prompt_color_dirtystate $tideColorGold
 _set fake___fish_git_prompt_color_untrackedfiles $_tide_color_light_blue
 _set fake___fish_git_prompt_color_stashstate $_tide_color_green
 # --------------Status--------------
+_set fake_tide_status_always_display_icon false
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
 _set fake_tide_status_success_bg_color normal

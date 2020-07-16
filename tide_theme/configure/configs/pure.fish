@@ -70,6 +70,7 @@ _set fake___fish_git_prompt_color_upstream cyan
 _set fake___fish_git_prompt_color_stagedstate brblack
 _set fake___fish_git_prompt_color_stashstate cyan
 # --------------Status--------------
+_set fake_tide_status_always_display_icon false
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
 _set fake_tide_status_success_bg_color normal
