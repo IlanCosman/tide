@@ -171,7 +171,7 @@ Download these four ttf files:
 - [MesloLGS NF Italic.ttf][]
 - [MesloLGS NF Bold Italic.ttf][]
 
-Open each file and click "Install". This will make the `Sauce Code Pro` font available to all applications on your system. Configure your terminal to use this font.
+Open each file and click "Install". This will make the `MesloLGS NF` font available to all applications on your system. Configure your terminal to use this font.
 
 ## Acknowledgments
 
