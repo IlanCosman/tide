@@ -1,4 +1,4 @@
-# 🌊 Tide [![ci_badge][]][ci] [![fish_version_badge][]](#System-Requirements) [![license_badge][]][license]
+# 🌊 Tide [![ci_badge][]][actions] [![fish_version_badge][]](#System-Requirements) [![license_badge][]][license]
 
 Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box experience.
 
@@ -158,42 +158,45 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. 
 
 ## Fonts
 
-`Sauce Code Pro`—a nerd-fonts patched version of the legendary Source Code Pro—is the recommended font for Tide.
+### Meslo Nerd Font
+
+Gorgeous monospace font designed by Jim Lyles for Bitstream, customized for Apple, enhanced by André Berg, and finally patched by Roman Perepelitsa of [Powerlevel10k][] with scripts originally developed by Ryan L McIntyre of [Nerd Fonts][]. Contains all the glyphs and symbols that Tide may need. Battle-tested in dozens of different terminals on all major operating systems.
 
 ### Font Installation
 
 Download these four ttf files:
 
-- [Sauce Code Pro Regular.ttf][]
-- [Sauce Code Pro Bold.ttf][]
-- [Sauce Code Pro Italic.ttf][]
-- [Sauce Code Pro Bold-Italic.ttf][]
+- [MesloLGS NF Regular.ttf][]
+- [MesloLGS NF Bold.ttf][]
+- [MesloLGS NF Italic.ttf][]
+- [MesloLGS NF Bold Italic.ttf][]
 
 Open each file and click "Install". This will make the `Sauce Code Pro` font available to all applications on your system. Configure your terminal to use this font.
 
 ## Acknowledgments
 
-- [Powerlevel10k][] - Fast, flexible, and powerful Zsh theme. Much of Tide's documentation, ideas, and design elements are borrowed from Powerlevel10k.
+- [Powerlevel10k][] - Much of Tide's documentation, resources, ideas, and design elements are borrowed from Powerlevel10k.
 
 <!-- Alphabetical Reference Links -->
 
-[ci]: https://github.com/IlanCosman/tide/actions?query=workflow%3ACI
+[actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration_wizard]: https://raw.githubusercontent.com/wiki/IlanCosman/tide/resources/svgs/Configuration_Wizard.svg
+[configuration_wizard]: https://github.com/IlanCosman/tide/wiki/resources/svgs/Configuration_Wizard.svg
 [contributing guide]: CONTRIBUTING.md
-[extensible]: https://raw.githubusercontent.com/wiki/IlanCosman/tide/resources/images/Extensible.png
+[extensible]: https://github.com/IlanCosman/tide/wiki/resources/images/Extensible.png
 [fish]: https://github.com/fish-shell/fish-shell
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [git]: https://github.com/git/git
 [license]: LICENSE.md
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[multi-line_right_prompt]: https://raw.githubusercontent.com/wiki/IlanCosman/tide/resources/images/Multi-Line_Right_Prompt.png
+[meslolgs nf bold.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Bold.ttf
+[meslolgs nf bold italic.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Bold%20Italic.ttf
+[meslolgs nf italic.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Italic.ttf
+[meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Regular.ttf
+[multi-line_right_prompt]: https://github.com/IlanCosman/tide/wiki/resources/images/Multi-Line_Right_Prompt.png
+[nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[prompt_connection]: https://raw.githubusercontent.com/wiki/IlanCosman/tide/resources/images/Prompt_Connection.png
+[prompt_connection]: https://github.com/IlanCosman/tide/wiki/resources/images/Prompt_Connection.png
 [pure]: https://github.com/rafaelrinaldi/pure
-[pure_compatibility]: https://raw.githubusercontent.com/wiki/IlanCosman/tide/resources/svgs/Pure_Compatibility.svg
-[sauce code pro bold.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf
-[sauce code pro bold-italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
-[sauce code pro italic.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Italic/complete/Sauce%20Code%20Pro%20Italic%20Nerd%20Font%20Complete.ttf
-[sauce code pro regular.ttf]: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+[pure_compatibility]: https://github.com/IlanCosman/tide/wiki/resources/svgs/Pure_Compatibility.svg
