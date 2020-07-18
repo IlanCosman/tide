@@ -10,7 +10,7 @@ _set fake_tide_prompt_connection_icon ' '
 
 # --------------------Prompt Items--------------------
 _set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
-_set fake_tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'virtual_env'
+_set fake_tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'virtual_env' 'nvm'
 # ------------Prompt Char------------
 _set fake_tide_prompt_char_success_color $_tide_color_green
 _set fake_tide_prompt_char_failure_color FF0000
@@ -61,6 +61,9 @@ _set fake_tide_jobs_color $tideColorDarkerGreen
 _set fake_tide_virtual_env_color 00AFAF
 _set fake_tide_virtual_env_display 'projectName'
 _set fake_tide_virtual_env_icon ''
+# ---------------NVM---------------
+_set fake_tide_nvm_color 22BB99
+_set fake_tide_nvm_icon ''
 # ---------------Time---------------
 _set fake_tide_time_color 5F8787
 _set fake_tide_time_format '%T'

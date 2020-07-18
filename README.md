@@ -59,11 +59,11 @@ Tide variables that users are encouraged to modify begin with the string `tide_`
 
 ## General Variables
 
-| Variable           | Description                                | Default                                      |
-| ------------------ | ------------------------------------------ | -------------------------------------------- |
-| newline            | add empty line before each prompt          | true                                         |
-| left_prompt_items  | order of the left prompt items to display  | pwd git_prompt newline prompt_char           |
-| right_prompt_items | order of the right prompt items to display | status cmd_duration context jobs virtual_env |
+| Variable           | Description                                | Default                                          |
+| ------------------ | ------------------------------------------ | ------------------------------------------------ |
+| newline            | add empty line before each prompt          | true                                             |
+| left_prompt_items  | order of the left prompt items to display  | pwd git_prompt newline prompt_char               |
+| right_prompt_items | order of the right prompt items to display | status cmd_duration context jobs virtual_env nvm |
 
 ### prompt_connection
 
@@ -155,6 +155,13 @@ Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. 
 | virtual_env_color   | color of virtual_env item                                                                                                              | 00AFAF      |
 | virtual_env_icon    | icon to display in front of virtual_env item                                                                                           | ''         |
 | virtual_env_display | Options are venvName and projectName. venvName is the virtual env directory, most often .venv. projectName is the directory above that | projectName |
+
+### nvm
+
+| Variable      | Description                          | Default |
+| ------------- | ------------------------------------ | ------- |
+| nvm_env_color | color of nvm item                    | 00AFAF  |
+| nvm_env_icon  | icon to display in front of ncm item | ''     |
 
 ## Fonts
 
