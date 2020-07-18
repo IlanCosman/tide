@@ -44,7 +44,7 @@ function tide_actual_install
         set -e $fakeVar
     end
 
-    source "$__fish_config_dir/conf.d/_tide_Ω_run_on_startup.fish"
+    source "$__fish_config_dir/conf.d/_tide_Ω_init.fish"
 
     # -----------------------Finish-----------------------
     for file in $_tide_file_list
