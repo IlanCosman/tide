@@ -17,17 +17,11 @@ function finish
 
             cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
 
-            for var in $_tide_var_list
-                set -e $var
-            end
-            set _tide_var_list
-
-            for fakeVar in $fake_tide_var_list
-                set -l normalVar (string replace 'fake_' '' $fakeVar)
+            for normalVar in (string replace 'fake_' '' $fake_tide_var_list)
+                set fakeVar fake_$normalVar
                 set -U $normalVar $$fakeVar
-                set -a _tide_var_list $normalVar
-                set -e $fakeVar
             end
+            set _tide_var_list $fake_tide_var_list
 
             source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
     end

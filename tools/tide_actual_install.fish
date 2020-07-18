@@ -30,21 +30,18 @@ function tide_actual_install
     # --------------------Set Defaults--------------------
     _set_immutables
 
-    cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
-
-    set -U _tide_var_list
-
     source "$_tide_dir/configure/choices/all/style.fish"
     _load_config 'lean'
 
-    for fakeVar in $fake_tide_var_list
-        set -l normalVar (string replace 'fake_' '' $fakeVar)
-        set -U $normalVar $$fakeVar
-        set -a _tide_var_list $normalVar
-        set -e $fakeVar
-    end
+    cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
 
-    source "$__fish_config_dir/conf.d/_tide_Ω_init.fish"
+    for normalVar in (string replace 'fake_' '' $fake_tide_var_list)
+        set fakeVar fake_$normalVar
+        set -U $normalVar $$fakeVar
+    end
+    set _tide_var_list $fake_tide_var_list
+
+    source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
 
     # -----------------------Finish-----------------------
     for file in $_tide_file_list
