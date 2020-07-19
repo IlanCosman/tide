@@ -181,22 +181,22 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration_wizard]: https://github.com/IlanCosman/tide/wiki/resources/svgs/Configuration_Wizard.svg
+[configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Configuration_Wizard.svg
 [contributing guide]: CONTRIBUTING.md
-[extensible]: https://github.com/IlanCosman/tide/wiki/resources/images/Extensible.png
+[extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Extensible.png
 [fish]: https://github.com/fish-shell/fish-shell
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [git]: https://github.com/git/git
 [license]: LICENSE.md
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[meslolgs nf bold.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Bold.ttf
-[meslolgs nf bold italic.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Bold%20Italic.ttf
-[meslolgs nf italic.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Italic.ttf
-[meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/wiki/resources/fonts/MesloLGS%20NF%20Regular.ttf
-[multi-line_right_prompt]: https://github.com/IlanCosman/tide/wiki/resources/images/Multi-Line_Right_Prompt.png
+[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold.ttf
+[meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold%20Italic.ttf
+[meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Italic.ttf
+[meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Regular.ttf
+[multi-line_right_prompt]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Multi-Line_Right_Prompt.png
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[prompt_connection]: https://github.com/IlanCosman/tide/wiki/resources/images/Prompt_Connection.png
+[prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Prompt_Connection.png
 [pure]: https://github.com/rafaelrinaldi/pure
-[pure_compatibility]: https://github.com/IlanCosman/tide/wiki/resources/svgs/Pure_Compatibility.svg
+[pure_compatibility]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Pure_Compatibility.svg

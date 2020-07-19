@@ -9,14 +9,12 @@ end
 
 # Unwritable directories
 
-sudo mkdir -p ~/unwritable/dir
+sudo mkdir -p ~/unwritable/dir # Uses sudo to make the dir unwritable
 
 set -lx tide_pwd_unwritable_icon ''
 
 @test '~/unwritable' (_pwd ~/unwritable) = ' ~/unwritable'
 @test '~/unwritable/dir' (_pwd ~/unwritable/dir) = ' ~/unwritable/dir'
-
-# sudo rm -rf ~/unwritable
 
 # No icon / directories
 
