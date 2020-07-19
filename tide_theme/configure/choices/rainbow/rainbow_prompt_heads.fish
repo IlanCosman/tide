@@ -1,29 +1,29 @@
 function rainbow_prompt_heads
-    _title 'Prompt Heads'
+    _tide_title 'Prompt Heads'
 
-    _option 1 'Sharp'
+    _tide_option 1 'Sharp'
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Blurred'
+    _tide_option 2 'Blurred'
     set -g fake_tide_left_prompt_suffix '▓▒░'
     set -g fake_tide_right_prompt_prefix '░▒▓'
-    _display_prompt
+    _tide_display_prompt
 
-    _option 3 'Slanted'
+    _tide_option 3 'Slanted'
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _option 4 'Round'
+    _tide_option 4 'Round'
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
@@ -41,8 +41,8 @@ function rainbow_prompt_heads
             set -g fake_tide_right_prompt_prefix ''
             _next_choice 'rainbow/rainbow_prompt_tails'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end

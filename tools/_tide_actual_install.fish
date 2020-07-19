@@ -1,4 +1,4 @@
-function tide_actual_install
+function _tide_actual_install
     argparse 'l/local' 'u/unattended' -- $argv
 
     set -l location $argv[1]

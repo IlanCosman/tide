@@ -1,25 +1,25 @@
 function classic_prompt_color
-    _title 'Prompt Color'
+    _tide_title 'Prompt Color'
 
-    _option 1 'Lightest'
+    _tide_option 1 'Lightest'
     _set_all_items_bg_color 585858
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Light'
+    _tide_option 2 'Light'
     _set_all_items_bg_color 444444
-    _display_prompt
+    _tide_display_prompt
 
-    _option 3 'Dark'
+    _tide_option 3 'Dark'
     _set_all_items_bg_color 303030
-    _display_prompt
+    _tide_display_prompt
 
-    _option 4 'Darkest'
+    _tide_option 4 'Darkest'
     _set_all_items_bg_color 1C1C1C
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             _set_all_items_bg_color 585858
             _next_choice 'classic/classic_show_time'
@@ -33,9 +33,9 @@ function classic_prompt_color
             _set_all_items_bg_color 1C1C1C
             _next_choice 'classic/classic_show_time'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end
 

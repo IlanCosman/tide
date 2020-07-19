@@ -5,7 +5,7 @@ function _fake_tide_left_prompt
 
     for item in $fake_tide_left_prompt_items
         if test "$item" = 'newline'
-            _print_frame
+            _tide_print_frame
 
             if not set -q lastItemWasNewline && not set -q lastItemWasPromptChar
                 set_color $previousColor -b normal
@@ -23,7 +23,7 @@ function _fake_tide_left_prompt
         set -l output (_fake_tide_item_$item)
 
         if test -n "$output"
-            _print_frame
+            _tide_print_frame
 
             set -l colorName fake_tide_"$item"_bg_color
             set -l color $$colorName
@@ -70,7 +70,7 @@ function _fake_tide_left_prompt
     end
 end
 
-function _print_frame --no-scope-shadowing
+function _tide_print_frame --no-scope-shadowing
     if set -q lastItemWasNewline && test "$fake_tide_left_prompt_frame_enabled" = 'true'
         set_color $fake_tide_left_prompt_frame_color -b normal
 

@@ -1,21 +1,21 @@
 function rainbow_prompt_height
-    _title 'Prompt Height'
+    _tide_title 'Prompt Height'
 
-    _option 1 'One line'
+    _tide_option 1 'One line'
     set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
     set fake_tide_left_prompt_frame_enabled false
     set fake_tide_right_prompt_frame_enabled false
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Two lines'
+    _tide_option 2 'Two lines'
     set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items 'newline'
     set fake_tide_left_prompt_frame_enabled true
     set fake_tide_right_prompt_frame_enabled true
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             set -e fake_tide_left_prompt_items[(contains -i 'newline' $fake_tide_left_prompt_items)]
             set fake_tide_left_prompt_frame_enabled false
@@ -28,8 +28,8 @@ function rainbow_prompt_height
             set fake_tide_right_prompt_frame_enabled true
             _next_choice 'rainbow/rainbow_prompt_connection'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end

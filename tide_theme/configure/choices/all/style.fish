@@ -1,25 +1,25 @@
 function style
-    _title 'Prompt Style'
+    _tide_title 'Prompt Style'
 
-    _option 1 'Lean'
+    _tide_option 1 'Lean'
     _load_config 'lean'
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Classic'
+    _tide_option 2 'Classic'
     _load_config 'classic'
-    _display_prompt
+    _tide_display_prompt
 
-    _option 3 'Rainbow'
+    _tide_option 3 'Rainbow'
     _load_config 'rainbow'
-    _display_prompt
+    _tide_display_prompt
 
-    _option 4 'Pure'
+    _tide_option 4 'Pure'
     _load_config 'pure'
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             _load_config lean
             _next_choice 'lean/lean_show_time'
@@ -33,9 +33,9 @@ function style
             _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end
 

@@ -1,20 +1,20 @@
 function rainbow_show_time
-    _title 'Show current time?'
+    _tide_title 'Show current time?'
 
-    _option 1 'No'
-    _display_prompt
+    _tide_option 1 'No'
+    _tide_display_prompt
 
     set -a fake_tide_right_prompt_items 'time'
     
-    _option 2 '24-hour format'
-    _display_prompt fake_tide_time_format '%T'
+    _tide_option 2 '24-hour format'
+    _tide_display_prompt fake_tide_time_format '%T'
 
-    _option 3 '12-hour format'
-    _display_prompt fake_tide_time_format '%r'
+    _tide_option 3 '12-hour format'
+    _tide_display_prompt fake_tide_time_format '%r'
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]
@@ -26,8 +26,8 @@ function rainbow_show_time
             set -g fake_tide_time_format '%r'
             _next_choice 'rainbow/rainbow_prompt_separators'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end

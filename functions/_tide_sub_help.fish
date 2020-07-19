@@ -18,7 +18,7 @@ function _tide_sub_help -a subcommand
         if functions -q _help_$subcommand
             _help_$subcommand
         else
-            _generic_help_sub $subcommand
+            _tide_generic_help_sub $subcommand
         end
         return 0
     end
@@ -31,7 +31,7 @@ function _tide_sub_help -a subcommand
         printf '%s' '  '$b$sub$n
         printf '%b' '\r'
         _tide_cursor_right 14
-        _getDescription $sub
+        _tide_get_description $sub
     end
     printf '%s\n'
     printf '%s\n' 'Print help for a specific subcommand:'
@@ -44,13 +44,13 @@ function _tide_sub_help -a subcommand
     end
 end
 
-function _getDescription -a subcommand
+function _tide_get_description -a subcommand
     set -l descriptionIndex (contains -i $subcommand $subcommandList)
     printf '%s\n' $descriptionList[$descriptionIndex]
 end
 
-function _generic_help_sub -a subcommand
-    set -l description (_getDescription $subcommand)
+function _tide_generic_help_sub -a subcommand
+    set -l description (_tide_get_description $subcommand)
     set -l descriptionFirstLetter (string sub -l 1 $description)
     set -l upperDescriptionFirstLetter (string upper $descriptionFirstLetter)
 

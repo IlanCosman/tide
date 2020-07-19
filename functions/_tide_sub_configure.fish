@@ -17,10 +17,10 @@ function _tide_sub_configure
         source "$promptItem"
     end
 
-    _begin
+    _tide_begin
 end
 
-function _begin
+function _tide_begin
     _next_choice 'all/style'
 end
 
@@ -30,24 +30,24 @@ function _next_choice -a nextChoice
     $cmd
 end
 
-function _menu
+function _tide_menu
     set -l bold (set_color -o)
     set -l norm (set_color normal)
 
-    set -l listWithSlashes (string join '/' $_option_list)
+    set -l listWithSlashes (string join '/' $_tide_option_list)
 
     while true
         read -P $bold"Choice [$listWithSlashes] "$norm input
 
-        if contains $input $_option_list
+        if contains $input $_tide_option_list
             printf '%s\n' $input
-            set -e _option_list
+            set -e _tide_option_list
             break
         end
     end
 end
 
-function _title -a text
+function _tide_title -a text
     clear
     set -l midCols (math -s0 $fake_columns/2)
     set -l midTitle (math -s0 (string length $text)/2)
@@ -58,15 +58,15 @@ function _title -a text
     set_color normal
 end
 
-function _option -a symbol text
-    set -ga _option_list $symbol
+function _tide_option -a symbol text
+    set -ga _tide_option_list $symbol
 
     set_color -o
     printf '%s\n' "($symbol) $text"
     set_color normal
 end
 
-function _display_prompt -a var_name var_value
+function _tide_display_prompt -a var_name var_value
     if test -n "$var_name"
         set -g $var_name $var_value
     end
@@ -74,15 +74,15 @@ function _display_prompt -a var_name var_value
     printf '\n\n'
 end
 
-function _display_restart_and_quit
+function _tide_display_restart_and_tide_quit
     printf '%s\n' '(r)  Restart from the beginning'
     printf '%s\n' '(q)  Quit and do nothing'
     printf '%s\n' ''
-    
-    set -ga _option_list r q
+
+    set -ga _tide_option_list r q
 end
 
-function _quit --on-signal INT
+function _tide_quit --on-signal INT
     clear
     source "$__fish_config_dir/functions/fish_prompt.fish"
     source "$__fish_config_dir/functions/_tide_left_prompt.fish"

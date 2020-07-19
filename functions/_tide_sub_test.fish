@@ -2,7 +2,7 @@ function _tide_sub_test
     argparse 'h/help' 'v/verbose' 'a/all' 'i/install' -- $argv
 
     if set -q _flag_help
-        _help
+        _tide_test_help
         return
     end
 
@@ -69,7 +69,7 @@ function _tide_sub_test
     return $returnStatement
 end
 
-function _help
+function _tide_test_help
     set -l b (set_color -o)
     set -l n (set_color normal)
     set -l g (set_color $_tide_color_green)

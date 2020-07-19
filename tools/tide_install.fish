@@ -13,12 +13,12 @@ function tide_install
     end
 
     if set -q _flag_local
-        source "$location/tools/tide_actual_install.fish"
+        source "$location/tools/_tide_actual_install.fish"
 
         set -a flags '-l'
     else
-        curl -s "https://raw.githubusercontent.com/IlanCosman/tide/$location/tools/tide_actual_install.fish" | source
+        curl -s "https://raw.githubusercontent.com/IlanCosman/tide/$location/tools/_tide_actual_install.fish" | source
     end
 
-    tide_actual_install $flags $argv
+    _tide_actual_install $flags $argv
 end

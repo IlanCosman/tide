@@ -1,15 +1,15 @@
 function finish
     set_color red
-    _title 'Overwrite tide config and fish_prompt?'
+    _tide_title 'Overwrite tide config and fish_prompt?'
     set_color normal
 
-    _option y 'Yes'
+    _tide_option y 'Yes'
     printf '%b' '\n\n'
 
-    _option n 'No'
+    _tide_option n 'No'
     printf '%b' '\n\n'
 
-    switch (_menu)
+    switch (_tide_menu)
         case y
             if not contains 'prompt_char' $fake_tide_left_prompt_items # Without a prompt_char, the user won't know if a command failed/succeeded
                 set fake_tide_status_always_display_icon true # Therefore, set the status to always display
@@ -26,5 +26,5 @@ function finish
             source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
     end
 
-    _quit
+    _tide_quit
 end

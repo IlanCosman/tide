@@ -1,5 +1,5 @@
 function _tide_sub_uninstall
-    if not _user_confirm_defaultNo 'Uninstall tide theme?'
+    if not _tide_user_confirm_defaultNo 'Uninstall tide theme?'
         printf '%s\n' 'Aborted uninstall.'
         return 1
     end
@@ -35,7 +35,7 @@ function _tide_sub_uninstall
     printf '%s\n' 'Tide theme uninstalled.'
 end
 
-function _user_confirm_defaultNo -a question
+function _tide_user_confirm_defaultNo -a question
     while true
         read -P "$question [y/N] " input
 

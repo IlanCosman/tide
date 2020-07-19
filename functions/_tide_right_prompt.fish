@@ -1,5 +1,5 @@
 function _tide_right_prompt
-    set -l splitText (_fetch_right_prompt_items | string split '@NEWLINE@')
+    set -l splitText (_tide_fetch_right_prompt_items | string split '@NEWLINE@')
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     if test "$tide_right_prompt_frame_enabled" = 'true'
@@ -31,21 +31,21 @@ function _tide_right_prompt
     end
 
     for lineOfText in $splitText[1..-2]
-        _print_at_end $lineOfText
+        _tide_print_at_end $lineOfText
     end
 
     if test $printAtEndedRightPromptHeight -eq $_tide_left_prompt_height
         set -g _tide_fish_right_prompt_display $splitText[-1]
         set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight-1)
     else
-        _print_at_end $splitText[-1]
+        _tide_print_at_end $splitText[-1]
         set -g _tide_fish_right_prompt_display ' '
     end
 
     _tide_cursor_up $printAtEndedRightPromptHeight
 end
 
-function _fetch_right_prompt_items
+function _tide_fetch_right_prompt_items
     set lastItemWasNewline # Display prefix instead of separator before first item
     set color normal
 
@@ -106,7 +106,7 @@ function fish_right_prompt
     printf '%s' $_tide_fish_right_prompt_display
 end
 
-function _print_at_end -a text
+function _tide_print_at_end -a text
     set -l startLocation (math $COLUMNS -(_tide_decolor $text | string length))
     _tide_cursor_right $startLocation
 

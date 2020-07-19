@@ -1,34 +1,34 @@
 function classic_prompt_tails
-    _title 'Prompt Tails'
+    _tide_title 'Prompt Tails'
 
-    _option 1 'Flat'
+    _tide_option 1 'Flat'
     set -g fake_tide_left_prompt_prefix ''
     set -g fake_tide_right_prompt_suffix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Blurred'
+    _tide_option 2 'Blurred'
     set -g fake_tide_left_prompt_prefix '░▒▓'
     set -g fake_tide_right_prompt_suffix '▓▒░'
-    _display_prompt
+    _tide_display_prompt
 
-    _option 3 'Sharp'
+    _tide_option 3 'Sharp'
     set -g fake_tide_left_prompt_prefix ''
     set -g fake_tide_right_prompt_suffix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _option 4 'Slanted'
+    _tide_option 4 'Slanted'
     set -g fake_tide_left_prompt_prefix ''
     set -g fake_tide_right_prompt_suffix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _option 5 'Round'
+    _tide_option 5 'Round'
     set -g fake_tide_left_prompt_prefix ''
     set -g fake_tide_right_prompt_suffix ''
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''
@@ -50,8 +50,8 @@ function classic_prompt_tails
             set -g fake_tide_right_prompt_suffix ''
             _next_choice 'classic/classic_prompt_height'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end

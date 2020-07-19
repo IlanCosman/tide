@@ -17,27 +17,27 @@ function prompt_connection_andor_frame_color
         return 0
     end
 
-    _title $title
+    _tide_title $title
 
-    _option 1 'Lightest'
+    _tide_option 1 'Lightest'
     _set_prompt_connection_and_frame_color 808080
-    _display_prompt
+    _tide_display_prompt
 
-    _option 2 'Light'
+    _tide_option 2 'Light'
     _set_prompt_connection_and_frame_color 6C6C6C
-    _display_prompt
+    _tide_display_prompt
 
-    _option 3 'Dark'
+    _tide_option 3 'Dark'
     _set_prompt_connection_and_frame_color 585858
-    _display_prompt
+    _tide_display_prompt
 
-    _option 4 'Darkest'
+    _tide_option 4 'Darkest'
     _set_prompt_connection_and_frame_color 444444
-    _display_prompt
+    _tide_display_prompt
 
-    _display_restart_and_quit
+    _tide_display_restart_and_tide_quit
 
-    switch (_menu)
+    switch (_tide_menu)
         case 1
             _set_prompt_connection_and_frame_color 808080
             _next_choice 'all/prompt_spacing'
@@ -51,9 +51,9 @@ function prompt_connection_andor_frame_color
             _set_prompt_connection_and_frame_color 444444
             _next_choice 'all/prompt_spacing'
         case r
-            _begin
+            _tide_begin
         case q
-            _quit
+            _tide_quit
     end
 end
 
