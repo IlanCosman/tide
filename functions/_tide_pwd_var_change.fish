@@ -1,4 +1,4 @@
-function _tide_pwd_var_change -v PWD
+function _tide_pwd_var_change --on-variable PWD
     set -l preDirNumberPwd (string replace $HOME '~' $PWD)
     set -l preDirNumberPwdSplit (string split '/' $preDirNumberPwd)
 

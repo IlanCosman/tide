@@ -6,7 +6,7 @@ end
 
 set -l dir ~/python_project
 
-mkdir -p $dir
+mkdir --parents $dir
 cd $dir
 
 @test 'nothing' (_virtual_env) -z

@@ -7,7 +7,7 @@ function tide
         return 0
     end
 
-    if functions -q _tide_sub_$subcommand
+    if functions --query _tide_sub_$subcommand
         _tide_sub_$subcommand $argv[2..-1]
     else
         tide help

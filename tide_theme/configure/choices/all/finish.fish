@@ -18,7 +18,7 @@ function finish
 end
 
 function _tide_finish
-    block -g # Event blocker prevents issues from arising while variables might be undefined etc.
+    block --global # Event blocker prevents issues from arising while variables might be undefined etc.
 
     if not contains 'prompt_char' $fake_tide_left_prompt_items # Without a prompt_char, the user won't know if a command failed/succeeded
         set fake_tide_status_always_display_icon true # Therefore, set the status to always display
@@ -42,5 +42,5 @@ function _tide_finish
 
     source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
 
-    block -e
+    block --erase
 end

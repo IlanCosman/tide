@@ -20,7 +20,7 @@ function _tide_actual_install
     if set -q _flag_local
         cp -rf "$location" "$tempDir"
     else
-        git clone -q --depth 1 -b $location https://github.com/IlanCosman/tide.git $tempDir
+        git clone --quiet --depth 1 --branch $location https://github.com/IlanCosman/tide.git $tempDir
     end
 
     for dir in completions conf.d functions tide_theme

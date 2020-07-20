@@ -9,7 +9,7 @@ end
 
 # Unwritable directories
 
-sudo mkdir -p ~/unwritable/dir # Uses sudo to make the dir unwritable
+sudo mkdir --parents ~/unwritable/dir # Uses sudo to make the dir unwritable
 
 set -lx tide_pwd_unwritable_icon ''
 
@@ -26,7 +26,7 @@ set -lx tide_pwd_unwritable_icon
 
 # Normal directories
 
-mkdir -p ~/normal/dir
+mkdir --parents ~/normal/dir
 
 @test '~' (_pwd ~) = '~'
 @test '~/normal' (_pwd ~/normal) = '~/normal'
@@ -37,7 +37,7 @@ rm -rf ~/normal
 # Long directories
 
 set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
-mkdir -p $longDir
+mkdir --parents $longDir
 
 @test 'Long dir' (_pwd "$longDir") = '~/a/b/c/d/e/f/g/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa'
 

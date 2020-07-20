@@ -48,9 +48,10 @@ function _tide_menu
 end
 
 function _tide_title -a text
+    set -l midCols (math --scale=0 $fake_columns/2)
+    set -l midTitle (math --scale=0 (string length $text)/2)
+
     clear
-    set -l midCols (math -s0 $fake_columns/2)
-    set -l midTitle (math -s0 (string length $text)/2)
 
     _tide_cursor_right (math $midCols-$midTitle)
     set_color -o

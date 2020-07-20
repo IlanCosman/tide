@@ -5,7 +5,7 @@ function _tide_sub_uninstall
     end
     printf '%s\n' 'Uninstalling tide theme...'
 
-    set -l fishPrompt (functions -D fish_prompt)
+    set -l fishPrompt (functions --details fish_prompt)
 
     # ----------------------------------Remove Files----------------------------------
     if test -e $_tide_dir
@@ -17,7 +17,7 @@ function _tide_sub_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    for func in (basename -s '.fish' $_tide_file_list)
+    for func in (basename --suffix='.fish' $_tide_file_list)
         functions -e $func
     end
 

@@ -17,7 +17,7 @@ function tide_install
 
         set -a flags '-l'
     else
-        curl -s "https://raw.githubusercontent.com/IlanCosman/tide/$location/tools/_tide_actual_install.fish" | source
+        curl --silent "https://raw.githubusercontent.com/IlanCosman/tide/$location/tools/_tide_actual_install.fish" | source
     end
 
     _tide_actual_install $flags $argv

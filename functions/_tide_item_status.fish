@@ -1,5 +1,5 @@
 function _tide_item_status
-    if string match -q --invert '0' $_tide_last_pipestatus # If there is a failure anywhere in the pipestatus
+    if string match --quiet --invert '0' $_tide_last_pipestatus # If there is a failure anywhere in the pipestatus
         if test "$_tide_last_pipestatus" = '1'
             if test "$tide_status_always_display_icon" = 'true'
                 set -g tide_status_bg_color $tide_status_failure_bg_color

@@ -12,7 +12,6 @@ _set fake_tide_left_prompt_item_separator_same_color ''
 _set fake_tide_left_prompt_item_separator_diff_color ''
 
 _set fake_tide_left_prompt_item_separator_same_color_color 949494
-_set fake_tide_right_prompt_item_separator_same_color_color 949494
 
 _set fake_tide_left_prompt_prefix ''
 _set fake_tide_left_prompt_suffix ''
@@ -25,6 +24,8 @@ _set fake_tide_right_prompt_pad_items true
 
 _set fake_tide_right_prompt_item_separator_same_color ''
 _set fake_tide_right_prompt_item_separator_diff_color ''
+
+_set fake_tide_right_prompt_item_separator_same_color_color 949494
 
 _set fake_tide_right_prompt_prefix ''
 _set fake_tide_right_prompt_suffix ''

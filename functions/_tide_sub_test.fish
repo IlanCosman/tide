@@ -32,7 +32,7 @@ function _tide_sub_test
     set -l returnStatement 0
 
     if set -q _flag_all
-        set argv (basename -s '.fish' $testsDir/*)
+        set argv (basename --suffix='.fish' $testsDir/*)
     end
 
     for test in $argv
@@ -93,7 +93,7 @@ function _tide_test_help
         printf '%s' '  -'$option
         printf '%b' '\r'
         _tide_cursor_right 20
-        set -l descriptionIndex (contains -i $option $optionList)
+        set -l descriptionIndex (contains --index $option $optionList)
         printf '%s\n' $descriptionList[$descriptionIndex]
     end
 end

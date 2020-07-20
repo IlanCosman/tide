@@ -27,5 +27,5 @@ function _tide_pwd
         end
     end
 
-    set _tide_pwd_output (string replace -a '/' $colorDirs'/' $_tide_pwd_output)
+    set _tide_pwd_output (string replace --all '/' $colorDirs'/' $_tide_pwd_output)
 end

@@ -1,3 +1,3 @@
 function _tide_decolor -a text
-    string replace -a $_tide_color_normal '' "$text" | string replace -ar '\e\[[0-9;]*m' ''
+    string replace --all $_tide_color_normal '' "$text" | string replace --all --regex '\e\[[0-9;]*m' ''
 end
