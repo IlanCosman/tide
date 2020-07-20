@@ -1,8 +1,9 @@
 function _tide_git_prompt_set_vars -v tide_git_prompt_bg_color
-    if test "$tide_git_prompt_bg_color" = 'normal'
-        set color ''
-    else
-        set color (set_color -b $tide_git_prompt_bg_color)
+    switch $tide_git_prompt_bg_color
+        case '' 'normal'
+            set color ''
+        case '*'
+            set color (set_color -b $tide_git_prompt_bg_color)
     end
 
     set -a vars __fish_git_prompt_char_{cleanstate, dirtystate, invalidstate, stagedstate, stashstate}
