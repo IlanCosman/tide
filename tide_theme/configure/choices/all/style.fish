@@ -40,16 +40,16 @@ function style
 end
 
 function _load_config -a name
-    for var in $fake_tide_var_list
+    for var in $fake__tide_var_list
         set -e $var
     end
 
-    set -g fake_tide_var_list
+    set -g fake__tide_var_list
 
     source "$_tide_dir/configure/configs/$name.fish"
 end
 
 function _set -a var_name
     set -g $var_name $argv[2..-1]
-    set -a fake_tide_var_list $var_name
+    set -a fake__tide_var_list $var_name
 end

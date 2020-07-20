@@ -30,18 +30,13 @@ function _tide_actual_install
     # --------------------Set Defaults--------------------
     _set_immutables
 
+    set -U _tide_var_list
+
     source "$_tide_dir/configure/choices/all/style.fish"
     _load_config 'lean'
 
-    cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
-
-    for normalVar in (string replace 'fake_' '' $fake_tide_var_list)
-        set fakeVar fake_$normalVar
-        set -U $normalVar $$fakeVar
-    end
-    set _tide_var_list $fake_tide_var_list
-
-    source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
+    source "$_tide_dir/configure/choices/all/finish.fish"
+    _tide_finish
 
     # -----------------------Finish-----------------------
     for file in $_tide_file_list
@@ -69,10 +64,7 @@ end
 function _set_immutables
     set -U _tide_var_immutable_list
 
-    _set_immutable _tide_file_list
-    for file in $tempDir/{completions/*, conf.d/*, functions/*}
-        set -a _tide_file_list (string replace "$tempDir/" '' "$file")
-    end
+    _set_immutable _tide_file_list (string replace "$tempDir/" '' $tempDir/{completions/*, conf.d/*, functions/*})
 
     _set_immutable _tide_version 2.0.0
     _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
