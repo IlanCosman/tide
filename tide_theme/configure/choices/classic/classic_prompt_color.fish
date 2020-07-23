@@ -40,13 +40,7 @@ function classic_prompt_color
 end
 
 function _set_all_items_bg_color -a color
-    set fake_tide_cmd_duration_bg_color $color
-    set fake_tide_context_bg_color $color
-    set fake_tide_git_prompt_bg_color $color
-    set fake_tide_jobs_bg_color $color
-    set fake_tide_pwd_bg_color $color
-    set fake_tide_status_success_bg_color $color
-    set fake_tide_status_failure_bg_color $color
-    set fake_tide_time_bg_color $color
-    set fake_tide_virtual_env_bg_color $color
+    for var in (set --names | string match --regex "fake_.*_bg_color")
+        set $var $color
+    end
 end

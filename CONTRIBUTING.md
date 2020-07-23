@@ -23,9 +23,10 @@ tide test -a
 ### Style Guide
 
 - `if` > `and` or `or`
-- `test` > `[...]`
+- `test` > `[...]`u
+- `printf` > `echo`
 - Long forms of flags > short forms
-  - Exceptions: `set`, `set_color`, `function foo -a` option, "common knowledge" options for commands like `rm -r`
+  - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
 - Prefer pipes over command substitution when convenient (no extra commands)
 
 ### Naming Conventions

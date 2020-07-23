@@ -17,7 +17,7 @@ function _tide_sub_test
     if not functions -q fishtape
         set -l b (set_color -o)
         set -l n (set_color normal)
-        printf '%s' $b'fishtape'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
+        printf '%s\n' $b'fishtape'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
         return
     end
 
@@ -72,7 +72,7 @@ end
 function _tide_test_help
     set -l b (set_color -o)
     set -l n (set_color normal)
-    set -l g (set_color $_tide_color_green)
+    set -l bl (set_color $_tide_color_light_blue)
 
     set -l optionList \
         'v or --verbose' \
@@ -85,14 +85,13 @@ function _tide_test_help
         'print this help message' \
         'install fisher and fishtape test dependencies'
 
-    printf '%s\n' 'Usage: '$g'tide test '$n'[options] '$b'[TESTS...]'$n
+    printf '%s\n' 'Usage: '$bl'tide test '$n'[options] '$b'[TESTS...]'$n
     printf '%s\n'
     printf '%s\n' 'Options:'
-    printf '%s\n'
     for option in $optionList
         printf '%s' '  -'$option
         printf '%b' '\r'
-        _tide_cursor_right 20
+        _tide_cursor_right 19
         set -l descriptionIndex (contains --index $option $optionList)
         printf '%s\n' $descriptionList[$descriptionIndex]
     end

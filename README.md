@@ -3,7 +3,7 @@
 <img
   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/logo.svg"
   alt="Tide Logo"
-  width="430"
+  width="450"
 />
 
 <!-- 0 width spaces on the line below -->
@@ -27,7 +27,7 @@
 
 - **Configuration Wizard:** With four compelling styles and myriad options, you can have your out-of-the-box cake and customize it too.
 - **Flexible:** One line, two line, powerline, all fine!
-- **Multi-line right prompt:** Make all your Fish friends jealous with this alien technology.
+- **Multi-line right prompt:** Impress all your Fish friends with this alien technology.
 - **Intelligent:** Shows relevant information at a glance, emphasizing important material.
 - **Extensible:** Easily add prompt items by creating simple fish functions.
 
@@ -42,7 +42,7 @@
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal.
   - For example the [reccomended font](#fonts).
 
-#### Source and run the install function:
+#### Source and run the install function
 
 ```console
 curl -sL git.io/tide | source && tide_install
