@@ -2,21 +2,36 @@
 
 <img
   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/logo.svg"
-  alt="Multi-Line_Right_Prompt.png"
-  width="400"
+  alt="Tide Logo"
+  width="430"
 />
 
 <!-- 0 width spaces on the line below -->
 
 [![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license]
 
+[Installation](#Installation) · [Documentation][]
+
 </div>
 
 #
 
-Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box experience.
+<img
+   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/header.png"
+   alt="Configuration Wizard"
+   width="50%"
+   align="right"
+/>
 
-![prompt_connection][]
+**A modern prompt manager for the [Fish][] shell.**
+
+- **Configuration Wizard:** With four compelling styles and myriad options, you can have your out-of-the-box cake and customize it too.
+- **Flexible:** One line, two line, powerline, all fine!
+- **Multi-line right prompt:** Make all your Fish friends jealous with this alien technology.
+- **Intelligent:** Shows relevant information at a glance, emphasizing important material.
+- **Extensible:** Easily add prompt items by creating simple fish functions.
+
+<br clear="right">
 
 ## Installation
 
@@ -27,11 +42,6 @@ Tide is a [Fish][] theme that provides a powerful, flexible, and out-of-the-box 
    ```console
    curl -sL git.io/tide | source && tide_install
    ```
-
-### System Requirements
-
-- [fish][] ≥3.1
-- [git][]
 
 ## Features
 
@@ -94,11 +104,11 @@ Much of Tide's documentation, resources, ideas, and design elements are borrowed
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Configuration_Wizard.svg
 [contributing guide]: CONTRIBUTING.md
+[documentation]: https://github.com/IlanCosman/tide/wiki
 [extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Extensible.png
-[fish]: https://github.com/fish-shell/fish-shell
+[fish]: https://fishshell.com/
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
-[git]: https://github.com/git/git
 [license]: LICENSE.md
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold.ttf
