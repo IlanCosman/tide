@@ -113,7 +113,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [documentation]: https://github.com/IlanCosman/tide/wiki
 [extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Extensible.png
 [fish]: https://fishshell.com/
-[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [git]: https://git-scm.com/
 [license]: LICENSE.md

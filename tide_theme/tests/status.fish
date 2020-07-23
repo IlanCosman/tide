@@ -16,8 +16,8 @@ set -lx tide_status_failure_icon
 set -lx tide_status_success_icon '✔'
 set -lx tide_status_failure_icon '✘'
 
-@mesg 'always_display_icon: false'
-set -lx tide_status_always_display_icon false
+@mesg 'always_display: false'
+set -lx tide_status_always_display false
 
 @test 'true' (true; _status) -z
 @test 'false' (false; _status) -z
@@ -26,8 +26,8 @@ set -lx tide_status_always_display_icon false
 @test 'false|true' (false|true; _status) = '✔ 1|0'
 @test 'false|false' (false|false; _status) = '✘ 1|1'
 
-@mesg 'always_display_icon: true'
-set -lx tide_status_always_display_icon true
+@mesg 'always_display: true'
+set -lx tide_status_always_display true
 
 @test 'true' (true; _status) = '✔'
 @test 'false' (false; _status) = '✘ 1'

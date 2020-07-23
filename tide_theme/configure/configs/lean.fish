@@ -72,7 +72,7 @@ _set fake___fish_git_prompt_color_dirtystate $tideColorGold
 _set fake___fish_git_prompt_color_untrackedfiles $_tide_color_light_blue
 _set fake___fish_git_prompt_color_stashstate $_tide_color_green
 # --------------Status--------------
-_set fake_tide_status_always_display_icon false
+_set fake_tide_status_always_display false
 _set fake_tide_status_success_icon '✔'
 _set fake_tide_status_success_color $tideColorDarkerGreen
 _set fake_tide_status_success_bg_color normal
@@ -94,7 +94,7 @@ _set fake_tide_jobs_color $tideColorDarkerGreen
 _set fake_tide_jobs_bg_color normal
 # ---------------Virtual_Env---------------
 _set fake_tide_virtual_env_color 00AFAF
-_set fake_tide_virtual_env_display 'projectName'
+_set fake_tide_virtual_env_display_mode 'projectName'
 _set fake_tide_virtual_env_icon ''
 _set fake_tide_virtual_env_bg_color normal
 # ---------------Time---------------

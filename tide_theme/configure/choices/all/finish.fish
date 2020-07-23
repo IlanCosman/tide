@@ -21,7 +21,7 @@ function _tide_finish
     block --global # Event blocker prevents issues from arising while variables might be undefined etc.
 
     if not contains 'prompt_char' $fake_tide_left_prompt_items # Without a prompt_char, the user won't know if a command failed/succeeded
-        set fake_tide_status_always_display_icon true # Therefore, set the status to always display
+        set fake_tide_status_always_display true # Therefore, set the status to always display
     end
 
     cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
