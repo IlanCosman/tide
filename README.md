@@ -37,13 +37,12 @@
 
 ### Prerequisites
 
+- [Git][]
 - [Fish][] ≥ 3.1
-- Git
-- Curl
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal.
-  - For example the [reccomended font](#fonts)
+  - For example the [reccomended font](#fonts).
 
-### Source and run the install function:
+#### Source and run the install function:
 
 ```console
 curl -sL git.io/tide | source && tide_install
@@ -116,6 +115,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [fish]: https://fishshell.com/
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[git]: https://git-scm.com/
 [license]: LICENSE.md
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold.ttf
