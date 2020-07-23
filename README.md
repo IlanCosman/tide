@@ -35,13 +35,19 @@
 
 ## Installation
 
-1. Install the [recommended font](#Fonts). _Optional but highly recommended_
+### Prerequisites
 
-2. Source and run the install function:
+- [Fish][] ≥ 3.1
+- Git
+- Curl
+- A [Nerd Font][nerd fonts] installed and enabled in your terminal.
+  - For example the [reccomended font](#fonts)
 
-   ```console
-   curl -sL git.io/tide | source && tide_install
-   ```
+### Source and run the install function:
+
+```console
+curl -sL git.io/tide | source && tide_install
+```
 
 ## Features
 
@@ -96,7 +102,8 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 ## Acknowledgments
 
-Much of Tide's documentation, resources, ideas, and design elements are borrowed from [Powerlevel10k][].
+- [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
+- [Starship][] - Inspired elements of the documentation.
 
 <!-- Alphabetical Reference Links -->
 
@@ -121,3 +128,4 @@ Much of Tide's documentation, resources, ideas, and design elements are borrowed
 [prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Prompt_Connection.png
 [pure]: https://github.com/rafaelrinaldi/pure
 [pure_compatibility]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Pure_Compatibility.svg
+[starship]: https://github.com/starship/starship
