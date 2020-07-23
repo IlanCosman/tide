@@ -35,6 +35,11 @@ function _tide_sub_test
         set argv (basename --suffix='.fish' $testsDir/*)
     end
 
+    if test (count $argv) -lt 1
+        _tide_test_help
+        return 1
+    end
+
     for test in $argv
         fishtape "$testsDir/$test.fish" >$pending
 

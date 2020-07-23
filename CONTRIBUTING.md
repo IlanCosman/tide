@@ -23,11 +23,11 @@ tide test -a
 ### Style Guide
 
 - `if` > `and` or `or`
-- `test` > `[...]`u
+- `test` > `[...]`
 - `printf` > `echo`
 - Long forms of flags > short forms
   - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
-- Prefer pipes over command substitution when convenient (no extra commands)
+- Piping > command substitution (only when convenient, i.e no extra commands)
 
 ### Naming Conventions
 
@@ -35,7 +35,7 @@ Local variables should be named in `camelCase`.
 
 - `set -l numberOfNewlines`
 
-Anything exposed to the shell or user--functions, global/universal variables, and files--should be named in `snake_case`, beginning with `tide_`. Prepend an underscore if user interaction is discouraged.
+Anything exposed to the shell or user--functions, global/universal variables, and files--should be named in `snake_case`, beginning with `tide_`. Prepend an underscore if the user in not meant to interact directly with it.
 
 - `set -g _tide_left_prompt_height`
 - `set -U tide_right_prompt_items`
