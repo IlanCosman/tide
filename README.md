@@ -10,8 +10,6 @@
 
 [![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license]
 
-[Installation](#Installation) · [Documentation][]
-
 </div>
 
 #
@@ -78,6 +76,10 @@ If there isn't a prompt item that fits your needs, make your own!
 
 ![extensible][]
 
+## Documentation
+
+See the [wiki][] for the full documentation.
+
 ## Contributing
 
 If you're interested in helping contribute to Tide, please take a look at the [Contributing Guide][].
@@ -110,7 +112,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Configuration_Wizard.svg
 [contributing guide]: CONTRIBUTING.md
-[documentation]: https://github.com/IlanCosman/tide/wiki
 [extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Extensible.png
 [fish]: https://fishshell.com/
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
@@ -128,3 +129,4 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [pure]: https://github.com/rafaelrinaldi/pure
 [pure_compatibility]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Pure_Compatibility.svg
 [starship]: https://github.com/starship/starship
+[wiki]: https://github.com/IlanCosman/tide/wiki
