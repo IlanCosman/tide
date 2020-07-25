@@ -37,8 +37,7 @@
 
 - [Git][]
 - [Fish][] ≥ 3.1
-- A [Nerd Font][nerd fonts] installed and enabled in your terminal.
-  - For example the [reccomended font](#fonts).
+- A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [reccomended font](#fonts)).
 
 #### Source and run the install function
 
@@ -60,11 +59,11 @@ Type `tide configure` to open the the wizard in your terminal.
 
 ![multi-line_right_prompt][]
 
-### Pure Compatibility
+### Pure Emulation
 
-Tide can produce the same prompt as [Pure][]. Type `tide configure` and select the Pure style.
+Tide can easily produce the same prompt as [Pure][]. Type `tide configure` and select the Pure style.
 
-![pure_compatibility][]
+![pure_emulation][]
 
 Tide doesn't recognize Pure configuration parameters, so you'll need to use `set tide_cmd_duration_threshold 3000` instead of `set pure_threshold_command_duration 3`, etc.
 
@@ -78,7 +77,7 @@ If there isn't a prompt item that fits your needs, make your own!
 
 ## Documentation
 
-See the [wiki][] for the full documentation.
+See the [wiki][] for the boring parts of the documentation.
 
 ## Contributing
 
@@ -110,23 +109,23 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Configuration_Wizard.svg
+[configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
-[extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Extensible.png
+[extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/extensible.png
 [fish]: https://fishshell.com/
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [git]: https://git-scm.com/
 [license]: LICENSE.md
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold.ttf
-[meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Bold%20Italic.ttf
-[meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Italic.ttf
-[meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/MesloLGS%20NF%20Regular.ttf
-[multi-line_right_prompt]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Multi-Line_Right_Prompt.png
+[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_bold.ttf
+[meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_bold_italic.ttf
+[meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_italic.ttf
+[meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_regular.ttf
+[multi-line_right_prompt]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/multi-line_right_prompt.png
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/Prompt_Connection.png
+[prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/prompt_connection.png
 [pure]: https://github.com/rafaelrinaldi/pure
-[pure_compatibility]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/svgs/Pure_Compatibility.svg
+[pure_emulation]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/pure_emulation.gif
 [starship]: https://github.com/starship/starship
 [wiki]: https://github.com/IlanCosman/tide/wiki
