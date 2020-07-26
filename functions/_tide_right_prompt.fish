@@ -70,6 +70,9 @@ function _tide_fetch_right_prompt_items
         if test -n "$output"
             set -l colorName tide_"$item"_bg_color
             set -l color $$colorName
+            if test -z "$color"
+                set color normal
+            end
 
             if set -e lastItemWasNewline
                 set_color $color -b normal

@@ -27,6 +27,9 @@ function _tide_left_prompt
 
             set -l colorName tide_"$item"_bg_color
             set -l color $$colorName
+            if test -z "$color"
+                set color normal
+            end
 
             if set -e lastItemWasNewline || set -e lastItemWasPromptChar
                 if test "$item" != 'prompt_char'
