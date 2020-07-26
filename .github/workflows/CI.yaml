@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: >
-          sudo apt-get install --yes
+          sudo apt-get update -qq && sudo apt-get install -qq --yes
           fish git
           curl
           python3 python3-venv
