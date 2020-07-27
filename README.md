@@ -8,7 +8,7 @@
 
 <!-- 0 width spaces on the line below -->
 
-[![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license]
+[![ci_badge][]][actions] ​ [![fish_version_badge][]](#Prerequisites) ​ [![license_badge][]][license]
 
 </div>
 
@@ -56,7 +56,7 @@ Run `tide configure` to open the the wizard in your terminal.
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/flexible.png"
-   alt="flexibl.png"
+   alt="flexible.png"
    width="55%"
    align="left"
 />
@@ -148,7 +148,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
-[extensible]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/extensible.png
 [fish]: https://fishshell.com/
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [git]: https://git-scm.com/
@@ -158,12 +157,9 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_bold_italic.ttf
 [meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_italic.ttf
 [meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/fonts/mesloLGS_NF_regular.ttf
-[multi-line_right_prompt]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/multi-line_right_prompt.png
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[items]: https://github.com/IlanCosman/tide/wiki/Prompt-Items
-[prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/prompt_connection.png
+[items]: https://github.com/IlanCosman/tide/wiki/Items
 [pure]: https://github.com/rafaelrinaldi/pure
-[pure_emulation]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/pure_emulation.gif
 [starship]: https://github.com/starship/starship
 [wiki]: https://github.com/IlanCosman/tide/wiki
