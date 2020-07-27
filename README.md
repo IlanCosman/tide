@@ -57,13 +57,13 @@ Run `tide configure` to open the the wizard in your terminal.
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/flexible.png"
    alt="Configuration Wizard"
-   width="60%"
+   width="55%"
    align="left"
 />
 
 ### Flexible
 
-Tide operates using "[prompt items][]", small functions that create the prompt contents. You have full control of where and which prompt items display.
+Tide uses "[prompt items][]", small functions that create the prompt contents. Using the `prompt_items` list for each side, you have full control of where and which prompt items display
 
 <br clear="left"><br>
 
