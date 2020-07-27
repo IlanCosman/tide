@@ -14,7 +14,7 @@ function _tide_sub_test
         return
     end
 
-    if not functions -cd .cq fishtape
+    if not functions -q fishtape
         set -l b (set_color -o)
         set -l n (set_color normal)
         printf '%s\n' $b'fishtape'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
