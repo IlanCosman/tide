@@ -104,9 +104,9 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 
 ### Pure Emulation
 
-Tide can easily produce the same prompt as [Pure][]. Run `tide configure` and select the Pure style.
+Tide can easily produce the same prompt as [Pure][] (with a number of improvements). Run `tide configure` and select the Pure style.
 
-You can still take advantage of all of Tide's features while using the Pure style, though the style does display less information by default.
+All of Tide's features are available while using Pure style, though it displays less information by default than Lean style.
 
 <br clear="right">
 
