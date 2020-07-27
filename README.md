@@ -16,7 +16,7 @@
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/header.png"
-   alt="Configuration Wizard"
+   alt="header.png"
    width="50%"
    align="right"
 />
@@ -24,9 +24,9 @@
 **A modern prompt manager for the [Fish][] shell.**
 
 - **Out of the box:** With four compelling styles and myriad options, you can have your out-of-the-box cake and customize it too.
-- **Flexible:** Move prompt items around, remove them, and add them back, all by manipulating variables.
+- **Flexible:** Move content around, remove it, or add it back, all without ever touching the code.
 - **Powerful:** Impress all your Fish friends with alien technologies like a multi-line right prompt.
-- **Extensible:** Create prompt items that work seamlessly with simple fish functions.
+- **Extensible:** Create custom content with simple fish functions that integrate seamlessly.
 
 <br clear="right">
 
@@ -56,21 +56,21 @@ Run `tide configure` to open the the wizard in your terminal.
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/flexible.png"
-   alt="Configuration Wizard"
+   alt="flexibl.png"
    width="55%"
    align="left"
 />
 
 ### Flexible
 
-Tide uses "[prompt items][]", small functions that create the prompt contents. Using the `prompt_items` list for each side, you have full control of where and which prompt items display
+Tide uses "[items][]", small functions that create the prompt contents. Using the `items` list for each side of the prompt, you have full control of where and which items display.
 
 <br clear="left"><br>
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/multi-line_right_prompt.png"
-   alt="Configuration Wizard"
-   width="60%"
+   alt="multi-line_right_prompt.png"
+   width="62%"
    align="right"
 />
 
@@ -78,27 +78,27 @@ Tide uses "[prompt items][]", small functions that create the prompt contents. U
 
 > Fish can't do _that_ yet can it!
 
-Tide takes care of all the multi-line logic and printing for you. All you have to do is add the special `newline` prompt item.
+Tide takes care of all the multi-line logic and printing for you. All you have to do is add the special `newline` item.
 
 <br clear="right"><br>
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/extensible.png"
-   alt="Configuration Wizard"
-   width="60%"
+   alt="extensible.png"
+   width="62%"
    align="left"
 />
 
 ### Extensible
 
-If there isn't a prompt item that fits your needs, you can make your own, submit an issue, or open a pull request!
+If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
 
 <br clear="left"><br>
 
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/pure_emulation.gif"
-   alt="Configuration Wizard"
-   width="60%"
+   alt="pure_emulation.gif"
+   width="62%"
    align="right"
 />
 
@@ -106,7 +106,7 @@ If there isn't a prompt item that fits your needs, you can make your own, submit
 
 Tide can easily produce the same prompt as [Pure][]. Run `tide configure` and select the Pure style.
 
-You can still take advantage of all of Tide's features while using the Pure style, though it will display less information by default.
+You can still take advantage of all of Tide's features while using the Pure style, though the style does display less information by default.
 
 <br clear="right"><br>
 
@@ -161,7 +161,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [multi-line_right_prompt]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/multi-line_right_prompt.png
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[prompt items]: https://github.com/IlanCosman/tide/wiki/Prompt-Items
+[items]: https://github.com/IlanCosman/tide/wiki/Prompt-Items
 [prompt_connection]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/images/prompt_connection.png
 [pure]: https://github.com/rafaelrinaldi/pure
 [pure_emulation]: https://raw.githubusercontent.com/IlanCosman/tide-resources/master/animations/pure_emulation.gif
