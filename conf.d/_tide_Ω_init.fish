@@ -4,3 +4,5 @@ _tide_git_prompt_set_vars
 
 _tide_pwd_set_max_length
 _tide_pwd_var_change
+
+_tide_detect_os
