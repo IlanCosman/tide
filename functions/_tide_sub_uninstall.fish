@@ -17,7 +17,7 @@ function _tide_sub_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    for func in (basename --suffix='.fish' $_tide_file_list)
+    for func in (basename -s '.fish' $_tide_file_list)
         functions -e $func
     end
 
