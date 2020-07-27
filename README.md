@@ -78,7 +78,7 @@ Tide uses "[items][]", small functions that create the prompt contents. Using th
 
 > Fish can't do _that_ yet can it!
 
-Tide takes care of all the multi-line logic and printing for you. All you have to do is add the special `newline` item.
+Tide takes care of all the multi-line logic and printing for you. All you have to do is add the `newline` item.
 
 <br clear="right"><br>
 
@@ -108,7 +108,7 @@ Tide can easily produce the same prompt as [Pure][]. Run `tide configure` and se
 
 You can still take advantage of all of Tide's features while using the Pure style, though the style does display less information by default.
 
-<br clear="right"><br>
+<br clear="right">
 
 ## Documentation
 
