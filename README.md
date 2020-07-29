@@ -8,7 +8,7 @@
 
 <!-- 0 width spaces on the line below -->
 
-[![ci_badge][]][actions] ​ [![fish_version_badge][]](#Prerequisites) ​ [![license_badge][]][license]
+[![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license]
 
 </div>
 
@@ -24,7 +24,7 @@
 **A modern prompt manager for the [Fish][] shell.**
 
 - **Out of the box:** With four compelling styles and myriad options, you can have your out-of-the-box cake and customize it too.
-- **Flexible:** Move content around, remove it, or add it back, all without ever touching the code.
+- **Flexible:** Move content around, remove it, or add it back, all without ever touching a line of code.
 - **Powerful:** Impress all your Fish friends with alien technologies like a multi-line right prompt.
 - **Extensible:** Create custom content with simple fish functions that integrate seamlessly.
 
@@ -32,7 +32,7 @@
 
 ## Installation
 
-### Prerequisites
+### System Requirements
 
 - [Git][]
 - [Fish][] ≥ 3.1
