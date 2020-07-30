@@ -5,9 +5,9 @@ function _tide_detect_os
         case freebsd openbsd dragonfly
             set -g _tide_os_icon 
         case linux
-            # Use ID first, then ID_LIKE if that fails, then default to generic linux logo
+            # Use ID first, if that fails and tide_os_use_nearest is enabled use ID_LIKE, if that fails default to generic linux logo
             if _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info 2)
-            else if _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info 3)
+            else if test "$tide_os_use_nearest" = 'true' && _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info 3)
             else
                 set -g _tide_os_icon 
             end

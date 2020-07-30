@@ -101,3 +101,7 @@ _set fake_tide_virtual_env_bg_color 444444
 _set fake_tide_time_color 5F8787
 _set fake_tide_time_format '%T'
 _set fake_tide_time_bg_color 444444
+# ---------------OS---------------
+_set fake_tide_os_color normal
+_set fake_tide_os_bg_color normal
+_set fake_tide_os_use_nearest true

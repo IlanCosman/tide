@@ -100,3 +100,7 @@ _set fake_tide_virtual_env_bg_color normal
 _set fake_tide_time_color 6C6C6C
 _set fake_tide_time_format '%T'
 _set fake_tide_time_bg_color normal
+# ---------------OS---------------
+_set fake_tide_os_color normal
+_set fake_tide_os_bg_color normal
+_set fake_tide_os_use_nearest true
