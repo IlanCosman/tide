@@ -3,7 +3,7 @@ function _tide_actual_install
 
     set -l location $argv[1]
     if test -z "$location"
-        set location 'master'
+        set location 'main'
     end
 
     set -gx TERM xterm # Necessary for testing purposes, ensures color codes are printed

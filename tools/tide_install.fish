@@ -9,7 +9,7 @@ function tide_install
 
     set -l location $argv[-1]
     if test -z "$location"
-        set location 'master'
+        set location 'main'
     end
 
     if set -q _flag_local
