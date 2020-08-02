@@ -16,10 +16,10 @@ name: Lint Code Base
 #############################
 on:
   push:
-    branches-ignore: [master]
-    # Remove the line above to run when pushing to master
+    branches-ignore: [main]
+    # Remove the line above to run when pushing to main
   pull_request:
-    branches: [master]
+    branches: [main]
 
 ###############
 # Set the Job #
@@ -48,5 +48,5 @@ jobs:
         uses: docker://github/super-linter:v3
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
