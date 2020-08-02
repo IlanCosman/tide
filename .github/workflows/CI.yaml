@@ -1,3 +1,4 @@
+---
 name: CI
 
 on: [push, pull_request]
@@ -17,13 +18,18 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: >
-          sudo apt-get update -qq && sudo apt-get install -qq --yes
-          fish git
+          sudo apt-get update -qq &&
+          sudo apt-get install --yes
           curl
-          python3 python3-venv
+          fish
+          git
+          python3
+          python3-venv
 
       - name: Install Tide unattended
-        run: source "$GITHUB_WORKSPACE/tools/tide_install.fish" && tide_install --local --unattended "$GITHUB_WORKSPACE"
+        run: >
+          source "$GITHUB_WORKSPACE/tools/tide_install.fish" &&
+          tide_install --local --unattended "$GITHUB_WORKSPACE"
 
       - name: Install fisher and fishtape
         run: tide test --install
