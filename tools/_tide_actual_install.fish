@@ -66,7 +66,7 @@ function _set_immutables
 
     _set_immutable _tide_file_list (string replace "$tempDir/" '' $tempDir/{completions/*, conf.d/*, functions/*})
 
-    _set_immutable _tide_version 2.0.0
+    _set_immutable _tide_version 2.2.0
     _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
     # --------------Colors--------------
     _set_immutable _tide_color_green 5FD700

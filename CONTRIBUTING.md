@@ -48,4 +48,17 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 - Items begin with `_tide_item_`
 - Subcommands begin with `_tide_sub_`
 
+## Linting
+
+Markdown and Yaml linting is done via the [Super-Linter][] action.
+
+## Formatting
+
+Code formatting is done via [fish_indent][].
+
+Markdown and Yaml formatting is done via [Prettier][].
+
 [fishtape]: https://github.com/jorgebucaran/fishtape
+[fish_indent]: https://fishshell.com/docs/current/cmds/fish_indent.html
+[prettier]: https://github.com/prettier/prettier
+[super-linter]: https://github.com/github/super-linter
