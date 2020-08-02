@@ -4,15 +4,14 @@ name: Super-Linter
 on: [push, pull_request]
 
 jobs:
-  build:
-    name: Super-Linter
+  super-linter:
     runs-on: ubuntu-latest
 
     steps:
       # Checks-out repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
-      # Run Linter against code base
+      # Run super-linter against code base
       - name: Super-Linter
         uses: docker://github/super-linter:v3
         env:

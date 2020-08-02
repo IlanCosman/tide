@@ -1,0 +1,15 @@
+---
+name: Prettier
+
+on: [push, pull_request]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+
+      # Run Prettier against code base
+      - uses: creyD/prettier_action@v3
