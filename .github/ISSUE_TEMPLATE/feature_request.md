@@ -1,6 +1,6 @@
 ---
 name: "🌊 Feature request"
-about: Suggest an idea for this project
+about: "I have a suggestion (and may want to implement it 🙂)"
 title: ""
 labels: "🌊 enhancement"
 assignees: ""

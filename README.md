@@ -140,7 +140,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 ## Acknowledgments
 
 - [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
-- [Starship][] - Inspired elements of the documentation.
+- [Starship][] - Inspired elements of the documentation and community health files.
 
 <!-- Alphabetical Reference Links -->
 
