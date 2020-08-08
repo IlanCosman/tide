@@ -12,7 +12,6 @@ jobs:
         shell: fish {0}
 
     steps:
-      # Checks-out repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
       - name: Install dependencies
@@ -36,3 +35,24 @@ jobs:
 
       - name: Run all tests
         run: tide test --all
+
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: creyD/prettier_action@v3.0
+        with:
+          prettier_options: --check .
+
+  super-linter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: docker://github/super-linter:v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
