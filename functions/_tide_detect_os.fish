@@ -5,9 +5,9 @@ function _tide_detect_os
         case freebsd openbsd dragonfly
             set -g _tide_os_icon 
         case linux
-            # Use ID first, if that fails and tide_os_use_nearest is enabled use ID_LIKE, if that fails default to generic linux logo
-            if _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info 2)
-            else if test "$tide_os_use_nearest" = 'true' && _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info 3)
+            if _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info ID)
+            else if test "$tide_os_use_nearest" = 'true' &&
+                _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info ID_LIKE)
             else
                 set -g _tide_os_icon 
             end
@@ -47,11 +47,12 @@ function _tide_detect_os_linux_cases -a name
         case '*'
             return 1
     end
+    return 0 # If we didn't run into the catch case '*', then return succesfull
 end
 
-function _tide_detect_os_extract_os_release_info -a lineNumber
-    set -l osRelease (cat /etc/os-release)
-    set -l selectedLine $osRelease[$lineNumber]
-    set -l splitData (string split '=' $selectedLine | string trim -c '"' | string lower)
-    echo $splitData[2]
+function _tide_detect_os_extract_os_release_info -a key
+    set -l splitOsRelease (cat /etc/os-release | string split '=')
+    set -l value $splitOsRelease[(math (contains --index $key $splitOsRelease)+1)]
+
+    string trim --chars='"' $value | string lower
 end
