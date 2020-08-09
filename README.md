@@ -142,8 +142,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 - [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
 - [Starship][] - Inspired elements of the documentation and community health files.
 
-<!-- Alphabetical Reference Links -->
-
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/configuration_wizard.gif
