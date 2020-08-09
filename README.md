@@ -2,8 +2,8 @@
 
 <img
   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/logo.svg"
-  alt="Tide Logo"
-  width="480"
+  alt="logo.svg"
+  width="61.8%"
 />
 
 <!-- 0 width spaces on the line below -->
@@ -70,7 +70,7 @@ Tide uses "[items][]", small functions that create the prompt contents. Using th
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/multi-line_right_prompt.png"
    alt="multi-line_right_prompt.png"
-   width="62%"
+   width="61.8%"
    align="right"
 />
 
@@ -85,7 +85,7 @@ Tide takes care of all the multi-line logic and printing for you. All you have t
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/extensible.png"
    alt="extensible.png"
-   width="62%"
+   width="61.8%"
    align="left"
 />
 
@@ -98,7 +98,7 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 <img
    src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/pure_emulation.gif"
    alt="pure_emulation.gif"
-   width="62%"
+   width="61.8%"
    align="right"
 />
 

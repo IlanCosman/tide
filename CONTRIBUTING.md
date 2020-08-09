@@ -72,11 +72,11 @@ All links should be in the [reference style][], with references at the bottom of
 
 Tide does not use strict semantic versioning but instead whatever feels appropriate at the time.
 
-For example Tide may:
+For example Tide might:
 
 - Bump the major version number for a large feature even if it's backwards compatible
 - Make small non-backwards compatible changes in a minor version bump
-- Not bump the patch version number for minor fixes
+- Not bump the patch version number for ultra minor fixes
 
 [code of conduct]: CODE_OF_CONDUCT.md
 [fishtape]: https://github.com/jorgebucaran/fishtape
