@@ -40,10 +40,10 @@ function _tide_sub_test
         return 1
     end
 
-    for test in $argv
-        fishtape "$testsDir/$test.fish" >$pending
+    sudo --validate # Cache sudo credentials
 
-        if test $status -eq 0
+    for test in $argv
+        if fishtape "$testsDir/$test.fish" >$pending
             if set -q _flag_verbose
                 cat $pending >>$passed
             else
@@ -54,24 +54,18 @@ function _tide_sub_test
         end
     end
 
-    if test -e $failed
-        printf '%s\n' '--------FAILED--------'
-        cat $failed
-        rm $failed
-
-        set returnStatement 1
-    end
     if test -e $passed
         printf '%s\n' '--------PASSED--------'
         cat $passed
         rm $passed
     end
+    if test -e $failed
+        printf '%s\n' '--------FAILED--------'
+        cat $failed
+        rm $failed
 
-    if test -e $pending
-        rm $pending
+        return 1
     end
-
-    return $returnStatement
 end
 
 function _tide_test_help
