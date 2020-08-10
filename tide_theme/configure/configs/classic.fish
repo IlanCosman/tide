@@ -87,6 +87,8 @@ _set fake_tide_cmd_duration_bg_color 444444
 # --------------Context--------------
 _set fake_tide_context_ssh_color D7AF87
 _set fake_tide_context_root_color $tideColorGold
+_set fake_tide_context_always_display false
+_set fake_tide_context_default_color D7AF87
 _set fake_tide_context_bg_color 444444
 # ---------------Jobs---------------
 _set fake_tide_jobs_icon '' # Gear
