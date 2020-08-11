@@ -33,8 +33,8 @@ jobs:
       - name: Install fisher and fishtape
         run: tide test --install
 
-      - name: Run all tests
-        run: tide test --all
+      - name: Run all tests as CI
+        run: tide test --all --CI
 
   prettier:
     runs-on: ubuntu-latest

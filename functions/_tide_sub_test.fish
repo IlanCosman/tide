@@ -1,5 +1,5 @@
 function _tide_sub_test
-    argparse 'h/help' 'v/verbose' 'a/all' 'i/install' -- $argv
+    argparse 'h/help' 'v/verbose' 'a/all' 'i/install' 'c-CI' -- $argv
 
     if set -q _flag_help
         _tide_test_help
@@ -32,7 +32,11 @@ function _tide_sub_test
     set -l returnStatement 0
 
     if set -q _flag_all
-        set argv (basename -s '.fish' $testsDir/*)
+        set argv (basename -s '.fish' $testsDir/*.fish)
+    end
+
+    if set -q _flag_CI
+        set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
     end
 
     if test (count $argv) -lt 1
