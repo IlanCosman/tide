@@ -27,8 +27,8 @@ jobs:
           python3-venv
 
       - name: Install Tide unattended
-        run: >
-          source "$GITHUB_WORKSPACE/tools/tide_install.fish" &&
+        run: |
+          source "$GITHUB_WORKSPACE/tools/tide_install.fish"
           tide_install --local --unattended "$GITHUB_WORKSPACE"
 
       - name: Install fisher and fishtape
