@@ -15,6 +15,7 @@ If you have any questions that aren't addressed in this document, please don't h
 - `printf` > `echo`
 - Long forms of flags > short forms
   - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
+  - Note that MacOS utils often do not support long flags, in which case one should use the short option
 - Piping > command substitution (only when convenient, i.e no extra commands)
 
 ### Naming Conventions
@@ -51,6 +52,8 @@ You can run the full test suite with the `-a/--all` flag.
 ```console
 tide test -a
 ```
+
+Some tests are designed for a CI machine and will not necessarily run on any working Tide install. These tests can be run using the `--CI` flag.
 
 ## Linting
 

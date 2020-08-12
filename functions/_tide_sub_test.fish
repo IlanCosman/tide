@@ -78,24 +78,26 @@ function _tide_test_help
     set -l bl (set_color $_tide_color_light_blue)
 
     set -l optionList \
-        'v or --verbose' \
-        'a or --all' \
-        'h or --help' \
-        'i or --install'
+        '-v or --verbose' \
+        '-a or --all' \
+        '-h or --help' \
+        '-i or --install' \
+        '--CI'
     set -l descriptionList \
         'display test output even if passed' \
         'run all available tests' \
         'print this help message' \
-        'install fisher and fishtape test dependencies'
+        'install fisher and fishtape test dependencies' \
+        'run tests designed for CI'
 
     printf '%s\n' 'Usage: '$bl'tide test '$n'[options] '$b'[TESTS...]'$n
     printf '%s\n'
     printf '%s\n' 'Options:'
     for option in $optionList
-        printf '%s' '  -'$option
+        printf '%s' $option
         printf '%b' '\r'
         _tide_cursor_right 19
-        set -l descriptionIndex (contains --index $option $optionList)
+        set -l descriptionIndex (contains --index -- $option $optionList)
         printf '%s\n' $descriptionList[$descriptionIndex]
     end
 end
