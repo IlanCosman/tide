@@ -107,3 +107,8 @@ _set fake_tide_time_bg_color normal
 _set fake_tide_os_color normal
 _set fake_tide_os_bg_color normal
 _set fake_tide_os_use_nearest true
+# ---------------Rust---------------
+_set fake_tide_rust_color 00AFAF
+_set fake_tide_rust_bg_color normal
+_set fake_tide_rust_icon ''
+_set fake_tide_rust_verbose_version false

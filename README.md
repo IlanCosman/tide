@@ -140,7 +140,8 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 ## Acknowledgments
 
 - [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
-- [Starship][] - Inspired elements of the documentation and community health files.
+- [Starship][] - Inspired elements of Tide's documentation and community health files.
+- [Spacefish][] - Inspired some of Tide's items.
 
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
@@ -159,5 +160,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [items]: https://github.com/IlanCosman/tide/wiki/Items
 [pure]: https://github.com/rafaelrinaldi/pure
+[spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
 [wiki]: https://github.com/IlanCosman/tide/wiki

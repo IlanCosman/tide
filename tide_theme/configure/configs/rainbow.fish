@@ -104,6 +104,11 @@ _set fake_tide_time_color 000000
 _set fake_tide_time_format '%T'
 _set fake_tide_time_bg_color D3D7CF
 # ---------------OS---------------
-_set fake_tide_os_color normal
-_set fake_tide_os_bg_color normal
+_set fake_tide_os_color 080808
+_set fake_tide_os_bg_color CED7CF
 _set fake_tide_os_use_nearest true
+# ---------------Rust---------------
+_set fake_tide_rust_color 2E3436
+_set fake_tide_rust_bg_color FF8700
+_set fake_tide_rust_icon ''
+_set fake_tide_rust_verbose_version false
