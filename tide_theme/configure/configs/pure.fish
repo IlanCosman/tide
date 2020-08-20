@@ -62,12 +62,13 @@ _set fake___fish_git_prompt_char_upstream_equal ''
 _set fake___fish_git_prompt_char_upstream_ahead ' ⇡'
 _set fake___fish_git_prompt_char_upstream_behind ' ⇣'
 _set fake___fish_git_prompt_char_upstream_diverged ' ⇡⇣'
-_set fake___fish_git_prompt_char_dirtystate ''
+_set fake___fish_git_prompt_char_dirtystate '*'
 _set fake___fish_git_prompt_char_stagedstate '*'
 _set fake___fish_git_prompt_char_stashstate ' ≡'
 # --------Colors--------
 _set fake___fish_git_prompt_color_branch brblack
 _set fake___fish_git_prompt_color_upstream cyan
+_set fake___fish_git_prompt_color_dirtystate brblack
 _set fake___fish_git_prompt_color_stagedstate brblack
 _set fake___fish_git_prompt_color_stashstate cyan
 # --------------Status--------------
