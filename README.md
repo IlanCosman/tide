@@ -1,14 +1,12 @@
 <div align="center">
 
 <img
-  src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/logo.svg"
-  alt="logo.svg"
-  width="61.8%"
+   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/logo.svg"
+   alt="logo.svg"
+   width="61.8%"
 />
 
-<!-- 0 width spaces on the line below -->
-
-[![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license]
+[![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license] <!-- 0 width spaces on this line -->
 
 </div>
 
