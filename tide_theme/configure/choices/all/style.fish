@@ -44,12 +44,13 @@ function _load_config -a name
         set -e $var
     end
 
+    set -g tideColorDarkerGreen 5FAF00
+    set -g tideColorGold D7AF00
+
     set -g fake__tide_var_list
 
-    source "$_tide_dir/configure/configs/$name.fish"
-end
-
-function _set -a var_name
-    set -g $var_name $argv[2..-1]
-    set -a fake__tide_var_list $var_name
+    for line in fake_(cat "$_tide_dir/configure/configs/$name.fish")
+        set -a fake__tide_var_list (string split --max 1 ' ' $line)[1]
+        eval set -g $line
+    end
 end

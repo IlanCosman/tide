@@ -1,114 +1,83 @@
-# -------------------Local Variables-------------------
-set -l tideColorGold D7AF00
-set -l tideColorDarkerGreen 5FAF00
-
-# ---------------General Theme Variables---------------
-_set fake_tide_print_newline_before_prompt 'true'
-# ------------Left Prompt------------
-_set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'virtual_env' 'newline' 'prompt_char'
-_set fake_tide_left_prompt_pad_items false
-
-_set fake_tide_left_prompt_item_separator_same_color ' '
-_set fake_tide_left_prompt_item_separator_diff_color ' '
-
-_set fake_tide_left_prompt_item_separator_same_color_color 949494
-
-_set fake_tide_left_prompt_prefix ''
-_set fake_tide_left_prompt_suffix ' '
-
-_set fake_tide_left_prompt_frame_enabled false
-_set fake_tide_left_prompt_frame_color 6C6C6C
-# ------------Right Prompt------------
-_set fake_tide_right_prompt_items
-_set fake_tide_right_prompt_pad_items false
-
-_set fake_tide_right_prompt_item_separator_same_color ' '
-_set fake_tide_right_prompt_item_separator_diff_color ' '
-
-_set fake_tide_right_prompt_item_separator_same_color_color 949494
-
-_set fake_tide_right_prompt_prefix ' '
-_set fake_tide_right_prompt_suffix ''
-
-_set fake_tide_right_prompt_frame_enabled false
-_set fake_tide_right_prompt_frame_color 6C6C6C
-# ---------Prompt Connection---------
-_set fake_tide_prompt_connection_color 6C6C6C
-_set fake_tide_prompt_connection_icon ''
-
-# --------------------Prompt Items--------------------
-# ------------Prompt Char------------
-_set fake_tide_prompt_char_success_color magenta
-_set fake_tide_prompt_char_failure_color red
-_set fake_tide_prompt_char_icon '❯'
-_set fake_tide_prompt_char_bg_color normal
-# ----------------Pwd----------------
-_set fake_tide_pwd_truncate_margin 10
-_set fake_tide_pwd_unwritable_icon
-_set fake_tide_pwd_max_dirs 0
-_set fake_tide_pwd_anchors
-_set fake_tide_pwd_color_anchors $_tide_color_light_blue
-_set fake_tide_pwd_color_dirs blue
-_set fake_tide_pwd_color_truncated_dirs 8787AF
-_set fake_tide_pwd_bg_color normal
-# ------------Git prompt------------
-_set fake___fish_git_prompt_showupstream true
-_set fake___fish_git_prompt_showdirtystate true
-_set fake___fish_git_prompt_showstashstate true
-_set fake_tide_git_prompt_bg_color normal
-# -------Symbols-------
-_set fake___fish_git_prompt_char_stateseparator ''
-_set fake___fish_git_prompt_char_upstream_equal ''
-_set fake___fish_git_prompt_char_upstream_ahead ' ⇡'
-_set fake___fish_git_prompt_char_upstream_behind ' ⇣'
-_set fake___fish_git_prompt_char_upstream_diverged ' ⇡⇣'
-_set fake___fish_git_prompt_char_dirtystate '*'
-_set fake___fish_git_prompt_char_stagedstate '*'
-_set fake___fish_git_prompt_char_stashstate ' ≡'
-# --------Colors--------
-_set fake___fish_git_prompt_color_branch brblack
-_set fake___fish_git_prompt_color_upstream cyan
-_set fake___fish_git_prompt_color_dirtystate brblack
-_set fake___fish_git_prompt_color_stagedstate brblack
-_set fake___fish_git_prompt_color_stashstate cyan
-# --------------Status--------------
-_set fake_tide_status_always_display false
-_set fake_tide_status_success_icon '✔'
-_set fake_tide_status_success_color $tideColorDarkerGreen
-_set fake_tide_status_success_bg_color normal
-_set fake_tide_status_failure_icon '✘'
-_set fake_tide_status_failure_color D70000
-_set fake_tide_status_failure_bg_color normal
-# -----------Cmd_Duration-----------
-_set fake_tide_cmd_duration_color yellow
-_set fake_tide_cmd_duration_decimals 0
-_set fake_tide_cmd_duration_threshold 3000
-_set fake_tide_cmd_duration_bg_color normal
-# --------------Context--------------
-_set fake_tide_context_ssh_color D7AF87
-_set fake_tide_context_root_color $tideColorGold
-_set fake_tide_context_always_display false
-_set fake_tide_context_default_color D7AF87
-_set fake_tide_context_bg_color normal
-# ---------------Jobs---------------
-_set fake_tide_jobs_icon '' # Gear
-_set fake_tide_jobs_color $tideColorDarkerGreen
-_set fake_tide_jobs_bg_color normal
-# ---------------Virtual_Env---------------
-_set fake_tide_virtual_env_color 00AFAF
-_set fake_tide_virtual_env_display_mode 'projectName'
-_set fake_tide_virtual_env_icon ''
-_set fake_tide_virtual_env_bg_color normal
-# ---------------Time---------------
-_set fake_tide_time_color 6C6C6C
-_set fake_tide_time_format '%T'
-_set fake_tide_time_bg_color normal
-# ---------------OS---------------
-_set fake_tide_os_color normal
-_set fake_tide_os_bg_color normal
-_set fake_tide_os_use_nearest true
-# ---------------Rust---------------
-_set fake_tide_rust_color 00AFAF
-_set fake_tide_rust_bg_color normal
-_set fake_tide_rust_icon ''
-_set fake_tide_rust_verbose_version false
+__fish_git_prompt_char_dirtystate '*'
+__fish_git_prompt_char_stagedstate '*'
+__fish_git_prompt_char_stashstate ' ≡'
+__fish_git_prompt_char_stateseparator ''
+__fish_git_prompt_char_upstream_ahead ' ⇡'
+__fish_git_prompt_char_upstream_behind ' ⇣'
+__fish_git_prompt_char_upstream_diverged ' ⇡⇣'
+__fish_git_prompt_char_upstream_equal ''
+__fish_git_prompt_color_branch brblack
+__fish_git_prompt_color_dirtystate brblack
+__fish_git_prompt_color_stagedstate brblack
+__fish_git_prompt_color_stashstate cyan
+__fish_git_prompt_color_upstream cyan
+__fish_git_prompt_showdirtystate true
+__fish_git_prompt_showstashstate true
+__fish_git_prompt_showupstream true
+tide_cmd_duration_bg_color normal
+tide_cmd_duration_color yellow
+tide_cmd_duration_decimals 0
+tide_cmd_duration_threshold 3000
+tide_context_always_display false
+tide_context_bg_color normal
+tide_context_default_color D7AF87
+tide_context_root_color $tideColorGold
+tide_context_ssh_color D7AF87
+tide_git_prompt_bg_color normal
+tide_jobs_bg_color normal
+tide_jobs_color $tideColorDarkerGreen
+tide_jobs_icon ''
+tide_left_prompt_frame_color 6C6C6C
+tide_left_prompt_frame_enabled false
+tide_left_prompt_item_separator_diff_color ' '
+tide_left_prompt_item_separator_same_color ' '
+tide_left_prompt_item_separator_same_color_color 949494
+tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'virtual_env' 'newline' 'prompt_char'
+tide_left_prompt_pad_items false
+tide_left_prompt_prefix ''
+tide_left_prompt_suffix ' '
+tide_os_bg_color normal
+tide_os_color normal
+tide_os_use_nearest true
+tide_print_newline_before_prompt 'true'
+tide_prompt_char_bg_color normal
+tide_prompt_char_failure_color red
+tide_prompt_char_icon '❯'
+tide_prompt_char_success_color magenta
+tide_prompt_connection_color 6C6C6C
+tide_prompt_connection_icon ''
+tide_pwd_anchors
+tide_pwd_bg_color normal
+tide_pwd_color_anchors $_tide_color_light_blue
+tide_pwd_color_dirs blue
+tide_pwd_color_truncated_dirs 8787AF
+tide_pwd_max_dirs 0
+tide_pwd_truncate_margin 10
+tide_pwd_unwritable_icon
+tide_right_prompt_frame_color 6C6C6C
+tide_right_prompt_frame_enabled false
+tide_right_prompt_item_separator_diff_color ' '
+tide_right_prompt_item_separator_same_color ' '
+tide_right_prompt_item_separator_same_color_color 949494
+tide_right_prompt_items
+tide_right_prompt_pad_items false
+tide_right_prompt_prefix ' '
+tide_right_prompt_suffix ''
+tide_rust_bg_color normal
+tide_rust_color 00AFAF
+tide_rust_icon ''
+tide_rust_verbose_version false
+tide_status_always_display false
+tide_status_failure_bg_color normal
+tide_status_failure_color D70000
+tide_status_failure_icon '✘'
+tide_status_success_bg_color normal
+tide_status_success_color $tideColorDarkerGreen
+tide_status_success_icon '✔'
+tide_time_bg_color normal
+tide_time_color 6C6C6C
+tide_time_format '%T'
+tide_virtual_env_bg_color normal
+tide_virtual_env_color 00AFAF
+tide_virtual_env_display_mode 'projectName'
+tide_virtual_env_icon ''
