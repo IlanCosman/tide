@@ -2,7 +2,6 @@ _tide_count_left_prompt_height
 
 _tide_git_prompt_set_vars
 
-_tide_pwd_set_max_length
-_tide_pwd_var_change
+_tide_pwd
 
 _tide_detect_os
