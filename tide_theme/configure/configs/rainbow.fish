@@ -51,6 +51,8 @@ tide_pwd_bg_color blue
 tide_pwd_color_anchors E4E4E4
 tide_pwd_color_dirs E4E4E4
 tide_pwd_color_truncated_dirs BCBCBC
+tide_pwd_dir_icon
+tide_pwd_home_icon
 tide_pwd_max_dirs 0
 tide_pwd_truncate_margin 10
 tide_pwd_unwritable_icon ''

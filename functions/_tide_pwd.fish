@@ -4,8 +4,13 @@ function _tide_pwd
 
     set -g _tide_pwd_output $colorDirs$_tide_pwd
 
+    # Prepend icons
     if not test -w $PWD
         set _tide_pwd_output $colorDirs{$tide_pwd_unwritable_icon}' ' $_tide_pwd_output
+    else if test $PWD = $HOME
+        set _tide_pwd_output $colorDirs{$tide_pwd_home_icon}' ' $_tide_pwd_output
+    else
+        set _tide_pwd_output $colorDirs{$tide_pwd_dir_icon}' ' $_tide_pwd_output
     end
 
     set -l truncatedList '.' $_tide_split_pwd
