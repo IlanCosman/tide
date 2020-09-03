@@ -3,7 +3,7 @@ function tide
     set -l subcommand $argv[1]
 
     if set -q _flag_version
-        printf '%s\n' $_tide_version
+        printf '%s\n' "tide, version $_tide_version"
         return 0
     end
 
