@@ -31,8 +31,8 @@ function _next_choice -a nextChoice
 end
 
 function _tide_menu
-    set -l bold (set_color -o)
-    set -l norm (set_color normal)
+    set -l bold (set_color -o; or echo)
+    set -l norm (set_color normal; or echo)
 
     set -l listWithSlashes (string join '/' $_tide_option_list)
 

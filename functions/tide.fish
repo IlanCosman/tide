@@ -21,9 +21,9 @@ function tide
 end
 
 function _tide_help
-    set -l b (set_color -o)
-    set -l n (set_color normal)
-    set -l bl (set_color $_tide_color_light_blue)
+    set -l b (set_color -o; or echo)
+    set -l n (set_color normal; or echo)
+    set -l bl (set_color $_tide_color_light_blue; or echo)
 
     set -l options \
         '-v or --version' \

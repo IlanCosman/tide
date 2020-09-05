@@ -23,7 +23,11 @@ function _tide_pwd --on-variable PWD --on-signal WINCH
         set -a tidePwdAnchors (string split -r -m1 '/' "$_tide_git_dir")[2]
     end
 
-    set -l colorDirs (set_color $tide_pwd_color_dirs)
+    set -l colorDirs (set_color $tide_pwd_color_dirs; or echo)
+    set -l colorAnchors (set_color -o $tide_pwd_color_anchors; or echo)
+    set -l keepBackgroundColor (set_color normal -b $tide_pwd_bg_color; or echo)
+    set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs; or echo)
+
     set -g _tide_pwd_output $colorDirs$pwd
 
     # Prepend icons
@@ -39,7 +43,7 @@ function _tide_pwd --on-variable PWD --on-signal WINCH
 
     for dir in $splitPwd
         if contains $dir $tidePwdAnchors
-            set _tide_pwd_output (string replace $dir (set_color -o $tide_pwd_color_anchors)$dir(set_color normal -b $tide_pwd_bg_color) $_tide_pwd_output)
+            set _tide_pwd_output (string replace $dir $colorAnchors$dir$keepBackgroundColor $_tide_pwd_output)
         else if test (string length $pwd) -gt $pwdMaxLength
             set -l dirTruncated $dir
             set -l truncationLength 1
@@ -50,7 +54,7 @@ function _tide_pwd --on-variable PWD --on-signal WINCH
             set -a truncatedList $dirTruncated
 
             set pwd (string replace $dir $dirTruncated $pwd)
-            set _tide_pwd_output (string replace $dir (set_color $tide_pwd_color_truncated_dirs)$dirTruncated $_tide_pwd_output)
+            set _tide_pwd_output (string replace $dir $colorTruncatedDirs$dirTruncated $_tide_pwd_output)
         end
     end
 
