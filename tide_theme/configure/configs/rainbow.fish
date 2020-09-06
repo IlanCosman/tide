@@ -61,7 +61,7 @@ tide_right_prompt_frame_enabled true
 tide_right_prompt_item_separator_diff_color ''
 tide_right_prompt_item_separator_same_color ''
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'virtual_env'
+tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env'
 tide_right_prompt_pad_items true
 tide_right_prompt_prefix ''
 tide_right_prompt_suffix ''
@@ -83,3 +83,5 @@ tide_virtual_env_bg_color 444444
 tide_virtual_env_color 00AFAF
 tide_virtual_env_display_mode 'projectName'
 tide_virtual_env_icon ''
+tide_nvm_color 00AFAF
+tide_nvm_icon ''

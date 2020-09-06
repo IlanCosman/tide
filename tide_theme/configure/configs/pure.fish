@@ -32,7 +32,7 @@ tide_left_prompt_frame_enabled false
 tide_left_prompt_item_separator_diff_color ' '
 tide_left_prompt_item_separator_same_color ' '
 tide_left_prompt_item_separator_same_color_color 949494
-tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'virtual_env' 'newline' 'prompt_char'
+tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'nvm' 'virtual_env' 'newline' 'prompt_char'
 tide_left_prompt_pad_items false
 tide_left_prompt_prefix ''
 tide_left_prompt_suffix ' '
@@ -83,3 +83,5 @@ tide_virtual_env_bg_color normal
 tide_virtual_env_color 00AFAF
 tide_virtual_env_display_mode 'projectName'
 tide_virtual_env_icon ''
+tide_nvm_color 00AFAF
+tide_nvm_icon ''
