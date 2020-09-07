@@ -36,6 +36,7 @@ tide_left_prompt_items 'pwd' 'git_prompt' 'newline'
 tide_left_prompt_pad_items true
 tide_left_prompt_prefix ''
 tide_left_prompt_suffix ''
+tide_nvm_bg_color 444444
 tide_nvm_color 00AFAF
 tide_nvm_default_node
 tide_nvm_icon '⬢'
