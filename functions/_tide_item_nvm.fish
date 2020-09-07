@@ -1,6 +1,6 @@
 function _tide_item_nvm
     if set -l whichNode (which node 2>/dev/null) # Ensure node is installed
-        set -l nodeVersion (node --version)
+        set -l nodeVersion (string split / $whichNode)[-3] # Much faster than node --version
 
         if test -n "$tide_nvm_default_node"
             if test "$tide_nvm_default_node" != "$nodeVersion"

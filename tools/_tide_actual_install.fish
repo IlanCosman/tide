@@ -75,6 +75,7 @@ function _set_immutables
     _set_immutable _tide_color_normal (set_color normal)
 
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
+    _set_immutable NVM_DIR $HOME/.nvm
 end
 
 function _set_immutable -a var_name
