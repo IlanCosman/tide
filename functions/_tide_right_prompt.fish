@@ -1,5 +1,5 @@
 function _tide_right_prompt
-    set -l splitText (_tide_fetch_right_prompt_items | string split '@NEWLINE@')
+    set -l splitText (_tide_fetch_right_prompt_items)
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     if test "$tide_right_prompt_frame_enabled" = 'true'
@@ -103,10 +103,6 @@ function _tide_fetch_right_prompt_items
         set_color $previousColor -b normal
         printf '%s' $tide_right_prompt_suffix
     end
-end
-
-function fish_right_prompt
-    printf '%s' $_tide_fish_right_prompt_display
 end
 
 function _tide_print_at_end -a text

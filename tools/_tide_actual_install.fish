@@ -64,18 +64,19 @@ end
 function _set_immutables
     set -U _tide_var_immutable_list
 
+    _set_immutable _tide_color_dark_blue 0087AF
+    _set_immutable _tide_color_green 5FD700
+    _set_immutable _tide_color_light_blue 00AFFF
+    _set_immutable _tide_color_normal (set_color normal)
+
+    _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
+
     _set_immutable _tide_file_list (string replace "$tempDir/" '' $tempDir/{completions/*, conf.d/*, functions/*})
 
     _set_immutable _tide_version 2.3.0
-    _set_immutable _tide_dir "$__fish_config_dir/tide_theme"
-    # --------------Colors--------------
-    _set_immutable _tide_color_green 5FD700
-    _set_immutable _tide_color_light_blue 00AFFF
-    _set_immutable _tide_color_dark_blue 0087AF
-    _set_immutable _tide_color_normal (set_color normal)
 
-    _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
     _set_immutable NVM_DIR $HOME/.nvm
+    _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
 end
 
 function _set_immutable -a var_name

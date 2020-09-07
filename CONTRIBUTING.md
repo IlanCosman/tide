@@ -81,10 +81,10 @@ For example Tide might:
 - Make small non-backwards compatible changes in a minor version bump
 - Not bump the patch version number for ultra minor fixes
 
-[code of conduct]: CODE_OF_CONDUCT.md
-[fishtape]: https://github.com/jorgebucaran/fishtape
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
+[code of conduct]: CODE_OF_CONDUCT.md
+[fishtape]: https://github.com/jorgebucaran/fishtape
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links

@@ -1,5 +1,5 @@
 function _fake_tide_right_prompt
-    set -l splitText (_tide_fetch_right_prompt_items | string split '@NEWLINE@')
+    set -l splitText (_tide_fetch_right_prompt_items)
     set -l printAtEndedRightPromptHeight (count $splitText)
 
     if test "$fake_tide_right_prompt_frame_enabled" = 'true'

@@ -9,9 +9,8 @@
 #### Motivation and Context
 
 <!-- Why is this change required? What problem does it solve? -->
-<!--- Please link to an open issue. -->
 
-Closes #
+Closes # <!--- Please link to an open issue. -->
 
 #### Screenshots (if appropriate)
 
@@ -20,8 +19,8 @@ Closes #
 <!-- Please describe how you tested your changes. -->
 <!-- If you have not tested your changes on both OSes, someone else can help you out. -->
 
-- [ ] I have tested using **MacOS**.
 - [ ] I have tested using **Linux**.
+- [ ] I have tested using **MacOS**.
 
 #### Checklist
 

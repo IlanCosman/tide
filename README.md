@@ -145,18 +145,18 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
-[fish]: https://fishshell.com/
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[fish]: https://fishshell.com/
 [git]: https://git-scm.com/
-[license]: LICENSE.md
+[items]: https://github.com/IlanCosman/tide/wiki/Items
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold.ttf
+[license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold_italic.ttf
+[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold.ttf
 [meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_italic.ttf
 [meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_regular.ttf
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[items]: https://github.com/IlanCosman/tide/wiki/Items
 [pure]: https://github.com/rafaelrinaldi/pure
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship

@@ -14,3 +14,7 @@ function fish_prompt --description 'Write out the prompt'
     _tide_right_prompt
     _tide_left_prompt
 end
+
+function fish_right_prompt
+    printf '%s' $_tide_fish_right_prompt_display
+end
