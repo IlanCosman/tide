@@ -5,6 +5,6 @@ function _tide_item_jobs
         end
 
         set_color $tide_jobs_color
-        printf '%s' $tide_jobs_icon ' '{$jobs_number}
+        printf '%s' $tide_jobs_icon ' '$jobs_number
     end
 end

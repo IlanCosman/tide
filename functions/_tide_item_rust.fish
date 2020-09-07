@@ -7,6 +7,6 @@ function _tide_item_rust
         end
 
         set_color $tide_rust_color
-        printf '%s' {$tide_rust_icon}' ' $rustVersion
+        printf '%s' $tide_rust_icon' ' $rustVersion
     end
 end
