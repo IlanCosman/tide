@@ -7,8 +7,8 @@ __fish_git_prompt_char_untrackedfiles ' ?'
 __fish_git_prompt_char_upstream_ahead ' ⇡'
 __fish_git_prompt_char_upstream_behind ' ⇣'
 __fish_git_prompt_color_branch $_tide_color_green
-__fish_git_prompt_color_dirtystate $tideColorGold
-__fish_git_prompt_color_stagedstate $tideColorGold
+__fish_git_prompt_color_dirtystate $_tide_color_gold
+__fish_git_prompt_color_stagedstate $_tide_color_gold
 __fish_git_prompt_color_stashstate $_tide_color_green
 __fish_git_prompt_color_untrackedfiles $_tide_color_light_blue
 __fish_git_prompt_color_upstream $_tide_color_green
@@ -21,11 +21,11 @@ tide_cmd_duration_threshold 3000
 tide_context_always_display false
 tide_context_bg_color 444444
 tide_context_default_color D7AF87
-tide_context_root_color $tideColorGold
+tide_context_root_color $_tide_color_gold
 tide_context_ssh_color D7AF87
 tide_git_prompt_bg_color 444444
 tide_jobs_bg_color 444444
-tide_jobs_color $tideColorDarkerGreen
+tide_jobs_color $_tide_color_dark_green
 tide_jobs_icon ''
 tide_left_prompt_frame_color 6C6C6C
 tide_left_prompt_frame_enabled true
@@ -78,7 +78,7 @@ tide_status_failure_bg_color 444444
 tide_status_failure_color D70000
 tide_status_failure_icon '✘'
 tide_status_success_bg_color 444444
-tide_status_success_color $tideColorDarkerGreen
+tide_status_success_color $_tide_color_dark_green
 tide_status_success_icon '✔'
 tide_time_bg_color 444444
 tide_time_color 5F8787

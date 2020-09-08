@@ -43,10 +43,6 @@ function _load_config -a name
     for var in $fake__tide_var_list
         set -e $var
     end
-
-    set -g tideColorDarkerGreen 5FAF00
-    set -g tideColorGold D7AF00
-
     set -g fake__tide_var_list
 
     for line in fake_(cat "$_tide_dir/configure/configs/$name.fish")

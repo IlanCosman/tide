@@ -65,6 +65,8 @@ function _set_immutables
     set -U _tide_var_immutable_list
 
     _set_immutable _tide_color_dark_blue 0087AF
+    _set_immutable _tide_color_dark_green 5FAF00
+    _set_immutable _tide_color_gold D7AF00
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF
     _set_immutable _tide_color_normal (set_color normal)

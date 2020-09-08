@@ -21,7 +21,7 @@ tide_cmd_duration_threshold 3000
 tide_context_always_display false
 tide_context_bg_color 444444
 tide_context_default_color D7AF87
-tide_context_root_color $tideColorGold
+tide_context_root_color $_tide_color_gold
 tide_context_ssh_color D7AF87
 tide_git_prompt_bg_color 4E9A06
 tide_jobs_bg_color 444444
