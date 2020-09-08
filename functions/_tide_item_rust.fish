@@ -1,12 +1,11 @@
 function _tide_item_rust
     if command --quiet rustc && test -e Cargo.toml -o (count *.rs) -gt 0
-        set -l rustVersion (rustc --version | string split ' ')[2]
+        set_color $tide_rust_color
 
         if test "$tide_rust_verbose_version" = false
-            set rustVersion (string split '-' $rustVersion)[1] # Cut off -suffixes. "v1.30.0-beta" vs "v1.30.0"
+            printf '%s' $tide_rust_icon' ' (rustc --version | string split ' ' | string split '-')[2] # Cut off -suffixes. "v1.30.0-beta" vs "v1.30.0"
+        else
+            printf '%s' $tide_rust_icon' ' (rustc --version | string split ' ')[2]
         end
-
-        set_color $tide_rust_color
-        printf '%s' $tide_rust_icon' ' $rustVersion
     end
 end
