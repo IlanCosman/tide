@@ -1,5 +1,7 @@
 function _tide_item_rust
-    if set -l rustVersion (rustc --version | string split ' ')[2] && test -e Cargo.toml -o (count *.rs) -gt 0
+    if command --quiet rustc && test -e Cargo.toml -o (count *.rs) -gt 0
+        set -l rustVersion (rustc --version | string split ' ')[2]
+
         if test "$tide_rust_verbose_version" = false
             set rustVersion (string split '-' $rustVersion)[1] # Cut off -suffixes. "v1.30.0-beta" vs "v1.30.0"
         end
