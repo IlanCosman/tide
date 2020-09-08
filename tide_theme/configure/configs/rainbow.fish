@@ -72,7 +72,7 @@ tide_right_prompt_suffix ''
 tide_rust_bg_color FF8700
 tide_rust_color 2E3436
 tide_rust_icon ''
-tide_rust_verbose_version false
+tide_rust_verbose_version true
 tide_status_always_display false
 tide_status_failure_bg_color CC0000
 tide_status_failure_color FFFF00
