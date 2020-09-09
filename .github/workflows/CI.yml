@@ -31,11 +31,9 @@ jobs:
           source "$GITHUB_WORKSPACE/tools/tide_install.fish"
           tide_install --local --unattended "$GITHUB_WORKSPACE"
 
-      - name: Install fisher and fishtape
-        run: tide test --install
+      - run: tide test --install
 
-      - name: Run all tests as CI
-        run: tide test --all --CI
+      - run: tide test --all --CI
 
   prettier:
     runs-on: ubuntu-latest
@@ -43,9 +41,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: creyD/prettier_action@v3.0
+      - uses: actionsx/prettier@v2
         with:
-          prettier_options: --check .
+          args: --check .
 
   super-linter:
     runs-on: ubuntu-latest
@@ -53,7 +51,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: docker://github/super-linter:v3
+      - uses: github/super-linter@v3
         env:
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
