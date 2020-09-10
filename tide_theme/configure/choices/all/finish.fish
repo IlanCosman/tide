@@ -40,7 +40,7 @@ function _tide_finish
 
     set _tide_var_list $incomingVarList
 
-    source "$__fish_config_dir/conf.d/_tide_Ω_init.fish" # Reload important startup variables
+    source "$__fish_config_dir/conf.d/_tide_init.fish" # Reload important startup variables
 
-    block --erase
+    block --erase # Unblock events
 end
