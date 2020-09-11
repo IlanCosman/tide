@@ -5,9 +5,9 @@ function _tide_detect_os
         case freebsd openbsd dragonfly
             set -g _tide_os_icon 
         case linux
-            if _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info ID)
-            else if test "$tide_os_use_nearest" = 'true' &&
-                _tide_detect_os_linux_cases (_tide_detect_os_extract_os_release_info ID_LIKE)
+            if _tide_detect_os_linux_cases (_tide_detect_os_get_info /etc/os-release ID)
+            else if _tide_detect_os_linux_cases (_tide_detect_os_get_info /etc/os-release ID_LIKE)
+            else if _tide_detect_os_linux_cases (_tide_detect_os_get_info /etc/lsb-release DISTRIB_ID)
             else
                 set -g _tide_os_icon 
             end
@@ -50,9 +50,11 @@ function _tide_detect_os_linux_cases -a name
     return 0 # If we didn't run into the catch case '*', then return succesfull
 end
 
-function _tide_detect_os_extract_os_release_info -a key
-    set -l splitOsRelease (cat /etc/os-release | string split '=')
-    set -l value $splitOsRelease[(math (contains --index $key $splitOsRelease)+1)]
+function _tide_detect_os_get_info -a file key
+    if test -e $file
+        set -l splitOsRelease (cat $file | string split '=')
+        set -l value $splitOsRelease[(math (contains --index $key $splitOsRelease)+1)]
 
-    string trim --chars='"' $value | string lower
+        string trim --chars='"' $value | string lower
+    end
 end

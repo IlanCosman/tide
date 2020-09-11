@@ -42,7 +42,6 @@ tide_nvm_default_node
 tide_nvm_icon '⬢'
 tide_os_bg_color CED7CF
 tide_os_color 080808
-tide_os_use_nearest true
 tide_print_newline_before_prompt 'true'
 tide_prompt_char_bg_color normal
 tide_prompt_char_failure_color FF0000
