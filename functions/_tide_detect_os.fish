@@ -47,7 +47,7 @@ function _tide_detect_os_linux_cases -a name
         case '*'
             return 1
     end
-    return 0 # If we didn't run into the catch case '*', then return succesfull
+    return 0 # If we didn't run into the catch case '*' return succesfull
 end
 
 function _tide_detect_os_get_info -a file key

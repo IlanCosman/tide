@@ -5,7 +5,7 @@ function _tide_item_nvm
         if string match --quiet --regex "^$NVM_DIR.*" $nodePath # If node path begins with nvm directory
             set_color $tide_nvm_color
             printf '%s' $tide_nvm_icon' ' $nodeVersion
-        else if test -n "$tide_nvm_default_node" -a "$tide_nvm_default_node" != "$nodeVersion"
+        else if test -n "$tide_nvm_default_node" -a "$nodeVersion" != "$tide_nvm_default_node"
             set_color $tide_nvm_color
             printf '%s' $tide_nvm_icon' ' $nodeVersion
         end

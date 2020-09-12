@@ -29,9 +29,9 @@ assignees: ""
 - Operating System: <!-- e.g. Ubuntu 20.04 -->
 - Output of `tide bug-report`: <!-- In the code block below -->
 
-  ```console
+```console
 
-  ```
+```
 
 #### Additional context
 
