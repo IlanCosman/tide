@@ -19,10 +19,10 @@ set -lx tide_status_failure_icon '✘'
 @mesg 'always_display: false'
 set -lx tide_status_always_display false
 
-@test 'true' (true; _status) -z
-@test 'false' (false; _status) -z
+@test 'true' -z (true; _status)
+@test 'false' -z (false; _status)
 @test 'true|false' (true|false; _status) = '✘ 0|1'
-@test 'true|true' (true|true; _status) -z
+@test 'true|true' -z (true|true; _status)
 @test 'false|true' (false|true; _status) = '✔ 1|0'
 @test 'false|false' (false|false; _status) = '✘ 1|1'
 

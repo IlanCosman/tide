@@ -9,7 +9,7 @@ set -l dir ~/python_project
 mkdir -p $dir
 cd $dir
 
-@test 'nothing' (_virtual_env) -z
+@test 'nothing' -z (_virtual_env)
 
 python3 -m venv .venv
 source .venv/bin/activate.fish

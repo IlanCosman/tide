@@ -10,7 +10,7 @@ end
 # back afterwards. This test will still put your clock off by a few seconds though.
 set -l actualTime (date)
 
-@test 'No format' (_time '') -z
+@test 'No format' -z (_time '')
 @test '24 Hour' (_time '%T') = "12:00:00"
 @test '12 Hour' (_time '%r') = "12:00:00 PM"
 

@@ -7,17 +7,17 @@ function _tide_sub_test
     end
 
     if set -q _flag_install
-        # Install fisher and fishtape for testing
+        # Install fisher and spout for testing
         curl git.io/fisher --create-dirs -sLo $__fish_config_dir/functions/fisher.fish
-        fisher add jorgebucaran/fishtape
+        fisher add IlanCosman/spout
 
         return
     end
 
-    if not functions -q fishtape
+    if not functions -q spout
         set -l b (set_color -o; or echo)
         set -l n (set_color normal; or echo)
-        printf '%s\n' $b'fishtape'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
+        printf '%s\n' $b'spout'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
         return
     end
 
@@ -47,7 +47,7 @@ function _tide_sub_test
     sudo --validate # Cache sudo credentials
 
     for test in $argv
-        if fishtape "$testsDir/$test.fish" >$pending
+        if spout "$testsDir/$test.fish" >$pending
             if set -q _flag_verbose
                 cat $pending >>$passed
             else
@@ -87,7 +87,7 @@ function _tide_test_help
         'display test output even if passed' \
         'run all available tests' \
         'print this help message' \
-        'install fisher and fishtape test dependencies' \
+        'install fisher and spout test dependencies' \
         'run tests designed for CI'
 
     printf '%s\n' 'Usage: '$bl'tide test '$n'[options] '$b'[TESTS...]'$n

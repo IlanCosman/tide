@@ -39,7 +39,7 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ## Testing
 
-`tide test` runs tests from the `$_tide_dir/tests` folder using [fishtape][]. You can quickly install fisher and fishtape using `tide test -i`.
+`tide test` runs tests from the `$_tide_dir/tests` folder using [spout][]. You can quickly install fisher and spout using `tide test -i`.
 
 Example:
 
@@ -84,9 +84,9 @@ For example Tide might:
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
 [code of conduct]: CODE_OF_CONDUCT.md
-[fishtape]: https://github.com/jorgebucaran/fishtape
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
+[spout]: https://github.com/IlanCosman/spout
 [super-linter]: https://github.com/github/super-linter
 [yamllint]: https://github.com/adrienverge/yamllint

@@ -5,7 +5,7 @@ function _pwd -a dir
     _tide_decolor (_tide_item_pwd)
 end
 
-# Dont forget that ~ doesn't expand to $HOME in quotes
+set COLUMNS 80
 
 # Unwritable directories
 
