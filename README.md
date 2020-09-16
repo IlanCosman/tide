@@ -61,7 +61,7 @@ Run `tide configure` to open the the wizard in your terminal.
 
 ### Flexible
 
-Tide uses "[items][]", small functions that create the prompt contents. Using the `items` list for each side of the prompt, you have full control of where and which items display.
+Using the [`items`][] list for each side of the prompt, you have full control of which and where prompt sections display.
 
 <br clear="left"><br>
 
@@ -108,9 +108,9 @@ All of Tide's features are available while using Pure style, though it displays 
 
 <br clear="right">
 
-## Documentation
+## Configuration
 
-See the [wiki][] for the full documentation.
+See the [configuration guide][] for variable documentation.
 
 ## Contributing
 
@@ -143,13 +143,14 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
+[configuration guide]: docs/Configuration.md
 [configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [fish]: https://fishshell.com/
 [git]: https://git-scm.com/
-[items]: https://github.com/IlanCosman/tide/wiki/Items
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
+[`items`]: docs/Configuration.md#Items
 [license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold_italic.ttf
 [meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold.ttf
@@ -160,4 +161,3 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [pure]: https://github.com/rafaelrinaldi/pure
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
-[wiki]: https://github.com/IlanCosman/tide/wiki
