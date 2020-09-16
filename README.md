@@ -55,7 +55,7 @@ Run `tide configure` to open the the wizard in your terminal.
 <img
    src="resources/images/flexible.png"
    alt="flexible.png"
-   width="55%"
+   width="61.8%"
    align="left"
 />
 
