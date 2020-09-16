@@ -1,10 +1,16 @@
 # Configuration
 
-## Variable Naming
+The following sections contain tables of variable names, their descriptions, and their types, organized alphabetically.
+
+| Type    | Description                                |
+| ------- | ------------------------------------------ |
+| boolean | string `true` or `false`                   |
+| color   | argument that [`set_color`][] would accept |
+| integer | number without decimals                    |
+| list    | collection of other types                  |
+| string  | sequence of characters                     |
 
 Variables in these sections will be denoted as `foo_bar` but will actually be `tide_<INSERT HEADER>_foo_bar`. Variables that do not conform to this standard will be written out in full.
-
-See the following sections for variable names and descriptions.
 
 You can take a look at the default configurations in `~/.config/fish/tide_theme/configure/configs` for inspiration.
 
@@ -14,14 +20,14 @@ You can take a look at the default configurations in `~/.config/fish/tide_theme/
 | -------------------------------- | ------------------------------------- | ------- |
 | tide_print_newline_before_prompt | print an empty line before the prompt | boolean |
 
-## prompt_connection
+### prompt_connection
 
 | Variable | Description                                                           | Type   |
 | -------- | --------------------------------------------------------------------- | ------ |
 | color    | color of prompt connection                                            | color  |
 | icon     | repeated symbol that spans gap between left and right sides of prompt | string |
 
-## left_prompt
+### left_prompt
 
 | Variable                        | Description                                               | Type    |
 | ------------------------------- | --------------------------------------------------------- | ------- |
@@ -35,7 +41,7 @@ You can take a look at the default configurations in `~/.config/fish/tide_theme/
 | prefix                          | string to put before the left prompt                      | string  |
 | suffix                          | string to put after the left prompt                       | string  |
 
-## right_prompt
+### right_prompt
 
 | Variable                        | Description                                               | Type    |
 | ------------------------------- | --------------------------------------------------------- | ------- |
@@ -175,5 +181,6 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 | display_mode | Options are venvName and projectName. venvName is the virtual env directory, most often .venv. projectName is the directory above that | string |
 | icon         | icon to display in front of virtual_env item                                                                                           | string |
 
+[`set_color`]: https://fishshell.com/docs/current/cmds/set_color.html
 [fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.htmls
 [nvm.fish]: https://github.com/jorgebucaran/nvm.fish
