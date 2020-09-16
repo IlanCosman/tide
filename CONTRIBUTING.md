@@ -79,7 +79,7 @@ Todo on release:
 
 - [ ] Update `_tide_version` in install script.
 - [ ] Create a commit containing above edit, titled with the version number.
-- [ ] Update changelog with changes from previous version.
+- [ ] Create release on github with information from changelog.
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html

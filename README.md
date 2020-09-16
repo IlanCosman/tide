@@ -1,7 +1,7 @@
 <div align="center">
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/logo.svg"
+   src="resources/images/logo.svg"
    alt="logo.svg"
    width="61.8%"
 />
@@ -13,7 +13,7 @@
 #
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/header.png"
+   src="resources/images/header.png"
    alt="header.png"
    width="50%"
    align="right"
@@ -53,7 +53,7 @@ Run `tide configure` to open the the wizard in your terminal.
 <br>
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/flexible.png"
+   src="resources/images/flexible.png"
    alt="flexible.png"
    width="55%"
    align="left"
@@ -66,7 +66,7 @@ Using the [`items`][] list for each side of the prompt, you have full control of
 <br clear="left"><br>
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/multi-line_right_prompt.png"
+   src="resources/images/multi-line_right_prompt.png"
    alt="multi-line_right_prompt.png"
    width="61.8%"
    align="right"
@@ -81,7 +81,7 @@ Tide takes care of all the multi-line logic and printing for you. All you have t
 <br clear="right"><br>
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/images/extensible.png"
+   src="resources/images/extensible.png"
    alt="extensible.png"
    width="61.8%"
    align="left"
@@ -94,7 +94,7 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 <br clear="left"><br>
 
 <img
-   src="https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/pure_emulation.gif"
+   src="resources/animations/pure_emulation.gif"
    alt="pure_emulation.gif"
    width="61.8%"
    align="right"
@@ -145,17 +145,17 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration guide]: docs/Configuration.md
-[configuration_wizard]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/animations/configuration_wizard.gif
+[configuration_wizard]: resources/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [fish]: https://fishshell.com/
 [git]: https://git-scm.com/
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
-[meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold_italic.ttf
-[meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold.ttf
-[meslolgs nf italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_italic.ttf
-[meslolgs nf regular.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_regular.ttf
+[meslolgs nf bold italic.ttf]: resources/fonts/mesloLGS_NF_bold_italic.ttf
+[meslolgs nf bold.ttf]: resources/fonts/mesloLGS_NF_bold.ttf
+[meslolgs nf italic.ttf]: resources/fonts/mesloLGS_NF_italic.ttf
+[meslolgs nf regular.ttf]: resources/fonts/mesloLGS_NF_regular.ttf
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
