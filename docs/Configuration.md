@@ -1,0 +1,179 @@
+# Configuration
+
+## Variable Naming
+
+Variables in these sections will be denoted as `foo_bar` but will actually be `tide_<INSERT HEADER>_foo_bar`. Variables that do not conform to this standard will be written out in full.
+
+See the following sections for variable names and descriptions.
+
+You can take a look at the default configurations in `~/.config/fish/tide_theme/configure/configs` for inspiration.
+
+## Prompt Variables
+
+| Variable                         | Description                           | Type    |
+| -------------------------------- | ------------------------------------- | ------- |
+| tide_print_newline_before_prompt | print an empty line before the prompt | boolean |
+
+## prompt_connection
+
+| Variable | Description                                                           | Type   |
+| -------- | --------------------------------------------------------------------- | ------ |
+| color    | color of prompt connection                                            | color  |
+| icon     | repeated symbol that spans gap between left and right sides of prompt | string |
+
+## left_prompt
+
+| Variable                        | Description                                               | Type    |
+| ------------------------------- | --------------------------------------------------------- | ------- |
+| frame_color                     | color of the left prompt frame                            | color   |
+| frame_enabled                   | display the left prompt frame                             | boolean |
+| item_separator_diff_color       | string to separate items with different background colors | string  |
+| item_separator_same_color       | string to separate items with the same background color   | string  |
+| item_separator_same_color_color | color of the item_separator_same_color                    | color   |
+| items                           | order of items to print in the left prompt                | list    |
+| pad_items                       | add spaces to the ends of each item                       | boolean |
+| prefix                          | string to put before the left prompt                      | string  |
+| suffix                          | string to put after the left prompt                       | string  |
+
+## right_prompt
+
+| Variable                        | Description                                               | Type    |
+| ------------------------------- | --------------------------------------------------------- | ------- |
+| frame_color                     | color of the right prompt frame                           | color   |
+| frame_enabled                   | display the right prompt frame                            | boolean |
+| item_separator_diff_color       | string to separate items with different background colors | string  |
+| item_separator_same_color       | string to separate items with the same background color   | string  |
+| item_separator_same_color_color | color of the item_separator_same_color                    | color   |
+| items                           | order of items to print in the right prompt               | list    |
+| pad_items                       | add spaces to the ends of each item                       | boolean |
+| prefix                          | string to put before the right prompt                     | string  |
+| suffix                          | string to put after the right prompt                      | string  |
+
+## Items
+
+| Item                          | Description                       |
+| ----------------------------- | --------------------------------- |
+| [cmd_duration](#cmd_duration) | duration of the last run command  |
+| [context](#context)           | user@hostname in ssh or root      |
+| [git_prompt](#git_prompt)     | git repository status             |
+| [jobs](#jobs)                 | presence of background jobs       |
+| [nvm](#nvm)                   | node version manager              |
+| [os](#os)                     | current operating system          |
+| [prompt_char](#prompt_char)   | prompt symbol; turns red on error |
+| [pwd](#pwd)                   | current directory                 |
+| [rust](#rust)                 | rust version number               |
+| [status](#status)             | exit code of the last command     |
+| [time](#time)                 | current time                      |
+| [virtual_env](#virtual_env)   | python virtual environment        |
+| newline                       | new line                          |
+
+## cmd_duration
+
+| Variable  | Description                                                        | Type    |
+| --------- | ------------------------------------------------------------------ | ------- |
+| bg_color  | background color of the cmd_duration item                          | color   |
+| color     | color of the cmd_duration item                                     | color   |
+| decimals  | number of decimals to display after the seconds place              | integer |
+| threshold | number of milliseconds that duration must exceed to produce output | integer |
+
+## context
+
+| Variable       | Description                                            | Type    |
+| -------------- | ------------------------------------------------------ | ------- |
+| always_display | display context when not in SSH or root user           | boolean |
+| bg_color       | background color of the context item                   | color   |
+| default_color  | color of the context item when not in SSH or root user | color   |
+| root_color     | color of the context item when the user is root        | color   |
+| ssh_color      | color of the context item when in SSH                  | color   |
+
+## git_prompt
+
+Most of Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. Modify those variables to configure tide's git prompt.
+
+| Variable | Description                      | Type  |
+| -------- | -------------------------------- | ----- |
+| bg_color | background color of the git_item | color |
+
+## jobs
+
+| Variable | Description                                      | Type    |
+| -------- | ------------------------------------------------ | ------- |
+| bg_color | background color of jobs item                    | color   |
+| color    | color of jobs item                               | color   |
+| icon     | string to display when there are background jobs | string  |
+| verbose  | print number of jobs                             | boolean |
+
+## nvm
+
+| Variable     | Description                                                                                                                                                                                          | Type   |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| bg_color     | background color of nvm item                                                                                                                                                                         | color  |
+| color        | color of nvm item                                                                                                                                                                                    | color  |
+| default_node | treated as the "system" version of node. The nvm item doesn't display when this version is active. This variable is useful for users of [nvm.fish][], which has no conception of a "system" version. | string |
+| icon         | icon for the nvm item                                                                                                                                                                                | string |
+
+## os
+
+| Variable | Description                 | Type  |
+| -------- | --------------------------- | ----- |
+| bg_color | background color of os item | color |
+| color    | color of os item            | color |
+
+## prompt_char
+
+| Variable      | Description                                            | Type   |
+| ------------- | ------------------------------------------------------ | ------ |
+| bg_color      | background color of prompt_char item                   | color  |
+| failure_color | color when the last command exited with a code >0      | color  |
+| icon          | string for the prompt_char item to display             | string |
+| success_color | color when the last command completed with a code of 0 | color  |
+
+## pwd
+
+| Variable             | Description                                                       | Type    |
+| -------------------- | ----------------------------------------------------------------- | ------- |
+| anchors              | directories that are displayed in bold and immune to truncation   | list    |
+| bg_color             | background color of pwd item                                      | color   |
+| color_anchors        | color of anchor directories                                       | color   |
+| color_dirs           | color of normal directories                                       | color   |
+| color_truncated_dirs | color of truncated directories                                    | color   |
+| max_dirs             | max number of directories to display, 0 or less equals unlimited  | integer |
+| truncate_margin      | start truncating when pwd is this many columns from terminal edge | integer |
+| unwritable_icon      | symbol to display when the directory is not writable by the user  | string  |
+
+## rust
+
+| Variable        | Description                                                 | Type    |
+| --------------- | ----------------------------------------------------------- | ------- |
+| bg_color        | background color of rust item                               | color   |
+| color           | color of rust item                                          | color   |
+| icon            | icon to display next to the rust version                    | string  |
+| verbose_version | Cut off -suffixes from version. "v1.30.0-beta" vs "v1.30.0" | boolean |
+
+## status
+
+| Variable       | Description                                                     | Type    |
+| -------------- | --------------------------------------------------------------- | ------- |
+| always_display | display the status regardless of success or simple failure      | boolean |
+| failure_color  | color of failed status                                          | color   |
+| failure_icon   | symbol to display when the last command failed >1               | string  |
+| success_color  | color of successful status                                      | color   |
+| success_icon   | symbol to display when the last command in a pipeline succeeded | string  |
+
+## time
+
+| Variable | Description         | Type   |
+| -------- | ------------------- | ------ |
+| color    | color of time item  | color  |
+| format   | format of time item | string |
+
+## virtual_env
+
+| Variable     | Description                                                                                                                            | Type   |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| color        | color of virtual_env item                                                                                                              | color  |
+| display_mode | Options are venvName and projectName. venvName is the virtual env directory, most often .venv. projectName is the directory above that | string |
+| icon         | icon to display in front of virtual_env item                                                                                           | string |
+
+[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.htmls
+[nvm.fish]: https://github.com/jorgebucaran/nvm.fish
