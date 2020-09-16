@@ -141,6 +141,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
+[`items`]: docs/Configuration.md#Items
 [actions]: https://github.com/IlanCosman/tide/actions
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration guide]: docs/Configuration.md
@@ -150,7 +151,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [fish]: https://fishshell.com/
 [git]: https://git-scm.com/
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[`items`]: docs/Configuration.md#Items
 [license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold_italic.ttf
 [meslolgs nf bold.ttf]: https://raw.githubusercontent.com/IlanCosman/tide-resources/main/fonts/mesloLGS_NF_bold.ttf

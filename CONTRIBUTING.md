@@ -71,15 +71,15 @@ Markdown and Yaml formatting is done via [Prettier][].
 
 All links should be in the [reference style][], with references at the bottom of the document in alphabetical order.
 
-## Versioning
+## Release
 
-Tide does not use strict semantic versioning but instead whatever feels appropriate at the time.
+Note that Tide does not use strict semantic versioning.
 
-For example Tide might:
+Todo on release:
 
-- Bump the major version number for a large feature even if it's backwards compatible
-- Make small non-backwards compatible changes in a minor version bump
-- Not bump the patch version number for ultra minor fixes
+- [ ] Update `_tide_version` in install script.
+- [ ] Create a commit containing above edit, titled with the version number.
+- [ ] Update changelog with changes from previous version.
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
