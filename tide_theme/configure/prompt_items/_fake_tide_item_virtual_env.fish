@@ -1,2 +1,0 @@
-function _fake_tide_item_virtual_env
-end

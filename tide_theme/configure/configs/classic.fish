@@ -47,6 +47,10 @@ tide_prompt_char_bg_color normal
 tide_prompt_char_failure_color FF0000
 tide_prompt_char_icon '❯'
 tide_prompt_char_success_color $_tide_color_green
+tide_prompt_char_vi_default_icon '❮'
+tide_prompt_char_vi_insert_icon '❯'
+tide_prompt_char_vi_replace_icon '▶'
+tide_prompt_char_vi_visual_icon 'V'
 tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ''
 tide_pwd_anchors 'first' 'last' 'git'
@@ -64,7 +68,7 @@ tide_right_prompt_frame_enabled true
 tide_right_prompt_item_separator_diff_color ''
 tide_right_prompt_item_separator_same_color ''
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env'
+tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'vi_mode'
 tide_right_prompt_pad_items true
 tide_right_prompt_prefix ''
 tide_right_prompt_suffix ''
@@ -82,6 +86,18 @@ tide_status_success_icon '✔'
 tide_time_bg_color 444444
 tide_time_color 5F8787
 tide_time_format '%T'
+tide_vi_mode_default_bg_color 444444
+tide_vi_mode_default_color 87af00
+tide_vi_mode_default_icon DEFAULT
+tide_vi_mode_insert_bg_color 444444
+tide_vi_mode_insert_color 5f8787
+tide_vi_mode_insert_icon
+tide_vi_mode_replace_bg_color 444444
+tide_vi_mode_replace_color d78700
+tide_vi_mode_replace_icon REPLACE
+tide_vi_mode_visual_bg_color 444444
+tide_vi_mode_visual_color 5f87d7
+tide_vi_mode_visual_icon VISUAL
 tide_virtual_env_bg_color 444444
 tide_virtual_env_color 00AFAF
 tide_virtual_env_display_mode 'projectName'

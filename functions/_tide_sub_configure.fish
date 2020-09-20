@@ -6,15 +6,18 @@ function _tide_sub_configure
 
     set -g fake_columns $COLUMNS
     if test $fake_columns -gt 90
-        set -g fake_columns 90
+        set fake_columns 90
     end
     set -g fake_lines $LINES
 
-    for fn in $_tide_dir/configure/functions/*
-        source "$fn"
+    # Create an empty fake function for each item
+    for func in _fake(functions --all | string match --entire _tide_item)
+        function $func
+        end
     end
-    for promptItem in $_tide_dir/configure/prompt_items/*
-        source "$promptItem"
+
+    for file in $_tide_dir/configure/{functions, prompt_items}/*
+        source "$file"
     end
 
     _tide_begin

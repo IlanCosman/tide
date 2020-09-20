@@ -20,8 +20,18 @@ end
 function _tide_finish
     block --global # Event blocker prevents issues from arising while variables might be undefined etc.
 
-    if not contains 'prompt_char' $fake_tide_left_prompt_items # Without a prompt_char, the user won't know if a command failed/succeeded
-        set fake_tide_status_always_display true # Therefore, set the status to always display
+    if contains 'prompt_char' $fake_tide_left_prompt_items
+        set -e fake_tide_right_prompt_items[(contains --index 'vi_mode' $fake_tide_right_prompt_items)] # No need for vi_mode if prompt_char is activated
+    else
+        set fake_tide_status_always_display true # Without a prompt_char, the user won't know if a command failed/succeeded
+
+        # If no prompt_char, insert vi_mode
+        set -e fake_tide_right_prompt_items[(contains --index 'vi_mode' $fake_tide_right_prompt_items)]
+        if contains 'time' $fake_tide_right_prompt_items
+            set fake_tide_right_prompt_items $fake_tide_right_prompt_items[1..-2] 'vi_mode' $fake_tide_right_prompt_items[-1]
+        else
+            set -a fake_tide_right_prompt_items 'vi_mode'
+        end
     end
 
     cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
