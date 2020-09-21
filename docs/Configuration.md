@@ -70,6 +70,7 @@ You can take a look at the default configurations in `~/.config/fish/tide_theme/
 | [rust](#rust)                 | rust version number               |
 | [status](#status)             | exit code of the last command     |
 | [time](#time)                 | current time                      |
+| [vi_mode](#vi_mode)           | vi bind mode display              |
 | [virtual_env](#virtual_env)   | python virtual environment        |
 | newline                       | new line                          |
 
@@ -127,12 +128,16 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 
 ## prompt_char
 
-| Variable      | Description                                            | Type   |
-| ------------- | ------------------------------------------------------ | ------ |
-| bg_color      | background color of prompt_char item                   | color  |
-| failure_color | color when the last command exited with a code >0      | color  |
-| icon          | string for the prompt_char item to display             | string |
-| success_color | color when the last command completed with a code of 0 | color  |
+| Variable        | Description                                            | Type   |
+| --------------- | ------------------------------------------------------ | ------ |
+| bg_color        | background color of prompt_char item                   | color  |
+| failure_color   | color when the last command exited with a code >0      | color  |
+| icon            | icon for prompt_char to display                        | string |
+| success_color   | color when the last command completed with a code of 0 | color  |
+| vi_default_icon | vi default bind mode icon                              | string |
+| vi_insert_icon  | vi insert bind mode icon                               | string |
+| vi_replace_icon | vi replace bind mode icon                              | string |
+| vi_visual_icon  | vi visual bind mode icon                               | string |
 
 ## pwd
 
@@ -172,6 +177,23 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 | -------- | ------------------- | ------ |
 | color    | color of time item  | color  |
 | format   | format of time item | string |
+
+## vi_mode
+
+| Variable         | Description                        | Type   |
+| ---------------- | ---------------------------------- | ------ |
+| default_bg_color | default bind mode background color | color  |
+| default_color    | default bind mode color            | color  |
+| default_icon     | default bind mode icon             | string |
+| insert_bg_color  | insert bind mode background color  | color  |
+| insert_color     | insert bind mode color             | color  |
+| insert_icon      | insert bind mode icon              | string |
+| replace_bg_color | replace bind mode background color | color  |
+| replace_color    | replace bind mode color            | color  |
+| replace_icon     | replace bind mode icon             | string |
+| visual_bg_color  | visual bind mode background color  | color  |
+| visual_color     | visual bind mode color             | color  |
+| visual_icon      | visual bind mode icon              | string |
 
 ## virtual_env
 
