@@ -90,7 +90,7 @@ tide_vi_mode_default_bg_color 444444
 tide_vi_mode_default_color 87af00
 tide_vi_mode_default_icon DEFAULT
 tide_vi_mode_insert_bg_color 444444
-tide_vi_mode_insert_color 5f8787
+tide_vi_mode_insert_color
 tide_vi_mode_insert_icon
 tide_vi_mode_replace_bg_color 444444
 tide_vi_mode_replace_color d78700
