@@ -75,7 +75,7 @@ function _set_immutables
 
     _set_immutable _tide_file_list (string replace "$tempDir/" '' $tempDir/{completions/*, conf.d/*, functions/*})
 
-    _set_immutable _tide_version 2.3.0
+    _set_immutable _tide_version 2.4.0
 
     _set_immutable NVM_DIR $HOME/.nvm
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
