@@ -21,7 +21,7 @@ function _tide_finish
     block --global # Event blocker prevents issues from arising while variables might be undefined etc.
 
     if contains 'prompt_char' $fake_tide_left_prompt_items
-        set -e fake_tide_right_prompt_items[(contains --index 'vi_mode' $fake_tide_right_prompt_items)] # No need for vi_mode if prompt_char is activated
+        set -e fake_tide_right_prompt_items[(contains --index 'vi_mode' $fake_tide_right_prompt_items)] 2>/dev/null # No need for vi_mode if prompt_char is activated
     else
         set fake_tide_status_always_display true # Without a prompt_char, the user won't know if a command failed/succeeded
 

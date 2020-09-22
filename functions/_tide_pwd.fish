@@ -5,10 +5,7 @@ function _tide_pwd --on-variable PWD --on-signal WINCH
 
     set -g _tide_git_dir (git rev-parse --show-toplevel 2>/dev/null) # Used for git_prompt item
 
-    set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
-
     # Compute anchors
-    set -l tidePwdAnchors
     if contains 'first' $tide_pwd_anchors
         if test -n "$splitPwd[1]"
             set -a tidePwdAnchors $splitPwd[1]
@@ -32,14 +29,18 @@ function _tide_pwd --on-variable PWD --on-signal WINCH
 
     # Prepend icons
     if not test -w $PWD
-        set _tide_pwd_output $colorDirs$tide_pwd_unwritable_icon' ' $_tide_pwd_output
+        set -p _tide_pwd_output $colorDirs$tide_pwd_unwritable_icon' '
     else if test $PWD = $HOME
-        set _tide_pwd_output $colorDirs$tide_pwd_home_icon' ' $_tide_pwd_output
+        set -p _tide_pwd_output $colorDirs$tide_pwd_home_icon' '
     else
-        set _tide_pwd_output $colorDirs$tide_pwd_dir_icon' ' $_tide_pwd_output
+        set -p _tide_pwd_output $colorDirs$tide_pwd_dir_icon' '
     end
 
-    set -l truncatedList '.' $splitPwd
+    set -l truncatedList $splitPwd '.'
+    if test -z "$splitPwd[1]" # Empty string will cause an issue for the while loop
+        set -e truncatedList[1]
+    end
+    set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
     for dir in $splitPwd
         if contains $dir $tidePwdAnchors
