@@ -1,5 +1,19 @@
 # Changelog
 
+## [v2.4.0][] (Sep 21 2020)
+
+### Features
+
+- Added number of jobs option (#5)
+- Added `nvm` item (#23)
+- Added support for lsb-release in `detect_os` for non systemd distros (#24)
+- Added `vi_mode` item and `prompt_char_vi` variables for vi keybindings users (#26)
+
+### Bug fixes
+
+- Added git dirty state to pure style (#18)
+- Fixed bug when pwd started with / (#25)
+
 ## [v2.3.0][] (Aug 20 2020)
 
 - Add question issue template
@@ -98,3 +112,4 @@
 [v2.1.0]: https://github.com/IlanCosman/tide/tree/v2.1.0
 [v2.2.0]: https://github.com/IlanCosman/tide/tree/v2.2.0
 [v2.3.0]: https://github.com/IlanCosman/tide/tree/v2.3.0
+[v2.4.0]: https://github.com/IlanCosman/tide/tree/v2.4.0
