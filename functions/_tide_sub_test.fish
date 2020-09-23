@@ -3,22 +3,19 @@ function _tide_sub_test
 
     if set -q _flag_help
         _tide_test_help
-        return
-    end
-
-    if set -q _flag_install
+        return 0
+    else if set -q _flag_install
         # Install fisher and spout for testing
         curl git.io/fisher --create-dirs -sLo $__fish_config_dir/functions/fisher.fish
         fisher add IlanCosman/spout
-
-        return
+        return 0
     end
 
     if not functions -q spout
         set -l b (set_color -o; or echo)
         set -l n (set_color normal; or echo)
         printf '%s\n' $b'spout'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
-        return
+        return 1
     end
 
     set -lx TERM xterm # Necessary for testing purposes, ensures color codes are printed

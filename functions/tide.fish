@@ -5,14 +5,10 @@ function tide
     if set -q _flag_version
         printf '%s\n' "tide, version $_tide_version"
         return 0
-    end
-
-    if set -q _flag_help
+    else if set -q _flag_help
         _tide_help
         return 0
-    end
-
-    if functions --query _tide_sub_$subcommand
+    else if functions --query _tide_sub_$subcommand
         _tide_sub_$subcommand $argv[2..-1]
     else
         _tide_help
