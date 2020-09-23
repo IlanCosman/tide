@@ -7,14 +7,14 @@ function _tide_sub_test
     else if set -q _flag_install
         # Install fisher and spout for testing
         curl git.io/fisher --create-dirs -sLo $__fish_config_dir/functions/fisher.fish
-        fisher add IlanCosman/spout
+        fisher add IlanCosman/spout IlanCosman/clownfish
         return 0
     end
 
-    if not functions -q spout
+    if not functions --query spout mock
         set -l b (set_color -o; or echo)
         set -l n (set_color normal; or echo)
-        printf '%s\n' $b'spout'$n' must be installed to to run Tide\'s test suite. You can install it with'$b' tide test -i'$n
+        printf '%s\n' $b'spout'$n' and'$b' clownfish'$n' must be installed to to run Tide\'s test suite. You can install them with'$b' tide test -i'$n
         return 1
     end
 
