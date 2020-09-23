@@ -39,7 +39,15 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ## Testing
 
-`tide test` runs tests from the `$_tide_dir/tests` folder using [spout][]. You can quickly install fisher and spout using `tide test -i`.
+### Dependencies
+
+- [fisher][] - plugin manager for fish
+- [spout][] - 100% pure-fish TAP-based test runner
+- [clownfish][] - override the behavior of commands
+
+You can quickly install all necessary dependencies using `tide test -i`.
+
+`tide test` runs tests from the `$_tide_dir/tests` directory.
 
 Example:
 
@@ -83,7 +91,9 @@ Todo on release:
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
+[clownfish]: https://github.com/IlanCosman/clownfish
 [code of conduct]: CODE_OF_CONDUCT.md
+[fisher]: https://github.com/jorgebucaran/fisher
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
