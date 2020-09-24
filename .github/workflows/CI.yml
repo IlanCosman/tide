@@ -14,26 +14,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Install fish
         shell: bash
-        run: >
-          sudo apt-add-repository --yes --no-update ppa:fish-shell/release-3 &&
-          sudo apt-get update -qq &&
-          sudo apt-get install --yes
-          curl
-          fish
-          git
-          python3
-          python3-venv
+        run: |
+          sudo apt-add-repository --yes --no-update ppa:fish-shell/release-3
+          sudo apt-get update -qq
+          sudo apt-get install --yes fish
 
       - name: Install Tide unattended
         run: |
-          source "$GITHUB_WORKSPACE/tools/tide_install.fish"
-          tide_install --local --unattended "$GITHUB_WORKSPACE"
+          source $GITHUB_WORKSPACE/tools/tide_install.fish
+          tide_install --local --unattended $GITHUB_WORKSPACE
 
-      - run: tide test --install
+      - name: Install testing dependencies
+        run: tide test --install
 
-      - run: tide test --all --CI
+      - name: Run full test suite
+        run: tide test --all --CI
 
   prettier:
     runs-on: ubuntu-latest
