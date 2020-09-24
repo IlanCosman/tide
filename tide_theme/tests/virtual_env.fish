@@ -4,16 +4,11 @@ function _virtual_env
     _tide_decolor (_tide_item_virtual_env)
 end
 
-set -l dir ~/python_project
-
-mkdir -p $dir
-cd $dir
+set -lx VIRTUAL_ENV
 
 @test 'nothing' -z (_virtual_env)
 
-python3 -m venv .venv
-source .venv/bin/activate.fish
-
+set -lx VIRTUAL_ENV ~/python_project/.venv
 set -lx tide_virtual_env_icon ''
 
 set -lx tide_virtual_env_display_mode projectName
@@ -25,5 +20,3 @@ set -lx tide_virtual_env_display_mode venvName
 set -lx tide_virtual_env_icon
 set -lx tide_virtual_env_display_mode projectName
 @test 'No icon' (_virtual_env) = "python_project"
-
-rm -r $dir
