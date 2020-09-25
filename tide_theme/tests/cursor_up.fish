@@ -1,4 +1,4 @@
-@mesg '---------cmd_duration---------'
+@mesg '---------cursor_up---------'
 
 set -lx text 'hello'
 

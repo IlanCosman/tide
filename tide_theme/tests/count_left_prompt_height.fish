@@ -1,4 +1,4 @@
-@mesg '---------cmd_duration---------'
+@mesg '---------count_left_prompt_height---------'
 
 function _count_left_prompt_height
     set -lx tide_left_prompt_items $argv

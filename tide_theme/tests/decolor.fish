@@ -1,4 +1,4 @@
-@mesg '---------cmd_duration---------'
+@mesg '---------decolor---------'
 
 set -lx decolorText 'Hello Foo'
 
