@@ -11,7 +11,7 @@ on:
 
 jobs:
   tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     defaults:
       run:
@@ -20,12 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install fish
-        shell: bash
-        run: |
-          sudo apt-add-repository --yes --no-update ppa:fish-shell/release-3
-          sudo apt-get update -qq
-          sudo apt-get install --yes fish
+      - uses: fish-actions/install-fish@v1
 
       - name: Install Tide unattended
         run: |
