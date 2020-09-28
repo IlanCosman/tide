@@ -27,8 +27,8 @@ Note that Tide does not use strict semantic versioning.
 ## [v2.2.0][] (Aug 2 2020)
 
 - Actions
-  - Add [super-linter](https://github.com/github/super-linter) action to lint markdown and yaml.
-  - Add [prettier](https://github.com/prettier/prettier) action to format markdown and yaml.
+  - Add [super-linter][] action to lint markdown and yaml.
+  - Add [prettier action][] to format markdown and yaml.
 - Rename `master` to `main`
 
 ## [v2.1.0][] (Jul 29 2020)
@@ -77,17 +77,17 @@ Note that Tide does not use strict semantic versioning.
 
 - Add pwd anchors
   - Bold directories that don't get truncated
-  - Options - first, last, and git
+  - Options: first, last, and git
 - Add recommended font to readme
 - Add contributing guide and code of conduct
 
 ## [v1.1.2][] (May 24 2020)
 
-- Fix tide configure making fish_prompt larger and larger
+- Fix `tide configure` making fish_prompt larger and larger
 
 ## [v1.1.1][] (May 24 2020)
 
-- tide configure now also resets fish_prompt to default
+- `tide configure` now also resets fish_prompt to default
 
 ## [v1.1.0][] (May 24 2020)
 
@@ -106,6 +106,8 @@ Note that Tide does not use strict semantic versioning.
 [#24]: https://github.com/IlanCosman/tide/issues/24
 [#25]: https://github.com/IlanCosman/tide/issues/25
 [#26]: https://github.com/IlanCosman/tide/issues/26
+[prettier action]: https://github.com/actionsx/prettier
+[super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
 [v1.1.0]: https://github.com/IlanCosman/tide/tree/v1.1.0
 [v1.1.1]: https://github.com/IlanCosman/tide/tree/v1.1.1
