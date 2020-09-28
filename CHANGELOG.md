@@ -1,18 +1,20 @@
 # Changelog
 
+Note that Tide does not use strict semantic versioning.
+
 ## [v2.4.0][] (Sep 21 2020)
 
 ### Features
 
-- Added number of jobs option (#5)
-- Added `nvm` item (#23)
-- Added support for lsb-release in `detect_os` for non systemd distros (#24)
-- Added `vi_mode` item and `prompt_char_vi` variables for vi keybindings users (#26)
+- Added number of jobs option ([#5][])
+- Added `nvm` item ([#23][])
+- Added support for lsb-release in `detect_os` for non systemd distros ([#24][])
+- Added `vi_mode` item and `prompt_char_vi` variables for vi keybindings users ([#26][])
 
 ### Bug fixes
 
-- Added git dirty state to pure style (#18)
-- Fixed bug when pwd started with / (#25)
+- Added git dirty state to pure style ([#18][])
+- Fixed bug when pwd started with / ([#25][])
 
 ## [v2.3.0][] (Aug 20 2020)
 
@@ -98,6 +100,12 @@
 
 - First release
 
+[#5]: https://github.com/IlanCosman/tide/issues/5
+[#18]: https://github.com/IlanCosman/tide/issues/18
+[#23]: https://github.com/IlanCosman/tide/issues/23
+[#24]: https://github.com/IlanCosman/tide/issues/24
+[#25]: https://github.com/IlanCosman/tide/issues/25
+[#26]: https://github.com/IlanCosman/tide/issues/26
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
 [v1.1.0]: https://github.com/IlanCosman/tide/tree/v1.1.0
 [v1.1.1]: https://github.com/IlanCosman/tide/tree/v1.1.1
