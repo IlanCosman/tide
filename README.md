@@ -152,10 +152,10 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [git]: https://git-scm.com/
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
-[meslolgs nf bold italic.ttf]: resources/fonts/mesloLGS_NF_bold_italic.ttf
-[meslolgs nf bold.ttf]: resources/fonts/mesloLGS_NF_bold.ttf
-[meslolgs nf italic.ttf]: resources/fonts/mesloLGS_NF_italic.ttf
-[meslolgs nf regular.ttf]: resources/fonts/mesloLGS_NF_regular.ttf
+[meslolgs nf bold italic.ttf]: https://github.com/IlanCosman/tide/raw/main/resources/fonts/mesloLGS_NF_bold_italic.ttf
+[meslolgs nf bold.ttf]: https://github.com/IlanCosman/tide/raw/main/resources/fonts/mesloLGS_NF_bold.ttf
+[meslolgs nf italic.ttf]: https://github.com/IlanCosman/tide/raw/main/resources/fonts/mesloLGS_NF_italic.ttf
+[meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/raw/main/resources/fonts/mesloLGS_NF_regular.ttf
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
