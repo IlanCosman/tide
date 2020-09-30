@@ -14,6 +14,8 @@ Variables in these sections will be denoted as `foo_bar` but will actually be `t
 
 You can take a look at the default configurations in `~/.config/fish/tide_theme/configure/configs` for inspiration.
 
+Do not customize these variables directly in `fish_variables`, use `set --universal` or `set --global` in your `config.fish` file.
+
 ## Prompt Variables
 
 | Variable                         | Description                           | Type    |
@@ -57,7 +59,13 @@ You can take a look at the default configurations in `~/.config/fish/tide_theme/
 
 ## Items
 
-These can be added to `tide_left_prompt_items` or `tide_right_prompt_items` in `~/.config/fish/fish_variables`.
+These can be added to `tide_left_prompt_items` or `tide_right_prompt_items`.
+You can modify these variables using `set --universal` or `set --global` from your `config.fish` file.
+For example, to add `context` on the far left of your left prompt:
+
+```fish
+set --universal tide_left_prompt_items context $tide_left_prompt_items
+```
 
 | Item                          | Description                       |
 | ----------------------------- | --------------------------------- |
