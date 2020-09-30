@@ -57,6 +57,8 @@ You can take a look at the default configurations in `~/.config/fish/tide_theme/
 
 ## Items
 
+These can be added to `tide_left_prompt_items` or `tide_right_prompt_items` in `~/.config/fish/fish_variables`.
+
 | Item                          | Description                       |
 | ----------------------------- | --------------------------------- |
 | [cmd_duration](#cmd_duration) | duration of the last run command  |
