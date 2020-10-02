@@ -1,5 +1,4 @@
-# Created by tide configure
-function fish_prompt --description 'Write out the prompt'
+function fish_prompt --description 'Created by tide configure'
     set -g _tide_last_pipestatus $pipestatus
     set -g _tide_last_status $status
 

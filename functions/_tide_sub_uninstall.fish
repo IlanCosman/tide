@@ -12,8 +12,9 @@ function _tide_sub_uninstall
         rm -r $_tide_dir
     end
 
-    if test (head -n 1 $fishPrompt) = '# Created by tide configure'
-        rm $fishPrompt
+
+    if test (functions --details --verbose fish_prompt)[5] = 'Created by tide configure'
+        rm (functions --details fish_prompt)
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
