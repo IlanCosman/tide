@@ -1,9 +1,9 @@
 function _tide_sub_uninstall
-    if not _tide_user_confirm_defaultNo 'Uninstall tide theme?'
+    if not _tide_user_confirm_defaultNo 'Uninstall tide?'
         printf '%s\n' 'Aborted uninstall.'
         return 1
     end
-    printf '%s\n' 'Uninstalling tide theme...'
+    printf '%s\n' 'Uninstalling tide...'
 
     # ----------------------------------Remove Files----------------------------------
     rm -r $_tide_dir
@@ -13,9 +13,9 @@ function _tide_sub_uninstall
         source "$__fish_data_dir/functions/fish_prompt.fish"
     end
 
-    functions -e $func (basename -s '.fish' $_tide_file_list)
+    functions -e (basename -s '.fish' $_tide_file_list)
 
-    rm -f $__fish_config_dir/$_tide_file_list
+    rm $__fish_config_dir/$_tide_file_list
 
     # -----------------------------Erase Theme Variables------------------------------
     for var in $_tide_var_immutable_list $_tide_var_list
@@ -24,7 +24,7 @@ function _tide_sub_uninstall
     set -e _tide_var_immutable_list
     set -e _tide_var_list
 
-    printf '%s\n' 'Tide theme uninstalled.'
+    printf '%s\n' 'Tide uninstalled.'
 end
 
 function _tide_user_confirm_defaultNo -a question
