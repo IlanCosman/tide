@@ -22,10 +22,11 @@ jobs:
 
       - uses: fish-actions/install-fish@v1
 
-      - name: Install Tide unattended
-        run: |
-          source $GITHUB_WORKSPACE/tools/tide_install.fish
-          tide_install --local --unattended $GITHUB_WORKSPACE
+      - name: Install Scuba
+        run: curl -sL git.io/scuba-install | source && _scuba_sub_install ilancosman/scuba
+
+      - name: Install Tide
+        run: scuba install $GITHUB_WORKSPACE
 
       - name: Install testing dependencies
         run: tide test --install

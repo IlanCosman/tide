@@ -36,10 +36,10 @@
 - [Fish][] ≥ 3.1
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
-#### Source and run the install function
+#### Install with [Scuba][]
 
 ```console
-curl -sL git.io/tide | source && tide_install
+scuba install IlanCosman/tide
 ```
 
 ## Features
@@ -159,5 +159,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
+[scuba]: https://github.com/IlanCosman/scuba
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship

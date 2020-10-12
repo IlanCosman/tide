@@ -5,9 +5,8 @@ function _tide_sub_test
         _tide_test_help
         return 0
     else if set -q _flag_install
-        # Install fisher and spout for testing
-        curl git.io/fisher --create-dirs -sLo $__fish_config_dir/functions/fisher.fish
-        fisher add IlanCosman/spout IlanCosman/clownfish
+        # Install scuba, spout, and clownfish for testing
+        curl -sL git.io/scuba-install | source && _scuba_sub_install ilancosman/scuba IlanCosman/spout IlanCosman/clownfish
         return 0
     end
 
@@ -84,7 +83,7 @@ function _tide_test_help
         'display test output even if passed' \
         'run all available tests' \
         'print this help message' \
-        'install fisher and spout test dependencies' \
+        'install testing dependencies' \
         'run tests designed for CI'
 
     printf '%s\n' 'Usage: '$bl'tide test '$n'[options] '$b'[TESTS...]'$n

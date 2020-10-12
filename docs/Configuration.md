@@ -12,7 +12,7 @@ The following sections contain tables of variable names, their descriptions, and
 
 Variables in these sections will be denoted as `foo_bar` but will actually be `tide_<INSERT HEADER>_foo_bar`. Variables that do not conform to this standard will be written out in full.
 
-You can take a look at the default configurations in `~/.config/fish/tide_theme/configure/configs` for inspiration.
+You can take a look at the default configurations in `~/.config/fish/functions/tide/configure/configs` for inspiration.
 
 You can modify variables using `set --universal` from the command line or `set --global` in your `config.fish` file.
 
