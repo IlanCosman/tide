@@ -47,6 +47,14 @@ function _tide_init_install --on-event _tide_init_install
     end
 end
 
+function _tide_init_uninstall --on-event _tide_init_uninstall
+    for var in $_tide_var_immutable_list $_tide_var_list
+        set -e $var
+    end
+    set -e _tide_var_immutable_list
+    set -e _tide_var_list
+end
+
 function _set_immutable -a var_name
     set -U $var_name $argv[2..-1]
     set -Ua _tide_var_immutable_list $var_name

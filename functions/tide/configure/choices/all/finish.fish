@@ -1,6 +1,6 @@
 function finish
     set_color red
-    _tide_title 'Overwrite tide config and fish_prompt?'
+    _tide_title 'Overwrite tide config?'
     set_color normal
 
     _tide_option y 'Yes'
@@ -33,8 +33,6 @@ function _tide_finish
             set -a fake_tide_right_prompt_items 'vi_mode'
         end
     end
-
-    cat "$_tide_dir/configure/fish_prompt.fish" >"$__fish_config_dir/functions/fish_prompt.fish"
 
     # Delete all vars in _tide_var_list and all non fake fish_git_prompt vars
     for var in $_tide_var_list (set -n | string match --invert --entire 'fake' | string match --entire fish_git_prompt)
