@@ -30,12 +30,10 @@ function _tide_help
 
     set -l subcommands \
         'configure' \
-        'uninstall' \
         'bug-report' \
         'test'
     set -l subcommandDescriptions \
         'run interactive configuration wizard' \
-        'uninstall tide prompt manager' \
         'print tide configuration for use in bug reports' \
         'run tests for developers'
 

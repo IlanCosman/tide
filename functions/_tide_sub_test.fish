@@ -74,11 +74,11 @@ function _tide_test_help
     set -l bl (set_color $_tide_color_light_blue; or echo)
 
     set -l optionList \
-        '-v or --verbose' \
-        '-a or --all' \
-        '-h or --help' \
-        '-i or --install' \
-        '--CI'
+        '  -v or --verbose' \
+        '  -a or --all' \
+        '  -h or --help' \
+        '  -i or --install' \
+        '  --CI'
     set -l descriptionList \
         'display test output even if passed' \
         'run all available tests' \
