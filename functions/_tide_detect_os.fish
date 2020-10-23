@@ -17,6 +17,7 @@ function _tide_detect_os
 end
 
 function _tide_detect_os_linux_cases -a file key
+    test ! -f $file && return 1
     set -l splitOsRelease (cat $file | string split '=')
     set -l value $splitOsRelease[(math (contains --index $key $splitOsRelease)+1)]
     set -l name (string trim --chars='"' $value | string lower)
