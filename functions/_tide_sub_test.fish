@@ -18,13 +18,17 @@ function _tide_sub_test
         return 1
     end
 
+    if ! set -q TMPDIR
+        set -g TMPDIR /tmp
+    endif
+
     set -lx TERM xterm # Necessary for testing purposes, ensures color codes are printed
 
     set -l testsDir "$_tide_dir/tests"
 
-    set -l pending '/tmp/tide_test'
-    set -l failed '/tmp/tide_test_failed'
-    set -l passed '/tmp/tide_test_passed'
+    set -l pending "$TMPDIR/tide_test"
+    set -l failed "$TMPDIR/tide_test_failed"
+    set -l passed "$TMPDIR/tide_test_passed"
 
     set -l returnStatement 0
 

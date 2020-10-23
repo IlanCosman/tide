@@ -11,7 +11,11 @@ function _tide_actual_install
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Files-----------------
-    set -lx tempDir '/tmp/tide_theme'
+    if ! set -q TMPDIR
+        set -g TMPDIR /tmp
+    endif
+
+    set -lx tempDir "$TMPDIR/tide_theme"
     if test -e $tempDir
         rm -rf $tempDir
     end
