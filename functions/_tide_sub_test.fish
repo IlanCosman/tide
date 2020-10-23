@@ -20,7 +20,7 @@ function _tide_sub_test
 
     if ! set -q TMPDIR
         set -g TMPDIR /tmp
-    endif
+    end
 
     set -lx TERM xterm # Necessary for testing purposes, ensures color codes are printed
 

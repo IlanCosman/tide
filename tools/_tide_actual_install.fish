@@ -13,7 +13,7 @@ function _tide_actual_install
     # -----------------Download Files-----------------
     if ! set -q TMPDIR
         set -g TMPDIR /tmp
-    endif
+    end
 
     set -lx tempDir "$TMPDIR/tide_theme"
     if test -e $tempDir
