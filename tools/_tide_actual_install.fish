@@ -11,14 +11,11 @@ function _tide_actual_install
     printf '%s\n' 'Installing tide theme...'
 
     # -----------------Download Files-----------------
-    set -lx tempDir '/tmp/tide_theme'
-    if test -e $tempDir
-        rm -rf $tempDir
-    end
+    set -lx tempDir (mktemp -d)
 
     # Copy/clone repository into $tempDir
     if set -q _flag_local
-        cp -rf "$location" "$tempDir"
+        cp -r $location/* $tempDir
     else
         git clone --quiet --depth 1 --branch $location https://github.com/IlanCosman/tide.git $tempDir
     end
