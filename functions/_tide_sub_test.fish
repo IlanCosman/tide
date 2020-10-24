@@ -22,9 +22,9 @@ function _tide_sub_test
 
     set -l testsDir "$_tide_dir/tests"
 
-    set -l pending '/tmp/tide_test'
-    set -l failed '/tmp/tide_test_failed'
-    set -l passed '/tmp/tide_test_passed'
+    set -l pending (mktemp -u)
+    set -l failed (mktemp -u)
+    set -l passed (mktemp -u)
 
     set -l returnStatement 0
 
