@@ -212,5 +212,5 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 | icon         | icon to display in front of virtual_env item                                                                                           | string |
 
 [`set_color`]: https://fishshell.com/docs/current/cmds/set_color.html
-[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.htmls
+[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 [nvm.fish]: https://github.com/jorgebucaran/nvm.fish
