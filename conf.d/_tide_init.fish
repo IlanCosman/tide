@@ -33,16 +33,12 @@ function _tide_init_install --on-event _tide_init_install
     source "$__fish_config_dir/functions/fish_prompt.fish"
 
     if status is-interactive
-        while true
-            switch (read --prompt-str="Configure tide prompt? [Y/n] ")
-                case y Y yes Yes ''
-                    tide configure
-                case n N no No
-                    printf '%s' \
-                        \n 'Run ' (set_color $fish_color_command) 'tide ' \
-                        (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
-            end
-            break
+        switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
+            case y ye yes ''
+                tide configure
+            case n no '*'
+                printf '%s' \n 'Run ' (set_color $fish_color_command) 'tide ' \
+                    (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
         end
     end
 end
