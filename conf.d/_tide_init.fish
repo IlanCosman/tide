@@ -36,7 +36,7 @@ function _tide_init_install --on-event _tide_init_install
         switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
             case y ye yes ''
                 tide configure
-            case n no '*'
+            case '*'
                 printf '%s' \n 'Run ' (set_color $fish_color_command) 'tide ' \
                     (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
         end
