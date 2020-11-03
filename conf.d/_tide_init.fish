@@ -53,7 +53,8 @@ function _tide_init_uninstall --on-event _tide_init_uninstall
     end
     set -e _tide_var_immutable_list
     set -e _tide_var_list
-    functions -e (functions --all | string match -- --entire --regex '^_tide_')
+
+    functions --erase (functions --all | string match --entire --regex '^_tide_')
 end
 
 function _set_immutable -a var_name
