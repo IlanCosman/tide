@@ -5,8 +5,8 @@ function _tide_sub_test
         _tide_test_help
         return 0
     else if set -q _flag_install
-        # Install scuba, spout, and clownfish for testing
-        curl -sL git.io/scuba-install | source && _scuba_sub_install ilancosman/scuba IlanCosman/spout IlanCosman/clownfish
+        # Install fisher, spout, and clownfish for testing
+        fisher install IlanCosman/spout IlanCosman/clownfish
         return 0
     end
 

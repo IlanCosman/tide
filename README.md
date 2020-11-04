@@ -36,13 +36,11 @@
 - [Fish][] ≥ 3.1
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
-Install with [Scuba][]:
+Install with [Fisher][]:
 
 ```console
-scuba install IlanCosman/tide
+fisher install IlanCosman/tide
 ```
-
-<sub>[Why not fisher?][]</sub>
 
 ## Features
 
@@ -151,6 +149,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [contributing guide]: CONTRIBUTING.md
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [fish]: https://fishshell.com/
+[fisher]: https://github.com/jorgebucaran/fisher
 [git]: https://git-scm.com/
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
@@ -161,7 +160,5 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
-[scuba]: https://github.com/IlanCosman/scuba
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
-[why not fisher?]: https://github.com/jorgebucaran/fisher/issues/581

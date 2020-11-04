@@ -22,11 +22,11 @@ jobs:
 
       - uses: fish-actions/install-fish@v1
 
-      - name: Install Scuba
-        run: curl -sL git.io/scuba-install | source && _scuba_sub_install ilancosman/scuba
+      - name: Install Fisher
+        run: curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
 
       - name: Install Tide
-        run: scuba install $GITHUB_WORKSPACE
+        run: fisher install $GITHUB_WORKSPACE
 
       - name: Install testing dependencies
         run: tide test --install
