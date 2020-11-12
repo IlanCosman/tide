@@ -99,6 +99,6 @@ tide_vi_mode_visual_bg_color
 tide_vi_mode_visual_color
 tide_vi_mode_visual_icon
 tide_virtual_env_bg_color normal
-tide_virtual_env_color 00AFAF
-tide_virtual_env_display_mode 'projectName'
-tide_virtual_env_icon ''
+tide_virtual_env_color brblack
+tide_virtual_env_display_mode 'venvName'
+tide_virtual_env_icon
