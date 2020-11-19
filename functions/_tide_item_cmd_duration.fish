@@ -6,13 +6,12 @@ function _tide_item_cmd_duration
 
         set_color $tide_cmd_duration_color
 
+        printf '%s' $tide_cmd_duration_icon' '
+
         if test $hours -gt 0
-            printf '%s' $hours'h '
-            printf '%s' $minutes'm '
-            printf '%s' $seconds's'
+            printf '%s' $hours'h ' $minutes'm ' $seconds's'
         else if test $minutes -gt 0
-            printf '%s' $minutes'm '
-            printf '%s' $seconds's'
+            printf '%s' $minutes'm ' $seconds's'
         else if test $seconds -gt 0
             printf '%s' $seconds's'
         end

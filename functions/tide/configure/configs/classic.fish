@@ -17,6 +17,7 @@ __fish_git_prompt_showstashstate true
 tide_cmd_duration_bg_color 444444
 tide_cmd_duration_color 87875F
 tide_cmd_duration_decimals 0
+tide_cmd_duration_icon
 tide_cmd_duration_threshold 3000
 tide_context_always_display false
 tide_context_bg_color 444444

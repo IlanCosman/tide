@@ -17,6 +17,7 @@ __fish_git_prompt_showupstream true
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color yellow
 tide_cmd_duration_decimals 0
+tide_cmd_duration_icon
 tide_cmd_duration_threshold 3000
 tide_context_always_display false
 tide_context_bg_color normal
@@ -100,5 +101,5 @@ tide_vi_mode_visual_color
 tide_vi_mode_visual_icon
 tide_virtual_env_bg_color normal
 tide_virtual_env_color brblack
-tide_virtual_env_display_mode 'venvName'
+tide_virtual_env_display_mode  'venvName'
 tide_virtual_env_icon
