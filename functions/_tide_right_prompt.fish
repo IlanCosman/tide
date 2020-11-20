@@ -39,7 +39,7 @@ function _tide_right_prompt
         set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight-1)
     else
         _tide_print_at_end $splitText[-1]
-        set -g _tide_fish_right_prompt_display ' '
+        set -g _tide_fish_right_prompt_display
     end
 
     _tide_cursor_up $printAtEndedRightPromptHeight
