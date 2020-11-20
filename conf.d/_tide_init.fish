@@ -17,7 +17,7 @@ function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_normal (set_color normal)
 
     _set_immutable _tide_dir "$__fish_config_dir/functions/tide"
-    _set_immutable _tide_version 2.4.0
+    _set_immutable _tide_version 2.5.0
 
     _set_immutable NVM_DIR $HOME/.nvm
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
