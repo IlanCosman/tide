@@ -14,7 +14,6 @@ function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_gold D7AF00
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF
-    _set_immutable _tide_color_normal (set_color normal)
 
     _set_immutable _tide_dir "$__fish_config_dir/functions/tide"
     _set_immutable _tide_version 2.5.0
