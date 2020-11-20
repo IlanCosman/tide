@@ -31,7 +31,7 @@ function _enable_icons
 end
 
 function _disable_icons
-    set -e fake_tide_left_prompt_items[(contains --index os $fake_tide_left_prompt_items)] 2>/dev/null
+    _find_and_remove os fake_tide_left_prompt_items
     set fake_tide_pwd_dir_icon
     set fake_tide_pwd_home_icon
     set fake_tide_cmd_duration_icon

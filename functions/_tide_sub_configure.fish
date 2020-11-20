@@ -92,3 +92,7 @@ function _tide_quit --on-signal INT
     source "$__fish_config_dir/functions/_tide_left_prompt.fish"
     source "$__fish_config_dir/functions/_tide_right_prompt.fish"
 end
+
+function _find_and_remove -a name list --no-scope-shadowing
+    set -e "$list"[(contains --index $name $$list)] 2>/dev/null # Ignore error if $list doesn't contain $name
+end
