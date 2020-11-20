@@ -15,10 +15,10 @@ function prompt_spacing
     switch (_tide_menu)
         case 1
             set -g fake_tide_print_newline_before_prompt false
-            _next_choice 'all/finish'
+            _next_choice 'all/icons'
         case 2
             set -g fake_tide_print_newline_before_prompt true
-            _next_choice 'all/finish'
+            _next_choice 'all/icons'
         case r
             _tide_begin
         case q
