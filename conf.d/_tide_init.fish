@@ -1,11 +1,6 @@
-if set -q _tide_version
-    _tide_count_left_prompt_height
-
+if not set -q _tide_subshell && set -q _tide_version
     _tide_detect_os
-
     _tide_git_prompt_set_vars
-
-    _tide_pwd
 end
 
 function _tide_init_install --on-event _tide_init_install
