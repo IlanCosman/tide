@@ -1,7 +1,7 @@
 @mesg '---------cmd_duration---------'
 
 function _cmd_duration -a duration threshold decimals
-    set -lx CMD_DURATION $duration
+    set -lx _tide_cmd_duration $duration
     set -lx tide_cmd_duration_threshold $threshold
     set -lx tide_cmd_duration_decimals $decimals
 
