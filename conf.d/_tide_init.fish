@@ -1,4 +1,4 @@
-if not set -q _tide_subshell && set -q _tide_version
+if status is-interactive && set -q _tide_version
     _tide_detect_os
     _tide_git_prompt_set_vars
 end
