@@ -27,13 +27,8 @@ function _tide_sub_test
 
     set -l returnStatement 0
 
-    if set -q _flag_all
-        set argv (basename -s '.fish' $testsDir/*.fish)
-    end
-
-    if set -q _flag_CI
-        set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
-    end
+    set -q _flag_all && set argv (basename -s '.fish' $testsDir/*.fish)
+    set -q _flag_CI && set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
 
     if test (count $argv) -lt 1
         _tide_test_help

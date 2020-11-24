@@ -13,12 +13,8 @@ function _tide_item_pwd
             set -a tidePwdAnchors $splitPwd[2]
         end
     end
-    if contains 'last' $tide_pwd_anchors
-        set -a tidePwdAnchors $splitPwd[-1]
-    end
-    if contains 'git' $tide_pwd_anchors
-        set -a tidePwdAnchors (string split -r -m1 '/' "$gitDir")[2]
-    end
+    contains 'last' $tide_pwd_anchors && set -a tidePwdAnchors $splitPwd[-1]
+    contains 'git' $tide_pwd_anchors && set -a tidePwdAnchors (string split -r -m1 '/' "$gitDir")[2]
 
     set -l colorDirs (set_color $tide_pwd_color_dirs; or echo)
     set -l colorAnchors (set_color -o $tide_pwd_color_anchors; or echo)
@@ -37,9 +33,8 @@ function _tide_item_pwd
     end
 
     set -l truncatedList $splitPwd '.'
-    if test -z "$splitPwd[1]" # Empty string will cause an issue for the while loop
-        set -e truncatedList[1]
-    end
+    # Empty string will cause an issue for the while loop
+    test -z "$splitPwd[1]" && set -e truncatedList[1]
     set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
     for dir in $splitPwd
