@@ -17,15 +17,13 @@ function _tide_sub_test
         return 1
     end
 
-    set -lx TERM xterm # Necessary for testing purposes, ensures color codes are printed
+    set -lx TERM xterm # Ensures color codes are printed
 
     set -l testsDir "$_tide_dir/tests"
 
     set -l pending (mktemp -u)
     set -l failed (mktemp -u)
     set -l passed (mktemp -u)
-
-    set -l returnStatement 0
 
     set -q _flag_all && set argv (basename -s '.fish' $testsDir/*.fish)
     set -q _flag_CI && set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
@@ -64,31 +62,13 @@ function _tide_sub_test
 end
 
 function _tide_test_help
-    set -l b (set_color -o; or echo)
-    set -l n (set_color normal; or echo)
-    set -l bl (set_color $_tide_color_light_blue; or echo)
-
-    set -l optionList \
-        '  -v or --verbose' \
-        '  -a or --all' \
-        '  -h or --help' \
-        '  -i or --install' \
-        '  --CI'
-    set -l descriptionList \
-        'display test output even if passed' \
-        'run all available tests' \
-        'print this help message' \
-        'install testing dependencies' \
-        'run tests designed for CI'
-
-    printf '%s\n' 'Usage: '$bl'tide test '$n'[options] '$b'[TESTS...]'$n
-    printf '%s\n'
-    printf '%s\n' 'Options:'
-    for option in $optionList
-        printf '%s' $option
-        printf '%b' '\r'
-        _tide_cursor_right 19
-        set -l descriptionIndex (contains --index -- $option $optionList)
-        printf '%s\n' $descriptionList[$descriptionIndex]
-    end
+    printf '%s\n' \
+        'Usage: tide test [options] [tests]' \
+        '' \
+        'Options:' \
+        '  -v or --verbose  print test output even if passed' \
+        '  -a or --all      run all available tests' \
+        '  -h or --help     print this help message' \
+        '  -i or --install  install testing dependencies' \
+        '  --CI             run tests designed for CI'
 end
