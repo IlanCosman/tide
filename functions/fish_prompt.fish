@@ -2,9 +2,11 @@ _tide_detect_os
 _tide_git_prompt_set_vars
 
 function fish_prompt
+    set -lx _tide_last_pipestatus $pipestatus
+    set -lx _tide_last_status $status
+    set -lx _tide_jobs_number (jobs --pid | count)
+
     fish --command "
-    set -g _tide_last_pipestatus $pipestatus
-    set -g _tide_last_status $status
     set -g _tide_fish_pid $fish_pid
     
     test -n \"$SSH_TTY\" && set -g SSH_TTY

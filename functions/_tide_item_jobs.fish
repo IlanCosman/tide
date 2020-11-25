@@ -1,9 +1,9 @@
 function _tide_item_jobs
-    if jobs --quiet # Use --quiet because its faster and most people wont use verbose
+    if test $_tide_jobs_number -gt 0
         set_color $tide_jobs_color
 
         if test "$tide_jobs_verbose" = true
-            printf '%s' $tide_jobs_icon ' '(jobs --pid | count) # --pid because it's faster than just jobs
+            printf '%s' $tide_jobs_icon' ' $_tide_jobs_number
         else
             printf '%s' $tide_jobs_icon
         end
