@@ -9,6 +9,7 @@ function fish_prompt
 
     fish --command "command kill $_tide_last_pid 2>/dev/null; set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
     set -g _tide_last_pid (jobs --last --pid)
+    disown
 
     set -l displayVarName _tide_left_prompt_display_$fish_pid
     string unescape $$displayVarName
