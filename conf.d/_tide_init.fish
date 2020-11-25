@@ -1,8 +1,3 @@
-if status is-interactive && set -q _tide_version
-    _tide_detect_os
-    _tide_git_prompt_set_vars
-end
-
 function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_dark_blue 0087AF
     _set_immutable _tide_color_dark_green 5FAF00

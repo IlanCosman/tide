@@ -1,3 +1,6 @@
+_tide_detect_os
+_tide_git_prompt_set_vars
+
 function fish_prompt
     fish --command "
     set -g _tide_last_pipestatus $pipestatus
@@ -12,7 +15,7 @@ function fish_prompt
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
 
     set -g _tide_last_pid (jobs --last --pid)
-    disown
+    disown $_tide_last_pid 2>/dev/null
 
     set -l displayVarName _tide_left_prompt_display_$fish_pid
     string unescape $$displayVarName
