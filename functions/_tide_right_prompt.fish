@@ -36,6 +36,8 @@ end
 function _tide_fetch_right_prompt_items
     set lastItemWasNewline
 
+    set_color normal
+
     for item in $tide_right_prompt_items
         if test "$item" = 'newline'
             set_color $previousColor -b normal
