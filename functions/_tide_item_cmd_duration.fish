@@ -1,8 +1,8 @@
 function _tide_item_cmd_duration
-    if test $_tide_cmd_duration -gt $tide_cmd_duration_threshold
-        set -l seconds (math --scale=$tide_cmd_duration_decimals "$_tide_cmd_duration/1000" % 60)
-        set -l minutes (math --scale=0 "$_tide_cmd_duration/60000" % 60)
-        set -l hours (math --scale=0 "$_tide_cmd_duration/3600000")
+    if test $CMD_DURATION -gt $tide_cmd_duration_threshold
+        set -l seconds (math --scale=$tide_cmd_duration_decimals "$CMD_DURATION/1000" % 60)
+        set -l minutes (math --scale=0 "$CMD_DURATION/60000" % 60)
+        set -l hours (math --scale=0 "$CMD_DURATION/3600000")
 
         set_color $tide_cmd_duration_color
 

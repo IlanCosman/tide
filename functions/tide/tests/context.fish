@@ -8,5 +8,5 @@ end
 
 @test 'None' -z (set -lx tide_context_always_display false; _context)
 @test 'Default' (set -lx tide_context_always_display true; _context ) = $USER'@'$hostname
-@test 'SSH' (set -g SSH_TTY 'true'; _context) = $USER'@'$hostname
+@test 'SSH' (set -g SSH_TTY /dev/pts/0; _context) = $USER'@'$hostname
 @test 'Root' (_tide_decolor (sudo fish --command="source $sourceFile;_tide_item_context")) = 'root@'$hostname
