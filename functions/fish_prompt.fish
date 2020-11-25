@@ -1,4 +1,4 @@
-function fish_prompt --description 'Created by tide configure'
+function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
     set -lx _tide_last_status $status
     set -lx _tide_fish_pid $fish_pid # User for right prompt
@@ -17,7 +17,7 @@ function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid
     commandline --function repaint
 end
 
-function _tide_on_fish_exit --on-even fish_exit
+function _tide_on_fish_exit --on-event fish_exit
     set -e _tide_left_prompt_display_$fish_pid
     set -e _tide_right_prompt_display_$fish_pid
 end
