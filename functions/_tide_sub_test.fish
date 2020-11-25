@@ -8,9 +8,7 @@ function _tide_sub_test
         # Install fisher, spout, and clownfish for testing
         fisher install IlanCosman/spout IlanCosman/clownfish
         return 0
-    end
-
-    if not functions --query spout mock
+    else if not functions --query spout mock
         set -l b (set_color -o; or echo)
         set -l n (set_color normal; or echo)
         printf '%s\n' $b'spout'$n' and'$b' clownfish'$n' must be installed to to run Tide\'s test suite. You can install them with'$b' tide test -i'$n
@@ -21,10 +19,6 @@ function _tide_sub_test
 
     set -l testsDir "$_tide_dir/tests"
 
-    set -l pending (mktemp -u)
-    set -l failed (mktemp -u)
-    set -l passed (mktemp -u)
-
     set -q _flag_all && set argv (basename -s '.fish' $testsDir/*.fish)
     set -q _flag_CI && set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
 
@@ -34,6 +28,10 @@ function _tide_sub_test
     end
 
     sudo --validate # Cache sudo credentials
+
+    set -l pending (mktemp -u)
+    set -l failed (mktemp -u)
+    set -l passed (mktemp -u)
 
     for test in $argv
         if spout "$testsDir/$test.fish" >$pending
