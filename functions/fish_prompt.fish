@@ -12,6 +12,7 @@ function fish_prompt
     test -n \"$SSH_TTY\" && set -g SSH_TTY
     set COLUMNS $COLUMNS
     set CMD_DURATION $CMD_DURATION
+    set fish_bind_mode $fish_bind_mode
 
     command kill $_tide_last_pid 2>/dev/null
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
