@@ -35,11 +35,11 @@ function _tide_right_prompt
     end
 
     if test $printAtEndedRightPromptHeight -eq $_tide_left_prompt_height
-        set -U _tide_right_prompt_display $splitText[-1]
+        set -U _tide_right_prompt_display_$_tide_fish_pid $splitText[-1]
         set printAtEndedRightPromptHeight (math $printAtEndedRightPromptHeight-1)
     else
         _tide_print_at_end $splitText[-1]
-        set -U _tide_right_prompt_display
+        set -U _tide_right_prompt_display_$_tide_fish_pid
     end
 
     _tide_cursor_up $printAtEndedRightPromptHeight
