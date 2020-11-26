@@ -9,7 +9,6 @@ function fish_prompt
     fish --command "
     set -g _tide_fish_pid $fish_pid
     
-    test -n \"$SSH_TTY\" && set -g SSH_TTY
     set COLUMNS $COLUMNS
     set CMD_DURATION $CMD_DURATION
     set fish_bind_mode $fish_bind_mode
