@@ -9,9 +9,10 @@ function fish_prompt
     fish --command "
     set -g _tide_fish_pid $fish_pid
     
-    set COLUMNS $COLUMNS
     set CMD_DURATION $CMD_DURATION
+    set COLUMNS $COLUMNS
     set fish_bind_mode $fish_bind_mode
+    set fish_term24bit $fish_term24bit
 
     command kill $_tide_last_pid 2>/dev/null
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
