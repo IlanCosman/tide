@@ -84,9 +84,9 @@ Note that Tide does not use strict semantic versioning.
 
 Todo on release:
 
-- [ ] Update `_tide_version` in install script.
-- [ ] Create a commit containing above edit, titled with the version number.
-- [ ] Create release on github with information from changelog.
+- [ ] Update version number in install `tide.fish`
+- [ ] Make a commit containing above edit, titled with the version number
+- [ ] Create release on github with information from changelog
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
