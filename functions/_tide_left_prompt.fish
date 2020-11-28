@@ -56,5 +56,8 @@ function _tide_left_prompt
     if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = 'true'
         set_color $tide_left_prompt_frame_color -b normal
         printf '%s' '╰─'
+    else if not set -q lastItemWasPromptChar
+        set_color $previousColor -b normal
+        printf '%s' $tide_left_prompt_suffix
     end
 end
