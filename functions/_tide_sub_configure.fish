@@ -83,10 +83,11 @@ function _tide_display_restart_and_tide_quit
 end
 
 function _tide_quit --on-signal INT
-    clear
+    _tide_on_fish_exit
     source "$__fish_config_dir/functions/fish_prompt.fish"
     source "$__fish_config_dir/functions/_tide_left_prompt.fish"
     source "$__fish_config_dir/functions/_tide_right_prompt.fish"
+    clear
 end
 
 function _find_and_remove -a name list --no-scope-shadowing
