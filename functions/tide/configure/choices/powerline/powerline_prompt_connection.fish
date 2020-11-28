@@ -1,4 +1,4 @@
-function classic_prompt_connection
+function powerline_prompt_connection
     _tide_title 'Prompt Connection'
 
     _tide_option 1 'Disconnected'
@@ -15,13 +15,13 @@ function classic_prompt_connection
     switch (_tide_menu)
         case 1
             set -g fake_tide_prompt_connection_icon ''
-            _next_choice 'classic/classic_prompt_frame'
+            _next_choice 'powerline/powerline_prompt_frame'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
-            _next_choice 'classic/classic_prompt_frame'
+            _next_choice 'powerline/powerline_prompt_frame'
         case 3
             set -g fake_tide_prompt_connection_icon '─'
-            _next_choice 'classic/classic_prompt_frame'
+            _next_choice 'powerline/powerline_prompt_frame'
         case r
             _tide_begin
         case q

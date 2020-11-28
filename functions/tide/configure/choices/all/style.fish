@@ -28,7 +28,7 @@ function style
             _next_choice 'classic/classic_prompt_color'
         case 3
             _load_config rainbow
-            _next_choice 'rainbow/rainbow_show_time'
+            _next_choice 'powerline/powerline_show_time'
         case 4
             _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'

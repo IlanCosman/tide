@@ -1,4 +1,4 @@
-function rainbow_prompt_heads
+function powerline_prompt_heads
     _tide_title 'Prompt Heads'
 
     _tide_option 1 'Sharp'
@@ -27,19 +27,19 @@ function rainbow_prompt_heads
         case 1
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'rainbow/rainbow_prompt_tails'
+            _next_choice 'powerline/powerline_prompt_tails'
         case 2
             set -g fake_tide_left_prompt_suffix '▓▒░'
             set -g fake_tide_right_prompt_prefix '░▒▓'
-            _next_choice 'rainbow/rainbow_prompt_tails'
+            _next_choice 'powerline/powerline_prompt_tails'
         case 3
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'rainbow/rainbow_prompt_tails'
+            _next_choice 'powerline/powerline_prompt_tails'
         case 4
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'rainbow/rainbow_prompt_tails'
+            _next_choice 'powerline/powerline_prompt_tails'
         case r
             _tide_begin
         case q

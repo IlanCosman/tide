@@ -22,16 +22,16 @@ function classic_prompt_color
     switch (_tide_menu)
         case 1
             _set_all_items_bg_color 585858
-            _next_choice 'classic/classic_show_time'
+            _next_choice 'powerline/powerline_show_time'
         case 2
             _set_all_items_bg_color 444444
-            _next_choice 'classic/classic_show_time'
+            _next_choice 'powerline/powerline_show_time'
         case 3
             _set_all_items_bg_color 303030
-            _next_choice 'classic/classic_show_time'
+            _next_choice 'powerline/powerline_show_time'
         case 4
             _set_all_items_bg_color 1C1C1C
-            _next_choice 'classic/classic_show_time'
+            _next_choice 'powerline/powerline_show_time'
         case r
             _tide_begin
         case q

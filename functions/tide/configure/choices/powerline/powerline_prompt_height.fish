@@ -1,4 +1,4 @@
-function rainbow_prompt_height
+function powerline_prompt_height
     _tide_title 'Prompt Height'
 
     _tide_option 1 'One line'
@@ -26,7 +26,7 @@ function rainbow_prompt_height
             set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items 'newline'
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
-            _next_choice 'rainbow/rainbow_prompt_connection'
+            _next_choice 'powerline/powerline_prompt_connection'
         case r
             _tide_begin
         case q

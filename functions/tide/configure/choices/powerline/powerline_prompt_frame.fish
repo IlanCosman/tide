@@ -1,4 +1,4 @@
-function rainbow_prompt_frame
+function powerline_prompt_frame
     _tide_title 'Prompt Frame'
 
     _tide_option 1 'No frame'

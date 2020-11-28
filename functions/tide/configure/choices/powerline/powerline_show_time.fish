@@ -1,4 +1,4 @@
-function rainbow_show_time
+function powerline_show_time
     _tide_title 'Show current time?'
 
     _tide_option 1 'No'
@@ -18,13 +18,13 @@ function rainbow_show_time
         case 1
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]
-            _next_choice 'rainbow/rainbow_prompt_separators'
+            _next_choice 'powerline/powerline_prompt_separators'
         case 2
             set -g fake_tide_time_format '%T'
-            _next_choice 'rainbow/rainbow_prompt_separators'
+            _next_choice 'powerline/powerline_prompt_separators'
         case 3
             set -g fake_tide_time_format '%r'
-            _next_choice 'rainbow/rainbow_prompt_separators'
+            _next_choice 'powerline/powerline_prompt_separators'
         case r
             _tide_begin
         case q
