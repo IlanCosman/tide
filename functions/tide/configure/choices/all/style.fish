@@ -22,13 +22,13 @@ function style
     switch (_tide_menu)
         case 1
             _load_config lean
-            _next_choice 'lean/lean_show_time'
+            _next_choice 'all/show_time'
         case 2
             _load_config classic
             _next_choice 'classic/classic_prompt_color'
         case 3
             _load_config rainbow
-            _next_choice 'powerline/powerline_show_time'
+            _next_choice 'all/show_time'
         case 4
             _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'
@@ -49,4 +49,6 @@ function _load_config -a name
         set -a fake__tide_var_list (string split --max 1 ' ' $line)[1]
         eval set -g $line
     end
+
+    set -g _tide_configure_style $name
 end
