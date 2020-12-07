@@ -1,18 +1,21 @@
 _tide_detect_os
 _tide_git_prompt_set_vars
 
+# Set things that wont change once
+set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
+
+set -gx _tide_fish_pid $fish_pid
+set -x fish_term24bit $fish_term24bit
+
 function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
     set -lx _tide_last_status $status
     set -lx _tide_jobs_number (jobs --pid | count)
 
     fish --command "
-    set -g _tide_fish_pid $fish_pid
-    
     set CMD_DURATION $CMD_DURATION
     set COLUMNS $COLUMNS
     set fish_bind_mode $fish_bind_mode
-    set fish_term24bit $fish_term24bit
 
     command kill $_tide_last_pid 2>/dev/null
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
@@ -20,8 +23,7 @@ function fish_prompt
     set -g _tide_last_pid (jobs --last --pid)
     disown $_tide_last_pid 2>/dev/null
 
-    set -l displayVarName _tide_left_prompt_display_$fish_pid
-    string unescape $$displayVarName
+    string unescape $$_tide_left_prompt_display_var
 end
 
 function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid
