@@ -19,12 +19,12 @@
    align="right"
 />
 
-**A modern prompt manager for the [Fish][] shell.**
+**An insanely powerful [fish] prompt.**
 
-- **Out of the box:** With four compelling styles and myriad options, you can have your out-of-the-box cake and customize it too.
-- **Flexible:** Move content around, remove it, or add it back, all without ever touching a line of code.
-- **Powerful:** Impress all your Fish friends with alien technologies like a multi-line right prompt.
+- **Out of the box:** With four compelling styles and lots of options, you can have your ready-to-run cake and customize it too.
+- **Flexible:** Move content around or remove it, all without ever touching a line of code.
 - **Extensible:** Create custom content with simple fish functions that integrate seamlessly.
+- **Fast:** Asynchronous rendering makes Tide the fastest full-featured fish prompt.
 
 <br clear="right">
 
