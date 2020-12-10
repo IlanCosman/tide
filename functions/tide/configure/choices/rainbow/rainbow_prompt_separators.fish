@@ -1,4 +1,4 @@
-function powerline_prompt_separators
+function rainbow_prompt_separators
     _tide_title 'Prompt Separators'
 
     _tide_option 1 'Angled'
