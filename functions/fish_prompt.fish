@@ -1,7 +1,7 @@
 _tide_detect_os
 _tide_git_prompt_set_vars
 
-# Set things that wont change once
+# Set things that wont change
 set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 
 set -gx _tide_fish_pid $fish_pid
@@ -27,7 +27,7 @@ function fish_prompt
 end
 
 function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid
-    commandline --function repaint
+    commandline --function force-repaint
 end
 
 function _tide_on_fish_cancel --on-event fish_cancel
