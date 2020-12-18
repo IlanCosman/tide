@@ -120,12 +120,11 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 
 ## nvm
 
-| Variable     | Description                                                                                                                                                                                          | Type   |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| bg_color     | background color of nvm item                                                                                                                                                                         | color  |
-| color        | color of nvm item                                                                                                                                                                                    | color  |
-| default_node | treated as the "system" version of node. The nvm item doesn't display when this version is active. This variable is useful for users of [nvm.fish][], which has no conception of a "system" version. | string |
-| icon         | icon for the nvm item                                                                                                                                                                                | string |
+| Variable | Description                  | Type   |
+| -------- | ---------------------------- | ------ |
+| bg_color | background color of nvm item | color  |
+| color    | color of nvm item            | color  |
+| icon     | icon for the nvm item        | string |
 
 ## os
 
