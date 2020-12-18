@@ -10,6 +10,6 @@ complete -c tide -x -n '__fish_seen_subcommand_from test' -a --help -d "Print he
 complete -c tide -x -n '__fish_seen_subcommand_from test' -a --install -d "Install testing dependencies"
 complete -c tide -x -n '__fish_seen_subcommand_from test' -a --verbose -d "Display test output even if passed"
 
-for file in (basename -s .fish $_tide_dir/tests/*.fish)
+for file in (string replace --all --regex '^.*/|\.fish$' '' $_tide_dir/tests/*.fish)
     complete -c tide -x -n "__fish_seen_subcommand_from test" -a $file
 end

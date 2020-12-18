@@ -19,8 +19,8 @@ function _tide_sub_test
 
     set -l testsDir "$_tide_dir/tests"
 
-    set -q _flag_all && set argv (basename -s '.fish' $testsDir/*.fish)
-    set -q _flag_CI && set -a argv 'CI/'(basename -s '.fish' $testsDir/CI/*.fish)
+    set -q _flag_all && set argv (string replace --all --regex '^.*/|\.fish$' '' $testsDir/*.fish)
+    set -q _flag_CI && set -a argv 'CI/'(string replace --all --regex '^.*/|\.fish$' '' $testsDir/CI/*.fish)
 
     if test (count $argv) -lt 1
         _tide_test_help
