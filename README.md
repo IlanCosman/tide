@@ -91,22 +91,7 @@ Tide takes care of all the multi-line logic and printing for you. All you have t
 
 If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
 
-<br clear="left"><br>
-
-<img
-   src="resources/animations/pure_emulation.gif"
-   alt="pure_emulation.gif"
-   width="61.8%"
-   align="right"
-/>
-
-### Pure Emulation
-
-Tide can easily produce the same prompt as [Pure][] (with a number of improvements). Run `tide configure` and select the Pure style.
-
-All of Tide's features are available while using Pure style, though it displays less information by default than Lean style.
-
-<br clear="right">
+<br clear="left">
 
 ## Configuration
 
