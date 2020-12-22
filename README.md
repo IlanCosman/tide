@@ -65,20 +65,15 @@ Using the [`items`][] list for each side of the prompt, you have full control of
 
 <br clear="left"><br>
 
-<img
-   src="resources/images/multi-line_right_prompt.png"
-   alt="multi-line_right_prompt.png"
-   width="61.8%"
-   align="right"
-/>
+### Asynchronous Rendering
 
-### Multi-Line Right Prompt
+Tide runs everything in the background so that your prompt will always feel snappy.
 
-> Fish can't do _that_ yet can it!
+![async][]
 
-Tide takes care of all the multi-line logic and printing for you. All you have to do is add the `newline` item.
+Asynchronous rendering also allows Tide to display more information than other prompts. For example, most prompts don't display the number of untracked, modified, or deleted files in a git repository because it's slow to compute and would therefore harm the user experience.
 
-<br clear="right"><br>
+<br>
 
 <img
    src="resources/images/extensible.png"
@@ -91,7 +86,22 @@ Tide takes care of all the multi-line logic and printing for you. All you have t
 
 If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
 
-<br clear="left">
+<br clear="left"><br>
+
+<img
+   src="resources/images/multi-line_right_prompt.png"
+   alt="multi-line_right_prompt.png"
+   width="61.8%"
+   align="right"
+/>
+
+### Multi-Line Right Prompt
+
+> Fish can't do _that_ yet can it!
+
+Tide is the only Fish prompt capable of displaying a multi-line right prompt. All you have to do is add the `newline` item.
+
+<br clear="right">
 
 ## Configuration
 
@@ -128,6 +138,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 [`items`]: docs/Configuration.md#Items
 [actions]: https://github.com/IlanCosman/tide/actions
+[async]: resources/animations/async.gif
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration guide]: docs/Configuration.md
 [configuration_wizard]: resources/animations/configuration_wizard.gif
