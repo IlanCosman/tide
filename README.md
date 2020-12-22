@@ -53,6 +53,19 @@ Run `tide configure` to open the the wizard in your terminal.
 <br>
 
 <img
+   src="resources/images/extensible.png"
+   alt="extensible.png"
+   width="61.8%"
+   align="right"
+/>
+
+### Extensible
+
+If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
+
+<br clear="right"><br>
+
+<img
    src="resources/images/flexible.png"
    alt="flexible.png"
    width="61.8%"
@@ -71,28 +84,15 @@ Tide runs everything in the background so that your prompt will always feel snap
 
 ![async][]
 
-Asynchronous rendering also allows Tide to display more information than other prompts. For example, most prompts don't display the number of untracked, modified, or deleted files in a git repository because it's slow to compute and would therefore harm the user experience.
+Asynchronous rendering also allows Tide to display more information than other prompts. For example, most prompts don't display the number of untracked, modified, or deleted files in a git repository because it's too slow to compute.
 
 <br>
-
-<img
-   src="resources/images/extensible.png"
-   alt="extensible.png"
-   width="61.8%"
-   align="left"
-/>
-
-### Extensible
-
-If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
-
-<br clear="left"><br>
 
 <img
    src="resources/images/multi-line_right_prompt.png"
    alt="multi-line_right_prompt.png"
    width="61.8%"
-   align="right"
+   align="left"
 />
 
 ### Multi-Line Right Prompt
@@ -101,7 +101,7 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 
 Tide is the only Fish prompt capable of displaying a multi-line right prompt. All you have to do is add the `newline` item.
 
-<br clear="right">
+<br clear="left">
 
 ## Configuration
 
