@@ -26,7 +26,7 @@ function fish_prompt
     string unescape $$_tide_left_prompt_display_var
 end
 
-function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid
+function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
     commandline --function force-repaint
 end
 
