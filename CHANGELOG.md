@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.0.0][] (Dec 22 2020)
+
+### Features
+
+- Prompt now renders asynchronously ([#15][])
+- Prompt now redraws accurately when the line is cancelled ([#53][])
+
 ## [v2.5.0][] (Nov 19 2020)
 
 ### Features
@@ -50,7 +57,7 @@
 - Add `context_always_display` option
 - Add Rust item
 
-## [v2.2.0][] (Aug 2 2020)
+## [v2.2.0][] (Aug 02 2020)
 
 - Actions
   - Add [super-linter][] action to lint markdown and yaml.
@@ -89,17 +96,17 @@
 
 - Fix / not showing at start of pwd
 
-## [v1.3.1][] (Jun 8 2020)
+## [v1.3.1][] (Jun 08 2020)
 
 - Fix pwd not displaying in unwritable directories
 
-## [v1.3.0][] (Jun 6 2020)
+## [v1.3.0][] (Jun 06 2020)
 
 - Massive speed increase
   - Greater than 2x in most cases
   - Run code only when relevant variables change
 
-## [v1.2.0][] (Jun 5 2020)
+## [v1.2.0][] (Jun 05 2020)
 
 - Add pwd anchors
   - Bold directories that don't get truncated
@@ -127,6 +134,7 @@
 - First release
 
 [#5]: https://github.com/IlanCosman/tide/issues/5
+[#15]: https://github.com/IlanCosman/tide/issues/15
 [#18]: https://github.com/IlanCosman/tide/issues/18
 [#20]: https://github.com/IlanCosman/tide/issues/20
 [#23]: https://github.com/IlanCosman/tide/issues/23
@@ -141,6 +149,7 @@
 [#41]: https://github.com/IlanCosman/tide/issues/41
 [#43]: https://github.com/IlanCosman/tide/issues/43
 [#45]: https://github.com/IlanCosman/tide/issues/45
+[#53]: https://github.com/IlanCosman/tide/issues/53
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -159,3 +168,4 @@
 [v2.3.0]: https://github.com/IlanCosman/tide/tree/v2.3.0
 [v2.4.0]: https://github.com/IlanCosman/tide/tree/v2.4.0
 [v2.5.0]: https://github.com/IlanCosman/tide/tree/v2.5.0
+[v3.0.0]: https://github.com/IlanCosman/tide/tree/v3.0.0
