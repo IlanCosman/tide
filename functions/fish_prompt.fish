@@ -30,11 +30,6 @@ function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid
     commandline --function force-repaint
 end
 
-function _tide_on_fish_cancel --on-event fish_cancel
-    string repeat --no-newline --count (string match --all 'newline' $tide_left_prompt_items | count) \n
-    test "$tide_print_newline_before_prompt" = 'true' && printf '%b' '\n'
-end
-
 function _tide_on_fish_exit --on-event fish_exit
     set -e _tide_left_prompt_display_$fish_pid
     set -e _tide_right_prompt_display_$fish_pid
