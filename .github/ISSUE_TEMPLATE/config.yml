@@ -1,2 +1,6 @@
 ---
 blank_issues_enabled: false
+contact_links:
+  - name: ❓ Ask a question
+    url: https://github.com/IlanCosman/tide/discussions/new
+    about: Ask the community for help 🙏
