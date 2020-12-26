@@ -9,7 +9,6 @@ set -x fish_term24bit $fish_term24bit
 
 function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
-    set -lx _tide_last_status $status
     set -lx _tide_jobs_number (jobs --pid | count)
 
     fish --command "
