@@ -5,12 +5,10 @@ function _tide_detect_os
         case freebsd openbsd dragonfly
             set -gx _tide_os_icon 
         case linux
-            if _tide_detect_os_linux_cases /etc/os-release ID
-            else if _tide_detect_os_linux_cases /etc/os-release ID_LIKE
-            else if _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID
-            else
-                set -gx _tide_os_icon 
-            end
+            _tide_detect_os_linux_cases /etc/os-release ID ||
+            _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
+            _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
+            set -gx _tide_os_icon 
         case '*'
             set -gx _tide_os_icon '?'
     end

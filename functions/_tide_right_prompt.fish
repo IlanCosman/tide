@@ -8,13 +8,11 @@ function _tide_right_prompt
 
         set splitText[1] $splitText[1]$frameColor'─╮'
 
-        if test $leftPromptHeight -gt 1
-            if test $rightPromptHeight -gt 1
-                set splitText[-1] $splitText[-1]$frameColor'─╯'
-            else
-                set splitText[2] $frameColor'─╯'
-                set rightPromptHeight (math $rightPromptHeight+1)
-            end
+        test $leftPromptHeight -gt 1 && if test $rightPromptHeight -gt 1
+            set splitText[-1] $splitText[-1]$frameColor'─╯'
+        else
+            set splitText[2] $frameColor'─╯'
+            set rightPromptHeight (math $rightPromptHeight+1)
         end
     end
 

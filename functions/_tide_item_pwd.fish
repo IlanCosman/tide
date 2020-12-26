@@ -6,12 +6,10 @@ function _tide_item_pwd
     set -l gitDir (git rev-parse --show-toplevel 2>/dev/null)
 
     # Compute anchors
-    if contains 'first' $tide_pwd_anchors
-        if test -n "$splitPwd[1]"
-            set -a tidePwdAnchors $splitPwd[1]
-        else
-            set -a tidePwdAnchors $splitPwd[2]
-        end
+    contains 'first' $tide_pwd_anchors && if test -n "$splitPwd[1]"
+        set -a tidePwdAnchors $splitPwd[1]
+    else
+        set -a tidePwdAnchors $splitPwd[2]
     end
     contains 'last' $tide_pwd_anchors && set -a tidePwdAnchors $splitPwd[-1]
     contains 'git' $tide_pwd_anchors && set -a tidePwdAnchors (string split -r -m1 '/' "$gitDir")[2]

@@ -40,11 +40,10 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ### Dependencies
 
-- [fisher][] - plugin manager for fish
 - [spout][] - 100% pure-fish TAP-based test runner
 - [clownfish][] - override the behavior of commands
 
-You can quickly install all necessary dependencies using `tide test -i`.
+You can quickly install the necessary dependencies using `tide test -i`.
 
 `tide test` runs tests from the `$_tide_dir/tests` directory.
 
