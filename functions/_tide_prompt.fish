@@ -1,7 +1,7 @@
 function _tide_prompt
     # Variables are exported as strings, convert _tide_last_pipestatus back into a list
     set -g _tide_last_pipestatus (string split ' ' $_tide_last_pipestatus)
-    
+
     test "$tide_print_newline_before_prompt" = 'true' && printf '%b' '\n'
 
     set_color $tide_prompt_connection_color

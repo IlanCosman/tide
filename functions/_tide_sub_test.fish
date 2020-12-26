@@ -9,8 +9,8 @@ function _tide_sub_test
         fisher install IlanCosman/spout IlanCosman/clownfish
         return 0
     else if not functions --query spout mock
-        set -l b (set_color -o; or echo)
-        set -l n (set_color normal; or echo)
+        set -l b (set_color -o || echo)
+        set -l n (set_color normal || echo)
         printf '%s\n' $b'spout'$n' and'$b' clownfish'$n' must be installed to to run Tide\'s test suite. You can install them with'$b' tide test -i'$n
         return 1
     end

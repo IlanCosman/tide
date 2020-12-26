@@ -3,7 +3,7 @@ function _tide_git_prompt_set_vars --on-variable tide_git_prompt_bg_color
         case '' 'normal'
             set color ''
         case '*'
-            set color (set_color -b $tide_git_prompt_bg_color; or echo)
+            set color (set_color -b $tide_git_prompt_bg_color || echo)
     end
 
     for var in (set --names | string match --regex "__fish_git_prompt_char_.*")

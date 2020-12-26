@@ -14,10 +14,10 @@ function _tide_item_pwd
     contains 'last' $tide_pwd_anchors && set -a tidePwdAnchors $splitPwd[-1]
     contains 'git' $tide_pwd_anchors && set -a tidePwdAnchors (string split -r -m1 '/' "$gitDir")[2]
 
-    set -l colorDirs (set_color $tide_pwd_color_dirs; or echo)
-    set -l colorAnchors (set_color -o $tide_pwd_color_anchors; or echo)
-    set -l keepBackgroundColor (set_color normal -b $tide_pwd_bg_color; or echo)
-    set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs; or echo)
+    set -l colorDirs (set_color $tide_pwd_color_dirs || echo)
+    set -l colorAnchors (set_color -o $tide_pwd_color_anchors || echo)
+    set -l keepBackgroundColor (set_color normal -b $tide_pwd_bg_color || echo)
+    set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs || echo)
 
     set -g _tide_pwd_output $colorDirs$pwd
 

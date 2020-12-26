@@ -4,7 +4,7 @@ function _tide_right_prompt
     set -l leftPromptHeight (math 1+(string match --all 'newline' $tide_left_prompt_items | count))
 
     if test "$tide_right_prompt_frame_enabled" = 'true'
-        set -l frameColor (set_color $tide_right_prompt_frame_color -b normal; or echo)
+        set -l frameColor (set_color $tide_right_prompt_frame_color -b normal || echo)
 
         set splitText[1] $splitText[1]$frameColor'─╮'
 
@@ -64,7 +64,7 @@ function _tide_fetch_right_prompt_items
                 set_color -b $color
 
                 if test "$tide_right_prompt_pad_items" = 'true'
-                    printf '%s' " $output"(set_color -b $color; or echo)' ' # The set_color is for git_prompt which resets the background color
+                    printf '%s' " $output"(set_color -b $color || echo)' ' # The set_color is for git_prompt which resets the background color
                 else
                     printf '%s' "$output"
                 end
