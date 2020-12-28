@@ -4,7 +4,6 @@ function fake_prompt
     printf '%b' '\r'
 
     _fake_tide_right_prompt
-    set_color normal
     _fake_tide_left_prompt
     set_color normal
 end
