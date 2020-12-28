@@ -1,3 +1,13 @@
+# Create an empty fake function for each item
+for func in _fake(functions --all | string match --entire _tide_item)
+    function $func
+    end
+end
+
+for file in $_tide_dir/configure/{choices, functions, prompt_items}/**.fish
+    source "$file"
+end
+
 function _tide_sub_configure
     if test $COLUMNS -lt 55 -o $LINES -lt 21
         printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
@@ -8,32 +18,18 @@ function _tide_sub_configure
     test $fake_columns -gt 90 && set fake_columns 90
     set -g fake_lines $LINES
 
-    # Create an empty fake function for each item
-    for func in _fake(functions --all | string match --entire _tide_item)
-        function $func
-        end
-    end
-
-    for file in $_tide_dir/configure/{functions, prompt_items}/*
-        source "$file"
-    end
-
     _next_choice 'all/style'
 end
 
 function _next_choice -a nextChoice
-    source "$_tide_dir/configure/choices/$nextChoice.fish"
     set -l cmd (string split '/' $nextChoice)[2]
     $cmd
 end
 
 function _tide_title -a text
-    set -l midCols (math --scale=0 $fake_columns/2)
-    set -l midTitle (math --scale=0 (string length $text)/2)
-
     clear
 
-    _tide_cursor_right (math $midCols-$midTitle)
+    _tide_cursor_right (math --scale=0 "$fake_columns/2" - (string length $text)/2)
     set_color -o
     printf '%s\n' $text
     set_color normal
