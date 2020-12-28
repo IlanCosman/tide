@@ -25,9 +25,8 @@ function powerline_prompt_frame
     set fake_tide_right_prompt_frame_enabled true
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
@@ -46,9 +45,5 @@ function powerline_prompt_frame
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
             _next_choice 'all/prompt_connection_andor_frame_color'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end

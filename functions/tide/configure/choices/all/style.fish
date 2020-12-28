@@ -17,9 +17,8 @@ function style
     _load_config 'pure'
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             _load_config lean
             _next_choice 'all/show_time'
@@ -32,10 +31,6 @@ function style
         case 4
             _load_config pure
             _next_choice 'pure/pure_nonperm_content_location'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end
 

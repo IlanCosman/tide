@@ -11,9 +11,8 @@ function pure_nonperm_content_location
     set -g fake_tide_right_prompt_items 'cmd_duration' 'virtual_env'
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'cmd_duration' 'newline' 'virtual_env' 'prompt_char'
             set -g fake_tide_right_prompt_items
@@ -22,9 +21,5 @@ function pure_nonperm_content_location
             set -g fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
             set -g fake_tide_right_prompt_items 'cmd_duration' 'virtual_env'
             _next_choice 'all/show_time'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end

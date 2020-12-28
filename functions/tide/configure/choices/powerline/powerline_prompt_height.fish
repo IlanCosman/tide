@@ -13,9 +13,8 @@ function powerline_prompt_height
     set fake_tide_right_prompt_frame_enabled true
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             _find_and_remove 'newline' fake_tide_left_prompt_items
             set fake_tide_left_prompt_frame_enabled false
@@ -27,9 +26,5 @@ function powerline_prompt_height
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
             _next_choice 'powerline/powerline_prompt_connection'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end

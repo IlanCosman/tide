@@ -4,17 +4,15 @@ function finish
     set_color normal
 
     _tide_option y 'Yes'
-    printf '%b' '\n\n'
+    printf '%b' '\n'
 
-    _tide_option n 'No'
-    printf '%b' '\n\n'
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case y
             _tide_finish
     end
 
-    _tide_quit
+    clear
 end
 
 function _tide_finish

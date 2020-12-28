@@ -10,9 +10,8 @@ function powerline_prompt_connection
     _tide_option 3 'Solid'
     _tide_display_prompt fake_tide_prompt_connection_icon '─'
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             set -g fake_tide_prompt_connection_icon ''
             _next_choice 'powerline/powerline_prompt_frame'
@@ -22,9 +21,5 @@ function powerline_prompt_connection
         case 3
             set -g fake_tide_prompt_connection_icon '─'
             _next_choice 'powerline/powerline_prompt_frame'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end

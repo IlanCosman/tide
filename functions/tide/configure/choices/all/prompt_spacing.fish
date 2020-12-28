@@ -10,18 +10,13 @@ function prompt_spacing
     _tide_display_prompt
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             set -g fake_tide_print_newline_before_prompt false
             _next_choice 'all/icons'
         case 2
             set -g fake_tide_print_newline_before_prompt true
             _next_choice 'all/icons'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end

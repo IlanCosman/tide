@@ -35,9 +35,8 @@ function prompt_connection_andor_frame_color
     _set_prompt_connection_and_frame_color 444444
     _tide_display_prompt
 
-    _tide_display_restart_and_tide_quit
-
-    switch (_tide_menu)
+    _tide_menu
+    switch $_tide_selected_option
         case 1
             _set_prompt_connection_and_frame_color 808080
             _next_choice 'all/prompt_spacing'
@@ -50,10 +49,6 @@ function prompt_connection_andor_frame_color
         case 4
             _set_prompt_connection_and_frame_color 444444
             _next_choice 'all/prompt_spacing'
-        case r
-            _tide_begin
-        case q
-            _tide_quit
     end
 end
 
