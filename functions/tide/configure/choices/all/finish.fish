@@ -16,8 +16,6 @@ function finish
 end
 
 function _tide_finish
-    block --global # Event blocker prevents issues from arising while variables might be undefined etc.
-
     if contains 'prompt_char' $fake_tide_left_prompt_items
         _find_and_remove vi_mode fake_tide_right_prompt_items
     else
@@ -45,8 +43,4 @@ function _tide_finish
     end
 
     set _tide_var_list $incomingVarList
-
-    # source (functions --details fish_prompt) # Reload important startup variables
-
-    block --erase # Unblock events
 end
