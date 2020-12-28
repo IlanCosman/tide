@@ -12,6 +12,7 @@ function finish
             _tide_finish
     end
 
+    _tide_on_fish_exit
     clear
 end
 
