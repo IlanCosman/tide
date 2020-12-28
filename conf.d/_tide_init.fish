@@ -11,22 +11,16 @@ function _tide_init_install --on-event _tide_init_install
 
     set -U _tide_var_list
 
-    source "$_tide_dir/configure/choices/all/style.fish"
+    source $__fish_config_dir/functions/_tide_sub_configure.fish
     _load_config 'lean'
-
-    source "$_tide_dir/configure/choices/all/finish.fish"
     _tide_finish
 
-    source "$__fish_config_dir/functions/fish_prompt.fish"
-
-    if status is-interactive
-        switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
-            case y ye yes ''
-                tide configure
-            case '*'
-                printf '%s' \n 'Run ' (set_color $fish_color_command) 'tide ' \
-                    (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
-        end
+    status is-interactive && switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
+        case y ye yes ''
+            tide configure
+        case '*'
+            printf '%s' \n 'Run ' (set_color $fish_color_command) 'tide ' \
+                (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
     end
 end
 
