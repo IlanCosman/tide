@@ -52,10 +52,12 @@ function _tide_menu
 
     printf '%s\n' \
         '(r)  Restart from the beginning' \
-        '(q)  Quit and do nothing'\n
+        '(q)  Quit and do nothing'\n\n
 
     while true
         set -e _tide_selected_option
+
+        _tide_cursor_up 1
 
         set_color -o
         read --prompt-str "Choice [$listWithSlashes/r/q] " input
