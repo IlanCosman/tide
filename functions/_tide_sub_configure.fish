@@ -69,6 +69,7 @@ function _tide_menu
                 _next_choice 'all/style'
                 break
             case q
+                set -e _tide_option_list
                 clear
                 break
             case $_tide_option_list
