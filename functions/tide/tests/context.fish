@@ -1,6 +1,6 @@
 @mesg '-----------context-----------'
 
-set -l sourceFile "$__fish_config_dir/functions/_tide_item_context.fish"
+set -l sourceFile "$_tide_root/functions/_tide_item_context.fish"
 
 function _context
     _tide_decolor (_tide_item_context)

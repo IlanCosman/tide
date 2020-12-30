@@ -45,7 +45,7 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 You can quickly install the necessary dependencies using `tide test -i`.
 
-`tide test` runs tests from the `$_tide_dir/tests` directory.
+`tide test` runs tests from the `$_tide_root/functions/tide/tests` directory.
 
 Example:
 

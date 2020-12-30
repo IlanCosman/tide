@@ -4,7 +4,7 @@ for func in _fake(functions --all | string match --entire _tide_item)
     end
 end
 
-for file in $_tide_dir/configure/{choices, functions, prompt_items}/**.fish
+for file in $_tide_root/functions/tide/configure/{choices, functions, prompt_items}/**.fish
     source "$file"
 end
 

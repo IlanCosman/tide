@@ -1,3 +1,14 @@
+# Gets the parent of the parent of a given path
+# Returns the current directory if the given path does not have two parents
+function _tide_dirname_2 -a somepath
+    set -l result (string replace -r '(\\/*?)(.*)(?:\\/+[^\\/]+){2}(\\/*?)$' '$1$2' $somepath)
+    if test $status -eq 0
+        echo $result
+    else
+        echo '.'
+    end
+end
+
 function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_dark_blue 0087AF
     _set_immutable _tide_color_dark_green 5FAF00
@@ -5,13 +16,13 @@ function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF
 
-    _set_immutable _tide_dir "$__fish_config_dir/functions/tide"
+    _set_immutable _tide_root (_tide_dirname_2 (status filename))
 
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
 
     set -U _tide_var_list
 
-    source $__fish_config_dir/functions/_tide_sub_configure.fish
+    source $_tide_root/functions/_tide_sub_configure.fish
     _load_config 'lean'
     _tide_finish
 
