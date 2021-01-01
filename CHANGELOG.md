@@ -1,5 +1,14 @@
 # Changelog
 
+## [v3.1.0][] (Dec 31 2020)
+
+### Bug fixes
+
+- Remove prompt cancel handling. It helped on Linux but hurt on MacOS.
+- Refresh prompt when right prompt changes ([#59][])
+- Set color to normal at end of prompt ([#63][] - @peng1999)
+- Allow for installation into non-standard locations ([#65][] - @vamega)
+
 ## [v3.0.0][] (Dec 22 2020)
 
 ### Features
@@ -150,6 +159,9 @@
 [#43]: https://github.com/IlanCosman/tide/issues/43
 [#45]: https://github.com/IlanCosman/tide/issues/45
 [#53]: https://github.com/IlanCosman/tide/issues/53
+[#59]: https://github.com/IlanCosman/tide/issues/59
+[#63]: https://github.com/IlanCosman/tide/issues/63
+[#65]: https://github.com/IlanCosman/tide/issues/65
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -169,3 +181,4 @@
 [v2.4.0]: https://github.com/IlanCosman/tide/tree/v2.4.0
 [v2.5.0]: https://github.com/IlanCosman/tide/tree/v2.5.0
 [v3.0.0]: https://github.com/IlanCosman/tide/tree/v3.0.0
+[v3.1.0]: https://github.com/IlanCosman/tide/tree/v3.1.0
