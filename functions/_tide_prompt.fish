@@ -11,4 +11,5 @@ function _tide_prompt
 
     _tide_right_prompt
     _tide_left_prompt
+    set_color normal
 end

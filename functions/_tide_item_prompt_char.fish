@@ -19,5 +19,4 @@ function _tide_item_prompt_char
                 printf '%s' $tide_prompt_char_vi_visual_icon' '
         end
     end
-    set_color normal
 end
