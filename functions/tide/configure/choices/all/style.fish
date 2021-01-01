@@ -40,7 +40,7 @@ function _load_config -a name
     end
     set -g fake__tide_var_list
 
-    for line in fake_(cat "$_tide_dir/configure/configs/$name.fish")
+    for line in fake_(cat "$_tide_root/functions/tide/configure/configs/$name.fish")
         set -a fake__tide_var_list (string split --max 1 ' ' $line)[1]
         eval set -g $line
     end

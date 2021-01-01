@@ -5,13 +5,14 @@ function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF
 
-    _set_immutable _tide_dir "$__fish_config_dir/functions/tide"
+    # Each string replace is the regex equivalent of dirname
+    _set_immutable _tide_root (status current-filename | string replace --regex '/[^/]+$' '' | string replace --regex '/[^/]+$' '')
 
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
 
     set -U _tide_var_list
 
-    source $__fish_config_dir/functions/_tide_sub_configure.fish
+    source $_tide_root/functions/_tide_sub_configure.fish
     _load_config 'lean'
     _tide_finish
 
