@@ -5,14 +5,14 @@ function _tide_item_pwd
 
     set -l gitDir (git rev-parse --show-toplevel 2>/dev/null)
 
-    # Compute anchors
+    # Compute anchorDirs
     contains 'first' $tide_pwd_anchors && if test -n "$splitPwd[1]"
-        set -a tidePwdAnchors $splitPwd[1]
+        set -a anchorDirs $splitPwd[1]
     else
-        set -a tidePwdAnchors $splitPwd[2]
+        set -a anchorDirs $splitPwd[2]
     end
-    contains 'last' $tide_pwd_anchors && set -a tidePwdAnchors $splitPwd[-1]
-    contains 'git' $tide_pwd_anchors && set -a tidePwdAnchors (string split -r -m1 '/' "$gitDir")[2]
+    contains 'last' $tide_pwd_anchors && set -a anchorDirs $splitPwd[-1]
+    contains 'git' $tide_pwd_anchors && set -a anchorDirs (string split -r -m1 '/' "$gitDir")[2]
 
     set -l colorDirs (set_color $tide_pwd_color_dirs || echo)
     set -l colorAnchors (set_color -o $tide_pwd_color_anchors || echo)
@@ -36,12 +36,12 @@ function _tide_item_pwd
     set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
     for dir in $splitPwd
-        if contains $dir $tidePwdAnchors
+        if contains $dir $anchorDirs
             set _tide_pwd_output (string replace $dir $colorAnchors$dir$keepBackgroundColor $_tide_pwd_output)
         else if test (string length $pwd) -gt $pwdMaxLength
             set -l dirTruncated $dir
             set -l truncationLength 1
-            while contains $dirTruncated $truncatedList
+            test (string length $dirTruncated) -gt $truncationLength && while contains $dirTruncated $truncatedList
                 set dirTruncated (string sub -l $truncationLength $dir)
                 set truncationLength (math $truncationLength+1)
             end
