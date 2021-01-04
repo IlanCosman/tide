@@ -17,7 +17,8 @@ function fish_prompt
     set fish_bind_mode $fish_bind_mode
 
     command kill $_tide_last_pid 2>/dev/null
-    set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
+    set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" >&- &
+    # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559#issuecomment-753692135
 
     set -g _tide_last_pid (jobs --last --pid)
     disown $_tide_last_pid 2>/dev/null
