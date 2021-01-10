@@ -61,6 +61,7 @@ tide_pwd_color_dirs blue
 tide_pwd_color_truncated_dirs 8787AF
 tide_pwd_dir_icon
 tide_pwd_home_icon
+tide_pwd_markers
 tide_pwd_max_dirs 0
 tide_pwd_truncate_margin 10
 tide_pwd_unwritable_icon

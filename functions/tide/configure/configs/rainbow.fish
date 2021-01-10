@@ -61,6 +61,7 @@ tide_pwd_color_dirs E4E4E4
 tide_pwd_color_truncated_dirs BCBCBC
 tide_pwd_dir_icon
 tide_pwd_home_icon
+tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_pwd_max_dirs 0
 tide_pwd_truncate_margin 10
 tide_pwd_unwritable_icon ''
