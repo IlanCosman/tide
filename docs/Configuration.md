@@ -148,16 +148,17 @@ Most of Tide's git capabilities are inherited from fish's built-in [fish_git_pro
 
 ## pwd
 
-| Variable             | Description                                                       | Type    |
-| -------------------- | ----------------------------------------------------------------- | ------- |
-| anchors              | directories that are displayed in bold and immune to truncation   | list    |
-| bg_color             | background color of pwd item                                      | color   |
-| color_anchors        | color of anchor directories                                       | color   |
-| color_dirs           | color of normal directories                                       | color   |
-| color_truncated_dirs | color of truncated directories                                    | color   |
-| max_dirs             | max number of directories to display, 0 or less equals unlimited  | integer |
-| truncate_margin      | start truncating when pwd is this many columns from terminal edge | integer |
-| unwritable_icon      | symbol to display when the directory is not writable by the user  | string  |
+| Variable             | Description                                                                            | Type    |
+| -------------------- | -------------------------------------------------------------------------------------- | ------- |
+| anchors              | directories displayed in bold and immune to truncation. Can contain `first` and `last` | list    |
+| bg_color             | background color of pwd item                                                           | color   |
+| color_anchors        | color of anchor directories                                                            | color   |
+| color_dirs           | color of normal directories                                                            | color   |
+| color_truncated_dirs | color of truncated directories                                                         | color   |
+| markers              | if a directory contains any of these files/directories, it will be anchored            | list    |
+| max_dirs             | max number of directories to display, 0 or less equals unlimited                       | integer |
+| truncate_margin      | start truncating when pwd is this many columns from terminal edge                      | integer |
+| unwritable_icon      | symbol to display when the directory is not writable by the user                       | string  |
 
 ## rust
 
