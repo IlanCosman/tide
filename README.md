@@ -103,6 +103,16 @@ Tide is the only Fish prompt capable of displaying a multi-line right prompt. Al
 
 <br clear="left">
 
+### Current directory that just works
+
+The current working directory is the the most important part of any shell prompt. Tide highlights the critical parts and truncates with the least loss of information when horizontal space is scarce.
+
+![pwd][]
+
+When the full directory doesn't fit, the leftmost segment is truncated to its shortest unique prefix. For example, `~/Documents` becomes `~/Doc` instead of `~/D` because that could be confused with `~/Downloads`. Important segments are bold and never truncated. These include the first and the last segments, roots of Git repositories etc.
+
+<sup>_Tip_: If you copy-paste a truncated directory and hit <kbd>tab</kbd>, it will complete to the original.</sup>
+
 ## Configuration
 
 See the [configuration guide][] for variable documentation.
@@ -132,7 +142,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 ## Acknowledgments
 
-- [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
+- [Powerlevel10k][] - Inspired Tide's creation and informs nearly every aspect of Tide's existence. Because Tide aims to replicate Powerlevel10k's amazing feature set, small sections of documentation have been directly borrowed when rewording the language would negatively impact meaning.
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
@@ -156,5 +166,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
+[pwd]: resources/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
