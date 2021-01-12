@@ -142,7 +142,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 ## Acknowledgments
 
-- [Powerlevel10k][] - Inspired much of Tide's documentation, resources, ideas, and design.
+- [Powerlevel10k][] - Inspired Tide's creation and informs nearly every aspect of Tide's existence. Because Tide aims to replicate Powerlevel10k's amazing feature set, small sections of documentation have been directly borrowed when rewording the language would negatively impact meaning.
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
