@@ -101,7 +101,17 @@ Asynchronous rendering also allows Tide to display more information than other p
 
 Tide is the only Fish prompt capable of displaying a multi-line right prompt. All you have to do is add the `newline` item.
 
-<br clear="left">
+<br clear="left"><br>
+
+### Current directory that just works
+
+The current working directory is the the most important part of any shell prompt. Tide highlights the critical parts and truncates with the least loss of information when horizontal space is scarce.
+
+![pwd][]
+
+When the full directory doesn't fit, the leftmost segment is truncated to its shortest unique prefix. For example, `~/Documents` becomes `~/Doc` instead of `~/D` because that could be confused with `~/Downloads`. Important segments are bold, bright, and never truncated. These include the first and the last segments, roots of Git repositories etc.
+
+_Tip_: If you copy-paste a truncated directory and hit <kbd>tab</kbd>, it'll complete to the original.
 
 ## Configuration
 
@@ -156,5 +166,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
 [pure]: https://github.com/rafaelrinaldi/pure
+[pwd]: resources/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
