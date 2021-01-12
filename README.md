@@ -101,7 +101,7 @@ Asynchronous rendering also allows Tide to display more information than other p
 
 Tide is the only Fish prompt capable of displaying a multi-line right prompt. All you have to do is add the `newline` item.
 
-<br clear="left"><br>
+<br clear="left">
 
 ### Current directory that just works
 
