@@ -30,21 +30,24 @@ function _tide_item_pwd
     for i in (seq (count $splitPwd))
         set -l parentDir (string join '/' $splitPwd[1..(math $i-1)])
 
-        # This line returns true if any markers exist in parentDir, or if anchorDirs contains i
+        # This line returns true if any markers exist in splitPwd[$i], or if anchorDirs contains i
         if eval test -z thisPartIsFalse "-o -e $parentDir"/$splitPwd[$i]/$tide_pwd_markers || contains $i $anchorDirs
-            set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]
+            set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
         else if test (string join '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             set -l truncationLength 1
             while set -l truncated (string sub --length $truncationLength $splitPwd[$i])
                 test (string length $truncated) -lt (string length $splitPwdForLength[$i]) || break
+
                 eval set -l truncatedPath $parentDir/$truncated
                 test (count $truncatedPath*/) -gt 1 || break
+
                 set truncationLength (math $truncationLength + 1)
             end
+
             set splitPwdForLength[$i] $truncated
-            set splitPwdForOutput[$i] $colorTruncatedDirs$truncated
+            set splitPwdForOutput[$i] $colorTruncatedDirs$truncated$keepBackgroundColor$colorDirs
         end
     end
 
-    string join $keepBackgroundColor$colorDirs'/' $splitPwdForOutput
+    string join '/' $splitPwdForOutput
 end
