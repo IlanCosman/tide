@@ -1,4 +1,4 @@
-@mesg '---------cursor_up---------'
+@echo '---------cursor_up---------'
 
 set -lx text 'hello'
 

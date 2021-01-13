@@ -1,4 +1,4 @@
-@mesg '---------virtual_env---------'
+@echo '---------virtual_env---------'
 
 function _virtual_env
     _tide_decolor (_tide_item_virtual_env)

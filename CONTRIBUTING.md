@@ -40,8 +40,8 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ### Dependencies
 
-- [spout][] - 100% pure-fish TAP-based test runner
-- [clownfish][] - override the behavior of commands
+- [Fishtape][] - 100% _pure_-Fish test runner
+- [Clownfish][] - Override the behavior of commands
 
 You can quickly install the necessary dependencies using `tide test -i`.
 
@@ -95,6 +95,6 @@ Todo on release:
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
-[spout]: https://github.com/IlanCosman/spout
+[fishtape]: https://github.com/jorgebucaran/fishtape
 [super-linter]: https://github.com/github/super-linter
 [yamllint]: https://github.com/adrienverge/yamllint

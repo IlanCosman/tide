@@ -1,4 +1,4 @@
-@mesg '---------os---------'
+@echo '---------os---------'
 
 @test 'OS' (
     _tide_detect_os
