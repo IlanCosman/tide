@@ -23,8 +23,8 @@
 
 - **Out of the box:** With four compelling styles and lots of options, you can have your ready-to-run cake and customize it too.
 - **Flexible:** Move content around or remove it, all without ever touching a line of code.
-- **Extensible:** Create custom content with simple fish functions that integrate seamlessly.
-- **Fast:** Asynchronous rendering makes Tide the fastest full-featured fish prompt.
+- **Extensible:** Create custom content with simple Fish functions that integrate seamlessly.
+- **Fast:** Asynchronous rendering makes Tide the fastest full-featured Fish prompt.
 
 <br clear="right">
 
