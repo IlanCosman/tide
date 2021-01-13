@@ -40,7 +40,7 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ### Dependencies
 
-- [Fishtape][] - 100% pure-fish TAP-based test runner
+- [Fishtape][] - 100% _pure_-Fish test runner
 - [Clownfish][] - Override the behavior of commands
 
 You can quickly install the necessary dependencies using `tide test -i`.
@@ -89,12 +89,12 @@ Todo on release:
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
-[clownfish]: https://github.com/IlanCosman/clownfish
+[Clownfish]: https://github.com/IlanCosman/clownfish
 [code of conduct]: CODE_OF_CONDUCT.md
 [fisher]: https://github.com/jorgebucaran/fisher
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
-[fishtape]: https://github.com/jorgebucaran/fishtape
+[Fishtape]: https://github.com/jorgebucaran/fishtape
 [super-linter]: https://github.com/github/super-linter
 [yamllint]: https://github.com/adrienverge/yamllint
