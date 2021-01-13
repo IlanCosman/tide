@@ -13,7 +13,7 @@ set -lx tide_rust_verbose_version true
 set -lx tide_rust_icon 
 
 touch blah.rs
-@test 'rs file' "(_rust)" = " 1.30.0-beta"
+@test 'rs file' (_rust) = " 1.30.0-beta"
 rm blah.rs
 
 @test 'Nothing' -z (_rust)
