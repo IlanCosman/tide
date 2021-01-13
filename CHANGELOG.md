@@ -1,5 +1,20 @@
 # Changelog
 
+## [v3.2.0][] (Jan 12 2021)
+
+## Features
+
+- New pwd features:
+  - Markers - If a directory contains these files/directories, it will be anchored
+  - Truncate to unique - Truncate directories to their shortest unique identifier, i.e no other directories match
+
+## Bug fixes
+
+- Fix `_tide_decolor` for linux and tmux TERMs ([#66][])
+- Close stdout in background process, prompt feels super smooth now
+- Ensure prompt variables are erased after uninstall ([#69][])
+- Don't error if detect_os file doesn't have the specified key
+
 ## [v3.1.0][] (Dec 31 2020)
 
 ### Bug fixes
@@ -162,6 +177,8 @@
 [#59]: https://github.com/IlanCosman/tide/issues/59
 [#63]: https://github.com/IlanCosman/tide/issues/63
 [#65]: https://github.com/IlanCosman/tide/issues/65
+[#66]: https://github.com/IlanCosman/tide/issues/66
+[#69]: https://github.com/IlanCosman/tide/issues/69
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -182,3 +199,4 @@
 [v2.5.0]: https://github.com/IlanCosman/tide/tree/v2.5.0
 [v3.0.0]: https://github.com/IlanCosman/tide/tree/v3.0.0
 [v3.1.0]: https://github.com/IlanCosman/tide/tree/v3.1.0
+[v3.2.0]: https://github.com/IlanCosman/tide/tree/v3.2.0
