@@ -103,7 +103,7 @@ set --universal tide_left_prompt_items context $tide_left_prompt_items
 
 ## git_prompt
 
-Most of Tide's git capabilities are inherited from fish's built-in [fish_git_prompt][]. Modify those variables to configure tide's git prompt.
+Most of Tide's git capabilities are inherited from Fish's built-in [fish_git_prompt][]. Modify those variables to configure tide's git prompt.
 
 | Variable | Description                      | Type  |
 | -------- | -------------------------------- | ----- |
