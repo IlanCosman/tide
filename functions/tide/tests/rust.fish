@@ -1,4 +1,4 @@
-@mesg '-------rust--------'
+@echo '-------rust--------'
 
 function _rust
     _tide_decolor (_tide_item_rust)

@@ -1,4 +1,4 @@
-@mesg '-------------pwd-------------'
+@echo '-------------pwd-------------'
 
 function _pwd -a dir
     cd $dir
