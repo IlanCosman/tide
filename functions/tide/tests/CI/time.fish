@@ -1,4 +1,4 @@
-@mesg '---------time---------'
+@echo '---------time---------'
 
 function _time -a format
     set -lx tide_time_format $format

@@ -1,4 +1,4 @@
-@mesg '---------cmd_duration---------'
+@echo '---------cmd_duration---------'
 
 function _cmd_duration -a duration threshold decimals
     set -lx CMD_DURATION $duration

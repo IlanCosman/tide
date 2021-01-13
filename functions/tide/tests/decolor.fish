@@ -1,4 +1,4 @@
-@mesg '---------decolor---------'
+@echo '---------decolor---------'
 
 set -lx decolorText 'Hello Foo'
 

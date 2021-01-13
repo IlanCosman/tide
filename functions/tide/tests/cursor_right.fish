@@ -1,4 +1,4 @@
-@mesg '---------cursor_right---------'
+@echo '---------cursor_right---------'
 
 set -lx text 'hello'
 

@@ -1,4 +1,4 @@
-@mesg '-------------jobs-------------'
+@echo '-------------jobs-------------'
 
 function _jobs -a number
     set -lx _tide_jobs_number $number
