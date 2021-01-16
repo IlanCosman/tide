@@ -10,7 +10,7 @@ function git_prompt
     test "$upstreamBehind" = 0 && set -e upstreamBehind
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
-    # Git status information
+    # General status
     set -l gitInfo (git status --porcelain | string trim)
 
     set -l deletedCount (string match --regex '^D' $gitInfo | count) || set -e deletedCount
@@ -18,6 +18,10 @@ function git_prompt
     set -l stagedCount (string match --regex '^A' $gitInfo | count) || set -e stagedCount
     set -l untrackedCount (string match --regex '^\?\?' $gitInfo | count) || set -e untrackedCount
 
+    # Stash
+    set -l stashCount (git stash list | count) || set -e stashCount
+
+    # Print the information
     printf '%s' \
         $location' ' \
         $upstreamBehind"$upstreamBehindIcon" \
@@ -25,5 +29,6 @@ function git_prompt
         $deletedCount"$deletedIcon" \
         $modifiedCount"$modifiedIcon" \
         $stagedCount"$stagedIcon" \
-        $untrackedCount"$untrackedIcon"
+        $untrackedCount"$untrackedIcon" \
+        $stashCount"$stashIcon"
 end
