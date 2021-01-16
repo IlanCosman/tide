@@ -13,22 +13,22 @@ function git_prompt
     # General status
     set -l gitInfo (git status --porcelain | string trim)
 
-    set -l deletedCount (string match --regex '^D' $gitInfo | count) || set -e deletedCount
-    set -l modifiedCount (string match --regex '^M' $gitInfo | count) || set -e modifiedCount
-    set -l stagedCount (string match --regex '^A' $gitInfo | count) || set -e stagedCount
-    set -l untrackedCount (string match --regex '^\?\?' $gitInfo | count) || set -e untrackedCount
+    set -l deleted (string match --regex '^D' $gitInfo | count) || set -e deleted
+    set -l modified (string match --regex '^M' $gitInfo | count) || set -e modified
+    set -l staged (string match --regex '^A' $gitInfo | count) || set -e staged
+    set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
 
     # Stash
-    set -l stashCount (git stash list | count) || set -e stashCount
+    set -l stash (git stash list | count) || set -e stash
 
     # Print the information
     printf '%s' \
-        $location' ' \
-        $upstreamBehind"$upstreamBehindIcon" \
-        $upstreamAhead"$upstreamAheadIcon" \
-        $deletedCount"$deletedIcon" \
-        $modifiedCount"$modifiedIcon" \
-        $stagedCount"$stagedIcon" \
-        $untrackedCount"$untrackedIcon" \
-        $stashCount"$stashIcon"
+        ' '$location \
+        ' ⇣'$upstreamBehind \
+        ' ⇡'$upstreamAhead \
+        ' !'$deleted \
+        ' !'$modified \
+        ' +'$staged \
+        ' ?'$untracked \
+        ' *'$stash
 end
