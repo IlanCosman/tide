@@ -156,7 +156,6 @@ Most of Tide's git capabilities are inherited from Fish's built-in [fish_git_pro
 | color_dirs           | color of normal directories                                                            | color   |
 | color_truncated_dirs | color of truncated directories                                                         | color   |
 | markers              | if a directory contains any of these files/directories, it will be anchored            | list    |
-| max_dirs             | max number of directories to display, 0 or less equals unlimited                       | integer |
 | truncate_margin      | start truncating when pwd is this many columns from terminal edge                      | integer |
 | unwritable_icon      | symbol to display when the directory is not writable by the user                       | string  |
 

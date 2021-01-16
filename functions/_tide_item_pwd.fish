@@ -1,16 +1,10 @@
 function _tide_item_pwd
-    set -l preMaxDirsSplitPwd (string replace $HOME '~' $PWD | string split '/')
-    set -l splitPwd $preMaxDirsSplitPwd[(math -$tide_pwd_max_dirs)..-1]
+    set -l splitPwd (string replace $HOME '~' $PWD | string split --no-empty '/')
     set -l splitPwdForLength $splitPwd
     set -l splitPwdForOutput $splitPwd
 
-    set -l anchorDirs
-    contains first $tide_pwd_anchors && if test -n "$splitPwd[1]"
-        set -a anchorDirs 1
-    else
-        set -a anchorDirs 2
-    end
-    contains last $tide_pwd_anchors && set -a anchorDirs (count $splitPwd)
+    contains first $tide_pwd_anchors && set -la anchorDirs 1
+    contains last $tide_pwd_anchors && set -la anchorDirs (count $splitPwd)
 
     set -l colorDirs (set_color $tide_pwd_color_dirs || echo)
     set -l colorAnchors (set_color -o $tide_pwd_color_anchors || echo)
@@ -31,9 +25,7 @@ function _tide_item_pwd
         set -l parentDir (string join '/' $splitPwd[1..(math $i-1)] | string replace '~' $HOME)
 
         # Returns true if any markers exist in splitPwd[$i], or if anchorDirs contains i
-        if test -z thisIsFalse (string split -m 2 " " -- "-o -e "$parentDir/$tide_pwd_markers) ||
-            contains $i $anchorDirs
-
+        if test -z false (string split -m 2 " " -- "-o -e "$parentDir/$tide_pwd_markers) || contains $i $anchorDirs
             set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
         else if test (string join '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             set -l truncationLength 1
@@ -48,6 +40,8 @@ function _tide_item_pwd
             set splitPwdForOutput[$i] $colorTruncatedDirs$truncated$keepBackgroundColor$colorDirs
         end
     end
+
+    test $splitPwd[1] = '~' || printf '%s' '/'
 
     string join '/' $splitPwdForOutput
 end
