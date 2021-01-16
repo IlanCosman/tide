@@ -54,7 +54,7 @@ tide_prompt_char_vi_replace_icon '▶'
 tide_prompt_char_vi_visual_icon 'V'
 tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ''
-tide_pwd_anchors 'first' 'last' 'git'
+tide_pwd_anchors 'first' 'last'
 tide_pwd_bg_color 444444
 tide_pwd_color_anchors $_tide_color_light_blue
 tide_pwd_color_dirs $_tide_color_dark_blue
