@@ -6,19 +6,14 @@ function git_prompt
     # Upstream behind/ahead
     git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null |
     read --local --delimiter=\t upstreamBehind upstreamAhead
-
     test "$upstreamBehind" = 0 && set -e upstreamBehind
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
-    # General status
-    set -l gitInfo (git status --porcelain | string trim)
-
-    set -l deleted (string match --regex '^D' $gitInfo | count) || set -e deleted
-    set -l modified (string match --regex '^M' $gitInfo | count) || set -e modified
-    set -l staged (string match --regex '^A' $gitInfo | count) || set -e staged
+    set -l gitInfo (git status --porcelain)
+    set -l staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
+    set -l dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
 
-    # Stash
     set -l stash (git stash list | count) || set -e stash
 
     # Print the information
@@ -26,9 +21,8 @@ function git_prompt
         ' '$location \
         ' ⇣'$upstreamBehind \
         ' ⇡'$upstreamAhead \
-        ' !'$deleted \
-        ' !'$modified \
         ' +'$staged \
+        ' !'$dirty \
         ' ?'$untracked \
         ' *'$stash
 end
