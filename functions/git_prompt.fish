@@ -9,11 +9,14 @@ function git_prompt
     test "$upstreamBehind" = 0 && set -e upstreamBehind
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
+    # Git status info
     set -l gitInfo (git status --porcelain)
     set -l staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
+    set -l unmerged (string match --regex '^UU' $gitInfo | count) || set -e unmerged
 
+    # Stash
     set -l stash (git stash list | count) || set -e stash
 
     # Print the information
@@ -21,6 +24,7 @@ function git_prompt
         ' '$location \
         ' ⇣'$upstreamBehind \
         ' ⇡'$upstreamAhead \
+        ' ~'$unmerged \
         ' +'$staged \
         ' !'$dirty \
         ' ?'$untracked \
