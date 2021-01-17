@@ -46,7 +46,7 @@ function git_prompt
     set -l staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
-    set -l unmerged (string match --regex '^UU' $gitInfo | count) || set -e unmerged
+    set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
 
     # Stash
     set -l stash (git stash list | count) || set -e stash
@@ -63,8 +63,8 @@ function git_prompt
     set_color $tide_git_upstream_color
     printf '%s' ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead
 
-    set_color $tide_git_unmerged_color
-    printf '%s' ' ~'$unmerged
+    set_color $tide_git_conflicted_color
+    printf '%s' ' ~'$conflicted
 
     set_color $tide_git_staged_color
     printf '%s' ' +'$staged
