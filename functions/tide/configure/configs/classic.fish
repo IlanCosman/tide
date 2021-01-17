@@ -33,7 +33,7 @@ tide_left_prompt_frame_enabled true
 tide_left_prompt_item_separator_diff_color ''
 tide_left_prompt_item_separator_same_color ''
 tide_left_prompt_item_separator_same_color_color 949494
-tide_left_prompt_items 'pwd' 'git_prompt' 'newline'
+tide_left_prompt_items 'pwd' 'git' 'newline'
 tide_left_prompt_pad_items true
 tide_left_prompt_prefix ''
 tide_left_prompt_suffix ''

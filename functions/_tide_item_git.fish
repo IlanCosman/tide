@@ -1,4 +1,4 @@
-function git_prompt
+function _tide_item_git
     # Branch or SHA
     set -l location (git branch --show-current 2>/dev/null) || return
     git rev-parse --git-dir --short=8 HEAD | read --local --line gitDir sha
