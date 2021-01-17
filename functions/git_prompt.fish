@@ -2,7 +2,6 @@ function git_prompt
     # Branch or SHA
     set -l location (git branch --show-current 2>/dev/null) || return
     git rev-parse --git-dir --short HEAD | read --local --line gitDir sha
-    test -z "$location" && set location $sha
 
     set -l operation
     set -l step
@@ -53,15 +52,29 @@ function git_prompt
     set -l stash (git stash list | count) || set -e stash
 
     # Print the information
-    printf '%s' \
-        ' '$location \
-        ' '$operation \
-        ' '$step/$totalSteps \
-        ' ⇣'$upstreamBehind \
-        ' ⇡'$upstreamAhead \
-        ' ~'$unmerged \
-        ' +'$staged \
-        ' !'$dirty \
-        ' ?'$untracked \
-        ' *'$stash
+    printf '%s' ' '
+    test -z "$location" && printf '%s' '@' && set location $sha
+    set_color $tide_git_branch_color
+    printf '%s' $location
+
+    set_color $tide_git_operation_color
+    printf '%s' ' '$operation ' '$step/$totalSteps
+
+    set_color $tide_git_upstream_color
+    printf '%s' ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead
+
+    set_color $tide_git_unmerged_color
+    printf '%s' ' ~'$unmerged
+
+    set_color $tide_git_staged_color
+    printf '%s' ' +'$staged
+
+    set_color $tide_git_dirty_color
+    printf '%s' ' !'$dirty
+
+    set_color $tide_git_untracked_color
+    printf '%s' ' ?'$untracked
+
+    set_color $tide_git_stash_color
+    printf '%s' ' *'$stash
 end
