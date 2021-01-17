@@ -1,8 +1,9 @@
 function git_prompt
     # Branch or SHA
     set -l location (git branch --show-current 2>/dev/null) || return
-    git rev-parse --git-dir --short HEAD | read --local --line gitDir sha
+    git rev-parse --git-dir --short=8 HEAD | read --local --line gitDir sha
 
+    # Operation
     set -l operation
     set -l step
     set -l totalSteps
@@ -28,7 +29,7 @@ function git_prompt
     else if test -f $gitDir/MERGE_HEAD
         set operation merge
     else if test -f $gitDir/CHERRY_PICK_HEAD
-        set operation cherry-picking
+        set operation cherry-pick
     else if test -f $gitDir/REVERT_HEAD
         set operation revert
     else if test -f $gitDir/BISECT_LOG
