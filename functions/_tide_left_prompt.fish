@@ -41,7 +41,7 @@ function _tide_left_prompt
                 set_color -b $color
 
                 if test "$tide_left_prompt_pad_items" = 'true' -a "$item" != 'prompt_char'
-                    printf '%s' " $output"(set_color -b $color || echo)' ' # The set_color is for git_prompt which resets the background color
+                    printf '%s' " $output "
                 else
                     printf '%s' "$output"
                 end

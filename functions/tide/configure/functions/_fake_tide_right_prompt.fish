@@ -56,7 +56,7 @@ function _fake_tide_fetch_right_prompt_items
                 set_color -b $color
 
                 if test "$fake_tide_right_prompt_pad_items" = 'true'
-                    printf '%s' " $output"(set_color -b $color || echo)' ' # The set_color is for git_prompt which resets the background color
+                    printf '%s' " $output "
                 else
                     printf '%s' "$output"
                 end
