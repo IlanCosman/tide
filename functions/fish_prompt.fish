@@ -1,5 +1,4 @@
 _tide_detect_os
-_tide_git_prompt_set_vars
 
 # Set things that wont change
 set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid

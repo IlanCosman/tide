@@ -53,7 +53,6 @@ function _tide_item_git
     set -l stash (git stash list | count) || set -e stash
 
     # Print the information
-    printf '%s' ' '
     test -z "$location" && printf '%s' '@' && set location $sha
     set_color $tide_git_branch_color
     printf '%s' $location
