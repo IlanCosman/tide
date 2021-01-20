@@ -13,10 +13,6 @@ function style
     _load_config 'rainbow'
     _tide_display_prompt
 
-    _tide_option 4 'Pure'
-    _load_config 'pure'
-    _tide_display_prompt
-
     _tide_menu
     switch $_tide_selected_option
         case 1
@@ -28,9 +24,6 @@ function style
         case 3
             _load_config rainbow
             _next_choice 'all/show_time'
-        case 4
-            _load_config pure
-            _next_choice 'pure/pure_nonperm_content_location'
     end
 end
 

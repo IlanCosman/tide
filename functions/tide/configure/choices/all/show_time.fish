@@ -29,7 +29,7 @@ end
 
 function _show_time_next_choice
     switch $_tide_configure_style
-        case lean pure
+        case lean
             _next_choice "$_tide_configure_style"/"$_tide_configure_style"_prompt_height
         case classic rainbow
             _next_choice "$_tide_configure_style"/"$_tide_configure_style"_prompt_separators
