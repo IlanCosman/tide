@@ -29,9 +29,9 @@ function _tide_item_pwd
             set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
         else if test (string join '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             set -l truncationLength 1
-            while set -l truncated (string sub --length $truncationLength $splitPwd[$i])
-                test (string length $truncated) -lt (string length $splitPwdForLength[$i]) || break
-                test (count $parentDir/$truncated*/) -gt 1 || break
+            while set -l truncated (string sub --length $truncationLength $splitPwd[$i]) &&
+                test (string length $truncated) -lt (string length $splitPwdForLength[$i]) &&
+                test (count $parentDir/$truncated*/) -gt 1
 
                 set truncationLength (math $truncationLength + 1)
             end
