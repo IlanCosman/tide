@@ -41,7 +41,7 @@ function _tide_item_pwd
         end
     end
 
-    test $splitPwd[1] = '~' || printf '%s' '/'
+    test "$splitPwd[1]" = '~' || printf '%s' '/'
 
     string join '/' $splitPwdForOutput
 end
