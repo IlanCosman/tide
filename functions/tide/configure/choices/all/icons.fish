@@ -12,10 +12,8 @@ function icons
     switch $_tide_selected_option
         case 1
             _disable_icons
-            _next_choice 'all/finish'
-        case 2
-            _next_choice 'all/finish'
     end
+    _next_choice 'all/finish'
 end
 
 function _enable_icons

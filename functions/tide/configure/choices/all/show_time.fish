@@ -17,17 +17,11 @@ function show_time
         case 1
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]
-            _show_time_next_choice
         case 2
             set -g fake_tide_time_format '%T'
-            _show_time_next_choice
         case 3
             set -g fake_tide_time_format '%r'
-            _show_time_next_choice
     end
-end
-
-function _show_time_next_choice
     switch $_tide_configure_style
         case lean
             _next_choice "$_tide_configure_style"/"$_tide_configure_style"_prompt_height

@@ -26,18 +26,15 @@ function rainbow_prompt_separators
         case 1
             set -g fake_tide_left_prompt_item_separator_diff_color ''
             set -g fake_tide_right_prompt_item_separator_diff_color ''
-            _next_choice 'powerline/powerline_prompt_heads'
         case 2
             set -g fake_tide_left_prompt_item_separator_diff_color ''
             set -g fake_tide_right_prompt_item_separator_diff_color ''
-            _next_choice 'powerline/powerline_prompt_heads'
         case 3
             set -g fake_tide_left_prompt_item_separator_diff_color ''
             set -g fake_tide_right_prompt_item_separator_diff_color ''
-            _next_choice 'powerline/powerline_prompt_heads'
         case 4
             set -g fake_tide_left_prompt_item_separator_diff_color ''
             set -g fake_tide_right_prompt_item_separator_diff_color ''
-            _next_choice 'powerline/powerline_prompt_heads'
     end
+    _next_choice 'powerline/powerline_prompt_heads'
 end

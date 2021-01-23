@@ -14,9 +14,8 @@ function prompt_spacing
     switch $_tide_selected_option
         case 1
             set -g fake_tide_print_newline_before_prompt false
-            _next_choice 'all/icons'
         case 2
             set -g fake_tide_print_newline_before_prompt true
-            _next_choice 'all/icons'
     end
+    _next_choice 'all/icons'
 end

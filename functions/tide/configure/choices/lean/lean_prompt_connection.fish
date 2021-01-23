@@ -14,12 +14,10 @@ function lean_prompt_connection
     switch $_tide_selected_option
         case 1
             set -g fake_tide_prompt_connection_icon ''
-            _next_choice 'all/prompt_connection_andor_frame_color'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
-            _next_choice 'all/prompt_connection_andor_frame_color'
         case 3
             set -g fake_tide_prompt_connection_icon '─'
-            _next_choice 'all/prompt_connection_andor_frame_color'
     end
+    _next_choice 'all/prompt_connection_andor_frame_color'
 end

@@ -39,17 +39,14 @@ function prompt_connection_andor_frame_color
     switch $_tide_selected_option
         case 1
             _set_prompt_connection_and_frame_color 808080
-            _next_choice 'all/prompt_spacing'
         case 2
             _set_prompt_connection_and_frame_color 6C6C6C
-            _next_choice 'all/prompt_spacing'
         case 3
             _set_prompt_connection_and_frame_color 585858
-            _next_choice 'all/prompt_spacing'
         case 4
             _set_prompt_connection_and_frame_color 444444
-            _next_choice 'all/prompt_spacing'
     end
+    _next_choice 'all/prompt_spacing'
 end
 
 function _set_prompt_connection_and_frame_color -a color

@@ -26,18 +26,15 @@ function powerline_prompt_heads
         case 1
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'powerline/powerline_prompt_tails'
         case 2
             set -g fake_tide_left_prompt_suffix '▓▒░'
             set -g fake_tide_right_prompt_prefix '░▒▓'
-            _next_choice 'powerline/powerline_prompt_tails'
         case 3
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'powerline/powerline_prompt_tails'
         case 4
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-            _next_choice 'powerline/powerline_prompt_tails'
     end
+    _next_choice 'powerline/powerline_prompt_tails'
 end

@@ -31,22 +31,18 @@ function powerline_prompt_tails
         case 1
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''
-            _next_choice 'powerline/powerline_prompt_height'
         case 2
             set -g fake_tide_left_prompt_prefix '░▒▓'
             set -g fake_tide_right_prompt_suffix '▓▒░'
-            _next_choice 'powerline/powerline_prompt_height'
         case 3
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''
-            _next_choice 'powerline/powerline_prompt_height'
         case 4
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''
-            _next_choice 'powerline/powerline_prompt_height'
         case 5
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''
-            _next_choice 'powerline/powerline_prompt_height'
     end
+    _next_choice 'powerline/powerline_prompt_height'
 end

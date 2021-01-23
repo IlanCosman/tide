@@ -14,12 +14,10 @@ function powerline_prompt_connection
     switch $_tide_selected_option
         case 1
             set -g fake_tide_prompt_connection_icon ''
-            _next_choice 'powerline/powerline_prompt_frame'
         case 2
             set -g fake_tide_prompt_connection_icon '·'
-            _next_choice 'powerline/powerline_prompt_frame'
         case 3
             set -g fake_tide_prompt_connection_icon '─'
-            _next_choice 'powerline/powerline_prompt_frame'
     end
+    _next_choice 'powerline/powerline_prompt_frame'
 end
