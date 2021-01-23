@@ -25,6 +25,6 @@ function powerline_prompt_height
             set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items 'newline'
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
-            _next_choice 'powerline/powerline_prompt_connection'
+            _next_choice 'all/prompt_connection'
     end
 end

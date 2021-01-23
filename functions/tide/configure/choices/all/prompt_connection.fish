@@ -1,4 +1,4 @@
-function lean_prompt_connection
+function prompt_connection
     _tide_title 'Prompt Connection'
 
     _tide_option 1 'Disconnected'
@@ -19,5 +19,10 @@ function lean_prompt_connection
         case 3
             set -g fake_tide_prompt_connection_icon '─'
     end
-    _next_choice 'all/prompt_connection_andor_frame_color'
+    switch $_tide_configure_style
+        case lean
+            _next_choice 'all/prompt_connection_andor_frame_color'
+        case classic rainbow
+            _next_choice 'powerline/powerline_prompt_frame'
+    end
 end

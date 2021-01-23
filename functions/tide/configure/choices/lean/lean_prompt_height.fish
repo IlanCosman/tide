@@ -17,6 +17,6 @@ function lean_prompt_height
         case 2
             _find_and_remove 'newline' fake_tide_left_prompt_items
             set -g fake_tide_left_prompt_items $fake_tide_left_prompt_items[1..-2] 'newline' $fake_tide_left_prompt_items[-1]
-            _next_choice 'lean/lean_prompt_connection'
+            _next_choice 'all/prompt_connection'
     end
 end
