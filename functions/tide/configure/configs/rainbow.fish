@@ -15,7 +15,7 @@ tide_git_dirty_color 000000
 tide_git_operation_color 000000
 tide_git_staged_color 000000
 tide_git_stash_color 000000
-tide_git_untracked_color $000000
+tide_git_untracked_color 000000
 tide_git_upstream_color 000000
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
@@ -47,7 +47,7 @@ tide_prompt_char_vi_visual_icon 'V'
 tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ''
 tide_pwd_anchors 'first' 'last'
-tide_pwd_bg_color blue
+tide_pwd_bg_color 3465A4
 tide_pwd_color_anchors E4E4E4
 tide_pwd_color_dirs E4E4E4
 tide_pwd_color_truncated_dirs BCBCBC
