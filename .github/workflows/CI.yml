@@ -22,14 +22,9 @@ jobs:
 
       - uses: fish-actions/install-fish@v1.1.0
 
-      - name: Install Fisher
-        run: curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
-
-      - name: Install Tide
-        run: fisher install $GITHUB_WORKSPACE
-
-      - name: Install testing dependencies
-        run: tide test --install
+      - uses: fish-actions/fisher@v1.0.0
+        with:
+          plugins: jorgebucaran/fishtape ilancosman/clownfish $GITHUB_WORKSPACE
 
       - name: Run full test suite
         run: tide test --all --CI
