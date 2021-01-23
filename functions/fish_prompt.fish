@@ -4,7 +4,6 @@ _tide_detect_os
 set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 
 set -gx _tide_fish_pid $fish_pid
-set -x fish_term24bit $fish_term24bit
 
 function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
@@ -14,6 +13,8 @@ function fish_prompt
     set CMD_DURATION $CMD_DURATION
     set COLUMNS $COLUMNS
     set fish_bind_mode $fish_bind_mode
+    set -g fish_term24bit $tide_true_color
+    set -g fish_term256 $tide_true_color
 
     command kill $_tide_last_pid 2>/dev/null
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
