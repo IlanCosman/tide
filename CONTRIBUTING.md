@@ -43,7 +43,7 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 - [Fishtape][] - 100% _pure_-Fish test runner
 - [Clownfish][] - Override the behavior of commands
 
-You can quickly install the necessary dependencies using `tide test -i`.
+You can install the necessary dependencies using `fisher install jorgebucaran/fishtape ilancosman/clownfish`.
 
 `tide test` runs tests from the `$_tide_root/functions/tide/tests` directory.
 
