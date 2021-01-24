@@ -84,3 +84,9 @@ end
 function _find_and_remove -a name list --no-scope-shadowing
     set -e "$list"[(contains --index $name $$list)] 2>/dev/null # Ignore error if $list doesn't contain $name
 end
+
+function _set_all_items_bg_color -a color
+    for var in (set --names | string match --regex "fake_.*_bg_color")
+        set $var $color
+    end
+end

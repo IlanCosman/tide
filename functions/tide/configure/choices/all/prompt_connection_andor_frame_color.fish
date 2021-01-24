@@ -1,10 +1,11 @@
 function prompt_connection_andor_frame_color
-    if test -n "$fake_tide_prompt_connection_icon"
-        set promptConnectionExists
+    if test "$fake_tide_true_color" = 0
+        _next_choice 'all/prompt_spacing'
+        return 0
     end
-    if test "$fake_tide_left_prompt_frame_enabled" = 'true' -o "$fake_tide_right_prompt_frame_enabled" = 'true'
-        set frameExists
-    end
+
+    test -n "$fake_tide_prompt_connection_icon" && set promptConnectionExists
+    test "$fake_tide_left_prompt_frame_enabled" = 'true' -o "$fake_tide_right_prompt_frame_enabled" = 'true' && set frameExists
 
     if set -q promptConnectionExists && set -q frameExists
         set title "Connection & Frame Color"
