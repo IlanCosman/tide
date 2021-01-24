@@ -1,4 +1,4 @@
-function _fake_tide_left_prompt
+function _fake_tide_left_prompt --no-scope-shadowing
     set lastItemWasNewline
 
     for item in $fake_tide_left_prompt_items

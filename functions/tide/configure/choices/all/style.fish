@@ -17,14 +17,12 @@ function style
     switch $_tide_selected_option
         case 1
             _load_config lean
-            _next_choice 'all/show_time'
         case 2
             _load_config classic
-            _next_choice 'classic/classic_prompt_color'
         case 3
             _load_config rainbow
-            _next_choice 'all/show_time'
     end
+    _next_choice 'all/prompt_colors'
 end
 
 function _load_config -a name
