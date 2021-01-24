@@ -1,7 +1,8 @@
 function _tide_item_git
     # Branch or SHA
     set -l location (git branch --show-current 2>/dev/null) || return
-    git rev-parse --git-dir --short=8 HEAD | read --local --line gitDir sha
+    # Repository might not have any commits, in which case this would error
+    git rev-parse --git-dir --short=8 HEAD 2>/dev/null | read --local --line gitDir sha
 
     # Operation
     set -l operation
@@ -38,7 +39,7 @@ function _tide_item_git
 
     # Upstream behind/ahead
     git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null |
-    read --local --delimiter=\t upstreamBehind upstreamAhead
+        read --local --delimiter=\t upstreamBehind upstreamAhead
     test "$upstreamBehind" = 0 && set -e upstreamBehind
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
