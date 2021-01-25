@@ -1,11 +1,9 @@
-@echo '------------status------------'
-
 function _status
     set -g _tide_last_pipestatus $pipestatus
     _tide_decolor (_tide_item_status)
 end
 
-@echo 'icons empty'
+
 set -lx tide_status_success_icon
 set -lx tide_status_failure_icon
 
@@ -15,7 +13,7 @@ set -lx tide_status_failure_icon
 set -lx tide_status_success_icon '✔'
 set -lx tide_status_failure_icon '✘'
 
-@echo 'always_display: false'
+
 set -lx tide_status_always_display false
 
 @test 'true' -z (true; _status)
@@ -25,7 +23,7 @@ set -lx tide_status_always_display false
 @test 'false|true' (false|true; _status) = '✔ 1|0'
 @test 'false|false' (false|false; _status) = '✘ 1|1'
 
-@echo 'always_display: true'
+
 set -lx tide_status_always_display true
 
 @test 'true' (true; _status) = '✔'

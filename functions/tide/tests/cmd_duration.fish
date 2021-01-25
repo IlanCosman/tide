@@ -1,5 +1,3 @@
-@echo '---------cmd_duration---------'
-
 function _cmd_duration -a duration threshold decimals
     set -lx CMD_DURATION $duration
     set -lx tide_cmd_duration_threshold $threshold

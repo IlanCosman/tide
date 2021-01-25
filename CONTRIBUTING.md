@@ -45,18 +45,12 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 You can install the necessary dependencies using `fisher install jorgebucaran/fishtape ilancosman/clownfish`.
 
-`tide test` runs tests from the `$_tide_root/functions/tide/tests` directory.
+Run tests from the `$_tide_root/functions/tide/tests` directory.
 
 Example:
 
 ```console
-tide test status
-```
-
-You can run the full test suite with the `-a/--all` flag.
-
-```console
-tide test -a
+fishtape $_tide_root/functions/tide/tests/**
 ```
 
 ## Linting

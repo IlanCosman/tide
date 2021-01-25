@@ -1,5 +1,3 @@
-@echo '---------decolor---------'
-
 set -lx decolorText 'Hello Foo'
 
 function _decolor -a color

@@ -23,6 +23,5 @@ function _tide_help
         '' \
         'Subcommands:' \
         '  configure   run interactive configuration wizard' \
-        '  bug-report  print info for use in bug reports' \
-        '  test        run tests for developers'
+        '  bug-report  print info for use in bug reports'
 end

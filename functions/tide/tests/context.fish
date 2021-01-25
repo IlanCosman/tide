@@ -1,5 +1,3 @@
-@echo '-----------context-----------'
-
 set -l sourceFile "$_tide_root/functions/_tide_item_context.fish"
 
 function _context

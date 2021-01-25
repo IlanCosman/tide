@@ -1,5 +1,3 @@
-@echo '-------------pwd-------------'
-
 function _pwd -a dir
     cd $dir
     _tide_decolor (_tide_item_pwd)
