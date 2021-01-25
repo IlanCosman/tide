@@ -27,7 +27,7 @@ jobs:
           plugins: jorgebucaran/fishtape ilancosman/clownfish $GITHUB_WORKSPACE
 
       - name: Run full test suite
-        run: tide test --all --CI
+        run: tide test --all
         shell: fish {0}
 
   prettier:

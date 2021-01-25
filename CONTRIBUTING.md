@@ -59,8 +59,6 @@ You can run the full test suite with the `-a/--all` flag.
 tide test -a
 ```
 
-Some tests are designed for a CI machine and will not necessarily run on any working Tide install. These tests can be run using the `--CI` flag.
-
 ## Linting
 
 Code linting is done via [`fish --no-execute`][].

@@ -1,5 +1,5 @@
 function _tide_sub_test
-    argparse 'h/help' 'v/verbose' 'a/all' 'c-CI' -- $argv
+    argparse 'h/help' 'v/verbose' 'a/all' -- $argv
 
     if set -q _flag_help
         _tide_test_help
@@ -16,7 +16,6 @@ function _tide_sub_test
     set -l testsDir "$_tide_root/functions/tide/tests"
 
     set -q _flag_all && set argv (string replace --all --regex '^.*/|\.fish$' '' $testsDir/*.fish)
-    set -q _flag_CI && set -a argv 'CI/'(string replace --all --regex '^.*/|\.fish$' '' $testsDir/CI/*.fish)
 
     if test (count $argv) -lt 1
         _tide_test_help
