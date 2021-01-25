@@ -26,15 +26,6 @@ function style
 end
 
 function _load_config -a name
-    for var in $fake__tide_var_list
-        set -e $var
-    end
-    set -g fake__tide_var_list
-
-    for line in fake_(cat "$_tide_root/functions/tide/configure/configs/$name.fish")
-        set -a fake__tide_var_list (string split --max 1 ' ' $line)[1]
-        eval set -g $line
-    end
-
+    printf '%s\n' "set -g fake_"(cat "$_tide_root/functions/tide/configure/configs/$name.fish") | source
     set -g _tide_configure_style $name
 end

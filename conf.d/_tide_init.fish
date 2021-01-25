@@ -12,9 +12,13 @@ function _tide_init_install --on-event _tide_init_install
 
     set -U _tide_var_list
 
-    source $_tide_root/functions/_tide_sub_configure.fish
+    source $_tide_root/functions/tide/configure/choices/all/style.fish
     _load_config 'lean'
-    _tide_finish
+    for fakeVar in (set --names | string match --regex "^fake_tide.*")
+        set -l normalVar (string replace 'fake_' '' $fakeVar)
+        set -a _tide_var_list $normalVar
+        set -U $normalVar $$fakeVar
+    end
 
     status is-interactive && switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
         case y ye yes ''
