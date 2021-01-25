@@ -11,14 +11,6 @@ function _tide_item_pwd
     set -l keepBackgroundColor (set_color normal -b $tide_pwd_bg_color || echo)
     set -l colorTruncatedDirs (set_color $tide_pwd_color_truncated_dirs || echo)
 
-    if not test -w $PWD
-        printf '%s' $colorDirs $tide_pwd_unwritable_icon' '
-    else if test $PWD = $HOME
-        printf '%s' $colorDirs $tide_pwd_home_icon' '
-    else
-        printf '%s' $colorDirs $tide_pwd_dir_icon' '
-    end
-
     set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
     for i in (seq (count $splitPwd))
@@ -39,6 +31,15 @@ function _tide_item_pwd
             set splitPwdForLength[$i] $truncated
             set splitPwdForOutput[$i] $colorTruncatedDirs$truncated$keepBackgroundColor$colorDirs
         end
+    end
+
+    # All the actual printing
+    if not test -w $PWD
+        printf '%s' $colorDirs $tide_pwd_unwritable_icon' '
+    else if test $PWD = $HOME
+        printf '%s' $colorDirs $tide_pwd_home_icon' '
+    else
+        printf '%s' $colorDirs $tide_pwd_dir_icon' '
     end
 
     test "$splitPwd[1]" = '~' || printf '%s' '/'
