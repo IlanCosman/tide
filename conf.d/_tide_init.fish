@@ -5,7 +5,7 @@ function _tide_init_install --on-event _tide_init_install
     _set_immutable _tide_color_green 5FD700
     _set_immutable _tide_color_light_blue 00AFFF
 
-    # Each string replace is the regex equivalent of dirname
+    # Each string replace is kind of dirname
     _set_immutable _tide_root (status current-filename | string replace --regex '/[^/]+$' '' | string replace --regex '/[^/]+$' '')
 
     _set_immutable VIRTUAL_ENV_DISABLE_PROMPT true
