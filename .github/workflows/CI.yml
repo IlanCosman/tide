@@ -28,7 +28,7 @@ jobs:
 
       - uses: fish-actions/littlecheck@v1
         with:
-          files: $GITHUB_WORKSPACE/functions/tide/tests/**
+          files: $GITHUB_WORKSPACE/tests/**
 
   prettier:
     runs-on: ubuntu-latest
