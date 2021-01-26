@@ -13,7 +13,10 @@ function _tide_item_pwd
 
     set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
-    for i in (seq (count $splitPwd))
+    set -l i 0
+    for unusedVariable in $splitPwd
+        set i (math $i + 1) # This keeps us from using seq
+
         set -l parentDir (string join '/' $splitPwd[1..(math $i-1)] | string replace '~' $HOME)
 
         # Returns true if any markers exist in splitPwd[$i], or if anchorDirs contains i
