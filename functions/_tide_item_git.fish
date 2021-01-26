@@ -1,8 +1,8 @@
 function _tide_item_git
     # Branch or SHA
     set -l location (git branch --show-current 2>/dev/null) || return
-    # Repository might not have any commits, in which case this would error
-    git rev-parse --git-dir --short=8 HEAD 2>/dev/null | read --local --line gitDir sha
+    # --quiet ensures that it won't complain if there are no commits
+    git rev-parse --git-dir --short=8 --quiet HEAD | read --local --line gitDir sha
 
     # Operation
     set -l operation
