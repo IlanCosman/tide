@@ -1,3 +1,5 @@
+# RUN: %fish %s
+
 function _pwd -a dir
     cd $dir
     _tide_decolor (_tide_item_pwd)
@@ -11,24 +13,24 @@ sudo mkdir -p ~/unwritable/dir # Uses sudo to make the dir unwritable
 
 set -lx tide_pwd_unwritable_icon ''
 
-@test '~/unwritable' (_pwd ~/unwritable) = ' ~/unwritable'
-@test '~/unwritable/dir' (_pwd ~/unwritable/dir) = ' ~/unwritable/dir'
+_pwd ~/unwritable # CHECK:  ~/unwritable
+_pwd ~/unwritable/dir # CHECK:  ~/unwritable/dir
 
 # No icon / directories
 
 set -lx tide_pwd_unwritable_icon
 
-@test '/' (_pwd '/') = '/'
-@test '/usr' (_pwd '/usr') = '/usr'
-@test '/usr/share' (_pwd '/usr/share') = '/usr/share'
+_pwd '/' # CHECK: /
+_pwd '/usr' # CHECK: /usr
+_pwd '/usr/share' # CHECK: /usr/share
 
 # Normal directories
 
 mkdir -p ~/normal/dir
 
-@test '~' (_pwd ~) = '~'
-@test '~/normal' (_pwd ~/normal) = '~/normal'
-@test '~/normal/dir' (_pwd ~/normal/dir) = '~/normal/dir'
+_pwd ~ # CHECK: ~
+_pwd ~/normal # CHECK: ~/normal
+_pwd ~/normal/dir # CHECK: ~/normal/dir
 
 rm -rf ~/normal
 
@@ -37,6 +39,6 @@ rm -rf ~/normal
 set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
 mkdir -p $longDir
 
-@test 'Long dir' (_pwd "$longDir") = '~/a/b/c/d/e/f/g/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa'
+_pwd "$longDir" # CHECK: ~/a/b/c/d/e/f/g/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
 
 rm -r ~/alfa

@@ -1,3 +1,5 @@
+# RUN: %fish %s
+
 function _status
     set -g _tide_last_pipestatus $pipestatus
     _tide_decolor (_tide_item_status)
@@ -7,8 +9,11 @@ end
 set -lx tide_status_success_icon
 set -lx tide_status_failure_icon
 
-@test 'true|false' (true|false; _status) = '0|1'
-@test 'false|true' (false|true; _status) = '1|0'
+true | false
+_status # CHECK: 0|1
+
+false | true
+_status # CHECK: 1|0
 
 set -lx tide_status_success_icon '✔'
 set -lx tide_status_failure_icon '✘'
@@ -16,19 +21,41 @@ set -lx tide_status_failure_icon '✘'
 
 set -lx tide_status_always_display false
 
-@test 'true' -z (true; _status)
-@test 'false' -z (false; _status)
-@test 'true|false' (true|false; _status) = '✘ 0|1'
-@test 'true|true' -z (true|true; _status)
-@test 'false|true' (false|true; _status) = '✔ 1|0'
-@test 'false|false' (false|false; _status) = '✘ 1|1'
+true
+_status # CHECK:
+
+false
+_status # CHECK:
+
+true | false
+_status # CHECK: ✘ 0|1
+
+true | true
+_status # CHECK:
+
+false | true
+_status # CHECK: ✔ 1|0
+
+false | false
+_status # CHECK: ✘ 1|1
 
 
 set -lx tide_status_always_display true
 
-@test 'true' (true; _status) = '✔'
-@test 'false' (false; _status) = '✘ 1'
-@test 'true|false' (true|false; _status) = '✘ 0|1'
-@test 'true|true' (true|true; _status) = '✔'
-@test 'false|true' (false|true; _status) = '✔ 1|0'
-@test 'false|false' (false|false; _status) = '✘ 1|1'
+true
+_status # CHECK: ✔
+
+false
+_status # CHECK: ✘ 1
+
+true | false
+_status # CHECK: ✘ 0|1
+
+true | true
+_status # CHECK: ✔
+
+false | true
+_status # CHECK: ✔ 1|0
+
+false | false
+_status # CHECK: ✘ 1|1

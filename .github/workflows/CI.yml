@@ -24,11 +24,11 @@ jobs:
 
       - uses: fish-actions/fisher@v1.0.0
         with:
-          plugins: jorgebucaran/fishtape ilancosman/clownfish $GITHUB_WORKSPACE
+          plugins: ilancosman/clownfish $GITHUB_WORKSPACE
 
-      - name: Run full test suite
-        run: fishtape $_tide_root/functions/tide/tests/**
-        shell: fish {0}
+      - uses: fish-actions/littlecheck@v1
+        with:
+          files: $GITHUB_WORKSPACE/functions/tide/tests/**
 
   prettier:
     runs-on: ubuntu-latest
