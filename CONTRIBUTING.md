@@ -40,17 +40,13 @@ Anything exposed to the shell or user--functions, global/universal variables, an
 
 ### Dependencies
 
-- [Fishtape][] - 100% _pure_-Fish test runner
+- [Littlecheck][] - Test driver for command line tools
 - [Clownfish][] - Override the behavior of commands
-
-You can install the necessary dependencies using `fisher install jorgebucaran/fishtape ilancosman/clownfish`.
-
-Run tests from the `$_tide_root/functions/tide/tests` directory.
 
 Example:
 
 ```console
-fishtape $_tide_root/functions/tide/tests/**
+python littlecheck.py ~/tide/tests/**
 ```
 
 ## Linting
@@ -83,10 +79,9 @@ Todo on release:
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
 [clownfish]: https://github.com/IlanCosman/clownfish
 [code of conduct]: CODE_OF_CONDUCT.md
-[fisher]: https://github.com/jorgebucaran/fisher
+[littlecheck]: https://github.com/ridiculousfish/littlecheck
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
-[fishtape]: https://github.com/jorgebucaran/fishtape
 [super-linter]: https://github.com/github/super-linter
 [yamllint]: https://github.com/adrienverge/yamllint
