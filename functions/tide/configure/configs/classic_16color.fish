@@ -42,6 +42,7 @@ tide_time_color brblack
 tide_vi_mode_default_bg_color black
 tide_vi_mode_default_color green
 tide_vi_mode_insert_bg_color black
+tide_vi_mode_insert_color
 tide_vi_mode_replace_bg_color black
 tide_vi_mode_replace_color yellow
 tide_vi_mode_visual_bg_color black
