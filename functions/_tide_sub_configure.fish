@@ -1,17 +1,17 @@
-# Create an empty fake function for each item
-for func in _fake(functions --all | string match --entire _tide_item)
-    function $func
-    end
-end
-
-for file in $_tide_root/functions/tide/configure/{choices, functions, prompt_items}/**.fish
-    source "$file"
-end
-
 function _tide_sub_configure
     if test $COLUMNS -lt 55 -o $LINES -lt 21
         printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
         return 1
+    end
+
+    # Create an empty fake function for each item
+    for func in _fake(functions --all | string match --entire _tide_item)
+        function $func
+        end
+    end
+
+    for file in $_tide_root/functions/tide/configure/{choices, functions, prompt_items}/**.fish
+        source "$file"
     end
 
     set -g fake_columns $COLUMNS
