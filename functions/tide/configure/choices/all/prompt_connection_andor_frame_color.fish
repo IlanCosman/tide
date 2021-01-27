@@ -1,5 +1,5 @@
 function prompt_connection_andor_frame_color
-    if test "$fake_tide_true_color" = 0
+    if test "$_tide_16color" = 0
         _next_choice 'all/prompt_spacing'
         return 0
     end

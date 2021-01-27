@@ -79,7 +79,6 @@ tide_status_success_icon '✔'
 tide_time_bg_color 444444
 tide_time_color 5F8787
 tide_time_format '%T'
-tide_true_color 1
 tide_vi_mode_default_bg_color 444444
 tide_vi_mode_default_color 87af00
 tide_vi_mode_default_icon DEFAULT

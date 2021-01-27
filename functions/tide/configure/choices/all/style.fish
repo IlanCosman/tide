@@ -17,15 +17,17 @@ function style
     switch $_tide_selected_option
         case 1
             _load_config lean
+            set -g _tide_configure_style lean
         case 2
             _load_config classic
+            set -g _tide_configure_style classic
         case 3
             _load_config rainbow
+            set -g _tide_configure_style rainbow
     end
     _next_choice 'all/prompt_colors'
 end
 
 function _load_config -a name
     printf '%s\n' "set -g fake_"(cat "$_tide_root/functions/tide/configure/configs/$name.fish") | source
-    set -g _tide_configure_style $name
 end

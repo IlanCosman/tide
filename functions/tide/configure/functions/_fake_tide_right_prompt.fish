@@ -1,4 +1,4 @@
-function _fake_tide_right_prompt --no-scope-shadowing
+function _fake_tide_right_prompt
     set -l splitText (_fake_tide_fetch_right_prompt_items)
     set -l rightPromptHeight (count $splitText)
     set -l leftPromptHeight (math 1+(string match --all 'newline' $fake_tide_left_prompt_items | count))

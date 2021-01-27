@@ -13,8 +13,6 @@ function fish_prompt
     set CMD_DURATION $CMD_DURATION
     set COLUMNS $COLUMNS
     set fish_bind_mode $fish_bind_mode
-    set -g fish_term24bit $tide_true_color
-    set -g fish_term256 $tide_true_color
 
     command kill $_tide_last_pid 2>/dev/null
     set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
