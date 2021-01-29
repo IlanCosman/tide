@@ -4,6 +4,7 @@ _tide_detect_os
 set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 
 set -gx _tide_fish_pid $fish_pid
+set -x fish_term24bit $fish_term24bit
 
 function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
