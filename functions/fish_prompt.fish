@@ -8,24 +8,28 @@ set -x fish_term24bit $fish_term24bit
 
 function fish_prompt
     set -lx _tide_last_pipestatus $pipestatus
-    set -lx _tide_jobs_number (jobs --pid | count)
 
-    fish --command "
-    set CMD_DURATION $CMD_DURATION
-    set COLUMNS $COLUMNS
-    set fish_bind_mode $fish_bind_mode
+    if not set -e _tide_repainting
+        set -lx _tide_jobs_number (jobs --pid | count)
 
-    command kill $_tide_last_pid 2>/dev/null
-    set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
-    " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
+        fish --command "
+        set CMD_DURATION $CMD_DURATION
+        set COLUMNS $COLUMNS
+        set fish_bind_mode $fish_bind_mode
 
-    set -g _tide_last_pid (jobs --last --pid)
-    disown $_tide_last_pid 2>/dev/null
+        command kill $_tide_last_pid 2>/dev/null
+        set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
+        " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
+
+        set -g _tide_last_pid (jobs --last --pid)
+        disown $_tide_last_pid 2>/dev/null
+    end
 
     string unescape $$_tide_left_prompt_display_var
 end
 
 function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
+    set -g _tide_repainting
     commandline --function force-repaint
 end
 
