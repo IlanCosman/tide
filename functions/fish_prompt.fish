@@ -27,7 +27,7 @@ function fish_prompt
 end
 
 function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
-    commandline --function force-repaint
+    commandline --function force-repaint 2>/dev/null
 end
 
 # Double underscores to avoid erasing this function on uninstall
