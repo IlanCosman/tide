@@ -1,3 +1,5 @@
+complete -c tide --no-files
+
 complete -c tide -x -n '__fish_use_subcommand' -a --help -d "Print help message"
 complete -c tide -x -n '__fish_use_subcommand' -a --version -d "Print tide version"
 complete -c tide -x -n '__fish_use_subcommand' -a bug-report -d "Print info for use in bug reports"
