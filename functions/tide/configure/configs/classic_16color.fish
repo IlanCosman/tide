@@ -26,8 +26,8 @@ tide_prompt_char_failure_color brred
 tide_prompt_char_success_color brgreen
 tide_prompt_connection_color brblack
 tide_pwd_bg_color black
-tide_pwd_color_anchors brblue
-tide_pwd_color_dirs blue
+tide_pwd_color_anchors brcyan
+tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
 tide_right_prompt_frame_color brblack
 tide_right_prompt_item_separator_same_color_color brblack
