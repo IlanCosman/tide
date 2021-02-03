@@ -1,5 +1,31 @@
 # Changelog
 
+## [v4.0.0][] (Feb 03 2021)
+
+### Features
+
+- Add native git solution; 15 to 50% faster than `fish_git_prompt`.
+  The `git_prompt` item has been renamed to `git`. ([#75][])
+- Remove Pure style, redundant now that Tide is async ([#77][])
+- Add 16 color option. Lets users customize Tide's colors through the terminal pallete,
+  which was one of the attractions of Pure style. ([#79][])
+
+### Bug fixes
+
+- Remove `seq`, fixes errors when in macOS root
+
+### CI/Testing
+
+- Use Littlecheck instead of Fishtape
+- Test on macOS as well as Ubuntu
+
+### Internal
+
+- The menu code is significantly shorter
+- A bunch of other small improvements, mostly because we removed `fish_git_prompt`
+- Moved the resources directory into a seperate repo,
+  makes installing/updating Tide much faster.
+
 ## [v3.2.0][] (Jan 12 2021)
 
 ### Features
@@ -179,6 +205,9 @@
 [#65]: https://github.com/IlanCosman/tide/issues/65
 [#66]: https://github.com/IlanCosman/tide/issues/66
 [#69]: https://github.com/IlanCosman/tide/issues/69
+[#75]: https://github.com/IlanCosman/tide/issues/75
+[#77]: https://github.com/IlanCosman/tide/issues/77
+[#79]: https://github.com/IlanCosman/tide/issues/79
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -200,3 +229,4 @@
 [v3.0.0]: https://github.com/IlanCosman/tide/tree/v3.0.0
 [v3.1.0]: https://github.com/IlanCosman/tide/tree/v3.1.0
 [v3.2.0]: https://github.com/IlanCosman/tide/tree/v3.2.0
+[v4.0.0]: https://github.com/IlanCosman/tide/tree/v4.0.0
