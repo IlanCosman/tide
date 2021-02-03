@@ -2,13 +2,13 @@
 
 ## [v3.2.0][] (Jan 12 2021)
 
-## Features
+### Features
 
 - New pwd features:
   - Markers - If a directory contains these files/directories, it will be anchored
   - Truncate to unique - Truncate directories to their shortest unique identifier, i.e no other directories match
 
-## Bug fixes
+### Bug fixes
 
 - Fix `_tide_decolor` for linux and tmux TERMs ([#66][])
 - Close stdout in background process, prompt feels super smooth now
