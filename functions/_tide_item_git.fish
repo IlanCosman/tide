@@ -54,28 +54,18 @@ function _tide_item_git
     set -l stash (git stash list | count) || set -e stash
 
     # Print the information
-    test -z "$location" && printf '%s' '@' && set location $sha
-    set_color $tide_git_branch_color
-    printf '%s' $location
+    if test -z "$location"
+        printf '%s' '@'
+        set location $sha
+    end
 
-    set_color $tide_git_operation_color
-    printf '%s' ' '$operation ' '$step/$totalSteps
-
-    set_color $tide_git_upstream_color
-    printf '%s' ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead
-
-    set_color $tide_git_conflicted_color
-    printf '%s' ' ~'$conflicted
-
-    set_color $tide_git_staged_color
-    printf '%s' ' +'$staged
-
-    set_color $tide_git_dirty_color
-    printf '%s' ' !'$dirty
-
-    set_color $tide_git_untracked_color
-    printf '%s' ' ?'$untracked
-
-    set_color $tide_git_stash_color
-    printf '%s' ' *'$stash
+    printf '%s' \
+        (set_color $tide_git_branch_color) $location \
+        (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
+        (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
+        (set_color $tide_git_conflicted_color) ' ~'$conflicted \
+        (set_color $tide_git_staged_color) ' +'$staged \
+        (set_color $tide_git_dirty_color) ' !'$dirty \
+        (set_color $tide_git_untracked_color) ' ?'$untracked \
+        (set_color $tide_git_stash_color) ' *'$stash
 end
