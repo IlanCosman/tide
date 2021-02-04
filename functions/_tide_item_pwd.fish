@@ -1,5 +1,5 @@
 function _tide_item_pwd
-    set -l splitPwd (string replace $HOME '~' $PWD | string split --no-empty '/')
+    set -l splitPwd (string replace -- $HOME '~' $PWD | string split --no-empty '/')
     set -l splitPwdForLength $splitPwd
     set -l splitPwdForOutput $splitPwd
 
@@ -17,15 +17,15 @@ function _tide_item_pwd
     for unusedVariable in $splitPwd
         set i (math $i + 1) # This keeps us from using seq
 
-        set -l parentDir (string join '/' $splitPwd[1..(math $i-1)] | string replace '~' $HOME)
+        set -l parentDir (string join -- '/' $splitPwd[1..(math $i-1)] | string replace '~' $HOME)
 
         # Returns true if any markers exist in splitPwd[$i], or if anchorDirs contains i
         if test -z false (string split -m 2 " " -- "-o -e "$parentDir/$tide_pwd_markers) || contains $i $anchorDirs
             set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
-        else if test (string join '/' $splitPwdForLength | string length) -gt $pwdMaxLength
+        else if test (string join -- '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             set -l truncationLength 1
-            while set -l truncated (string sub --length $truncationLength $splitPwd[$i]) &&
-                test (string length $truncated) -lt (string length $splitPwdForLength[$i]) &&
+            while set -l truncated (string sub --length $truncationLength -- $splitPwd[$i]) &&
+                test (string length -- $truncated) -lt (string length -- $splitPwdForLength[$i]) &&
                 test (count $parentDir/$truncated*/) -gt 1
 
                 set truncationLength (math $truncationLength + 1)
@@ -47,5 +47,5 @@ function _tide_item_pwd
 
     test "$splitPwd[1]" = '~' || printf '%s' '/'
 
-    string join '/' $splitPwdForOutput
+    string join -- '/' $splitPwdForOutput
 end
