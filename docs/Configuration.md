@@ -69,7 +69,7 @@ set --universal tide_left_prompt_items context $tide_left_prompt_items
 | ----------------------------- | --------------------------------- |
 | [cmd_duration](#cmd_duration) | duration of the last run command  |
 | [context](#context)           | user@hostname in ssh or root      |
-| [git_prompt](#git_prompt)     | git repository status             |
+| [git](#git)                   | git repository status             |
 | [jobs](#jobs)                 | presence of background jobs       |
 | [nvm](#nvm)                   | node version manager              |
 | [os](#os)                     | current operating system          |
@@ -101,13 +101,19 @@ set --universal tide_left_prompt_items context $tide_left_prompt_items
 | root_color     | color of the context item when the user is root        | color   |
 | ssh_color      | color of the context item when in SSH                  | color   |
 
-## git_prompt
+## git
 
-Most of Tide's git capabilities are inherited from Fish's built-in [fish_git_prompt][]. Modify those variables to configure tide's git prompt.
-
-| Variable | Description                      | Type  |
-| -------- | -------------------------------- | ----- |
-| bg_color | background color of the git_item | color |
+| Variable         | Description                            | Type  |
+| ---------------- | -------------------------------------- | ----- |
+| bg_color         | background color of the git_item       | color |
+| branch_color     | color of branch/SHA                    | color |
+| conflicted_color | color of conflicted files number       | color |
+| dirty_color      | color of dirty files number            | color |
+| operation_color  | color of the current operation         | color |
+| staged_color     | color of staged files number           | color |
+| stash_color      | color of stashes number                | color |
+| untracked_color  | color of untracked files number        | color |
+| upstream_color   | color of upstream behind/ahead numbers | color |
 
 ## jobs
 
@@ -211,5 +217,3 @@ Most of Tide's git capabilities are inherited from Fish's built-in [fish_git_pro
 | icon         | icon to display in front of virtual_env item                                                                                           | string |
 
 [`set_color`]: https://fishshell.com/docs/current/cmds/set_color.html
-[fish_git_prompt]: https://fishshell.com/docs/current/cmds/fish_git_prompt.html
-[nvm.fish]: https://github.com/jorgebucaran/nvm.fish
