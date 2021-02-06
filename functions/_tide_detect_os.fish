@@ -15,14 +15,11 @@ function _tide_detect_os
 end
 
 function _tide_detect_os_linux_cases -a file key
-    test -f $file || return
+    set -l splitFile (cat $file | string split '=') || return
+    set -l keyIndex (contains --index $key $splitFile) || return
+    set -l value $splitFile[(math $keyIndex + 1)]
 
-    set -l splitOsRelease (cat $file | string split '=')
-    set -l keyIndex (contains --index $key $splitOsRelease) || return
-    set -l value $splitOsRelease[(math $keyIndex + 1)]
-    set -l name (string trim --chars='"' $value | string lower)
-
-    switch $name
+    switch (string trim --chars='"' $value | string lower)
         case alpine
             set -gx _tide_os_icon 
         case arch
