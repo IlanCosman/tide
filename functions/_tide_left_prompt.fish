@@ -12,7 +12,6 @@ function _tide_left_prompt
             if test -n "$output"
                 set -l colorName tide_"$item"_bg_color
                 set -l color $$colorName
-                test -n "$color" || set color normal
 
                 if set -e lastItemWasNewline
                     if test "$tide_left_prompt_frame_enabled" = 'true'
@@ -28,14 +27,12 @@ function _tide_left_prompt
                         set_color $color -b normal
                         printf '%s' $tide_left_prompt_prefix
                     end
+                else if test "$color" = "$previousColor"
+                    set_color $tide_left_prompt_item_separator_same_color_color
+                    printf '%s' $tide_left_prompt_item_separator_same_color
                 else
-                    if test "$color" = "$previousColor"
-                        set_color $tide_left_prompt_item_separator_same_color_color
-                        printf '%s' $tide_left_prompt_item_separator_same_color
-                    else
-                        set_color $previousColor -b $color
-                        printf '%s' $tide_left_prompt_item_separator_diff_color
-                    end
+                    set_color $previousColor -b $color
+                    printf '%s' $tide_left_prompt_item_separator_diff_color
                 end
 
                 set_color -b $color
