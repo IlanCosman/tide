@@ -1,8 +1,20 @@
 function _tide_item_git
     # Branch or SHA
-    set -l location (git branch --show-current 2>/dev/null) || return
+    set -l branch (git branch --show-current 2>/dev/null) || return
     # --quiet ensures that it won't complain if there are no commits
-    git rev-parse --git-dir --short=8 --quiet HEAD | read --local --line gitDir sha
+    git rev-parse --quiet \
+        --is-inside-work-tree \
+        --git-dir \
+        --short=8 HEAD | read --local --line isInsideWorkTree gitDir sha
+
+    set -l location
+    if test "$isInsideWorkTree" = false
+        set location GIT_DIR!
+    else if test -n "$branch"
+        set location $branch
+    else
+        set location $sha…
+    end
 
     # Operation
     set -l operation
@@ -43,22 +55,23 @@ function _tide_item_git
     test "$upstreamBehind" = 0 && set -e upstreamBehind
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
-    # Git status info
-    set -l gitInfo (git status --porcelain)
-    set -l staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
-    set -l dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
-    set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
-    set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
+    # Git status/stash
+    set -l staged
+    set -l dirty
+    set -l untracked
+    set -l conflicted
+    set -l stash
 
-    # Stash
-    set -l stash (git stash list | count) || set -e stash
-
-    # Print the information
-    if test -z "$location"
-        printf '%s' '@'
-        set location $sha
+    if test "$isInsideWorkTree" = true
+        set -l gitInfo (git status --porcelain)
+        set staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
+        set dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
+        set untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
+        set conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
+        set stash (git stash list | count) || set -e stash
     end
 
+    # Print the information
     printf '%s' \
         (set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
