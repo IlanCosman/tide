@@ -8,9 +8,11 @@ end
 _git # CHECK:
 
 # Initial setup
-rm -rf gitItemTest
-mkdir -p gitItemTest
-cd gitItemTest
+set -l dir ~/gitItemTest
+
+rm -rf $dir
+mkdir -p $dir
+cd $dir
 git init >/dev/null 2>&1
 git checkout -b main >/dev/null 2>&1
 
