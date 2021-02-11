@@ -6,9 +6,7 @@ function _tide_sub_bug-report
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
         source && fisher install ilancosman/tide"
     else if set -q _flag_verbose
-        for var in $_tide_var_list
-            printf '%s\n' "$var $$var"
-        end
+        set | string match --regex "^_?tide.*"
     else
         fish --version
         tide --version
