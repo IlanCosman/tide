@@ -1,7 +1,5 @@
 # RUN: %fish %s
 
-set -l sourceFile "$_tide_root/functions/_tide_item_context.fish"
-
 function _context
     _tide_decolor (_tide_item_context)
 end
@@ -15,4 +13,5 @@ _context # CHECK: {{.*@.*}}
 set -g SSH_TTY /dev/pts/0
 _context # CHECK: {{.*@.*}}
 
-_tide_decolor (sudo fish --command="source $sourceFile;_tide_item_context") # CHECK: {{root@.*}}
+set USER root
+_context # CHECK: {{root@.*}}
