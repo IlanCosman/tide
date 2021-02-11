@@ -32,8 +32,8 @@ _git_item # CHECK: main ?1
 _git add foo
 _git_item # CHECK: main +1
 
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+git config --local user.email "you@example.com"
+git config --local user.name "Your Name"
 _git commit -am 'Add foo'
 
 # Dirty
