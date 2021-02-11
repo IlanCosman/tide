@@ -36,17 +36,17 @@ rm -rf ~/normal
 
 # Long directories
 
-set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
+set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 mkdir -p $longDir
-_pwd "$longDir" # CHECK: ~/a/b/c/d/e/f/g/hotel/inda/juliett/kilo/lima/mike/november/oscar/papa
+_pwd "$longDir" # CHECK: ~/a/b/c/d/e/f/g/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 
 # Truncate to unique
 mkdir -p ~/alfa/bratwurst
-_pwd "$longDir" # CHECK: ~/a/brav/c/d/e/f/g/h/inda/juliett/kilo/lima/mike/november/oscar/papa
+_pwd "$longDir" # CHECK: ~/a/brav/c/d/e/f/g/h/india/juliett/kilo/lima/mike/november/oscar/papa
 rm -r ~/alfa/bratwurst
 
 # Markers
 mkdir -p ~/alfa/.git
-_pwd "$longDir" # CHECK: ~/a/bravo/c/d/e/f/g/h/inda/juliett/kilo/lima/mike/november/oscar/papa
+_pwd "$longDir" # CHECK: ~/a/bravo/c/d/e/f/g/h/india/juliett/kilo/lima/mike/november/oscar/papa
 
 rm -r ~/alfa
