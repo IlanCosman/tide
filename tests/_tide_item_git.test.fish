@@ -28,6 +28,8 @@ _git # CHECK: main ?1
 git add foo >/dev/null 2>&1
 _git # CHECK: main +1
 
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 git commit -am 'Add foo' >/dev/null 2>&1
 
 # Dirty
