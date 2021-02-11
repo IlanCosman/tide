@@ -1,6 +1,10 @@
 # RUN: %fish %s
 
 function _git
+    git $argv >/dev/null 2>&1
+end
+
+function _git_item
     _tide_decolor (_tide_item_git)
 end
 
@@ -11,44 +15,42 @@ mkdir -p $dir
 cd $dir
 
 # Not in git repo
-_git # CHECK:
+_git_item # CHECK:
 
 # Create git repo and main branch
-git init >/dev/null 2>&1
-git checkout -b main >/dev/null 2>&1
+_git init
+_git checkout -b main
 
 # Branch
-_git # CHECK: main
+_git_item # CHECK: main
 
 # Untracked
 touch foo
-_git # CHECK: main ?1
+_git_item # CHECK: main ?1
 
 # Staged
-git add foo >/dev/null 2>&1
-_git # CHECK: main +1
+_git add foo
+_git_item # CHECK: main +1
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-git commit -am 'Add foo' >/dev/null 2>&1
+_git commit -am 'Add foo'
 
 # Dirty
-echo hello > foo
-_git # CHECK: main !1
+echo hello >foo
+_git_item # CHECK: main !1
 
 # Stash
-git stash >/dev/null 2>&1
-_git # CHECK: main *1
+_git stash
+_git_item # CHECK: main *1
 
-git stash pop >/dev/null 2>&1
-git commit -am 'Append hello to foo' >/dev/null 2>&1
+_git stash pop
+_git commit -am 'Append hello to foo'
 
 # SHA
-git checkout HEAD~ >/dev/null 2>&1
-_git # CHECK: {{\w{8}…}}
+_git checkout HEAD~
+_git_item # CHECK: {{\w{8}…}}
 
 # GIT_DIR!
 cd .git
-_git # CHECK: GIT_DIR!
-
-
+_git_item # CHECK: GIT_DIR!
