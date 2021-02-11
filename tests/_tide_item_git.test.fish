@@ -4,15 +4,16 @@ function _git
     _tide_decolor (_tide_item_git)
 end
 
-# Not in git repo
-_git # CHECK:
-
-# Initial setup
+# Create directory
 set -l dir ~/gitItemTest
-
 rm -rf $dir
 mkdir -p $dir
 cd $dir
+
+# Not in git repo
+_git # CHECK:
+
+# Create git repo and main branch
 git init >/dev/null 2>&1
 git checkout -b main >/dev/null 2>&1
 
