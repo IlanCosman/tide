@@ -4,7 +4,13 @@ function _tide_prompt
 
     test "$tide_print_newline_before_prompt" = 'true' && printf '%b' '\n'
 
-    set_color $tide_prompt_connection_color
+    if set -q SSH_TTY
+      set_color $tide_context_ssh_color
+    else if test $USER = 'root'
+      set_color --bold red
+    else
+      set_color $tide_prompt_connection_color
+    end
     test -n "$tide_prompt_connection_icon" || set -l tide_prompt_connection_icon ' '
     string repeat --no-newline --max $COLUMNS $tide_prompt_connection_icon
     printf '%b' '\r'
