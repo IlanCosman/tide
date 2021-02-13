@@ -64,10 +64,13 @@ tide_right_prompt_frame_enabled true
 tide_right_prompt_item_separator_diff_color ''
 tide_right_prompt_item_separator_same_color ''
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'rust' 'php' 'vi_mode'
+tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'rust' 'php' 'vi_mode' 'chruby'
 tide_right_prompt_pad_items true
 tide_right_prompt_prefix ''
 tide_right_prompt_suffix ''
+tide_chruby_bg_color CC342D
+tide_chruby_color white
+tide_chruby_icon ''
 tide_rust_bg_color FF8700
 tide_rust_color 2E3436
 tide_rust_icon ''

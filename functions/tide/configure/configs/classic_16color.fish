@@ -33,6 +33,8 @@ tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
 tide_right_prompt_frame_color brblack
 tide_right_prompt_item_separator_same_color_color brblack
+tide_chruby_bg_color black
+tide_chruby_color red
 tide_rust_bg_color black
 tide_rust_color cyan
 tide_status_failure_bg_color black
