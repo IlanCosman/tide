@@ -75,6 +75,7 @@ set --universal tide_left_prompt_items context $tide_left_prompt_items
 | [os](#os)                     | current operating system          |
 | [prompt_char](#prompt_char)   | prompt symbol; turns red on error |
 | [pwd](#pwd)                   | current directory                 |
+| [ruby](#ruby)                 | ruby version number               |
 | [rust](#rust)                 | rust version number               |
 | [status](#status)             | exit code of the last command     |
 | [time](#time)                 | current time                      |
@@ -164,6 +165,15 @@ set --universal tide_left_prompt_items context $tide_left_prompt_items
 | markers              | if a directory contains any of these files/directories, it will be anchored            | list    |
 | truncate_margin      | start truncating when pwd is this many columns from terminal edge                      | integer |
 | unwritable_icon      | symbol to display when the directory is not writable by the user                       | string  |
+
+## ruby
+
+| Variable        | Description                                             | Type    |
+| --------------- | ------------------------------------------------------- | ------- |
+| bg_color        | background color of ruby item                           | color   |
+| color           | color of ruby item                                      | color   |
+| icon            | icon to display next to the ruby version                | string  |
+| verbose_version | Cut off patch number from version. "3.0.0p0" vs "3.0.0" | boolean |
 
 ## rust
 
