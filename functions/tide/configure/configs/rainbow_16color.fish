@@ -31,6 +31,8 @@ tide_pwd_color_dirs brwhite
 tide_pwd_color_truncated_dirs white
 tide_right_prompt_frame_color brblack
 tide_right_prompt_item_separator_same_color_color brblack
+tide_ruby_bg_color red
+tide_ruby_color black
 tide_rust_bg_color yellow
 tide_rust_color black
 tide_status_failure_bg_color red

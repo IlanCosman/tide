@@ -65,6 +65,10 @@ tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_
 tide_right_prompt_pad_items true
 tide_right_prompt_prefix ''
 tide_right_prompt_suffix ''
+tide_ruby_bg_color CC342D
+tide_ruby_color white
+tide_ruby_icon ''
+tide_ruby_verbose_version true
 tide_rust_bg_color FF8700
 tide_rust_color 2E3436
 tide_rust_icon ''
