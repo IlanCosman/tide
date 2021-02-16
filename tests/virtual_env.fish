@@ -20,3 +20,14 @@ _virtual_env # CHECK:  .venv
 set -lx tide_virtual_env_icon
 set -lx tide_virtual_env_display_mode projectName
 _virtual_env # CHECK: python_project
+
+# Support for poetry virtualenvs
+set -lx VIRTUAL_ENV /home/user/.cache/pypoetry/virtualenvs/project-j_EVlIcP-py3.8
+_virtual_env # CHECK: project
+set -lx VIRTUAL_ENV /home/user/.cache/pypoetry/virtualenvs/some-project-j_EVlIcP-py3.8
+_virtual_env # CHECK: some-project
+
+# Support for conda virtualenvs
+set -lx VIRTUAL_ENV
+set -lx CONDA_DEFAULT_ENV base
+_virtual_env # CHECK: base
