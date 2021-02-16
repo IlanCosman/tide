@@ -22,6 +22,7 @@ set -lx tide_virtual_env_display_mode projectName
 _virtual_env # CHECK: python_project
 
 # Support for poetry virtualenvs
+set -lx _OLD_VIRTUAL_PATH /some /paths # set by poetry
 set -lx VIRTUAL_ENV /home/user/.cache/pypoetry/virtualenvs/project-j_EVlIcP-py3.8
 _virtual_env # CHECK: project
 set -lx VIRTUAL_ENV /home/user/.cache/pypoetry/virtualenvs/some-project-j_EVlIcP-py3.8
