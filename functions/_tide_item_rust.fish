@@ -1,5 +1,5 @@
 function _tide_item_rust
-    if command --quiet rustc && test -e Cargo.toml -o (count *.rs) -gt 0
+    if test -e Cargo.toml -o (count *.rs) -gt 0
         set_color $tide_rust_color
 
         if test "$tide_rust_verbose_version" = false

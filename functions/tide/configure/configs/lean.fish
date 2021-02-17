@@ -61,7 +61,7 @@ tide_right_prompt_frame_enabled false
 tide_right_prompt_item_separator_diff_color ' '
 tide_right_prompt_item_separator_same_color ' '
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env'
+tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'rust'
 tide_right_prompt_pad_items false
 tide_right_prompt_prefix ' '
 tide_right_prompt_suffix ''
