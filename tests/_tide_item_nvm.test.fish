@@ -6,9 +6,6 @@ end
 
 set -lx tide_nvm_icon ⬢
 
-functions --erase nvm
-_nvm # CHECK:
-
 mock nvm current "echo v15.8.0"
 _nvm # CHECK: ⬢ v15.8.0
 
