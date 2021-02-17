@@ -32,7 +32,6 @@
 
 ### System Requirements
 
-- [Git][]
 - [Fish][] ≥ 3.1
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
@@ -156,7 +155,6 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
-[git]: https://git-scm.com/
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: ../assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true
