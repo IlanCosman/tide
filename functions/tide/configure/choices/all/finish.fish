@@ -17,14 +17,14 @@ function finish
 end
 
 function _tide_finish
-    # Remove version items that the current machine doesn't have installed
-    set -l nonVersionItems jobs os prompt_char pwd status time vi_mode
-    set -l versionItems (functions --all | string replace --filter --regex "^_tide_item_" '')
-    for item in $nonVersionItems
-        _find_and_remove $item versionItems
+    # Remove tool-specific items for tools the machine doesn't have installed
+    set -l generalItems jobs os prompt_char pwd status time vi_mode
+    set -l toolSpecificItems (functions --all | string replace --filter --regex "^_tide_item_" '')
+    for item in $generalItems
+        _find_and_remove $item toolSpecificItems
     end
 
-    for item in $versionItems
+    for item in $toolSpecificItems
         set -l cliName $item
         switch $item
             case virtual_env
