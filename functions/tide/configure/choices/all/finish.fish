@@ -17,6 +17,29 @@ function finish
 end
 
 function _tide_finish
+    # Remove version items that the current machine doesn't have installed
+    set -l nonVersionItems jobs os prompt_char pwd status time vi_mode
+    set -l versionItems (functions --all | string replace --filter --regex "^_tide_item_" '')
+    for item in $nonVersionItems
+        _find_and_remove $item versionItems
+    end
+
+    for item in $versionItems
+        set -l cliName $item
+        switch $item
+            case virtual_env
+                set cliName python
+            case rust
+                set cliName rustc
+        end
+
+        if not type -q $cliName
+            _find_and_remove $item fake_tide_left_prompt_items
+            _find_and_remove $item fake_tide_right_prompt_items
+        end
+    end
+
+    # Deal with prompt char/vi mode
     if contains 'prompt_char' $fake_tide_left_prompt_items
         _find_and_remove vi_mode fake_tide_right_prompt_items
     else
@@ -31,6 +54,7 @@ function _tide_finish
         end
     end
 
+    # Finally, set the real variables
     for fakeVar in (set --names | string match --regex "^fake_tide.*")
         set -U (string replace 'fake_' '' $fakeVar) $$fakeVar
     end
