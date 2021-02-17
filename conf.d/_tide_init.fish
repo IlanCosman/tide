@@ -19,12 +19,10 @@ function _tide_init_install --on-event _tide_init_install
     _tide_set VIRTUAL_ENV_DISABLE_PROMPT true
 
     source $_tide_root/functions/tide/configure/choices/all/style.fish
+    source $_tide_root/functions/tide/configure/choices/all/finish.fish
     _load_config 'lean'
-    for fakeVar in (set --names | string match --regex "^fake_tide.*")
-        set -l normalVar (string replace 'fake_' '' $fakeVar)
-        set -a _tide_var_list $normalVar
-        set -U $normalVar $$fakeVar
-    end
+    _tide_finish
+    set -a _tide_var_list (set --names | string match --regex "^tide.*")
 
     status is-interactive && switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
         case y ye yes ''
