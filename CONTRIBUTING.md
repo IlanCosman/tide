@@ -10,9 +10,13 @@ If you have any questions that aren't addressed in this document, please don't h
 
 ### Style Guide
 
-- `if` > `and` or `or`
 - `test` > `[...]`
 - `printf` > `echo`
+- `&&`/`||` > `and`/`or`
+- Conditionals
+  - For simple conditionals use `&&`/`||`
+    - Ex: `test -n "$foo" && echo "foo is not empty"`
+  - For anything more complex use `if`, `else`, and `else if`
 - Long forms of flags > short forms
   - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
   - Note that MacOS utils often do not support long flags, in which case one should use the short option
@@ -73,7 +77,7 @@ Todo on release:
 
 - [ ] Update version number in install `tide.fish`
 - [ ] Make a commit containing above edit, titled with the version number
-- [ ] Create release on github with information from changelog
+- [ ] Create a new tag and push it to GitHub
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
