@@ -1,5 +1,23 @@
 # Changelog
 
+## [v4.1.0][] (Feb 20 2021)
+
+## Features
+
+- Add `tide bug-report --clean` option for debugging
+- All items are now enabled by default. Items for tools that aren't installed are automatically removed.
+
+## Bug fixes
+
+- Avoid parsing directories as flags ([#88][])
+- Don't error if in .git directory of git repo
+
+## CI/Testing
+
+- Add new release action to reduce manual labor
+- Add nvm, git, and time item tests
+- Add truncate to unique and markers to PWD test
+
 ## [v4.0.0][] (Feb 03 2021)
 
 ### Features
@@ -208,6 +226,7 @@
 [#75]: https://github.com/IlanCosman/tide/issues/75
 [#77]: https://github.com/IlanCosman/tide/issues/77
 [#79]: https://github.com/IlanCosman/tide/issues/79
+[#88]: https://github.com/IlanCosman/tide/issues/79
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
