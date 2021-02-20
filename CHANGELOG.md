@@ -2,17 +2,17 @@
 
 ## [v4.1.0][] (Feb 20 2021)
 
-## Features
+### Features
 
 - Add `tide bug-report --clean` option for debugging
 - All items are now enabled by default. Items for tools that aren't installed are automatically removed.
 
-## Bug fixes
+### Bug fixes
 
 - Avoid parsing directories as flags ([#88][])
 - Don't error if in .git directory of git repo
 
-## CI/Testing
+### CI/Testing
 
 - Add new release action to reduce manual labor
 - Add nvm, git, and time item tests
@@ -249,3 +249,4 @@
 [v3.1.0]: https://github.com/IlanCosman/tide/tree/v3.1.0
 [v3.2.0]: https://github.com/IlanCosman/tide/tree/v3.2.0
 [v4.0.0]: https://github.com/IlanCosman/tide/tree/v4.0.0
+[v4.1.0]: https://github.com/IlanCosman/tide/tree/v4.1.0
