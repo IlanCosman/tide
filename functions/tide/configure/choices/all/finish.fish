@@ -18,7 +18,7 @@ end
 
 function _tide_finish
     # Remove tool-specific items for tools the machine doesn't have installed
-    set -l generalItems jobs os prompt_char pwd status time vi_mode
+    set -l generalItems cmd_duration context jobs os prompt_char pwd status time vi_mode
     set -l toolSpecificItems (functions --all | string replace --filter --regex "^_tide_item_" '')
     for item in $generalItems
         _find_and_remove $item toolSpecificItems
