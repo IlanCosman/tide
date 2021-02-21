@@ -112,9 +112,9 @@ When the full directory doesn't fit, the leftmost segment is truncated to its sh
 
 <sup>_Tip_: If you copy-paste a truncated directory and hit <kbd>tab</kbd>, it will complete to the original.</sup>
 
-## Configuration
+## Documentation
 
-See the [configuration guide][] for variable documentation.
+See the [Wiki][] for documentation.
 
 ## Contributing
 
@@ -145,11 +145,10 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
-[`items`]: docs/Configuration.md#Items
+[`items`]: https://github.com/IlanCosman/tide/wiki/Configuration#items
 [actions]: https://github.com/IlanCosman/tide/actions
 [async]: ../assets/animations/async.gif
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration guide]: docs/Configuration.md
 [configuration_wizard]: ../assets/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
 [fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
@@ -166,3 +165,4 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [pwd]: ../assets/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
+[wiki]: https://github.com/IlanCosman/tide/wiki
