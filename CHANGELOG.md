@@ -1,5 +1,22 @@
 # Changelog
 
+## [v4.1.1][] (Feb 22 2021)
+
+### Deprecations/Warnings
+
+- Tide v4.1.1 will be the last version to support Fish 3.1.2
+
+### Bug fixes
+
+- Fixed bug where `cmd_duration` and `context` items were being removed from the user's items list
+- Support `toor` and `Administrator` in context item
+
+### Documentation
+
+- Moved the documentation back to the Wiki
+- Added an FAQ ([#96][])
+- Added a Custom Items guide
+
 ## [v4.1.0][] (Feb 20 2021)
 
 ### Features
@@ -226,7 +243,8 @@
 [#75]: https://github.com/IlanCosman/tide/issues/75
 [#77]: https://github.com/IlanCosman/tide/issues/77
 [#79]: https://github.com/IlanCosman/tide/issues/79
-[#88]: https://github.com/IlanCosman/tide/issues/79
+[#88]: https://github.com/IlanCosman/tide/issues/88
+[#96]: https://github.com/IlanCosman/tide/issues/96
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -250,3 +268,4 @@
 [v3.2.0]: https://github.com/IlanCosman/tide/tree/v3.2.0
 [v4.0.0]: https://github.com/IlanCosman/tide/tree/v4.0.0
 [v4.1.0]: https://github.com/IlanCosman/tide/tree/v4.1.0
+[v4.1.1]: https://github.com/IlanCosman/tide/tree/v4.1.1
