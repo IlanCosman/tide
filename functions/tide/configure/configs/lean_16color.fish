@@ -21,6 +21,8 @@ tide_nvm_bg_color normal
 tide_nvm_color cyan
 tide_os_bg_color normal
 tide_os_color brwhite
+tide_php_bg_color normal
+tide_php_color brmagenta
 tide_prompt_char_bg_color normal
 tide_prompt_char_failure_color brred
 tide_prompt_char_success_color brgreen

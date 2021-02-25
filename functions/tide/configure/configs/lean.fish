@@ -35,6 +35,9 @@ tide_nvm_default_node
 tide_nvm_icon '⬢'
 tide_os_bg_color normal
 tide_os_color normal
+tide_php_bg_color normal
+tide_php_color 875FFF
+tide_php_icon ''
 tide_print_newline_before_prompt 'true'
 tide_prompt_char_bg_color normal
 tide_prompt_char_failure_color FF0000
@@ -61,7 +64,7 @@ tide_right_prompt_frame_enabled false
 tide_right_prompt_item_separator_diff_color ' '
 tide_right_prompt_item_separator_same_color ' '
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'rust'
+tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs' 'nvm' 'virtual_env' 'rust' 'php'
 tide_right_prompt_pad_items false
 tide_right_prompt_prefix ' '
 tide_right_prompt_suffix ''
