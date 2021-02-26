@@ -22,7 +22,7 @@ function fish_prompt
         " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
 
         set -g _tide_last_pid (jobs --last --pid)
-        disown $_tide_last_pid 2>/dev/null
+        builtin disown $_tide_last_pid
     end
 
     string unescape $$_tide_left_prompt_display_var
