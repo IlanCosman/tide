@@ -1,13 +1,15 @@
-_tide_detect_os
+if not status is-interactive
+    function fish_prompt
+        # do nothing when not interactive
+    end
+else
+    _tide_detect_os
 
-# Set things that wont change
-set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
+    # Set things that wont change
+    set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 
-set -gx _tide_fish_pid $fish_pid
+    set -gx _tide_fish_pid $fish_pid
 
-
-
-if status is-interactive
     function fish_prompt
         set -lx _tide_last_pipestatus $pipestatus
 
@@ -40,9 +42,5 @@ if status is-interactive
     function __tide_on_fish_exit --on-event fish_exit
         set -e _tide_left_prompt_display_$fish_pid
         set -e _tide_right_prompt_display_$fish_pid
-    end
-else
-    function fish_prompt
-        # do nothing when not interactive
     end
 end
