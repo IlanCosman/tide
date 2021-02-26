@@ -15,14 +15,14 @@ if status is-interactive
             set -lx _tide_jobs_number (jobs --pid | count)
 
             fish --command "
-        set CMD_DURATION $CMD_DURATION
-        set COLUMNS $COLUMNS
-        set fish_bind_mode $fish_bind_mode
-        set fish_term24bit $fish_term24bit
+                set CMD_DURATION $CMD_DURATION
+                set COLUMNS $COLUMNS
+                set fish_bind_mode $fish_bind_mode
+                set fish_term24bit $fish_term24bit
 
-        command kill $_tide_last_pid 2>/dev/null
-        set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
-        " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
+                command kill $_tide_last_pid 2>/dev/null
+                set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
+            " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
 
             set -g _tide_last_pid (jobs --last --pid)
             builtin disown $_tide_last_pid
