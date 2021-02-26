@@ -20,15 +20,35 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: fish-actions/install-fish@v1.1.0
+      - uses: fish-actions/install-fish@v1
 
-      - uses: fish-actions/fisher@v1.0.0
+      - uses: fish-actions/fisher@v1
         with:
           plugins: ilancosman/clownfish $GITHUB_WORKSPACE
 
       - uses: fish-actions/littlecheck@v1
         with:
           files: $GITHUB_WORKSPACE/tests/**
+
+  syntax-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: fish-actions/install-fish@v1
+
+      - uses: fish-actions/syntax-check@v1
+
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: fish-actions/install-fish@v1
+
+      - uses: fish-actions/format-check@v1
 
   prettier:
     runs-on: ubuntu-latest
