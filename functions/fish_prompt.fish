@@ -24,8 +24,7 @@ function fish_prompt
             set fish_term24bit $fish_term24bit
 
             command kill $_tide_last_pid 2>/dev/null
-            set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
-        " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
+            set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
 
         set -g _tide_last_pid (jobs --last --pid)
         builtin disown $_tide_last_pid
@@ -36,7 +35,7 @@ end
 
 function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
     set -g _tide_repainting
-    commandline --function force-repaint
+    commandline --function repaint
 end
 
 # Double underscores to avoid erasing this function on uninstall

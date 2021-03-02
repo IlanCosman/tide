@@ -13,8 +13,8 @@ function _tide_init_install --on-event _tide_init_install
     _tide_set _tide_color_green 5FD700
     _tide_set _tide_color_light_blue 00AFFF
 
-    # Each string replace is kind of dirname
-    _tide_set _tide_root (status filename | string replace --regex '/[^/]+$' '' | string replace --regex '/[^/]+$' '')
+    # string replace is roughly dirname
+    _tide_set _tide_root (status dirname | string replace --regex '/[^/]+$' '')
 
     _tide_set VIRTUAL_ENV_DISABLE_PROMPT true
 
@@ -34,10 +34,7 @@ function _tide_init_install --on-event _tide_init_install
 end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
-    for var in $_tide_var_list
-        set -e $var
-    end
-    set -e _tide_var_list
+    set -e $_tide_var_list _tide_var_list
 
     functions --erase (functions --all | string match --entire --regex '^_tide_')
 end
