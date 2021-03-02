@@ -6,9 +6,9 @@ function _tide_detect_os
             set -gx _tide_os_icon 
         case linux
             _tide_detect_os_linux_cases /etc/os-release ID ||
-            _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
-            _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
-            set -gx _tide_os_icon 
+                _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
+                _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
+                set -gx _tide_os_icon 
         case '*'
             set -gx _tide_os_icon '?'
     end

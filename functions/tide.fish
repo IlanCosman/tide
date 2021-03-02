@@ -1,5 +1,5 @@
 function tide
-    argparse --stop-nonopt 'v/version' 'h/help' -- $argv
+    argparse --stop-nonopt v/version h/help -- $argv
 
     if set -q _flag_version
         printf '%s\n' "tide, version 4.1.1"

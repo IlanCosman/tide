@@ -5,7 +5,7 @@ function _tide_item_prompt_char
         set_color $tide_prompt_char_failure_color
     end
 
-    if test "$fish_key_bindings" = 'fish_default_key_bindings'
+    if test "$fish_key_bindings" = fish_default_key_bindings
         printf '%s' $tide_prompt_char_icon' '
     else
         switch $fish_bind_mode

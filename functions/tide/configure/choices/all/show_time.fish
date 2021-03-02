@@ -1,10 +1,10 @@
 function show_time
     _tide_title 'Show current time?'
 
-    _tide_option 1 'No'
+    _tide_option 1 No
     _tide_display_prompt
 
-    set -a fake_tide_right_prompt_items 'time'
+    set -a fake_tide_right_prompt_items time
 
     _tide_option 2 '24-hour format'
     _tide_display_prompt fake_tide_time_format '%T'

@@ -1,5 +1,5 @@
 function icons
-    _tide_title 'Icons'
+    _tide_title Icons
 
     _tide_option 1 'Few icons'
     _tide_display_prompt
@@ -13,7 +13,7 @@ function icons
         case 1
             _disable_icons
     end
-    _next_choice 'all/finish'
+    _next_choice all/finish
 end
 
 function _enable_icons

@@ -1,5 +1,5 @@
 function _tide_item_vi_mode
-    test "$fish_key_bindings" != 'fish_default_key_bindings' && switch $fish_bind_mode
+    test "$fish_key_bindings" != fish_default_key_bindings && switch $fish_bind_mode
         case default
             set -g tide_vi_mode_bg_color $tide_vi_mode_default_bg_color
             set_color $tide_vi_mode_default_color

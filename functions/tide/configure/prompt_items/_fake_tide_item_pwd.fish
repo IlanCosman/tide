@@ -7,11 +7,11 @@ function _fake_tide_item_pwd
         set_color normal -b $fake_tide_pwd_bg_color
 
         set_color $fake_tide_pwd_color_dirs
-        printf '%s' '/'
+        printf '%s' /
         set_color normal -b $fake_tide_pwd_bg_color
 
         set_color -o $fake_tide_pwd_color_anchors
-        printf '%s' 'src'
+        printf '%s' src
         set_color normal -b $fake_tide_pwd_bg_color
     else
         set_color $fake_tide_pwd_color_dirs

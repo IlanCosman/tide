@@ -1,22 +1,22 @@
 function powerline_prompt_heads
     _tide_title 'Prompt Heads'
 
-    _tide_option 1 'Sharp'
+    _tide_option 1 Sharp
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
     _tide_display_prompt
 
-    _tide_option 2 'Blurred'
+    _tide_option 2 Blurred
     set -g fake_tide_left_prompt_suffix '▓▒░'
     set -g fake_tide_right_prompt_prefix '░▒▓'
     _tide_display_prompt
 
-    _tide_option 3 'Slanted'
+    _tide_option 3 Slanted
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
     _tide_display_prompt
 
-    _tide_option 4 'Round'
+    _tide_option 4 Round
     set -g fake_tide_left_prompt_suffix ''
     set -g fake_tide_right_prompt_prefix ''
     _tide_display_prompt
@@ -36,5 +36,5 @@ function powerline_prompt_heads
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
     end
-    _next_choice 'powerline/powerline_prompt_tails'
+    _next_choice powerline/powerline_prompt_tails
 end

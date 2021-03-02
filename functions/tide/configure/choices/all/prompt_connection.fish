@@ -1,13 +1,13 @@
 function prompt_connection
     _tide_title 'Prompt Connection'
 
-    _tide_option 1 'Disconnected'
+    _tide_option 1 Disconnected
     _tide_display_prompt fake_tide_prompt_connection_icon ''
 
-    _tide_option 2 'Dotted'
+    _tide_option 2 Dotted
     _tide_display_prompt fake_tide_prompt_connection_icon '·'
 
-    _tide_option 3 'Solid'
+    _tide_option 3 Solid
     _tide_display_prompt fake_tide_prompt_connection_icon '─'
 
     _tide_menu
@@ -21,8 +21,8 @@ function prompt_connection
     end
     switch $_tide_configure_style
         case lean
-            _next_choice 'all/prompt_connection_andor_frame_color'
+            _next_choice all/prompt_connection_andor_frame_color
         case classic rainbow
-            _next_choice 'powerline/powerline_prompt_frame'
+            _next_choice powerline/powerline_prompt_frame
     end
 end

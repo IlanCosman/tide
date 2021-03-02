@@ -3,7 +3,7 @@ function _fake_tide_right_prompt
     set -l rightPromptHeight (count $splitText)
     set -l leftPromptHeight (math 1+(string match --all 'newline' $fake_tide_left_prompt_items | count))
 
-    if test "$fake_tide_right_prompt_frame_enabled" = 'true'
+    if test "$fake_tide_right_prompt_frame_enabled" = true
         set -l frameColor (set_color $fake_tide_right_prompt_frame_color -b normal || echo)
 
         set splitText[1] $splitText[1]$frameColor'─╮'
@@ -29,7 +29,7 @@ function _fake_tide_fetch_right_prompt_items
     set_color normal
 
     for item in $fake_tide_right_prompt_items
-        if test "$item" = 'newline'
+        if test "$item" = newline
             set_color $previousColor -b normal
             printf '%s' $fake_tide_right_prompt_suffix\n
             set lastItemWasNewline
@@ -55,7 +55,7 @@ function _fake_tide_fetch_right_prompt_items
 
                 set_color -b $color
 
-                if test "$fake_tide_right_prompt_pad_items" = 'true'
+                if test "$fake_tide_right_prompt_pad_items" = true
                     printf '%s' " $output "
                 else
                     printf '%s' "$output"

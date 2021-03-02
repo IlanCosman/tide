@@ -20,9 +20,9 @@ _pwd ~/unwritable/dir # CHECK:  ~/unwritable/dir
 
 set -lx tide_pwd_unwritable_icon
 
-_pwd '/' # CHECK: /
-_pwd '/usr' # CHECK: /usr
-_pwd '/usr/share' # CHECK: /usr/share
+_pwd / # CHECK: /
+_pwd /usr # CHECK: /usr
+_pwd /usr/share # CHECK: /usr/share
 
 # Normal directories
 

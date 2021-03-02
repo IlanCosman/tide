@@ -16,11 +16,11 @@ function prompt_colors
             set -e _tide_16color
             switch $_tide_configure_style
                 case lean rainbow
-                    _next_choice 'all/show_time'
+                    _next_choice all/show_time
                 case classic
-                    _next_choice 'classic/classic_prompt_color'
+                    _next_choice classic/classic_prompt_color
             end
         case 2
-            _next_choice 'all/show_time'
+            _next_choice all/show_time
     end
 end

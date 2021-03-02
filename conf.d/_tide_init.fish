@@ -20,7 +20,7 @@ function _tide_init_install --on-event _tide_init_install
 
     source $_tide_root/functions/tide/configure/choices/all/style.fish
     source $_tide_root/functions/tide/configure/choices/all/finish.fish
-    _load_config 'lean'
+    _load_config lean
     _tide_finish
     set -a _tide_var_list (set --names | string match --regex "^tide.*")
 

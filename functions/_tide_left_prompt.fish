@@ -2,7 +2,7 @@ function _tide_left_prompt
     set lastItemWasNewline
 
     for item in $tide_left_prompt_items
-        if test "$item" = 'newline'
+        if test "$item" = newline
             set_color $previousColor -b normal
             printf '%s' $tide_left_prompt_suffix\n
             set lastItemWasNewline
@@ -14,7 +14,7 @@ function _tide_left_prompt
                 set -l color $$colorName
 
                 if set -e lastItemWasNewline
-                    if test "$tide_left_prompt_frame_enabled" = 'true'
+                    if test "$tide_left_prompt_frame_enabled" = true
                         set_color $tide_left_prompt_frame_color -b normal
                         if set -q alreadyOneNewline
                             printf '%s' '╰─'
@@ -23,7 +23,7 @@ function _tide_left_prompt
                         end
                     end
 
-                    if test "$item" != 'prompt_char'
+                    if test "$item" != prompt_char
                         set_color $color -b normal
                         printf '%s' $tide_left_prompt_prefix
                     end
@@ -37,7 +37,7 @@ function _tide_left_prompt
 
                 set_color -b $color
 
-                if test "$tide_left_prompt_pad_items" = 'true' -a "$item" != 'prompt_char'
+                if test "$tide_left_prompt_pad_items" = true -a "$item" != prompt_char
                     printf '%s' " $output "
                 else
                     printf '%s' "$output"
@@ -45,12 +45,12 @@ function _tide_left_prompt
 
                 set previousColor $color
 
-                test "$item" = 'prompt_char' && set lastItemWasPromptChar
+                test "$item" = prompt_char && set lastItemWasPromptChar
             end
         end
     end
 
-    if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = 'true'
+    if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = true
         set_color $tide_left_prompt_frame_color -b normal
         printf '%s' '╰─'
     else if not set -q lastItemWasPromptChar

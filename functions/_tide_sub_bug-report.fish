@@ -1,5 +1,5 @@
 function _tide_sub_bug-report
-    argparse 'c/clean' 'v/verbose' -- $argv
+    argparse c/clean v/verbose -- $argv
 
     if set -q _flag_clean
         HOME=(mktemp -d) fish --init-command "curl --silent \

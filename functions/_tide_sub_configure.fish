@@ -19,7 +19,7 @@ function _tide_sub_configure
     set -g fake_lines $LINES
 
     set -g _tide_selected_option
-    _next_choice 'all/style'
+    _next_choice all/style
 end
 
 function _next_choice -a nextChoice
@@ -60,7 +60,7 @@ function _tide_menu
         switch $input
             case r
                 set -e _tide_option_list
-                _next_choice 'all/style'
+                _next_choice all/style
                 break
             case q
                 set -e _tide_selected_option # Skip through all the _next_choices

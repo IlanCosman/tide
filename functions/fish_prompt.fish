@@ -44,4 +44,3 @@ function __tide_on_fish_exit --on-event fish_exit
     set -e _tide_left_prompt_display_$fish_pid
     set -e _tide_right_prompt_display_$fish_pid
 end
-

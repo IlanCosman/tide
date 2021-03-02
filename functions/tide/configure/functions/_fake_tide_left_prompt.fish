@@ -2,7 +2,7 @@ function _fake_tide_left_prompt
     set lastItemWasNewline
 
     for item in $fake_tide_left_prompt_items
-        if test "$item" = 'newline'
+        if test "$item" = newline
             set_color $previousColor -b normal
             printf '%s' $fake_tide_left_prompt_suffix\n
             set lastItemWasNewline
@@ -15,7 +15,7 @@ function _fake_tide_left_prompt
                 test -n "$color" || set color normal
 
                 if set -e lastItemWasNewline
-                    if test "$fake_tide_left_prompt_frame_enabled" = 'true'
+                    if test "$fake_tide_left_prompt_frame_enabled" = true
                         set_color $fake_tide_left_prompt_frame_color -b normal
                         if set -q alreadyOneNewline
                             printf '%s' '╰─'
@@ -24,7 +24,7 @@ function _fake_tide_left_prompt
                         end
                     end
 
-                    if test "$item" != 'prompt_char'
+                    if test "$item" != prompt_char
                         set_color $color -b normal
                         printf '%s' $fake_tide_left_prompt_prefix
                     end
@@ -40,7 +40,7 @@ function _fake_tide_left_prompt
 
                 set_color -b $color
 
-                if test "$fake_tide_left_prompt_pad_items" = 'true' -a "$item" != 'prompt_char'
+                if test "$fake_tide_left_prompt_pad_items" = true -a "$item" != prompt_char
                     printf '%s' " $output "
                 else
                     printf '%s' "$output"
@@ -48,12 +48,12 @@ function _fake_tide_left_prompt
 
                 set previousColor $color
 
-                test "$item" = 'prompt_char' && set lastItemWasPromptChar
+                test "$item" = prompt_char && set lastItemWasPromptChar
             end
         end
     end
 
-    if set -q lastItemWasNewline && test "$fake_tide_left_prompt_frame_enabled" = 'true'
+    if set -q lastItemWasNewline && test "$fake_tide_left_prompt_frame_enabled" = true
         set_color $fake_tide_left_prompt_frame_color -b normal
         printf '%s' '╰─'
     else if not set -q lastItemWasPromptChar
