@@ -32,7 +32,7 @@
 
 ### System Requirements
 
-- [Fish][] ≥ 3.2 <sup><sub>[Using an older version of Fish?][]</sub></sup>
+- [Fish][] ≥ 3.2.0 - [Using an older version of Fish?][]
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
 Install with [Fisher][]:
