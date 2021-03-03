@@ -32,7 +32,7 @@
 
 ### System Requirements
 
-- [Fish][] ≥ 3.1
+- [Fish][] ≥ 3.2 <sup><sub>[Using an older version of Fish?][]</sub></sup>
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
 Install with [Fisher][]:
@@ -151,7 +151,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: ../assets/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
-[fish_version_badge]: https://img.shields.io/badge/fish-3.1.0%2B-blue
+[fish_version_badge]: https://img.shields.io/badge/fish-3.2.0%2B-blue
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
@@ -165,4 +165,5 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [pwd]: ../assets/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
+[using an older version of fish?]: https://github.com/IlanCosman/tide/wiki/Fish-version-compatibility
 [wiki]: https://github.com/IlanCosman/tide/wiki
