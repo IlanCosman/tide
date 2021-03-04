@@ -1,5 +1,31 @@
 # Changelog
 
+## [v4.2.0][] (Mar 04 2021)
+
+### Features
+
+- Add PHP item ([#91][])
+- Add chruby item ([#100][])
+
+### Bug fixes
+
+- Load fish_prompt only if session is interactive ([#107][] - @chvolkmann)
+- Make virtual_env item smarter in avoiding generic names ([#97][])
+
+### Internal
+
+- Updated code for Fish 3.2.0
+- Refactor printing logic, much faster now ([#111][])
+- Use builtin `disown` instead of function, small speed increase
+- Don't even create `fish_mode_prompt` function, tiny speed improvement
+
+### CI/Testing
+
+- Add syntax checking for Fish
+- Add format checking for Fish
+- Add PHP item tests
+- Add chruby item tests
+
 ## [v4.1.1][] (Feb 22 2021)
 
 ### Deprecations/Warnings
@@ -244,7 +270,12 @@
 [#77]: https://github.com/IlanCosman/tide/issues/77
 [#79]: https://github.com/IlanCosman/tide/issues/79
 [#88]: https://github.com/IlanCosman/tide/issues/88
+[#91]: https://github.com/IlanCosman/tide/issues/91
 [#96]: https://github.com/IlanCosman/tide/issues/96
+[#97]: https://github.com/IlanCosman/tide/issues/97
+[#100]: https://github.com/IlanCosman/tide/issues/100
+[#107]: https://github.com/IlanCosman/tide/issues/107
+[#111]: https://github.com/IlanCosman/tide/issues/111
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
