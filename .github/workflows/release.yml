@@ -16,14 +16,14 @@ jobs:
       # Remove first five lines
       # Print until we hit a ## header
       # Remove last two lines
-      # Replace ([#79][]) with (#79)
+      # Replace [#79][] with #79
       # Output to /tmp/github_release.md
       - name: Generate release notes
         run: >
           tail --lines=+5 $GITHUB_WORKSPACE/CHANGELOG.md |
           sed '/^## /q' |
           head --lines=-2 |
-          sed -E 's/\(\[(#[0-9]*)\]\[\]\)/(\1)/g'
+          sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
       - uses: actions/create-release@v1
