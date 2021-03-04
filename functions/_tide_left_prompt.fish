@@ -6,7 +6,6 @@ function _tide_left_prompt
             set_color $previousColor -b normal
             printf '%s' $tide_left_prompt_suffix\n
             set lastItemWasNewline
-            set alreadyOneNewline
         else
             set -l output (_tide_item_$item)
             if test -n "$output"
@@ -14,15 +13,6 @@ function _tide_left_prompt
                 set -l color $$colorName
 
                 if set -e lastItemWasNewline
-                    if test "$tide_left_prompt_frame_enabled" = true
-                        set_color $tide_left_prompt_frame_color -b normal
-                        if set -q alreadyOneNewline
-                            printf '%s' '╰─'
-                        else
-                            printf '%s' '╭─'
-                        end
-                    end
-
                     if test "$item" != prompt_char
                         set_color $color -b normal
                         printf '%s' $tide_left_prompt_prefix
@@ -50,11 +40,10 @@ function _tide_left_prompt
         end
     end
 
-    if set -q lastItemWasNewline && test "$tide_left_prompt_frame_enabled" = true
-        set_color $tide_left_prompt_frame_color -b normal
-        printf '%s' '╰─'
-    else if not set -q lastItemWasPromptChar
+    if not set -q lastItemWasNewline && not set -q lastItemWasPromptChar
         set_color $previousColor -b normal
         printf '%s' $tide_left_prompt_suffix
     end
+
+    set_color normal
 end
