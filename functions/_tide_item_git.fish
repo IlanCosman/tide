@@ -1,6 +1,6 @@
 function _tide_item_git
     # Branch or SHA
-    set -l branch (git branch --show-current 2>/dev/null) || return
+    set -l branch (git rev-parse --abbrev-ref 2>/dev/null) || return
     # --quiet ensures that it won't complain if there are no commits
     git rev-parse --quiet \
         --is-inside-work-tree \
