@@ -10,7 +10,7 @@ function _tide_item_git
     set -l location
     if test "$isInsideWorkTree" = false
         set location GIT_DIR!
-    else if test -n "$branch"
+    else if test "$branch" != HEAD
         set location $branch
     else
         set location $sha…
