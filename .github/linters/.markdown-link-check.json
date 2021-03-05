@@ -1,0 +1,8 @@
+{
+  "replacementPatterns": [
+    {
+      "pattern": "^../assets/",
+      "replacement": "https://github.com/IlanCosman/tide/blob/assets/"
+    }
+  ]
+}

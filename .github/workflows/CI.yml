@@ -69,3 +69,4 @@ jobs:
       - uses: nvuillam/mega-linter/flavors/documentation@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISABLE_LINTERS: SPELL_CSPELL

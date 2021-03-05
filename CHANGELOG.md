@@ -68,7 +68,7 @@
 - Add native git solution; 15 to 50% faster than `fish_git_prompt`.
   The `git_prompt` item has been renamed to `git`. ([#75][])
 - Remove Pure style, redundant now that Tide is async ([#77][])
-- Add 16 color option. Lets users customize Tide's colors through the terminal pallete,
+- Add 16 color option. Lets users customize Tide's colors through the terminal palette,
   which was one of the attractions of Pure style. ([#79][])
 
 ### Bug fixes
@@ -84,7 +84,7 @@
 
 - The menu code is significantly shorter
 - A bunch of other small improvements, mostly because we removed `fish_git_prompt`
-- Moved the resources directory into a seperate repo,
+- Moved the resources directory into a separate repo,
   makes installing/updating Tide much faster.
 
 ## [v3.2.0][] (Jan 12 2021)
