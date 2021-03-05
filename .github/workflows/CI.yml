@@ -60,14 +60,12 @@ jobs:
         with:
           args: --check .
 
-  super-linter:
+  mega-linter:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: github/super-linter@v3
+      - uses: nvuillam/mega-linter/flavors/documentation@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_MD: true
-          VALIDATE_YAML: true
