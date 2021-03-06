@@ -3,7 +3,7 @@ function prompt_spacing
 
     _tide_option 1 Compact
     _tide_display_prompt
-    _tide_cursor_up 1
+    printf \e\[1A # Move cursor up 1 row
     _tide_display_prompt
 
     _tide_option 2 Sparse

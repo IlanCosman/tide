@@ -31,7 +31,7 @@ end
 function _tide_title -a text
     clear
 
-    _tide_cursor_right (math --scale=0 "$fake_columns/2" - (string length $text)/2)
+    string repeat --no-newline --count (math --scale=0 "$fake_columns/2" - (string length $text)/2) ' '
     set_color -o
     printf '%s\n' $text
     set_color normal
