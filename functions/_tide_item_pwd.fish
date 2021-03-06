@@ -20,7 +20,7 @@ function _tide_item_pwd
         set i (math $i + 1) # This keeps us from using seq
 
         # Returns true if any markers exist in splitPwd[$i], or if anchorDirs contains i
-        if test -z false (string split -m 2 " " -- "-o -e "$parentDir/$tide_pwd_markers) || contains $i $anchorDirs
+        if test -z false (string split -m 2 " " -- "-o -e "$parentDir/$splitPwd[$i]/$tide_pwd_markers) || contains $i $anchorDirs
             set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
         else if test (string join -- '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             while set -l truncationLength (math $truncationLength + 1) &&

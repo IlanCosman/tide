@@ -47,6 +47,6 @@ rm -r ~/alfa/bratwurst
 
 # Markers
 mkdir -p ~/alfa/.git
-_pwd "$longDir" # CHECK: ~/a/bravo/c/d/e/f/g/h/india/juliett/kilo/lima/mike/november/oscar/papa
+_pwd "$longDir" # CHECK: ~/alfa/b/c/d/e/f/g/h/india/juliett/kilo/lima/mike/november/oscar/papa
 
 rm -r ~/alfa
