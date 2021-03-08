@@ -6,7 +6,9 @@ function _tide_sub_bug-report
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
         source && fisher install ilancosman/tide"
     else if set -q _flag_verbose
-        set | string match --regex "^_?tide.*"
+        set --long | string match --regex "^_?tide.*" | # Get only tide variables
+            string match --regex --invert "^_tide_.*_prompt_display_.*" | # Remove _tide_left_prompt_display_5770 etc
+            string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
         fish --version
         tide --version
