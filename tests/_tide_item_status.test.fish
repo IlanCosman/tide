@@ -5,42 +5,11 @@ function _status
     _tide_decolor (_tide_item_status)
 end
 
-
-set -lx tide_status_success_icon
-set -lx tide_status_failure_icon
-
-true | false
-_status # CHECK: 0|1
-
-false | true
-_status # CHECK: 1|0
-
 set -lx tide_status_success_icon '✔'
 set -lx tide_status_failure_icon '✘'
 
-
-set -lx tide_status_always_display false
-
-true
-_status # CHECK:
-
-false
-_status # CHECK:
-
-true | false
-_status # CHECK: ✘ 0|1
-
-true | true
-_status # CHECK:
-
-false | true
-_status # CHECK: ✔ 1|0
-
-false | false
-_status # CHECK: ✘ 1|1
-
-
-set -lx tide_status_always_display true
+# Without prompt_char
+set -lx tide_left_prompt_items
 
 true
 _status # CHECK: ✔
@@ -53,6 +22,27 @@ _status # CHECK: ✘ 0|1
 
 true | true
 _status # CHECK: ✔
+
+false | true
+_status # CHECK: ✔ 1|0
+
+false | false
+_status # CHECK: ✘ 1|1
+
+# With prompt_char
+set -lx tide_left_prompt_items prompt_char
+
+true
+_status # CHECK:
+
+false
+_status # CHECK:
+
+true | false
+_status # CHECK: ✘ 0|1
+
+true | true
+_status # CHECK:
 
 false | true
 _status # CHECK: ✔ 1|0

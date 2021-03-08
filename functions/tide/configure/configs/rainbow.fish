@@ -73,7 +73,6 @@ tide_chruby_icon ''
 tide_rust_bg_color FF8700
 tide_rust_color 2E3436
 tide_rust_icon ''
-tide_status_always_display false
 tide_status_failure_bg_color CC0000
 tide_status_failure_color FFFF00
 tide_status_failure_icon '✘'
