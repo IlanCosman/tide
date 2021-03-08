@@ -8,18 +8,12 @@ set -l rustDir ~/rustTest
 mkdir -p $rustDir
 cd $rustDir
 
-mock rustc --version "echo rustc 1.30.0-beta"
-set -lx tide_rust_verbose_version true
+mock rustc --version "echo rustc 1.30.0"
 set -lx tide_rust_icon 
-
-touch blah.rs
-_rust # CHECK:  1.30.0-beta
-rm blah.rs
 
 _rust # CHECK:
 
 touch Cargo.toml
-set -lx tide_rust_verbose_version false
 _rust # CHECK:  1.30.0
 
 rm -r $rustDir

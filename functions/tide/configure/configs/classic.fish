@@ -73,7 +73,6 @@ tide_chruby_icon ''
 tide_rust_bg_color 444444
 tide_rust_color 00AFAF
 tide_rust_icon ''
-tide_rust_verbose_version true
 tide_status_always_display false
 tide_status_failure_bg_color 444444
 tide_status_failure_color D70000
