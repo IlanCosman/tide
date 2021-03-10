@@ -4,5 +4,6 @@
       "pattern": "^../assets/",
       "replacement": "https://github.com/IlanCosman/tide/blob/assets/"
     }
-  ]
+  ],
+  "retryOn429": true
 }
