@@ -23,14 +23,9 @@ function _tide_prompt
         printf '%s' $leftPrompt[1]
 
         set_color $tide_prompt_connection_color
-        set -l decoloredTextLength (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length)
         test -n "$tide_prompt_connection_icon" || set -l tide_prompt_connection_icon ' '
-
-        set -l totalLength (math $COLUMNS - $decoloredTextLength)
-        if test $totalLength -lt 0
-            set totalLength 0
-        end
-        string repeat --no-newline --max $totalLength $tide_prompt_connection_icon
+        set -l lengthToMove (math $COLUMNS - (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length))
+        test $lengthToMove -gt 0 && string repeat --no-newline --max $lengthToMove $tide_prompt_connection_icon
 
         printf '%s\n' $rightPrompt[1]
     end
