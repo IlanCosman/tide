@@ -30,10 +30,8 @@ end
 
 function _tide_title -a text
     clear
-
-    string repeat --no-newline --count (math --scale=0 "$fake_columns/2" - (string length $text)/2) ' '
     set_color -o
-    printf '%s\n' $text
+    string pad --width (math --scale=0 "$fake_columns/2" + (string length $text)/2) $text
     set_color normal
 end
 
