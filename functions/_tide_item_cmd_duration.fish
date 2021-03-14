@@ -8,11 +8,11 @@ function _tide_item_cmd_duration
 
         printf '%s' $tide_cmd_duration_icon' '
 
-        if test $hours -gt 0
+        if test $hours != 0
             printf '%s' $hours'h ' $minutes'm ' $seconds's'
-        else if test $minutes -gt 0
+        else if test $minutes != 0
             printf '%s' $minutes'm ' $seconds's'
-        else if test $seconds -gt 0
+        else if test $seconds != 0
             printf '%s' $seconds's'
         end
     end

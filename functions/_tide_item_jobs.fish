@@ -1,5 +1,5 @@
 function _tide_item_jobs
-    if test $_tide_jobs_number -gt 0
+    if test $_tide_jobs_number != 0
         set_color $tide_jobs_color
 
         if test "$tide_jobs_verbose" = true

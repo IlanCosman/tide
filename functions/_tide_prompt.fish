@@ -8,7 +8,7 @@ function _tide_prompt
     set -l leftPromptHeight (count $leftPrompt)
     set -l rightPrompt (_tide_right_prompt)
 
-    if test $leftPromptHeight -gt 1
+    if test $leftPromptHeight = 2
         if test "$tide_left_prompt_frame_enabled" = true
             set -l frameColor (set_color $tide_left_prompt_frame_color -b normal || echo)
             set leftPrompt[1] $frameColor╭─"$leftPrompt[1]"
