@@ -23,11 +23,11 @@ function fish_prompt
             set fish_bind_mode $fish_bind_mode
             set fish_term24bit $fish_term24bit
 
-            command kill $_tide_last_pid 2>/dev/null
             set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)" &
 
+        command kill $_tide_last_pid 2>/dev/null
         set -g _tide_last_pid (jobs --last --pid)
-        builtin disown $_tide_last_pid
+        builtin disown $_tide_last_pid 2>/dev/null
     end
 
     string unescape $$_tide_left_prompt_display_var
