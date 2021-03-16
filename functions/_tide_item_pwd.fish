@@ -14,19 +14,18 @@ function _tide_item_pwd
     set -l pwdMaxLength (math $COLUMNS -$tide_pwd_truncate_margin)
 
     set -l i 1
-    for unusedVariable in $splitPwd[2..-2]
+    for dirSection in $splitPwd[2..-2]
         set -l parentDir (string join -- '/' $splitPwd[1..$i] | string replace '~' $HOME) # Use i from before increment
 
         set i (math $i + 1) # This keeps us from using seq
 
-        # Returns true if any markers exist in splitPwd[$i]
-        if test -z false (string split --max 2 " " -- "-o -e "$parentDir/$splitPwd[$i]/$tide_pwd_markers)
-            set splitPwdForOutput[$i] $colorAnchors$splitPwd[$i]$keepBackgroundColor$colorDirs
+        # Returns true if any markers exist in dirSection
+        if test -z false (string split --max 2 " " -- "-o -e "$parentDir/$dirSection/$tide_pwd_markers)
+            set splitPwdForOutput[$i] $colorAnchors$dirSection$keepBackgroundColor$colorDirs
         else if test (string join -- '/' $splitPwdForLength | string length) -gt $pwdMaxLength
             while set -l truncationLength (math $truncationLength + 1) &&
-                    set -l truncated (string sub --length $truncationLength -- $splitPwd[$i]) &&
-                    test $truncated != $splitPwd[$i] &&
-                    test (count $parentDir/$truncated*/) -gt 1
+                    set -l truncated (string sub --length $truncationLength -- $dirSection) &&
+                    test $truncated != $dirSection -a (count $parentDir/$truncated*/) -gt 1
             end
 
             set splitPwdForLength[$i] $truncated
