@@ -30,6 +30,7 @@ function _tide_prompt
         printf '%s\n' $rightPrompt[1]
     end
 
-    set -U _tide_right_prompt_display_$_tide_fish_pid $rightPrompt[$leftPromptHeight]
-    printf '%s' $leftPrompt[-1]
+    set -l normal (set_color normal || echo) # Avoid coloring tab completion
+    set -U _tide_right_prompt_display_$_tide_fish_pid $rightPrompt[$leftPromptHeight]$normal
+    printf '%s' $leftPrompt[-1]$normal
 end

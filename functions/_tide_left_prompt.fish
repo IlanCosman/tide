@@ -42,6 +42,4 @@ function _tide_left_prompt
         set_color $previousColor -b normal
         printf '%s' $tide_left_prompt_suffix
     end
-
-    set_color normal
 end
