@@ -17,34 +17,14 @@ function finish
 end
 
 function _tide_finish
-    # Remove tool-specific items for tools the machine doesn't have installed
-    set -l generalItems cmd_duration context jobs os prompt_char pwd status time vi_mode
-    set -l toolSpecificItems (functions --all | string replace --filter --regex "^_tide_item_" '')
-    for item in $generalItems
-        _find_and_remove $item toolSpecificItems
-    end
-
-    for item in $toolSpecificItems
-        set -l cliName $item
-        switch $item
-            case virtual_env
-                set cliName python
-            case rust
-                set cliName rustc
-        end
-
-        if not type -q $cliName
-            _find_and_remove $item fake_tide_left_prompt_items
-            _find_and_remove $item fake_tide_right_prompt_items
-        end
-    end
+    _tide_remove_unusable_items --fake
 
     # Deal with prompt char/vi mode
     if contains prompt_char $fake_tide_left_prompt_items
-        _find_and_remove vi_mode fake_tide_right_prompt_items
+        _tide_find_and_remove vi_mode fake_tide_right_prompt_items
     else
         # If no prompt_char, insert vi_mode
-        _find_and_remove vi_mode fake_tide_right_prompt_items
+        _tide_find_and_remove vi_mode fake_tide_right_prompt_items
         if contains time $fake_tide_right_prompt_items
             set fake_tide_right_prompt_items $fake_tide_right_prompt_items[1..-2] vi_mode $fake_tide_right_prompt_items[-1]
         else

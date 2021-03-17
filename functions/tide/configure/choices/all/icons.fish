@@ -24,7 +24,7 @@ function _enable_icons
 end
 
 function _disable_icons
-    _find_and_remove os fake_tide_left_prompt_items
+    _tide_find_and_remove os fake_tide_left_prompt_items
     set fake_tide_pwd_dir_icon
     set fake_tide_pwd_home_icon
     set fake_tide_cmd_duration_icon
