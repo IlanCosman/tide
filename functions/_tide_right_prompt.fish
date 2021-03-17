@@ -40,4 +40,6 @@ function _tide_right_prompt
         set_color $previousColor -b normal
         printf '%s' $tide_right_prompt_suffix
     end
+
+    set_color normal # Make sure there is something printed on the last line
 end
