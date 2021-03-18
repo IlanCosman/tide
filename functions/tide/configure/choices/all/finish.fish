@@ -17,8 +17,6 @@ function finish
 end
 
 function _tide_finish
-    _tide_remove_unusable_items --fake
-
     # Deal with prompt char/vi mode
     if contains prompt_char $fake_tide_left_prompt_items
         _tide_find_and_remove vi_mode fake_tide_right_prompt_items
@@ -36,4 +34,6 @@ function _tide_finish
     for fakeVar in (set --names | string match --regex "^fake_tide.*")
         set -U (string replace 'fake_' '' $fakeVar) $$fakeVar
     end
+
+    _tide_remove_unusable_items
 end

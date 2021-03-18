@@ -1,6 +1,4 @@
 function _tide_remove_unusable_items
-    argparse f/fake -- $argv
-
     # Remove tool-specific items for tools the machine doesn't have installed
     for item in chruby git nvm php rust virtual_env
         set -l cliName $item
@@ -12,13 +10,8 @@ function _tide_remove_unusable_items
         end
 
         if not type -q $cliName
-            if set -q _flag_fake
-                _tide_find_and_remove $item fake_tide_left_prompt_items
-                _tide_find_and_remove $item fake_tide_right_prompt_items
-            else
-                _tide_find_and_remove $item tide_left_prompt_items
-                _tide_find_and_remove $item tide_right_prompt_items
-            end
+            _tide_find_and_remove $item tide_left_prompt_items
+            _tide_find_and_remove $item tide_right_prompt_items
         end
     end
 end
