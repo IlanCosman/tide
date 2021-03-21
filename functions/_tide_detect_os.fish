@@ -15,7 +15,8 @@ function _tide_detect_os
 end
 
 function _tide_detect_os_linux_cases -a file key
-    set -l splitFile (cat $file 2>/dev/null | string split '=') || return
+    test -e $file || return
+    set -l splitFile (string split '=' <$file)
     set -l keyIndex (contains --index $key $splitFile) || return
     set -l value $splitFile[(math $keyIndex + 1)]
 

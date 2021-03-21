@@ -29,5 +29,5 @@ function style
 end
 
 function _load_config -a name
-    printf '%s\n' "set -g fake_"(cat "$_tide_root/functions/tide/configure/configs/$name.fish") | source
+    string replace --regex '^' 'set -g fake_' <$_tide_root/functions/tide/configure/configs/$name.fish | source
 end

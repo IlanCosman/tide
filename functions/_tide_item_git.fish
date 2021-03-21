@@ -22,16 +22,16 @@ function _tide_item_git
     set -l totalSteps
 
     if test -d $gitDir/rebase-merge
-        set step (cat $gitDir/rebase-merge/msgnum 2>/dev/null)
-        set totalSteps (cat $gitDir/rebase-merge/end 2>/dev/null)
+        read step <$gitDir/rebase-merge/msgnum
+        read totalSteps <$gitDir/rebase-merge/end
         if test -f $gitDir/rebase-merge/interactive
             set operation rebase-i
         else
             set operation rebase-m
         end
     else if test -d $gitDir/rebase-apply
-        set step (cat $gitDir/rebase-apply/next 2>/dev/null)
-        set totalSteps (cat $gitDir/rebase-apply/last 2>/dev/null)
+        read step <$gitDir/rebase-apply/next
+        read totalSteps <$gitDir/rebase-apply/last
         if test -f $gitDir/rebase-apply/rebasing
             set operation rebase
         else if test -f $gitDir/rebase-apply/applying
