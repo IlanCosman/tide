@@ -1,5 +1,23 @@
 # Changelog
 
+## [v4.3.0][] (Mar 22 2021)
+
+### Features
+
+- Remove on startup items that the user doesn't have a required tool for
+- Always add a space after the prompt, even without `prompt_char` item ([#129][])
+
+### Bug fixes
+
+- Fix pwd markers which had been broken for a while
+- Don't error when the left prompt is too long ([#121][] - @mfossen)
+- Fix multi-line prompt when there are no items on the second line
+
+### CI/Testing
+
+- Use mega-linter instead of super-linter
+- Fix bug in release action
+
 ## [v4.2.0][] (Mar 04 2021)
 
 ### Features
@@ -276,6 +294,8 @@
 [#100]: https://github.com/IlanCosman/tide/issues/100
 [#107]: https://github.com/IlanCosman/tide/issues/107
 [#111]: https://github.com/IlanCosman/tide/issues/111
+[#121]: https://github.com/IlanCosman/tide/issues/121
+[#129]: https://github.com/IlanCosman/tide/issues/129
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -301,3 +321,4 @@
 [v4.1.0]: https://github.com/IlanCosman/tide/tree/v4.1.0
 [v4.1.1]: https://github.com/IlanCosman/tide/tree/v4.1.1
 [v4.2.0]: https://github.com/IlanCosman/tide/tree/v4.2.0
+[v4.3.0]: https://github.com/IlanCosman/tide/tree/v4.3.0
