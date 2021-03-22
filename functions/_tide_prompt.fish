@@ -30,6 +30,6 @@ function _tide_prompt
         printf '%s\n' $rightPrompt[1]
     end
 
-    set -U _tide_right_prompt_display_$_tide_fish_pid $rightPrompt[$leftPromptHeight]
+    set -U $_tide_right_prompt_display_var $rightPrompt[$leftPromptHeight]
     printf '%s' $leftPrompt[-1]' '
 end
