@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.3.1][] (Mar 24 2021)
+
+### Bug fixes
+
+- Fixed a bug where the commandline wouldn't highlight on startup ([#130][])
+
 ## [v4.3.0][] (Mar 22 2021)
 
 ### Features
@@ -296,6 +302,7 @@
 [#111]: https://github.com/IlanCosman/tide/issues/111
 [#121]: https://github.com/IlanCosman/tide/issues/121
 [#129]: https://github.com/IlanCosman/tide/issues/129
+[#130]: https://github.com/IlanCosman/tide/issues/130
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -322,3 +329,4 @@
 [v4.1.1]: https://github.com/IlanCosman/tide/tree/v4.1.1
 [v4.2.0]: https://github.com/IlanCosman/tide/tree/v4.2.0
 [v4.3.0]: https://github.com/IlanCosman/tide/tree/v4.3.0
+[v4.3.1]: https://github.com/IlanCosman/tide/tree/v4.3.1
