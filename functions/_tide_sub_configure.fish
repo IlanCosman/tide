@@ -80,7 +80,7 @@ function _tide_display_prompt -a var_name var_value
 end
 
 function _set_all_items_bg_color -a color
-    for var in (set --names | string match --regex "fake_.*_bg_color")
+    for var in (set --names | string match --regex "fake_.*_bg_color" | string match --invert --entire prompt_char)
         set $var $color
     end
 end
