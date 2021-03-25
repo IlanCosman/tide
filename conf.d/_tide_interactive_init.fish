@@ -18,7 +18,7 @@ function _tide_background_job --on-event fish_prompt --on-variable fish_bind_mod
         set -U $_tide_left_prompt_display_var (_tide_prompt)" &
 
     command kill $_tide_last_pid 2>/dev/null
-    set -g _tide_last_pid (jobs --last --pid)
+    set -g _tide_last_pid $last_pid
     builtin disown $_tide_last_pid 2>/dev/null
 end
 
