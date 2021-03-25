@@ -49,7 +49,7 @@ _git commit -am 'Append hello to foo'
 
 # SHA
 _git checkout HEAD~
-_git_item # CHECK: {{\w{8}…}}
+_git_item # CHECK: {{\w*}}
 
 # GIT_DIR!
 cd .git

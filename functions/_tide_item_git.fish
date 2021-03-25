@@ -2,10 +2,8 @@ function _tide_item_git
     # Branch or SHA
     set -l branch (git branch --show-current 2>/dev/null) || return
     # --quiet ensures that it won't complain if there are no commits
-    git rev-parse --quiet \
-        --is-inside-work-tree \
-        --git-dir \
-        --short=8 HEAD | read --local --line isInsideWorkTree gitDir sha
+    git rev-parse --quiet --is-inside-work-tree --git-dir --short HEAD |
+        read --local --line isInsideWorkTree gitDir sha
 
     set -l location
     if test "$isInsideWorkTree" = false
@@ -13,7 +11,7 @@ function _tide_item_git
     else if test -n "$branch"
         set location $branch
     else
-        set location $sha…
+        set location $sha
     end
 
     # Operation
