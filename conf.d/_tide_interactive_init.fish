@@ -16,10 +16,10 @@ function _tide_background_job --on-event fish_prompt --on-variable fish_bind_mod
         set fish_bind_mode $fish_bind_mode
         set fish_term24bit $fish_term24bit
         set -U $_tide_left_prompt_display_var (_tide_prompt)" &
+    builtin disown
 
     command kill $_tide_last_pid 2>/dev/null
     set -g _tide_last_pid $last_pid
-    builtin disown $_tide_last_pid 2>/dev/null
 end
 
 function _tide_refresh_prompt --on-variable $_tide_left_prompt_display_var --on-variable $_tide_right_prompt_display_var
