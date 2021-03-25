@@ -1,5 +1,7 @@
 status is-interactive || exit
 
+status job-control full # Remove in Fish 3.3.0, see https://github.com/fish-shell/fish-shell/issues/7842
+
 # Set things that wont change
 _tide_remove_unusable_items
 _tide_detect_os
