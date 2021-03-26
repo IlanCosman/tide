@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="../assets/images/logo.svg" width="61.8%"/>
+<img src="../assets/images/logo.svg" width="61.8%"/><br>
 
 [![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license] <!-- 0 width spaces on this line -->
 
