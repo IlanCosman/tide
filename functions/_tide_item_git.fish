@@ -62,8 +62,8 @@ function _tide_item_git
 
     if test "$isInsideWorkTree" = true
         set -l gitInfo (git status --porcelain)
-        set staged (string match --regex '^[ADMR] ' $gitInfo | count) || set -e staged
-        set dirty (string match --regex '^ [ADMR]' $gitInfo | count) || set -e dirty
+        set staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
+        set dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
         set untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
         set conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
         set stash (git stash list | count) || set -e stash
