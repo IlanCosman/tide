@@ -1,5 +1,13 @@
 # Changelog
 
+## [v4.3.2][] (Mar 26 2021)
+
+### Bug fixes
+
+- Fixed a bug where git staged/dirty counters wouldn't display
+- Use `$status` instead of `$pipestatus[-1]` to account for the `not` command.
+- Safer fix for the commandline not highlighting bug ([#130][])
+
 ## [v4.3.1][] (Mar 24 2021)
 
 ### Bug fixes
