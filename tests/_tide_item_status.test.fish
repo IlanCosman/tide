@@ -1,7 +1,8 @@
 # RUN: %fish %s
 
 function _status
-    set -g _tide_last_pipestatus $pipestatus
+    set -lx _tide_last_status $status
+    set -lx _tide_last_pipestatus $pipestatus
     _tide_decolor (_tide_item_status)
 end
 
@@ -49,3 +50,10 @@ _status # CHECK: ✔ 1|0
 
 false | false
 _status # CHECK: ✘ 1|1
+
+# Check that not command works
+not true | false
+_status # CHECK: ✔ 0|1
+
+not false | true
+_status # CHECK: ✘ 1|0
