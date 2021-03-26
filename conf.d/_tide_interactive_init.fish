@@ -1,7 +1,5 @@
 status is-interactive || exit
 
-status job-control full # Remove in Fish 3.3.0, see https://github.com/fish-shell/fish-shell/issues/7842
-
 # Set things that wont change
 _tide_remove_unusable_items
 _tide_detect_os
@@ -15,11 +13,13 @@ function _tide_background_job --on-event fish_prompt --on-variable fish_bind_mod
         set COLUMNS $COLUMNS
         set fish_bind_mode $fish_bind_mode
         set fish_term24bit $fish_term24bit
-        set -U $_tide_left_prompt_display_var (_tide_prompt)" &
+        set -U $_tide_left_prompt_display_var (_tide_prompt)" </dev/null &
+    # Remove </dev/null in Fish 3.3.0, see https://github.com/fish-shell/fish-shell/issues/7842
+
     builtin disown
 
     command kill $_tide_last_pid 2>/dev/null
-    set -g _tide_last_pid $last_pid
+    set -g _tide_last_pid (jobs --last --pid)
 end
 
 function _tide_refresh_prompt --on-variable $_tide_left_prompt_display_var --on-variable $_tide_right_prompt_display_var
