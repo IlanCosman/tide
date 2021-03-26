@@ -7,7 +7,7 @@ function _tide_item_status
                 printf '%s' $tide_status_failure_icon' ' 1
             end
         else
-            if test $_tide_last_pipestatus[-1] = 0
+            if test $_tide_last_status = 0
                 set -g tide_status_bg_color $tide_status_success_bg_color
                 set_color $tide_status_success_color
                 printf '%s' $tide_status_success_icon' '

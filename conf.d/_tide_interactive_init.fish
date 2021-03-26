@@ -10,7 +10,7 @@ set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 set -gx _tide_right_prompt_display_var _tide_right_prompt_display_$fish_pid
 
 function _tide_background_job --on-event fish_prompt --on-variable fish_bind_mode
-    _tide_last_pipestatus=$pipestatus _tide_jobs_number=(jobs --pid | count) fish --command "
+    _tide_last_status=$status _tide_last_pipestatus=$pipestatus _tide_jobs_number=(jobs --pid | count) fish --command "
         set CMD_DURATION $CMD_DURATION
         set COLUMNS $COLUMNS
         set fish_bind_mode $fish_bind_mode

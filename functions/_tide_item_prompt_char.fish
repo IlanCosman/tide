@@ -1,5 +1,5 @@
 function _tide_item_prompt_char
-    if test $_tide_last_pipestatus[-1] = 0
+    if test $_tide_last_status = 0
         set_color $tide_prompt_char_success_color
     else
         set_color $tide_prompt_char_failure_color
