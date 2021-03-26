@@ -16,6 +16,7 @@ If you have any questions that aren't addressed in this document, please don't h
 - Conditionals
   - For simple conditionals use `&&`/`||`
     - Ex: `test -n "$foo" && echo "foo is not empty"`
+    - Ex: `foo || bar || baz`
   - For anything more complex use `if`, `else`, and `else if`
 - Long forms of flags > short forms
   - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
@@ -57,7 +58,7 @@ python littlecheck.py ~/tide/tests/**
 
 Code linting is done via [`fish --no-execute`][].
 
-Markdown and Yaml linting is done via the [Super-Linter][] action, which uses [Markdownlint][] and [Yamllint][].
+Markdown and Yaml linting is done via the [Mega-Linter][] action.
 
 ## Formatting
 
@@ -84,8 +85,6 @@ Todo on release:
 [clownfish]: https://github.com/IlanCosman/clownfish
 [code of conduct]: CODE_OF_CONDUCT.md
 [littlecheck]: https://github.com/ridiculousfish/littlecheck
-[markdownlint]: https://github.com/DavidAnson/markdownlint
+[mega-linter]: https://github.com/nvuillam/mega-linter
 [prettier]: https://github.com/prettier/prettier
 [reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
-[super-linter]: https://github.com/github/super-linter
-[yamllint]: https://github.com/adrienverge/yamllint
