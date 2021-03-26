@@ -1,10 +1,6 @@
 <div align="center">
 
-<img
-   src="../assets/images/logo.svg"
-   alt="logo.svg"
-   width="61.8%"
-/>
+<img src="../assets/images/logo.svg" width="61.8%"/>
 
 [![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license] <!-- 0 width spaces on this line -->
 
@@ -12,12 +8,7 @@
 
 #
 
-<img
-   src="../assets/images/header.png"
-   alt="header.png"
-   width="50%"
-   align="right"
-/>
+<img src="../assets/images/header.png" width="50%" align="right"/>
 
 **The ultimate Fish prompt.**
 
@@ -51,12 +42,7 @@ Run `tide configure` to open the the wizard in your terminal.
 
 <br>
 
-<img
-   src="../assets/images/extensible.png"
-   alt="extensible.png"
-   width="61.8%"
-   align="right"
-/>
+<img src="../assets/images/extensible.png" width="61.8%" align="right"/>
 
 ### Extensible
 
@@ -64,12 +50,7 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 
 <br clear="right"><br>
 
-<img
-   src="../assets/images/flexible.png"
-   alt="flexible.png"
-   width="61.8%"
-   align="left"
-/>
+<img src="../assets/images/flexible.png" width="61.8%" align="left"/>
 
 ### Flexible
 
@@ -87,12 +68,7 @@ Asynchronous rendering also allows Tide to display more information than other p
 
 <br>
 
-<img
-   src="../assets/images/multi-line_right_prompt.png"
-   alt="multi-line_right_prompt.png"
-   width="61.8%"
-   align="left"
-/>
+<img src="../assets/images/multi-line_right_prompt.png" width="61.8%" align="left"/>
 
 ### Multi-Line Right Prompt
 
