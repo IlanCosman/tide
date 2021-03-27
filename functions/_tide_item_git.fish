@@ -1,18 +1,9 @@
 function _tide_item_git
     # Branch or SHA
     set -l branch (git branch --show-current 2>/dev/null) || return
-    # --quiet ensures that it won't complain if there are no commits
-    git rev-parse --quiet --is-inside-work-tree --git-dir --short HEAD |
-        read --local --line isInsideWorkTree gitDir sha
-
-    set -l location
-    if test "$isInsideWorkTree" = false
-        set location GIT_DIR!
-    else if test -n "$branch"
-        set location $branch
-    else
-        set location $sha
-    end
+    # --quiet=don't complain if there are no commits
+    git rev-parse --quiet --git-dir --short HEAD | read --local --line gitDir location
+    test -n "$branch" && set location $branch # location is SHA if branch is empty
 
     # Operation
     set -l operation
@@ -54,20 +45,12 @@ function _tide_item_git
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
     # Git status/stash
-    set -l staged
-    set -l dirty
-    set -l untracked
-    set -l conflicted
-    set -l stash
-
-    if test "$isInsideWorkTree" = true
-        set -l gitInfo (git status --porcelain)
-        set staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
-        set dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
-        set untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
-        set conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
-        set stash (git stash list | count) || set -e stash
-    end
+    set -l gitInfo (git -C $gitDir/.. status --porcelain)
+    set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
+    set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
+    set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
+    set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
+    set -l stash (git -C $gitDir/.. stash list | count) || set -e stash
 
     # Print the information
     printf '%s' \
