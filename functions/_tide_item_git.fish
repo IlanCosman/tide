@@ -46,20 +46,20 @@ function _tide_item_git
 
     # Git status/stash
     set -l gitInfo (git -C $gitDir/.. status --porcelain)
+    set -l stash (git -C $gitDir/.. stash list | count) || set -e stash
+    set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
-    set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
-    set -l stash (git -C $gitDir/.. stash list | count) || set -e stash
 
     # Print the information
     printf '%s' \
         (set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
         (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
+        (set_color $tide_git_stash_color) ' *'$stash \
         (set_color $tide_git_conflicted_color) ' ~'$conflicted \
         (set_color $tide_git_staged_color) ' +'$staged \
         (set_color $tide_git_dirty_color) ' !'$dirty \
-        (set_color $tide_git_untracked_color) ' ?'$untracked \
-        (set_color $tide_git_stash_color) ' *'$stash
+        (set_color $tide_git_untracked_color) ' ?'$untracked
 end
