@@ -16,10 +16,9 @@ function _tide_background_job --on-event fish_prompt --on-variable fish_bind_mod
         set -U $_tide_left_prompt_display_var (_tide_prompt)" </dev/null &
     # Remove </dev/null in Fish 3.3.0, see https://github.com/fish-shell/fish-shell/issues/7842
 
-    builtin disown
-
     command kill $_tide_last_pid 2>/dev/null
     set -g _tide_last_pid (jobs --last --pid) # Replace with $last_pid in Fish 3.3.0
+    builtin disown $_tide_last_pid 2>/dev/null
 end
 
 function _tide_refresh_prompt --on-variable $_tide_left_prompt_display_var --on-variable $_tide_right_prompt_display_var
