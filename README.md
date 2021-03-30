@@ -2,7 +2,7 @@
 
 <img src="../assets/images/logo.svg" width="61.8%"/><br>
 
-[![ci_badge][]][actions] ​ [![fish_version_badge][]](#System-Requirements) ​ [![license_badge][]][license] <!-- 0 width spaces on this line -->
+[![ci_badge][]][actions] ​ [![license_badge][]][license] ​ [![blazing_badge][]][blazing_tweet] <!-- 0 width spaces on this line -->
 
 </div>
 
@@ -23,7 +23,7 @@
 
 ### System Requirements
 
-- [Fish][] ≥ 3.2.0 - [Using an older version of Fish?][]
+- The **latest** version of [Fish][], currently 3.2.1. [Using an older version of Fish?][]
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
 Install with [Fisher][]:
@@ -124,10 +124,11 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [`items`]: https://github.com/IlanCosman/tide/wiki/Configuration#items
 [actions]: https://github.com/IlanCosman/tide/actions
 [async]: ../assets/animations/async.gif
+[blazing_badge]: https://img.shields.io/badge/speed-blazing%20%F0%9F%94%A5-red
+[blazing_tweet]: https://twitter.com/acdlite/status/974390255393505280
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
 [configuration_wizard]: ../assets/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
-[fish_version_badge]: https://img.shields.io/badge/fish-3.2.0%2B-blue
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
