@@ -7,7 +7,7 @@ function _tide_sub_bug-report
         source && fisher install ilancosman/tide"
     else if set -q _flag_verbose
         printf '%s\n' $TERM
-        
+
         set --long | string match --regex "^_?tide.*" | # Get only tide variables
             string match --regex --invert "^_tide_.*_prompt_display_.*" | # Remove _tide_left_prompt_display_5770 etc
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
@@ -26,7 +26,7 @@ function _tide_check_version -a programName repoName regexToGetVersion currentVe
         read --local --line __ latestVersion
 
     string match --quiet --regex "^$latestVersion" "$currentVersion" && return
-    
+
     set_color red
     printf '%s\n' \
         "Your $programName version is out of date." \
