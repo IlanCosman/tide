@@ -21,17 +21,24 @@ function _tide_sub_bug-report
 end
 
 function _tide_check_version -a programName repoName regexToGetVersion currentVersion
+    printf '%s' "Using latest version of $programName... "
+
     curl --silent https://github.com/$repoName/releases/latest |
         string match --regex ".*$repoName/releases/tag/$regexToGetVersion.*" |
         read --local --line __ latestVersion
 
-    string match --quiet --regex "^$latestVersion" "$currentVersion" && return
-
-    set_color red
-    printf '%s\n' \
-        "Your $programName version is out of date." \
-        "The latest is $latestVersion. You have $currentVersion." \
-        "Please update before submitting a bug report."
-    set_color normal
-    return 1
+    if string match --quiet --regex "^$latestVersion" "$currentVersion"
+        set_color brgreen
+        printf '%s\n' $tide_status_success_icon
+        set_color normal
+        return 0
+    else
+        set_color red
+        printf '%s\n' $tide_status_failure_icon \
+            "Your $programName version is out of date." \
+            "The latest is $latestVersion. You have $currentVersion." \
+            "Please update before submitting a bug report."
+        set_color normal
+        return 1
+    end
 end
