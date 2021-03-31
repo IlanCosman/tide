@@ -32,6 +32,18 @@ Install with [Fisher][]:
 fisher install IlanCosman/tide
 ```
 
+<details>
+  <summary>Install manually</summary>
+
+```fish
+# This may not work for all use cases.
+curl https://codeload.github.com/ilancosman/tide/tar.gz/HEAD | tar -xzC /tmp
+command cp -R /tmp/tide-HEAD/{completions,conf.d,functions} $__fish_config_dir
+exec fish --init-command "emit _tide_init_install"
+```
+
+</details>
+
 ## Features
 
 ### Configuration Wizard
