@@ -25,8 +25,7 @@ function _tide_init_install --on-event _tide_init_install
         case y ye yes ''
             tide configure
         case '*'
-            printf '%s' \n 'Run ' (set_color $fish_color_command) 'tide ' \
-                (set_color $fish_color_param) 'configure ' (set_color normal) 'to customize your prompt.' \n
+            printf '%s' \n 'Run ' (printf '%s' "tide configure" | fish_indent --ansi) ' to customize your prompt.' \n
     end
 end
 
