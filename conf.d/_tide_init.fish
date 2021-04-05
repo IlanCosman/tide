@@ -13,6 +13,7 @@ function _tide_init_install --on-event _tide_init_install
     _tide_set _tide_color_green 5FD700
     _tide_set _tide_color_light_blue 00AFFF
     _tide_set _tide_root (status dirname)/..
+    _tide_set _tide_os_icon (_tide_detect_os)
     _tide_set VIRTUAL_ENV_DISABLE_PROMPT true
 
     source $_tide_root/functions/tide/configure/choices/all/style.fish
