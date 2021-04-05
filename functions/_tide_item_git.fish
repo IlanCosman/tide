@@ -46,10 +46,10 @@ function _tide_item_git
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
     # Git status/stash
-    test "$isInsideGitDir" = true && set -l gitOptions "-C $gitDir/.."
+    test "$isInsideGitDir" = true && set -l gitSetDirOption "-C $gitDir/.."
 
-    set -l gitInfo (git $gitOptions status --porcelain)
-    set -l stash (git $gitOptions stash list | count) || set -e stash
+    set -l gitInfo (git $gitSetDirOption --no-optional-locks status --porcelain)
+    set -l stash (git $gitSetDirOption stash list | count) || set -e stash
     set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
