@@ -2,7 +2,8 @@ function _tide_item_git
     # Branch or SHA
     set -l branch (git branch --show-current 2>/dev/null) || return
     # --quiet=don't complain if there are no commits
-    git rev-parse --quiet --git-dir --short HEAD | read --local --line gitDir location
+    git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
+        read --local --line gitDir isInsideGitDir location
     test -n "$branch" && set location $branch # location is SHA if branch is empty
 
     # Operation
@@ -45,8 +46,10 @@ function _tide_item_git
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
     # Git status/stash
-    set -l gitInfo (git -C $gitDir/.. status --porcelain)
-    set -l stash (git -C $gitDir/.. stash list | count) || set -e stash
+    test "$isInsideGitDir" = true && set -l gitOptions "-C $gitDir/.."
+
+    set -l gitInfo (git $gitOptions status --porcelain)
+    set -l stash (git $gitOptions stash list | count) || set -e stash
     set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
