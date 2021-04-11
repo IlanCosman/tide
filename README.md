@@ -35,11 +35,12 @@ fisher install IlanCosman/tide
 <details>
   <summary>Install manually</summary>
 
+This script may not work for all use cases.
+
 ```fish
-# This may not work for all use cases.
-set -l tide_tmp_dir (command mktemp -d)
-curl https://codeload.github.com/ilancosman/tide/tar.gz/HEAD | tar -xzC $tide_tmp_dir
-command cp -R $tide_tmp_dir/tide-HEAD/{completions,conf.d,functions} $__fish_config_dir
+set -l _tide_tmp_dir (command mktemp -d)
+curl https://codeload.github.com/ilancosman/tide/tar.gz/HEAD | tar -xzC $_tide_tmp_dir
+command cp -R $_tide_tmp_dir/tide-HEAD/{completions,conf.d,functions} $__fish_config_dir
 exec fish --init-command "set -g fish_greeting; emit _tide_init_install"
 ```
 
