@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.3.3][] (Apr 11 2021)
+
+### Bug fixes
+
+- Git item now works correctly in `.git` directory and in submodules ([#138][])
+- Vi mode prompt char will display correct `$status` ([#126][])
+- `alt+arrow` directory switching will work as before ([#139][])
+- Avoid killing user's background jobs
+
 ## [v4.3.2][] (Mar 26 2021)
 
 ### Bug fixes
@@ -309,8 +318,11 @@
 [#107]: https://github.com/IlanCosman/tide/issues/107
 [#111]: https://github.com/IlanCosman/tide/issues/111
 [#121]: https://github.com/IlanCosman/tide/issues/121
+[#126]: https://github.com/IlanCosman/tide/issues/126
 [#129]: https://github.com/IlanCosman/tide/issues/129
 [#130]: https://github.com/IlanCosman/tide/issues/130
+[#138]: https://github.com/IlanCosman/tide/issues/138
+[#139]: https://github.com/IlanCosman/tide/issues/139
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -339,3 +351,4 @@
 [v4.3.0]: https://github.com/IlanCosman/tide/tree/v4.3.0
 [v4.3.1]: https://github.com/IlanCosman/tide/tree/v4.3.1
 [v4.3.2]: https://github.com/IlanCosman/tide/tree/v4.3.2
+[v4.3.2]: https://github.com/IlanCosman/tide/tree/v4.3.3
