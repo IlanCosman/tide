@@ -13,10 +13,17 @@ function _tide_sub_bug-report
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
         set -l currentFishVersion (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
-        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $currentFishVersion || return
+        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $currentFishVersion
 
         set -l currentTideVersion (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
-        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $currentTideVersion || return
+        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $currentTideVersion
+
+        # Check that omf is not installed
+        printf '%s' "Not using oh-my-fish... "
+        functions --query omf
+        _tide_check_condition \
+            "Tide does not work with oh-my-fish installed." \
+            "Please uninstall it before submitting a bug report."
     end
 end
 
@@ -27,18 +34,24 @@ function _tide_check_version -a programName repoName regexToGetVersion currentVe
         string match --regex ".*$repoName/releases/tag/$regexToGetVersion.*" |
         read --local --line __ latestVersion
 
-    if string match --quiet --regex "^$latestVersion" "$currentVersion"
+    string match --quiet --regex "^$latestVersion" "$currentVersion"
+    _tide_check_condition \
+        "Your $programName version is out of date." \
+        "The latest is $latestVersion. You have $currentVersion." \
+        "Please update before submitting a bug report."
+end
+
+function _tide_check_condition
+    set -l returnStatus $status
+
+    if test "$returnStatus" = 0
         set_color brgreen
         printf '%s\n' $tide_status_success_icon
-        set_color normal
-        return 0
     else
         set_color red
-        printf '%s\n' $tide_status_failure_icon \
-            "Your $programName version is out of date." \
-            "The latest is $latestVersion. You have $currentVersion." \
-            "Please update before submitting a bug report."
-        set_color normal
-        return 1
+        printf '%s\n' $tide_status_failure_icon $argv
     end
+
+    set_color normal
+    return $returnStatus
 end
