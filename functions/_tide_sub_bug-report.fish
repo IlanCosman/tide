@@ -6,30 +6,35 @@ function _tide_sub_bug-report
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
         source && fisher install ilancosman/tide"
     else if set -q _flag_verbose
-        printf '%s\n' $TERM
-
         set --long | string match --regex "^_?tide.*" | # Get only tide variables
             string match --regex --invert "^_tide_.*_prompt_display_.*" | # Remove _tide_left_prompt_display_5770 etc
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
-        set -l currentFishVersion (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
-        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $currentFishVersion
+        set -l fishVersion (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
+        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fishVersion || return
 
-        set -l currentTideVersion (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
-        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $currentTideVersion
+        set -l tideVersion (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
+        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tideVersion || return
 
         # Check that omf is not installed
-        printf '%s' "Not using oh-my-fish... "
-        functions --query omf
+        not functions --query omf
         _tide_check_condition \
             "Tide does not work with oh-my-fish installed." \
-            "Please uninstall it before submitting a bug report."
+            "Please uninstall it before submitting a bug report." || return
+
+        read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
+        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminalEmulator
+
+        printf '%b\n' "\nPlease copy the following information into the issue:\n" \
+            "fish version: $fishVersion" \
+            "tide version: $tideVersion" \
+            "term: $TERM" \
+            "os: $os" \
+            "terminal emulator: $terminalEmulator"
     end
 end
 
 function _tide_check_version -a programName repoName regexToGetVersion currentVersion
-    printf '%s' "Using latest version of $programName... "
-
     curl --silent https://github.com/$repoName/releases/latest |
         string match --regex ".*$repoName/releases/tag/$regexToGetVersion.*" |
         read --local --line __ latestVersion
@@ -42,16 +47,11 @@ function _tide_check_version -a programName repoName regexToGetVersion currentVe
 end
 
 function _tide_check_condition
-    set -l returnStatus $status
-
-    if test "$returnStatus" = 0
-        set_color brgreen
-        printf '%s\n' $tide_status_success_icon
-    else
+    if test "$status" != 0
         set_color red
-        printf '%s\n' $tide_status_failure_icon $argv
+        printf '%s\n' $argv
+        set_color normal
+        return 1
     end
-
-    set_color normal
-    return $returnStatus
+    return 0
 end
