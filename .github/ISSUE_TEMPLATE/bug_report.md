@@ -6,18 +6,14 @@ labels: "🐛 bug"
 assignees: ""
 ---
 
-<!-- -------------------------------------------------------------------
-Please run the following command before submitting: tide bug-report
--------------------------------------------------------------------- -->
-
 #### Describe the bug
 
 <!-- A clear and concise description of what the bug is. -->
 
 #### Steps to reproduce
 
-1. Set '....' to '....'
-2. Run '....'
+1. Set ... to ...
+2. Run ...
 3. See error
 
 #### Screenshots
@@ -26,8 +22,11 @@ Please run the following command before submitting: tide bug-report
 
 #### Environment
 
-- Operating system: <!-- e.g. Ubuntu 20.04 -->
-- Terminal emulator: <!-- e.g. Kitty, Alacritty, Hyper -->
+Output of `tide bug-report`: <!-- In the code block below -->
+
+```
+
+```
 
 #### Additional context
 
