@@ -46,7 +46,7 @@ function _tide_item_git
     test "$upstreamAhead" = 0 && set -e upstreamAhead
 
     # Git status/stash
-    test "$isInsideGitDir" = true && set -l gitSetDirOption "-C $gitDir/.."
+    test "$isInsideGitDir" = true && set -l gitSetDirOption -C $gitDir/..
 
     set -l gitInfo (git $gitSetDirOption --no-optional-locks status --porcelain)
     set -l stash (git $gitSetDirOption stash list | count) || set -e stash
