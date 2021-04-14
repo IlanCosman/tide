@@ -40,6 +40,7 @@ function _tide_item_git
     end
 
     # Upstream behind/ahead
+    # Suppress errors in case there is no upstream
     git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null |
         read --local --delimiter=\t upstreamBehind upstreamAhead
     test "$upstreamBehind" = 0 && set -e upstreamBehind
@@ -48,8 +49,9 @@ function _tide_item_git
     # Git status/stash
     test "$isInsideGitDir" = true && set -l gitSetDirOption -C $gitDir/..
 
-    set -l gitInfo (git $gitSetDirOption --no-optional-locks status --porcelain)
-    set -l stash (git $gitSetDirOption stash list | count) || set -e stash
+    # Suppress errors in case we are in a bare repo
+    set -l gitInfo (git $gitSetDirOption --no-optional-locks status --porcelain 2>/dev/null)
+    set -l stash (git $gitSetDirOption stash list 2>/dev/null | count) || set -e stash
     set -l conflicted (string match --regex '^UU' $gitInfo | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $gitInfo | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $gitInfo | count) || set -e dirty
