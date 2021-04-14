@@ -11,18 +11,24 @@ end
 # Create directory
 set -l dir ~/gitItemTest
 rm -rf $dir
-mkdir -p $dir
-cd $dir
+mkdir -p $dir/{normal-repo, bare-repo}
 
 # Not in git repo
+cd $dir
 _git_item # CHECK:
 
-# Create git repo and main branch
+# -------- normal repo tests --------
+cd ./normal-repo
 _git init
-_git checkout -b main
+_git branch -m main
 
 # Branch
 _git_item # CHECK: main
+
+# .git dir
+cd .git/
+_git_item # CHECK: main
+cd ..
 
 # Untracked
 touch foo
@@ -50,3 +56,9 @@ _git commit -am 'Append hello to foo'
 # SHA
 _git checkout HEAD~
 _git_item # CHECK: {{\w*}}
+
+# -------- bare repo test --------
+cd $dir/bare-repo
+_git init --bare
+_git branch -m main
+_git_item # CHECK: main
