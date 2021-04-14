@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.3.4][] (Apr 14 2021)
+
+- Git item now works correctly in bare git repositories ([#145][])
+- Git item now actually works in `.git` directory, and added tests to make sure
+- Made `tide bug-report` more powerful and also check for oh-my-fish on the user's machine
+
 ## [v4.3.3][] (Apr 11 2021)
 
 ### Bug fixes
@@ -323,6 +329,7 @@
 [#130]: https://github.com/IlanCosman/tide/issues/130
 [#138]: https://github.com/IlanCosman/tide/issues/138
 [#139]: https://github.com/IlanCosman/tide/issues/139
+[#145]: https://github.com/IlanCosman/tide/issues/145
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -352,3 +359,4 @@
 [v4.3.1]: https://github.com/IlanCosman/tide/tree/v4.3.1
 [v4.3.2]: https://github.com/IlanCosman/tide/tree/v4.3.2
 [v4.3.3]: https://github.com/IlanCosman/tide/tree/v4.3.3
+[v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
