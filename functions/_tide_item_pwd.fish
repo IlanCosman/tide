@@ -35,14 +35,15 @@ function _tide_item_pwd
 
     # All the actual printing
     if not test -w $PWD
-        printf '%s' $colorDirs $tide_pwd_unwritable_icon' '
+        set -g tide_pwd_icon $colorDirs$tide_pwd_unwritable_icon
     else if test $PWD = $HOME
-        printf '%s' $colorDirs $tide_pwd_home_icon' '
+        set -g tide_pwd_icon $colorDirs $tide_pwd_home_icon
     else
-        printf '%s' $colorDirs $tide_pwd_dir_icon' '
+        set -g tide_pwd_icon $colorDirs$tide_pwd_dir_icon
     end
 
-    test "$splitPwd[1]" = '~' || printf '%s' /
+    set -l blah $splitPwdForOutput
+    test "$splitPwd[1]" = '~' || set -p blah '/'
 
-    string join -- / $splitPwdForOutput
+    _tide_print_item pwd (string join -- / $blah)
 end

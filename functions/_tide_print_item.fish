@@ -20,7 +20,7 @@ function _tide_print_item -a item
     set_color $itemColor -b $itemBgColor
 
     test "$tide_left_prompt_pad_items" = true -a "$item" != prompt_char && set -l padItem ' '
-    itemIconName=tide_"$item"_icon printf '%s' $padItem $$itemIconName $argv[2..] $padItem
+    itemIconName=tide_"$item"_icon printf '%s' $padItem $$itemIconName' ' $argv[2..] $padItem
 
     set -g tide_previous_bg_color $itemBgColor
     set -g tide_last_item $item

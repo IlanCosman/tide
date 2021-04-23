@@ -58,7 +58,7 @@ function _tide_item_git
     set -l untracked (string match --regex '^\?\?' $gitInfo | count) || set -e untracked
 
     # Print the information
-    printf '%s' \
+    _tide_print_item git \
         (set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
         (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
