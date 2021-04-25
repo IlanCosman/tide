@@ -1,6 +1,6 @@
 function _tide_left_prompt
     set -g _tide_which_side_working_on left
-    
+
     for item in $tide_left_prompt_items
         if test "$item" = newline
             set_color $previousColor -b normal

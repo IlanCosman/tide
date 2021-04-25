@@ -5,8 +5,6 @@ function _tide_remove_unusable_items
         switch $item
             case virtual_env
                 set cliName python
-            case rust
-                set cliName rustc
         end
 
         if not type -q $cliName
