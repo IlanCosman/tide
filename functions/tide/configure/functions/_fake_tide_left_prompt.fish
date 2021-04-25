@@ -13,7 +13,7 @@ function _fake_tide_left_prompt
             set -l color $$colorName
 
             if test "$lastItem" = newline
-                if test "$item" != prompt_char
+                if test "$item" != character
                     set_color $color -b normal
                     printf '%s' $fake_tide_left_prompt_prefix
                 end
@@ -27,7 +27,7 @@ function _fake_tide_left_prompt
 
             set_color -b $color
 
-            if test "$fake_tide_left_prompt_pad_items" = true -a "$item" != prompt_char
+            if test "$fake_tide_left_prompt_pad_items" = true -a "$item" != character
                 printf '%s' " $output "
             else
                 printf '%s' "$output"
@@ -38,7 +38,7 @@ function _fake_tide_left_prompt
         set lastItem $item
     end
 
-    if test "$lastItem" != newline -a "$lastItem" != prompt_char
+    if test "$lastItem" != newline -a "$lastItem" != character
         set_color $previousColor -b normal
         printf '%s' $fake_tide_left_prompt_suffix
     end

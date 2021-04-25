@@ -11,7 +11,7 @@ function _tide_right_prompt
         end
     end
 
-    if test "$tide_last_item" != newline -a "$tide_last_item" != prompt_char
+    if test "$tide_last_item" != newline -a "$tide_last_item" != character
         set_color $tide_previous_bg_color -b normal
         printf '%s' $tide_right_prompt_suffix
     end

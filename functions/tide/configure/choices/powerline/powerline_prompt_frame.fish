@@ -4,7 +4,7 @@ function powerline_prompt_frame
     _tide_option 1 'No frame'
     set fake_tide_left_prompt_frame_enabled false
     set fake_tide_right_prompt_frame_enabled false
-    set -a fake_tide_left_prompt_items prompt_char
+    set -a fake_tide_left_prompt_items character
     _tide_display_prompt
     set -e fake_tide_left_prompt_items[-1]
 
@@ -16,7 +16,7 @@ function powerline_prompt_frame
     _tide_option 3 Right
     set fake_tide_left_prompt_frame_enabled false
     set fake_tide_right_prompt_frame_enabled true
-    set -a fake_tide_left_prompt_items prompt_char
+    set -a fake_tide_left_prompt_items character
     _tide_display_prompt
     set -e fake_tide_left_prompt_items[-1]
 
@@ -30,14 +30,14 @@ function powerline_prompt_frame
         case 1
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
-            set -a fake_tide_left_prompt_items prompt_char
+            set -a fake_tide_left_prompt_items character
         case 2
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled false
         case 3
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled true
-            set -a fake_tide_left_prompt_items prompt_char
+            set -a fake_tide_left_prompt_items character
         case 4
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true

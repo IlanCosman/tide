@@ -23,9 +23,9 @@ tide_os_bg_color white
 tide_os_color black
 tide_php_bg_color magenta
 tide_php_color black
-tide_prompt_char_bg_color normal
-tide_prompt_char_failure_color brred
-tide_prompt_char_success_color brgreen
+tide_character_bg_color normal
+tide_character_failure_color brred
+tide_character_success_color brgreen
 tide_prompt_connection_color brblack
 tide_pwd_bg_color blue
 tide_pwd_color_anchors brwhite

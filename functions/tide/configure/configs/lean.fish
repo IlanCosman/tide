@@ -25,7 +25,7 @@ tide_left_prompt_frame_enabled false
 tide_left_prompt_item_separator_diff_color ' '
 tide_left_prompt_item_separator_same_color ' '
 tide_left_prompt_item_separator_same_color_color 949494
-tide_left_prompt_items pwd git newline prompt_char
+tide_left_prompt_items pwd git newline character
 tide_left_prompt_pad_items false
 tide_left_prompt_prefix ''
 tide_left_prompt_suffix ' '
@@ -39,14 +39,14 @@ tide_php_bg_color normal
 tide_php_color 875FFF
 tide_php_icon ''
 tide_print_newline_before_prompt true
-tide_prompt_char_bg_color normal
-tide_prompt_char_failure_color FF0000
-tide_prompt_char_icon '❯'
-tide_prompt_char_success_color $_tide_color_green
-tide_prompt_char_vi_default_icon '❮'
-tide_prompt_char_vi_insert_icon '❯'
-tide_prompt_char_vi_replace_icon '▶'
-tide_prompt_char_vi_visual_icon V
+tide_character_bg_color normal
+tide_character_failure_color FF0000
+tide_character_icon '❯'
+tide_character_success_color $_tide_color_green
+tide_character_vi_default_icon '❮'
+tide_character_vi_insert_icon '❯'
+tide_character_vi_replace_icon '▶'
+tide_character_vi_visual_icon V
 tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ''
 tide_pwd_bg_color normal
