@@ -25,7 +25,7 @@ function _fake_tide_right_prompt
 
             set_color -b $color
 
-            if test "$fake_tide_right_prompt_pad_items" = true
+            if test "$fake_tide_prompt_pad_items" = true -a "$item" != character
                 printf '%s' " $output "
             else
                 printf '%s' "$output"

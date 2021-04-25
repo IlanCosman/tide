@@ -2,7 +2,7 @@ function _tide_prompt
     # Variables are exported as strings, convert _tide_last_pipestatus back into a list
     set -g _tide_last_pipestatus (string split ' ' $_tide_last_pipestatus)
 
-    test "$tide_print_newline_before_prompt" = true && printf '%b' '\n'
+    test "$tide_prompt_add_newline_before" = true && printf '%b' '\n'
 
     set -l leftPrompt (_tide_left_prompt)
     set -l leftPromptHeight (count $leftPrompt)

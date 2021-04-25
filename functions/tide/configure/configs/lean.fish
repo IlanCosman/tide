@@ -1,3 +1,15 @@
+
+tide_character_bg_color normal
+tide_character_failure_color FF0000
+tide_character_icon '❯'
+tide_character_success_color $_tide_color_green
+tide_character_vi_default_icon '❮'
+tide_character_vi_insert_icon '❯'
+tide_character_vi_replace_icon '▶'
+tide_character_vi_visual_icon V
+tide_chruby_bg_color normal
+tide_chruby_color CC342D
+tide_chruby_icon ''
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color 87875F
 tide_cmd_duration_decimals 0
@@ -26,7 +38,6 @@ tide_left_prompt_item_separator_diff_color ' '
 tide_left_prompt_item_separator_same_color ' '
 tide_left_prompt_item_separator_same_color_color 949494
 tide_left_prompt_items pwd git newline character
-tide_left_prompt_pad_items false
 tide_left_prompt_prefix ''
 tide_left_prompt_suffix ' '
 tide_nvm_bg_color normal
@@ -38,17 +49,10 @@ tide_os_color normal
 tide_php_bg_color normal
 tide_php_color 875FFF
 tide_php_icon ''
-tide_print_newline_before_prompt true
-tide_character_bg_color normal
-tide_character_failure_color FF0000
-tide_character_icon '❯'
-tide_character_success_color $_tide_color_green
-tide_character_vi_default_icon '❮'
-tide_character_vi_insert_icon '❯'
-tide_character_vi_replace_icon '▶'
-tide_character_vi_visual_icon V
+tide_prompt_add_newline_before true
 tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ''
+tide_prompt_pad_items false
 tide_pwd_bg_color normal
 tide_pwd_color_anchors $_tide_color_light_blue
 tide_pwd_color_dirs $_tide_color_dark_blue
@@ -64,12 +68,8 @@ tide_right_prompt_item_separator_diff_color ' '
 tide_right_prompt_item_separator_same_color ' '
 tide_right_prompt_item_separator_same_color_color 949494
 tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rust php chruby
-tide_right_prompt_pad_items false
 tide_right_prompt_prefix ' '
 tide_right_prompt_suffix ''
-tide_chruby_bg_color normal
-tide_chruby_color CC342D
-tide_chruby_icon ''
 tide_rust_bg_color normal
 tide_rust_color 00AFAF
 tide_rust_icon ''
