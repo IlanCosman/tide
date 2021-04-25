@@ -67,12 +67,12 @@ tide_right_prompt_frame_enabled false
 tide_right_prompt_item_separator_diff_color ' '
 tide_right_prompt_item_separator_same_color ' '
 tide_right_prompt_item_separator_same_color_color 949494
-tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rust php chruby
+tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rustcphp chruby
 tide_right_prompt_prefix ' '
 tide_right_prompt_suffix ''
-tide_rust_bg_color normal
-tide_rust_color 00AFAF
-tide_rust_icon ''
+tide_rustcbg_color normal
+tide_rustccolor 00AFAF
+tide_rustcicon ''
 tide_status_failure_bg_color normal
 tide_status_failure_color D70000
 tide_status_failure_icon '✘'

@@ -35,8 +35,8 @@ tide_right_prompt_frame_color brblack
 tide_right_prompt_item_separator_same_color_color brblack
 tide_chruby_bg_color normal
 tide_chruby_color red
-tide_rust_bg_color normal
-tide_rust_color cyan
+tide_rustcbg_color normal
+tide_rustccolor cyan
 tide_status_failure_bg_color normal
 tide_status_failure_color red
 tide_status_success_bg_color normal
