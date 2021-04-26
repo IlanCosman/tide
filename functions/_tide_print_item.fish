@@ -1,8 +1,8 @@
 set -g tide_last_item newline
 
 function _tide_print_item -a item
-    itemColorName=tide_"$item"_color set itemColor $$colorName
-    itemBgColorName=tide_"$item"_bg_color set itemBgColor $$itemBgColor
+    itemColorName=tide_"$item"_color set itemColor $$itemColorName
+    itemBgColorName=tide_"$item"_bg_color set itemBgColor $$itemBgColorName
 
     if test "$_tide_which_side_working_on" = left
         if test "$tide_last_item" = newline
