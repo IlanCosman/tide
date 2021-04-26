@@ -1,4 +1,5 @@
 function _tide_right_prompt
+    set -g tide_last_item newline
     set -g _tide_which_side_working_on right
 
     for item in $tide_right_prompt_items

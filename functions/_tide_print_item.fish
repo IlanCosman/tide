@@ -1,5 +1,3 @@
-set -g tide_last_item newline
-
 function _tide_print_item -a item
     itemColorName=tide_"$item"_color set itemColor $$itemColorName
     itemBgColorName=tide_"$item"_bg_color set itemBgColor $$itemBgColorName
@@ -7,7 +5,7 @@ function _tide_print_item -a item
     if test "$_tide_which_side_working_on" = left
         if test "$tide_last_item" = newline
             if test "$item" != character
-                set_color $itemBgColorName -b normal
+                set_color $itemBgColor -b normal
                 printf '%s' $tide_left_prompt_prefix
             end
         else if test "$itemBgColor" = "$tide_previous_bg_color"
@@ -20,14 +18,14 @@ function _tide_print_item -a item
     else
         if test "$tide_last_item" = newline
             if test "$item" != character
-                set_color $itemBgColorName -b normal
+                set_color $itemBgColor -b normal
                 printf '%s' $tide_right_prompt_prefix
             end
         else if test "$itemBgColor" = "$tide_previous_bg_color"
             set_color $tide_right_prompt_item_separator_same_color_color
             printf '%s' $tide_right_prompt_item_separator_same_color
         else
-            set_color $tide_previous_bg_color -b $itemBgColor
+            set_color $itemBgColor -b $tide_previous_bg_color
             printf '%s' $tide_right_prompt_item_separator_diff_color
         end
     end
