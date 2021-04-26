@@ -17,10 +17,8 @@ function _tide_print_item -a item
         end
     else
         if test "$tide_last_item" = newline
-            if test "$item" != character
-                set_color $itemBgColor -b normal
-                printf '%s' $tide_right_prompt_prefix
-            end
+            set_color $itemBgColor -b normal
+            printf '%s' $tide_right_prompt_prefix
         else if test "$itemBgColor" = "$tide_previous_bg_color"
             set_color $tide_right_prompt_item_separator_same_color_color
             printf '%s' $tide_right_prompt_item_separator_same_color
@@ -32,8 +30,11 @@ function _tide_print_item -a item
 
     set_color $itemColor -b $itemBgColor
 
-    test "$tide_prompt_pad_items" = true -a "$item" != character && set -l padItem ' '
-    itemIconName=tide_"$item"_icon printf '%s' $padItem $$itemIconName' ' $argv[2..] $padItem
+    if test "$tide_prompt_pad_items" = true -a "$item" != character
+        itemIconName=tide_"$item"_icon printf '%s' ' ' $$itemIconName' ' $argv[2..] ' '
+    else
+        itemIconName=tide_"$item"_icon printf '%s' $$itemIconName' ' $argv[2..]
+    end
 
     set -g tide_previous_bg_color $itemBgColor
     set -g tide_last_item $item
