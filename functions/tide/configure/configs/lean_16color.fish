@@ -4,6 +4,7 @@ tide_context_bg_color normal
 tide_context_default_color yellow
 tide_context_root_color bryellow
 tide_context_ssh_color yellow
+tide_elixir_color purple
 tide_git_bg_color normal
 tide_git_branch_color brgreen
 tide_git_conflicted_color brred

@@ -8,6 +8,8 @@ tide_context_bg_color 444444
 tide_context_default_color D7AF87
 tide_context_root_color $_tide_color_gold
 tide_context_ssh_color D7AF87
+tide_elixir_icon 
+tide_elixir_color 9370DB
 tide_git_bg_color 4E9A06
 tide_git_branch_color 000000
 tide_git_conflicted_color 000000
