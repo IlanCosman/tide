@@ -1,6 +1,6 @@
 function _tide_remove_unusable_items
     # Remove tool-specific items for tools the machine doesn't have installed
-    for item in chruby git nvm php rust virtual_env
+    for item in chruby git nvm php rust virtual_env elixir
         set -l cliName $item
         switch $item
             case virtual_env
