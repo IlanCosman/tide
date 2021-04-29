@@ -3,14 +3,7 @@ function _tide_right_prompt
     set -g _tide_which_side_working_on right
 
     for item in $tide_right_prompt_items
-        switch $item
-            case newline
-                set_color $tide_previous_bg_color -b normal
-                printf '%s' $tide_right_prompt_suffix\n
-                set -g tide_last_item newline
-            case '*'
-                _tide_item_$item
-        end
+        _tide_item_$item
     end
 
     if test "$tide_last_item" != newline
