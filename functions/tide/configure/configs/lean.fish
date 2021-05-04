@@ -51,7 +51,7 @@ tide_php_color 875FFF
 tide_php_icon ''
 tide_prompt_add_newline_before true
 tide_prompt_connection_color 6C6C6C
-tide_prompt_connection_icon ''
+tide_prompt_connection_icon ' '
 tide_prompt_pad_items false
 tide_pwd_bg_color normal
 tide_pwd_color_anchors $_tide_color_light_blue

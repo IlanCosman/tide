@@ -2,7 +2,7 @@ function _tide_prompt
     # Variables are exported as strings, convert _tide_last_pipestatus back into a list
     set -g _tide_last_pipestatus (string split ' ' $_tide_last_pipestatus)
 
-    test "$tide_prompt_add_newline_before" = true && printf '%b' '\n'
+    test "$tide_prompt_add_newline_before" = true && echo
 
     set -l leftPrompt (_tide_left_prompt)
     set -l leftPromptHeight (count $leftPrompt)
@@ -23,7 +23,6 @@ function _tide_prompt
         printf '%s' $leftPrompt[1]
 
         set_color $tide_prompt_connection_color
-        test -n "$tide_prompt_connection_icon" || set -l tide_prompt_connection_icon ' '
         set -l lengthToMove (math $COLUMNS - (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length))
         test $lengthToMove -gt 0 && string repeat --no-newline --max $lengthToMove $tide_prompt_connection_icon
 
@@ -42,7 +41,7 @@ function _tide_left_prompt
         _tide_item_$item
     end
 
-    if test "$tide_last_item" != newline -a "$tide_last_item" != character
+    if not contains -- $tide_last_item newline character
         set_color $tide_previous_bg_color -b normal
         printf '%s' $tide_left_prompt_suffix
     end

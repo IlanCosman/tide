@@ -1,5 +1,4 @@
 function _tide_print_item -a item
-    itemColorName=tide_"$item"_color set itemColor $$itemColorName
     itemBgColorName=tide_"$item"_bg_color set itemBgColor $$itemBgColorName
 
     if test "$_tide_which_side_working_on" = left
@@ -28,7 +27,7 @@ function _tide_print_item -a item
         end
     end
 
-    set_color $itemColor -b $itemBgColor
+    itemColorName=tide_"$item"_color set_color $$itemColorName -b $itemBgColor
 
     if test "$tide_prompt_pad_items" = true -a "$item" != character
         printf '%s' ' ' $argv[2..] ' '
