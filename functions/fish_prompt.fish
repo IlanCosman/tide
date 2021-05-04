@@ -9,8 +9,10 @@ set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
 set -gx _tide_right_prompt_display_var _tide_right_prompt_display_$fish_pid
 
 function _tide_refresh_prompt --on-variable $_tide_left_prompt_display_var --on-variable $_tide_right_prompt_display_var
-    set -g _tide_self_repainting # prevents us from creating a second background job
-    commandline --function repaint
+    if status is-interactive
+        set -g _tide_self_repainting # prevents us from creating a second background job
+        commandline --function repaint
+    end
 end
 
 function fish_prompt
