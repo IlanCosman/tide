@@ -5,11 +5,11 @@ function _tide_item_cmd_duration
         set -l hours (math --scale=0 "$CMD_DURATION/3600000")
 
         if test $hours != 0
-            _tide_print_item cmd_duration $hours'h ' $minutes'm ' $seconds's'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $hours'h ' $minutes'm ' $seconds's'
         else if test $minutes != 0
-            _tide_print_item cmd_duration $minutes'm ' $seconds's'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $minutes'm ' $seconds's'
         else if test $seconds != 0
-            _tide_print_item cmd_duration $seconds's'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $seconds's'
         end
     end
 end

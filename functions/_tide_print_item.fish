@@ -31,9 +31,9 @@ function _tide_print_item -a item
     set_color $itemColor -b $itemBgColor
 
     if test "$tide_prompt_pad_items" = true -a "$item" != character
-        itemIconName=tide_"$item"_icon printf '%s' ' ' $$itemIconName' ' $argv[2..] ' '
+        printf '%s' ' ' $argv[2..] ' '
     else
-        itemIconName=tide_"$item"_icon printf '%s' $$itemIconName' ' $argv[2..]
+        printf '%s' $argv[2..]
     end
 
     set -g tide_previous_bg_color $itemBgColor
