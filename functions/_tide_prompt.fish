@@ -5,10 +5,9 @@ function _tide_prompt
     test "$tide_prompt_add_newline_before" = true && echo
 
     set -l leftPrompt (_tide_left_prompt)
-    set -l leftPromptHeight (count $leftPrompt)
     set -l rightPrompt (_tide_right_prompt)
 
-    if test $leftPromptHeight = 2
+    if set -q leftPrompt[2] # If the prompt is two lines
         set -l promptAndFrameColor (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
 
         if test "$tide_left_prompt_frame_enabled" = true
@@ -25,11 +24,12 @@ function _tide_prompt
         set -l lengthToMove (math $COLUMNS - (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length))
         test $lengthToMove -gt 0 && string repeat --no-newline --max $lengthToMove $tide_prompt_connection_icon
 
-        printf '%s\n' $rightPrompt[1]
+        printf '%s' $rightPrompt[1] \n $leftPrompt[-1]' '
+        set -U $_tide_right_prompt_display_var $rightPrompt[2]
+    else
+        printf '%s' $leftPrompt[-1]' '
+        set -U $_tide_right_prompt_display_var $rightPrompt[1]
     end
-
-    set -U $_tide_right_prompt_display_var $rightPrompt[$leftPromptHeight]
-    printf '%s' $leftPrompt[-1]' '
 end
 
 function _tide_left_prompt
