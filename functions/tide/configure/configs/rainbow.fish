@@ -32,7 +32,6 @@ tide_git_upstream_color 000000
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
 tide_jobs_icon ''
-tide_left_prompt_frame_color 6C6C6C
 tide_left_prompt_frame_enabled true
 tide_left_prompt_item_separator_diff_color ''
 tide_left_prompt_item_separator_same_color ''
@@ -50,8 +49,8 @@ tide_php_bg_color 75507B
 tide_php_color 000000
 tide_php_icon ''
 tide_prompt_add_newline_before true
-tide_prompt_connection_color 6C6C6C
 tide_prompt_connection_icon ' '
+tide_prompt_frame_and_connection_color 6C6C6C
 tide_prompt_pad_items true
 tide_pwd_bg_color 3465A4
 tide_pwd_color_anchors E4E4E4
@@ -62,7 +61,6 @@ tide_pwd_home_icon
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_pwd_truncate_margin 10
 tide_pwd_unwritable_icon ''
-tide_right_prompt_frame_color 6C6C6C
 tide_right_prompt_frame_enabled true
 tide_right_prompt_item_separator_diff_color ''
 tide_right_prompt_item_separator_same_color ''

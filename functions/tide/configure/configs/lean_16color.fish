@@ -1,3 +1,8 @@
+tide_character_bg_color normal
+tide_character_failure_color brred
+tide_character_success_color brgreen
+tide_chruby_bg_color normal
+tide_chruby_color red
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color brblack
 tide_context_bg_color normal
@@ -15,7 +20,6 @@ tide_git_untracked_color brblue
 tide_git_upstream_color brgreen
 tide_jobs_bg_color normal
 tide_jobs_color green
-tide_left_prompt_frame_color brblack
 tide_left_prompt_item_separator_same_color_color brblack
 tide_nvm_bg_color normal
 tide_nvm_color cyan
@@ -23,18 +27,12 @@ tide_os_bg_color normal
 tide_os_color brwhite
 tide_php_bg_color normal
 tide_php_color brmagenta
-tide_character_bg_color normal
-tide_character_failure_color brred
-tide_character_success_color brgreen
-tide_prompt_connection_color brblack
+tide_prompt_frame_and_connection_color brblack
 tide_pwd_bg_color normal
 tide_pwd_color_anchors brcyan
 tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
-tide_right_prompt_frame_color brblack
 tide_right_prompt_item_separator_same_color_color brblack
-tide_chruby_bg_color normal
-tide_chruby_color red
 tide_rustc_bg_color normal
 tide_rustc_color cyan
 tide_status_failure_bg_color normal

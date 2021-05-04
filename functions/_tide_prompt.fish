@@ -9,20 +9,19 @@ function _tide_prompt
     set -l rightPrompt (_tide_right_prompt)
 
     if test $leftPromptHeight = 2
+        set -l promptAndFrameColor (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
+
         if test "$tide_left_prompt_frame_enabled" = true
-            set -l frameColor (set_color $tide_left_prompt_frame_color -b normal || echo)
-            set leftPrompt[1] $frameColor╭─"$leftPrompt[1]"
-            set leftPrompt[2] $frameColor╰─"$leftPrompt[2]"
+            set leftPrompt[1] $promptAndFrameColor╭─"$leftPrompt[1]"
+            set leftPrompt[2] $promptAndFrameColor╰─"$leftPrompt[2]"
         end
         if test "$tide_right_prompt_frame_enabled" = true
-            set -l frameColor (set_color $tide_right_prompt_frame_color -b normal || echo)
-            set rightPrompt[1] "$rightPrompt[1]"$frameColor─╮
-            set rightPrompt[2] "$rightPrompt[2]"$frameColor─╯
+            set rightPrompt[1] "$rightPrompt[1]"$promptAndFrameColor─╮
+            set rightPrompt[2] "$rightPrompt[2]"$promptAndFrameColor─╯
         end
 
-        printf '%s' $leftPrompt[1]
+        printf '%s' $leftPrompt[1] $promptAndFrameColor
 
-        set_color $tide_prompt_connection_color
         set -l lengthToMove (math $COLUMNS - (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length))
         test $lengthToMove -gt 0 && string repeat --no-newline --max $lengthToMove $tide_prompt_connection_icon
 
