@@ -14,15 +14,9 @@ function _tide_refresh_prompt --on-variable $_tide_left_prompt_display_var --on-
 end
 
 function fish_prompt
-    set -lx _tide_last_status $status
-    set -lx _tide_last_pipestatus $pipestatus
-
-    if not set -e _tide_self_repainting
+    _tide_last_status=$status _tide_last_pipestatus=$pipestatus if not set -e _tide_self_repainting
         _tide_jobs_number=(jobs --pid | count) fish --command "
-            set -g CMD_DURATION $CMD_DURATION
-            set -g COLUMNS $COLUMNS
-            set -g fish_bind_mode $fish_bind_mode
-            set -g fish_term24bit $fish_term24bit
+            CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS fish_bind_mode=$fish_bind_mode fish_term24bit=$fish_term24bit \
             set -U $_tide_left_prompt_display_var (_tide_prompt)" &
 
         command kill $_tide_last_pid 2>/dev/null
