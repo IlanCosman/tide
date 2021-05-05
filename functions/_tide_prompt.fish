@@ -4,10 +4,7 @@ function _tide_prompt
 
     test "$tide_prompt_add_newline_before" = true && echo
 
-    set -l leftPrompt (_tide_left_prompt)
-    set -l rightPrompt (_tide_right_prompt)
-
-    if set -q leftPrompt[2] # If the prompt is two lines
+    leftPrompt=(_tide_left_prompt) rightPrompt=(_tide_right_prompt) if set -q leftPrompt[2] # If the prompt is two lines
         set -l promptAndFrameColor (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
 
         if test "$tide_left_prompt_frame_enabled" = true
