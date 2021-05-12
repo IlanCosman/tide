@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: fish-actions/install-fish@v1
+      - uses: fish-actions/install-fish@v1.1.0
 
       - uses: fish-actions/fisher@v1
         with:
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: fish-actions/install-fish@v1
+      - uses: fish-actions/install-fish@v1.1.0
 
       - uses: fish-actions/syntax-check@v1
 
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: fish-actions/install-fish@v1
+      - uses: fish-actions/install-fish@v1.1.0
 
       - uses: fish-actions/format-check@v1
 
