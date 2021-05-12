@@ -26,7 +26,7 @@ jobs:
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
-      - uses: actions/create-release@v1
+      - uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
