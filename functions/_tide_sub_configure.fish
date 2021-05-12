@@ -44,7 +44,7 @@ function _tide_option -a symbol text
 end
 
 function _tide_menu
-    set -l listWithSlashes (string join '/' $_tide_option_list)
+    set -l list_with_slashes (string join '/' $_tide_option_list)
 
     printf '%s\n' \
         '(r)  Restart from the beginning' \
@@ -52,7 +52,7 @@ function _tide_menu
 
     while true
         set_color -o
-        read --prompt-str "Choice [$listWithSlashes/r/q] " input
+        read --prompt-str "Choice [$list_with_slashes/r/q] " input
         set_color normal
 
         switch $input

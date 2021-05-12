@@ -25,11 +25,8 @@ If you have any questions that aren't addressed in this document, please don't h
 
 ### Naming Conventions
 
-Local variables should be named in `camelCase`.
-
-- `set -l numberOfNewlines`
-
-Anything exposed to the shell or user--functions, global/universal variables, and files--should be named in `snake_case`, beginning with `tide_`. Prepend an underscore if the user in not meant to interact directly with it.
+Everything (variables, files, functions) should be named in `snake_case`, beginning with `tide_`.
+Prepend an underscore if the user in not meant to interact directly with it.
 
 - `set -g _tide_left_prompt_height`
 - `set -U tide_right_prompt_items`

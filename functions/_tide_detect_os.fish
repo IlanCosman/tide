@@ -16,11 +16,11 @@ end
 
 function _tide_detect_os_linux_cases -a file key
     test -e $file || return
-    set -l splitFile (string split '=' <$file)
-    set -l keyIndex (contains --index $key $splitFile) || return
-    set -l value (string trim --chars='"' $splitFile[(math $keyIndex + 1)] | string lower)
+    set -l split_file (string split '=' <$file)
+    set -l key_index (contains --index $key $split_file) || return
+    set -l value (string trim --chars='"' $split_file[(math $key_index + 1)] | string lower)
 
-    set -l distroIcons \
+    set -l distro_icons \
         alpine  \
         aosc  \
         arch  \
@@ -42,6 +42,6 @@ function _tide_detect_os_linux_cases -a file key
         tumbleweed  \
         ubuntu 
 
-    set -l distroIndex (contains --index $value $distroIcons) || return
-    printf '%s' $distroIcons[(math $distroIndex + 1)]
+    set -l distro_index (contains --index $value $distro_icons) || return
+    printf '%s' $distro_icons[(math $distro_index + 1)]
 end

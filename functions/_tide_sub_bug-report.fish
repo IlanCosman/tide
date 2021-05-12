@@ -10,11 +10,11 @@ function _tide_sub_bug-report
             string match --regex --invert "^_tide_.*_prompt_display_.*" | # Remove _tide_left_prompt_display_5770 etc
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
-        set -l fishVersion (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
-        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fishVersion || return
+        set -l fish_version (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
+        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fish_version || return
 
-        set -l tideVersion (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
-        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tideVersion || return
+        set -l tide_version (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
+        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tide_version || return
 
         # Check that omf is not installed
         not functions --query omf
@@ -23,26 +23,26 @@ function _tide_sub_bug-report
             "Please uninstall it before submitting a bug report." || return
 
         read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
-        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminalEmulator
+        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
         printf '%b\n' "\nPlease copy the following information into the issue:\n" \
-            "fish version: $fishVersion" \
-            "tide version: $tideVersion" \
+            "fish version: $fish_version" \
+            "tide version: $tide_version" \
             "term: $TERM" \
             "os: $os" \
-            "terminal emulator: $terminalEmulator"
+            "terminal emulator: $terminal_emulator"
     end
 end
 
-function _tide_check_version -a programName repoName regexToGetVersion currentVersion
-    curl --silent https://github.com/$repoName/releases/latest |
-        string match --regex ".*$repoName/releases/tag/$regexToGetVersion.*" |
+function _tide_check_version -a program_name repo_name regex_to_get_version current_version
+    curl --silent https://github.com/$repo_name/releases/latest |
+        string match --regex ".*$repo_name/releases/tag/$regex_to_get_version.*" |
         read --local --line __ latestVersion
 
-    string match --quiet --regex "^$latestVersion" "$currentVersion"
+    string match --quiet --regex "^$latestVersion" "$current_version"
     _tide_check_condition \
-        "Your $programName version is out of date." \
-        "The latest is $latestVersion. You have $currentVersion." \
+        "Your $program_name version is out of date." \
+        "The latest is $latestVersion. You have $current_version." \
         "Please update before submitting a bug report."
 end
 

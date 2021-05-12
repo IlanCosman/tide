@@ -4,28 +4,28 @@ function _tide_prompt
 
     test "$tide_prompt_add_newline_before" = true && echo
 
-    leftPrompt=(_tide_left_prompt) rightPrompt=(_tide_right_prompt) if set -q leftPrompt[2] # If the prompt is two lines
-        set -l promptAndFrameColor (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
+    left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If the prompt is two lines
+        set -l prompt_and_frame_color (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
 
         if test "$tide_left_prompt_frame_enabled" = true
-            set leftPrompt[1] $promptAndFrameColor╭─"$leftPrompt[1]"
-            set leftPrompt[2] $promptAndFrameColor╰─"$leftPrompt[2]"
+            set left_prompt[1] $prompt_and_frame_color╭─"$left_prompt[1]"
+            set left_prompt[2] $prompt_and_frame_color╰─"$left_prompt[2]"
         end
         if test "$tide_right_prompt_frame_enabled" = true
-            set rightPrompt[1] "$rightPrompt[1]"$promptAndFrameColor─╮
-            set rightPrompt[2] "$rightPrompt[2]"$promptAndFrameColor─╯
+            set right_prompt[1] "$right_prompt[1]"$prompt_and_frame_color─╮
+            set right_prompt[2] "$right_prompt[2]"$prompt_and_frame_color─╯
         end
 
-        printf '%s' $leftPrompt[1] $promptAndFrameColor
+        printf '%s' $left_prompt[1] $prompt_and_frame_color
 
-        set -l lengthToMove (math $COLUMNS - (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length))
-        test $lengthToMove -gt 0 && string repeat --no-newline --max $lengthToMove $tide_prompt_connection_icon
+        set -l length_to_move (math $COLUMNS - (_tide_decolor "$left_prompt[1]""$right_prompt[1]" | string length))
+        test $length_to_move -gt 0 && string repeat --no-newline --max $length_to_move $tide_prompt_connection_icon
 
-        printf '%s' $rightPrompt[1] \n $leftPrompt[-1]' '
-        set -U $_tide_right_prompt_display_var $rightPrompt[2]
+        printf '%s' $right_prompt[1] \n $left_prompt[-1]' '
+        set -U $_tide_right_prompt_display_var $right_prompt[2]
     else
-        printf '%s' $leftPrompt[-1]' '
-        set -U $_tide_right_prompt_display_var $rightPrompt[1]
+        printf '%s' $left_prompt[-1]' '
+        set -U $_tide_right_prompt_display_var $right_prompt[1]
     end
 end
 
