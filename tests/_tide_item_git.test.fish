@@ -55,7 +55,7 @@ _git commit -am 'Append hello to foo'
 
 # SHA
 _git checkout HEAD~
-_git_item # CHECK: {{\w*}}
+_git_item # CHECK: {{@\w*}}
 
 # -------- bare repo test --------
 cd $dir/bare-repo

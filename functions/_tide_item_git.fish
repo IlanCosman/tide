@@ -6,7 +6,11 @@ function _tide_item_git
     # Default to branch, then tag, then sha
     if test -z "$location" # Default to branch
         set location (git tag --points-at HEAD)[1] # only get the first tag
-        test -z "$location" && set location $sha
+        set locationCharacter '#'
+        if test -z "$location"
+            set location $sha
+            set locationCharacter '@'
+        end
     end
 
     # Operation
@@ -62,7 +66,7 @@ function _tide_item_git
 
     # Print the information
     _tide_print_item git \
-        (set_color $tide_git_branch_color) $location \
+        $locationCharacter (set_color $tide_git_branch_color) $location \
         (set_color $tide_git_operation_color) ' '$operation ' '$step/$totalSteps \
         (set_color $tide_git_upstream_color) ' ⇣'$upstreamBehind ' ⇡'$upstreamAhead \
         (set_color $tide_git_stash_color) ' *'$stash \
