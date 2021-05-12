@@ -1,10 +1,13 @@
 function _tide_item_git
-    # Branch or SHA
-    set -l branch (git branch --show-current 2>/dev/null) || return
+    set -l location (git branch --show-current 2>/dev/null) || return
     # --quiet=don't complain if there are no commits
     git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
-        read --local --line gitDir isInsideGitDir location
-    test -n "$branch" && set location $branch # location is SHA if branch is empty
+        read --local --line gitDir isInsideGitDir sha
+    # Default to branch, then tag, then sha
+    if test -z "$location" # Default to branch
+        set location (git tag --points-at HEAD)[1] # only get the first tag
+        test -z "$location" && set location $sha
+    end
 
     # Operation
     set -l operation
