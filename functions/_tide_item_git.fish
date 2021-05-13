@@ -4,8 +4,8 @@ function _tide_item_git
     git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
         read --local --line git_dir is_inside_git_dir sha
     # Default to branch, then tag, then sha
-    if test -z "$location" # Default to branch
-        set location (git tag --points-at HEAD)[1] # only get the first tag
+    if test -z "$location"
+        set location (git tag --points-at HEAD)[1] # get the first tag
         set location_character '#'
         if test -z "$location"
             set location $sha
