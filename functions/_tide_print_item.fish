@@ -25,7 +25,7 @@ function _tide_print_item -a item
         printf '%s' $tide_right_prompt_item_separator_diff_color
     end
 
-    item_color_name=tide_"$item"_color set_color $$itemColorName -b $item_bg_color
+    item_color_name=tide_"$item"_color set_color $$item_color_name -b $item_bg_color
 
     if test "$tide_prompt_pad_items" = true -a "$item" != character
         printf '%s' ' ' $argv[2..] ' '
