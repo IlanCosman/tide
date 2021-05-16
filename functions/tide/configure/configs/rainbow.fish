@@ -1,4 +1,3 @@
-
 tide_character_bg_color normal
 tide_character_failure_color FF0000
 tide_character_icon '❯'
@@ -24,6 +23,7 @@ tide_git_bg_color 4E9A06
 tide_git_branch_color 000000
 tide_git_conflicted_color 000000
 tide_git_dirty_color 000000
+tide_git_icon
 tide_git_operation_color 000000
 tide_git_staged_color 000000
 tide_git_stash_color 000000

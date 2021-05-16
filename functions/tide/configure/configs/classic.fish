@@ -23,6 +23,7 @@ tide_git_bg_color 444444
 tide_git_branch_color $_tide_color_green
 tide_git_conflicted_color FF0000
 tide_git_dirty_color $_tide_color_gold
+tide_git_icon
 tide_git_operation_color FF0000
 tide_git_staged_color $_tide_color_gold
 tide_git_stash_color $_tide_color_green
