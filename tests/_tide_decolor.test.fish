@@ -6,4 +6,4 @@ end
 
 _decolor red # CHECK: Hello Foo
 _decolor normal # CHECK: Hello Foo
-_decolor $_tide_color_gold # CHECK: Hello Foo
+_decolor D7AF00 # CHECK: Hello Foo

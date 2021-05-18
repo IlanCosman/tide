@@ -1,17 +1,23 @@
+set -g _tide_color_dark_blue 0087AF
+set -g _tide_color_dark_green 5FAF00
+set -g _tide_color_gold D7AF00
+set -g _tide_color_green 5FD700
+set -g _tide_color_light_blue 00AFFF
+
+# Create an empty fake function for each item
+for func in _fake(functions --all | string match --entire _tide_item)
+    function $func
+    end
+end
+
+for file in (status dirname)/tide/configure/{choices, functions, prompt_items}/**.fish
+    source "$file"
+end
+
 function _tide_sub_configure
     if test $COLUMNS -lt 55 -o $LINES -lt 21
         printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
         return 1
-    end
-
-    # Create an empty fake function for each item
-    for func in _fake(functions --all | string match --entire _tide_item)
-        function $func
-        end
-    end
-
-    for file in $_tide_root/functions/tide/configure/{choices, functions, prompt_items}/**.fish
-        source "$file"
     end
 
     set -g fake_columns $COLUMNS
