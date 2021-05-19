@@ -4,7 +4,7 @@ function _tide_prompt
 
     test "$tide_prompt_add_newline_before" = true && echo
 
-    left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If the prompt is two lines
+    left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
         set -l prompt_and_frame_color (set_color $tide_prompt_frame_and_connection_color -b normal || echo)
 
         if test "$tide_left_prompt_frame_enabled" = true
@@ -18,7 +18,8 @@ function _tide_prompt
 
         printf '%s' $left_prompt[1] $prompt_and_frame_color
 
-        set -l length_to_move (math $COLUMNS - (_tide_decolor "$left_prompt[1]""$right_prompt[1]" | string length))
+        set -l length_to_move (math $COLUMNS - ( # Regex removes color codes
+            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
         test $length_to_move -gt 0 && string repeat --no-newline --max $length_to_move $tide_prompt_connection_icon
 
         printf '%s' $right_prompt[1] \n $left_prompt[-1]' '

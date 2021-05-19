@@ -26,9 +26,11 @@ jobs:
         with:
           plugins: ilancosman/clownfish $GITHUB_WORKSPACE
 
+      - run: fish $GITHUB_WORKSPACE/tests/test_setup.fish
+
       - uses: fish-actions/littlecheck@v1
         with:
-          files: $GITHUB_WORKSPACE/tests/**
+          files: $GITHUB_WORKSPACE/tests/**.test.fish
 
   syntax-check:
     runs-on: ubuntu-latest
