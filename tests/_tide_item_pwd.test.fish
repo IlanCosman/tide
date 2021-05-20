@@ -11,14 +11,14 @@ set COLUMNS 80
 
 sudo mkdir -p ~/unwritable/dir # Uses sudo to make the dir unwritable
 
-set -lx tide_pwd_unwritable_icon ''
+set -lx tide_pwd_icon_unwritable ''
 
 _pwd ~/unwritable # CHECK:  ~/unwritable
 _pwd ~/unwritable/dir # CHECK:  ~/unwritable/dir
 
 # No icon / directories
 
-set -lx tide_pwd_unwritable_icon
+set -lx tide_pwd_icon_unwritable
 
 _pwd / # CHECK: /
 _pwd /usr # CHECK: /usr

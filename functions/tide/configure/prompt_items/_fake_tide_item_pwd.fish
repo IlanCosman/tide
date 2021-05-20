@@ -1,5 +1,5 @@
 function _fake_tide_item_pwd
-    printf '%s' (set_color $fake_tide_pwd_color_dirs)$fake_tide_pwd_dir_icon' '
+    printf '%s' (set_color $fake_tide_pwd_color_dirs)$fake_tide_pwd_icon_dir' '
 
     set_color -o $fake_tide_pwd_color_anchors
     printf '%s' '~'

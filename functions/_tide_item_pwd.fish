@@ -34,10 +34,10 @@ function _tide_item_pwd
     test "$split_pwd[1]" = '~' || set split_pwd_for_output[1] '/'$split_pwd_for_output[1]
 
     if not test -w $PWD
-        _tide_print_item pwd $color_dirs$tide_pwd_unwritable_icon' ' (string join -- / $split_pwd_for_output)
+        _tide_print_item pwd $color_dirs$tide_pwd_icon_unwritable' ' (string join -- / $split_pwd_for_output)
     else if test $PWD = $HOME
-        _tide_print_item pwd $color_dirs$tide_pwd_home_icon' ' (string join -- / $split_pwd_for_output)
+        _tide_print_item pwd $color_dirs$tide_pwd_icon_home' ' (string join -- / $split_pwd_for_output)
     else
-        _tide_print_item pwd $color_dirs$tide_pwd_dir_icon' ' (string join -- / $split_pwd_for_output)
+        _tide_print_item pwd $color_dirs$tide_pwd_icon_dir' ' (string join -- / $split_pwd_for_output)
     end
 end

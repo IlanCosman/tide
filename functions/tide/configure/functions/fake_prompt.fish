@@ -22,8 +22,8 @@ function fake_prompt
 
         set_color $fake_tide_prompt_connection_color
         set -l decoloredTextLength (_tide_decolor "$leftPrompt[1]""$rightPrompt[1]" | string length)
-        test -n "$fake_tide_prompt_connection_icon" || set -l fake_tide_prompt_connection_icon ' '
-        string repeat --no-newline --max (math $fake_columns - $decoloredTextLength) $fake_tide_prompt_connection_icon
+        test -n "$fake_tide_prompt_icon_connection" || set -l fake_tide_prompt_icon_connection ' '
+        string repeat --no-newline --max (math $fake_columns - $decoloredTextLength) $fake_tide_prompt_icon_connection
 
         printf '%s\n' $rightPrompt[1]
     end

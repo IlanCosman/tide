@@ -1,20 +1,20 @@
 function _tide_item_vi_mode
     test "$fish_key_bindings" != fish_default_key_bindings && switch $fish_bind_mode
         case default
-            set -g tide_vi_mode_bg_color $tide_vi_mode_default_bg_color
-            set_color $tide_vi_mode_default_color
-            printf '%s' $tide_vi_mode_default_icon
+            set -g tide_vi_mode_bg_color $tide_vi_mode_bg_color_default
+            set_color $tide_vi_mode_color_default
+            printf '%s' $tide_vi_mode_icon_default
         case insert
-            set -g tide_vi_mode_bg_color $tide_vi_mode_insert_bg_color
-            set_color $tide_vi_mode_insert_color
-            printf '%s' $tide_vi_mode_insert_icon
+            set -g tide_vi_mode_bg_color $tide_vi_mode_bg_color_insert
+            set_color $tide_vi_mode_color_insert
+            printf '%s' $tide_vi_mode_icon_insert
         case replace replace_one
-            set -g tide_vi_mode_bg_color $tide_vi_mode_replace_bg_color
-            set_color $tide_vi_mode_replace_color
-            printf '%s' $tide_vi_mode_replace_icon
+            set -g tide_vi_mode_bg_color $tide_vi_mode_bg_color_replace
+            set_color $tide_vi_mode_color_replace
+            printf '%s' $tide_vi_mode_icon_replace
         case visual
-            set -g tide_vi_mode_bg_color $tide_vi_mode_visual_bg_color
-            set_color $tide_vi_mode_visual_color
-            printf '%s' $tide_vi_mode_visual_icon
+            set -g tide_vi_mode_bg_color $tide_vi_mode_bg_color_visual
+            set_color $tide_vi_mode_color_visual
+            printf '%s' $tide_vi_mode_icon_visual
     end
 end

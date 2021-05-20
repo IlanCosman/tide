@@ -1,5 +1,5 @@
 function _tide_item_git
-    set -l location_color (set_color $tide_git_branch_color || echo)
+    set -l location_color (set_color $tide_git_color_branch || echo)
     set -l location $location_color(git branch --show-current 2>/dev/null) || return
     # --quiet = don't error if there are no commits
     git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
@@ -60,11 +60,11 @@ function _tide_item_git
     set -l untracked (string match --regex '^\?\?' $git_info | count) || set -e untracked
 
     _tide_print_item git $location_color $tide_git_icon' ' (set_color white) $location \
-        (set_color $tide_git_operation_color) ' '$operation ' '$step/$total_steps \
-        (set_color $tide_git_upstream_color) ' ⇣'$upstream_behind ' ⇡'$upstream_ahead \
-        (set_color $tide_git_stash_color) ' *'$stash \
-        (set_color $tide_git_conflicted_color) ' ~'$conflicted \
-        (set_color $tide_git_staged_color) ' +'$staged \
-        (set_color $tide_git_dirty_color) ' !'$dirty \
-        (set_color $tide_git_untracked_color) ' ?'$untracked
+        (set_color $tide_git_color_operation) ' '$operation ' '$step/$total_steps \
+        (set_color $tide_git_color_upstream) ' ⇣'$upstream_behind ' ⇡'$upstream_ahead \
+        (set_color $tide_git_color_stash) ' *'$stash \
+        (set_color $tide_git_color_conflicted) ' ~'$conflicted \
+        (set_color $tide_git_color_staged) ' +'$staged \
+        (set_color $tide_git_color_dirty) ' !'$dirty \
+        (set_color $tide_git_color_untracked) ' ?'$untracked
 end

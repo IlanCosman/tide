@@ -16,11 +16,10 @@ function _fake_tide_right_prompt
                 set_color $color -b normal
                 printf '%s' $fake_tide_right_prompt_prefix
             else if test "$color" = "$previousColor"
-                set_color $fake_tide_right_prompt_item_separator_same_color_color
-                printf '%s' $fake_tide_right_prompt_item_separator_same_color
+                set_color $fake_                printf '%s' $fake_tide_right_prompt_separator_same_color
             else
                 set_color $color -b $previousColor
-                printf '%s' $fake_tide_right_prompt_item_separator_diff_color
+                printf '%s' $fake_tide_right_prompt_separator_diff_color
             end
 
             set_color -b $color
