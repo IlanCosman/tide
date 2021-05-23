@@ -1,9 +1,4 @@
 function _fake_tide_prompt
-    # Variables are exported as strings, convert _fake_tide_last_pipestatus back into a list
-    set -g _fake_tide_last_pipestatus (string split ' ' $_fake_tide_last_pipestatus)
-
-    test "$fake_tide_prompt_add_newline_before" = true && echo
-
     left_prompt=(_fake_tide_left_prompt) right_prompt=(_fake_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
         set -l prompt_and_frame_color (set_color $fake_tide_prompt_color_frame_and_connection -b normal || echo)
 
@@ -23,9 +18,16 @@ function _fake_tide_prompt
         test $length_to_move -gt 0 && string repeat --no-newline --max $length_to_move $fake_tide_prompt_icon_connection
 
         printf '%s' $right_prompt[1] \n $left_prompt[-1]' '
+
+        string repeat --no-newline --max (math $fake_columns - ( # The -1 is necessary for some reason
+            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[-1]""$right_prompt[-1]" | string length) - 1) ' '
+        printf '%s' $right_prompt[2]
     else
         printf '%s' $left_prompt[-1]' '
-        printf '%s' $right_prompt[1]
+
+        string repeat --no-newline --max (math $fake_columns - ( # The -1 is necessary for some reason
+            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[-1]""$right_prompt[-1]" | string length) - 1) ' '
+        printf '%s' $right_prompt[-1]
     end
 
     set_color normal
