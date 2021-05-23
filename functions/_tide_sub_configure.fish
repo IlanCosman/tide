@@ -10,8 +10,8 @@ for func in _fake(functions --all | string match --entire _tide_item)
     end
 end
 
-for file in (status dirname)/tide/configure/{choices, functions, prompt_items}/**.fish
-    source "$file"
+for file in (status dirname)/tide/configure/{choices, functions}/**.fish
+    source $file
 end
 
 function _tide_sub_configure

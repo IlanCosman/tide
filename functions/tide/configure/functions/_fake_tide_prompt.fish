@@ -25,7 +25,6 @@ function _fake_tide_prompt
         printf '%s' $right_prompt[1] \n $left_prompt[-1]' '
     else
         printf '%s' $left_prompt[-1]' '
-        printf '%s' 'h'
         printf '%s' $right_prompt[1]
     end
 
