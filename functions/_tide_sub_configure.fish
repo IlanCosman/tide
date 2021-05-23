@@ -81,7 +81,7 @@ end
 
 function _tide_display_prompt -a var_name var_value
     test -n "$var_name" && set -g $var_name $var_value
-    fake_prompt
+    _fake_tide_prompt
     printf '\n\n'
 end
 

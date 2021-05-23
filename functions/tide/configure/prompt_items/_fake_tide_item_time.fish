@@ -1,4 +1,3 @@
 function _fake_tide_item_time
-    set_color $fake_tide_time_color
-    printf '%s' (date +$fake_tide_time_format)
+    _fake_tide_print_item time $tide_time_icon' ' (date +$fake_tide_time_format)
 end
