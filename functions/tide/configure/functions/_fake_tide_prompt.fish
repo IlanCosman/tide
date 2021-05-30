@@ -13,9 +13,9 @@ function _fake_tide_prompt
 
         printf '%s' $left_prompt[1] $prompt_and_frame_color
 
-        set -l length_to_move (math $fake_columns - ( # Regex removes color codes
+        set -l dist_btwn_sides (math $fake_columns - ( # Regex removes color codes
             string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
-        test $length_to_move -gt 0 && string repeat --no-newline --max $length_to_move $fake_tide_prompt_icon_connection
+        test $dist_btwn_sides -gt 0 && string repeat --no-newline --max $dist_btwn_sides $fake_tide_prompt_icon_connection
 
         printf '%s' $right_prompt[1] \n $left_prompt[-1]' '
 

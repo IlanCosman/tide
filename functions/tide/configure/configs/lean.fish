@@ -60,7 +60,6 @@ tide_pwd_icon_dir
 tide_pwd_icon_home
 tide_pwd_icon_unwritable ''
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
-tide_pwd_truncate_margin 10
 tide_right_prompt_frame_enabled false
 tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rustc php chruby
 tide_right_prompt_prefix ' '
