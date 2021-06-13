@@ -11,36 +11,32 @@ function _tide_item_git
     end
 
     # Operation
-    set -l operation
-    set -l step
-    set -l total_steps
-
     if test -d $git_dir/rebase-merge
-        read step <$git_dir/rebase-merge/msgnum
-        read total_steps <$git_dir/rebase-merge/end
+        read tide_git_step <$git_dir/rebase-merge/msgnum
+        read tide_git_total_steps <$git_dir/rebase-merge/end
         if test -f $git_dir/rebase-merge/interactive
-            set operation rebase-i
+            set tide_git_operation rebase-i
         else
-            set operation rebase-m
+            set tide_git_operation rebase-m
         end
     else if test -d $git_dir/rebase-apply
-        read step <$git_dir/rebase-apply/next
-        read total_steps <$git_dir/rebase-apply/last
+        read tide_git_step <$git_dir/rebase-apply/next
+        read tide_git_total_steps <$git_dir/rebase-apply/last
         if test -f $git_dir/rebase-apply/rebasing
-            set operation rebase
+            set tide_git_operation rebase
         else if test -f $git_dir/rebase-apply/applying
-            set operation am
+            set tide_git_operation am
         else
-            set operation am/rebase
+            set tide_git_operation am/rebase
         end
     else if test -f $git_dir/MERGE_HEAD
-        set operation merge
+        set tide_git_operation merge
     else if test -f $git_dir/CHERRY_PICK_HEAD
-        set operation cherry-pick
+        set tide_git_operation cherry-pick
     else if test -f $git_dir/REVERT_HEAD
-        set operation revert
+        set tide_git_operation revert
     else if test -f $git_dir/BISECT_LOG
-        set operation bisect
+        set tide_git_operation bisect
     end
 
     # Upstream behind/ahead. Suppress errors in case there is no upstream
@@ -50,17 +46,17 @@ function _tide_item_git
     test "$upstream_ahead" = 0 && set -e upstream_ahead
 
     # Git status/stash
-    test "$is_inside_git_dir" = true && set -l git_set_dir_option -C $git_dir/..
+    test "$is_inside_git_dir" = true && set -l tide_git_set_dir_option -C $git_dir/..
     # Suppress errors in case we are in a bare repo
-    set -l git_info (git $git_set_dir_option --no-optional-locks status --porcelain 2>/dev/null)
-    set -l stash (git $git_set_dir_option stash list 2>/dev/null | count) || set -e stash
+    set -l git_info (git $tide_git_set_dir_option --no-optional-locks status --porcelain 2>/dev/null)
+    set -l stash (git $tide_git_set_dir_option stash list 2>/dev/null | count) || set -e stash
     set -l conflicted (string match --regex '^UU' $git_info | count) || set -e conflicted
     set -l staged (string match --regex '^[ADMR].' $git_info | count) || set -e staged
     set -l dirty (string match --regex '^.[ADMR]' $git_info | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $git_info | count) || set -e untracked
 
     _tide_print_item git $location_color $tide_git_icon' ' (set_color white) $location \
-        (set_color $tide_git_color_operation) ' '$operation ' '$step/$total_steps \
+        (set_color $tide_git_color_operation) ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps \
         (set_color $tide_git_color_upstream) ' ⇣'$upstream_behind ' ⇡'$upstream_ahead \
         (set_color $tide_git_color_stash) ' *'$stash \
         (set_color $tide_git_color_conflicted) ' ~'$conflicted \
