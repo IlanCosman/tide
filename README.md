@@ -98,9 +98,9 @@ The current working directory is the the most important part of any shell prompt
 
 ![pwd][]
 
-When the full directory doesn't fit, the leftmost segment is truncated to its shortest unique prefix. For example, `~/Documents` becomes `~/Doc` instead of `~/D` because that could be confused with `~/Downloads`. Important segments are bold and never truncated. These include the first and the last segments, roots of Git repositories etc.
+When the full directory doesn't fit, the leftmost segment is truncated to its shortest unique prefix. In the example above, `Documents` becomes `Doc` instead of `D` because that could be confused with `Downloads`. Important segments are bold and never truncated. These include the first and the last segments, roots of Git repositories etc.
 
-<sup>_Tip_: If you copy-paste a truncated directory and hit <kbd>tab</kbd>, it will complete to the original.</sup>
+<sup>_Tip_: If you copy-paste a truncated path and hit <kbd>tab</kbd>, it will complete to the original.</sup>
 
 ## Documentation
 
