@@ -12,7 +12,7 @@
 
 **The ultimate Fish prompt.**
 
-- **Out of the box:** With four compelling styles and lots of options, you can have your ready-to-run cake and customize it too.
+- **Out of the box:** With three compelling styles and lots of options, you can have your ready-to-run cake and customize it too.
 - **Flexible:** Move content around or remove it, all without ever touching a line of code.
 - **Extensible:** Create custom content with simple Fish functions that integrate seamlessly.
 - **Fast:** Asynchronous rendering makes Tide the fastest full-featured Fish prompt.
@@ -23,7 +23,7 @@
 
 ### System Requirements
 
-- The **latest** version of [Fish][], currently 3.2.2. [Using an older version of Fish?][]
+- The **latest** version of [Fish][], currently 3.3.0. [Using an older version of Fish?][]
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
 Install with [Fisher][]:
@@ -116,7 +116,7 @@ If you're interested in helping contribute to Tide, please take a look at the [C
 
 ### Meslo Nerd Font
 
-Gorgeous monospace font designed by Jim Lyles for Bitstream, customized for Apple, enhanced by André Berg, and finally patched by Roman Perepelitsa of [Powerlevel10k][] with scripts originally developed by Ryan McIntyre of [Nerd Fonts][]. Contains all the glyphs and symbols that Tide may need. Battle-tested in dozens of different terminals on all major operating systems.
+A gorgeous monospace font designed by Jim Lyles for Bitstream, customized for Apple, enhanced by André Berg, and finally patched by Roman Perepelitsa of [Powerlevel10k][] with scripts originally developed by Ryan McIntyre of [Nerd Fonts][]. Contains all the glyphs and symbols that Tide may need. Battle-tested in dozens of different terminals on all major operating systems.
 
 ### Font Installation
 
@@ -131,7 +131,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 ## Acknowledgments
 
-- [Powerlevel10k][] - Inspired Tide's creation and informs nearly every aspect of Tide's existence. Because Tide aims to replicate Powerlevel10k's amazing feature set, small sections of documentation have been directly borrowed when rewording the language would negatively impact meaning.
+- [Powerlevel10k][] - Inspired Tide's creation. Because Tide aims to replicate Powerlevel10k's amazing capabilities, small sections of documentation have been borrowed when rewording the language would reduce clarity.
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
