@@ -8,6 +8,7 @@
 - Display git tag when available ([#154][])
 - Add special characters to indicate git tags and shas ([#154][])
 - Add git icon ([#154][])
+- Minor performance improvements
 
 ### Bug fixes
 
@@ -341,9 +342,13 @@
 [#126]: https://github.com/IlanCosman/tide/issues/126
 [#129]: https://github.com/IlanCosman/tide/issues/129
 [#130]: https://github.com/IlanCosman/tide/issues/130
+[#105]: https://github.com/IlanCosman/tide/issues/105
+[#131]: https://github.com/IlanCosman/tide/issues/131
 [#138]: https://github.com/IlanCosman/tide/issues/138
 [#139]: https://github.com/IlanCosman/tide/issues/139
 [#145]: https://github.com/IlanCosman/tide/issues/145
+[#154]: https://github.com/IlanCosman/tide/issues/154
+[#162]: https://github.com/IlanCosman/tide/issues/162
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
