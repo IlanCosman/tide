@@ -1,5 +1,19 @@
 # Changelog
 
+## [v5.0.0][] (???)
+
+### Features
+
+- Improve variable naming scheme, and renamed some items ([#105][])
+- Display git tag when available ([#154][])
+- Add special characters to indicate git tags and shas ([#154][])
+- Add git icon ([#154][])
+
+### Bug fixes
+
+- Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
+- Check for `python3` in addition to `python` before removing virtual_env item ([#162][])
+
 ## [v4.3.4][] (Apr 14 2021)
 
 - Git item now works correctly in bare git repositories ([#145][])
@@ -360,3 +374,4 @@
 [v4.3.2]: https://github.com/IlanCosman/tide/tree/v4.3.2
 [v4.3.3]: https://github.com/IlanCosman/tide/tree/v4.3.3
 [v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
+[v5.0.0]: https://github.com/IlanCosman/tide/tree/v4.3.4
