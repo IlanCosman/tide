@@ -34,6 +34,8 @@ tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
 tide_rustc_bg_color normal
 tide_rustc_color cyan
+tide_shlvl_bg_color normal
+tide_shlvl_color yellow
 tide_status_bg_color_failure normal
 tide_status_bg_color_success normal
 tide_status_color_failure red

@@ -34,6 +34,8 @@ tide_pwd_color_dirs brwhite
 tide_pwd_color_truncated_dirs white
 tide_rustc_bg_color yellow
 tide_rustc_color black
+tide_shlvl_bg_color yellow
+tide_shlvl_color black
 tide_status_bg_color_failure red
 tide_status_bg_color_success black
 tide_status_color_failure bryellow
