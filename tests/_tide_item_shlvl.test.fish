@@ -1,19 +1,12 @@
 # RUN: %fish %s
+# REQUIRES: test $(uname) = Linux
 
 function _shlvl
     _tide_decolor (fish -c _tide_item_shlvl)
 end
 
-if test (uname) = Darwin
-    _shlvl # CHECK:  4
+_shlvl # CHECK:  2
 
-    set -lx tide_shlvl_threshold 4
+set -lx tide_shlvl_threshold 2
 
-    _shlvl # CHECK:
-else
-    _shlvl # CHECK:  2
-
-    set -lx tide_shlvl_threshold 2
-
-    _shlvl # CHECK:
-end
+_shlvl # CHECK:
