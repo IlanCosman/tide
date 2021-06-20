@@ -71,7 +71,7 @@ tide_rustc_color 00AFAF
 tide_rustc_icon ''
 tide_shlvl_bg_color 444444
 tide_shlvl_color d78700
-tide_shlvl_icon '↕️'
+tide_shlvl_icon ''
 tide_shlvl_threshold 1
 tide_status_bg_color_failure 444444
 tide_status_bg_color_success 444444
