@@ -1,10 +1,8 @@
 # RUN: %fish %s
 
 function _shlvl
-    _tide_decolor (_tide_item_shlvl)
+    _tide_decolor (fish -c _tide_item_shlvl)
 end
-
-set -lx SHLVL 2
 
 _shlvl # CHECK: ↕️ 2
 
