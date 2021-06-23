@@ -69,6 +69,10 @@ tide_right_prompt_suffix ''
 tide_rustc_bg_color normal
 tide_rustc_color 00AFAF
 tide_rustc_icon ''
+tide_shlvl_bg_color normal
+tide_shlvl_color d78700
+tide_shlvl_icon ''
+tide_shlvl_threshold 1
 tide_status_bg_color_failure normal
 tide_status_bg_color_success normal
 tide_status_color_failure D70000
