@@ -4,7 +4,7 @@ name: release
 on:
   push:
     tags:
-      - v*.*.*
+      - v[0-9]+.[0-9]+.[0-9]+
 
 jobs:
   release:
@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Create higher level tags
+        uses: vweevers/additional-tags-action@v1
 
       # Remove first five lines
       # Print until we hit a ## header
