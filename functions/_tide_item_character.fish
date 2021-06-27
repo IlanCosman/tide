@@ -9,10 +9,10 @@ function _tide_item_character
         _tide_print_item character $tide_character_icon
     else
         switch $fish_bind_mode
+            case insert
+                _tide_print_item character $tide_character_icon
             case default
                 _tide_print_item character $tide_character_vi_icon_default
-            case insert
-                _tide_print_item character $tide_character_vi_icon_insert
             case replace replace_one
                 _tide_print_item character $tide_character_vi_icon_replace
             case visual

@@ -3,7 +3,6 @@ tide_character_color_failure FF0000
 tide_character_color_success $_tide_color_green
 tide_character_icon '❯'
 tide_character_vi_icon_default '❮'
-tide_character_vi_icon_insert '❯'
 tide_character_vi_icon_replace '▶'
 tide_character_vi_icon_visual V
 tide_chruby_bg_color normal
