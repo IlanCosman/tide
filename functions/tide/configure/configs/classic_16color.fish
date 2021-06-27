@@ -10,6 +10,8 @@ tide_context_color_default yellow
 tide_context_color_root bryellow
 tide_context_color_ssh yellow
 tide_git_bg_color black
+tide_git_bg_color_unstable black
+tide_git_bg_color_urgent black
 tide_git_color_branch brgreen
 tide_git_color_conflicted brred
 tide_git_color_dirty bryellow

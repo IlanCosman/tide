@@ -55,6 +55,12 @@ function _tide_item_git
     set -l dirty (string match --regex '^.[ADMR]' $git_info | count) || set -e dirty
     set -l untracked (string match --regex '^\?\?' $git_info | count) || set -e untracked
 
+    if set -q tide_git_operation || set -q conflicted
+        set -g tide_git_bg_color $tide_git_bg_color_urgent
+    else if set -q staged || set -q dirty || set -q untracked
+        set -g tide_git_bg_color $tide_git_bg_color_unstable
+    end
+
     _tide_print_item git $location_color $tide_git_icon' ' (set_color white) $location \
         (set_color $tide_git_color_operation) ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps \
         (set_color $tide_git_color_upstream) ' ⇣'$upstream_behind ' ⇡'$upstream_ahead \

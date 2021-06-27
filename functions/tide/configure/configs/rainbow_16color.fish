@@ -10,6 +10,8 @@ tide_context_color_default yellow
 tide_context_color_root yellow
 tide_context_color_ssh yellow
 tide_git_bg_color green
+tide_git_bg_color_unstable yellow
+tide_git_bg_color_urgent red
 tide_git_color_branch black
 tide_git_color_conflicted black
 tide_git_color_dirty black

@@ -20,6 +20,8 @@ tide_context_color_default D7AF87
 tide_context_color_root_color $_tide_color_gold
 tide_context_color_ssh D7AF87
 tide_git_bg_color 4E9A06
+tide_git_bg_color_unstable C4A000
+tide_git_bg_color_urgent CC0000
 tide_git_color_branch 000000
 tide_git_color_conflicted 000000
 tide_git_color_dirty 000000
