@@ -5,11 +5,6 @@ function _tide_prompt
     test "$tide_prompt_add_newline_before" = true && echo
 
     left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
-        set -lx dist_btwn_sides (math $COLUMNS + 7 - ( # Regex removes color. 7 = @@PWD@@ length which will be replaced
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
-        set left_prompt[1] (string replace @@PWD@@ (_tide_pwd) "$left_prompt[1]")
-        set dist_btwn_sides (math $dist_btwn_sides - $pwd_length)
-
         set -l prompt_and_frame_color (set_color $tide_prompt_color_frame_and_connection -b normal || echo)
         if test "$tide_left_prompt_frame_enabled" = true
             set left_prompt[1] $prompt_and_frame_color╭─"$left_prompt[1]"
@@ -20,17 +15,20 @@ function _tide_prompt
             set right_prompt[2] "$right_prompt[2]"$prompt_and_frame_color─╯
         end
 
-        printf '%s' $left_prompt[1] $prompt_and_frame_color
+        set -lx dist_btwn_sides (math $COLUMNS + 7 - ( # Regex removes color. 7 = @@PWD@@ length which will be replaced
+            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
+        printf '%s' (string replace @@PWD@@ (_tide_pwd) "$left_prompt[1]") $prompt_and_frame_color
+
+        set dist_btwn_sides (math $dist_btwn_sides - $pwd_length)
         test $dist_btwn_sides -gt 0 && string repeat --no-newline --max $dist_btwn_sides $tide_prompt_icon_connection
         printf '%s' $right_prompt[1] \n $left_prompt[2]' '
+
         set -U $_tide_right_prompt_display_var $right_prompt[2]
     else
         set -lx dist_btwn_sides (math $COLUMNS - 19 - ( # 19 = 26 - 7. We want min 26 cols for user
             string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
-        set left_prompt[1] (string replace @@PWD@@ (_tide_pwd) "$left_prompt[1]")
-        set dist_btwn_sides (math $dist_btwn_sides - $pwd_length)
+        string replace @@PWD@@ (_tide_pwd) "$left_prompt[1] "
 
-        printf '%s' $left_prompt[1]' '
         set -U $_tide_right_prompt_display_var $right_prompt[1]
     end
 end
