@@ -25,7 +25,7 @@ function _tide_prompt
 
         set -U $_tide_right_prompt_display_var $right_prompt[2]
     else
-        set -lx dist_btwn_sides (math $COLUMNS - 19 - ( # 19 = 26 - 7. We want min 26 cols for user
+        set -lx dist_btwn_sides (math $COLUMNS + 7 -$tide_prompt_min_cols - (
             string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
         string replace @@PWD@@ (_tide_pwd) "$left_prompt[1] "
 
