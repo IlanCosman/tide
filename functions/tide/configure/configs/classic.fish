@@ -85,7 +85,6 @@ tide_time_bg_color 444444
 tide_time_color 5F8787
 tide_time_format '%T'
 tide_vi_mode_bg_color_default 444444
-tide_vi_mode_bg_color_insert 444444
 tide_vi_mode_bg_color_replace 444444
 tide_vi_mode_bg_color_visual 444444
 tide_vi_mode_color_default 87af00

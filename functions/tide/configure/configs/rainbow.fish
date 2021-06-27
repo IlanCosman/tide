@@ -85,7 +85,6 @@ tide_time_bg_color D3D7CF
 tide_time_color 000000
 tide_time_format '%T'
 tide_vi_mode_bg_color_default 008000
-tide_vi_mode_bg_color_insert 444444
 tide_vi_mode_bg_color_replace 808000
 tide_vi_mode_bg_color_visual 000080
 tide_vi_mode_color_default 000000

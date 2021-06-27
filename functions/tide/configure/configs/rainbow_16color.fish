@@ -45,11 +45,9 @@ tide_status_color_success green
 tide_time_bg_color white
 tide_time_color black
 tide_vi_mode_bg_color_default green
-tide_vi_mode_bg_color_insert brblack
 tide_vi_mode_bg_color_replace yellow
 tide_vi_mode_bg_color_visual blue
 tide_vi_mode_color_default black
-tide_vi_mode_color_insert
 tide_vi_mode_color_replace black
 tide_vi_mode_color_visual black
 tide_virtual_env_bg_color brblack
