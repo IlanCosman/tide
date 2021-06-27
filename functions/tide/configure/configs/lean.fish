@@ -94,5 +94,4 @@ tide_vi_mode_icon_replace
 tide_vi_mode_icon_visual
 tide_virtual_env_bg_color normal
 tide_virtual_env_color 00AFAF
-tide_virtual_env_display_mode projectName
 tide_virtual_env_icon ''
