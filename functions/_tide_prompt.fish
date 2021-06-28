@@ -19,8 +19,7 @@ function _tide_prompt
             string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
         printf '%s' (string replace @@PWD@@ (_tide_pwd) "$left_prompt[1]") $prompt_and_frame_color
 
-        set dist_btwn_sides (math $dist_btwn_sides - $pwd_length)
-        test $dist_btwn_sides -gt 0 && string repeat --no-newline --max $dist_btwn_sides $tide_prompt_icon_connection
+        string repeat --no-newline --max (math max 0, $dist_btwn_sides - $pwd_length) $tide_prompt_icon_connection
         printf '%s' $right_prompt[1] \n $left_prompt[2]' '
 
         set -U $_tide_right_prompt_display_var $right_prompt[2]

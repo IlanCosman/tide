@@ -18,10 +18,10 @@ function fish_prompt
         _tide_jobs=(jobs --pid) fish --command "
             CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS fish_bind_mode=$fish_bind_mode \
             set -U $_tide_left_prompt_display_var (_tide_prompt)" &
+        builtin disown
 
         command kill $_tide_last_pid 2>/dev/null
-        set -g _tide_last_pid (jobs --last --pid) # Replace with $last_pid in Fish 3.3.0
-        builtin disown $_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid $last_pid
     end
 
     string unescape $$_tide_left_prompt_display_var
