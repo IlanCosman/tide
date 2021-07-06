@@ -10,14 +10,13 @@ function _tide_pwd
     set -l split_pwd_for_output $color_anchors$split_pwd[1]$reset_to_color_dirs $split_pwd[2..]
     set split_pwd_for_output[-1] $color_anchors$split_pwd[-1]$reset_to_color_dirs
 
-    set -l icon $tide_pwd_icon_dir' '
     if not test -w $PWD
-        set icon $tide_pwd_icon_unwritable' '
+        set -g tide_pwd_icon $tide_pwd_icon_unwritable' '
     else if test $PWD = $HOME
-        set icon $tide_pwd_icon_home' '
+        set -g tide_pwd_icon $tide_pwd_icon_home' '
     end
 
-    set -g pwd_length (string length "$icon"(string join / $split_pwd_for_length))
+    set -g pwd_length (string length "$tide_pwd_icon"(string join / $split_pwd_for_length))
 
     i=1 for dir_section in $split_pwd[2..-2]
         set -l parent_dir (string join -- / $split_pwd[..$i] | string replace '~' $HOME) # Uses i before increment
@@ -34,10 +33,10 @@ function _tide_pwd
             end
             set split_pwd_for_length[$i] $truncated
             set split_pwd_for_output[$i] $color_truncated_dirs$truncated$reset_to_color_dirs
-            set pwd_length (string length "$icon"(string join / $split_pwd_for_length)) # Update length
+            set pwd_length (string length "$tide_pwd_icon"(string join / $split_pwd_for_length)) # Update length
         end
     end
 
-    printf '%s' $reset_to_color_dirs $icon
+    printf '%s' $reset_to_color_dirs $tide_pwd_icon
     string join -- / $split_pwd_for_output
 end

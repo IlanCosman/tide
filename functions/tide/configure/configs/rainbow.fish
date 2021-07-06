@@ -57,7 +57,7 @@ tide_pwd_bg_color 3465A4
 tide_pwd_color_anchors E4E4E4
 tide_pwd_color_dirs E4E4E4
 tide_pwd_color_truncated_dirs BCBCBC
-tide_pwd_icon_dir
+tide_pwd_icon
 tide_pwd_icon_home
 tide_pwd_icon_unwritable ''
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
