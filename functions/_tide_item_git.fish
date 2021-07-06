@@ -61,12 +61,12 @@ function _tide_item_git
         set -g tide_git_bg_color $tide_git_bg_color_unstable
     end
 
-    _tide_print_item git $location_color $tide_git_icon' ' (set_color white) $location \
-        (set_color $tide_git_color_operation) ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps \
-        (set_color $tide_git_color_upstream) ' ⇣'$upstream_behind ' ⇡'$upstream_ahead \
-        (set_color $tide_git_color_stash) ' *'$stash \
-        (set_color $tide_git_color_conflicted) ' ~'$conflicted \
-        (set_color $tide_git_color_staged) ' +'$staged \
-        (set_color $tide_git_color_dirty) ' !'$dirty \
-        (set_color $tide_git_color_untracked) ' ?'$untracked
+    _tide_print_item git $location_color $tide_git_icon' ' (set_color white; printf %s $location
+        set_color $tide_git_color_operation; printf %s ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps
+        set_color $tide_git_color_upstream; printf %s ' ⇣'$upstream_behind ' ⇡'$upstream_ahead
+        set_color $tide_git_color_stash; printf %s ' *'$stash
+        set_color $tide_git_color_conflicted; printf %s ' ~'$conflicted
+        set_color $tide_git_color_staged; printf %s ' +'$staged
+        set_color $tide_git_color_dirty; printf %s ' !'$dirty
+        set_color $tide_git_color_untracked; printf %s ' ?'$untracked)
 end
