@@ -41,7 +41,6 @@ tide_left_prompt_separator_same_color ''
 tide_left_prompt_suffix ''
 tide_nvm_bg_color 444444
 tide_nvm_color 00AFAF
-tide_nvm_default_node
 tide_nvm_icon '⬢'
 tide_os_bg_color 444444
 tide_os_color EEEEEE
