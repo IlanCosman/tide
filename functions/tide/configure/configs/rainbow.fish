@@ -74,12 +74,12 @@ tide_shlvl_bg_color 808000
 tide_shlvl_color 000000
 tide_shlvl_icon ''
 tide_shlvl_threshold 1
+tide_status_bg_color 2E3436
 tide_status_bg_color_failure CC0000
-tide_status_bg_color_success 2E3436
+tide_status_color 4E9A06
 tide_status_color_failure FFFF00
-tide_status_color_success 4E9A06
+tide_status_icon '✔'
 tide_status_icon_failure '✘'
-tide_status_icon_success '✔'
 tide_time_bg_color D3D7CF
 tide_time_color 000000
 tide_time_format '%T'

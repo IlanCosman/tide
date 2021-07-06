@@ -38,10 +38,10 @@ tide_rustc_bg_color normal
 tide_rustc_color cyan
 tide_shlvl_bg_color normal
 tide_shlvl_color yellow
+tide_status_bg_color normal
 tide_status_bg_color_failure normal
-tide_status_bg_color_success normal
+tide_status_color green
 tide_status_color_failure red
-tide_status_color_success green
 tide_time_bg_color normal
 tide_time_color brblack
 tide_vi_mode_bg_color_default normal

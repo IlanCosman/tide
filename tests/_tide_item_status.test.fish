@@ -6,7 +6,7 @@ function _status
     _tide_decolor (_tide_item_status)
 end
 
-set -lx tide_status_icon_success '✔'
+set -lx tide_status_icon '✔'
 set -lx tide_status_icon_failure '✘'
 
 # Without character

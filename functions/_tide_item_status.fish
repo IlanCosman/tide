@@ -7,8 +7,7 @@ function _tide_item_status
             contains character $tide_left_prompt_items || tide_status_bg_color=$tide_status_bg_color_failure \
                 tide_status_color=$tide_status_color_failure _tide_print_item status $tide_status_icon_failure' ' 1
         else if test $_tide_last_status = 0
-            tide_status_bg_color=$tide_status_bg_color_success tide_status_color=$tide_status_color_success \
-                _tide_print_item status $tide_status_icon_success' ' \
+            _tide_print_item status $tide_status_icon' ' \
                 (fish_status_to_signal $_tide_last_pipestatus | string replace SIG '' | string join '|')
         else
             tide_status_bg_color=$tide_status_bg_color_failure tide_status_color=$tide_status_color_failure \
@@ -16,7 +15,6 @@ function _tide_item_status
                 (fish_status_to_signal $_tide_last_pipestatus | string replace SIG '' | string join '|')
         end
     else if not contains character $tide_left_prompt_items
-        tide_status_bg_color=$tide_status_bg_color_success tide_status_color=$tide_status_color_success \
-            _tide_print_item status $tide_status_icon_success
+        _tide_print_item status $tide_status_icon
     end
 end

@@ -38,10 +38,10 @@ tide_rustc_bg_color yellow
 tide_rustc_color black
 tide_shlvl_bg_color yellow
 tide_shlvl_color black
+tide_status_bg_color black
 tide_status_bg_color_failure red
-tide_status_bg_color_success black
+tide_status_color green
 tide_status_color_failure bryellow
-tide_status_color_success green
 tide_time_bg_color white
 tide_time_color black
 tide_vi_mode_bg_color_default green
