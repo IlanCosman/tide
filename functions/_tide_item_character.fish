@@ -1,10 +1,6 @@
 function _tide_item_character
-    if test $_tide_last_status = 0
-        set -g tide_character_color $tide_character_color_success
-    else
-        set -g tide_character_color $tide_character_color_failure
-    end
-
+    test $_tide_last_status = 0 || set -g tide_character_color $tide_character_color_failure
+    
     if test "$fish_key_bindings" = fish_default_key_bindings
         _tide_print_item character $tide_character_icon
     else

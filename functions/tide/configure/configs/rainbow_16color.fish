@@ -1,6 +1,6 @@
 tide_character_bg_color normal
 tide_character_color_failure brred
-tide_character_color_success brgreen
+tide_character_color brgreen
 tide_chruby_bg_color red
 tide_chruby_color black
 tide_cmd_duration_bg_color yellow
