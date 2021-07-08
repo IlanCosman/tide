@@ -7,7 +7,11 @@ function _tide_pwd
     set -l split_pwd_for_length $split_pwd
 
     # Anchor first and last directories (which may be the same)
-    set -l split_pwd_for_output $color_anchors$split_pwd[1]$reset_to_color_dirs $split_pwd[2..]
+    if test -n "$split_pwd[1]" # ~/foo/bar, hightlight ~
+        set split_pwd_for_output $color_anchors$split_pwd[1]$reset_to_color_dirs $split_pwd[2..]
+    else # /foo/bar, hightlight foo not empty string
+        set split_pwd_for_output '' $color_anchors$split_pwd[2]$reset_to_color_dirs $split_pwd[3..]
+    end
     set split_pwd_for_output[-1] $color_anchors$split_pwd[-1]$reset_to_color_dirs
 
     if not test -w $PWD
