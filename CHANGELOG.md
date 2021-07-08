@@ -4,16 +4,21 @@
 
 ### Features
 
+- `git` item improvements
+  - Display git tag when available ([#154][])
+  - Add special characters to indicate git tags and shas ([#154][])
+  - Add git icon ([#154][])
+  - Add changing background color in rainbow style ([#163][])
 - Improve variable naming scheme, and renamed some items ([#105][])
-- Display git tag when available ([#154][])
-- Add special characters to indicate git tags and shas ([#154][])
-- Add git icon ([#154][])
-- Minor performance improvements
+- Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
+- Add `shlvl` item ([#165][] - @kidonng)
+- Display pipenv virtual environments better in `virtual_env` item.
+- Performance improvements
 
 ### Bug fixes
 
-- Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
 - Check for `python3` in addition to `python` before removing virtual_env item ([#162][])
+- Don't set `fish_term24bit`, which was messing up colors
 
 ## [v4.3.4][] (Apr 14 2021)
 
