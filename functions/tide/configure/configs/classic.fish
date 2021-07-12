@@ -75,7 +75,7 @@ tide_rust_color 00AFAF
 tide_rust_icon ''
 tide_go_bg_color 444444
 tide_go_color 00EFEF
-tide_go_icon ''
+tide_go_icon 'ﳑ'
 tide_status_failure_bg_color 444444
 tide_status_failure_color D70000
 tide_status_failure_icon '✘'

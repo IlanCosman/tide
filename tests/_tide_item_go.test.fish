@@ -9,11 +9,10 @@ mkdir -p $goDir
 cd $goDir
 
 mock go version "echo go version go1.16.5 linux/amd64"
-set -lx tide_go_icon 
+set -lx tide_go_icon ﳑ
 
 _go # CHECK:
 
 touch go.mod
-_go # CHECK:  1.16.5
-
+_go # CHECK: ﳑ go1.16.5
 rm -r $goDir
