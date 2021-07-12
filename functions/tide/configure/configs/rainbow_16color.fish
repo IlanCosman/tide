@@ -37,6 +37,8 @@ tide_chruby_bg_color red
 tide_chruby_color black
 tide_rust_bg_color yellow
 tide_rust_color black
+tide_go_bg_color yellow
+tide_go_color black
 tide_status_failure_bg_color red
 tide_status_failure_color bryellow
 tide_status_success_bg_color black
