@@ -30,6 +30,9 @@ tide_git_color_stash 000000
 tide_git_color_untracked 000000
 tide_git_color_upstream 000000
 tide_git_icon
+tide_go_bg_color FF8700
+tide_go_color 2E3436
+tide_go_icon 
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
 tide_jobs_icon ''
@@ -62,7 +65,7 @@ tide_pwd_icon_home
 tide_pwd_icon_unwritable ''
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rustc php vi_mode chruby
+tide_right_prompt_items status cmd_duration context jobs nvm virtual_env rustc php chruby go vi_mode
 tide_right_prompt_prefix ''
 tide_right_prompt_separator_diff_color ''
 tide_right_prompt_separator_same_color ''

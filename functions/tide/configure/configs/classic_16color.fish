@@ -20,6 +20,8 @@ tide_git_color_staged bryellow
 tide_git_color_stash brgreen
 tide_git_color_untracked brblue
 tide_git_color_upstream brgreen
+tide_go_bg_color black
+tide_go_color cyan
 tide_jobs_bg_color black
 tide_jobs_color green
 tide_nvm_bg_color black

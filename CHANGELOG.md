@@ -13,6 +13,7 @@
 - Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
 - Add `shlvl` item ([#156][] - @kidonng)
 - Display pipenv virtual environments better in `virtual_env` item.
+- Add `go` item ([#174][] - @dr-emacs)
 - Performance improvements
 
 ### Bug fixes

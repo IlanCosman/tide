@@ -20,6 +20,8 @@ tide_git_color_staged black
 tide_git_color_stash black
 tide_git_color_untracked black
 tide_git_color_upstream black
+tide_go_bg_color yellow
+tide_go_color black
 tide_jobs_bg_color brblack
 tide_jobs_color green
 tide_nvm_bg_color magenta
