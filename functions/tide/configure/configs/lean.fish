@@ -31,7 +31,7 @@ tide_git_color_untracked $_tide_color_light_blue
 tide_git_color_upstream $_tide_color_green
 tide_git_icon
 tide_go_bg_color normal
-tide_go_color 00AFAF
+tide_go_color 00ACD7
 tide_go_icon 
 tide_jobs_bg_color normal
 tide_jobs_color $_tide_color_dark_green

@@ -30,8 +30,8 @@ tide_git_color_stash 000000
 tide_git_color_untracked 000000
 tide_git_color_upstream 000000
 tide_git_icon
-tide_go_bg_color FF8700
-tide_go_color 2E3436
+tide_go_bg_color 00ACD7
+tide_go_color 000000
 tide_go_icon 
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
