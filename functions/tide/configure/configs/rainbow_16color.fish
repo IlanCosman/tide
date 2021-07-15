@@ -28,7 +28,7 @@ tide_nvm_bg_color green
 tide_nvm_color black
 tide_os_bg_color white
 tide_os_color black
-tide_php_bg_color magenta
+tide_php_bg_color blue
 tide_php_color black
 tide_prompt_color_frame_and_connection brblack
 tide_prompt_color_separator_same_color brblack

@@ -47,7 +47,7 @@ tide_nvm_color 000000
 tide_nvm_icon '⬢'
 tide_os_bg_color CED7CF
 tide_os_color 080808
-tide_php_bg_color 75507B
+tide_php_bg_color 617CBE
 tide_php_color 000000
 tide_php_icon ''
 tide_prompt_add_newline_before true
