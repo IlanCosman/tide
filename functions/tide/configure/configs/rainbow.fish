@@ -42,8 +42,8 @@ tide_left_prompt_prefix ''
 tide_left_prompt_separator_diff_color ''
 tide_left_prompt_separator_same_color ''
 tide_left_prompt_suffix ''
-tide_nvm_bg_color 75507B
-tide_nvm_color 2E3436
+tide_nvm_bg_color 44883E
+tide_nvm_color 000000
 tide_nvm_icon '⬢'
 tide_os_bg_color CED7CF
 tide_os_color 080808
