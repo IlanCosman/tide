@@ -70,8 +70,8 @@ tide_right_prompt_prefix ''
 tide_right_prompt_separator_diff_color ''
 tide_right_prompt_separator_same_color ''
 tide_right_prompt_suffix ''
-tide_rustc_bg_color FF8700
-tide_rustc_color 2E3436
+tide_rustc_bg_color F74C00
+tide_rustc_color 000000
 tide_rustc_icon ''
 tide_shlvl_bg_color 808000
 tide_shlvl_color 000000
