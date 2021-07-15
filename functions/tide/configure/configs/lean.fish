@@ -6,7 +6,7 @@ tide_character_vi_icon_default '❮'
 tide_character_vi_icon_replace '▶'
 tide_character_vi_icon_visual V
 tide_chruby_bg_color normal
-tide_chruby_color CC342D
+tide_chruby_color B31209
 tide_chruby_icon ''
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color 87875F
