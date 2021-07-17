@@ -29,7 +29,7 @@ function _tide_sub_configure
 end
 
 function _next_choice -a nextChoice
-    set -q _tide_selected_option || return
+    set -q _tide_selected_option || return 0
     set -l cmd (string split '/' $nextChoice)[2]
     $cmd
 end

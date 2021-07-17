@@ -9,11 +9,12 @@ function finish
     _tide_menu
     switch $_tide_selected_option
         case y
+            set -e _tide_selected_option # Skip through all the _next_choices
             _tide_finish
+            set $_tide_left_prompt_display_var
+            set $_tide_right_prompt_display_var
+            clear
     end
-
-    __tide_on_fish_exit
-    clear
 end
 
 function _tide_finish

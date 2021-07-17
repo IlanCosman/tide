@@ -1,7 +1,7 @@
 # RUN: %fish %s
 
 function _jobs -a jobs
-    set -lx _tide_has_jobs $jobs
+    set -lx _tide_jobs_status $jobs
     _tide_decolor (_tide_item_jobs)
 end
 
