@@ -36,6 +36,9 @@ tide_go_icon 
 tide_jobs_bg_color 444444
 tide_jobs_color $_tide_color_dark_green
 tide_jobs_icon ''
+tide_kube_context_bg_color 444444
+tide_kube_context_color magenta
+tide_kube_context_icon '⎈'
 tide_left_prompt_frame_enabled true
 tide_left_prompt_items pwd git newline
 tide_left_prompt_prefix ''
