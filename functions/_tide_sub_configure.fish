@@ -53,8 +53,8 @@ function _tide_menu
     set -l list_with_slashes (string join '/' $_tide_option_list)
 
     printf '%s\n' \
-        '(r)  Restart from the beginning' \
-        '(q)  Quit and do nothing'\n
+        '(r) Restart from the beginning' \
+        '(q) Quit and do nothing'\n
 
     while true
         set_color -o

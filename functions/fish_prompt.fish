@@ -16,7 +16,7 @@ end
 function fish_prompt
     _tide_last_status=$status _tide_last_pipestatus=$pipestatus if not set -e _tide_self_repainting
         jobs --query
-        fish --command "_tide_has_jobs=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
+        fish --command "_tide_jobs_status=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
             fish_bind_mode=$fish_bind_mode set -U $_tide_left_prompt_display_var (_tide_prompt)" &
         builtin disown
 
