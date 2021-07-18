@@ -2,6 +2,10 @@
 
 ## [v5.0.0][] (???)
 
+### Deprecations/Warnings
+
+- Variable naming scheme has been overhauled, some items have been renamed ([#105][])
+
 ### Features
 
 - `git` item improvements
@@ -9,7 +13,6 @@
   - Add special characters to indicate git tags and shas ([#154][])
   - Add git icon ([#154][])
   - Add changing background color in rainbow style ([#163][])
-- Improve variable naming scheme, and renamed some items ([#105][])
 - Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
 - Add `shlvl` item ([#156][] - @kidonng)
 - Display pipenv virtual environments better in `virtual_env` item.
@@ -357,6 +360,7 @@
 [#156]: https://github.com/IlanCosman/tide/issues/156
 [#162]: https://github.com/IlanCosman/tide/issues/162
 [#163]: https://github.com/IlanCosman/tide/issues/163
+[#174]: https://github.com/IlanCosman/tide/issues/174
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
