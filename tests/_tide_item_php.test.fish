@@ -4,8 +4,7 @@ function _php
     _tide_decolor (_tide_item_php)
 end
 
-set -l phpDir ~/phpTest
-mkdir -p $phpDir
+set -l phpDir (mktemp -d)
 cd $phpDir
 
 mock php --version "echo \

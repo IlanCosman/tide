@@ -4,8 +4,7 @@ function _go
     _tide_decolor (_tide_item_go)
 end
 
-set -l goDir ~/goTest
-mkdir -p $goDir
+set -l goDir (mktemp -d)
 cd $goDir
 
 mock go version "echo go version go1.16.5 linux/amd64"

@@ -4,8 +4,7 @@ function _rustc
     _tide_decolor (_tide_item_rustc)
 end
 
-set -l rustcDir ~/rustcTest
-mkdir -p $rustcDir
+set -l rustcDir (mktemp -d)
 cd $rustcDir
 
 mock rustc --version "echo rustc 1.30.0"
