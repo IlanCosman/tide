@@ -9,8 +9,7 @@ function _git_item
 end
 
 # Create directory
-set -l dir ~/gitItemTest
-rm -rf $dir
+set -l dir (mktemp -d)
 mkdir -p $dir/{normal-repo, bare-repo}
 
 # Not in git repo
@@ -62,3 +61,5 @@ cd $dir/bare-repo
 _git init --bare
 _git branch -m main
 _git_item # CHECK: main
+
+rm -r $dir

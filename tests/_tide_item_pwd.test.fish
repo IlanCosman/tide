@@ -1,8 +1,10 @@
 # RUN: %fish %s
 
-function _pwd -a dir
+set -l tmpdir (mktemp -d)
+
+function _pwd -a dir --inherit-variable tmpdir
     cd $dir
-    _tide_decolor (_tide_pwd)
+    HOME=$tmpdir _tide_decolor (_tide_pwd)
 end
 
 set -g COLUMNS 80
@@ -10,12 +12,15 @@ set -g dist_btwn_sides 80
 
 # Unwritable directories
 
-sudo mkdir -p ~/unwritable/dir # Uses sudo to make the dir unwritable
+mkdir -p $tmpdir/unwritable/dir
+chmod -R -w $tmpdir/unwritable # revoke write access
 
 set -lx tide_pwd_icon_unwritable ''
 
-_pwd ~/unwritable # CHECK:  ~/unwritable
-_pwd ~/unwritable/dir # CHECK:  ~/unwritable/dir
+_pwd $tmpdir/unwritable # CHECK:  ~/unwritable
+_pwd $tmpdir/unwritable/dir # CHECK:  ~/unwritable/dir
+
+chmod -R +w $tmpdir/unwritable # grant write access
 
 # No icon / directories
 
@@ -27,27 +32,25 @@ _pwd /usr/share # CHECK: /usr/share
 
 # Normal directories
 
-mkdir -p ~/normal/dir
+mkdir -p $tmpdir/normal/dir
 
-_pwd ~ # CHECK: ~
-_pwd ~/normal # CHECK: ~/normal
-_pwd ~/normal/dir # CHECK: ~/normal/dir
-
-rm -rf ~/normal
+_pwd $tmpdir # CHECK: ~
+_pwd $tmpdir/normal # CHECK: ~/normal
+_pwd $tmpdir/normal/dir # CHECK: ~/normal/dir
 
 # Long directories
 
-set -l longDir ~/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+set -l longDir $tmpdir/alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 mkdir -p $longDir
 _pwd "$longDir" # CHECK: ~/a/b/c/d/e/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 
 # Truncate to unique
-mkdir -p ~/alfa/bratwurst
+mkdir -p $tmpdir/alfa/bratwurst
 _pwd "$longDir" # CHECK: ~/a/brav/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r ~/alfa/bratwurst
+rm -r $tmpdir/alfa/bratwurst
 
 # Markers
-mkdir -p ~/alfa/.git
+mkdir -p $tmpdir/alfa/.git
 _pwd "$longDir" # CHECK: ~/alfa/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 
-rm -r ~/alfa
+rm -r $tmpdir
