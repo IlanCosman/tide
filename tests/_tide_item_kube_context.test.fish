@@ -12,5 +12,8 @@ _kube_context # CHECK:
 mock kubectl "config view --minify --output" "printf curr-context/default"
 _kube_context # CHECK: ⎈ curr-context
 
+mock kubectl "config view --minify --output" "printf curr-context/"
+_kube_context # CHECK: ⎈ curr-context
+
 mock kubectl "config view --minify --output" "printf curr-context/curr-namespace"
 _kube_context # CHECK: ⎈ curr-context/curr-namespace
