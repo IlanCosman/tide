@@ -1,19 +1,19 @@
 # RUN: %fish %s
 
-function _kube_context
-    _tide_decolor (_tide_item_kube_context)
+function _kubectl
+    _tide_decolor (_tide_item_kubectl)
 end
 
-set -lx tide_kube_context_icon ⎈
+set -lx tide_kubectl_icon ⎈
 
 mock kubectl "config view --minify --output" "echo error: current-context must exist in order to minify >&2"
-_kube_context # CHECK:
+_kubectl # CHECK:
 
 mock kubectl "config view --minify --output" "printf curr-context/default"
-_kube_context # CHECK: ⎈ curr-context
+_kubectl # CHECK: ⎈ curr-context
 
 mock kubectl "config view --minify --output" "printf curr-context/"
-_kube_context # CHECK: ⎈ curr-context
+_kubectl # CHECK: ⎈ curr-context
 
 mock kubectl "config view --minify --output" "printf curr-context/curr-namespace"
-_kube_context # CHECK: ⎈ curr-context/curr-namespace
+_kubectl # CHECK: ⎈ curr-context/curr-namespace
