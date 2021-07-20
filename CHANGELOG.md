@@ -8,15 +8,17 @@
 
 ### Features
 
+- Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
 - `git` item improvements
   - Display git tag when available ([#154][])
   - Add special characters to indicate git tags and shas ([#154][])
   - Add git icon ([#154][])
   - Add changing background color in rainbow style ([#163][])
-- Run pwd after all other items, which allows it to precisely react to prompt length ([#131][])
-- Add `shlvl` item ([#156][] - @kidonng)
+- New items
+  - `shlvl` ([#156][] - @kidonng)
+  - `go` ([#174][] - @dr-emacs)
+  - `kubectl` ([#178][] - @branchvincent)
 - Display pipenv virtual environments better in `virtual_env` item.
-- Add `go` item ([#174][] - @dr-emacs)
 - Performance improvements
 
 ### Bug fixes
@@ -361,6 +363,7 @@
 [#162]: https://github.com/IlanCosman/tide/issues/162
 [#163]: https://github.com/IlanCosman/tide/issues/163
 [#174]: https://github.com/IlanCosman/tide/issues/174
+[#178]: https://github.com/IlanCosman/tide/issues/178
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
