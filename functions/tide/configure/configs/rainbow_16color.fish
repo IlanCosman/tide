@@ -26,6 +26,8 @@ tide_jobs_bg_color brblack
 tide_jobs_color green
 tide_kubectl_bg_color blue
 tide_kubectl_color black
+tide_node_bg_color green
+tide_node_color black
 tide_nvm_bg_color green
 tide_nvm_color black
 tide_os_bg_color white
