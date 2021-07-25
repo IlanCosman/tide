@@ -27,7 +27,6 @@ function fish_prompt
     string unescape $$_tide_left_prompt_display_var
 end
 
-# Double underscores to avoid erasing this function on uninstall
-function __tide_on_fish_exit --on-event fish_exit
+function _tide_on_fish_exit --on-event fish_exit
     set -e $_tide_left_prompt_display_var $_tide_right_prompt_display_var
 end
