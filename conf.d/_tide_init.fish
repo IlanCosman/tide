@@ -17,6 +17,6 @@ function _tide_init_install --on-event _tide_init_install
 end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
-    set -e $_tide_var_list _tide_var_list
+    set -e $_tide_var_list _tide_var_list $_tide_left_prompt_display_var $_tide_right_prompt_display_var
     functions --erase (functions --all | string match --entire --regex '^_tide_')
 end
