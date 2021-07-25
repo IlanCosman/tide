@@ -1,26 +1,27 @@
 SHELL := /usr/bin/env fish
 
-.PHONY: help
-help: ## Show this help
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z -]+:.*?## / {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
-
-littlecheck:
-	@echo "Downloading littlecheck.py..."
-	@curl -fsSL https://raw.githubusercontent.com/ridiculousfish/littlecheck/master/littlecheck/littlecheck.py -o littlecheck
-	@chmod +x littlecheck
+.PHONY: all
+all: fmt lint install test
 
 .PHONY: fmt
-fmt: ## Format codebase
-	@fish_indent -w **/*.fish
+fmt:
+	@fish_indent --write **/*.fish
 
 .PHONY: lint
-lint: ## Lint codebase
-	@echo **/*.fish | xargs -n1 fish --no-execute
+lint:
+	@for file in **/*.fish; fish --no-execute $$file; end
+
+.PHONY: install
+install:
+	@type -q fisher || begin; curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher; end
+	@fisher install . >/dev/null
+
+littlecheck:
+	@curl -sL https://raw.githubusercontent.com/ridiculousfish/littlecheck/HEAD/littlecheck/littlecheck.py -o littlecheck
+	@chmod +x littlecheck
 
 .PHONY: test
-test: littlecheck ## Run tests
-	@type -q fisher || begin; curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher; end
+test: install littlecheck
 	@type -q mock || fisher install IlanCosman/clownfish
-	@fisher install . >/dev/null
 	@fish tests/test_setup.fish
 	@./littlecheck --progress tests/*.test.fish
