@@ -7,7 +7,7 @@ function _tide_remove_unusable_items
                 set cli_names python python3
         end
 
-        if not type -q $cli_names
+        if not type --query $cli_names
             _tide_find_and_remove $item tide_left_prompt_items
             _tide_find_and_remove $item tide_right_prompt_items
         end

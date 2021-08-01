@@ -1,5 +1,5 @@
 function _tide_pwd
-    set -l color_anchors (set_color -o $tide_pwd_color_anchors || echo)
+    set -l color_anchors (set_color -o $tide_pwd_color_anchors)
     set -l color_truncated_dirs (set_color $tide_pwd_color_truncated_dirs || echo)
     set -l reset_to_color_dirs (set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs)
 

@@ -31,9 +31,8 @@ end
 
 function _tide_left_prompt
     set -g _tide_last_item newline
-    set -g _tide_which_side_working_on left
 
-    for item in $tide_left_prompt_items
+    _tide_which_side_working_on=left for item in $tide_left_prompt_items
         _tide_item_$item
     end
 
@@ -47,9 +46,8 @@ end
 
 function _tide_right_prompt
     set -g _tide_last_item newline
-    set -g _tide_which_side_working_on right
 
-    for item in $tide_right_prompt_items
+    _tide_which_side_working_on=right for item in $tide_right_prompt_items
         _tide_item_$item
     end
 
