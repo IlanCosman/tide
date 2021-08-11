@@ -29,7 +29,7 @@
 Install with [Fisher][]:
 
 ```console
-fisher install IlanCosman/tide
+fisher install IlanCosman/tide@v5
 ```
 
 <details>
