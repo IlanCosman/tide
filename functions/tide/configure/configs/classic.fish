@@ -48,9 +48,6 @@ tide_left_prompt_suffix ''
 tide_node_bg_color 444444
 tide_node_color 44883E
 tide_node_icon '⬢'
-tide_nvm_bg_color 444444
-tide_nvm_color 44883E
-tide_nvm_icon '⬢'
 tide_os_bg_color 444444
 tide_os_color EEEEEE
 tide_php_bg_color 444444
@@ -71,7 +68,7 @@ tide_pwd_icon_home
 tide_pwd_icon_unwritable ''
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs node nvm virtual_env rustc php chruby go kubectl vi_mode
+tide_right_prompt_items status cmd_duration context jobs node virtual_env rustc php chruby go kubectl vi_mode
 tide_right_prompt_prefix ''
 tide_right_prompt_separator_diff_color ''
 tide_right_prompt_separator_same_color ''
