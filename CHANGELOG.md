@@ -4,6 +4,8 @@
 
 ### Deprecations/Warnings
 
+- `main` is now a development branch. Users should instead install from version tags
+  - e.g. `fisher install ilancosman/tide@v5`
 - Variable naming scheme has been overhauled, some items have been renamed ([#105][])
 
 ### Features
@@ -18,6 +20,7 @@
   - `shlvl` ([#156][] - @kidonng)
   - `go` ([#174][] - @dr-emacs)
   - `kubectl` ([#178][] - @branchvincent)
+  - `node` item has replaced `nvm` item ([#181][] - @branchvincent)
 - Display pipenv virtual environments better in `virtual_env` item.
 - Performance improvements
 
@@ -364,6 +367,7 @@
 [#163]: https://github.com/IlanCosman/tide/issues/163
 [#174]: https://github.com/IlanCosman/tide/issues/174
 [#178]: https://github.com/IlanCosman/tide/issues/178
+[#181]: https://github.com/IlanCosman/tide/issues/181
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
