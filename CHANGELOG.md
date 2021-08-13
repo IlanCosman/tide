@@ -1,6 +1,6 @@
 # Changelog
 
-## [v5.0.1][] (???)
+## [v5.0.1][] (Aug 13 2021)
 
 ### Bug fixes
 
@@ -406,4 +406,4 @@
 [v4.3.3]: https://github.com/IlanCosman/tide/tree/v4.3.3
 [v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
 [v5.0.0]: https://github.com/IlanCosman/tide/tree/v5.0.0
-[v5.0.1]: https://github.com/IlanCosman/tide/tree/v5.0.0
+[v5.0.1]: https://github.com/IlanCosman/tide/tree/v5.0.1

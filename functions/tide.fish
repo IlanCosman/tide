@@ -2,7 +2,7 @@ function tide
     argparse --stop-nonopt v/version h/help -- $argv
 
     if set -q _flag_version
-        printf '%s\n' "tide, version 5.0.0"
+        printf '%s\n' "tide, version 5.0.1"
     else if set -q _flag_help
         _tide_help
     else if functions --query _tide_sub_$argv[1]
