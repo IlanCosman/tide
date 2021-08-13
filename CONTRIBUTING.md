@@ -25,43 +25,42 @@ If you have any questions that aren't addressed in this document, please don't h
 
 ### Naming Conventions
 
-Everything (variables, files, functions) should be named in `snake_case`, beginning with `tide_`.
-Prepend an underscore if the user in not meant to interact directly with it.
+- Everything should be in `snake_case`.
+- Anything exposed to the user (variables, files, functions) should begin with `tide_`.
+- If the user isn't meant to interact with it from the commandline, prepend an underscore.
 
-- `set -g _tide_left_prompt_height`
+Examples:
+
+- `set -l color_anchors`
 - `set -U tide_right_prompt_items`
-- `_tide_count_left_prompt_height.fish`
-- `_tide_right_prompt`
+- `_tide_detect_os.fish`
+- `_tide_print_item`
 
 #### Specific Naming Conventions
 
 - Items begin with `_tide_item_`
 - Subcommands begin with `_tide_sub_`
 
-## Testing
+## Makefile
 
-### Dependencies
+Pretty self explanatory.
+
+- `make all`
+- `make fmt`
+- `make lint`
+- `make install`
+- `make test`
+
+In general, just run `make` to do everything.
+
+### Specifics
 
 - [Littlecheck][] - Test driver for command line tools
 - [Clownfish][] - Override the behavior of commands
-
-Example:
-
-```console
-python littlecheck.py ~/tide/tests/**
-```
-
-## Linting
-
-Code linting is done via [`fish --no-execute`][].
-
-Markdown and Yaml linting is done via the [Mega-Linter][] action.
-
-## Formatting
-
-Code formatting is done via [`fish_indent`][].
-
-Markdown and Yaml formatting is done via [Prettier][].
+- Code linting is done via [`fish --no-execute`][].
+- Markdown and Yaml linting is done via the [Mega-Linter][] action.
+- Code formatting is done via [`fish_indent`][].
+- Markdown and Yaml formatting is done via [Prettier][].
 
 ## Documentation Conventions
 
@@ -69,11 +68,9 @@ All links should be in the [reference style][], with references at the bottom of
 
 ## Release
 
-Note that Tide does not use strict semantic versioning.
-
 Todo on release:
 
-- [ ] Update version number in install `tide.fish`
+- [ ] Update version number in `tide.fish`
 - [ ] Make a commit containing above edit, titled with the version number
 - [ ] Create a new tag and push it to GitHub
 
