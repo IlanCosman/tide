@@ -29,5 +29,5 @@ function fish_prompt
 end
 
 function _tide_on_fish_exit --on-event fish_exit
-    set -e $_tide_prompt_var $_tide_right_prompt_display_var
+    set -e $_tide_prompt_var
 end

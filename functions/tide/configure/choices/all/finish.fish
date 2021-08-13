@@ -11,8 +11,7 @@ function finish
         case y
             set -e _tide_selected_option # Skip through all the _next_choices
             _tide_finish
-            set $_tide_left_prompt_display_var
-            set $_tide_right_prompt_display_var
+            set $_tide_prompt_var
             clear
     end
 end

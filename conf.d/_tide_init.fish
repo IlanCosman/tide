@@ -25,7 +25,7 @@ function _tide_init_update --on-event _tide_init_update
     tide bug-report --verbose >$tmp
 
     # Delete old vars
-    set -e $_tide_var_list _tide_var_list $_tide_left_prompt_display_var $_tide_right_prompt_display_var
+    set -e $_tide_var_list _tide_var_list $_tide_prompt_var
 
     # Print a warning
     set_color yellow
@@ -40,6 +40,6 @@ function _tide_init_update --on-event _tide_init_update
 end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
-    set -e $_tide_var_list _tide_var_list $_tide_left_prompt_display_var $_tide_right_prompt_display_var
+    set -e $_tide_var_list _tide_var_list $_tide_prompt_var
     functions --erase (functions --all | string match --entire --regex '^_tide_')
 end

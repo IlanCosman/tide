@@ -7,7 +7,8 @@ function _tide_sub_bug-report
         source && fisher install ilancosman/tide@v5"
     else if set -q _flag_verbose
         set --long | string match --regex "^_?tide.*" | # Get only tide variables
-            string match --regex --invert "^_tide_.*_prompt_display_.*" | # Remove _tide_left_prompt_display_5770 etc
+            string match --regex --invert "^_tide_prompt_var.*" | # Remove _tide_prompt_var
+            string match --regex --invert "^_tide_prompt_data.*" | # Remove _tide_prompt_data
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
         set -l fish_version (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
