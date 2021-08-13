@@ -9,7 +9,7 @@ set -g _tide_prompt_var _tide_prompt_$fish_pid
 
 function _tide_refresh_prompt --on-variable $_tide_prompt_var
     set -g _tide_self_repainting # prevents us from creating a second background job
-    set -g _tide_prompt_data $$_tide_prompt_var # First element in _tide_prompt_data is 'actual' right prompt
+    set -g _tide_prompt_data $$_tide_prompt_var # First element in _tide_prompt_data is right prompt
     commandline --function repaint
 end
 
@@ -26,6 +26,10 @@ function fish_prompt
 
     test "$tide_prompt_add_newline_before" = true && echo
     string unescape $_tide_prompt_data[2..]
+end
+
+function fish_right_prompt
+    string unescape $_tide_prompt_data[1]
 end
 
 function _tide_on_fish_exit --on-event fish_exit
