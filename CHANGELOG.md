@@ -1,5 +1,12 @@
 # Changelog
 
+## [v5.0.1][] (???)
+
+### Bug fixes
+
+- Fixed a bug which caused the prompt to not appear immediately in new shells ([#171][])
+- Fixed a bug where `tide_context_color_root` was not correctly set
+
 ## [v5.0.0][] (Aug 11 2021)
 
 ### Deprecations/Warnings
@@ -399,3 +406,4 @@
 [v4.3.3]: https://github.com/IlanCosman/tide/tree/v4.3.3
 [v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
 [v5.0.0]: https://github.com/IlanCosman/tide/tree/v5.0.0
+[v5.0.1]: https://github.com/IlanCosman/tide/tree/v5.0.0
