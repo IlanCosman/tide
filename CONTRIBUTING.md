@@ -66,13 +66,13 @@ In general, just run `make` to do everything.
 
 All links should be in the [reference style][], with references at the bottom of the document in alphabetical order.
 
-## Release
-
-Todo on release:
+## Release Checklist
 
 - [ ] Update version number in `tide.fish`
-- [ ] Make a commit containing above edit, titled with the version number
-- [ ] Create a new tag and push it to GitHub
+- [ ] Put the current date in the changelog
+- [ ] Make a commit containing above edits, titled with the version number
+- [ ] Create a new tag
+- [ ] Push to GitHub
 
 [`fish --no-execute`]: https://fishshell.com/docs/current/cmds/fish.html
 [`fish_indent`]: https://fishshell.com/docs/current/cmds/fish_indent.html
