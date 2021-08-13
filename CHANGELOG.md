@@ -1,6 +1,6 @@
 # Changelog
 
-## [v5.0.0][] (???)
+## [v5.0.0][] (Aug 11 2021)
 
 ### Deprecations/Warnings
 
@@ -398,4 +398,4 @@
 [v4.3.2]: https://github.com/IlanCosman/tide/tree/v4.3.2
 [v4.3.3]: https://github.com/IlanCosman/tide/tree/v4.3.3
 [v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
-[v5.0.0]: https://github.com/IlanCosman/tide/tree/v4.3.4
+[v5.0.0]: https://github.com/IlanCosman/tide/tree/v5.0.0
