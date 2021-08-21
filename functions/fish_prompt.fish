@@ -4,6 +4,7 @@ end
 status is-interactive || exit
 
 _tide_remove_unusable_items
+_tide_cache_variables
 
 # The first element in $$_tide_prompt_var is right prompt
 # All remaining ones are 'left' prompt (also upper right in 2-line prompts)
@@ -25,8 +26,7 @@ function fish_prompt
         set -g _tide_last_pid $last_pid
     end
 
-    test "$tide_prompt_add_newline_before" = true && echo
-    string unescape $$_tide_prompt_var[1][2..]
+    string unescape $_tide_add_newline $$_tide_prompt_var[1][2..]
 end
 
 function fish_right_prompt

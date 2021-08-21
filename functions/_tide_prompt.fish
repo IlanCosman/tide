@@ -1,20 +1,19 @@
 function _tide_prompt
     left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
-        set -l prompt_and_frame_color (set_color $tide_prompt_color_frame_and_connection -b normal)
         if test "$tide_left_prompt_frame_enabled" = true
-            set left_prompt[1] $prompt_and_frame_color╭─"$left_prompt[1]"
-            set left_prompt[2] $prompt_and_frame_color╰─"$left_prompt[2]"
+            set left_prompt[1] $_tide_prompt_and_frame_color╭─"$left_prompt[1]"
+            set left_prompt[2] $_tide_prompt_and_frame_color╰─"$left_prompt[2]"
         end
         if test "$tide_right_prompt_frame_enabled" = true
-            set right_prompt[1] "$right_prompt[1]"$prompt_and_frame_color─╮
-            set right_prompt[2] "$right_prompt[2]"$prompt_and_frame_color─╯
+            set right_prompt[1] "$right_prompt[1]"$_tide_prompt_and_frame_color─╮
+            set right_prompt[2] "$right_prompt[2]"$_tide_prompt_and_frame_color─╯
         end
 
         echo $right_prompt[2]
 
         set -lx dist_btwn_sides (math $COLUMNS + 5 - ( # Regex removes color. 5 = @PWD@ length which will be replaced
             string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
-        printf '%s' (string replace @PWD@ (_tide_pwd) "$left_prompt[1]") $prompt_and_frame_color
+        printf '%s' (string replace @PWD@ (_tide_pwd) "$left_prompt[1]") $_tide_prompt_and_frame_color
 
         string repeat --no-newline --max (math max 0, $dist_btwn_sides - $pwd_length) $tide_prompt_icon_connection
         printf '%s' $right_prompt[1] \n $left_prompt[2]' '
