@@ -58,7 +58,7 @@ function _tide_menu
 
     while true
         set_color -o
-        read --prompt-str "Choice [$list_with_slashes/r/q] " input
+        read --nchars 1 --prompt-str "Choice [$list_with_slashes/r/q] " input
         set_color normal
 
         switch $input
