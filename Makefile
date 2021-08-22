@@ -24,4 +24,4 @@ littlecheck:
 test: install littlecheck
 	@type -q mock || fisher install IlanCosman/clownfish
 	@fish tests/test_setup.fish
-	@./littlecheck --progress tests/*.test.fish
+	@_tide_cache_variables; ./littlecheck --progress tests/*.test.fish
