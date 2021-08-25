@@ -35,7 +35,8 @@ function _tide_finish
         set -U (string replace 'fake_' '' $fakeVar) $$fakeVar
     end
 
-    set -e $_tide_prompt_var # Make sure old prompt won't display
+    # Make sure old prompt won't display
+    set -e $_tide_prompt_var 2>/dev/null
 
     # Re-initialize the prompt
     source (functions --details fish_prompt)
