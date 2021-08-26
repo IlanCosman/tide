@@ -20,9 +20,9 @@ function _tide_pwd
     string join / $split_pwd_for_output | string length --visible | read -g pwd_length
 
     i=1 for dir_section in $split_pwd[2..-2]
-        set -l parent_dir (string join -- / $split_pwd[..$i] | string replace '~' $HOME) # Uses i before increment
+        string join -- / $split_pwd[..$i] | string replace '~' $HOME | read -l parent_dir # Uses i before increment
 
-        set i (math $i + 1)
+        math $i + 1 | read i
 
         # Returns true if any markers exist in dir_section
         if test -z false (string split --max 2 " " -- "-o -e "$parent_dir/$dir_section/$tide_pwd_markers)
