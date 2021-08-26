@@ -11,8 +11,8 @@ function _tide_prompt
 
         echo $right_prompt[2]
 
-        set -lx dist_btwn_sides (math $COLUMNS + 5 - ( # Regex removes color. 5 = @PWD@ length which will be replaced
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
+        # 5 = @PWD@ length which will be replaced
+        set -lx dist_btwn_sides (math $COLUMNS + 5 - (string length --visible "$left_prompt[1]""$right_prompt[1]"))
         printf '%s' (string replace @PWD@ (_tide_pwd) "$left_prompt[1]") $_tide_prompt_and_frame_color
 
         string repeat --no-newline --max (math max 0, $dist_btwn_sides - $pwd_length) $tide_prompt_icon_connection
@@ -20,8 +20,7 @@ function _tide_prompt
     else
         echo $right_prompt[1]
 
-        set -lx dist_btwn_sides (math $COLUMNS + 5 -$tide_prompt_min_cols - (
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
+        set -lx dist_btwn_sides (math $COLUMNS + 5 -$tide_prompt_min_cols - (string length --visible "$left_prompt[1]""$right_prompt[1]"))
         string replace @PWD@ (_tide_pwd) "$left_prompt[1] "
     end
 end
