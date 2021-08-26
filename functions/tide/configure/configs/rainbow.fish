@@ -30,6 +30,13 @@ tide_git_color_stash 000000
 tide_git_color_untracked 000000
 tide_git_color_upstream 000000
 tide_git_icon
+tide_git_icon_ahead '⇡'
+tide_git_icon_behind '⇣'
+tide_git_icon_conflicted '~'
+tide_git_icon_dirty '!'
+tide_git_icon_staged '+'
+tide_git_icon_stash '*'
+tide_git_icon_untracked '?'
 tide_go_bg_color 00ACD7
 tide_go_color 000000
 tide_go_icon 

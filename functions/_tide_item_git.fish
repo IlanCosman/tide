@@ -62,10 +62,10 @@ function _tide_item_git
 
     _tide_print_item git $_tide_location_color $tide_git_icon' ' (set_color white; printf %s $location
         set_color $tide_git_color_operation; printf %s ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps
-        set_color $tide_git_color_upstream; printf %s ' ⇣'$upstream_behind ' ⇡'$upstream_ahead
-        set_color $tide_git_color_stash; printf %s ' *'$stash
-        set_color $tide_git_color_conflicted; printf %s ' ~'$conflicted
-        set_color $tide_git_color_staged; printf %s ' +'$staged
-        set_color $tide_git_color_dirty; printf %s ' !'$dirty
-        set_color $tide_git_color_untracked; printf %s ' ?'$untracked)
+        set_color $tide_git_color_upstream; printf %s ' '$tide_git_icon_behind$upstream_behind ' '$tide_git_icon_ahead$upstream_ahead
+        set_color $tide_git_color_stash; printf %s ' '$tide_git_icon_stash$stash
+        set_color $tide_git_color_conflicted; printf %s ' '$tide_git_icon_conflicted$conflicted
+        set_color $tide_git_color_staged; printf %s ' '$tide_git_icon_staged$staged
+        set_color $tide_git_color_dirty; printf %s ' '$tide_git_icon_dirty$dirty
+        set_color $tide_git_color_untracked; printf %s ' '$tide_git_icon_untracked$untracked)
 end
