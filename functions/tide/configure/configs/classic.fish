@@ -90,15 +90,15 @@ tide_time_bg_color 444444
 tide_time_color 5F8787
 tide_time_format '%T'
 tide_vi_mode_bg_color_default 444444
-tide_vi_mode_bg_color_insert 444444
+tide_vi_mode_bg_color_insert
 tide_vi_mode_bg_color_replace 444444
 tide_vi_mode_bg_color_visual 444444
 tide_vi_mode_color_default 87af00
-tide_vi_mode_color_insert 8787af
+tide_vi_mode_color_insert
 tide_vi_mode_color_replace d78700
 tide_vi_mode_color_visual 5f87d7
 tide_vi_mode_icon_default DEFAULT
-tide_vi_mode_icon_insert INSERT
+tide_vi_mode_icon_insert
 tide_vi_mode_icon_replace REPLACE
 tide_vi_mode_icon_visual VISUAL
 tide_virtual_env_bg_color 444444
