@@ -56,3 +56,4 @@ tide_vi_mode_color_replace yellow
 tide_vi_mode_color_visual blue
 tide_virtual_env_bg_color normal
 tide_virtual_env_color cyan
+tide_ws_icon 'ﮂ'
