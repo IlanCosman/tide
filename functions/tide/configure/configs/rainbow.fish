@@ -86,6 +86,9 @@ tide_status_color 4E9A06
 tide_status_color_failure FFFF00
 tide_status_icon '✔'
 tide_status_icon_failure '✘'
+tide_terraform_bg_color 800080
+tide_terraform_color 000000
+tide_terraform_icon
 tide_time_bg_color D3D7CF
 tide_time_color 000000
 tide_time_format '%T'
