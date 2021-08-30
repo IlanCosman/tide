@@ -101,6 +101,6 @@ tide_vi_mode_icon_visual
 tide_virtual_env_bg_color normal
 tide_virtual_env_color 00AFAF
 tide_virtual_env_icon ''
-tide_ws_bg_color 0000FF
-tide_ws_color FFFFFF
+tide_ws_bg_color FF58BF
+tide_ws_color 000000
 tide_ws_icon 'ﮂ'
