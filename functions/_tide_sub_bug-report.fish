@@ -32,12 +32,16 @@ function _tide_sub_bug-report
         read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
         read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
+        set -l fish_startup_time (fish --command "time fish -c exit" 2>&1 |
+            string match --regex "Executed in(.*)fish" | string trim)[2]
+
         printf '%b\n' "\nPlease copy the following information into the issue:\n" \
             "fish version: $fish_version" \
             "tide version: $tide_version" \
             "term: $TERM" \
             "os: $os" \
-            "terminal emulator: $terminal_emulator"
+            "terminal emulator: $terminal_emulator" \
+            "fish startup: $fish_startup_time"
     end
 end
 
