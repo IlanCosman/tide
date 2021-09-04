@@ -29,11 +29,13 @@ function _tide_sub_bug-report
             "Tide does not work with oh-my-fish installed." \
             "Please uninstall it before submitting a bug report." || return
 
-        read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
-        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
-
         set -l fish_startup_time (fish --command "time fish -c exit" 2>&1 |
             string match --regex "Executed in(.*)fish" | string trim)[2]
+
+        set -l fisher_plugins (string join ', ' $_fisher_plugins)
+
+        read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
+        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
         printf '%b\n' "\nPlease copy the following information into the issue:\n" \
             "fish version: $fish_version" \
@@ -41,7 +43,8 @@ function _tide_sub_bug-report
             "term: $TERM" \
             "os: $os" \
             "terminal emulator: $terminal_emulator" \
-            "fish startup: $fish_startup_time"
+            "fish startup: $fish_startup_time" \
+            "fisher plugins: $fisher_plugins"
     end
 end
 
