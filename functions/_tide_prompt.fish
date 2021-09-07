@@ -33,7 +33,7 @@ function _tide_left_prompt
         _tide_item_$item
     end
 
-    if not contains -- $_tide_last_item newline character
+    if test "$_tide_last_item" != newline
         set_color $_tide_previous_bg_color -b normal
         printf '%s' $tide_left_prompt_suffix
     end
