@@ -27,13 +27,13 @@ function _tide_prompt
 end
 
 function _tide_left_prompt
-    set -g _tide_last_item newline
+    set -g _tide_last_item_was_newline
 
     _tide_which_side_working_on=left for item in $tide_left_prompt_items
         _tide_item_$item
     end
 
-    if test "$_tide_last_item" != newline
+    if not set -e _tide_last_item_was_newline
         set_color $_tide_previous_bg_color -b normal
         printf '%s' $tide_left_prompt_suffix
     end
@@ -42,13 +42,13 @@ function _tide_left_prompt
 end
 
 function _tide_right_prompt
-    set -g _tide_last_item newline
+    set -g _tide_last_item_was_newline
 
     _tide_which_side_working_on=right for item in $tide_right_prompt_items
         _tide_item_$item
     end
 
-    if test "$_tide_last_item" != newline
+    if not set -e _tide_last_item_was_newline
         set_color $_tide_previous_bg_color -b normal
         printf '%s' $tide_right_prompt_suffix
     end
