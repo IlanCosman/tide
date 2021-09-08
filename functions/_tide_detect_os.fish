@@ -1,16 +1,16 @@
 function _tide_detect_os
     switch (uname | string lower)
         case darwin
-            printf '%s' 
+            echo -ns 
         case freebsd openbsd dragonfly
-            printf '%s' 
+            echo -ns 
         case linux
             _tide_detect_os_linux_cases /etc/os-release ID ||
                 _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
                 _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
-                printf '%s' 
+                echo -ns 
         case '*'
-            printf '%s' '?'
+            echo -ns '?'
     end
 end
 
@@ -43,5 +43,5 @@ function _tide_detect_os_linux_cases -a file key
         ubuntu 
 
     set -l distro_index (contains --index $value $distro_icons) || return
-    printf '%s' $distro_icons[(math $distro_index + 1)]
+    echo -ns $distro_icons[(math $distro_index + 1)]
 end

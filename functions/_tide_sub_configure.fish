@@ -16,7 +16,7 @@ end
 
 function _tide_sub_configure
     if test $COLUMNS -lt 55 -o $LINES -lt 21
-        printf '%s\n' 'Terminal size too small; must be at least 55 x 21'
+        echo 'Terminal size too small; must be at least 55 x 21'
         return 1
     end
 
@@ -45,16 +45,15 @@ function _tide_option -a symbol text
     set -ga _tide_option_list $symbol
 
     set_color -o
-    printf '%s\n' "($symbol) $text"
+    echo "($symbol) $text"
     set_color normal
 end
 
 function _tide_menu
     set -l list_with_slashes (string join '/' $_tide_option_list)
 
-    printf '%s\n' \
-        '(r) Restart from the beginning' \
-        '(q) Quit and do nothing'\n
+    echo '(r) Restart from the beginning'
+    echo '(q) Quit and do nothing'\n
 
     while true
         set_color -o
