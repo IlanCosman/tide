@@ -1,4 +1,3 @@
-tide_character_bg_color normal
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
 tide_character_icon '❯'

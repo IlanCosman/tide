@@ -1,4 +1,3 @@
-tide_character_bg_color normal
 tide_character_color brgreen
 tide_character_color_failure brred
 tide_chruby_bg_color black
