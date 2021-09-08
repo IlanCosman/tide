@@ -22,13 +22,13 @@ function _tide_pwd
     i=1 for dir_section in $split_pwd[2..-2]
         string join -- / $split_pwd[..$i] | string replace '~' $HOME | read -l parent_dir # Uses i before increment
 
-        math $i + 1 | read i
+        math $i+1 | read i
 
         # Returns true if any markers exist in dir_section
         if test -z false (string split --max 2 " " -- "-o -e "$parent_dir/$dir_section/$tide_pwd_markers)
             set split_pwd_for_output[$i] $_tide_color_anchors$dir_section$_tide_reset_to_color_dirs
         else if test $pwd_length -gt $dist_btwn_sides
-            while set -l truncation_length (math $truncation_length + 1) &&
+            while set -l truncation_length (math $truncation_length +1) &&
                     set -l truncated (string sub --length $truncation_length -- $dir_section) &&
                     test $truncated != $dir_section -a (count $parent_dir/$truncated*/) -gt 1
             end

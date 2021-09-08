@@ -1,7 +1,7 @@
 function _tide_item_cmd_duration
     if test $CMD_DURATION -gt $tide_cmd_duration_threshold
-        math --scale=$tide_cmd_duration_decimals "$CMD_DURATION/1000" % 60 | read -l seconds
-        math --scale=0 "$CMD_DURATION/60000" % 60 | read -l minutes
+        math --scale=$tide_cmd_duration_decimals "$CMD_DURATION/1000"%60 | read -l seconds
+        math --scale=0 "$CMD_DURATION/60000"%60 | read -l minutes
         math --scale=0 "$CMD_DURATION/3600000" | read -l hours
 
         if test $hours != 0

@@ -12,15 +12,15 @@ function _tide_prompt
         echo $right_prompt[2]
 
         # 5 = @PWD@ length which will be replaced
-        math $COLUMNS + 5 - (string length --visible "$left_prompt[1]""$right_prompt[1]") | read -lx dist_btwn_sides
+        math $COLUMNS+5-(string length --visible "$left_prompt[1]""$right_prompt[1]") | read -lx dist_btwn_sides
         printf '%s' (string replace @PWD@ (_tide_pwd) "$left_prompt[1]") $_tide_prompt_and_frame_color
 
-        string repeat --no-newline --max (math max 0, $dist_btwn_sides - $pwd_length) $tide_prompt_icon_connection
+        string repeat --no-newline --max (math max 0, $dist_btwn_sides-$pwd_length) $tide_prompt_icon_connection
         printf '%s' $right_prompt[1] \n $left_prompt[2]' '
     else
         echo $right_prompt[1]
 
-        math $COLUMNS + 5 -$tide_prompt_min_cols - (string length --visible "$left_prompt[1]""$right_prompt[1]") | read -lx dist_btwn_sides
+        math $COLUMNS+5-(string length --visible "$left_prompt[1]""$right_prompt[1]") -$tide_prompt_min_cols | read -lx dist_btwn_sides
         string replace @PWD@ (_tide_pwd) "$left_prompt[1] "
     end
 end
