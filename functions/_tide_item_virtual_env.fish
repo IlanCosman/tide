@@ -9,4 +9,7 @@ function _tide_item_virtual_env
         else
             _tide_print_item virtual_env $tide_virtual_env_icon' ' $split_virtual_env[-1]
         end
+    if test -n "$CONDA_DEFAULT_ENV"
+        _tide_print_item virtual_env $tide_virtual_env_icon' ' $CONDA_DEFAULT_ENV
+    end
 end

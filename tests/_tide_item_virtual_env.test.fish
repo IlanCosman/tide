@@ -17,3 +17,10 @@ _virtual_env # CHECK:  python_project
 
 set -lx VIRTUAL_ENV /home/ilan/.local/share/virtualenvs/pipenv_project-EwRYuc3l
 _virtual_env # CHECK:  pipenv_project
+
+set -lx VIRTUAL_ENV
+set -lx CONDA_DEFAULT_ENV
+_virtual_env # CHECK:
+
+set -lx CONDA_DEFAULT_ENV myenv
+_virtual_env # CHECK:  myenv
