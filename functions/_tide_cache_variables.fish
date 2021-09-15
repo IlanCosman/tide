@@ -9,10 +9,16 @@ function _tide_cache_variables
         set -gx _tide_location_color (set_color $tide_git_color_branch || echo)
 
     # two line prompt
-    contains newline $tide_left_prompt_items &&
+    if contains newline $tide_left_prompt_items
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
+    else
+        set -e _tide_prompt_and_frame_color
+    end
 
     # newline before
-    set -e _tide_add_newline
-    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline ''
+    if test "$tide_prompt_add_newline_before" = true
+        set -g _tide_add_newline ''
+    else
+        set -e _tide_add_newline
+    end
 end

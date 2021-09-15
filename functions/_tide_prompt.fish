@@ -1,5 +1,5 @@
 function _tide_prompt
-    left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
+    left_prompt=(_tide_left_prompt) right_prompt=(_tide_right_prompt) if set -q _tide_prompt_and_frame_color # If prompt is two lines
         if test "$tide_left_prompt_frame_enabled" = true
             set left_prompt[1] $_tide_prompt_and_frame_color╭─"$left_prompt[1]"
             set left_prompt[2] $_tide_prompt_and_frame_color╰─"$left_prompt[2]"
@@ -32,8 +32,6 @@ function _tide_left_prompt
         set_color $_tide_previous_bg_color -b normal
         echo -ns $tide_left_prompt_suffix
     end
-
-    set_color normal # Make sure there is something printed on the last line
 end
 
 function _tide_right_prompt
@@ -47,8 +45,6 @@ function _tide_right_prompt
         set_color $_tide_previous_bg_color -b normal
         echo -ns $tide_right_prompt_suffix
     end
-
-    set_color normal # Make sure there is something printed on the last line
 end
 
 function _tide_item_pwd
