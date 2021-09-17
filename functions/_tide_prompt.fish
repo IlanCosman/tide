@@ -19,20 +19,20 @@ function _tide_prompt
 
     if set -q _tide_prompt_and_frame_color # If prompt is two lines
         if test "$tide_left_prompt_frame_enabled" = true
-            set left_prompt[1] $_tide_prompt_and_frame_color╭─"$left_prompt[1]"
-            set left_prompt[2] $_tide_prompt_and_frame_color╰─"$left_prompt[2]"
+            set left_prompt[1] "$_tide_prompt_and_frame_color╭─$left_prompt[1]"
+            set left_prompt[2] "$_tide_prompt_and_frame_color╰─$left_prompt[2]"
         end
         if test "$tide_right_prompt_frame_enabled" = true
-            set right_prompt[1] "$right_prompt[1]"$_tide_prompt_and_frame_color─╮
-            set right_prompt[2] "$right_prompt[2]"$_tide_prompt_and_frame_color─╯
+            set right_prompt[1] "$right_prompt[1]$_tide_prompt_and_frame_color─╮"
+            set right_prompt[2] "$right_prompt[2]$_tide_prompt_and_frame_color─╯"
         end
 
         # 5 = @PWD@ length which will be replaced
         math $COLUMNS+5-(string length --visible "$left_prompt[1]$right_prompt[1]") | read -lx dist_btwn_sides
-        echo -ns $right_prompt[2] \n (string replace @PWD@ (_tide_pwd) "$left_prompt[1]") $_tide_prompt_and_frame_color
+        echo -ns "$right_prompt[2]"\n(string replace @PWD@ (_tide_pwd) "$left_prompt[1]")$_tide_prompt_and_frame_color
 
         string repeat --no-newline --max (math max 0, $dist_btwn_sides-$pwd_length) $tide_prompt_icon_connection
-        echo -ns $right_prompt[1] \n $left_prompt[2]' '
+        echo -ns "$right_prompt[1]"\n"$left_prompt[2] "
     else
         math $COLUMNS+5-(string length --visible "$left_prompt[1]$right_prompt[1]") -$tide_prompt_min_cols | read -lx dist_btwn_sides
         string replace @PWD@ (_tide_pwd) "$right_prompt[1]" "$left_prompt[1] "
