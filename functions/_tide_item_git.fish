@@ -48,11 +48,16 @@ function _tide_item_git
     test "$is_inside_git_dir" = true && set -l tide_git_set_dir_option -C $git_dir/..
     # Suppress errors in case we are in a bare repo
     set -l git_info (git $tide_git_set_dir_option --no-optional-locks status --porcelain 2>/dev/null)
-    set -l stash (git $tide_git_set_dir_option stash list 2>/dev/null | count) || set -e stash
-    set -l conflicted (string match --regex '^UU' $git_info | count) || set -e conflicted
-    set -l staged (string match --regex '^[ADMR].' $git_info | count) || set -e staged
-    set -l dirty (string match --regex '^.[ADMR]' $git_info | count) || set -e dirty
-    set -l untracked (string match --regex '^\?\?' $git_info | count) || set -e untracked
+    set -l data (git $tide_git_set_dir_option stash list 2>/dev/null | count
+        string match --regex '^UU' $git_info | count
+        string match --regex '^[ADMR].' $git_info | count
+        string match --regex '^.[ADMR]' $git_info | count
+        string match --regex '^\?\?' $git_info | count)
+    test $data[1] != 0 && set -l stash $data[1]
+    test $data[2] != 0 && set -l conflicted $data[2]
+    test $data[3] != 0 && set -l staged $data[3]
+    test $data[4] != 0 && set -l dirty $data[4]
+    test $data[5] != 0 && set -l untracked $data[5]
 
     if set -q tide_git_operation || set -q conflicted
         set -g tide_git_bg_color $tide_git_bg_color_urgent
