@@ -11,7 +11,6 @@ If you have any questions that aren't addressed in this document, please don't h
 ### Style Guide
 
 - `test` > `[...]`
-- `printf` > `echo`
 - `&&`/`||` > `and`/`or`
 - Conditionals
   - For simple conditionals use `&&`/`||`
