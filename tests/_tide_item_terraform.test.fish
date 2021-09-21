@@ -12,6 +12,9 @@ mock terraform workspace show "echo 'default'"
 _php # CHECK:
 
 mkdir .terraform
-_php # CHECK: default
+_php # CHECK:
+
+mock terraform workspace show "echo 'test'"
+_php # CHECK: test
 
 rm -r $terraformDir
