@@ -1,6 +1,6 @@
 function _tide_remove_unusable_items
     # Remove tool-specific items for tools the machine doesn't have installed
-    for item in chruby git go kubectl node php rustc virtual_env
+    for item in chruby git go kubectl node php rustc terraform virtual_env
         set -l cli_names $item
         switch $item
             case virtual_env
