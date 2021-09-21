@@ -7,14 +7,13 @@ end
 set -l terraformDir (mktemp -d)
 cd $terraformDir
 
-mock terraform workspace show "echo 'default'"
-
-_php # CHECK:
+mock terraform "workspace show" "echo default"
+_terraform # CHECK:
 
 mkdir .terraform
-_php # CHECK:
+_terraform # CHECK:
 
-mock terraform workspace show "echo 'test'"
-_php # CHECK: test
+mock terraform "workspace show" "echo test"
+_terraform # CHECK: test
 
 rm -r $terraformDir
