@@ -1,6 +1,6 @@
 function _tide_prompt
     set -g _tide_last_item_was_newline
-    _tide_which_side_working_on=left set -f left_prompt (for item in $tide_left_prompt_items
+    _tide_side=left set -f left_prompt (for item in $tide_left_prompt_items
             _tide_item_$item
         end
         if not set -e _tide_last_item_was_newline
@@ -9,7 +9,7 @@ function _tide_prompt
         end)
 
     set -g _tide_last_item_was_newline
-    _tide_which_side_working_on=right set -f right_prompt (for item in $tide_right_prompt_items
+    _tide_side=right set -f right_prompt (for item in $tide_right_prompt_items
             _tide_item_$item
         end
         if not set -e _tide_last_item_was_newline
