@@ -21,4 +21,11 @@ function _tide_cache_variables
     else
         set -e _tide_add_newline
     end
+
+    # item padding
+    if test "$tide_prompt_pad_items" = true
+        set -gx _tide_pad ' '
+    else
+        set -e _tide_pad
+    end
 end

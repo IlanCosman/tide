@@ -17,11 +17,7 @@ function _tide_print_item -a item
 
     var=tide_"$item"_color set_color $$var -b $item_bg_color
 
-    if test "$tide_prompt_pad_items" = true
-        echo -ns ' ' $argv[2..] ' '
-    else
-        echo -ns $argv[2..]
-    end
+    echo -ns $_tide_pad $argv[2..] $_tide_pad
 
     set -g _tide_previous_bg_color $item_bg_color
 end
