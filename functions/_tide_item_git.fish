@@ -11,31 +11,31 @@ function _tide_item_git
 
     # Operation
     if test -d $git_dir/rebase-merge
-        read tide_git_step <$git_dir/rebase-merge/msgnum
-        read tide_git_total_steps <$git_dir/rebase-merge/end
+        read -f step <$git_dir/rebase-merge/msgnum
+        read -f total_steps <$git_dir/rebase-merge/end
         if test -f $git_dir/rebase-merge/interactive
-            set tide_git_operation rebase-i
+            set -f operation rebase-i
         else
-            set tide_git_operation rebase-m
+            set -f operation rebase-m
         end
     else if test -d $git_dir/rebase-apply
-        read tide_git_step <$git_dir/rebase-apply/next
-        read tide_git_total_steps <$git_dir/rebase-apply/last
+        read -f step <$git_dir/rebase-apply/next
+        read -f total_steps <$git_dir/rebase-apply/last
         if test -f $git_dir/rebase-apply/rebasing
-            set tide_git_operation rebase
+            set -f operation rebase
         else if test -f $git_dir/rebase-apply/applying
-            set tide_git_operation am
+            set -f operation am
         else
-            set tide_git_operation am/rebase
+            set -f operation am/rebase
         end
     else if test -f $git_dir/MERGE_HEAD
-        set tide_git_operation merge
+        set -f operation merge
     else if test -f $git_dir/CHERRY_PICK_HEAD
-        set tide_git_operation cherry-pick
+        set -f operation cherry-pick
     else if test -f $git_dir/REVERT_HEAD
-        set tide_git_operation revert
+        set -f operation revert
     else if test -f $git_dir/BISECT_LOG
-        set tide_git_operation bisect
+        set -f operation bisect
     end
 
     # Upstream behind/ahead. Suppress errors in case there is no upstream
@@ -59,14 +59,14 @@ function _tide_item_git
     test $data[4] != 0 && set -l dirty $data[4]
     test $data[5] != 0 && set -l untracked $data[5]
 
-    if set -q tide_git_operation || set -q conflicted
+    if set -q operation || set -q conflicted
         set -g tide_git_bg_color $tide_git_bg_color_urgent
     else if set -q staged || set -q dirty || set -q untracked
         set -g tide_git_bg_color $tide_git_bg_color_unstable
     end
 
     _tide_print_item git $_tide_location_color $tide_git_icon' ' (set_color white; echo -ns $location
-        set_color $tide_git_color_operation; echo -ns ' '$tide_git_operation ' '$tide_git_step/$tide_git_total_steps
+        set_color $tide_git_color_operation; echo -ns ' '$operation ' '$step/$total_steps
         set_color $tide_git_color_upstream; echo -ns ' ⇣'$upstream_behind ' ⇡'$upstream_ahead
         set_color $tide_git_color_stash; echo -ns ' *'$stash
         set_color $tide_git_color_conflicted; echo -ns ' ~'$conflicted
