@@ -8,7 +8,6 @@ function _tide_sub_bug-report
     else if set -q _flag_verbose
         set --long | string match --regex "^_?tide.*" | # Get only tide variables
             string match --regex --invert "^_tide_prompt_var.*" | # Remove _tide_prompt_var
-            string match --regex --invert "^_tide_prompt_data.*" | # Remove _tide_prompt_data
             string match --regex --invert "^_tide_var_list.*" # Remove _tide_var_list
     else
         set -l fish_version (fish --version | string match --regex "fish, version (\d\.\d\.\d)")[2]
@@ -17,7 +16,7 @@ function _tide_sub_bug-report
         set -l tide_version (tide --version | string match --regex "tide, version (\d\.\d\.\d)")[2]
         _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tide_version || return
 
-        test (git --version | string match --regex "git version ([\d\.]*)" | string replace --all '.' '')[2] -gt 2220
+        test (git --version | string match --regex "git version ([\d\.]*)" | string replace --all . '')[2] -gt 2220
         _tide_check_condition \
             "Your git version is too old." \
             "Tide requires at least version 2.22." \
@@ -32,8 +31,6 @@ function _tide_sub_bug-report
         set -l fish_startup_time (fish --command "time fish -c exit" 2>&1 |
             string match --regex "Executed in(.*)fish" | string trim)[2]
 
-        set -l fisher_plugins (string join ', ' $_fisher_plugins)
-
         read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
         read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
@@ -44,7 +41,7 @@ function _tide_sub_bug-report
             "os: $os" \
             "terminal emulator: $terminal_emulator" \
             "fish startup: $fish_startup_time" \
-            "fisher plugins: $fisher_plugins"
+            "fisher plugins: $(string join ', ' $_fisher_plugins)"
     end
 end
 
