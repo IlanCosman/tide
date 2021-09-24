@@ -39,10 +39,9 @@ function _tide_item_git
     end
 
     # Upstream behind/ahead. Suppress errors in case there is no upstream
-    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null |
-        read --local --delimiter=\t upstream_behind upstream_ahead
-    test "$upstream_behind" = 0 && set -e upstream_behind
-    test "$upstream_ahead" = 0 && set -e upstream_ahead
+    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null | read --local --delimiter=\t behind ahead
+    test "$behind" = 0 && set -e behind
+    test "$ahead" = 0 && set -e ahead
 
     # Git status/stash
     test "$is_inside_git_dir" = true && set -l tide_git_set_dir_option -C $git_dir/..
@@ -52,12 +51,11 @@ function _tide_item_git
         string match --regex '^UU' $git_info | count
         string match --regex '^[ADMR].' $git_info | count
         string match --regex '^.[ADMR]' $git_info | count
-        string match --regex '^\?\?' $git_info | count)
+        string match --regex '^\?\?' $git_info | count) && set -l untracked $data[5]
     test $data[1] != 0 && set -l stash $data[1]
     test $data[2] != 0 && set -l conflicted $data[2]
     test $data[3] != 0 && set -l staged $data[3]
     test $data[4] != 0 && set -l dirty $data[4]
-    test $data[5] != 0 && set -l untracked $data[5]
 
     if set -q operation || set -q conflicted
         set -g tide_git_bg_color $tide_git_bg_color_urgent
@@ -67,7 +65,7 @@ function _tide_item_git
 
     _tide_print_item git $_tide_location_color $tide_git_icon' ' (set_color white; echo -ns $location
         set_color $tide_git_color_operation; echo -ns ' '$operation ' '$step/$total_steps
-        set_color $tide_git_color_upstream; echo -ns ' ⇣'$upstream_behind ' ⇡'$upstream_ahead
+        set_color $tide_git_color_upstream; echo -ns ' ⇣'$behind ' ⇡'$ahead
         set_color $tide_git_color_stash; echo -ns ' *'$stash
         set_color $tide_git_color_conflicted; echo -ns ' ~'$conflicted
         set_color $tide_git_color_staged; echo -ns ' +'$staged
