@@ -1,8 +1,7 @@
 function _tide_item_git
     set -l location $_tide_location_color(git branch --show-current 2>/dev/null) || return
     # --quiet = don't error if there are no commits
-    git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
-        read --local --line git_dir is_inside_git_dir sha
+    git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD | read -l --line git_dir inside_git_dir sha
 
     if test -z "$location" # Default to branch, then tag, then sha
         set location '#'$_tide_location_color(git tag --points-at HEAD)[1] # get the first tag
@@ -39,15 +38,15 @@ function _tide_item_git
     end
 
     # Upstream behind/ahead. Suppress errors in case there is no upstream
-    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null | read --local --delimiter=\t behind ahead
-    test "$behind" = 0 && set -e behind
-    test "$ahead" = 0 && set -e ahead
+    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null | read -l --delimiter=\t behind ahead
+    test "$behind" = 0 && set behind
+    test "$ahead" = 0 && set ahead
 
     # Git status/stash
-    test "$is_inside_git_dir" = true && set -l tide_git_set_dir_option -C $git_dir/..
+    test "$inside_git_dir" = true && set -l _set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo
-    set -l git_info (git $tide_git_set_dir_option --no-optional-locks status --porcelain 2>/dev/null)
-    set -l data (git $tide_git_set_dir_option stash list 2>/dev/null | count
+    set -l git_info (git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null)
+    set -l data (git $_set_dir_opt stash list 2>/dev/null | count
         string match --regex '^UU' $git_info | count
         string match --regex '^[ADMR].' $git_info | count
         string match --regex '^.[ADMR]' $git_info | count
