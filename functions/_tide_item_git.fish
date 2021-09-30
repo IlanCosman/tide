@@ -38,23 +38,18 @@ function _tide_item_git
     end
 
     # Upstream behind/ahead. Suppress errors in case there is no upstream
-    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null | read -l --delimiter=\t behind ahead
-    test "$behind" = 0 && set behind
-    test "$ahead" = 0 && set ahead
+    git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null | string match -qr '(0|(?<behind>.*))\t(0|(?<ahead>.*))'
 
     # Git status/stash
     test "$inside_git_dir" = true && set -l _set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo
     set -l git_info (git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null)
-    set -l data (git $_set_dir_opt stash list 2>/dev/null | count
+    string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))\n(0|(?<dirty>.*))\n(0|(?<untracked>.*))' \
+        "$(git $_set_dir_opt stash list 2>/dev/null | count
         string match --regex '^UU' $git_info | count
         string match --regex '^[ADMR].' $git_info | count
         string match --regex '^.[ADMR]' $git_info | count
-        string match --regex '^\?\?' $git_info | count) && set -l untracked $data[5]
-    test $data[1] != 0 && set -l stash $data[1]
-    test $data[2] != 0 && set -l conflicted $data[2]
-    test $data[3] != 0 && set -l staged $data[3]
-    test $data[4] != 0 && set -l dirty $data[4]
+        string match --regex '^\?\?' $git_info | count)"
 
     if set -q operation || set -q conflicted
         set -g tide_git_bg_color $tide_git_bg_color_urgent
