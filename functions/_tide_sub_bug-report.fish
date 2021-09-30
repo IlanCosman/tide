@@ -28,7 +28,7 @@ function _tide_sub_bug-report
             "Tide does not work with oh-my-fish installed." \
             "Please uninstall it before submitting a bug report." || return
 
-        set -l fish_startup_time (fish --command "time fish -c exit" 2>&1 |
+        set -l fish_startup_time (fish -ic "time fish -c exit" 2>&1 |
             string match --regex "Executed in(.*)fish" | string trim)[2]
 
         read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
@@ -41,7 +41,7 @@ function _tide_sub_bug-report
             "os: $os" \
             "terminal emulator: $terminal_emulator" \
             "fish startup: $fish_startup_time" \
-            "fisher plugins: $(string join ', ' $_fisher_plugins)"
+            "fisher plugins: $_fisher_plugins"
     end
 end
 
