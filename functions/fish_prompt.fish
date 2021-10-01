@@ -12,12 +12,12 @@ set -g _tide_prompt_var _tide_prompt_$fish_pid
 set -U $_tide_prompt_var # So that if we erase $_tide_prompt_var, the bg job can't set a uvar
 
 function _tide_refresh_prompt --on-variable $_tide_prompt_var
-    set -g _tide_self_repainting # prevents us from creating a second background job
+    set -g _tide_repaint # prevents us from creating a second background job
     commandline --function repaint
 end
 
 function fish_prompt
-    _tide_status=$status _tide_pipestatus=$pipestatus if not set -e _tide_self_repainting
+    _tide_status=$status _tide_pipestatus=$pipestatus if not set -e _tide_repaint
         jobs --query
         fish --command "set _tide_pipestatus $_tide_pipestatus
             _tide_jobs_status=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
