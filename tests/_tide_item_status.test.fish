@@ -1,8 +1,8 @@
 # RUN: %fish %s
 
 function _status
-    set -lx _tide_last_status $status
-    set -lx _tide_last_pipestatus $pipestatus
+    set -lx _tide_status $status
+    set -lx _tide_pipestatus $pipestatus
     _tide_decolor (_tide_item_status)
 end
 

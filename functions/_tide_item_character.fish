@@ -1,5 +1,5 @@
 function _tide_item_character
-    if test $_tide_last_status = 0
+    if test $_tide_status = 0
         set_color $tide_character_color
     else
         set_color $tide_character_color_failure

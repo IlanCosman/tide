@@ -43,8 +43,8 @@ function _tide_item_git
     # Git status/stash
     test "$inside_git_dir" = true && set -l _set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo
-    set -l git_info (git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null)
-    string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))\n(0|(?<dirty>.*))\n(0|(?<untracked>.*))' \
+    git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
+        string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))\n(0|(?<dirty>.*))\n(0|(?<untracked>.*))' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
         string match --regex '^UU' $git_info | count
         string match --regex '^[ADMR].' $git_info | count
