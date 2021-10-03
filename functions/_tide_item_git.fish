@@ -51,9 +51,9 @@ function _tide_item_git
         string match --regex '^.[ADMR]' $git_info | count
         string match --regex '^\?\?' $git_info | count)"
 
-    if set -q operation || set -q conflicted
+    if test -n "$operation$conflicted"
         set -g tide_git_bg_color $tide_git_bg_color_urgent
-    else if set -q staged || set -q dirty || set -q untracked
+    else if test -n "$staged$dirty$untracked"
         set -g tide_git_bg_color $tide_git_bg_color_unstable
     end
 
