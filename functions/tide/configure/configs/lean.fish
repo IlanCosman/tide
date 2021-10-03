@@ -52,6 +52,9 @@ tide_os_color normal
 tide_php_bg_color normal
 tide_php_color 617CBE
 tide_php_icon ''
+tide_private_mode_bg_color normal
+tide_private_mode_color FFFFFF
+tide_private_mode_icon 﫸
 tide_prompt_add_newline_before true
 tide_prompt_color_frame_and_connection 6C6C6C
 tide_prompt_color_separator_same_color 949494

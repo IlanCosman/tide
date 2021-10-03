@@ -31,6 +31,8 @@ tide_os_bg_color normal
 tide_os_color brwhite
 tide_php_bg_color normal
 tide_php_color blue
+tide_private_mode_bg_color normal
+tide_private_mode_color brwhite
 tide_prompt_color_frame_and_connection brblack
 tide_prompt_color_separator_same_color brblack
 tide_pwd_bg_color normal
