@@ -15,6 +15,9 @@ function _tide_cache_variables
         set -e _tide_private_mode
     end
 
+    # Same-color-separator color
+    set -gx _tide_color_separator_same_color "$(set_color $tide_prompt_color_separator_same_color)"
+
     # two line prompt
     if contains newline $tide_left_prompt_items
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
