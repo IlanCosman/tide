@@ -5,11 +5,11 @@ function _tide_item_cmd_duration
             math --scale=$tide_cmd_duration_decimals "$CMD_DURATION/1000"%60) # Seconds
 
         if test $time[1] != 0
-            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $time[1]'h ' $time[2]'m ' $time[3]'s'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' "$time[1]h $time[2]m $time[3]s"
         else if test $time[2] != 0
-            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $time[2]'m ' $time[3]'s'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' "$time[2]m $time[3]s"
         else
-            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' $time[3]'s'
+            _tide_print_item cmd_duration $tide_cmd_duration_icon' ' "$time[3]s"
         end
     end
 end
