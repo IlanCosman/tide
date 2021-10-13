@@ -11,9 +11,9 @@ function _tide_pwd
 
     # Anchor first and last directories (which may be the same)
     if test -n "$split_pwd[1]" # ~/foo/bar, hightlight ~
-        set split_pwd_for_output "$_tide_reset_to_color_dirs$icon"$_tide_color_anchors$split_pwd[1]$_tide_reset_to_color_dirs $split_pwd[2..]
+        set -f split_pwd_for_output "$_tide_reset_to_color_dirs$icon"$_tide_color_anchors$split_pwd[1]$_tide_reset_to_color_dirs $split_pwd[2..]
     else # /foo/bar, hightlight foo not empty string
-        set split_pwd_for_output "$_tide_reset_to_color_dirs$icon" $_tide_color_anchors$split_pwd[2]$_tide_reset_to_color_dirs $split_pwd[3..]
+        set -f split_pwd_for_output "$_tide_reset_to_color_dirs$icon" $_tide_color_anchors$split_pwd[2]$_tide_reset_to_color_dirs $split_pwd[3..]
     end
     set split_pwd_for_output[-1] $_tide_color_anchors$split_pwd[-1]$_tide_reset_to_color_dirs
 
