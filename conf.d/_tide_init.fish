@@ -17,6 +17,14 @@ function _tide_init_install --on-event _tide_init_install
 end
 
 function _tide_init_update --on-event _tide_init_update
+    # Warn users who install from main branch
+    if contains ilancosman/tide (string lower $_fisher_plugins)
+        set_color bryellow
+        echo "ilancosman/tide is a development branch. Please install from a release tag:"
+        echo -ns "fisher install ilancosman/tide@v5" | fish_indent --ansi
+        sleep 3
+    end
+
     # v5 introduced tide_prompt_min_cols. Only proceed if older than v5
     set --query tide_prompt_min_cols && return
 
