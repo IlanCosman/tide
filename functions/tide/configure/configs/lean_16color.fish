@@ -51,6 +51,8 @@ tide_terraform_bg_color normal
 tide_terraform_color magenta
 tide_time_bg_color normal
 tide_time_color brblack
+tide_toolbox_bg_color normal
+tide_toolbox_color magenta
 tide_vi_mode_bg_color_default normal
 tide_vi_mode_bg_color_replace normal
 tide_vi_mode_bg_color_visual normal
