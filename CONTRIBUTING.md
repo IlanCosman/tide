@@ -19,7 +19,6 @@ If you have any questions that aren't addressed in this document, please don't h
   - For anything more complex use `if`, `else`, and `else if`
 - Long forms of flags > short forms
   - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
-  - Note that MacOS utils often do not support long flags, in which case one should use the short option
 - Piping > command substitution (only when convenient, i.e no extra commands)
 
 ### Naming Conventions
@@ -30,7 +29,7 @@ If you have any questions that aren't addressed in this document, please don't h
 
 Examples:
 
-- `set -l color_anchors`
+- `set -l split_pwd`
 - `set -U tide_right_prompt_items`
 - `_tide_detect_os.fish`
 - `_tide_print_item`
