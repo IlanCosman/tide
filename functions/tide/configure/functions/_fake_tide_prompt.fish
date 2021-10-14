@@ -1,66 +1,42 @@
 function _fake_tide_prompt
-    left_prompt=(_fake_tide_left_prompt) right_prompt=(_fake_tide_right_prompt) if set -q left_prompt[2] # If prompt is two lines
-        set -l _tide_prompt_and_frame_color (set_color $fake_tide_prompt_color_frame_and_connection -b normal || echo)
-
-        if test "$fake_tide_left_prompt_frame_enabled" = true
-            set left_prompt[1] $_tide_prompt_and_frame_color╭─"$left_prompt[1]"
-            set left_prompt[2] $_tide_prompt_and_frame_color╰─"$left_prompt[2]"
+    set -g prev_item_was_newline
+    _fake_tide_side=left set -f left (for item in $fake_tide_left_prompt_items
+            _fake_tide_item_$item
         end
-        if test "$fake_tide_right_prompt_frame_enabled" = true
-            set right_prompt[1] "$right_prompt[1]"$_tide_prompt_and_frame_color─╮
-            set right_prompt[2] "$right_prompt[2]"$_tide_prompt_and_frame_color─╯
+        if not set -e prev_item_was_newline
+            set_color $prev_bg_color -b normal
+            echo -ns $fake_tide_left_prompt_suffix
+        end)
+
+    set -g prev_item_was_newline
+    _fake_tide_side=right set -f right (for item in $fake_tide_right_prompt_items
+            _fake_tide_item_$item
         end
+        if not set -e prev_item_was_newline
+            set_color $prev_bg_color -b normal
+            echo -ns $fake_tide_right_prompt_suffix
+        end)
 
-        echo -ns $left_prompt[1] $_tide_prompt_and_frame_color
+    if set -q _fake_tide_prompt_and_frame_color # If prompt is two lines
+        test "$fake_tide_left_prompt_frame_enabled" = true &&
+            set left[1] "$_fake_tide_prompt_and_frame_color╭─$left[1]" &&
+            set left[2] "$_fake_tide_prompt_and_frame_color╰─$left[2]"
+        test "$fake_tide_right_prompt_frame_enabled" = true &&
+            set right[1] "$right[1]$_fake_tide_prompt_and_frame_color─╮" &&
+            set right[2] "$right[2]$_fake_tide_prompt_and_frame_color─╯"
 
-        set -l dist_btwn_sides (math $fake_columns - ( # Regex removes color codes
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[1]""$right_prompt[1]" | string length))
-        test $dist_btwn_sides -gt 0 && string repeat --no-newline --max $dist_btwn_sides $fake_tide_prompt_icon_connection
+        # 5 = @PWD@ length which will be replaced
+        math $fake_columns+5-(string length --visible "$left[1]$right[1]") | read -lx dist_btwn_sides
+        echo -ns "$right[2]"\n(string replace @PWD@ (_fake_tide_pwd) "$left[1]")$_fake_tide_prompt_and_frame_color
 
-        echo -ns $right_prompt[1] \n $left_prompt[-1]' '
-
-        string repeat --no-newline --max (math $fake_columns - ( # The -1 is necessary for some reason
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[-1]""$right_prompt[-1]" | string length) - 1) ' '
-        echo -ns $right_prompt[2]
+        string repeat --no-newline --max (math max 0, $dist_btwn_sides-$pwd_length) $fake_tide_prompt_icon_connection
+        echo -ns "$right[1]"\n"$left[2] "
     else
-        echo -ns $left_prompt[-1]' '
-
-        string repeat --no-newline --max (math $fake_columns - ( # The -1 is necessary for some reason
-            string replace -ar '\e(\[[\d;]*|\(B\e\[)m(\co)?' '' "$left_prompt[-1]""$right_prompt[-1]" | string length) - 1) ' '
-        echo -ns $right_prompt[-1]
+        math $fake_columns+5-(string length --visible "$left[1]$right[1]") -$fake_tide_prompt_min_cols | read -lx dist_btwn_sides
+        string replace @PWD@ (_fake_tide_pwd) "$right[1]" "$left[1] "
     end
-
-    set_color normal
 end
 
-function _fake_tide_left_prompt
-    set -g _fake_tide_last_item newline
-    set -g _fake_tide_which_side_working_on left
-
-    for item in $fake_tide_left_prompt_items
-        _fake_tide_item_$item
-    end
-
-    if not contains -- $_fake_tide_last_item newline character
-        set_color $_fake_tide_previous_bg_color -b normal
-        echo -ns $fake_tide_left_prompt_suffix
-    end
-
-    set_color normal # Make sure there is something printed on the last line
-end
-
-function _fake_tide_right_prompt
-    set -g _fake_tide_last_item newline
-    set -g _fake_tide_which_side_working_on right
-
-    for item in $fake_tide_right_prompt_items
-        _fake_tide_item_$item
-    end
-
-    if test "$_fake_tide_last_item" != newline
-        set_color $_fake_tide_previous_bg_color -b normal
-        echo -ns $fake_tide_right_prompt_suffix
-    end
-
-    set_color normal # Make sure there is something printed on the last line
+function _fake_tide_item_pwd
+    _fake_tide_print_item pwd @PWD@
 end

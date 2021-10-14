@@ -1,5 +1,5 @@
 function _fake_tide_item_newline
-    set_color $_fake_tide_previous_bg_color -b normal
-    side_working_on_suffix_name=fake_tide_"$_fake_tide_which_side_working_on"_prompt_suffix echo -ns $$side_working_on_suffix_name \n
-    set -g _fake_tide_last_item newline
+    set_color $prev_bg_color -b normal
+    var=fake_tide_"$_fake_tide_side"_prompt_suffix echo $$var
+    set -g prev_item_was_newline
 end
