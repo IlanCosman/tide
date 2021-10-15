@@ -81,7 +81,13 @@ end
 function _tide_display_prompt -a var_name var_value
     test -n "$var_name" && set -g $var_name $var_value
     _fake_tide_cache_variables
-    set -l foo (_fake_tide_prompt)
-    string unescape $foo[2..]
-    printf '\n'
+    set -l prompt (_fake_tide_prompt)
+
+    set -l bottom_left_prompt_string_length (string length --visible $prompt[-1])
+    set -l right_prompt_string (string pad --width (math $fake_columns-$bottom_left_prompt_string_length) $prompt[1])
+    set -l prompt[-1] "$prompt[-1]$right_prompt_string"
+
+    string unescape $prompt[2..]
+    set_color normal
+    echo
 end
