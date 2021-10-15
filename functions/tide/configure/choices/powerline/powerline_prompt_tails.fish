@@ -12,8 +12,8 @@ function powerline_prompt_tails
     _tide_display_prompt
 
     _tide_option 3 Sharp
-    set -g fake_tide_left_prompt_prefix ''
-    set -g fake_tide_right_prompt_suffix ''
+    set -g fake_tide_left_prompt_prefix 
+    set -g fake_tide_right_prompt_suffix 
     _tide_display_prompt
 
     _tide_option 4 Slanted
@@ -35,8 +35,8 @@ function powerline_prompt_tails
             set -g fake_tide_left_prompt_prefix '░▒▓'
             set -g fake_tide_right_prompt_suffix '▓▒░'
         case 3
-            set -g fake_tide_left_prompt_prefix ''
-            set -g fake_tide_right_prompt_suffix ''
+            set -g fake_tide_left_prompt_prefix 
+            set -g fake_tide_right_prompt_suffix 
         case 4
             set -g fake_tide_left_prompt_prefix ''
             set -g fake_tide_right_prompt_suffix ''

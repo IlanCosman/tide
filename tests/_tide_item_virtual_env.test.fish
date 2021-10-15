@@ -4,7 +4,7 @@ function _virtual_env
     _tide_decolor (_tide_item_virtual_env)
 end
 
-set -lx tide_virtual_env_icon ''
+set -lx tide_virtual_env_icon 
 
 set -lx VIRTUAL_ENV
 _virtual_env # CHECK:

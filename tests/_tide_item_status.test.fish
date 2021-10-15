@@ -6,8 +6,8 @@ function _status
     _tide_decolor (_tide_item_status)
 end
 
-set -lx tide_status_icon '✔'
-set -lx tide_status_icon_failure '✘'
+set -lx tide_status_icon ✔
+set -lx tide_status_icon_failure ✘
 
 # Without character
 set -lx tide_left_prompt_items

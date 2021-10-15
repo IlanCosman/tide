@@ -15,7 +15,7 @@ set -g dist_btwn_sides 80
 mkdir -p $tmpdir/unwritable/dir
 chmod -R -w $tmpdir/unwritable # revoke write access
 
-set -lx tide_pwd_icon_unwritable ''
+set -lx tide_pwd_icon_unwritable 
 
 _pwd $tmpdir/unwritable # CHECK:  ~/unwritable
 _pwd $tmpdir/unwritable/dir # CHECK:  ~/unwritable/dir

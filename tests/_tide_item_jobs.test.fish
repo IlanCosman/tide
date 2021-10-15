@@ -7,5 +7,5 @@ end
 
 _jobs 1 # CHECK:
 
-set -lx tide_jobs_icon ''
+set -lx tide_jobs_icon 
 _jobs 0 # CHECK: 

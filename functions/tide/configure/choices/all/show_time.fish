@@ -7,7 +7,7 @@ function show_time
     set -a fake_tide_right_prompt_items time
 
     _tide_option 2 '24-hour format'
-    _tide_display_prompt fake_tide_time_format '%T'
+    _tide_display_prompt fake_tide_time_format %T
 
     _tide_option 3 '12-hour format'
     _tide_display_prompt fake_tide_time_format '%r'
@@ -18,7 +18,7 @@ function show_time
             set -g fake_tide_time_format ''
             set -e fake_tide_right_prompt_items[-1]
         case 2
-            set -g fake_tide_time_format '%T'
+            set -g fake_tide_time_format %T
         case 3
             set -g fake_tide_time_format '%r'
     end

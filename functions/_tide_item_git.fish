@@ -5,7 +5,7 @@ function _tide_item_git
 
     if test -z "$location" # Default to branch, then tag, then sha
         set location '#'$_tide_location_color(git tag --points-at HEAD)[1] # get the first tag
-        test -z "$location" && set location '@'$_tide_location_color$sha
+        test -z "$location" && set location @$_tide_location_color$sha
     end
 
     # Operation
@@ -44,9 +44,9 @@ function _tide_item_git
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
-        string match --regex '^UU' $git_info | count
-        string match --regex '^[ADMR].' $git_info | count
-        string match --regex '^.[ADMR]' $git_info | count
+        string match --regex ^UU $git_info | count
+        string match --regex ^[ADMR]. $git_info | count
+        string match --regex ^.[ADMR] $git_info | count
         string match --regex '^\?\?' $git_info | count
         git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)"
 
