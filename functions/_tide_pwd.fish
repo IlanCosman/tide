@@ -30,10 +30,13 @@ function _tide_pwd
         else if test $pwd_length -gt $dist_btwn_sides
             while math $truncation_length +1 | read -l truncation_length &&
                     string sub --length $truncation_length -- $dir_section | read -l truncated &&
-                    test $truncated != $dir_section -a (count $parent_dir/$truncated*/) != 1
+                    test $truncated != $dir_section
+                if test (count $parent_dir/$truncated*/) = 1
+                    set split_pwd_for_output[$i] $_tide_color_truncated_dirs$truncated$_tide_reset_to_color_dirs
+                    string join / $split_pwd_for_output | string length --visible | read -g pwd_length
+                    break
+                end
             end
-            set split_pwd_for_output[$i] $_tide_color_truncated_dirs$truncated$_tide_reset_to_color_dirs
-            string join / $split_pwd_for_output | string length --visible | read -g pwd_length
         end
     end
 
