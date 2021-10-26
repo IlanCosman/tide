@@ -4,7 +4,8 @@ function _tide_item_git
     git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD | read -l --line git_dir inside_git_dir sha
 
     if test -z "$location" # Default to branch, then tag, then sha
-        set location '#'$_tide_location_color(git tag --points-at HEAD)[1] # get the first tag
+        # get last tag b/c they are listed in alphabet order, so more specific 5.0.1 is after 5
+        set location '#'$_tide_location_color(git tag --points-at HEAD)[-1]
         test -z "$location" && set location @$_tide_location_color$sha
     end
 
