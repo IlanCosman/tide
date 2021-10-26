@@ -12,11 +12,7 @@ function _tide_item_git
     if test -d $git_dir/rebase-merge
         read -f step <$git_dir/rebase-merge/msgnum
         read -f total_steps <$git_dir/rebase-merge/end
-        if test -f $git_dir/rebase-merge/interactive
-            set -f operation rebase-i
-        else
-            set -f operation rebase-m
-        end
+        test -f $git_dir/rebase-merge/interactive && set -f operation rebase-i || set -f operation rebase-m
     else if test -d $git_dir/rebase-apply
         read -f step <$git_dir/rebase-apply/next
         read -f total_steps <$git_dir/rebase-apply/last
