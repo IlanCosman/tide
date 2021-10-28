@@ -8,6 +8,8 @@ tide_context_bg_color normal
 tide_context_color_default yellow
 tide_context_color_root bryellow
 tide_context_color_ssh yellow
+tide_gcloud_bg_color normal
+tide_gcloud_color blue
 tide_git_bg_color normal
 tide_git_bg_color_unstable normal
 tide_git_bg_color_urgent normal
@@ -45,8 +47,6 @@ tide_status_bg_color normal
 tide_status_bg_color_failure normal
 tide_status_color green
 tide_status_color_failure red
-tide_terraform_bg_color normal
-tide_terraform_color magenta
 tide_time_bg_color normal
 tide_time_color brblack
 tide_vi_mode_bg_color_default normal

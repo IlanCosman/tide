@@ -8,6 +8,8 @@ tide_context_bg_color black
 tide_context_color_default yellow
 tide_context_color_root bryellow
 tide_context_color_ssh yellow
+tide_gcloud_bg_color black
+tide_gcloud_color blue
 tide_git_bg_color black
 tide_git_bg_color_unstable black
 tide_git_bg_color_urgent black
