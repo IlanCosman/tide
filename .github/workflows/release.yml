@@ -23,7 +23,7 @@ jobs:
       # Output to /tmp/github_release.md
       - name: Generate release notes
         run: >
-          tail --lines=+5 $GITHUB_WORKSPACE/CHANGELOG.md |
+          tail --lines=+5 "$GITHUB_WORKSPACE/CHANGELOG.md" |
           sed '/^## /q' |
           head --lines=-2 |
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
