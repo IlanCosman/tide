@@ -29,6 +29,7 @@ tide_git_color_stash $_tide_color_green
 tide_git_color_untracked $_tide_color_light_blue
 tide_git_color_upstream $_tide_color_green
 tide_git_icon
+tide_git_truncation_length 24
 tide_go_bg_color 444444
 tide_go_color 00ACD7
 tide_go_icon 

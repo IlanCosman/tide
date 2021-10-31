@@ -1,12 +1,14 @@
 function _tide_item_git
-    set -l location $_tide_location_color(git branch --show-current 2>/dev/null) || return
-    # --quiet = don't error if there are no commits
-    git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD | read -l --line git_dir inside_git_dir sha
-
-    if test -z "$location" # Default to branch, then tag, then sha
-        # get last tag b/c they are listed in alphabet order, so more specific 5.0.1 is after 5
-        set location '#'$_tide_location_color(git tag --points-at HEAD)[-1]
-        test -z "$location" && set location @$_tide_location_color$sha
+    if git branch --show-current 2>/dev/null | string replace -r "(.{$tide_git_truncation_length})..*" '$1…' | read -l location
+        set location $_tide_location_color$location
+        git rev-parse --git-dir --is-inside-git-dir | read -f --line git_dir inside_git_dir
+    else if test $pipestatus[1] != 0
+        return
+    else
+        # --quiet = don't error if there are no commits
+        git rev-parse --git-dir --is-inside-git-dir --quiet --short HEAD | read -f --line git_dir inside_git_dir sha
+        git tag --points-at HEAD | string replace -r "(.{$tide_git_truncation_length})..*" '$1…' | read location &&
+            set location '#'$_tide_location_color$location || set location @$_tide_location_color$sha
     end
 
     # Operation
