@@ -1,5 +1,9 @@
 function _tide_item_git
-    set -l location $_tide_location_color(git branch --show-current 2>/dev/null) || return
+    set -l git_branch (git branch --show-current 2>/dev/null) || return
+    if test ! -z "$tide_git_truncation_length"; and test (string length $git_branch) -gt $tide_git_truncation_length
+        set git_branch (string sub -l $tide_git_truncation_length $git_branch)"$tide_git_truncation_symbol"
+    end
+    set -l location $_tide_location_color$git_branch
     # --quiet = don't error if there are no commits
     git rev-parse --quiet --git-dir --is-inside-git-dir --short HEAD |
         read --local --line git_dir is_inside_git_dir sha

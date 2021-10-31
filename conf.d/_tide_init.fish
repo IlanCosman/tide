@@ -2,6 +2,7 @@ function _tide_init_install --on-event _tide_init_install
     set -U tide_os_icon (_tide_detect_os)
     set -U VIRTUAL_ENV_DISABLE_PROMPT true
     set -U _tide_var_list tide_os_icon VIRTUAL_ENV_DISABLE_PROMPT
+    set -U tide_git_truncation_symbol "…"
 
     source (functions --details _tide_sub_configure)
     _load_config lean
