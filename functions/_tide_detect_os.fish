@@ -3,7 +3,7 @@ function _tide_detect_os
         case darwin
             echo -ns 
         case freebsd openbsd dragonfly
-            echo -ns 
+            printf %s\n  FFFFFF AB2B28 # https://freebsdfoundation.org/about-us/about-the-foundation/project/
         case linux
             _tide_detect_os_linux_cases /etc/os-release ID ||
                 _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
@@ -42,5 +42,8 @@ function _tide_detect_os_linux_cases -a file key
         ubuntu  E95420 FFFFFF "https://design.ubuntu.com/brand/"
 
     set -l distro_index (contains --index $value $distro_data) || return
-    echo -ns $distro_data[(math $distro_index + 1)]
+    printf %s\n \
+        $distro_data[(math $distro_index+1)] \
+        $distro_data[(math $distro_index+2)] \
+        $distro_data[(math $distro_index+3)]
 end
