@@ -58,7 +58,7 @@ _git_item # CHECK: {{@\w*}}
 
 # Long prompts
 _git checkout main
-git branch -m "Looooooong_branchname"
+git branch -m Looooooong_branchname
 set tide_git_truncation_length 5
 _git_item # CHECK: Loooo…
 
