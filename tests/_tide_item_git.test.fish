@@ -56,6 +56,12 @@ _git commit -am 'Append hello to foo'
 _git checkout HEAD~
 _git_item # CHECK: {{@\w*}}
 
+# Long prompts
+_git checkout main
+git branch -m "Looooooong_branchname"
+set tide_git_truncation_length 5
+_git_item # CHECK: Loooo…
+
 # -------- bare repo test --------
 cd $dir/bare-repo
 _git init --bare
