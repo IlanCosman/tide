@@ -37,16 +37,16 @@ function _tide_item_git
     end
 
     # Git status/stash + Upstream behind/ahead
-    test "$inside_git_dir" = true && set -l _set_dir_opt -C $git_dir/..
+    test $inside_git_dir = true && set -l _set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo or there is no upstream
     git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
-        string match --regex ^UU $git_info | count
-        string match --regex ^[ADMR]. $git_info | count
-        string match --regex ^.[ADMR] $git_info | count
-        string match --regex '^\?\?' $git_info | count
+        string match -r ^UU $git_info | count
+        string match -r ^[ADMR]. $git_info | count
+        string match -r ^.[ADMR] $git_info | count
+        string match -r '^\?\?' $git_info | count
         git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)"
 
     if test -n "$operation$conflicted"

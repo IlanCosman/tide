@@ -5,7 +5,7 @@ function _tide_init_install --on-event _tide_init_install
     source (functions --details _tide_sub_configure)
     _load_config lean
     _tide_finish
-    set -a _tide_var_list (set --names | string match --regex "^tide.*")
+    set -a _tide_var_list (set --names | string match -r "^tide.*")
 
     status is-interactive && switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
         case y ye yes ''
@@ -48,5 +48,5 @@ end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
     set -e $_tide_var_list _tide_var_list $_tide_prompt_var
-    functions --erase (functions --all | string match --entire --regex '^_tide_')
+    functions --erase (functions --all | string match --entire -r '^_tide_')
 end

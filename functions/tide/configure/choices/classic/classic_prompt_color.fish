@@ -32,7 +32,7 @@ function classic_prompt_color
 end
 
 function _set_all_items_bg_color -a color
-    for var in (set --names | string match --regex "fake_.*_bg_color.*")
+    for var in (set --names | string match -r "fake_.*_bg_color.*")
         set $var $color
     end
 end
