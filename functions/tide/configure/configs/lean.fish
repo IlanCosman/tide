@@ -98,7 +98,7 @@ tide_time_color 5F8787
 tide_time_format %T
 tide_toolbox_bg_color normal
 tide_toolbox_color 613583
-tide_toolbox_icon '⬢ '
+tide_toolbox_icon ⬢
 tide_vi_mode_bg_color_default
 tide_vi_mode_bg_color_replace
 tide_vi_mode_bg_color_visual
