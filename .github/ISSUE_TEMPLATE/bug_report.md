@@ -24,7 +24,7 @@ assignees: ""
 
 Output of `tide bug-report`: <!-- In the code block below -->
 
-```
+```text
 
 ```
 

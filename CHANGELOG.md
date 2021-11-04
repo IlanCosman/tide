@@ -19,7 +19,7 @@
   - Add fisher plugins
 - Performance improvements
   - Cache variables once on fish startup
-  - Use `read` instead of command substituion when possible
+  - Use `read` instead of command substitution when possible
   - Combine command substitutions
   - Use `echo` instead of `printf`
   - Compact math (`1+1` instead of `1 + 1`)
