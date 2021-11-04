@@ -2,6 +2,26 @@
 
 ## [v5.1.0][] (???)
 
+### Bug fixes
+
+- Use `string length --visible` to allow for emojis in the prompt ([#134][])
+
+### Features
+
+- New items
+  - `private_mode` ([#157][])
+  - `terraform` ([#203][] - @radek-sprta)
+  - `toolbox` ([#211][])
+- Improve `bug-report` command
+  - Add fish startup time
+  - Add fisher plugins
+- Performance improvements
+  - Cache a number variables once on fish startup
+  - Use `read` instead of command substituion when possible
+  - Combine command substitutions
+  - Use `echo` instead of `printf`
+  - Compact math (`1+1` instead of `1 + 1`)
+
 ## [v5.0.1][] (Aug 13 2021)
 
 ### Bug fixes
@@ -359,25 +379,29 @@
 [#96]: https://github.com/IlanCosman/tide/issues/96
 [#97]: https://github.com/IlanCosman/tide/issues/97
 [#100]: https://github.com/IlanCosman/tide/issues/100
+[#105]: https://github.com/IlanCosman/tide/issues/105
 [#107]: https://github.com/IlanCosman/tide/issues/107
 [#111]: https://github.com/IlanCosman/tide/issues/111
 [#121]: https://github.com/IlanCosman/tide/issues/121
 [#126]: https://github.com/IlanCosman/tide/issues/126
 [#129]: https://github.com/IlanCosman/tide/issues/129
 [#130]: https://github.com/IlanCosman/tide/issues/130
-[#105]: https://github.com/IlanCosman/tide/issues/105
 [#131]: https://github.com/IlanCosman/tide/issues/131
+[#134]: https://github.com/IlanCosman/tide/issues/134
 [#138]: https://github.com/IlanCosman/tide/issues/138
 [#139]: https://github.com/IlanCosman/tide/issues/139
 [#145]: https://github.com/IlanCosman/tide/issues/145
 [#154]: https://github.com/IlanCosman/tide/issues/154
 [#156]: https://github.com/IlanCosman/tide/issues/156
+[#157]: https://github.com/IlanCosman/tide/issues/157
 [#162]: https://github.com/IlanCosman/tide/issues/162
 [#163]: https://github.com/IlanCosman/tide/issues/163
 [#171]: https://github.com/IlanCosman/tide/issues/171
 [#174]: https://github.com/IlanCosman/tide/issues/174
 [#178]: https://github.com/IlanCosman/tide/issues/178
 [#181]: https://github.com/IlanCosman/tide/issues/181
+[#203]: https://github.com/IlanCosman/tide/issues/203
+[#211]: https://github.com/IlanCosman/tide/issues/211
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
