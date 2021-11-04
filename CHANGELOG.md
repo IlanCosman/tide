@@ -12,11 +12,13 @@
   - `private_mode` ([#157][])
   - `terraform` ([#203][] - @radek-sprta)
   - `toolbox` ([#211][])
+- Don't require pressing enter for each menu in configuration wizard ([#187][] - @branchvincent)
+- Truncate git branches/tags when they get too long ([#221][])
 - Improve `bug-report` command
   - Add fish startup time
   - Add fisher plugins
 - Performance improvements
-  - Cache a number variables once on fish startup
+  - Cache variables once on fish startup
   - Use `read` instead of command substituion when possible
   - Combine command substitutions
   - Use `echo` instead of `printf`
@@ -400,8 +402,10 @@
 [#174]: https://github.com/IlanCosman/tide/issues/174
 [#178]: https://github.com/IlanCosman/tide/issues/178
 [#181]: https://github.com/IlanCosman/tide/issues/181
+[#187]: https://github.com/IlanCosman/tide/issues/187
 [#203]: https://github.com/IlanCosman/tide/issues/203
 [#211]: https://github.com/IlanCosman/tide/issues/211
+[#221]: https://github.com/IlanCosman/tide/issues/221
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
