@@ -1,12 +1,30 @@
 function _tide_cache_variables
     # pwd
-    set_color -o $tide_pwd_color_anchors | read -gx _tide_color_anchors
-    set -gx _tide_color_truncated_dirs "$(set_color $tide_pwd_color_truncated_dirs)"
-    set -gx _tide_reset_to_color_dirs (set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs)
+    set -l data (
+        # pwd
+        set_color -o $tide_pwd_color_anchors
+        echo
+        set_color $tide_pwd_color_truncated_dirs
+        echo
+        set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs
+        echo
+        # Same-color-separator color
+        set_color $tide_prompt_color_separator_same_color
+        echo
+        # git
+        set_color $tide_git_color_branch
+    )
+
+    # pwd
+    set -gx _tide_color_anchors "$data[1]"
+    set -gx _tide_color_truncated_dirs "$data[2]"
+    set -gx _tide_reset_to_color_dirs "$data[3]"
+
+    # Same-color-separator color
+    set -gx _tide_color_separator_same_color "$data[4]"
 
     # git
-    contains git $tide_left_prompt_items $tide_right_prompt_items &&
-        set -gx _tide_location_color "$(set_color $tide_git_color_branch)"
+    contains git $tide_left_prompt_items $tide_right_prompt_items && set -gx _tide_location_color "$data[5]"
 
     # private_mode
     if contains private_mode $tide_left_prompt_items $tide_right_prompt_items && test -n "$fish_private_mode"
@@ -14,9 +32,6 @@ function _tide_cache_variables
     else
         set -e _tide_private_mode
     end
-
-    # Same-color-separator color
-    set -gx _tide_color_separator_same_color "$(set_color $tide_prompt_color_separator_same_color)"
 
     # two line prompt
     if contains newline $tide_left_prompt_items
