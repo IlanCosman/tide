@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: nvuillam/mega-linter/flavors/documentation@v4
+      - uses: megalinter/megalinter/flavors/documentation@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_LINTERS: SPELL_CSPELL
