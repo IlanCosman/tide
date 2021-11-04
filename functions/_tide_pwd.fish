@@ -26,14 +26,14 @@ function _tide_pwd
         if test -z false (string split --max 2 " " -- "-o -e $parent_dir/$dir_section/"$tide_pwd_markers)
             set split_output[$i] $_tide_color_anchors$dir_section$_tide_reset_to_color_dirs
         else if test $pwd_length -gt $dist_btwn_sides
-            while math $truncation_length +1 | read -l truncation_length &&
-                    string sub --length $truncation_length -- $dir_section | read -l truncated &&
-                    test $truncated != $dir_section
-                if test (count $parent_dir/$truncated*/) = 1
-                    set split_output[$i] $_tide_color_truncated_dirs$truncated$_tide_reset_to_color_dirs
-                    string join / $split_output | string length --visible | read -g pwd_length
-                    break
-                end
+            string sub --length 1 -- $dir_section | read -l trunc
+            trunc_len=1 while test $trunc != $dir_section -a (count $parent_dir/$trunc*/) != 1
+                math $trunc_len+1 | read trunc_len
+                string sub --length $trunc_len -- $dir_section | read trunc
+            end
+            if test $trunc != $dir_section
+                set split_output[$i] $_tide_color_truncated_dirs$trunc$_tide_reset_to_color_dirs
+                string join / $split_output | string length --visible | read -g pwd_length
             end
         end
     end
