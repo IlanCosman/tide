@@ -1,4 +1,4 @@
-function tide
+function tide --description "Manage your Tide prompt"
     argparse --stop-nonopt v/version h/help -- $argv
 
     if set -q _flag_version
