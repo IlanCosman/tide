@@ -20,6 +20,8 @@ function _tide_sub_configure
         return 1
     end
 
+    _tide_detect_os | read -g --line os_branding_icon os_branding_color os_branding_bg_color
+
     set -g fake_columns $COLUMNS
     test $fake_columns -gt 90 && set fake_columns 90
     set -g fake_lines $LINES

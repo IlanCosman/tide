@@ -56,7 +56,7 @@ tide_node_color 44883E
 tide_node_icon ⬢
 tide_os_bg_color 444444
 tide_os_color EEEEEE
-tide_os_icon (_tide_detect_os)
+tide_os_icon $os_branding_icon
 tide_php_bg_color 444444
 tide_php_color 617CBE
 tide_php_icon 

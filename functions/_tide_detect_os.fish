@@ -1,4 +1,6 @@
+# Outputs icon, color, bg_color
 function _tide_detect_os
+    set -lx defaultColor 080808 CED7CF
     switch (uname | string lower)
         case darwin
             echo -ns 
@@ -8,7 +10,7 @@ function _tide_detect_os
             _tide_detect_os_linux_cases /etc/os-release ID ||
                 _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
                 _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
-                echo -ns 
+                printf %s\n  $defaultColor
         case '*'
             echo -ns '?'
     end
@@ -20,30 +22,42 @@ function _tide_detect_os_linux_cases -a file key
     set -l key_index (contains --index $key $split_file) || return
     set -l value (string trim --chars='"' $split_file[(math $key_index + 1)] | string lower)
 
-    # Name, icon, color, bg_color, source
-    set -l distro_data \
-        alpine  FFFFFF 0D597F "from alpine logo" \
-        arch  1793D1 4D4D4D "from arch wiki header" \
-        centos  000000 FFFFFF "https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic" \
-        debian  C70036 FFFFFF "from debian logo https://www.debian.org/logos/openlogo-nd-100.png" \
-        devuan  080808 CED7CF default \
-        elementary  000000 FFFFFF "https://elementary.io/brand, encouraged to be monochromatic" \
-        fedora  FFFFFF 294172 "from logo https://fedoraproject.org/w/uploads/2/2d/Logo_fedoralogo.png" \
-        gentoo  FFFFFF 54487A "https://wiki.gentoo.org/wiki/Project:Artwork/Colors" \
-        mageia  FFFFFF 262F45 "https://wiki.mageia.org/en/Artwork_guidelines" \
-        manjaro  FFFFFF 35BF5C "from https://gitlab.manjaro.org/artwork/branding/logo/-/blob/master/logo.svg" \
-        mint  FFFFFF 69B53F "extracted from https://linuxmint.com/web/img/favicon.ico" \
-        nixos  FFFFFF 5277C3 "https://github.com/NixOS/nixos-artwork/tree/master/logo" \
-        opensuse  73BA25 173f4f "https://en.opensuse.org/openSUSE:Artwork_brand" \
-        raspbian  FFFFFF A22846 "https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf" \
-        sabayon  080808 CED7CF default \
-        slackware  080808 CED7CF default \
-        tumbleweed  73BA25 173f4f "https://en.opensuse.org/openSUSE:Artwork_brand" \
-        ubuntu  E95420 FFFFFF "https://design.ubuntu.com/brand/"
-
-    set -l distro_index (contains --index $value $distro_data) || return
-    printf %s\n \
-        $distro_data[(math $distro_index+1)] \
-        $distro_data[(math $distro_index+2)] \
-        $distro_data[(math $distro_index+3)]
+    switch $value
+        case alpine
+            printf %s\n  FFFFFF 0D597F # from alpine logo
+        case arch
+            printf %s\n  1793D1 4D4D4D # from arch wiki header
+        case centos
+            printf %s\n  000000 FFFFFF # https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic
+        case debian
+            printf %s\n  C70036 FFFFFF # from debian logo https://www.debian.org/logos/openlogo-nd-100.png
+        case devuan
+            printf %s\n  $defaultColor # logo is monochromatic
+        case elementary
+            printf %s\n  000000 FFFFFF # https://elementary.io/brand, encouraged to be monochromatic
+        case fedora
+            printf %s\n  FFFFFF 294172 # from logo https://fedoraproject.org/w/uploads/2/2d/Logo_fedoralogo.png
+        case gentoo
+            printf %s\n  FFFFFF 54487A # https://wiki.gentoo.org/wiki/Project:Artwork/Colors
+        case mageia
+            printf %s\n  FFFFFF 262F45 # https://wiki.mageia.org/en/Artwork_guidelines
+        case manjaro
+            printf %s\n  FFFFFF 35BF5C # from https://gitlab.manjaro.org/artwork/branding/logo/-/blob/master/logo.svg
+        case mint
+            printf %s\n  FFFFFF 69B53F # extracted from https://linuxmint.com/web/img/favicon.ico
+        case nixos
+            printf %s\n  FFFFFF 5277C3 # https://github.com/NixOS/nixos-artwork/tree/master/logo
+        case opensuse tumbleweed
+            printf %s\n  73BA25 173f4f # https://en.opensuse.org/openSUSE:Artwork_brand
+        case raspbian
+            printf %s\n  FFFFFF A22846 # https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf
+        case sabayon
+            printf %s\n  $defaultColor # Can't find colors, and they are rebranding anyway
+        case slackware
+            printf %s\n  $defaultColor # Doesn't really have a logo, and the colors are too close to PWD blue anyway
+        case ubuntu
+            printf %s\n  E95420 FFFFFF # https://design.ubuntu.com/brand/
+        case '*'
+            return 1
+    end
 end
