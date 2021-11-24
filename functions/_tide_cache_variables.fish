@@ -24,17 +24,17 @@ function _tide_cache_variables
     set -gx _tide_color_separator_same_color "$data[4]"
 
     # git
-    contains git $tide_left_prompt_items $tide_right_prompt_items && set -gx _tide_location_color "$data[5]"
+    contains git $_tide_left_items $_tide_right_items && set -gx _tide_location_color "$data[5]"
 
     # private_mode
-    if contains private_mode $tide_left_prompt_items $tide_right_prompt_items && test -n "$fish_private_mode"
+    if contains private_mode $_tide_left_items $_tide_right_items && test -n "$fish_private_mode"
         set -gx _tide_private_mode
     else
         set -e _tide_private_mode
     end
 
     # two line prompt
-    if contains newline $tide_left_prompt_items
+    if contains newline $_tide_left_items
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
     else
         set -e _tide_prompt_and_frame_color

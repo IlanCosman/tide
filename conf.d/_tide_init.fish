@@ -1,11 +1,9 @@
 function _tide_init_install --on-event _tide_init_install
     set -U VIRTUAL_ENV_DISABLE_PROMPT true
-    set -U _tide_var_list VIRTUAL_ENV_DISABLE_PROMPT
 
     source (functions --details _tide_sub_configure)
     _load_config lean
     _tide_finish
-    set -a _tide_var_list (set --names | string match -r "^tide.*")
 
     status is-interactive && switch (read --prompt-str="Configure tide prompt? [Y/n] " | string lower)
         case y ye yes ''
@@ -32,7 +30,7 @@ function _tide_init_update --on-event _tide_init_update
     tide bug-report --verbose >$tmp
 
     # Delete old vars
-    set -e $_tide_var_list _tide_var_list $_tide_prompt_var
+    set -e (set -U --names | string match --entire -r '^_?tide_')
 
     # Print a warning
     set_color yellow
@@ -47,6 +45,7 @@ function _tide_init_update --on-event _tide_init_update
 end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
-    set -e $_tide_var_list _tide_var_list $_tide_prompt_var
+    set -e VIRTUAL_ENV_DISABLE_PROMPT
+    set -e (set -U --names | string match --entire -r '^_?tide_')
     functions --erase (functions --all | string match --entire -r '^_tide_')
 end
