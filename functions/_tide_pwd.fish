@@ -22,8 +22,9 @@ function _tide_pwd
 
         math $i+1 | read i
 
-        # Returns true if any markers exist in dir_section
-        if test -z false (string split --max 2 " " -- "-o -e $parent_dir/$dir_section/"$tide_pwd_markers)
+        if for marker in $tide_pwd_markers # Returns true if any markers exist in dir_section
+                test -e $parent_dir/$dir_section/$marker && break
+            end
             set split_output[$i] $_tide_color_anchors$dir_section$_tide_reset_to_color_dirs
         else if test $pwd_length -gt $dist_btwn_sides
             string sub --length 1 -- $dir_section | read -l trunc
