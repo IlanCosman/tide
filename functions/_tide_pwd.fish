@@ -22,7 +22,7 @@ function _tide_pwd
 
         math $i+1 | read i
 
-        if for marker in $tide_pwd_markers # Returns true if any markers exist in dir_section
+        if false || for marker in $tide_pwd_markers # false is for if tide_pwd_markers is empty
                 test -e $parent_dir/$dir_section/$marker && break
             end
             set split_output[$i] $_tide_color_anchors$dir_section$_tide_reset_to_color_dirs
