@@ -1,7 +1,7 @@
 function _tide_print_item -a item
     var=tide_"$item"_bg_color set -f item_bg_color $$var
 
-    if set -e prev_item_was_newline
+    if set -e add_prefix
         set_color $item_bg_color -b normal
         var=tide_"$_tide_side"_prompt_prefix echo -ns $$var
     else if test "$item_bg_color" = "$prev_bg_color"

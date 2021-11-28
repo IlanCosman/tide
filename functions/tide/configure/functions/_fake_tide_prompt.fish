@@ -1,18 +1,18 @@
 function _fake_tide_prompt
-    set -g prev_item_was_newline
+    set -g add_prefix
     _fake_tide_side=left set -f left (for item in $fake_tide_left_prompt_items
             _fake_tide_item_$item
         end
-        if not set -e prev_item_was_newline
+        if not set -e add_prefix
             set_color $prev_bg_color -b normal
             echo -ns $fake_tide_left_prompt_suffix
         end)
 
-    set -g prev_item_was_newline
+    set -g add_prefix
     _fake_tide_side=right set -f right (for item in $fake_tide_right_prompt_items
             _fake_tide_item_$item
         end
-        if not set -e prev_item_was_newline
+        if not set -e add_prefix
             set_color $prev_bg_color -b normal
             echo -ns $fake_tide_right_prompt_suffix
         end)

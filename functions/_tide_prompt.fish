@@ -1,18 +1,18 @@
 function _tide_prompt
-    set -g prev_item_was_newline
+    set -g add_prefix
     _tide_side=left set -f left (for item in $_tide_left_items
             _tide_item_$item
         end
-        if not set -e prev_item_was_newline
+        if not set -e add_prefix
             set_color $prev_bg_color -b normal
             echo -ns $tide_left_prompt_suffix
         end)
 
-    set -g prev_item_was_newline
+    set -g add_prefix
     _tide_side=right set -f right (for item in $_tide_right_items
             _tide_item_$item
         end
-        if not set -e prev_item_was_newline
+        if not set -e add_prefix
             set_color $prev_bg_color -b normal
             echo -ns $tide_right_prompt_suffix
         end)
