@@ -63,5 +63,3 @@ jobs:
       - uses: megalinter/megalinter/flavors/documentation@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISABLE_LINTERS: SPELL_CSPELL
-          PRINT_ALPACA: false
