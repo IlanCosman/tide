@@ -38,6 +38,9 @@ tide_jobs_icon ''
 tide_kubectl_bg_color normal
 tide_kubectl_color 326CE5
 tide_kubectl_icon '⎈'
+tide_docker_bg_color normal
+tide_docker_color 2898E8
+tide_docker_icon ''
 tide_left_prompt_frame_enabled false
 tide_left_prompt_items pwd git newline character
 tide_left_prompt_prefix ''
