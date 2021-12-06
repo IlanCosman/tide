@@ -6,8 +6,8 @@ end
 
 set -lx tide_docker_icon 
 
-mock docker "context show" "printf default"
+mock docker "context inspect" "printf default"
 _docker # CHECK:
 
-mock docker "context show" "printf curr-context"
+mock docker "context inspect" "printf curr-context"
 _docker # CHECK:  curr-context
