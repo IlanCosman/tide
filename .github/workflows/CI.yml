@@ -60,6 +60,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: megalinter/megalinter/flavors/documentation@v5
+      - uses: megalinter/megalinter/flavors/python@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

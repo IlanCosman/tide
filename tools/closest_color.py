@@ -33,7 +33,7 @@ def hex_to_lab(hex):
 def closest_tango_color(hex):
     input_color = hex_to_lab(hex)
 
-    min_delta_e = 100000000
+    min_delta_e = sys.maxsize
     closest_color_name = None
 
     for color_name, color_hex in TANGO_COLORS.items():
