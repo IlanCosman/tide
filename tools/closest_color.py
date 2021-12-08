@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 from colormath.color_conversions import convert_color
