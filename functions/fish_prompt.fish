@@ -28,14 +28,14 @@ var="function fish_prompt
         set -g _tide_last_pid \$last_pid
     end
 
-    string unescape $_tide_add_newline \$\$_tide_prompt_var[1][2..]
-end" eval "$var"
-set -e _tide_add_newline _tide_prompt_num_lines
+    string unescape $_tide_add_newline \$$_tide_prompt_var[1][2..]
+end
 
 function fish_right_prompt
-    string unescape $$_tide_prompt_var[1][1]
+    string unescape \$$_tide_prompt_var[1][1]
 end
 
 function _tide_on_fish_exit --on-event fish_exit
     set -e $_tide_prompt_var
-end
+end" eval "$var"
+set -e _tide_add_newline _tide_prompt_num_lines _tide_prompt_var
