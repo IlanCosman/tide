@@ -16,20 +16,21 @@ function _tide_refresh_prompt --on-variable $_tide_prompt_var
     commandline --function repaint
 end
 
-function fish_prompt
-    _tide_status=$status _tide_pipestatus=$pipestatus if not set -e _tide_repaint
+var="function fish_prompt
+    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs --query
-        fish --command "set _tide_pipestatus $_tide_pipestatus
-            _tide_jobs_status=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
-            fish_bind_mode=$fish_bind_mode set $_tide_prompt_var (_tide_prompt)" &
+        fish --command \"set _tide_pipestatus \$_tide_pipestatus
+            _tide_jobs_status=\$status CMD_DURATION=\$CMD_DURATION COLUMNS=\$COLUMNS \
+            fish_bind_mode=\$fish_bind_mode set $_tide_prompt_var (_tide_prompt)\" &
         builtin disown
 
-        command kill $_tide_last_pid 2>/dev/null
-        set -g _tide_last_pid $last_pid
+        command kill \$_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid \$last_pid
     end
 
-    string unescape $_tide_add_newline $$_tide_prompt_var[1][2..]
-end
+    string unescape $_tide_add_newline \$\$_tide_prompt_var[1][2..]
+end" eval "$var"
+set -e _tide_add_newline
 
 function fish_right_prompt
     string unescape $$_tide_prompt_var[1][1]

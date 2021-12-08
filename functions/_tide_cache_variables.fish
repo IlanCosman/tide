@@ -41,7 +41,7 @@ function _tide_cache_variables
     end
 
     # newline before
-    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline '' || set -e _tide_add_newline
+    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline \e || set -e _tide_add_newline
 
     # item padding
     test "$tide_prompt_pad_items" = true && set -gx _tide_pad ' ' || set -e _tide_pad
