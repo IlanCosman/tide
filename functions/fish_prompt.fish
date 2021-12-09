@@ -16,7 +16,8 @@ function _tide_refresh_prompt --on-variable $_tide_prompt_var
     commandline --function repaint
 end
 
-var="function fish_prompt
+eval "
+function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs --query
         fish --command \"set _tide_pipestatus \$_tide_pipestatus
@@ -37,5 +38,6 @@ end
 
 function _tide_on_fish_exit --on-event fish_exit
     set -e $_tide_prompt_var
-end" eval "$var"
-set -e _tide_add_newline _tide_prompt_num_lines _tide_prompt_var
+end"
+
+set -e _tide_prompt_var _tide_prompt_num_lines _tide_add_newline
