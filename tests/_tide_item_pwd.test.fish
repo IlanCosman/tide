@@ -49,6 +49,11 @@ mkdir -p $tmpdir/alfa/bratwurst
 _pwd "$longDir" # CHECK: ~/a/brav/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 rm -r $tmpdir/alfa/bratwurst
 
+# Truncate to unique
+mkdir -p $tmpdir/alfa/bravohello
+_pwd "$longDir" # CHECK: ~/a/bravo/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+rm -r $tmpdir/alfa/bravohello
+
 # Markers
 mkdir -p $tmpdir/alfa/.git
 _pwd "$longDir" # CHECK: ~/alfa/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
