@@ -26,7 +26,7 @@ tide_jobs_color green
 tide_kubectl_bg_color normal
 tide_kubectl_color blue
 tide_docker_bg_color normal
-tide_docker_color blue
+tide_docker_color brblue
 tide_node_bg_color normal
 tide_node_color green
 tide_os_bg_color normal
