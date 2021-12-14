@@ -31,10 +31,8 @@ function _tide_pwd
                     test (count $parent_dir/$trunc*/) != 1
                 math $trunc_len+1 | read trunc_len
             end
-            if test -n "$trunc"
-                set split_output[$i] $_tide_color_truncated_dirs$trunc$_tide_reset_to_color_dirs
+            test -n "$trunc" && set split_output[$i] $_tide_color_truncated_dirs$trunc$_tide_reset_to_color_dirs &&
                 string join / $split_output | string length --visible | read -g pwd_length
-            end
         end
     end
 
