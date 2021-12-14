@@ -36,14 +36,14 @@ function _tide_cache_variables
     # two line prompt
     if contains newline $_tide_left_items
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
-        set -g _tide_prompt_num_lines _tide_2_line_prompt
+        set -g _tide_X_line_prompt _tide_2_line_prompt
     else
         set -e _tide_prompt_and_frame_color
-        set -g _tide_prompt_num_lines _tide_1_line_prompt
+        set -g _tide_X_line_prompt _tide_1_line_prompt
     end
 
     # newline before
-    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline '\0' || set -e _tide_add_newline
+    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline '\0'
 
     # item padding
     test "$tide_prompt_pad_items" = true && set -gx _tide_pad ' ' || set -e _tide_pad

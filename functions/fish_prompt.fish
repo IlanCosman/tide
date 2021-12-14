@@ -21,8 +21,8 @@ function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs --query
         fish --command \"set _tide_pipestatus \$_tide_pipestatus
-            _tide_jobs_status=\$status CMD_DURATION=\$CMD_DURATION COLUMNS=\$COLUMNS \
-            fish_bind_mode=\$fish_bind_mode set $_tide_prompt_var ($_tide_prompt_num_lines)\" &
+_tide_jobs_status=\$status CMD_DURATION=\$CMD_DURATION COLUMNS=\$COLUMNS \
+fish_bind_mode=\$fish_bind_mode set $_tide_prompt_var ($_tide_X_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -40,4 +40,4 @@ function _tide_on_fish_exit --on-event fish_exit
     set -e $_tide_prompt_var
 end"
 
-set -e _tide_prompt_var _tide_prompt_num_lines _tide_add_newline
+set -e _tide_prompt_var _tide_X_line_prompt _tide_add_newline
