@@ -17,8 +17,6 @@ If you have any questions that aren't addressed in this document, please don't h
     - Ex: `test -n "$foo" && echo "foo is not empty"`
     - Ex: `foo || bar || baz`
   - For anything more complex use `if`, `else`, and `else if`
-- Long forms of flags > short forms
-  - Exceptions: `set`, `set_color`, `function foo -a`, "common knowledge" options for commands like `rm -r`
 - Piping > command substitution (only when convenient, i.e no extra commands)
 
 ### Naming Conventions
