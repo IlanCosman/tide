@@ -27,9 +27,8 @@ function _tide_pwd
             end
             set split_output[$i] $_tide_color_anchors$dir_section$_tide_reset_to_color_dirs
         else if test $pwd_length -gt $dist_btwn_sides
-            trunc_len=1 while string match -qr "(?<trunc>.{$trunc_len})" $dir_section &&
-                    test (count $parent_dir/$trunc*/) != 1
-                math $trunc_len+1 | read trunc_len
+            set -l trunc
+            while string match -qr "(?<trunc>$trunc.)" $dir_section && test (count $parent_dir/$trunc*/) != 1
             end
             test -n "$trunc" && set split_output[$i] $_tide_color_truncated_dirs$trunc$_tide_reset_to_color_dirs &&
                 string join / $split_output | string length --visible | read -g pwd_length
