@@ -21,6 +21,6 @@ function prompt_colors
                     _next_choice classic/classic_prompt_color
             end
         case 2
-            _next_choice all/show_time
+            _next_choice all/black_or_brblack
     end
 end
