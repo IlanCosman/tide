@@ -9,6 +9,10 @@ on:
       - v.*
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
@@ -43,16 +47,6 @@ jobs:
       - uses: fish-actions/install-fish@v1
 
       - uses: fish-actions/format-check@v1
-
-  prettier:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actionsx/prettier@v2
-        with:
-          args: --check .
 
   mega-linter:
     runs-on: ubuntu-latest
