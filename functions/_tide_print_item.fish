@@ -2,6 +2,13 @@
 # All arguments after the first are printed
 # Example Usage:
 # _tide_print_item node $tide_node_icon' ' (node --version | string trim --chars=v)
+#
+# This function depends on a background color, color, and icon,
+# which are defined in /functions/tide/configure/configs/*.fish
+# Example (from classic.fish)
+# tide_node_bg_color 444444
+# tide_node_color 44883E
+# tide_node_icon '⬢'
 function _tide_print_item -a item
     item_bg_color_name=tide_"$item"_bg_color set item_bg_color $$item_bg_color_name
 
