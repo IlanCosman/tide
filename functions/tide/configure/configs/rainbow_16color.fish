@@ -39,6 +39,8 @@ tide_pwd_color_dirs brwhite
 tide_pwd_color_truncated_dirs white
 tide_rustc_bg_color red
 tide_rustc_color black
+tide_rvm_bg_color black
+tide_rvm_color red
 tide_shlvl_bg_color yellow
 tide_shlvl_color black
 tide_status_bg_color black

@@ -1,3 +1,7 @@
+# Print a prompt segment with the given item name
+# All arguments after the first are printed
+# Example Usage:
+# _tide_print_item node $tide_node_icon' ' (node --version | string trim --chars=v)
 function _tide_print_item -a item
     item_bg_color_name=tide_"$item"_bg_color set item_bg_color $$item_bg_color_name
 
