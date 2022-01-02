@@ -22,15 +22,15 @@ function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
         fish -c \"set _tide_pipestatus \$_tide_pipestatus
-CMD_DURATION=\$CMD_DURATION COLUMNS=\$COLUMNS fish_bind_mode=\$fish_bind_mode \
-set $_tide_prompt_var ($_tide_X_line_prompt)\" &
+CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $_tide_prompt_var ($_tide_X_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
     end
-
-    string unescape $_tide_add_newline \$$_tide_prompt_var[1][2..]
+    
+    math \$COLUMNS-(string length --visible \"\$$_tide_prompt_var[1][..2]\")$column_offset | read -lx dist_btwn_sides
+    string replace @PWD@ (_tide_pwd) $_tide_add_newline \$$_tide_prompt_var[1][2..]
 end
 
 function fish_right_prompt
@@ -41,4 +41,4 @@ function _tide_on_fish_exit --on-event fish_exit
     set -e $_tide_prompt_var
 end"
 
-set -e _tide_prompt_var _tide_X_line_prompt _tide_add_newline
+set -e column_offset _tide_prompt_var _tide_X_line_prompt _tide_add_newline

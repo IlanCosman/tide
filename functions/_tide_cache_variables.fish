@@ -37,9 +37,14 @@ function _tide_cache_variables
     if contains newline $_tide_left_items
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
         set -g _tide_X_line_prompt _tide_2_line_prompt
+
+        set -g column_offset +5
     else
         set -e _tide_prompt_and_frame_color
         set -g _tide_X_line_prompt _tide_1_line_prompt
+
+        math 5 -$tide_prompt_min_cols | read -g column_offset
+        test $column_offset -gt 0 && set column_offset "+$column_offset"
     end
 
     # newline before

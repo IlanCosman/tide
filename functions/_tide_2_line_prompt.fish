@@ -17,9 +17,8 @@ function _tide_2_line_prompt
         set right[2] "$right[2]$_tide_prompt_and_frame_color─╯"
 
     # 5 = @PWD@ length which will be replaced
-    math $COLUMNS+5-(string length --visible "$left[1]$right[1]") | read -lx dist_btwn_sides
-    echo -ns "$right[2]"\n(string replace @PWD@ (_tide_pwd) "$left[1]")$_tide_prompt_and_frame_color
-
+    # math $COLUMNS+5-(string length --visible "$left[1]$right[1]") | read -lx dist_btwn_sides
+    echo -ns "$right[2]"\n"$left[1]"$_tide_prompt_and_frame_color
     string repeat --no-newline --max (math max 0, $dist_btwn_sides-$pwd_length) $tide_prompt_icon_connection
     echo -ns "$right[1]"\n"$left[2] "
 end
