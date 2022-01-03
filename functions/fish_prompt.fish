@@ -17,7 +17,8 @@ function _tide_refresh_prompt --on-variable $_tide_prompt_var
     commandline -f repaint
 end
 
-eval "
+if contains newline $_tide_left_items
+    eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
@@ -28,11 +29,32 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $_tide_prompt_va
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
     end
-    
-    math \$COLUMNS-(string length --visible \"\$$_tide_prompt_var[1][..2]\")$column_offset | read -lx dist_btwn_sides
-    string replace @PWD@ (_tide_pwd) $_tide_add_newline \$$_tide_prompt_var[1][2..]
+
+    math \$COLUMNS-(string length --visible \"\$$_tide_prompt_var[1][2..3]\")$column_offset | read -lx dist_btwn_sides
+
+    echo -ns $_tide_add_newline(string replace @PWD@ (_tide_pwd) \"\$$_tide_prompt_var[1][2]\")'$_tide_prompt_and_frame_color'
+    string repeat --no-newline --max (math max 0, \$dist_btwn_sides-\$pwd_length) '$tide_prompt_icon_connection'
+    echo -ns \"\$$_tide_prompt_var[1][3]\"\n\"\$$_tide_prompt_var[1][4] \"
+end"
+else
+    eval "
+function fish_prompt
+    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+        jobs -q && set -lx _tide_jobs
+        fish -c \"set _tide_pipestatus \$_tide_pipestatus
+CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $_tide_prompt_var ($_tide_X_line_prompt)\" &
+        builtin disown
+
+        command kill \$_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid \$last_pid
+    end
+
+    math \$COLUMNS-(string length --visible \"\$$_tide_prompt_var[1]\")$column_offset | read -lx dist_btwn_sides
+    string replace @PWD@ (_tide_pwd) $_tide_add_newline \$$_tide_prompt_var[1][2]' '
+end"
 end
 
+eval "
 function fish_right_prompt
     string unescape \$$_tide_prompt_var[1][1]
 end

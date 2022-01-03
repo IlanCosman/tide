@@ -33,8 +33,13 @@ function _tide_cache_variables
         set -e _tide_private_mode
     end
 
+    # newline before
+    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline '\0'
+
     # two line prompt
     if contains newline $_tide_left_items
+        test "$_tide_add_newline" = '\0' && set _tide_add_newline '\n'
+
         set_color $tide_prompt_color_frame_and_connection -b normal | read -gx _tide_prompt_and_frame_color
         set -g _tide_X_line_prompt _tide_2_line_prompt
 
@@ -46,9 +51,6 @@ function _tide_cache_variables
         math 5 -$tide_prompt_min_cols | read -g column_offset
         test $column_offset -gt 0 && set column_offset "+$column_offset"
     end
-
-    # newline before
-    test "$tide_prompt_add_newline_before" = true && set -g _tide_add_newline '\0'
 
     # item padding
     test "$tide_prompt_pad_items" = true && set -gx _tide_pad ' ' || set -e _tide_pad
