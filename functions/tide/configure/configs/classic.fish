@@ -75,9 +75,9 @@ tide_right_prompt_suffix ''
 tide_rustc_bg_color 444444
 tide_rustc_color F74C00
 tide_rustc_icon ''
-tide_rvm_bg_color 444444
-tide_rvm_color CC342D
-tide_rvm_icon ''
+tide_ruby_bg_color 444444
+tide_ruby_color CC342D
+tide_ruby_icon ''
 tide_shlvl_bg_color 444444
 tide_shlvl_color d78700
 tide_shlvl_icon ''
