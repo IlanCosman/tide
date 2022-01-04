@@ -55,7 +55,7 @@ else
     test "$tide_prompt_add_newline_before" = true && set -l _tide_add_newline '\0'
 
     math 5 -$tide_prompt_min_cols | read -l column_offset
-    test $column_offset -lt 0 && set column_offset "+$column_offset"
+    test $column_offset -ge 0 && set column_offset "+$column_offset"
 
     eval "
 function fish_prompt
