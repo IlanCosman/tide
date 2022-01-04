@@ -9,13 +9,6 @@ function _tide_2_line_prompt
             _tide_item_$item
         end)
 
-    test "$tide_left_prompt_frame_enabled" = true &&
-        set left[1] "$_tide_prompt_and_frame_color╭─$left[1]" &&
-        set left[2] "$_tide_prompt_and_frame_color╰─$left[2]"
-    test "$tide_right_prompt_frame_enabled" = true &&
-        set right[1] "$right[1]$_tide_prompt_and_frame_color─╮" &&
-        set right[2] "$right[2]$_tide_prompt_and_frame_color─╯"
-
     echo -ns "$right[2]"\n"$left[1]"\n"$right[1]"\n"$left[2]"
 end
 
