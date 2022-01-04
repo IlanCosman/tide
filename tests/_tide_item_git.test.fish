@@ -59,7 +59,7 @@ _git_item # CHECK: {{@\w*}}
 # Long branches
 _git checkout main
 _git checkout -b very_long_branch_name
-set tide_git_truncation_length 10
+set -lx tide_git_truncation_length 10
 _git_item # CHECK: very_long_…
 
 # Branch same length as tide_git_truncation_length
