@@ -5,6 +5,7 @@ status is-interactive || exit
 
 _tide_remove_unusable_items
 _tide_cache_variables
+source (functions --details _tide_pwd)
 
 # The first element in $$_tide_prompt_var is right prompt
 # All remaining ones are 'left' prompt (also upper right in 2-line prompts)
