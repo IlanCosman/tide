@@ -4,9 +4,9 @@ set -l data (
     set_color $tide_pwd_color_truncated_dirs
     echo
     set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs)
-set -l _tide_color_anchors "$data[1]"
-set -l _tide_color_truncated_dirs "$data[2]"
-set -l _tide_reset_to_color_dirs "$data[3]"
+set -l color_anchors "$data[1]"
+set -l color_truncated "$data[2]"
+set -l reset_to_color_dirs "$data[3]"
 
 set -l unwritable_icon $tide_pwd_icon_unwritable'\ '
 set -l home_icon $tide_pwd_icon_home'\ '
@@ -25,9 +25,9 @@ eval "function _tide_pwd
 
     # Anchor first and last directories (which may be the same)
     test -n \"\$split_pwd[1]\" && # ~/foo/bar, hightlight ~   OR   /foo/bar, hightlight foo not empty string
-        set -l split_output \"$_tide_reset_to_color_dirs\$icon$_tide_color_anchors\$split_pwd[1]$_tide_reset_to_color_dirs\" \$split_pwd[2..] ||
-        set -l split_output \"$_tide_reset_to_color_dirs\$icon\" \"$_tide_color_anchors\$split_pwd[2]$_tide_reset_to_color_dirs\" \$split_pwd[3..]
-    set split_output[-1] \"$_tide_color_anchors\$split_pwd[-1]$_tide_reset_to_color_dirs\"
+        set -l split_output \"$reset_to_color_dirs\$icon$color_anchors\$split_pwd[1]$reset_to_color_dirs\" \$split_pwd[2..] ||
+        set -l split_output \"$reset_to_color_dirs\$icon\" \"$color_anchors\$split_pwd[2]$reset_to_color_dirs\" \$split_pwd[3..]
+    set split_output[-1] \"$color_anchors\$split_pwd[-1]$reset_to_color_dirs\"
 
     string join / \$split_output | string length --visible | read -g pwd_length
 
@@ -39,12 +39,12 @@ eval "function _tide_pwd
         if false || for marker in $tide_pwd_markers # false is for if tide_pwd_markers is empty
                 test -e \$parent_dir/\$dir_section/\$marker && break
             end
-            set split_output[\$i] \"$_tide_color_anchors\$dir_section$_tide_reset_to_color_dirs\"
+            set split_output[\$i] \"$color_anchors\$dir_section$reset_to_color_dirs\"
         else if test \$pwd_length -gt \$dist_btwn_sides
             set -l trunc
             while string match -qr \"(?<trunc>\$trunc.)\" \$dir_section && test (count \$parent_dir/\$trunc*/) != 1
             end
-            test -n \"\$trunc\" && set split_output[\$i] \"$_tide_color_truncated_dirs\$trunc$_tide_reset_to_color_dirs\" &&
+            test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
                 string join / \$split_output | string length --visible | read -g pwd_length
         end
     end
