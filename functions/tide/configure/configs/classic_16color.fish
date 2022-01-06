@@ -21,6 +21,8 @@ tide_git_color_untracked brblue
 tide_git_color_upstream brgreen
 tide_go_bg_color black
 tide_go_color brcyan
+tide_java_bg_color black
+tide_java_color yellow
 tide_jobs_bg_color black
 tide_jobs_color green
 tide_kubectl_bg_color black
@@ -39,8 +41,6 @@ tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
 tide_rustc_bg_color black
 tide_rustc_color red
-tide_java_bg_color black
-tide_java_color red
 tide_shlvl_bg_color black
 tide_shlvl_color yellow
 tide_status_bg_color black

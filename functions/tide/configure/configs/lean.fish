@@ -32,6 +32,9 @@ tide_git_icon
 tide_go_bg_color normal
 tide_go_color 00ACD7
 tide_go_icon 
+tide_java_bg_color normal
+tide_java_color ED8B00
+tide_java_icon ''
 tide_jobs_bg_color normal
 tide_jobs_color $_tide_color_dark_green
 tide_jobs_icon ''
@@ -75,9 +78,6 @@ tide_right_prompt_suffix ''
 tide_rustc_bg_color normal
 tide_rustc_color F74C00
 tide_rustc_icon ''
-tide_java_bg_color normal
-tide_java_color F74C00
-tide_java_icon ''
 tide_shlvl_bg_color normal
 tide_shlvl_color d78700
 tide_shlvl_icon ''
