@@ -4,7 +4,9 @@ set -l tmpdir (mktemp -d)
 
 function _pwd -a dir --inherit-variable tmpdir
     cd $dir
-    HOME=$tmpdir _tide_decolor (_tide_pwd)
+    set -lx HOME $tmpdir
+    source (functions --details _tide_pwd) # Recache stuff
+    _tide_decolor (_tide_pwd)
 end
 
 set -g COLUMNS 80
