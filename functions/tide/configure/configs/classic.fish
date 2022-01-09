@@ -38,7 +38,7 @@ tide_go_color 00ACD7
 tide_go_icon 
 tide_java_bg_color 444444
 tide_java_color ED8B00
-tide_java_icon ''
+tide_java_icon 
 tide_jobs_bg_color 444444
 tide_jobs_color $_tide_color_dark_green
 tide_jobs_icon 
