@@ -7,10 +7,8 @@ _tide_remove_unusable_items
 _tide_cache_variables
 source (functions --details _tide_pwd)
 
-# The first element in $$prompt_var is right prompt
-# All remaining ones are 'left' prompt (also upper right in 2-line prompts)
 set -l prompt_var _tide_prompt_$fish_pid
-set -U $prompt_var # So that if we erase $prompt_var, the bg job can't set a uvar
+set -U $prompt_var # Set var here so if we erase $prompt_var, bg job won't a uvar
 
 # _tide_repaint prevents us from creating a second background job
 function _tide_refresh_prompt --on-variable $prompt_var
@@ -46,15 +44,15 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         set -l _tide_last_pid \$last_pid
     end
 
-    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][2]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
+    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
 
-    echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][2]\")'$prompt_and_framce_color'
+    echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_framce_color'
     string repeat --no-newline --max (math max 0, \$dist_btwn_sides-\$pwd_length) '$tide_prompt_icon_connection'
-    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][4] \"
+    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2] \"
 end
 
 function fish_right_prompt
-    string unescape \"\$$prompt_var[1][1]$bot_right_frame\"
+    string unescape \"\$$prompt_var[1][4]$bot_right_frame\"
 end"
 else # one line prompt initialization
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\0'
@@ -74,12 +72,12 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         set -l _tide_last_pid \$last_pid
     end
 
-    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][2]\$$prompt_var[1][3]\")$column_offset | read -lx dist_btwn_sides
-    string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][2]' '
+    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
+    string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]' '
 end
 
 function fish_right_prompt
-    string unescape \$$prompt_var[1][1]
+    string unescape \$$prompt_var[1][2]
 end"
 end
 

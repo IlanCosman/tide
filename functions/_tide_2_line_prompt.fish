@@ -1,15 +1,15 @@
 function _tide_2_line_prompt
     set -g add_prefix
-    _tide_side=left set -f left (for item in $_tide_left_items
-            _tide_item_$item
-        end)
+    _tide_side=left for item in $_tide_left_items
+        _tide_item_$item
+    end
+
+    echo
 
     set -g add_prefix
-    _tide_side=right set -f right (for item in $_tide_right_items
-            _tide_item_$item
-        end)
-
-    echo -ns "$right[2]"\n"$left[1]"\n"$right[1]"\n"$left[2]"
+    _tide_side=right for item in $_tide_right_items
+        _tide_item_$item
+    end
 end
 
 function _tide_item_pwd
