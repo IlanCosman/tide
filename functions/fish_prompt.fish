@@ -41,7 +41,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
-        set -l _tide_last_pid \$last_pid
+        set -g _tide_last_pid \$last_pid
     end
 
     math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
@@ -69,7 +69,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
-        set -l _tide_last_pid \$last_pid
+        set -g _tide_last_pid \$last_pid
     end
 
     math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
