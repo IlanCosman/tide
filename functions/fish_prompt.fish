@@ -8,7 +8,7 @@ _tide_cache_variables
 source (functions --details _tide_pwd)
 
 set -l prompt_var _tide_prompt_$fish_pid
-set -U $prompt_var # Set var here so if we erase $prompt_var, bg job won't a uvar
+set -U $prompt_var # Set var here so if we erase $prompt_var, bg job won't set a uvar
 
 # _tide_repaint prevents us from creating a second background job
 function _tide_refresh_prompt --on-variable $prompt_var
@@ -19,17 +19,17 @@ end
 if contains newline $_tide_left_items # two line prompt initialization
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\n'
 
-    set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_framce_color
+    set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_frame_color
 
     set -l column_offset 5
 
     test "$tide_left_prompt_frame_enabled" = true &&
-        set -l top_left_frame "$prompt_and_framce_color╭─" &&
-        set -l bot_left_frame "$prompt_and_framce_color╰─" &&
+        set -l top_left_frame "$prompt_and_frame_color╭─" &&
+        set -l bot_left_frame "$prompt_and_frame_color╰─" &&
         set column_offset (math $column_offset-2)
     test "$tide_right_prompt_frame_enabled" = true &&
-        set -l top_right_frame "$prompt_and_framce_color─╮" &&
-        set -l bot_right_frame "$prompt_and_framce_color─╯" &&
+        set -l top_right_frame "$prompt_and_frame_color─╮" &&
+        set -l bot_right_frame "$prompt_and_frame_color─╯" &&
         set column_offset (math $column_offset-2)
 
     eval "
@@ -46,7 +46,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
 
     math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
 
-    echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_framce_color'
+    echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
     string repeat --no-newline --max (math max 0, \$dist_btwn_sides-\$pwd_length) '$tide_prompt_icon_connection'
     echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2] \"
 end

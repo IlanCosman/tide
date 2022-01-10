@@ -35,7 +35,7 @@ function _tide_init_update --on-event _tide_init_update
     # Print a warning
     set_color yellow
     echo "You have upgraded to version 5 of Tide."
-    echo "Since there are breaking changes, your old configuraton has been saved in:"
+    echo "Since there are breaking changes, your old configuration has been saved in:"
     set_color normal
     echo $tmp
 
