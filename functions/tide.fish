@@ -14,14 +14,14 @@ function tide --description 'Manage your Tide prompt'
 end
 
 function _tide_help
-    echo "\
-Usage: tide [options] subcommand [options]
-
-Options:
-  -v or --version  print tide version number
-  -h or --help     print this help message
-
-Subcommands:
-  configure   run interactive configuration wizard
-  bug-report  print info for use in bug reports"
+    printf %s\n \
+        'Usage: tide [options] subcommand [options]' \
+        '' \
+        'Options:' \
+        '  -v or --version  print tide version number' \
+        '  -h or --help     print this help message' \
+        '' \
+        'Subcommands:' \
+        '  configure   run interactive configuration wizard' \
+        '  bug-report  print info for use in bug reports'
 end
