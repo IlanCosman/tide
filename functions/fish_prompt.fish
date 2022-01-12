@@ -44,10 +44,10 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         set -g _tide_last_pid \$last_pid
     end
 
-    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
+    math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
 
     echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
-    string repeat --no-newline --max (math max 0, \$dist_btwn_sides-\$pwd_length) '$tide_prompt_icon_connection'
+    string repeat -Nm(math max 0, \$dist_btwn_sides-\$pwd_length) '$tide_prompt_icon_connection'
     echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2] \"
 end
 
@@ -72,7 +72,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
         set -g _tide_last_pid \$last_pid
     end
 
-    math \$COLUMNS-(string length --visible \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
+    math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
     string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]' '
 end
 

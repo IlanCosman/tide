@@ -29,7 +29,7 @@ eval "function _tide_pwd
         set -l split_output \"$reset_to_color_dirs\$icon\" \"$color_anchors\$split_pwd[2]$reset_to_color_dirs\" \$split_pwd[3..]
     set split_output[-1] \"$color_anchors\$split_pwd[-1]$reset_to_color_dirs\"
 
-    string join / \$split_output | string length --visible | read -g pwd_length
+    string join / \$split_output | string length -V | read -g pwd_length
 
     i=1 for dir_section in \$split_pwd[2..-2]
         string join -- / \$split_pwd[..\$i] | string replace '~' $HOME | read -l parent_dir # Uses i before increment
@@ -45,7 +45,7 @@ eval "function _tide_pwd
             while string match -qr \"(?<trunc>\$trunc.)\" \$dir_section && test (count \$parent_dir/\$trunc*/) != 1
             end
             test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
-                string join / \$split_output | string length --visible | read -g pwd_length
+                string join / \$split_output | string length -V | read -g pwd_length
         end
     end
 

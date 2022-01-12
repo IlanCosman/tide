@@ -1,5 +1,5 @@
 function _tide_item_status
-    if string match --quiet --invert 0 $_tide_pipestatus # If there is a failure anywhere in the pipestatus
+    if string match -qv 0 $_tide_pipestatus # If there is a failure anywhere in the pipestatus
         if test "$_tide_pipestatus" = 1 # If simple failure
             contains character $_tide_left_items || tide_status_bg_color=$tide_status_bg_color_failure \
                 tide_status_color=$tide_status_color_failure _tide_print_item status $tide_status_icon_failure' ' 1
