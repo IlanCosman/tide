@@ -10,6 +10,8 @@ source (functions --details _tide_pwd)
 set -l prompt_var _tide_prompt_$fish_pid
 set -U $prompt_var # Set var here so if we erase $prompt_var, bg job won't set a uvar
 
+set -l color_normal (set_color normal)
+
 # _tide_repaint prevents us from creating a second background job
 function _tide_refresh_prompt --on-variable $prompt_var
     set -g _tide_repaint
@@ -52,7 +54,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
 end
 
 function fish_right_prompt
-    string unescape \"\$$prompt_var[1][4]$bot_right_frame\"
+    string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
 end"
 else # one line prompt initialization
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\0'
@@ -77,7 +79,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
 end
 
 function fish_right_prompt
-    string unescape \$$prompt_var[1][2]
+    string unescape \"\$$prompt_var[1][2]$color_normal\"
 end"
 end
 
