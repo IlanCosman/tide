@@ -1,12 +1,6 @@
-set -l data (
-    set_color -o $tide_pwd_color_anchors
-    echo
-    set_color $tide_pwd_color_truncated_dirs
-    echo
-    set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs)
-set -l color_anchors "$data[1]"
-set -l color_truncated "$data[2]"
-set -l reset_to_color_dirs "$data[3]"
+set_color -o $tide_pwd_color_anchors | read -l color_anchors
+set_color $tide_pwd_color_truncated_dirs | read -l color_truncated
+set -l reset_to_color_dirs (set_color normal -b $tide_pwd_bg_color; set_color $tide_pwd_color_dirs)
 
 set -l unwritable_icon $tide_pwd_icon_unwritable'\ '
 set -l home_icon $tide_pwd_icon_home'\ '
