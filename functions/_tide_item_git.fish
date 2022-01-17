@@ -8,8 +8,8 @@ function _tide_item_git
         git rev-parse --git-dir | read -f git_dir
         set location '#'$_tide_location_color$location
     else
-        git rev-parse --git-dir --short HEAD | read -fL git_dir sha
-        set location @$_tide_location_color$sha
+        git rev-parse --git-dir --short HEAD | read -fL git_dir location
+        set location @$_tide_location_color$location
     end
 
     # Operation
