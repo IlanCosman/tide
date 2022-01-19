@@ -7,14 +7,10 @@ set -l home_icon $tide_pwd_icon_home'\ '
 set -l pwd_icon $tide_pwd_icon'\ '
 
 eval "function _tide_pwd
-    set -l split_pwd (string replace -r -- ^$HOME '~' \$PWD | string split /)
-
-    if not test -w \$PWD
-        set -f icon $unwritable_icon
-    else if test \$PWD = $HOME
-        set -f icon $home_icon
+    if set -l split_pwd (string replace -r -- ^$HOME '~' \$PWD | string split /)
+        test -w \$PWD && set -f icon $pwd_icon || set -f icon $unwritable_icon
     else
-        set -f icon $pwd_icon
+        set -f icon $home_icon
     end
 
     # Anchor first and last directories (which may be the same)
