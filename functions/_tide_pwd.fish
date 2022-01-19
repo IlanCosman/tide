@@ -7,7 +7,7 @@ set -l home_icon $tide_pwd_icon_home'\ '
 set -l pwd_icon $tide_pwd_icon'\ '
 
 eval "function _tide_pwd
-    if set -l split_pwd (string replace -r -- ^$HOME '~' \$PWD | string split /)
+    if set -l split_pwd (string replace -r '^$HOME' '~' \$PWD | string split /)
         test -w \$PWD && set -f icon $pwd_icon || set -f icon $unwritable_icon
     else
         set -f icon $home_icon
