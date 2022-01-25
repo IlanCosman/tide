@@ -2,8 +2,6 @@
 
 🌊 Thank you for contributing to Tide! 🌊
 
-Please note that this project is released with a [Code of Conduct][]. By contributing to this project you agree to abide by its terms.
-
 If you have any questions that aren't addressed in this document, please don't hesitate to open an issue!
 
 ## Code Conventions

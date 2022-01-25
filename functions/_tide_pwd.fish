@@ -8,7 +8,7 @@ set -l pwd_icon $tide_pwd_icon'\ '
 
 eval "function _tide_pwd
     if set -l split_pwd (string replace -r '^$HOME' '~' \$PWD | string split /)
-        test -w \$PWD && set -f icon $pwd_icon || set -f icon $unwritable_icon
+        test -w . && set -f icon $pwd_icon || set -f icon $unwritable_icon
     else
         set -f icon $home_icon
     end
@@ -35,7 +35,7 @@ eval "function _tide_pwd
             while string match -qr \"(?<trunc>\$trunc.)\" \$dir_section && test (count \$parent_dir/\$trunc*/) != 1
             end
             test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
-                string join / \$split_output | string length -V | read -g pwd_length
+                string join / \$split_output | string length -V | read pwd_length
         end
     end
 

@@ -24,7 +24,6 @@ if contains newline $_tide_left_items # two line prompt initialization
     set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_frame_color
 
     set -l column_offset 5
-
     test "$tide_left_prompt_frame_enabled" = true &&
         set -l top_left_frame "$prompt_and_frame_color╭─" &&
         set -l bot_left_frame "$prompt_and_frame_color╰─" &&
