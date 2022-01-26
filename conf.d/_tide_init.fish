@@ -9,7 +9,7 @@ function _tide_init_install --on-event _tide_init_install
         case y ye yes ''
             tide configure
         case '*'
-            echo -ns \n 'Run ' (echo -ns "tide configure" | fish_indent --ansi) ' to customize your prompt.' \n
+            echo -s \n 'Run ' (echo -ns "tide configure" | fish_indent --ansi) ' to customize your prompt.'
     end
 end
 
@@ -25,6 +25,6 @@ end
 
 function _tide_init_uninstall --on-event _tide_init_uninstall
     set -e VIRTUAL_ENV_DISABLE_PROMPT
-    set -e (set -U --names | string match --entire -r '^_?tide_')
-    functions --erase (functions --all | string match --entire -r '^_tide_')
+    set -e (set -U --names | string match --entire -r '^_?tide')
+    functions --erase (functions --all | string match --entire -r '^_?tide')
 end
