@@ -29,7 +29,7 @@ function _fake_tide_prompt
         math $fake_columns+5-(string length --visible "$left[1]$right[1]") | read -lx dist_btwn_sides
         echo -ns "$right[2]"\n(string replace @PWD@ (_fake_tide_pwd) "$left[1]")$_fake_tide_prompt_and_frame_color
 
-        string repeat --no-newline --max (math max 0, $dist_btwn_sides-$pwd_length) $fake_tide_prompt_icon_connection
+        string repeat --no-newline --max (math max 0, $dist_btwn_sides-$_tide_pwd_len) $fake_tide_prompt_icon_connection
         echo -ns "$right[1]"\n"$left[2] "
     else
         math $fake_columns+5-(string length --visible "$left[1]$right[1]") -$fake_tide_prompt_min_cols | read -lx dist_btwn_sides
