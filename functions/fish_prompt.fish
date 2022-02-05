@@ -1,6 +1,5 @@
 function fish_prompt
-end
-
+end # In case this file gets loaded non-interactively, e.g by conda
 status is-interactive || exit
 
 _tide_remove_unusable_items
