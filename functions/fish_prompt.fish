@@ -48,7 +48,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
 
     echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
     string repeat -Nm(math max 0, \$dist_btwn_sides-\$_tide_pwd_len) '$tide_prompt_icon_connection'
-    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2] \"
+    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2]$color_normal \"
 end
 
 function fish_right_prompt
@@ -73,7 +73,7 @@ CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_ti
     end
 
     math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
-    string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]' '
+    string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]'$color_normal '
 end
 
 function fish_right_prompt
