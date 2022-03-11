@@ -10,7 +10,7 @@ function _tide_sub_bug-report
             string match -r --invert "^_tide_prompt_var.*" # Remove _tide_prompt_var
     else
         set -l fish_path (status fish-path)
-        
+
         set -l fish_version ($fish_path --version | string match -r "fish, version (\d\.\d\.\d)")[2]
         _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fish_version || return
 
