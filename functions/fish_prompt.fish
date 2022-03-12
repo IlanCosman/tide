@@ -19,6 +19,14 @@ function _tide_refresh_prompt --on-variable $prompt_var --on-variable COLUMNS
 end
 
 if contains newline $_tide_left_items # two line prompt initialization
+    set -l dirname (status dirname)
+
+    set -l left_prompt_items "$(cat $dirname/tide/items/_tide_item_{$tide_left_prompt_items}.fish)"
+    set -l right_prompt_items "$(cat $dirname/tide/items/_tide_item_{$tide_right_prompt_items}.fish)"
+    cat $dirname/tide/functions/_tide_2_line_prompt.fish |
+        string replace "# @ left side goes here @" $left_prompt_items |
+        string replace "# @ right side goes here @" $right_prompt_items >$dirname/tide/prompt.fish
+
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\n'
 
     set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_frame_color
@@ -38,7 +46,7 @@ function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
-CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (source $dirname/tide/prompt.fish)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
