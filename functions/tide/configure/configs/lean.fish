@@ -67,7 +67,7 @@ tide_prompt_add_newline_before true
 tide_prompt_color_frame_and_connection 6C6C6C
 tide_prompt_color_separator_same_color 949494
 tide_prompt_icon_connection ' '
-tide_prompt_min_cols 26
+tide_prompt_min_cols 34
 tide_prompt_pad_items false
 tide_pwd_bg_color normal
 tide_pwd_color_anchors $_tide_color_light_blue
