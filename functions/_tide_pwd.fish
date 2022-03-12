@@ -17,7 +17,7 @@ eval "function _tide_pwd
     test -n \"\$split_pwd[1]\" && # ~/foo/bar, hightlight ~   OR   /foo/bar, hightlight foo not empty string
         set -l split_output \"$reset_to_color_dirs\$icon$color_anchors\$split_pwd[1]$reset_to_color_dirs\" \$split_pwd[2..] ||
         set -l split_output \"$reset_to_color_dirs\$icon\" \"$color_anchors\$split_pwd[2]$reset_to_color_dirs\" \$split_pwd[3..]
-    set split_output[-1] \"$color_anchors\$split_pwd[-1]$reset_to_color_dirs\"
+    set split_output[-1] \"$color_anchors\$split_output[-1]$reset_to_color_dirs\"
 
     string join / \$split_output | string length -V | read -g _tide_pwd_len
 
