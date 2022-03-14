@@ -35,7 +35,7 @@ function _next_choice -a nextChoice
 end
 
 function _tide_title -a text
-    clear
+    command -q clear && clear
     set_color -o
     string pad --width (math --scale=0 "$fake_columns/2" + (string length $text)/2) $text
     set_color normal
@@ -68,7 +68,7 @@ function _tide_menu
             case q
                 set -e _tide_selected_option # Skip through all the _next_choices
                 set -e _tide_option_list
-                clear
+                command -q clear && clear
                 break
             case $_tide_option_list
                 set -e _tide_option_list
