@@ -50,7 +50,7 @@ exec fish --init-command "set -g fish_greeting; emit _tide_init_install"
 
 ### Configuration Wizard
 
-Run `tide configure` to open the the wizard in your terminal.
+Run `tide configure` to open the wizard in your terminal.
 
 ![configuration_wizard][]
 
@@ -94,7 +94,7 @@ Tide is the only Fish prompt capable of displaying a multi-line right prompt. Al
 
 ### Current directory that just works
 
-The current working directory is the the most important part of any shell prompt. Tide highlights the critical parts and truncates with the least loss of information when horizontal space is scarce.
+The current working directory is the most important part of any shell prompt. Tide highlights the critical parts and truncates with the least loss of information when horizontal space is scarce.
 
 ![pwd][]
 
