@@ -5,6 +5,8 @@
 ### Bug fixes
 
 - Use `string length --visible` to allow for emojis in the prompt ([#134][])
+- Only replace `$HOME` with ~ if at beginning of PWD (fixes [#250][])
+- Repaint prompt when `$COLUMNS` changes (fixes [#254][])
 
 ### Features
 
@@ -12,17 +14,18 @@
   - `private_mode` ([#157][])
   - `terraform` ([#203][] - @radek-sprta)
   - `toolbox` ([#211][])
+  - `docker`, disabled by default ([#231][] - @cr-mitmit)
+  - `java` ([#244][] - @cr-mitmit)
 - Don't require pressing enter for each menu in configuration wizard ([#187][] - @branchvincent)
 - Truncate git branches/tags when they get too long ([#221][])
-- Improve `bug-report` command
-  - Add fish startup time
-  - Add fisher plugins
 - Performance improvements
   - Cache variables once on fish startup
   - Use `read` instead of command substitution when possible
   - Combine command substitutions
-  - Use `echo` instead of `printf`
-  - Compact math (`1+1` instead of `1 + 1`)
+  - Some other, extremely tiny, extremely evil speed boosts
+- Improve `bug-report` command
+  - Add fish startup time
+  - Add fisher plugins
 
 ## [v5.0.1][] (Aug 13 2021)
 
@@ -406,6 +409,10 @@
 [#203]: https://github.com/IlanCosman/tide/issues/203
 [#211]: https://github.com/IlanCosman/tide/issues/211
 [#221]: https://github.com/IlanCosman/tide/issues/221
+[#231]: https://github.com/IlanCosman/tide/issues/231
+[#244]: https://github.com/IlanCosman/tide/issues/244
+[#250]: https://github.com/IlanCosman/tide/issues/250
+[#254]: https://github.com/IlanCosman/tide/issues/254
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
