@@ -1,12 +1,12 @@
 # Changelog
 
-## [v5.1.0][] (???)
+## [v5.1.0][] (Mar 31 2022)
 
 ### Bug fixes
 
 - Use `string length --visible` to allow for emojis in the prompt ([#134][])
-- Only replace `$HOME` with ~ if at beginning of PWD (fixes [#250][])
-- Repaint prompt when `$COLUMNS` changes (fixes [#254][])
+- Only replace `$HOME` with `~` if at beginning of PWD ([#250][])
+- Repaint prompt when `$COLUMNS` changes ([#254][])
 
 ### Features
 
@@ -14,7 +14,7 @@
   - `private_mode` ([#157][])
   - `terraform` ([#203][] - @radek-sprta)
   - `toolbox` ([#211][])
-  - `docker`, disabled by default ([#231][] - @cr-mitmit)
+  - `docker`, disabled by default ([#231][] - @Crocmagnon)
   - `java` ([#244][] - @cr-mitmit)
 - Don't require pressing enter for each menu in configuration wizard ([#187][] - @branchvincent)
 - Truncate git branches/tags when they get too long ([#221][])
@@ -445,3 +445,4 @@
 [v4.3.4]: https://github.com/IlanCosman/tide/tree/v4.3.4
 [v5.0.0]: https://github.com/IlanCosman/tide/tree/v5.0.0
 [v5.0.1]: https://github.com/IlanCosman/tide/tree/v5.0.1
+[v5.1.0]: https://github.com/IlanCosman/tide/tree/v5.1.0
