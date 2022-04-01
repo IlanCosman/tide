@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.1.1][] (Apr 01 2022)
+
+### Bug fixes
+
+- Fix java item for old jdks ([#271][])
+
 ## [v5.1.0][] (Mar 31 2022)
 
 ### Bug fixes
@@ -413,6 +419,7 @@
 [#244]: https://github.com/IlanCosman/tide/issues/244
 [#250]: https://github.com/IlanCosman/tide/issues/250
 [#254]: https://github.com/IlanCosman/tide/issues/254
+[#271]: https://github.com/IlanCosman/tide/issues/271
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -446,3 +453,4 @@
 [v5.0.0]: https://github.com/IlanCosman/tide/tree/v5.0.0
 [v5.0.1]: https://github.com/IlanCosman/tide/tree/v5.0.1
 [v5.1.0]: https://github.com/IlanCosman/tide/tree/v5.1.0
+[v5.1.1]: https://github.com/IlanCosman/tide/tree/v5.1.1
