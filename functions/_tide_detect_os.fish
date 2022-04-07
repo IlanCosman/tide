@@ -22,19 +22,21 @@ function _tide_detect_os_linux_cases -a file key
     set -l key_index (contains --index $key $split_file) || return
     set -l value (string trim --chars='"' $split_file[(math $key_index + 1)] | string lower)
 
+    # Anything which would have pure white background has been changed to D4D4D4
+    # It was just too bright otherwise
     switch $value
         case alpine
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
             printf %s\n  1793D1 4D4D4D # from arch wiki header
         case centos
-            printf %s\n  000000 FFFFFF # https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic
+            printf %s\n  000000 D4D4D4 # https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic
         case debian
-            printf %s\n  C70036 FFFFFF # from debian logo https://www.debian.org/logos/openlogo-nd-100.png
+            printf %s\n  C70036 D4D4D4 # from debian logo https://www.debian.org/logos/openlogo-nd-100.png
         case devuan
             printf %s\n  $defaultColor # logo is monochromatic
         case elementary
-            printf %s\n  000000 FFFFFF # https://elementary.io/brand, encouraged to be monochromatic
+            printf %s\n  000000 D4D4D4 # https://elementary.io/brand, encouraged to be monochromatic
         case fedora
             printf %s\n  FFFFFF 294172 # from logo https://fedoraproject.org/w/uploads/2/2d/Logo_fedoralogo.png
         case gentoo
@@ -56,7 +58,7 @@ function _tide_detect_os_linux_cases -a file key
         case slackware
             printf %s\n  $defaultColor # Doesn't really have a logo, and the colors are too close to PWD blue anyway
         case ubuntu
-            printf %s\n  E95420 FFFFFF # https://design.ubuntu.com/brand/
+            printf %s\n  E95420 D4D4D4 # https://design.ubuntu.com/brand/
         case '*'
             return 1
     end
