@@ -2,4 +2,7 @@
 # Only run this test on macOS:
 # REQUIRES: test $(uname) = Darwin
 
-_tide_decolor (_tide_detect_os) # CHECK:  D6D6D6 333333
+_tide_detect_os
+# CHECK: 
+# CHECK: D6D6D6
+# CHECK: 333333
