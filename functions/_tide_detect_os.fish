@@ -3,7 +3,7 @@ function _tide_detect_os
     set -lx defaultColor 080808 CED7CF
     switch (uname | string lower)
         case darwin
-            echo -ns 
+            printf %s\n  D6D6D6 333333 # from apple.com header
         case freebsd openbsd dragonfly
             printf %s\n  FFFFFF AB2B28 # https://freebsdfoundation.org/about-us/about-the-foundation/project/
         case linux
