@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.2.0][] (Apr 07 2022)
+
+### Features
+
+- Add branding colors to os logos when in rainbow mode ([#220][])
+
 ## [v5.1.2][] (Apr 03 2022)
 
 ### Bug fixes
@@ -420,6 +426,7 @@
 [#187]: https://github.com/IlanCosman/tide/issues/187
 [#203]: https://github.com/IlanCosman/tide/issues/203
 [#211]: https://github.com/IlanCosman/tide/issues/211
+[#220]: https://github.com/IlanCosman/tide/issues/220
 [#221]: https://github.com/IlanCosman/tide/issues/221
 [#231]: https://github.com/IlanCosman/tide/issues/231
 [#244]: https://github.com/IlanCosman/tide/issues/244
@@ -462,3 +469,4 @@
 [v5.1.0]: https://github.com/IlanCosman/tide/tree/v5.1.0
 [v5.1.1]: https://github.com/IlanCosman/tide/tree/v5.1.1
 [v5.1.2]: https://github.com/IlanCosman/tide/tree/v5.1.2
+[v5.2.0]: https://github.com/IlanCosman/tide/tree/v5.2.0
