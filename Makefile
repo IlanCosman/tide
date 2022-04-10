@@ -5,11 +5,11 @@ all: fmt lint install test
 
 .PHONY: fmt
 fmt:
-	@fish_indent --write **/*.fish
+	@fish_indent --write **.fish
 
 .PHONY: lint
 lint:
-	@for file in **/*.fish; fish --no-execute $$file; end
+	@for file in **.fish; fish --no-execute $$file; end
 
 .PHONY: install
 install:
@@ -24,4 +24,4 @@ test: install littlecheck.py
 	@type -q mock || fisher install IlanCosman/clownfish
 	@fish tests/test_setup.fish
 	@_tide_remove_unusable_items
-	@_tide_cache_variables; python3 littlecheck.py --progress tests/*.test.fish
+	@_tide_cache_variables; python3 littlecheck.py --progress tests/**.test.fish
