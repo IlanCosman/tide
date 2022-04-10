@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.2.1][] (Apr 10 2022)
+
+### Bug fixes
+
+- Fix bug with detection of opensuse ([#277][])
+
 ## [v5.2.0][] (Apr 07 2022)
 
 ### Features
@@ -434,6 +440,7 @@
 [#254]: https://github.com/IlanCosman/tide/issues/254
 [#271]: https://github.com/IlanCosman/tide/issues/271
 [#274]: https://github.com/IlanCosman/tide/issues/274
+[#277]: https://github.com/IlanCosman/tide/issues/277
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -470,3 +477,4 @@
 [v5.1.1]: https://github.com/IlanCosman/tide/tree/v5.1.1
 [v5.1.2]: https://github.com/IlanCosman/tide/tree/v5.1.2
 [v5.2.0]: https://github.com/IlanCosman/tide/tree/v5.2.0
+[v5.2.1]: https://github.com/IlanCosman/tide/tree/v5.2.1
