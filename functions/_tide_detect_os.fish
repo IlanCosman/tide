@@ -20,11 +20,12 @@ function _tide_detect_os_linux_cases -a file key
     test -e $file || return
     set -l split_file (string split '=' <$file)
     set -l key_index (contains --index $key $split_file) || return
-    set -l value (string trim --chars='"' $split_file[(math $key_index + 1)] | string lower)
+    set -l value (string trim --chars='"' $split_file[(math $key_index + 1)])
+    set -l value_processed (string lower $value | string split ' ')[1] # Split on spaces for things like "opensuse suse"
 
     # Anything which would have pure white background has been changed to D4D4D4
     # It was just too bright otherwise
-    switch $value
+    switch $value_processed
         case alpine
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
