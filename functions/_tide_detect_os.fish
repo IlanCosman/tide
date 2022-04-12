@@ -21,11 +21,10 @@ function _tide_detect_os_linux_cases -a file key
     set -l split_file (string split '=' <$file)
     set -l key_index (contains --index $key $split_file) || return
     set -l value (string trim --chars='"' $split_file[(math $key_index + 1)])
-    set -l value_processed (string lower $value | string split ' ')[1] # Split on spaces for things like "opensuse suse"
 
     # Anything which would have pure white background has been changed to D4D4D4
     # It was just too bright otherwise
-    switch $value_processed
+    switch (string lower $value)
         case alpine
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
@@ -50,7 +49,7 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 69B53F # extracted from https://linuxmint.com/web/img/favicon.ico
         case nixos
             printf %s\n  FFFFFF 5277C3 # https://github.com/NixOS/nixos-artwork/tree/master/logo
-        case opensuse tumbleweed
+        case opensuse-leap opensuse-tumbleweed
             printf %s\n  73BA25 173f4f # https://en.opensuse.org/openSUSE:Artwork_brand
         case raspbian
             printf %s\n  FFFFFF A22846 # https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf
