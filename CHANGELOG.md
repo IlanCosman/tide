@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.2.2][] (Apr 12 2022)
+
+### Bug fixes
+
+- _Actually_ fix the bug with detection of opensuse ([#277][])
+
 ## [v5.2.1][] (Apr 10 2022)
 
 ### Bug fixes
@@ -478,3 +484,4 @@
 [v5.1.2]: https://github.com/IlanCosman/tide/tree/v5.1.2
 [v5.2.0]: https://github.com/IlanCosman/tide/tree/v5.2.0
 [v5.2.1]: https://github.com/IlanCosman/tide/tree/v5.2.1
+[v5.2.2]: https://github.com/IlanCosman/tide/tree/v5.2.2
