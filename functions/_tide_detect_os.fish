@@ -7,10 +7,15 @@ function _tide_detect_os
         case freebsd openbsd dragonfly
             printf %s\n  FFFFFF AB2B28 # https://freebsdfoundation.org/about-us/about-the-foundation/project/
         case linux
-            _tide_detect_os_linux_cases /etc/os-release ID ||
-                _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
-                _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
-                printf %s\n  $defaultColor
+            if test (uname -o) = Android
+                # https://developer.android.com/distribute/marketing-tools/brand-guidelines
+                printf %s\n  3DDC84 3C3F41 # fg is from above link, bg is from Android Studio default dark theme
+            else
+                _tide_detect_os_linux_cases /etc/os-release ID ||
+                    _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
+                    _tide_detect_os_linux_cases /etc/lsb-release DISTRIB_ID ||
+                    printf %s\n  $defaultColor
+            end
         case '*'
             echo -ns '?'
     end

@@ -7,6 +7,13 @@ _tide_detect_os
 # CHECK: D6D6D6
 # CHECK: 333333
 
+mock uname \* "echo Linux"
+mock uname -o "echo Android"
+_tide_detect_os
+# CHECK: 
+# CHECK: 3DDC84
+# CHECK: 3C3F41
+
 function _detect_os_linux_cases -a file
     set -l dir (status dirname)
     _tide_detect_os_linux_cases $dir/$file ID ||
