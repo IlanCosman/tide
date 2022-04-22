@@ -1,14 +1,14 @@
 function _tide_item_git
     if git branch --show-current 2>/dev/null | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read -l location
-        git rev-parse --git-dir | read -f git_dir
+        git rev-parse --git-dir --is-inside-git-dir | read -fL git_dir inside_git_dir
         set location $_tide_location_color$location
     else if test $pipestatus[1] != 0
         return
     else if git tag --points-at HEAD | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read location
-        git rev-parse --git-dir | read -f git_dir
+        git rev-parse --git-dir --is-inside-git-dir | read -fL git_dir inside_git_dir
         set location '#'$_tide_location_color$location
     else
-        git rev-parse --git-dir --short HEAD | read -fL git_dir location
+        git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL git_dir inside_git_dir location
         set location @$_tide_location_color$location
     end
 
@@ -38,11 +38,12 @@ function _tide_item_git
     end
 
     # Git status/stash + Upstream behind/ahead
+    test $inside_git_dir = true && set -l _set_dir_opt -C $git_dir/..
     # Suppress errors in case we are in a bare repo or there is no upstream
-    git_info=(git -C $git_dir/.. --no-optional-locks status --porcelain 2>/dev/null) \
+    git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
-        "$(git -C $git_dir/.. stash list 2>/dev/null | count
+        "$(git $_set_dir_opt stash list 2>/dev/null | count
         string match -r ^UU $git_info | count
         string match -r ^[ADMR]. $git_info | count
         string match -r ^.[ADMR] $git_info | count
