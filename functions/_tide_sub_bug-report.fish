@@ -1,16 +1,16 @@
 function _tide_sub_bug-report
     argparse c/clean v/verbose -- $argv
 
+    set -l fish_path (status fish-path)
+
     if set -q _flag_clean
-        HOME=(mktemp -d) fish --init-command "curl --silent \
+        HOME=(mktemp -d) $fish_path --init-command "curl --silent \
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
         source && fisher install ilancosman/tide@v5"
     else if set -q _flag_verbose
         set --long | string match -r "^_?tide.*" | # Get only tide variables
             string match -r --invert "^_tide_prompt_var.*" # Remove _tide_prompt_var
     else
-        set -l fish_path (status fish-path)
-
         set -l fish_version ($fish_path --version | string match -r "fish, version (\d\.\d\.\d)")[2]
         _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fish_version || return
 
@@ -29,7 +29,7 @@ function _tide_sub_bug-report
             "Tide does not work with oh-my-fish installed." \
             "Please uninstall it before submitting a bug report." || return
 
-        set -l fish_startup_time (fish -ic "time fish -c exit" 2>&1 |
+        set -l fish_startup_time ($fish_path -ic "time $fish_path -c exit" 2>|
             string match -r "Executed in(.*)fish" | string trim)[2]
 
         read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os

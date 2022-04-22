@@ -10,7 +10,7 @@ end
 
 # Create directory
 set -l dir (mktemp -d)
-mkdir -p $dir/{normal-repo, bare-repo}
+mkdir -p $dir/{normal-repo, bare-repo, submodule-repo}
 
 # Not in git repo
 cd $dir
@@ -30,7 +30,7 @@ _git_item # CHECK: main
 cd ..
 
 # Untracked
-touch foo
+echo >foo
 _git_item # CHECK: main ?1
 
 # Staged
@@ -72,4 +72,23 @@ _git init --bare
 _git branch -m main
 _git_item # CHECK: main
 
+# ------ submodule repo test ------
+cd $dir/submodule-repo
+_git init
+_git branch -m main
+
+_git submodule add $dir/normal-repo
+_git_item # CHECK: main +2
+cd normal-repo
+_git_item # CHECK: very_long_
+cd ..
+
+echo >new_main_git_file
+_git_item # CHECK: main +2 ?1
+echo >normal-repo/new_submodule_file
+_git_item # CHECK: main +2 !1 ?1
+cd normal-repo
+_git_item # CHECK: very_long_ ?1
+
+# ------ cleanup ------
 rm -r $dir
