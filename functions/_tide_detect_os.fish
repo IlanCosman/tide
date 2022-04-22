@@ -9,7 +9,7 @@ function _tide_detect_os
         case linux
             if test (uname -o) = Android
                 # https://developer.android.com/distribute/marketing-tools/brand-guidelines
-                printf %s\n  3DDC84 3C3F41 # fg is from above link, bg is Android Studio Darcula
+                printf %s\n  3DDC84 3C3F41 # fg is from above link, bg is from Android Studio "Darcula"
             else
                 _tide_detect_os_linux_cases /etc/os-release ID ||
                     _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
