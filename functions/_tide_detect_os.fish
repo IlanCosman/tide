@@ -58,6 +58,8 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  73BA25 173f4f # https://en.opensuse.org/openSUSE:Artwork_brand
         case raspbian
             printf %s\n  FFFFFF A22846 # https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf
+        case rhel
+            printf %s\n  EE0000 000000 # https://www.redhat.com/en/about/brand/standards/color
         case sabayon
             printf %s\n  $defaultColor # Can't find colors, and they are rebranding anyway
         case slackware
