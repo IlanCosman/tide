@@ -1,3 +1,5 @@
+tide_aws_bg_color yellow
+tide_aws_color brblack
 tide_character_color brgreen
 tide_character_color_failure brred
 tide_chruby_bg_color red
