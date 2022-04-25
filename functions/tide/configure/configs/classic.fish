@@ -1,3 +1,6 @@
+tide_aws_bg_color 444444
+tide_aws_color FF9900
+tide_aws_icon 
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
 tide_character_icon ❯
@@ -79,7 +82,7 @@ tide_pwd_icon_home
 tide_pwd_icon_unwritable 
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs node virtual_env rustc java php chruby go kubectl toolbox terraform vi_mode
+tide_right_prompt_items status cmd_duration context jobs node virtual_env rustc java php chruby go kubectl toolbox terraform aws vi_mode
 tide_right_prompt_prefix 
 tide_right_prompt_separator_diff_color 
 tide_right_prompt_separator_same_color 
