@@ -1,6 +1,6 @@
 tide_aws_bg_color FF9900
 tide_aws_color 232F3E
-tide_aws_icon a
+tide_aws_icon 
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
 tide_character_icon ❯

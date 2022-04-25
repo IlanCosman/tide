@@ -6,7 +6,7 @@ end
 
 _aws # CHECK:
 
-set -lx tide_aws_icon a
+set -lx tide_aws_icon 
 set -lx AWS_DEFAULT_PROFILE default_profile
 
 _aws # CHECK: a default_profile
