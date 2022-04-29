@@ -10,7 +10,7 @@ _tide_detect_os
 mock uname \* "echo Linux"
 mock uname -o "echo Android"
 _tide_detect_os
-# CHECK: 
+# CHECK: ﲎ
 # CHECK: 3DDC84
 # CHECK: 3C3F41
 
