@@ -4,7 +4,7 @@ function finish
     set_color normal
 
     _tide_option y Yes
-    printf '%b' '\n'
+    echo
 
     _tide_menu
     switch $_tide_selected_option

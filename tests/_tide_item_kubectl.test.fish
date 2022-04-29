@@ -9,11 +9,11 @@ set -lx tide_kubectl_icon ⎈
 mock kubectl "config view --minify --output" "echo error: current-context must exist in order to minify >&2; false"
 _kubectl # CHECK:
 
-mock kubectl "config view --minify --output" "printf curr-context/default"
+mock kubectl "config view --minify --output" "echo curr-context/default"
 _kubectl # CHECK: ⎈ curr-context
 
-mock kubectl "config view --minify --output" "printf curr-context/"
+mock kubectl "config view --minify --output" "echo curr-context/"
 _kubectl # CHECK: ⎈ curr-context
 
-mock kubectl "config view --minify --output" "printf curr-context/curr-namespace"
+mock kubectl "config view --minify --output" "echo curr-context/curr-namespace"
 _kubectl # CHECK: ⎈ curr-context/curr-namespace
