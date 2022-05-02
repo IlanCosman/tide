@@ -1,5 +1,17 @@
 # Changelog
 
+## [v5.3.0][] (May 02 2022)
+
+### Features
+
+- Support multiple 'default' contexts for Docker ([#283][] - @halostatue)
+- Add aws item ([#293][] - @okravtsov)
+- Add os icons for RHEL, Android, and Windows ([#288][], [#289][], [#295][], - @jose1711)
+
+### Bug fixes
+
+- Fix bug where git submodule information would not display ([#290][])
+
 ## [v5.2.2][] (Apr 12 2022)
 
 ### Bug fixes
@@ -447,6 +459,12 @@
 [#271]: https://github.com/IlanCosman/tide/issues/271
 [#274]: https://github.com/IlanCosman/tide/issues/274
 [#277]: https://github.com/IlanCosman/tide/issues/277
+[#283]: https://github.com/IlanCosman/tide/issues/283
+[#288]: https://github.com/IlanCosman/tide/issues/288
+[#289]: https://github.com/IlanCosman/tide/issues/289
+[#290]: https://github.com/IlanCosman/tide/issues/290
+[#293]: https://github.com/IlanCosman/tide/issues/293
+[#295]: https://github.com/IlanCosman/tide/issues/295
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -485,3 +503,4 @@
 [v5.2.0]: https://github.com/IlanCosman/tide/tree/v5.2.0
 [v5.2.1]: https://github.com/IlanCosman/tide/tree/v5.2.1
 [v5.2.2]: https://github.com/IlanCosman/tide/tree/v5.2.2
+[v5.3.0]: https://github.com/IlanCosman/tide/tree/v5.3.0
