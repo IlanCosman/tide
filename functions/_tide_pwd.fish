@@ -13,10 +13,7 @@ eval "function _tide_pwd
         set -f icon $home_icon
     end
 
-    # Anchor first and last directories (which may be the same)
-    test -n \"\$split_pwd[1]\" && # ~/foo/bar, hightlight ~   OR   /foo/bar, hightlight foo not empty string
-        set -l split_output \"$reset_to_color_dirs\$icon$color_anchors\$split_pwd[1]$reset_to_color_dirs\" \$split_pwd[2..] ||
-        set -l split_output \"$reset_to_color_dirs\$icon\" \"$color_anchors\$split_pwd[2]$reset_to_color_dirs\" \$split_pwd[3..]
+    set -l split_output \"\$icon\$split_pwd[1]\" \$split_pwd[2..]
     set split_output[-1] \"$color_anchors\$split_output[-1]$reset_to_color_dirs\"
 
     string join / \$split_output | string length -V | read -g _tide_pwd_len
@@ -39,5 +36,5 @@ eval "function _tide_pwd
         end
     end
 
-    string join -- / \$split_output
+    string join -- / \"$reset_to_color_dirs\$split_output[1]\" \$split_output[2..]
 end"
