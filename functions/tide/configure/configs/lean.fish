@@ -1,5 +1,5 @@
 tide_aws_bg_color normal
-tide_aws_color FF9900
+tide_aws_color $_aws
 tide_aws_icon 
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
@@ -8,7 +8,7 @@ tide_character_vi_icon_default ❮
 tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
 tide_chruby_bg_color normal
-tide_chruby_color B31209
+tide_chruby_color $_chruby
 tide_chruby_icon 
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color 87875F

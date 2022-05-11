@@ -1,8 +1,8 @@
-tide_aws_bg_color yellow
+tide_aws_bg_color $_aws
 tide_aws_color brblack
 tide_character_color brgreen
 tide_character_color_failure brred
-tide_chruby_bg_color red
+tide_chruby_bg_color $_chruby
 tide_chruby_color black
 tide_cmd_duration_bg_color yellow
 tide_cmd_duration_color black

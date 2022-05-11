@@ -29,5 +29,12 @@ function style
 end
 
 function _load_config -a name
+    # Set colors
+    if string match -qr '.*_16color' "$name"
+        string replace -r '^' 'set -g ' <(status dirname)/../../colors/colors_16color.fish | source
+    else
+        string replace -r '^' 'set -g ' <(status dirname)/../../colors/colors.fish | source
+    end
+
     string replace -r '^' 'set -g fake_' <(status dirname)/../../configs/$name.fish | source
 end
