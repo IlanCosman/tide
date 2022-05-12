@@ -9,7 +9,7 @@ tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
 tide_chruby_bg_color normal
 tide_chruby_color $_chruby
-tide_chruby_icon 
+tide_chruby_icon 
 tide_cmd_duration_bg_color normal
 tide_cmd_duration_color 87875F
 tide_cmd_duration_decimals 0
