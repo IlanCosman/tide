@@ -20,7 +20,7 @@ tide_context_bg_color 444444
 tide_context_color_default D7AF87
 tide_context_color_root $_tide_color_gold
 tide_context_color_ssh D7AF87
-tide_docker_bg_color 2496ED
+tide_docker_bg_color $_docker
 tide_docker_color 000000
 tide_docker_default_contexts default colima
 tide_docker_icon 

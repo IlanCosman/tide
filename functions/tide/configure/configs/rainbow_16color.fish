@@ -10,7 +10,7 @@ tide_context_bg_color brblack
 tide_context_color_default yellow
 tide_context_color_root yellow
 tide_context_color_ssh yellow
-tide_docker_bg_color blue
+tide_docker_bg_color $_docker
 tide_docker_color black
 tide_git_bg_color green
 tide_git_bg_color_unstable yellow
