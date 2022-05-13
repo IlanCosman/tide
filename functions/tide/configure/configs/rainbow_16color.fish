@@ -25,7 +25,7 @@ tide_git_color_untracked black
 tide_git_color_upstream black
 tide_go_bg_color $_go
 tide_go_color black
-tide_java_bg_color yellow
+tide_java_bg_color $_java
 tide_java_color black
 tide_jobs_bg_color brblack
 tide_jobs_color green

@@ -40,7 +40,7 @@ tide_git_truncation_length 24
 tide_go_bg_color $_go
 tide_go_color 000000
 tide_go_icon 
-tide_java_bg_color ED8B00
+tide_java_bg_color $_java
 tide_java_color 000000
 tide_java_icon 
 tide_jobs_bg_color 444444
