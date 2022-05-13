@@ -38,7 +38,7 @@ tide_git_color_upstream $_tide_color_green
 tide_git_icon
 tide_git_truncation_length 24
 tide_go_bg_color normal
-tide_go_color 00ACD7
+tide_go_color $_go
 tide_go_icon 
 tide_java_bg_color normal
 tide_java_color ED8B00
