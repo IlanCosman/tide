@@ -3,4 +3,5 @@ _chruby red
 _docker blue
 _go brcyan
 _java yellow
-_kubectl $_kubectl
+_kubectl blue
+_node green

@@ -55,7 +55,7 @@ tide_left_prompt_prefix ''
 tide_left_prompt_separator_diff_color 
 tide_left_prompt_separator_same_color 
 tide_left_prompt_suffix 
-tide_node_bg_color 44883E
+tide_node_bg_color $_node
 tide_node_color 000000
 tide_node_icon ⬢
 tide_os_bg_color $os_branding_bg_color
