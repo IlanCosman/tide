@@ -45,7 +45,7 @@ tide_pwd_bg_color blue
 tide_pwd_color_anchors brwhite
 tide_pwd_color_dirs brwhite
 tide_pwd_color_truncated_dirs white
-tide_rustc_bg_color red
+tide_rustc_bg_color $_rustc
 tide_rustc_color black
 tide_shlvl_bg_color yellow
 tide_shlvl_color black

@@ -88,7 +88,7 @@ tide_right_prompt_separator_diff_color ' '
 tide_right_prompt_separator_same_color ' '
 tide_right_prompt_suffix ''
 tide_rustc_bg_color normal
-tide_rustc_color F74C00
+tide_rustc_color $_rustc
 tide_rustc_icon 
 tide_shlvl_bg_color normal
 tide_shlvl_color d78700

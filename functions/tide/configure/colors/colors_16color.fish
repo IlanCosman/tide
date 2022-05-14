@@ -6,3 +6,4 @@ _java yellow
 _kubectl blue
 _node green
 _php blue
+_rustc brred
