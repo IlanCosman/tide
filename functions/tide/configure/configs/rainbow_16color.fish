@@ -35,7 +35,7 @@ tide_node_bg_color $_node
 tide_node_color black
 tide_os_bg_color white
 tide_os_color black
-tide_php_bg_color blue
+tide_php_bg_color $_php
 tide_php_color black
 tide_private_mode_bg_color brwhite
 tide_private_mode_color black

@@ -61,7 +61,7 @@ tide_node_icon ⬢
 tide_os_bg_color $os_branding_bg_color
 tide_os_color $os_branding_color
 tide_os_icon $os_branding_icon
-tide_php_bg_color 617CBE
+tide_php_bg_color $_php
 tide_php_color 000000
 tide_php_icon 
 tide_private_mode_bg_color F1F3F4

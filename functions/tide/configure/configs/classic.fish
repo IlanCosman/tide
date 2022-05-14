@@ -62,7 +62,7 @@ tide_os_bg_color 444444
 tide_os_color EEEEEE
 tide_os_icon $os_branding_icon
 tide_php_bg_color 444444
-tide_php_color 617CBE
+tide_php_color $_php
 tide_php_icon 
 tide_private_mode_bg_color 444444
 tide_private_mode_color FFFFFF
