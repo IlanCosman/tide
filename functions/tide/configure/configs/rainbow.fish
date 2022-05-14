@@ -46,7 +46,7 @@ tide_java_icon 
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
 tide_jobs_icon 
-tide_kubectl_bg_color 326CE5
+tide_kubectl_bg_color $_kubectl
 tide_kubectl_color 000000
 tide_kubectl_icon ⎈
 tide_left_prompt_frame_enabled true

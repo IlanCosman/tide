@@ -47,7 +47,7 @@ tide_jobs_bg_color 444444
 tide_jobs_color $_tide_color_dark_green
 tide_jobs_icon 
 tide_kubectl_bg_color 444444
-tide_kubectl_color 326CE5
+tide_kubectl_color $_kubectl
 tide_kubectl_icon ⎈
 tide_left_prompt_frame_enabled true
 tide_left_prompt_items pwd git newline

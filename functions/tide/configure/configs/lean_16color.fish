@@ -30,7 +30,7 @@ tide_java_color $_java
 tide_jobs_bg_color normal
 tide_jobs_color green
 tide_kubectl_bg_color normal
-tide_kubectl_color blue
+tide_kubectl_color $_kubectl
 tide_node_bg_color normal
 tide_node_color green
 tide_os_bg_color normal
