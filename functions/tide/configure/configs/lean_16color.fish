@@ -54,7 +54,7 @@ tide_status_bg_color_failure normal
 tide_status_color green
 tide_status_color_failure red
 tide_terraform_bg_color normal
-tide_terraform_color magenta
+tide_terraform_color $_terraform
 tide_time_bg_color normal
 tide_time_color brblack
 tide_toolbox_bg_color normal

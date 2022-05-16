@@ -101,7 +101,7 @@ tide_status_color_failure D70000
 tide_status_icon ✔
 tide_status_icon_failure ✘
 tide_terraform_bg_color normal
-tide_terraform_color 844FBA
+tide_terraform_color $_terraform
 tide_terraform_icon
 tide_time_bg_color normal
 tide_time_color 5F8787

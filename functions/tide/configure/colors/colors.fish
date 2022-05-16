@@ -7,3 +7,4 @@ _kubectl 326CE5 # https://cncf-branding.netlify.app/projects/kubernetes/
 _node 44883E # https://nodejs.org/static/documents/foundation-visual-guidelines.pdf
 _php 617CBE # Extracted from https://www.php.net/download-logos.php png logo
 _rustc F74C00 # Extracted from https://rustacean.net/ "flat"
+_terraform 844FBA # https://www.hashicorp.com/brand -> "Terraform" -> "UI" color

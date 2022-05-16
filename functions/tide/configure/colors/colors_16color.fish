@@ -7,3 +7,4 @@ _kubectl blue
 _node green
 _php blue
 _rustc brred
+_terraform magenta
