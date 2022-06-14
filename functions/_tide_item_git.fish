@@ -1,53 +1,53 @@
 function _tide_item_git
     if git branch --show-current 2>/dev/null | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read -l location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL git_dir inside_git_dir
+        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
         set location $_tide_location_color$location
     else if test $pipestatus[1] != 0
         return
     else if git tag --points-at HEAD | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL git_dir inside_git_dir
+        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
         set location '#'$_tide_location_color$location
     else
-        git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL git_dir inside_git_dir location
+        git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL gdir in_gdir location
         set location @$_tide_location_color$location
     end
 
     # Operation
-    if test -d $git_dir/rebase-merge
-        read -f step <$git_dir/rebase-merge/msgnum
-        read -f total_steps <$git_dir/rebase-merge/end
-        test -f $git_dir/rebase-merge/interactive && set -f operation rebase-i || set -f operation rebase-m
-    else if test -d $git_dir/rebase-apply
-        read -f step <$git_dir/rebase-apply/next
-        read -f total_steps <$git_dir/rebase-apply/last
-        if test -f $git_dir/rebase-apply/rebasing
+    if test -d $gdir/rebase-merge
+        read -f step <$gdir/rebase-merge/msgnum
+        read -f total_steps <$gdir/rebase-merge/end
+        test -f $gdir/rebase-merge/interactive && set -f operation rebase-i || set -f operation rebase-m
+    else if test -d $gdir/rebase-apply
+        read -f step <$gdir/rebase-apply/next
+        read -f total_steps <$gdir/rebase-apply/last
+        if test -f $gdir/rebase-apply/rebasing
             set -f operation rebase
-        else if test -f $git_dir/rebase-apply/applying
+        else if test -f $gdir/rebase-apply/applying
             set -f operation am
         else
             set -f operation am/rebase
         end
-    else if test -f $git_dir/MERGE_HEAD
+    else if test -f $gdir/MERGE_HEAD
         set -f operation merge
-    else if test -f $git_dir/CHERRY_PICK_HEAD
+    else if test -f $gdir/CHERRY_PICK_HEAD
         set -f operation cherry-pick
-    else if test -f $git_dir/REVERT_HEAD
+    else if test -f $gdir/REVERT_HEAD
         set -f operation revert
-    else if test -f $git_dir/BISECT_LOG
+    else if test -f $gdir/BISECT_LOG
         set -f operation bisect
     end
 
     # Git status/stash + Upstream behind/ahead
-    test $inside_git_dir = true && set -l _set_dir_opt -C $git_dir/..
+    test $in_gdir = true && set -l _set_dir_opt -C $gdir/..
     # Suppress errors in case we are in a bare repo or there is no upstream
-    git_info=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
+    stat=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
         string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
-        string match -r ^UU $git_info | count
-        string match -r ^[ADMR]. $git_info | count
-        string match -r ^.[ADMR] $git_info | count
-        string match -r '^\?\?' $git_info | count
+        string match -r ^UU $stat | count
+        string match -r ^[ADMR]. $stat | count
+        string match -r ^.[ADMR] $stat | count
+        string match -r '^\?\?' $stat | count
         git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)"
 
     if test -n "$operation$conflicted"
