@@ -62,10 +62,12 @@ tide_time_color brblack
 tide_toolbox_bg_color black
 tide_toolbox_color magenta
 tide_vi_mode_bg_color_default black
+tide_vi_mode_bg_color_insert black
 tide_vi_mode_bg_color_replace black
 tide_vi_mode_bg_color_visual black
-tide_vi_mode_color_default green
-tide_vi_mode_color_replace yellow
-tide_vi_mode_color_visual blue
+tide_vi_mode_color_default white
+tide_vi_mode_color_insert cyan
+tide_vi_mode_color_replace green
+tide_vi_mode_color_visual yellow
 tide_virtual_env_bg_color black
 tide_virtual_env_color cyan

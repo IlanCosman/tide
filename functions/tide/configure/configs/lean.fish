@@ -112,15 +112,18 @@ tide_time_format %T
 tide_toolbox_bg_color normal
 tide_toolbox_color 613583
 tide_toolbox_icon ⬢
-tide_vi_mode_bg_color_default
-tide_vi_mode_bg_color_replace
-tide_vi_mode_bg_color_visual
-tide_vi_mode_color_default
-tide_vi_mode_color_replace
-tide_vi_mode_color_visual
-tide_vi_mode_icon_default
-tide_vi_mode_icon_replace
-tide_vi_mode_icon_visual
+tide_vi_mode_bg_color_default normal
+tide_vi_mode_bg_color_insert normal
+tide_vi_mode_bg_color_replace normal
+tide_vi_mode_bg_color_visual normal
+tide_vi_mode_color_default 949494
+tide_vi_mode_color_insert 87AFAF
+tide_vi_mode_color_replace 87AF87
+tide_vi_mode_color_visual FF8700
+tide_vi_mode_icon_default D
+tide_vi_mode_icon_insert I
+tide_vi_mode_icon_replace R
+tide_vi_mode_icon_visual V
 tide_virtual_env_bg_color normal
 tide_virtual_env_color 00AFAF
 tide_virtual_env_icon 
