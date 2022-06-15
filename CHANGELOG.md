@@ -1,5 +1,18 @@
 # Changelog
 
+## [v5.4.0][] (??? ?? 2022)
+
+### Features
+
+- Add nix_shell item ([#305][] - @oati)
+- vi_mode
+  - insert mode is now configurable
+  - better defaults inspired by spacevim
+
+### Bug fixes
+
+- The first pwd segment is no longer highlighted as anchored. It was already not functionally anchored.
+
 ## [v5.3.0][] (May 02 2022)
 
 ### Features
@@ -465,6 +478,7 @@
 [#290]: https://github.com/IlanCosman/tide/issues/290
 [#293]: https://github.com/IlanCosman/tide/issues/293
 [#295]: https://github.com/IlanCosman/tide/issues/295
+[#305]: https://github.com/IlanCosman/tide/issues/305
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
