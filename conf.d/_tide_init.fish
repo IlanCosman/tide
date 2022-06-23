@@ -6,6 +6,8 @@ function _tide_init_install --on-event _tide_init_install
     _tide_finish
 
     if status is-interactive
+        tide bug-report --check || sleep 4
+
         if contains ilancosman/tide (string lower $_fisher_plugins)
             set_color bryellow
             echo "ilancosman/tide is a development branch. Please install from a release tag:"

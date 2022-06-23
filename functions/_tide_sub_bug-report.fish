@@ -1,5 +1,5 @@
 function _tide_sub_bug-report
-    argparse c/clean v/verbose -- $argv
+    argparse c/clean v/verbose check -- $argv
 
     set -l fish_path (status fish-path)
 
@@ -29,20 +29,22 @@ function _tide_sub_bug-report
             "Tide does not work with oh-my-fish installed." \
             "Please uninstall it before submitting a bug report." || return
 
-        set -l fish_startup_time ($fish_path -ic "time $fish_path -c exit" 2>|
-            string match -r "Executed in(.*)fish" | string trim)[2]
+        if not set -q _flag_check
+            set -l fish_startup_time ($fish_path -ic "time $fish_path -c exit" 2>|
+                string match -r "Executed in(.*)fish" | string trim)[2]
 
-        read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
-        read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
+            read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
+            read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
-        printf '%b\n' "\nPlease copy the following information into the issue:\n" \
-            "fish version: $fish_version" \
-            "tide version: $tide_version" \
-            "term: $TERM" \
-            "os: $os" \
-            "terminal emulator: $terminal_emulator" \
-            "fish startup: $fish_startup_time" \
-            "fisher plugins: $_fisher_plugins"
+            printf '%b\n' "\nPlease copy the following information into the issue:\n" \
+                "fish version: $fish_version" \
+                "tide version: $tide_version" \
+                "term: $TERM" \
+                "os: $os" \
+                "terminal emulator: $terminal_emulator" \
+                "fish startup: $fish_startup_time" \
+                "fisher plugins: $_fisher_plugins"
+        end
     end
 end
 
