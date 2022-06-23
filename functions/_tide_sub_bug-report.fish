@@ -17,11 +17,13 @@ function _tide_sub_bug-report
         set -l tide_version (tide --version | string match -r "tide, version (\d\.\d\.\d)")[2]
         _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tide_version || return
 
-        test (git --version | string match -r "git version ([\d\.]*)" | string replace --all . '')[2] -gt 2220
-        _tide_check_condition \
-            "Your git version is too old." \
-            "Tide requires at least version 2.22." \
-            "Please update before submitting a bug report." || return
+        if command --query git
+            test (git --version | string match -r "git version ([\d\.]*)" | string replace --all . '')[2] -gt 2220
+            _tide_check_condition \
+                "Your git version is too old." \
+                "Tide requires at least version 2.22." \
+                "Please update before submitting a bug report." || return
+        end
 
         # Check that omf is not installed
         not functions --query omf
