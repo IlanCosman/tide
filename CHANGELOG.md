@@ -8,6 +8,7 @@
 - vi_mode
   - insert mode is now configurable
   - better defaults inspired by spacevim
+- Check for problems on installation, e.g. old Fish version
 
 ### Bug fixes
 
