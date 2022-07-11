@@ -42,6 +42,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: megalinter/megalinter/flavors/documentation@v5
+      - uses: megalinter/megalinter/flavors/documentation@v6.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
