@@ -13,5 +13,5 @@ _context # CHECK: {{.*@.*}}
 set -g SSH_TTY /dev/pts/0
 _context # CHECK: {{.*@.*}}
 
-set USER root
-_context # CHECK: {{root@.*}}
+set EUID 0
+_context # CHECK: {{.*@.*}}
