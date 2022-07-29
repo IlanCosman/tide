@@ -1,6 +1,6 @@
 # Changelog
 
-## [v5.4.0][] (??? ?? 2022)
+## [v5.4.0][] (Jul 29 2022)
 
 ### Features
 
@@ -9,6 +9,8 @@
   - insert mode is now configurable
   - better defaults inspired by spacevim
 - Check for problems on installation, e.g. old Fish version
+- Use the new `EUID` variable in Fish 3.5 to more accurately detect elevated privileges
+- Various performance improvements
 
 ### Bug fixes
 
@@ -519,3 +521,4 @@
 [v5.2.1]: https://github.com/IlanCosman/tide/tree/v5.2.1
 [v5.2.2]: https://github.com/IlanCosman/tide/tree/v5.2.2
 [v5.3.0]: https://github.com/IlanCosman/tide/tree/v5.3.0
+[v5.4.0]: https://github.com/IlanCosman/tide/tree/v5.4.0
