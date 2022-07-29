@@ -22,9 +22,7 @@ eval "function _tide_pwd
 
         math \$i+1 | read i
 
-        if false || for marker in $tide_pwd_markers # false is for if tide_pwd_markers is empty
-                test -e \$parent_dir/\$dir_section/\$marker && break
-            end
+        if path is \$parent_dir/\$dir_section/\$tide_pwd_markers
             set split_output[\$i] \"$color_anchors\$dir_section$reset_to_color_dirs\"
         else if test \$_tide_pwd_len -gt \$dist_btwn_sides
             set -l trunc
