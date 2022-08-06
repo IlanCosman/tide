@@ -20,6 +20,9 @@ tide_context_bg_color 444444
 tide_context_color_default D7AF87
 tide_context_color_root $_tide_color_gold
 tide_context_color_ssh D7AF87
+tide_crystal_bg_color 444444
+tide_crystal_color FFFFFF
+tide_crystal_icon ⬢
 tide_docker_bg_color 444444
 tide_docker_color 2496ED
 tide_docker_default_contexts default colima
@@ -85,7 +88,7 @@ tide_pwd_icon_home
 tide_pwd_icon_unwritable 
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs node virtual_env rustc java php chruby go kubectl toolbox terraform aws nix_shell
+tide_right_prompt_items status cmd_duration context jobs node virtual_env rustc java php chruby go kubectl toolbox terraform aws nix_shell crystal
 tide_right_prompt_prefix 
 tide_right_prompt_separator_diff_color 
 tide_right_prompt_separator_same_color 
