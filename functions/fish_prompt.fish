@@ -37,8 +37,8 @@ if contains newline $_tide_left_items # two line prompt initialization
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
-PATH=\$PATH CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+        $fish_path -c \"set _tide_pipestatus \$(string escape \"\$_tide_pipestatus\")
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$(string escape \"\$CMD_DURATION\") fish_bind_mode=\$(string escape \"\$fish_bind_mode\") set $(string escape $prompt_var) (_tide_2_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -65,8 +65,8 @@ else # one line prompt initialization
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
-PATH=\$PATH CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
+        $fish_path -c \"set _tide_pipestatus \$(string escape \"$_tide_pipestatus\")
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$(string escape \"\$CMD_DURATION\") fish_bind_mode=\$(string escape \"$fish_bind_mode\") set $(string escape $prompt_var) (_tide_1_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -83,5 +83,5 @@ end"
 end
 
 eval "function _tide_on_fish_exit --on-event fish_exit
-    set -e $prompt_var
+    set -e $(string escape $prompt_var)
 end"
