@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Bug fixes
+
+- Prompt disappears entirely when `$PATH` contains a space (#329)
+
 ## [v5.4.0][] (Jul 29 2022)
 
 ### Features
