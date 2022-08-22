@@ -1,10 +1,10 @@
 function _tide_item_git
-    if git branch --show-current 2>/dev/null | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read -l location
+    if git branch --show-current 2>/dev/null | string replace -r ".+(.{$tide_git_truncation_length})" '…$1' | read -l location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
         set location $_tide_location_color$location
     else if test $pipestatus[1] != 0
         return
-    else if git tag --points-at HEAD | string replace -r "(.{$tide_git_truncation_length}).+" '$1…' | read location
+    else if git tag --points-at HEAD | string replace -r ".+(.{$tide_git_truncation_length})" '…$1' | read location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
         set location '#'$_tide_location_color$location
     else

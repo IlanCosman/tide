@@ -60,11 +60,11 @@ _git_item # CHECK: {{@\w*}}
 _git checkout main
 _git checkout -b very_long_branch_name
 set -lx tide_git_truncation_length 10
-_git_item # CHECK: very_long_…
+_git_item # CHECK: …ranch_name
 
 # Branch same length as tide_git_truncation_length
-_git checkout -b very_long_
-_git_item # CHECK: very_long_
+_git checkout -b 10charhere
+_git_item # CHECK: 10charhere
 
 # -------- bare repo test --------
 cd $dir/bare-repo
@@ -80,7 +80,7 @@ _git branch -m main
 _git submodule add $dir/normal-repo
 _git_item # CHECK: main +2
 cd normal-repo
-_git_item # CHECK: very_long_
+_git_item # CHECK: 10charhere
 cd ..
 
 echo >new_main_git_file
@@ -88,7 +88,7 @@ _git_item # CHECK: main +2 ?1
 echo >normal-repo/new_submodule_file
 _git_item # CHECK: main +2 !1 ?1
 cd normal-repo
-_git_item # CHECK: very_long_ ?1
+_git_item # CHECK: 10charhere ?1
 
 # ------ cleanup ------
 rm -r $dir
