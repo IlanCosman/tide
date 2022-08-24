@@ -45,6 +45,8 @@ tide_private_mode_bg_color brwhite
 tide_private_mode_color black
 tide_prompt_color_frame_and_connection brblack
 tide_prompt_color_separator_same_color brblack
+tide_pulumi_bg_color yellow
+tide_pulumi_color black
 tide_pwd_bg_color blue
 tide_pwd_color_anchors brwhite
 tide_pwd_color_dirs brwhite
