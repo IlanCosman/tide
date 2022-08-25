@@ -15,4 +15,4 @@ _node # CHECK:
 touch package.json
 _node # CHECK: ⬢ 16.5.0
 
-/bin/rm -r $tmpdir
+command rm -r $tmpdir

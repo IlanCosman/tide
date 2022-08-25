@@ -16,4 +16,4 @@ _terraform # CHECK:
 mock terraform "workspace show" "echo test"
 _terraform # CHECK: test
 
-/bin/rm -r $terraformDir
+command rm -r $terraformDir
