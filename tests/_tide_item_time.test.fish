@@ -11,4 +11,4 @@ _time '' # CHECK:
 _time %T # CHECK: {{\d\d:\d\d:\d\d}}
 
 # 12 Hour
-_time %r # CHECK: {{\d\d:\d\d:\d\d (A|P)M [A-Z][A-Z][A-Z]}}
+_time %r # CHECK: {{\d\d:\d\d:\d\d (A|P)M}}
