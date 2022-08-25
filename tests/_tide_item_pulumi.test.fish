@@ -19,4 +19,4 @@ mock cat \* "echo '{\"stack\": \"dev\"}'"
 
 _pulumi # CHECK:  dev
 
-/bin/rm -r $tmpdir
+command rm -r $tmpdir
