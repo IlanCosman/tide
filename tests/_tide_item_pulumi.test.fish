@@ -12,7 +12,7 @@ _pulumi # CHECK:
 
 # Pulumi.yaml file with sample project name
 touch Pulumi.yaml
-echo "name: pulumi-test" > Pulumi.yaml
+echo "name: pulumi-test" >Pulumi.yaml
 
 # Mock contents of workspace json with sample stack
 mock cat \* "echo '{\"stack\": \"dev\"}'"
