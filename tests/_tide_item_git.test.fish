@@ -91,4 +91,4 @@ cd normal-repo
 _git_item # CHECK: 10charhere ?1
 
 # ------ cleanup ------
-rm -r $dir
+/bin/rm -r $dir

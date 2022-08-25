@@ -15,4 +15,4 @@ _go # CHECK:
 touch go.mod
 _go # CHECK:  1.16.5
 
-rm -r $goDir
+/bin/rm -r $goDir

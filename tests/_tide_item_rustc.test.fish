@@ -15,4 +15,4 @@ _rustc # CHECK:
 touch Cargo.toml
 _rustc # CHECK:  1.30.0
 
-rm -r $rustcDir
+/bin/rm -r $rustcDir

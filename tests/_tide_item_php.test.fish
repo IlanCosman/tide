@@ -17,4 +17,4 @@ _php # CHECK:
 touch composer.json
 _php # CHECK:  8.0.2
 
-rm -r $phpDir
+/bin/rm -r $phpDir

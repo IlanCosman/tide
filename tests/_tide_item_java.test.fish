@@ -25,4 +25,4 @@ OpenJDK 64-Bit Server VM (build 25.332-b04, mixed mode)' >&2"
 
 _java # CHECK:  1.8.0
 
-rm -r $javaDir
+/bin/rm -r $javaDir
