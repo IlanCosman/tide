@@ -20,4 +20,4 @@ touch shard.yml
 
 _crystal # CHECK: ⬢ 1.5.0
 
-rm -r $crystal_directory
+command rm -r $crystal_directory

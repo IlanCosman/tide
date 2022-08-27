@@ -28,15 +28,15 @@ _pwd /tmp/$longDir # CHECK: normal_icon /t/a/b/c/d/e/f/g/h/india/juliett/kilo/li
 
 mkdir -p /tmp/alfa/bratwurst
 _pwd /tmp/$longDir # CHECK: normal_icon /t/a/brav/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/alfa/bratwurst
+command rm -r /tmp/alfa/bratwurst
 
 mkdir -p /tmp/alfa/bravohello
 _pwd /tmp/$longDir # CHECK: normal_icon /t/a/bravo/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/alfa/bravohello
+command rm -r /tmp/alfa/bravohello
 
 mkdir -p /tmp/.git
 _pwd /tmp/$longDir # CHECK: normal_icon /tmp/a/b/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/.git
+command rm -r /tmp/.git
 
 # ------------------Starts with home------------------
 _pwd $tmpdir/ # CHECK: home_icon ~
@@ -48,15 +48,15 @@ _pwd $tmpdir/tmp/$longDir # CHECK: normal_icon ~/t/a/b/c/d/e/f/g/h/india/juliett
 
 mkdir -p $tmpdir/tmp/alfa/bratwurst
 _pwd $tmpdir/tmp/$longDir # CHECK: normal_icon ~/t/a/brav/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/alfa/bratwurst
+command rm -r $tmpdir/tmp/alfa/bratwurst
 
 mkdir -p $tmpdir/tmp/alfa/bravohello
 _pwd $tmpdir/tmp/$longDir # CHECK: normal_icon ~/t/a/bravo/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/alfa/bravohello
+command rm -r $tmpdir/tmp/alfa/bravohello
 
 mkdir -p $tmpdir/tmp/.git
 _pwd $tmpdir/tmp/$longDir # CHECK: normal_icon ~/tmp/a/b/c/d/e/f/g/h/i/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/.git
+command rm -r $tmpdir/tmp/.git
 
 # ------------------------------------NO ICONS-----------------------------------
 set -lx tide_pwd_icon_unwritable
@@ -73,15 +73,15 @@ _pwd /tmp/$longDir # CHECK: /t/a/b/c/d/e/foxtrot/golf/hotel/india/juliett/kilo/l
 
 mkdir -p /tmp/alfa/bratwurst
 _pwd /tmp/$longDir # CHECK: /t/a/brav/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/alfa/bratwurst
+command rm -r /tmp/alfa/bratwurst
 
 mkdir -p /tmp/alfa/bravohello
 _pwd /tmp/$longDir # CHECK: /t/a/bravo/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/alfa/bravohello
+command rm -r /tmp/alfa/bravohello
 
 mkdir -p /tmp/.git
 _pwd /tmp/$longDir # CHECK: /tmp/a/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r /tmp/.git
+command rm -r /tmp/.git
 
 # ------------------Starts with home------------------
 _pwd $tmpdir/ # CHECK: ~
@@ -93,15 +93,15 @@ _pwd $tmpdir/tmp/$longDir # CHECK: ~/t/a/b/c/d/e/f/golf/hotel/india/juliett/kilo
 
 mkdir -p $tmpdir/tmp/alfa/bratwurst
 _pwd $tmpdir/tmp/$longDir # CHECK: ~/t/a/brav/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/alfa/bratwurst
+command rm -r $tmpdir/tmp/alfa/bratwurst
 
 mkdir -p $tmpdir/tmp/alfa/bravohello
 _pwd $tmpdir/tmp/$longDir # CHECK: ~/t/a/bravo/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/alfa/bravohello
+command rm -r $tmpdir/tmp/alfa/bravohello
 
 mkdir -p $tmpdir/tmp/.git
 _pwd $tmpdir/tmp/$longDir # CHECK: ~/tmp/a/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
-rm -r $tmpdir/tmp/.git
+command rm -r $tmpdir/tmp/.git
 
 # ------------------------------------Cleanup------------------------------------
-rm -r $tmpdir
+command rm -r $tmpdir
