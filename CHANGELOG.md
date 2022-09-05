@@ -1,11 +1,11 @@
 # Changelog
 
-## [v5.5.0][] (???)
+## [v5.5.0][] (Sep 5 2022)
 
 ### Features
 
 - Add crystal language item ([#322][] - @rrevi)
-- Tide now looks in parent directories for special files, such as when displaying tool versions
+- Tide now looks in parent directories for special files, such as when displaying tool versions ([#323][])
 - Tide now truncates the beginning of git branch names instead of the end
 - A new variable, `tide_context_hostname_parts` lets you choose how many parts of the hostname, split on dots, to show. For example, if your hostname is `foo.bar.baz`:
   - With `set tide_context_hostname_parts 5` you would see `user@foo.bar.baz`
@@ -498,6 +498,8 @@
 [#293]: https://github.com/IlanCosman/tide/issues/293
 [#295]: https://github.com/IlanCosman/tide/issues/295
 [#305]: https://github.com/IlanCosman/tide/issues/305
+[#322]: https://github.com/IlanCosman/tide/issues/322
+[#323]: https://github.com/IlanCosman/tide/issues/323
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -538,3 +540,4 @@
 [v5.2.2]: https://github.com/IlanCosman/tide/tree/v5.2.2
 [v5.3.0]: https://github.com/IlanCosman/tide/tree/v5.3.0
 [v5.4.0]: https://github.com/IlanCosman/tide/tree/v5.4.0
+[v5.5.0]: https://github.com/IlanCosman/tide/tree/v5.5.0
