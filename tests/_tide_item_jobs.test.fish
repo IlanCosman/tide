@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 set -e _tide_jobs
 _tide_decolor (_tide_item_jobs) # CHECK:

@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _git
     git $argv >/dev/null 2>&1

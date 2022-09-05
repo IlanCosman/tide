@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 mock uname \* "echo Darwin"
 

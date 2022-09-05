@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _terraform
     _tide_decolor (_tide_item_terraform)

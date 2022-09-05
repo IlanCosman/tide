@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _nix_shell
     _tide_decolor (_tide_item_nix_shell)
