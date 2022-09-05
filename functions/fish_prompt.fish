@@ -68,6 +68,7 @@ function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+set _tide_parent_dirs \$_tide_parent_dirs
 PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
