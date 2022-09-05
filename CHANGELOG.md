@@ -7,6 +7,10 @@
 - Add crystal language item ([#322][] - @rrevi)
 - Tide now looks in parent directories for special files, such as when displaying tool versions
 - Tide now truncates the beginning of git branch names instead of the end
+- A new variable, `tide_context_hostname_parts` lets you choose how many parts of the hostname, split on dots, to show. For example, if your hostname is `foo.bar.baz`:
+  - With `set tide_context_hostname_parts 5` you would see `user@foo.bar.baz`
+  - With `set tide_context_hostname_parts 1` you would see `user@foo` (this is the new default)
+  - With `set tide_context_hostname_parts 0` you would see `user`
 
 ### Bug fixes
 
