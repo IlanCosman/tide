@@ -1,5 +1,17 @@
 # Changelog
 
+## [v5.5.0][] (???)
+
+### Features
+
+- Add crystal language item ([#322][] - @rrevi)
+- Tide now looks in parent directories for special files, such as when displaying tool versions
+- Tide now truncates the beginning of git branch names instead of the end
+
+### Bug fixes
+
+- Display the correct versions of tools when PATH has been altered, e.g. by nvm ([#303][], [#303][] - @9999years)
+
 ## [v5.4.0][] (Jul 29 2022)
 
 ### Features
