@@ -14,7 +14,7 @@
 
 ### Bug fixes
 
-- Display the correct versions of tools when PATH has been altered, e.g. by nvm ([#303][], [#303][] - @9999years)
+- Display the correct versions of tools when PATH has been altered, e.g. by nvm ([#303][], [#330][] - @9999years)
 
 ## [v5.4.0][] (Jul 29 2022)
 
@@ -497,9 +497,11 @@
 [#290]: https://github.com/IlanCosman/tide/issues/290
 [#293]: https://github.com/IlanCosman/tide/issues/293
 [#295]: https://github.com/IlanCosman/tide/issues/295
+[#303]: https://github.com/IlanCosman/tide/issues/303
 [#305]: https://github.com/IlanCosman/tide/issues/305
 [#322]: https://github.com/IlanCosman/tide/issues/322
 [#323]: https://github.com/IlanCosman/tide/issues/323
+[#330]: https://github.com/IlanCosman/tide/issues/330
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
