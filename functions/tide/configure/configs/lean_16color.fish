@@ -63,6 +63,8 @@ tide_time_bg_color normal
 tide_time_color brblack
 tide_toolbox_bg_color normal
 tide_toolbox_color magenta
+tide_proxy_bg_color normal
+tide_proxy_color yellow
 tide_vi_mode_bg_color_default normal
 tide_vi_mode_bg_color_insert normal
 tide_vi_mode_bg_color_replace normal
