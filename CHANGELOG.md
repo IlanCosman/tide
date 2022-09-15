@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.5.1][] (Sep 14 2022)
+
+### Bug fixes
+
+- Fix errors when in weird directories like `has spaces` or `--has dashes` ([#346][])
+
 ## [v5.5.0][] (Sep 5 2022)
 
 ### Features
@@ -502,6 +508,7 @@
 [#322]: https://github.com/IlanCosman/tide/issues/322
 [#323]: https://github.com/IlanCosman/tide/issues/323
 [#330]: https://github.com/IlanCosman/tide/issues/330
+[#346]: https://github.com/IlanCosman/tide/issues/346
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -543,3 +550,4 @@
 [v5.3.0]: https://github.com/IlanCosman/tide/tree/v5.3.0
 [v5.4.0]: https://github.com/IlanCosman/tide/tree/v5.4.0
 [v5.5.0]: https://github.com/IlanCosman/tide/tree/v5.5.0
+[v5.5.1]: https://github.com/IlanCosman/tide/tree/v5.5.1
