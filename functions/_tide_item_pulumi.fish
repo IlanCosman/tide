@@ -1,5 +1,5 @@
 function _tide_item_pulumi
-    if test -e Pulumi.yaml
+    if path is $_tide_parent_dirs/Pulumi.yaml
         if command -q sha1sum
             echo -n "$PWD/Pulumi.yaml" | sha1sum | string sub -e40 | read -f path_hash
         else if command -q shasum
