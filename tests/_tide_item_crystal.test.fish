@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _crystal
     _tide_decolor (_tide_item_crystal)
@@ -20,4 +21,4 @@ touch shard.yml
 
 _crystal # CHECK: ⬢ 1.5.0
 
-rm -r $crystal_directory
+command rm -r $crystal_directory

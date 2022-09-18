@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _cmd_duration -a duration threshold decimals
     set -lx CMD_DURATION $duration

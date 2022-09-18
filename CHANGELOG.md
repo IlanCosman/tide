@@ -1,5 +1,27 @@
 # Changelog
 
+## [v5.5.1][] (Sep 14 2022)
+
+### Bug fixes
+
+- Fix errors when in weird directories like `has spaces` or `--has dashes` ([#346][])
+
+## [v5.5.0][] (Sep 5 2022)
+
+### Features
+
+- Add crystal language item ([#322][] - @rrevi)
+- Tide now looks in parent directories for special files, such as when displaying tool versions ([#323][])
+- Tide now truncates the beginning of git branch names instead of the end
+- A new variable, `tide_context_hostname_parts` lets you choose how many parts of the hostname, split on dots, to show. For example, if your hostname is `foo.bar.baz`:
+  - With `set tide_context_hostname_parts 5` you would see `user@foo.bar.baz`
+  - With `set tide_context_hostname_parts 1` you would see `user@foo` (this is the new default)
+  - With `set tide_context_hostname_parts 0` you would see `user`
+
+### Bug fixes
+
+- Display the correct versions of tools when PATH has been altered, e.g. by nvm ([#303][], [#330][] - @9999years)
+
 ## [v5.4.0][] (Jul 29 2022)
 
 ### Features
@@ -481,7 +503,12 @@
 [#290]: https://github.com/IlanCosman/tide/issues/290
 [#293]: https://github.com/IlanCosman/tide/issues/293
 [#295]: https://github.com/IlanCosman/tide/issues/295
+[#303]: https://github.com/IlanCosman/tide/issues/303
 [#305]: https://github.com/IlanCosman/tide/issues/305
+[#322]: https://github.com/IlanCosman/tide/issues/322
+[#323]: https://github.com/IlanCosman/tide/issues/323
+[#330]: https://github.com/IlanCosman/tide/issues/330
+[#346]: https://github.com/IlanCosman/tide/issues/346
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -522,3 +549,5 @@
 [v5.2.2]: https://github.com/IlanCosman/tide/tree/v5.2.2
 [v5.3.0]: https://github.com/IlanCosman/tide/tree/v5.3.0
 [v5.4.0]: https://github.com/IlanCosman/tide/tree/v5.4.0
+[v5.5.0]: https://github.com/IlanCosman/tide/tree/v5.5.0
+[v5.5.1]: https://github.com/IlanCosman/tide/tree/v5.5.1

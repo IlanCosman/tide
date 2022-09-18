@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _terraform
     _tide_decolor (_tide_item_terraform)
@@ -16,4 +17,4 @@ _terraform # CHECK:
 mock terraform "workspace show" "echo test"
 _terraform # CHECK: test
 
-rm -r $terraformDir
+command rm -r $terraformDir

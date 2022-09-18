@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _rustc
     _tide_decolor (_tide_item_rustc)
@@ -15,4 +16,4 @@ _rustc # CHECK:
 touch Cargo.toml
 _rustc # CHECK:  1.30.0
 
-rm -r $rustcDir
+command rm -r $rustcDir

@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _java
     _tide_decolor (_tide_item_java)
@@ -25,4 +26,4 @@ OpenJDK 64-Bit Server VM (build 25.332-b04, mixed mode)' >&2"
 
 _java # CHECK:  1.8.0
 
-rm -r $javaDir
+command rm -r $javaDir
