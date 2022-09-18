@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _kubectl
     _tide_decolor (_tide_item_kubectl)

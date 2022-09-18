@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _php
     _tide_decolor (_tide_item_php)
@@ -17,4 +18,4 @@ _php # CHECK:
 touch composer.json
 _php # CHECK:  8.0.2
 
-rm -r $phpDir
+command rm -r $phpDir

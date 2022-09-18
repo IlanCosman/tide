@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _node
     _tide_decolor (_tide_item_node)
@@ -15,4 +16,4 @@ _node # CHECK:
 touch package.json
 _node # CHECK: ⬢ 16.5.0
 
-rm -r $tmpdir
+command rm -r $tmpdir

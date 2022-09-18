@@ -20,6 +20,7 @@ tide_context_bg_color 444444
 tide_context_color_default D7AF87
 tide_context_color_root $_tide_color_gold
 tide_context_color_ssh D7AF87
+tide_context_hostname_parts 1
 tide_crystal_bg_color FFFFFF
 tide_crystal_color 000000
 tide_crystal_icon ⬢

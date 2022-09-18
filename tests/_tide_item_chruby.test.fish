@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _chruby
     _tide_decolor (_tide_item_chruby)

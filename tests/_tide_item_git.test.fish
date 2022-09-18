@@ -1,4 +1,5 @@
 # RUN: %fish %s
+_tide_parent_dirs
 
 function _git
     git $argv >/dev/null 2>&1
@@ -91,4 +92,4 @@ cd normal-repo
 _git_item # CHECK: 10charhere ?1
 
 # ------ cleanup ------
-rm -r $dir
+command rm -r $dir
