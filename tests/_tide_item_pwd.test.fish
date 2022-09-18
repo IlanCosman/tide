@@ -104,5 +104,15 @@ mkdir -p $tmpdir/tmp/.git
 _pwd $tmpdir/tmp/$longDir # CHECK: ~/tmp/a/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 command rm -r $tmpdir/tmp/.git
 
+# ------------------------------------Weird Directories------------------------------------
+mkdir -p "$tmpdir/tmp/has spaces/foo"
+_pwd "$tmpdir/tmp/has spaces/foo" # CHECK: ~/tmp/has spaces/foo
+
+mkdir -p "$tmpdir/tmp/--has dashes/foo"
+_pwd "$tmpdir/tmp/--has dashes/foo" # CHECK: ~/tmp/--has dashes/foo
+
+mkdir -p "$tmpdir/tmp/has'quotes''/foo"
+_pwd "$tmpdir/tmp/has'quotes''/foo" # CHECK: ~/tmp/has'quotes''/foo
+
 # ------------------------------------Cleanup------------------------------------
 command rm -r $tmpdir

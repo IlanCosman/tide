@@ -27,5 +27,5 @@ Closes # <!--- Please link to an open issue. -->
 <!-- Go over the following points and put an x in all the boxes that apply. -->
 <!-- If you're unsure about any of these, don't hesitate to ask! -->
 
-- [ ] I have updated the documentation accordingly.
+- [ ] I am ready to update the wiki accordingly.
 - [ ] I have updated the tests accordingly.
