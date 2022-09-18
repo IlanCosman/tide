@@ -1,13 +1,13 @@
 function _tide_item_pulumi
-    if path is $_tide_parent_dirs/Pulumi.yaml
+    if path filter $_tide_parent_dirs/Pulumi.yaml | read -l yaml_path
         if command -q sha1sum
-            echo -n "$PWD/Pulumi.yaml" | sha1sum | string sub -e40 | read -f path_hash
+            echo -n "$yaml_path" | sha1sum | string sub -e40 | read -f path_hash
         else if command -q shasum
-            echo -n "$PWD/Pulumi.yaml" | shasum | string sub -e40 | read -f path_hash
+            echo -n "$yaml_path" | shasum | string sub -e40 | read -f path_hash
         end
 
         if test -n "$path_hash"
-            string match -rg 'name: *(.*)' <Pulumi.yaml | read -l project_name
+            string match -rg 'name: *(.*)' <$yaml_path | read -l project_name
             set -l workspace_file "$HOME/.pulumi/workspaces/$project_name-$path_hash-workspace.json"
 
             if test -e $workspace_file
