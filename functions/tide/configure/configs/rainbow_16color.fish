@@ -14,7 +14,7 @@ tide_crystal_bg_color brwhite
 tide_crystal_color black
 tide_docker_bg_color blue
 tide_docker_color black
-tide_distrobox_bg_color magenta
+tide_distrobox_bg_color brmagenta
 tide_distrobox_color black
 tide_git_bg_color green
 tide_git_bg_color_unstable yellow
