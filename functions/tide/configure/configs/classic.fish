@@ -28,6 +28,9 @@ tide_docker_bg_color 444444
 tide_docker_color 2496ED
 tide_docker_default_contexts default colima
 tide_docker_icon 
+tide_distrobox_bg_color 444444
+tide_distrobox_color FF00FF
+tide_distrobox_icon ⬢
 tide_git_bg_color 444444
 tide_git_bg_color_unstable 444444
 tide_git_bg_color_urgent 444444
