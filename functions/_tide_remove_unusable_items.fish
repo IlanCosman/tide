@@ -5,7 +5,7 @@ function _tide_remove_unusable_items
         set -l cli_names $item
         switch $item
             case distrobox                           # there is no '/usr/bin/distrobox' inside the container. 'distrobox-export' and 'distrobox-host-exec' are found. 
-                set cli_names distrobox-export       # It would be more accurate to check the existence of these two files.
+                set cli_names distrobox-export       # It would be more accurate to check the existence of these two files. See: https://github.com/IlanCosman/tide/pull/351
             case virtual_env
                 set cli_names python python3
             case nix_shell
