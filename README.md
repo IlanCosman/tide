@@ -25,6 +25,7 @@
 
 - The **latest** version of [Fish][], currently 3.5.1. <sub>[Using an older version of Fish?][]</sub>
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
+- A [Git][git], version >=2.22
 
 Install with [Fisher][]:
 
@@ -145,6 +146,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [contributing guide]: CONTRIBUTING.md
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
+[git]: https://git-scm.com
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: ../assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true
