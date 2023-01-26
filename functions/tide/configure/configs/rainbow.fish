@@ -31,6 +31,9 @@ tide_docker_icon 
 tide_distrobox_bg_color FF00FF
 tide_distrobox_color 000000
 tide_distrobox_icon ⬢
+tide_elixir_bg_color 000000
+tide_elixir_color A66684
+tide_elixir_icon 
 tide_git_bg_color 4E9A06
 tide_git_bg_color_unstable C4A000
 tide_git_bg_color_urgent CC0000
