@@ -77,9 +77,9 @@ _git_item # CHECK: main
 cd $dir/submodule-repo
 _git init
 _git branch -m main
-_git config --local protocol.file.allow always
+git config --local protocol.file.allow always
 
-_git submodule add --force $dir/normal-repo
+git submodule add --force $dir/normal-repo
 _git_item # CHECK: main +2
 cd normal-repo
 _git_item # CHECK: 10charhere
