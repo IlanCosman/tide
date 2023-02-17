@@ -2,7 +2,7 @@
 _tide_parent_dirs
 
 function _time -a format
-    _tide_decolor (tide_time_format="$format" _tide_item_time)
+    LC_TIME=en_US.UTF-8 _tide_decolor (tide_time_format="$format" _tide_item_time)
 end
 
 # None
