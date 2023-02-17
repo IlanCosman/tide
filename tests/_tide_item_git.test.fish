@@ -63,6 +63,10 @@ _git checkout -b very_long_branch_name
 set -lx tide_git_truncation_length 10
 _git_item # CHECK: …ranch_name
 
+# Branch truncates the end of the branch
+set -lx tide_git_truncate_end
+_git_item # CHECK: very_long_…
+
 # Branch same length as tide_git_truncation_length
 _git checkout -b 10charhere
 _git_item # CHECK: 10charhere
