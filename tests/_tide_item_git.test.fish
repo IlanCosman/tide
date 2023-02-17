@@ -77,9 +77,9 @@ _git_item # CHECK: main
 cd $dir/submodule-repo
 _git init
 _git branch -m main
-git config --local protocol.file.allow always
 
-git submodule add --force $dir/normal-repo
+# temporary workaround for git bug https://bugs.launchpad.net/ubuntu/+source/git/+bug/1993586
+_git -c protocol.file.allow=always submodule add $dir/normal-repo
 _git_item # CHECK: main +2
 cd normal-repo
 _git_item # CHECK: 10charhere
