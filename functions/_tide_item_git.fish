@@ -1,10 +1,10 @@
 function _tide_item_git
     if set -q tide_git_truncate_end
-        set -l branch_truncation_regex "(.{$tide_git_truncation_length}).+"
-        set -l branch_truncation_replacement '$1…'
+        set -f branch_truncation_regex "(.{$tide_git_truncation_length}).+"
+        set -f branch_truncation_replacement '$1…'
     else
-        set -l branch_truncation_regex ".+(.{$tide_git_truncation_length})"
-        set -l branch_truncation_replacement '…$1'
+        set -f branch_truncation_regex ".+(.{$tide_git_truncation_length})"
+        set -f branch_truncation_replacement '…$1'
     end
 
     if git branch --show-current 2>/dev/null | string replace -r $branch_truncation_regex $branch_truncation_replacement | read -l location
