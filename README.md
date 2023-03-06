@@ -23,7 +23,7 @@
 
 ### System Requirements
 
-- The **latest** version of [Fish][], currently 3.5.1. <sub>[Using an older version of Fish?][]</sub>
+- The **latest** version of [Fish][], currently 3.6.0. <sub>[Using an older version of Fish?][]</sub>
 - A [Nerd Font][nerd fonts] installed and enabled in your terminal (for example the [recommended font](#fonts)).
 
 Install with [Fisher][]:
