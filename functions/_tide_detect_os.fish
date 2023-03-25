@@ -57,7 +57,7 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 69B53F # extracted from https://linuxmint.com/web/img/favicon.ico
         case nixos
             printf %s\n  FFFFFF 5277C3 # https://github.com/NixOS/nixos-artwork/tree/master/logo
-        case opensuse-leap opensuse-tumbleweed
+        case opensuse-leap opensuse-tumbleweed opensuse-microos
             printf %s\n  73BA25 173f4f # https://en.opensuse.org/openSUSE:Artwork_brand
         case raspbian
             printf %s\n  FFFFFF A22846 # https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf
