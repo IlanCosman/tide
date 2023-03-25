@@ -14,7 +14,7 @@ set_color normal | read -l color_normal
 status fish-path | read -l fish_path
 
 # _tide_repaint prevents us from creating a second background job
-function _tide_refresh_prompt --on-variable $prompt_var --on-variable COLUMNS
+function _tide_refresh_prompt --on-variable $prompt_var --on-variable COLUMNS --on-variable PWD
     set -g _tide_repaint
     commandline -f repaint
 end
