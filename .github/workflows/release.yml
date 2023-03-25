@@ -6,6 +6,9 @@ on:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -28,10 +31,6 @@ jobs:
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
-      - uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
           body_path: /tmp/github_release.md
