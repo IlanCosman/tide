@@ -13,4 +13,4 @@ jobs:
   lock-threads:
     runs-on: ubuntu-latest
     steps:
-      - uses: dessant/lock-threads@v3
+      - uses: dessant/lock-threads@v4
