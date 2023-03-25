@@ -6,7 +6,7 @@ function _tide_detect_os
             printf %s\n  D6D6D6 333333 # from apple.com header
         case freebsd openbsd dragonfly
             printf %s\n  FFFFFF AB2B28 # https://freebsdfoundation.org/about-us/about-the-foundation/project/
-        case 'cygwin*'
+        case 'cygwin*' 'mingw*_nt*' 'msys_nt*'
             printf %s\n  FFFFFF 00CCFF # https://answers.microsoft.com/en-us/windows/forum/all/what-is-the-official-windows-8-blue-rgb-or-hex/fd57144b-f69b-42d8-8c21-6ca911646e44
         case linux
             if test (uname -o) = Android
