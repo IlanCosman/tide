@@ -57,11 +57,14 @@ _git commit -am 'Append hello to foo'
 _git checkout HEAD~
 _git_item # CHECK: {{@\w*}}
 
-# Long branches
+# --- Long branches ---
 _git checkout main
 _git checkout -b very_long_branch_name
 set -lx tide_git_truncation_length 10
-_git_item # CHECK: …ranch_name
+set -lx tide_git_truncation_strategy
+_git_item # CHECK: very_long…
+set -lx tide_git_truncation_strategy l
+_git_item # CHECK: …anch_name
 
 # Branch same length as tide_git_truncation_length
 _git checkout -b 10charhere
