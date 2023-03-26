@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="../assets/images/logo.svg" width="61.8%"/><br>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/logo.svg" width="61.8%"/><br>
 
 [![ci_badge][]][actions] ​ [![license_badge][]][license] ​ [![blazing_badge][]][blazing_tweet] <!-- 0 width spaces on this line -->
 
@@ -8,7 +8,7 @@
 
 #
 
-<img src="../assets/images/header.png" width="50%" align="right"/>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/header.png" width="50%" align="right"/>
 
 **The ultimate Fish prompt.**
 
@@ -56,7 +56,7 @@ Run `tide configure` to open the wizard in your terminal.
 
 <br>
 
-<img src="../assets/images/extensible.png" width="61.8%" align="right"/>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/extensible.png" width="61.8%" align="right"/>
 
 ### Extensible
 
@@ -64,7 +64,7 @@ If there isn't an item that fits your needs you can make your own (and hopefully
 
 <br clear="right"><br>
 
-<img src="../assets/images/flexible.png" width="61.8%" align="left"/>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/flexible.png" width="61.8%" align="left"/>
 
 ### Flexible
 
@@ -82,7 +82,7 @@ Asynchronous rendering also allows Tide to display more information than other p
 
 <br>
 
-<img src="../assets/images/multi-line_right_prompt.png" width="61.8%" align="left"/>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/multi-line_right_prompt.png" width="61.8%" align="left"/>
 
 ### Multi-Line Right Prompt
 
@@ -137,23 +137,23 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 
 [`items`]: https://github.com/IlanCosman/tide/wiki/Configuration#items
 [actions]: https://github.com/IlanCosman/tide/actions
-[async]: ../assets/animations/async.gif
+[async]: https://github.com/IlanCosman/tide/blob/assets/animations/async.gif
 [blazing_badge]: https://img.shields.io/badge/speed-blazing%20%F0%9F%94%A5-red
 [blazing_tweet]: https://twitter.com/acdlite/status/974390255393505280
 [ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration_wizard]: ../assets/animations/configuration_wizard.gif
+[configuration_wizard]: https://github.com/IlanCosman/tide/blob/assets/animations/configuration_wizard.gif
 [contributing guide]: CONTRIBUTING.md
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
 [license_badge]: https://img.shields.io/github/license/IlanCosman/tide
 [license]: LICENSE.md
-[meslolgs nf bold italic.ttf]: ../assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true
-[meslolgs nf bold.ttf]: ../assets/fonts/mesloLGS_NF_bold.ttf?raw=true
-[meslolgs nf italic.ttf]: ../assets/fonts/mesloLGS_NF_italic.ttf?raw=true
-[meslolgs nf regular.ttf]: ../assets/fonts/mesloLGS_NF_regular.ttf?raw=true
+[meslolgs nf bold italic.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true
+[meslolgs nf bold.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true
+[meslolgs nf italic.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true
+[meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[pwd]: ../assets/images/pwd.png
+[pwd]: https://github.com/IlanCosman/tide/blob/assets/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
 [using an older version of fish?]: https://github.com/IlanCosman/tide/wiki/Fish-version-compatibility
