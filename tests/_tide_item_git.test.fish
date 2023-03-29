@@ -11,7 +11,7 @@ end
 
 # Create directory
 set -l dir (mktemp -d)
-mkdir -p $dir/{normal-repo, bare-repo, submodule-repo}
+mkdir -p $dir/{normal-repo, bare-repo, submodule-repo, massive-status-repo}
 
 # Not in git repo
 cd $dir
@@ -94,6 +94,13 @@ echo >normal-repo/new_submodule_file
 _git_item # CHECK: main +2 !1 ?1
 cd normal-repo
 _git_item # CHECK: 10charhere ?1
+
+# --- Massive git status ---
+cd $dir/massive-status-repo
+_git init
+_git branch -m main
+mock git "--no-optional-locks status --porcelain" "string repeat -n100000 'D  some-file-name'\n"
+_git_item # CHECK: main +100000
 
 # ------ cleanup ------
 command rm -r $dir

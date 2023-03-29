@@ -11,6 +11,10 @@
 - Git branch truncation has reverted to keeping the beginning
   - Use `set tide_git_truncation_strategy l` to keep the end instead
 
+### Bug fixes
+
+- Fix an error message when `git status` produces a huge amount of information ([#394][])
+
 ## [v5.5.1][] (Sep 14 2022)
 
 ### Bug fixes
@@ -524,6 +528,7 @@
 [#343]: https://github.com/IlanCosman/tide/pull/343
 [#346]: https://github.com/IlanCosman/tide/issues/346
 [#373]: https://github.com/IlanCosman/tide/pull/373
+[#394]: https://github.com/IlanCosman/tide/issues/394
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0

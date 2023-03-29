@@ -40,8 +40,8 @@ function _tide_item_git
     # Git status/stash + Upstream behind/ahead
     test $in_gdir = true && set -l _set_dir_opt -C $gdir/..
     # Suppress errors in case we are in a bare repo or there is no upstream
-    stat=(git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null) \
-        string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
+    set -l stat (git $_set_dir_opt --no-optional-locks status --porcelain 2>/dev/null)
+    string match -qr '(0|(?<stash>.*))\n(0|(?<conflicted>.*))\n(0|(?<staged>.*))
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
         string match -r ^UU $stat | count
