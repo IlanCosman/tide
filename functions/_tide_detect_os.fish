@@ -53,7 +53,7 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 262F45 # https://wiki.mageia.org/en/Artwork_guidelines
         case manjaro
             printf %s\n  FFFFFF 35BF5C # from https://gitlab.manjaro.org/artwork/branding/logo/-/blob/master/logo.svg
-        case mint
+        case mint linuxmint
             printf %s\n  FFFFFF 69B53F # extracted from https://linuxmint.com/web/img/favicon.ico
         case nixos
             printf %s\n  FFFFFF 5277C3 # https://github.com/NixOS/nixos-artwork/tree/master/logo

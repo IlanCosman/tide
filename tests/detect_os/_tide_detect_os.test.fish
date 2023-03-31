@@ -32,3 +32,8 @@ _detect_os_linux_cases opensuse-etc-release
 # CHECK: 
 # CHECK: 73BA25
 # CHECK: 173f4f
+
+_detect_os_linux_cases linuxmint-etc-release
+# CHECK: 
+# CHECK: FFFFFF
+# CHECK: 69B53F
