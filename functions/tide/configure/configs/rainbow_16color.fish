@@ -18,6 +18,8 @@ tide_docker_bg_color blue
 tide_docker_color black
 tide_elixir_bg_color magenta
 tide_elixir_color black
+tide_gcloud_bg_color blue
+tide_gcloud_color black
 tide_git_bg_color green
 tide_git_bg_color_unstable yellow
 tide_git_bg_color_urgent red
