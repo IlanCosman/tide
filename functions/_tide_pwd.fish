@@ -26,7 +26,8 @@ eval "function _tide_pwd
             set split_output[\$i] \"$color_anchors\$dir_section$reset_to_color_dirs\"
         else if test \$_tide_pwd_len -gt \$dist_btwn_sides
             set -l trunc
-            while string match -qr \"(?<trunc>\$trunc.)\" \$dir_section && v=\$parent_dir/\$trunc*/ set -q v[2]
+            string match -qr \"(?<trunc>\..|.)\" \$dir_section
+            while v=\$parent_dir/\$trunc*/ set -q v[2] && string match -qr \"(?<trunc>\$trunc.)\" \$dir_section
             end
             test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
                 string join / \$split_output | string length -V | read _tide_pwd_len
