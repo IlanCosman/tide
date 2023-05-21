@@ -1,6 +1,8 @@
 function _tide_init_install --on-event _tide_init_install
     set -U VIRTUAL_ENV_DISABLE_PROMPT true
 
+    set --global _tide_fresh_session true
+    
     source (functions --details _tide_sub_configure)
     _load_config lean
     _tide_finish
