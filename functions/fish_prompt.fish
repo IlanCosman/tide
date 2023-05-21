@@ -20,7 +20,7 @@ function _tide_refresh_prompt --on-variable $prompt_var --on-variable COLUMNS
 end
 
 if contains newline $_tide_left_items # two line prompt initialization
-    test "$tide_prompt_add_newline_before" = true && set -l add_newline '\n'
+    test "$tide_prompt_add_newline_before" = true && test "$_tide_fresh_session" = false && set -l add_newline '\n'
 
     set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_frame_color
 
@@ -58,7 +58,7 @@ function fish_right_prompt
     string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
 end"
 else # one line prompt initialization
-    test "$tide_prompt_add_newline_before" = true && set -l add_newline '\0'
+    test "$tide_prompt_add_newline_before" = true && test "$_tide_fresh_session" = false && set -l add_newline '\0'
 
     math 5 -$tide_prompt_min_cols | read -l column_offset
     test $column_offset -ge 0 && set column_offset "+$column_offset"
