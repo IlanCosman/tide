@@ -88,3 +88,5 @@ end
 eval "function _tide_on_fish_exit --on-event fish_exit
     set -e $prompt_var
 end"
+
+set _tide_fresh_session false
