@@ -1,7 +1,13 @@
 function _tide_remove_unusable_items
     # Remove tool-specific items for tools the machine doesn't have installed
     set -l removed_items
-    for item in aws chruby crystal direnv distrobox docker elixir gcloud git go java kubectl nix_shell node php pulumi rustc terraform toolbox virtual_env
+    for item in aws chruby crystal docker git go java kubectl nix_shell node php rustc terraform toolbox virtual_env
+
+        # Only search for removal if the item is specified in the left or right prompt
+        if not contains $item $tide_left_prompt_items && not contains $item $tide_right_prompt_items
+            continue
+        end
+
         set -l cli_names $item
         switch $item
             case distrobox # there is no 'distrobox' command inside the container
