@@ -9,6 +9,6 @@ function _tide_item_context
         return
     end
 
-    test "$tide_context_hostname_parts" = 0 && _tide_print_item context $USER ||
-        h=(string split . $hostname) _tide_print_item context $USER@(string join . $h[..$tide_context_hostname_parts])
+    string match -qr "^(?<h>(\.?[^\.]*){0,$tide_context_hostname_parts})" @$hostname
+    _tide_print_item context $USER$h
 end
