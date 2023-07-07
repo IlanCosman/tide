@@ -12,7 +12,7 @@ function _tide_item_pulumi
         set -l workspace_file "$HOME/.pulumi/workspaces/$project_name-$path_hash-workspace.json"
 
         if test -e $workspace_file
-            string match -rg '"stack": *"(.*)"' <$workspace_file | read -l stack
+            string match -qr '"stack": *"(?<stack>.*)"' <$workspace_file
             _tide_print_item pulumi $tide_pulumi_icon' ' $stack
         end
     end
