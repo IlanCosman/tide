@@ -8,7 +8,7 @@ function _tide_item_pulumi
             return
         end
 
-        string match -rg 'name: *(.*)' <$yaml_path | read -l project_name
+        string match -qr 'name: *(?<project_name>.*)' <$yaml_path
         set -l workspace_file "$HOME/.pulumi/workspaces/$project_name-$path_hash-workspace.json"
 
         if test -e $workspace_file
