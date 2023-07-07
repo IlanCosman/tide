@@ -1,9 +1,9 @@
 function _tide_item_pulumi
     if path filter $_tide_parent_dirs/Pulumi.yaml | read -l yaml_path
         if command -q sha1sum
-            echo -n "$yaml_path" | sha1sum | string sub -e40 | read -f path_hash
+            echo -n "$yaml_path" | sha1sum | string match -qr "(?<path_hash>.{40})"
         else if command -q shasum
-            echo -n "$yaml_path" | shasum | string sub -e40 | read -f path_hash
+            echo -n "$yaml_path" | shasum | string match -qr "(?<path_hash>.{40})"
         end
 
         if test -n "$path_hash"
