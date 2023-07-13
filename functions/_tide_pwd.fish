@@ -27,7 +27,11 @@ eval "function _tide_pwd
         else if test \$_tide_pwd_len -gt \$dist_btwn_sides
             set -l trunc
             string match -qr \"(?<trunc>\..|.)\" \$dir_section
-            while v=\$parent_dir/\$trunc*/ set -q v[2] && string match -qr \"(?<trunc>\$trunc.)\" \$dir_section
+
+            set -l glob \$parent_dir/\$trunc*
+            set -e glob[(contains -i \$parent_dir/\$dir_section \$glob)] # This is faster than inverse string match
+
+            while string match -qr \"^\$parent_dir/\$trunc\" \$glob && string match -qr \"(?<trunc>\$trunc.)\" \$dir_section
             end
             test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
                 string join / \$split_output | string length -V | read _tide_pwd_len
