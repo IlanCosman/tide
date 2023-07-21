@@ -29,6 +29,7 @@ function style
 end
 
 function _load_config -a name
+    string replace -r '^' 'set -g fake_' <(status dirname)/../../icons.fish | source
     string replace -r '^' 'set -g fake_' <(status dirname)/../../configs/$name.fish | source
 end
 
