@@ -14,16 +14,14 @@ function _tide_item_git
 
     # Operation
     if test -d $gdir/rebase-merge
-        # Turn ANY into ALL, via double negation.
-        if not path is --invert $gdir/rebase-merge/{msgnum,end}
+        # Turn ANY into ALL, via double negation
+        if not path is -v $gdir/rebase-merge/{msgnum,end}
             read -f step <$gdir/rebase-merge/msgnum
             read -f total_steps <$gdir/rebase-merge/end
         end
-        test -f $gdir/rebase-merge/interactive \
-            && set -f operation rebase-i || set -f operation rebase-m
+        test -f $gdir/rebase-merge/interactive && set -f operation rebase-i || set -f operation rebase-m
     else if test -d $gdir/rebase-apply
-        # Turn ANY into ALL, via double negation.
-        if not path is --invert $gdir/rebase-apply/{next,last}
+        if not path is -v $gdir/rebase-apply/{next,last}
             read -f step <$gdir/rebase-apply/next
             read -f total_steps <$gdir/rebase-apply/last
         end
