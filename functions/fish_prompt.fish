@@ -34,7 +34,36 @@ if contains newline $_tide_left_items # two line prompt initialization
         set -l bot_right_frame "$prompt_and_frame_color─╯" &&
         set column_offset (math $column_offset-2)
 
-    eval "
+    if test "$tide_transient_enabled" = true
+        eval "
+function fish_prompt
+    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+        jobs -q && set -lx _tide_jobs
+        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+set _tide_parent_dirs \$_tide_parent_dirs
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+        builtin disown
+
+        command kill \$_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid \$last_pid
+    end
+
+    if not set -q _tide_transient
+        math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
+
+        echo -n $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
+        string repeat -Nm(math max 0, \$dist_btwn_sides-\$_tide_pwd_len) '$tide_prompt_icon_connection'
+
+        echo \"\$$prompt_var[1][3]$top_right_frame\"
+    end
+    echo -n \e\[0J\"$bot_left_frame\$$prompt_var[1][2]$color_normal \"
+end
+
+function fish_right_prompt
+    set -e _tide_transient || string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
+end"
+    else
+        eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && set -lx _tide_jobs
@@ -57,6 +86,7 @@ end
 function fish_right_prompt
     string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
 end"
+    end
 else # one line prompt initialization
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\0'
 
@@ -88,3 +118,19 @@ end
 eval "function _tide_on_fish_exit --on-event fish_exit
     set -e $prompt_var
 end"
+
+if test "$tide_transient_enabled" = true
+    function _tide_enter_transient
+        commandline --is-valid
+        # If commandline is complete (i.e pressing enter will produce a new prompt)
+        if test $status != 2
+            set -g _tide_transient
+            set -g _tide_repaint
+            commandline -f repaint
+        end
+        commandline -f execute
+    end
+
+    bind \r _tide_enter_transient
+    bind -M insert \r _tide_enter_transient
+end
