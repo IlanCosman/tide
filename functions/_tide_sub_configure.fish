@@ -52,18 +52,19 @@ function _tide_option -a symbol text
 end
 
 function _tide_menu
-    set -l list_with_slashes (string join '/' $_tide_option_list)
+    argparse no-restart -- $argv # Add no-restart option for first menu
 
-    echo '(r) Restart from the beginning'
+    if not set -q _flag_no_restart
+        set -f r r
+        echo '(r) Restart from the beginning'
+    end
     echo '(q) Quit and do nothing'\n
 
-    while true
-        set_color -o
-        read --nchars 1 --prompt-str "Choice [$list_with_slashes/r/q] " input
-        set_color normal
-
+    while read --nchars 1 --prompt-str \
+            "$(set_color -o)Choice [$(string join '/' $_tide_option_list $r q)] $(set_color normal)" input
         switch $input
             case r
+                set -q _flag_no_restart && continue
                 set -e _tide_option_list
                 _next_choice all/style
                 break
