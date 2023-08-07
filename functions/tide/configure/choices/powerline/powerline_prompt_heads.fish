@@ -23,16 +23,16 @@ function powerline_prompt_heads
 
     _tide_menu
     switch $_tide_selected_option
-        case 1
+        case Sharp
             set -g fake_tide_left_prompt_suffix 
             set -g fake_tide_right_prompt_prefix 
-        case 2
+        case Blurred
             set -g fake_tide_left_prompt_suffix '▓▒░'
             set -g fake_tide_right_prompt_prefix '░▒▓'
-        case 3
+        case Slanted
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
-        case 4
+        case Round
             set -g fake_tide_left_prompt_suffix ''
             set -g fake_tide_right_prompt_prefix ''
     end

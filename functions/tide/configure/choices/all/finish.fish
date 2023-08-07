@@ -8,7 +8,7 @@ function finish
 
     _tide_menu
     switch $_tide_selected_option
-        case y
+        case Yes
             _tide_finish
             command -q clear && clear
     end

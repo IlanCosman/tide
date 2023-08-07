@@ -12,9 +12,9 @@ function prompt_spacing
 
     _tide_menu
     switch $_tide_selected_option
-        case 1
+        case Compact
             set -g fake_tide_prompt_add_newline_before false
-        case 2
+        case Sparse
             set -g fake_tide_prompt_add_newline_before true
     end
     _next_choice all/icons

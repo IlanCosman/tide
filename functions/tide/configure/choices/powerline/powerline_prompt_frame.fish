@@ -27,18 +27,18 @@ function powerline_prompt_frame
 
     _tide_menu
     switch $_tide_selected_option
-        case 1
+        case 'No frame'
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled false
             set -a fake_tide_left_prompt_items character
-        case 2
+        case Left
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled false
-        case 3
+        case Right
             set fake_tide_left_prompt_frame_enabled false
             set fake_tide_right_prompt_frame_enabled true
             set -a fake_tide_left_prompt_items character
-        case 4
+        case Full
             set fake_tide_left_prompt_frame_enabled true
             set fake_tide_right_prompt_frame_enabled true
     end

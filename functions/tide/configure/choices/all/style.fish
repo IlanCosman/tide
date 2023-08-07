@@ -15,13 +15,13 @@ function style
 
     _tide_menu --no-restart
     switch $_tide_selected_option
-        case 1
+        case Lean
             _load_config lean
             set -g _tide_configure_style lean
-        case 2
+        case Classic
             _load_config classic
             set -g _tide_configure_style classic
-        case 3
+        case Rainbow
             _load_config rainbow
             set -g _tide_configure_style rainbow
     end

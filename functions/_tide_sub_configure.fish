@@ -44,7 +44,8 @@ function _tide_title -a text
 end
 
 function _tide_option -a symbol text
-    set -ga _tide_option_list $symbol
+    set -ga _tide_symbol_list $symbol
+    set -ga _tide_option_list $text
 
     set_color -o
     echo "($symbol) $text"
@@ -61,21 +62,24 @@ function _tide_menu
     echo '(q) Quit and do nothing'\n
 
     while read --nchars 1 --prompt-str \
-            "$(set_color -o)Choice [$(string join '/' $_tide_option_list $r q)] $(set_color normal)" input
+            "$(set_color -o)Choice [$(string join '/' $_tide_symbol_list $r q)] $(set_color normal)" input
         switch $input
             case r
                 set -q _flag_no_restart && continue
+                set -e _tide_symbol_list
                 set -e _tide_option_list
                 _next_choice all/style
                 break
             case q
                 set -e _tide_selected_option # Skip through all the _next_choices
+                set -e _tide_symbol_list
                 set -e _tide_option_list
                 command -q clear && clear
                 break
-            case $_tide_option_list
+            case $_tide_symbol_list
+                set -g _tide_selected_option $_tide_option_list[(contains -i $input $_tide_symbol_list)]
+                set -e _tide_symbol_list
                 set -e _tide_option_list
-                set -g _tide_selected_option $input
                 break
         end
     end

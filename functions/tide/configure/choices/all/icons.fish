@@ -10,7 +10,7 @@ function icons
 
     _tide_menu
     switch $_tide_selected_option
-        case 1
+        case 'Few icons'
             _disable_icons
     end
     _next_choice all/finish

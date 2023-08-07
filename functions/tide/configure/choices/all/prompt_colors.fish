@@ -11,7 +11,7 @@ function prompt_colors
 
     _tide_menu
     switch $_tide_selected_option
-        case 1
+        case 'True color'
             _load_config "$_tide_configure_style"
             set -e _tide_16color
             switch $_tide_configure_style
@@ -20,7 +20,7 @@ function prompt_colors
                 case classic
                     _next_choice classic/classic_prompt_color
             end
-        case 2
+        case '16 colors'
             _next_choice all/show_time
     end
 end
