@@ -1,4 +1,6 @@
 function style
+    set -g _tide_configure_current_options
+
     _tide_title 'Prompt Style'
 
     _tide_option 1 Lean

@@ -23,7 +23,7 @@ function _tide_sub_configure
     end
 
     if set -q _flag_auto
-        set -fx _flag_finish Yes
+        set -fx _flag_finish 'Overwrite your current tide config'
     else if test $COLUMNS -lt 55 -o $LINES -lt 21
         echo 'Terminal size too small; must be at least 55 x 21'
         return 1
@@ -99,6 +99,8 @@ function _tide_menu -a func
                 break
             case $_tide_symbol_list
                 set -g _tide_selected_option $_tide_option_list[(contains -i $input $_tide_symbol_list)]
+                test "$func" != finish &&
+                    set -a _tide_configure_current_options --$func=(string escape $_tide_selected_option)
                 set -e _tide_symbol_list
                 set -e _tide_option_list
                 break
