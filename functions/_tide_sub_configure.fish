@@ -23,10 +23,10 @@ function _tide_sub_configure
     end
 
     if set -q _flag_auto
-        if test $COLUMNS -lt 55 -o $LINES -lt 21
-            echo 'Terminal size too small; must be at least 55 x 21'
-            return 1
-        end
+        set -fx _flag_finish Yes
+    else if test $COLUMNS -lt 55 -o $LINES -lt 21
+        echo 'Terminal size too small; must be at least 55 x 21'
+        return 1
     end
 
     _tide_detect_os | read -g --line os_branding_icon os_branding_color os_branding_bg_color
