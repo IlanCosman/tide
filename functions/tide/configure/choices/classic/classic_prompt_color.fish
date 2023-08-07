@@ -17,7 +17,7 @@ function classic_prompt_color
     _set_all_items_bg_color 1C1C1C
     _tide_display_prompt
 
-    _tide_menu
+    _tide_menu (status function)
     switch $_tide_selected_option
         case Lightest
             _set_all_items_bg_color 585858

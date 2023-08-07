@@ -15,9 +15,18 @@ for file in (status dirname)/tide/configure/{choices, functions}/**.fish
 end
 
 function _tide_sub_configure
-    if test $COLUMNS -lt 55 -o $LINES -lt 21
-        echo 'Terminal size too small; must be at least 55 x 21'
-        return 1
+    set -l choices (path basename (status dirname)/tide/configure/choices/**.fish | path change-extension '')
+    argparse auto $choices= -- $argv
+
+    for var in (set -l --names | string match -e _flag)
+        set -x $var $$var
+    end
+
+    if set -q _flag_auto
+        if test $COLUMNS -lt 55 -o $LINES -lt 21
+            echo 'Terminal size too small; must be at least 55 x 21'
+            return 1
+        end
     end
 
     _tide_detect_os | read -g --line os_branding_icon os_branding_color os_branding_bg_color
@@ -37,6 +46,8 @@ function _next_choice -a nextChoice
 end
 
 function _tide_title -a text
+    set -q _flag_auto && return
+
     command -q clear && clear
     set_color -o
     string pad --width (math --scale=0 "$fake_columns/2" + (string length $text)/2) $text
@@ -47,12 +58,22 @@ function _tide_option -a symbol text
     set -ga _tide_symbol_list $symbol
     set -ga _tide_option_list $text
 
-    set_color -o
-    echo "($symbol) $text"
-    set_color normal
+    if not set -q _flag_auto
+        set_color -o
+        echo "($symbol) $text"
+        set_color normal
+    end
 end
 
-function _tide_menu
+function _tide_menu -a func
+    if set -q _flag_auto
+        set -l flag_var_name _flag_$func
+        set -g _tide_selected_option $$flag_var_name
+        set -e _tide_symbol_list
+        set -e _tide_option_list
+        return
+    end
+
     argparse no-restart -- $argv # Add no-restart option for first menu
 
     if not set -q _flag_no_restart
@@ -86,6 +107,8 @@ function _tide_menu
 end
 
 function _tide_display_prompt -a var_name var_value
+    set -q _flag_auto && return
+
     test -n "$var_name" && set -g $var_name $var_value
     _fake_tide_cache_variables
     set -l prompt (_fake_tide_prompt)

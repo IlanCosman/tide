@@ -13,7 +13,7 @@ function style
     _load_config rainbow
     _tide_display_prompt
 
-    _tide_menu --no-restart
+    _tide_menu (status function) --no-restart
     switch $_tide_selected_option
         case Lean
             _load_config lean

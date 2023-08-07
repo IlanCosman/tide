@@ -9,7 +9,7 @@ function prompt_colors
     set -g _tide_16color true
     _tide_display_prompt
 
-    _tide_menu
+    _tide_menu (status function)
     switch $_tide_selected_option
         case 'True color'
             _load_config "$_tide_configure_style"

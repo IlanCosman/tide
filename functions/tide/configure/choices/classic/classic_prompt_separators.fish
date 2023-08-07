@@ -21,7 +21,7 @@ function classic_prompt_separators
     set -g fake_tide_right_prompt_separator_same_color ''
     _tide_display_prompt
 
-    _tide_menu
+    _tide_menu (status function)
     switch $_tide_selected_option
         case Angled
             set -g fake_tide_left_prompt_separator_same_color 

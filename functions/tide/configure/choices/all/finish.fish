@@ -6,7 +6,7 @@ function finish
     _tide_option y Yes
     echo
 
-    _tide_menu
+    _tide_menu (status function)
     switch $_tide_selected_option
         case Yes
             _tide_finish
