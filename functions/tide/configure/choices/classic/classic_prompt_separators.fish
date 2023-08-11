@@ -7,18 +7,18 @@ function classic_prompt_separators
     _tide_display_prompt
 
     _tide_option 2 Vertical
-    set -g fake_tide_left_prompt_separator_same_color '│'
-    set -g fake_tide_right_prompt_separator_same_color '│'
+    set -g fake_tide_left_prompt_separator_same_color │
+    set -g fake_tide_right_prompt_separator_same_color │
     _tide_display_prompt
 
     _tide_option 3 Slanted
-    set -g fake_tide_left_prompt_separator_same_color '╱'
-    set -g fake_tide_right_prompt_separator_same_color '╱'
+    set -g fake_tide_left_prompt_separator_same_color ╱
+    set -g fake_tide_right_prompt_separator_same_color ╱
     _tide_display_prompt
 
     _tide_option 4 Round
-    set -g fake_tide_left_prompt_separator_same_color ''
-    set -g fake_tide_right_prompt_separator_same_color ''
+    set -g fake_tide_left_prompt_separator_same_color 
+    set -g fake_tide_right_prompt_separator_same_color 
     _tide_display_prompt
 
     _tide_menu (status function)
@@ -27,14 +27,14 @@ function classic_prompt_separators
             set -g fake_tide_left_prompt_separator_same_color 
             set -g fake_tide_right_prompt_separator_same_color 
         case Vertical
-            set -g fake_tide_left_prompt_separator_same_color '│'
-            set -g fake_tide_right_prompt_separator_same_color '│'
+            set -g fake_tide_left_prompt_separator_same_color │
+            set -g fake_tide_right_prompt_separator_same_color │
         case Slanted
-            set -g fake_tide_left_prompt_separator_same_color '╱'
-            set -g fake_tide_right_prompt_separator_same_color '╱'
+            set -g fake_tide_left_prompt_separator_same_color ╱
+            set -g fake_tide_right_prompt_separator_same_color ╱
         case Round
-            set -g fake_tide_left_prompt_separator_same_color ''
-            set -g fake_tide_right_prompt_separator_same_color ''
+            set -g fake_tide_left_prompt_separator_same_color 
+            set -g fake_tide_right_prompt_separator_same_color 
     end
     _next_choice powerline/powerline_prompt_heads
 end
