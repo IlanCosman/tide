@@ -5,11 +5,17 @@ function _ruby
     _tide_decolor (_tide_item_ruby)
 end
 
-set -lx RUBY_VERSION
+set -l ruby_directory (mktemp -d)
+cd $ruby_directory
+
+mock ruby --version "echo 'ruby 3.2.0 (2022-12-25 revision a528908271) +YJIT [arm64-darwin22]'"
+
+set -lx tide_ruby_icon 
 
 _ruby # CHECK:
 
-set -lx RUBY_VERSION 3.0.0
-set -lx tide_ruby_icon 
+touch Gemfile
 
-_ruby # CHECK:  3.0.0
+_ruby # CHECK:  3.2.0
+
+command rm -r $ruby_directory
