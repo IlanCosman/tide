@@ -3,7 +3,7 @@ tide_character_icon ❯
 tide_character_vi_icon_default ❮
 tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
-tide_chruby_icon 
+tide_ruby_icon 
 tide_cmd_duration_icon
 tide_crystal_icon 
 tide_direnv_icon ▼

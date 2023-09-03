@@ -2,8 +2,8 @@ tide_aws_bg_color black
 tide_aws_color yellow
 tide_character_color brgreen
 tide_character_color_failure brred
-tide_chruby_bg_color black
-tide_chruby_color red
+tide_ruby_bg_color black
+tide_ruby_color red
 tide_cmd_duration_bg_color black
 tide_cmd_duration_color brblack
 tide_context_bg_color black

@@ -1,5 +1,8 @@
 # Changelog
 
+## Pending changes
+
+- Changed chruby to ruby to improve Ruby support
 ## [v5.6.0][] (Jul 04 2023)
 
 ### Features
