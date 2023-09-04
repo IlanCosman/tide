@@ -23,28 +23,28 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: fish-actions/install-fish@v1
       - run: make test -C "$GITHUB_WORKSPACE"
 
   syntax-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: fish-actions/install-fish@v1
       - uses: fish-actions/syntax-check@v1
 
   format-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: fish-actions/install-fish@v1
       - uses: fish-actions/format-check@v1
 
   mega-linter:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: oxsecurity/megalinter/flavors/documentation@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
