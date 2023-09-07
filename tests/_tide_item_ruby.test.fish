@@ -15,7 +15,6 @@ set -lx tide_ruby_icon 
 _ruby # CHECK:
 
 touch Gemfile
-touch foo.rb
 
 _ruby # CHECK:  3.2.0
 
