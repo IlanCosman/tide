@@ -122,5 +122,13 @@ mkdir -p $tmpdir/tmp/.zumwalt
 _pwd $tmpdir/tmp/$longDirWithDot # CHECK: ~/t/.zul/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 command rm -r $tmpdir/tmp/.zumwalt
 
+# ---------- Truncation with a regex-unfriendly character ----------
+set -l longDirWithDot "[testing]/bravo/charlie/delta/echo/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa"
+_pwd $tmpdir/tmp/$longDirWithDot # CHECK: ~/t/[/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+
+mkdir -p "$tmpdir/tmp/[hello"
+_pwd $tmpdir/tmp/$longDirWithDot # CHECK: ~/t/[t/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+command rm -r "$tmpdir/tmp/[hello"
+
 # ------------------------------------Cleanup------------------------------------
 command rm -r $tmpdir

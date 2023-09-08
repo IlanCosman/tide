@@ -30,7 +30,8 @@ eval "function _tide_pwd
             set -l glob \$parent_dir/\$trunc*/
             set -e glob[(contains -i \$parent_dir/\$dir_section/ \$glob)] # This is faster than inverse string match
 
-            while string match -qr \"^\$parent_dir/\$trunc\" \$glob && string match -qr \"(?<trunc>\$trunc.)\" \$dir_section
+            while string match -qr \"^\$parent_dir/\$(string escape --style=regex \$trunc)\" \$glob &&
+                    string match -qr \"(?<trunc>\$(string escape --style=regex \$trunc).)\" \$dir_section
             end
             test -n \"\$trunc\" && set split_output[\$i] \"$color_truncated\$trunc$reset_to_color_dirs\" &&
                 string join / \$split_output | string length -V | read _tide_pwd_len
