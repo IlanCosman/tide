@@ -23,5 +23,6 @@ function _tide_help
         '' \
         'Subcommands:' \
         '  configure   run interactive configuration wizard' \
+        '  reload      reload tide configuration' \
         '  bug-report  print info for use in bug reports'
 end

@@ -38,7 +38,7 @@ function _tide_finish
     set -e $_tide_prompt_var 2>/dev/null
 
     # Re-initialize the prompt
-    source (functions --details fish_prompt)
+    tide reload
 end
 
 function _tide_print_configure_current_options
