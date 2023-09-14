@@ -2,8 +2,6 @@ tide_aws_bg_color 444444
 tide_aws_color FF9900
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
-tide_ruby_bg_color 444444
-tide_ruby_color B31209
 tide_cmd_duration_bg_color 444444
 tide_cmd_duration_color 87875F
 tide_cmd_duration_decimals 0
@@ -84,6 +82,8 @@ tide_right_prompt_prefix 
 tide_right_prompt_separator_diff_color 
 tide_right_prompt_separator_same_color 
 tide_right_prompt_suffix ''
+tide_ruby_bg_color 444444
+tide_ruby_color B31209
 tide_rustc_bg_color 444444
 tide_rustc_color F74C00
 tide_shlvl_bg_color 444444
