@@ -2,8 +2,6 @@ tide_aws_bg_color black
 tide_aws_color yellow
 tide_character_color brgreen
 tide_character_color_failure brred
-tide_chruby_bg_color black
-tide_chruby_color red
 tide_cmd_duration_bg_color black
 tide_cmd_duration_color brblack
 tide_context_bg_color black
@@ -61,6 +59,8 @@ tide_pwd_bg_color black
 tide_pwd_color_anchors brcyan
 tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
+tide_ruby_bg_color black
+tide_ruby_color red
 tide_rustc_bg_color black
 tide_rustc_color red
 tide_shlvl_bg_color black

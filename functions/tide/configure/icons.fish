@@ -3,7 +3,6 @@ tide_character_icon ❯
 tide_character_vi_icon_default ❮
 tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
-tide_chruby_icon 
 tide_cmd_duration_icon
 tide_crystal_icon 
 tide_direnv_icon ▼
@@ -26,6 +25,7 @@ tide_pulumi_icon 
 tide_pwd_icon
 tide_pwd_icon_home
 tide_pwd_icon_unwritable 
+tide_ruby_icon 
 tide_rustc_icon 
 tide_shlvl_icon 
 tide_status_icon ✔
