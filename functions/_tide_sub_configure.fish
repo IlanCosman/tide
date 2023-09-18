@@ -134,5 +134,5 @@ function _tide_display_prompt -a var_name var_value
 end
 
 function _tide_exit_configure
-    set -e _tide_selected_option # Skip through all switch and _next_choice 
+    set -e _tide_selected_option # Skip through all switch and _next_choice
 end

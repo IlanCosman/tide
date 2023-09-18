@@ -15,7 +15,7 @@ function finish
         case 'Overwrite your current tide config'
             _tide_finish
             command -q clear && clear
-            _tide_print_configure_current_options
+            set -q _flag_auto || _tide_print_configure_current_options
         case 'Exit and print the config you just generated'
             _tide_exit_configure
             command -q clear && clear
