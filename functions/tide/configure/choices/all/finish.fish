@@ -17,14 +17,14 @@ function finish
             command -q clear && clear
             _tide_print_configure_current_options
         case 'Exit and print the config you just generated'
-            set -e _tide_selected_option # Skip through all the _next_choices
+            _tide_exit_configure
             command -q clear && clear
             _tide_print_configure_current_options
     end
 end
 
 function _tide_finish
-    set -e _tide_selected_option # Skip through all the _next_choices
+    _tide_exit_configure
 
     # Deal with prompt char/vi mode
     contains character $fake_tide_left_prompt_items || set -p fake_tide_left_prompt_items vi_mode

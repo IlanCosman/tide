@@ -69,8 +69,17 @@ function _tide_menu -a func
     if set -q _flag_auto
         set -l flag_var_name _flag_$func
         set -g _tide_selected_option $$flag_var_name
-        set -e _tide_symbol_list
-        set -e _tide_option_list
+
+        if test -z "$_tide_selected_option"
+            echo "Missing input for choice '$func'"
+            _tide_exit_configure
+        else if not contains $_tide_selected_option $_tide_option_list
+            echo "Invalid input '$_tide_selected_option' for choice '$func'"
+            _tide_exit_configure
+        else
+            set -e _tide_symbol_list
+            set -e _tide_option_list
+        end
         return
     end
 
@@ -92,7 +101,7 @@ function _tide_menu -a func
                 _next_choice all/style
                 break
             case q
-                set -e _tide_selected_option # Skip through all the _next_choices
+                _tide_exit_configure
                 set -e _tide_symbol_list
                 set -e _tide_option_list
                 command -q clear && clear
@@ -122,4 +131,8 @@ function _tide_display_prompt -a var_name var_value
     string unescape $prompt[2..]
     set_color normal
     echo
+end
+
+function _tide_exit_configure
+    set -e _tide_selected_option # Skip through all switch and _next_choice 
 end
