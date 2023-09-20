@@ -134,10 +134,21 @@ function _tide_display_prompt -a var_name var_value
     set -l right_prompt_string (string pad --width (math $fake_columns-$bottom_left_prompt_string_length) $prompt[1])
     set -l prompt[-1] "$prompt[-1]$right_prompt_string"
 
-    if not set -e _tide_configure_first_prompt_after_option
-        test "$fake_tide_prompt_add_newline_before" = true && echo
+    if set -q _configure_transient
+        if contains newline $fake_tide_left_prompt_items
+            string unescape $prompt[3..]
+        else
+            _fake_tide_item_character
+            echo
+        end
+    else
+        if not set -q _tide_configure_first_prompt_after_option
+            test "$fake_tide_prompt_add_newline_before" = true && echo
+        end
+        string unescape $prompt[2..]
     end
-    string unescape $prompt[2..]
+
+    set -e _tide_configure_first_prompt_after_option
     set_color normal
 end
 
