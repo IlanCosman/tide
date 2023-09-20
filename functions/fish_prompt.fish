@@ -150,9 +150,8 @@ end"
 
 if test "$tide_prompt_transient_enabled" = true
     function _tide_enter_transient
-        commandline --is-valid
-        # If commandline is complete (i.e pressing enter will produce a new prompt)
-        if test $status != 2
+        # If the commandline will be executed, or is empty
+        if commandline --is-valid || test -z "$(commandline)"
             set -g _tide_transient
             set -g _tide_repaint
             commandline -f repaint
