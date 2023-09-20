@@ -123,10 +123,9 @@ function _tide_menu -a func
     end
 end
 
-function _tide_display_prompt -a var_name var_value
+function _tide_display_prompt
     set -q _flag_auto && return
 
-    test -n "$var_name" && set -g $var_name $var_value
     _fake_tide_cache_variables
     set -l prompt (_fake_tide_prompt)
 

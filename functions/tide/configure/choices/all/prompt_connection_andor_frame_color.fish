@@ -10,16 +10,20 @@ function prompt_connection_andor_frame_color
     _tide_title "Connection & Frame Color"
 
     _tide_option 1 Lightest
-    _tide_display_prompt fake_tide_prompt_color_frame_and_connection 808080
+    set -g fake_tide_prompt_color_frame_and_connection 808080
+    _tide_display_prompt
 
     _tide_option 2 Light
-    _tide_display_prompt fake_tide_prompt_color_frame_and_connection 6C6C6C
+    set -g fake_tide_prompt_color_frame_and_connection 6C6C6C
+    _tide_display_prompt
 
     _tide_option 3 Dark
-    _tide_display_prompt fake_tide_prompt_color_frame_and_connection 585858
+    set -g fake_tide_prompt_color_frame_and_connection 585858
+    _tide_display_prompt
 
     _tide_option 4 Darkest
-    _tide_display_prompt fake_tide_prompt_color_frame_and_connection 444444
+    set -g fake_tide_prompt_color_frame_and_connection 444444
+    _tide_display_prompt
 
     _tide_menu (status function)
     switch $_tide_selected_option
