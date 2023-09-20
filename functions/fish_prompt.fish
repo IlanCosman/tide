@@ -34,7 +34,7 @@ if contains newline $_tide_left_items # two line prompt initialization
         set -l bot_right_frame "$prompt_and_frame_color─╯" &&
         set column_offset (math $column_offset-2)
 
-    if test "$tide_transient_enabled" = true
+    if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
@@ -93,7 +93,7 @@ else # one line prompt initialization
     math 5 -$tide_prompt_min_cols | read -l column_offset
     test $column_offset -ge 0 && set column_offset "+$column_offset"
 
-    if test "$tide_transient_enabled" = true
+    if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
     set -lx _tide_status \$status
@@ -148,7 +148,7 @@ eval "function _tide_on_fish_exit --on-event fish_exit
     set -e $prompt_var
 end"
 
-if test "$tide_transient_enabled" = true
+if test "$tide_prompt_transient_enabled" = true
     function _tide_enter_transient
         commandline --is-valid
         # If commandline is complete (i.e pressing enter will produce a new prompt)

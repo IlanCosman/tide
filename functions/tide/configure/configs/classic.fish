@@ -69,6 +69,7 @@ tide_prompt_color_frame_and_connection 6C6C6C
 tide_prompt_color_separator_same_color 949494
 tide_prompt_min_cols 34
 tide_prompt_pad_items true
+tide_prompt_transient_enabled false
 tide_pulumi_bg_color 444444
 tide_pulumi_color F7BF2A
 tide_pwd_bg_color 444444
