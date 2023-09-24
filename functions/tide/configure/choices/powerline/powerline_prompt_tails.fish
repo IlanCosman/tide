@@ -36,5 +36,5 @@ function powerline_prompt_tails
             set -g fake_tide_left_prompt_prefix 
             set -g fake_tide_right_prompt_suffix 
     end
-    _next_choice powerline/powerline_prompt_height
+    _next_choice powerline/powerline_prompt_style
 end

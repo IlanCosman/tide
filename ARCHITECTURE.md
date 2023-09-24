@@ -27,16 +27,16 @@ classic_prompt_separators --> powerline_prompt_heads
 rainbow_prompt_separators --> powerline_prompt_heads
 
 powerline_prompt_heads --> powerline_prompt_tails
-powerline_prompt_tails --> powerline_prompt_height
+powerline_prompt_tails --> powerline_prompt_style
 
-powerline_prompt_height -- "One Line" --> prompt_connection_andor_frame_color
-powerline_prompt_height -- "Two Line" --> prompt_connection
+powerline_prompt_style -- "One Line" --> prompt_connection_andor_frame_color
+powerline_prompt_style -- "Two Line" --> prompt_connection
 
 prompt_connection -- "lean" --> prompt_connection_andor_frame_color
-prompt_connection -- "classic" --> powerline_prompt_frame
-prompt_connection -- "rainbow" --> powerline_prompt_frame
+prompt_connection -- "classic" --> powerline_prompt_right_frame
+prompt_connection -- "rainbow" --> powerline_prompt_right_frame
 
-powerline_prompt_frame --> prompt_connection_andor_frame_color
+powerline_prompt_right_frame --> prompt_connection_andor_frame_color
 
 prompt_connection_andor_frame_color --> prompt_spacing
 

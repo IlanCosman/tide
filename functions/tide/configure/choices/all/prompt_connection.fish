@@ -26,6 +26,6 @@ function prompt_connection
         case lean
             _next_choice all/prompt_connection_andor_frame_color
         case classic rainbow
-            _next_choice powerline/powerline_prompt_frame
+            _next_choice powerline/powerline_right_prompt_frame
     end
 end
