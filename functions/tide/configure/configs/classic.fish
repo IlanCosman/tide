@@ -77,8 +77,10 @@ tide_pwd_color_anchors $_tide_color_light_blue
 tide_pwd_color_dirs $_tide_color_dark_blue
 tide_pwd_color_truncated_dirs 8787AF
 tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json
+tide_python_bg_color 444444
+tide_python_color 00AFAF
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs direnv node virtual_env rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir
+tide_right_prompt_items status cmd_duration context jobs direnv node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir
 tide_right_prompt_prefix 
 tide_right_prompt_separator_diff_color 
 tide_right_prompt_separator_same_color 
@@ -109,5 +111,3 @@ tide_vi_mode_color_default 949494
 tide_vi_mode_color_insert 87AFAF
 tide_vi_mode_color_replace 87AF87
 tide_vi_mode_color_visual FF8700
-tide_virtual_env_bg_color 444444
-tide_virtual_env_color 00AFAF

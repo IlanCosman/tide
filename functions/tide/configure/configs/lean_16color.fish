@@ -59,6 +59,8 @@ tide_pwd_bg_color normal
 tide_pwd_color_anchors brcyan
 tide_pwd_color_dirs cyan
 tide_pwd_color_truncated_dirs magenta
+tide_python_bg_color normal
+tide_python_color cyan
 tide_ruby_bg_color normal
 tide_ruby_color red
 tide_rustc_bg_color normal
@@ -83,5 +85,3 @@ tide_vi_mode_color_default white
 tide_vi_mode_color_insert cyan
 tide_vi_mode_color_replace green
 tide_vi_mode_color_visual yellow
-tide_virtual_env_bg_color normal
-tide_virtual_env_color cyan

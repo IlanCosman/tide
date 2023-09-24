@@ -25,6 +25,7 @@ tide_pulumi_icon 
 tide_pwd_icon
 tide_pwd_icon_home
 tide_pwd_icon_unwritable 
+tide_python_icon 󰌠
 tide_ruby_icon 
 tide_rustc_icon 
 tide_shlvl_icon 
@@ -36,4 +37,3 @@ tide_vi_mode_icon_default D
 tide_vi_mode_icon_insert I
 tide_vi_mode_icon_replace R
 tide_vi_mode_icon_visual V
-tide_virtual_env_icon 󰌠
