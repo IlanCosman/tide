@@ -1,7 +1,8 @@
+# Architecture
+
+## Tide Configure Flowchart
+
 ```mermaid
----
-title: Tide Configure Flowchart
----
 flowchart TD
 
 prompt_connection_andor_frame_color["prompt_connection_andor_frame_color
