@@ -1,11 +1,11 @@
 function crop_screenshots
     mogrify \
         # Top
-        -chop 0x38 \
+        -chop 0x43 \
         # Bottom
-        -crop +0-46 +repage \
+        -crop +0-54 +repage \
         # Sides
-        -shave 44x0 \
+        -shave 49x0 \
         # Output
         -path out \
         *.png
