@@ -67,11 +67,17 @@ All links should be in the [reference style][], with references at the bottom of
   - Show Header Bar: off
   - Padding: 12
   - Default color scheme
+- Stitches: Dont stack frames, output image quality 100
 
 #### Specifics
 
 - Header: 13pt, 55x16
 - Configuration Wizard: 17pt, 70x21
+  - Stitch delays:
+  - | 80  | 10  | 10  | 10  | 10  | 14  | 10  | 30  |
+    | --- | --- | --- | --- | --- | --- | --- | --- |
+    | 80  | 110 | 110 | 110 | 110 | 110 | 110 | 110 |
+    | 110 | 110 | 110 | 110 | 300 |     |     |     |
 
 ## Release Checklist
 
