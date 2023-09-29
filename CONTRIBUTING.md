@@ -78,6 +78,7 @@ All links should be in the [reference style][], with references at the bottom of
     | --- | --- | --- | --- | --- | --- | --- | --- |
     | 80  | 110 | 110 | 110 | 110 | 110 | 110 | 110 |
     | 110 | 110 | 110 | 110 | 300 |     |     |     |
+- Extensible: 13pt, 55x9
 
 ## Release Checklist
 
