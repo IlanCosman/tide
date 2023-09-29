@@ -60,6 +60,19 @@ In general, just run `make` to do everything.
 
 All links should be in the [reference style][], with references at the bottom of the document in alphabetical order.
 
+### Images
+
+- Gnome DE
+- Blackbox terminal
+  - Show Header Bar: off
+  - Padding: 12
+  - Default color scheme
+
+#### Specifics
+
+- Header: 13pt, 55x16
+- Configuration Wizard: 17pt, 70x21
+
 ## Release Checklist
 
 - [ ] Update version number in `tide.fish`
