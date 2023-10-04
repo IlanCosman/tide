@@ -11,7 +11,7 @@ function _tide_init_install --on-event _tide_init_install
         if contains ilancosman/tide (string lower $_fisher_plugins)
             set_color bryellow
             echo "ilancosman/tide is a development branch. Please install from a release tag:"
-            echo -ns "fisher install ilancosman/tide@v5" | fish_indent --ansi
+            _tide_fish_colorize "fisher install ilancosman/tide@v5"
             sleep 3
         end
 
@@ -19,7 +19,7 @@ function _tide_init_install --on-event _tide_init_install
             case y ye yes ''
                 tide configure
             case '*'
-                echo -s \n 'Run ' (echo -ns "tide configure" | fish_indent --ansi) ' to customize your prompt.'
+                echo -s \n 'Run ' (_tide_fish_colorize "tide configure") ' to customize your prompt.'
         end
     end
 end
@@ -29,7 +29,7 @@ function _tide_init_update --on-event _tide_init_update
     if contains ilancosman/tide (string lower $_fisher_plugins)
         set_color bryellow
         echo "ilancosman/tide is a development branch. Please install from a release tag:"
-        echo -ns "fisher install ilancosman/tide@v5" | fish_indent --ansi
+        _tide_fish_colorize "fisher install ilancosman/tide@v5"
         sleep 3
     end
 end

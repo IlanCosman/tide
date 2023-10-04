@@ -42,9 +42,5 @@ function _tide_finish
 end
 
 function _tide_print_configure_current_options
-    if command -q fish_indent
-        printf %s\n "tide configure --auto $_tide_configure_current_options" | fish_indent --ansi
-    else
-        printf %s\n "tide configure --auto $_tide_configure_current_options"
-    end
+    _tide_fish_colorize "tide configure --auto $_tide_configure_current_options"
 end
