@@ -79,7 +79,8 @@ All links should be in the [reference style][], with references at the bottom of
     | 80  | 110 | 110 | 110 | 110 | 110 | 110 | 110 |
     | 110 | 110 | 110 | 110 | 300 |     |     |     |
 - Flexible: 13pt, 56x4
-- Extensible: 13pt, 55x9
+- Extendable: 13pt, 55x9
+- PWD: 17pt, 42x14
 
 ## Release Checklist
 
