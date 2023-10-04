@@ -111,6 +111,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
     if set -q _tide_transient
         echo -n \e\[0J
         add_prefix= _tide_item_character
+        echo -n '$color_normal '
     else
         math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
         string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]'$color_normal '
