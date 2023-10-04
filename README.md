@@ -1,25 +1,16 @@
-<div align="center">
-
-<img src="https://github.com/IlanCosman/tide/blob/assets/images/logo.svg" width="61.8%"/><br>
-
-[![ci_badge][]][actions] ​ [![license_badge][]][license] <!-- 0 width spaces on this line -->
-
-</div>
-
-#
+## <div align="center"><img src="https://github.com/IlanCosman/tide/blob/assets/images/logo.svg" width="480"/></div>
 
 <img src="https://github.com/IlanCosman/tide/blob/assets/images/header.png" width="50%" align="right"/>
 
 **The ultimate Fish prompt.**
 
-- **Out of the box:** With three compelling styles and lots of options, you can have your ready-to-run cake and customize it too.
-- **Flexible:** Move content around or remove it, all without ever touching a line of code.
-- **Extensible:** Create custom content with simple Fish functions that integrate seamlessly.
-- **Fast:** Asynchronous rendering makes Tide the fastest full-featured Fish prompt.
+- **Fast -** Asynchronous rendering makes Tide instantly responsive in any situation.
 
-<br clear="right">
+- **Friendly -** An interactive configuration wizard lets you design your prompt efficiently.
 
-## Installation
+- **Flexible -** Pure-Fish construction means you can easily control existing content or create your own that will integrate seamlessly.
+
+## Installation!
 
 ### System Requirements
 
@@ -54,23 +45,21 @@ Run `tide configure` to open the wizard in your terminal.
 
 ![configuration_wizard][]
 
-<br>
-
-<img src="https://github.com/IlanCosman/tide/blob/assets/images/extensible.png" width="61.8%" align="right"/>
-
-### Extensible
-
-If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
-
-<br clear="right"><br>
-
-<img src="https://github.com/IlanCosman/tide/blob/assets/images/flexible.png" width="61.8%" align="left"/>
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/flexible.png" width="61.8%" align="right"/>
 
 ### Flexible
 
 Using the [`items`][] list for each side of the prompt, you have full control of which and where prompt sections display.
 
-<br clear="left"><br>
+<br clear="right">
+
+<img src="https://github.com/IlanCosman/tide/blob/assets/images/extendable.png" width="61.8%" align="left"/>
+
+### Extendable
+
+If there isn't an item that fits your needs you can make your own (and hopefully submit a pull request) or ask for it to be made by opening an issue.
+
+<br clear="left">
 
 ### Asynchronous Rendering
 
@@ -78,25 +67,13 @@ Tide runs everything in the background so that your prompt will always feel snap
 
 ![async][]
 
-Asynchronous rendering also allows Tide to display more information than other prompts. For example, most prompts don't display the number of untracked, modified, or deleted files in a git repository because it's too slow to compute.
-
-<br>
-
-<img src="https://github.com/IlanCosman/tide/blob/assets/images/multi-line_right_prompt.png" width="61.8%" align="left"/>
-
-### Multi-Line Right Prompt
-
-> Fish can't do _that_ yet can it!
-
-Tide is the only Fish prompt capable of displaying a multi-line right prompt. All you have to do is add the `newline` item.
-
-<br clear="left">
+Asynchronous rendering also lets Tide display more information than other prompts. For example, most prompts don't display the number of untracked, modified, or deleted files in a git repository because it's too slow to compute.
 
 ### Current directory that just works
 
 The current working directory is the most important part of any shell prompt. Tide highlights the critical parts and truncates with the least loss of information when horizontal space is scarce.
 
-![pwd][]
+<div align="center"><img src="https://github.com/IlanCosman/tide/blob/assets/images/pwd.png"/></div>
 
 When the full directory doesn't fit, the leftmost segment is truncated to its shortest unique prefix. In the example above, `Documents` becomes `Doc` instead of `D` because that could be confused with `Downloads`. Important segments are bold and never truncated. These include the last segment, root of a Git repository etc.
 
@@ -136,22 +113,17 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 - [Spacefish][] - Inspired some of Tide's items.
 
 [`items`]: https://github.com/IlanCosman/tide/wiki/Configuration#items
-[actions]: https://github.com/IlanCosman/tide/actions
-[async]: https://github.com/IlanCosman/tide/blob/assets/animations/async.gif
-[ci_badge]: https://github.com/IlanCosman/tide/workflows/CI/badge.svg
-[configuration_wizard]: https://github.com/IlanCosman/tide/blob/assets/animations/configuration_wizard.gif
+[async]: https://github.com/IlanCosman/tide/blob/assets/animations/async.png
+[configuration_wizard]: https://github.com/IlanCosman/tide/blob/assets/animations/configuration_wizard.webp
 [contributing guide]: CONTRIBUTING.md
 [fish]: https://fishshell.com/
 [fisher]: https://github.com/jorgebucaran/fisher
-[license_badge]: https://img.shields.io/github/license/IlanCosman/tide
-[license]: LICENSE.md
 [meslolgs nf bold italic.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true
 [meslolgs nf bold.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true
 [meslolgs nf italic.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true
 [meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
-[pwd]: https://github.com/IlanCosman/tide/blob/assets/images/pwd.png
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
 [using an older version of fish?]: https://github.com/IlanCosman/tide/wiki/Fish-version-compatibility
