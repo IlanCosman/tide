@@ -20,7 +20,7 @@
 Install with [Fisher][]:
 
 ```console
-fisher install IlanCosman/tide@v5
+fisher install IlanCosman/tide@v6
 ```
 
 <details>
@@ -30,7 +30,7 @@ This script may not work for all use cases.
 
 ```fish
 set -l _tide_tmp_dir (command mktemp -d)
-curl https://codeload.github.com/ilancosman/tide/tar.gz/v5 | tar -xzC $_tide_tmp_dir
+curl https://codeload.github.com/ilancosman/tide/tar.gz/v6 | tar -xzC $_tide_tmp_dir
 command cp -R $_tide_tmp_dir/*/{completions,conf.d,functions} $__fish_config_dir
 fish_path=(status fish-path) exec $fish_path -C "emit _tide_init_install"
 ```

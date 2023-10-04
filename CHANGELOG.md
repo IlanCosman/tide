@@ -588,3 +588,4 @@
 [v5.5.0]: https://github.com/IlanCosman/tide/tree/v5.5.0
 [v5.5.1]: https://github.com/IlanCosman/tide/tree/v5.5.1
 [v5.6.0]: https://github.com/IlanCosman/tide/tree/v5.6.0
+[v6.0.0]: https://github.com/IlanCosman/tide/tree/v6.0.0

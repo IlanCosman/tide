@@ -11,7 +11,7 @@ function _tide_init_install --on-event _tide_init_install
         if contains ilancosman/tide (string lower $_fisher_plugins)
             set_color bryellow
             echo "ilancosman/tide is a development branch. Please install from a release tag:"
-            _tide_fish_colorize "fisher install ilancosman/tide@v5"
+            _tide_fish_colorize "fisher install ilancosman/tide@v6"
             sleep 3
         end
 
@@ -29,7 +29,7 @@ function _tide_init_update --on-event _tide_init_update
     if contains ilancosman/tide (string lower $_fisher_plugins)
         set_color bryellow
         echo "ilancosman/tide is a development branch. Please install from a release tag:"
-        _tide_fish_colorize "fisher install ilancosman/tide@v5"
+        _tide_fish_colorize "fisher install ilancosman/tide@v6"
         sleep 3
     end
 end
