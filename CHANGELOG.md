@@ -1,5 +1,15 @@
 # Changelog
 
+## [v6.0.0][] (Oct 03 2023)
+
+### Features
+
+- Add transient prompt setting, which automatically collapses old prompts for more condensed scrollback
+- Add automatic configuration, which lets users automate the configuration wizard
+- Add `tide reload` subcommand, to re-initialize the prompt without requiring a new shell session
+- Extensive use of `string match` variable setting for minor speedups
+- Reduce globbing in `pwd` item, which can be costly on slow filesystems
+
 ## [v5.6.0][] (Jul 04 2023)
 
 ### Features
