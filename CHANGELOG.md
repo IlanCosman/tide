@@ -8,7 +8,7 @@
 - Add automatic configuration, which lets users automate the configuration wizard
 - Add `tide reload` subcommand, to re-initialize the prompt without requiring a new shell session
 - Replace `virtual_env` item with a new and improved `python` item
-- Replace `chruby` item with a new and improved `ruby` item
+- Replace `chruby` item with a new and improved `ruby` item ([#437][] - @cmer)
 - Extensive use of `string match` variable setting for minor speedups
 - Reduce globbing in `pwd` item, which can be costly on slow filesystems
 
