@@ -89,3 +89,5 @@ tide_vi_mode_icon_default D
 tide_vi_mode_icon_insert I
 tide_vi_mode_icon_replace R
 tide_vi_mode_icon_visual V
+tide_zig_bg_color yellow
+tide_zig_color black

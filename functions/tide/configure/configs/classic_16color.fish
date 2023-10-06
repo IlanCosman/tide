@@ -85,3 +85,5 @@ tide_vi_mode_color_default white
 tide_vi_mode_color_insert cyan
 tide_vi_mode_color_replace green
 tide_vi_mode_color_visual yellow
+tide_zig_bg_color black
+tide_zig_color yellow
