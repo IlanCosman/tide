@@ -1,4 +1,6 @@
-## <div align="center"><img src="https://github.com/IlanCosman/tide/blob/assets/images/logo.svg" width="480"/></div>
+<div align="center"><img src="https://github.com/IlanCosman/tide/blob/assets/images/logo.svg" width="480"/></div>
+
+<h2></h2>
 
 <img src="https://github.com/IlanCosman/tide/blob/assets/images/header.png" width="50%" align="right"/>
 
@@ -10,7 +12,7 @@
 
 - **Flexible -** Pure-Fish construction means you can easily control existing content or create your own that will integrate seamlessly.
 
-## Installation!
+## Installation
 
 ### System Requirements
 
