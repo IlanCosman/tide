@@ -58,7 +58,7 @@ In general, just run `make` to do everything.
 
 ## Documentation Conventions
 
-All links should be in the [reference style][], with references at the bottom of the document in alphabetical order.
+All links should be in reference style, with references at the bottom of the document in alphabetical order.
 
 ### Images
 
@@ -96,4 +96,3 @@ All links should be in the [reference style][], with references at the bottom of
 [littlecheck]: https://github.com/ridiculousfish/littlecheck
 [mega-linter]: https://github.com/nvuillam/mega-linter
 [prettier]: https://github.com/prettier/prettier
-[reference style]: https://www.markdownguide.org/basic-syntax/#reference-style-links
