@@ -71,6 +71,8 @@ tide_status_bg_color black
 tide_status_bg_color_failure black
 tide_status_color green
 tide_status_color_failure red
+tide_sudo_bg_color black
+tide_sudo_color bryellow
 tide_terraform_bg_color black
 tide_terraform_color magenta
 tide_time_bg_color black
