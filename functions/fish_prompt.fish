@@ -161,5 +161,7 @@ if test "$tide_prompt_transient_enabled" = true
     end
 
     bind \r _tide_enter_transient
+    bind \n _tide_enter_transient
     bind -M insert \r _tide_enter_transient
+    bind -M insert \n _tide_enter_transient
 end
