@@ -1,5 +1,16 @@
 # Changelog
 
+## [v6.1.0][] (???)
+
+### Features
+
+- Add a new `zig` item ([#452][] - @TheFunctionalGuy)
+
+### Bug fixes
+
+- Fix the `python` item only using `python` and not `python3` ([#459][])
+- Fix transience not working when trying to run a command during the previous command's execution ([#455][])
+
 ## [v6.0.1][] (Oct 04 2023)
 
 ### Bug fixes
@@ -552,6 +563,9 @@
 [#398]: https://github.com/IlanCosman/tide/pull/398
 [#399]: https://github.com/IlanCosman/tide/issues/399
 [#437]: https://github.com/IlanCosman/tide/issues/437
+[#452]: https://github.com/IlanCosman/tide/issues/452
+[#455]: https://github.com/IlanCosman/tide/issues/455
+[#459]: https://github.com/IlanCosman/tide/issues/459
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
