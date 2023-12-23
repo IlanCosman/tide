@@ -151,6 +151,23 @@ end"
 
 if test "$tide_prompt_transient_enabled" = true
     function _tide_enter_transient
+        set -l line (commandline --line)
+
+        commandline --search-mode
+        set -l search_mode_status $status
+
+        commandline --paging-mode
+        set -l paging_mode_status $status
+
+        commandline --paging-full-mode
+        set -l paging_full_mode_status $status
+
+        commandline --is-valid
+        set -l is_valid_status $status
+
+        echo "line: $line, search: $search_mode_status, paging: $paging_mode_status, paging_full: $paging_full_mode_status, is_valid: $is_valid_status" >>~/commandline_status
+
+
         # If the commandline will be executed, or is empty
         if commandline --is-valid || test -z "$(commandline)"
             set -g _tide_transient

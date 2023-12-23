@@ -6,6 +6,7 @@ function _python
 end
 
 set -lx tide_python_icon 
+mock python3 --version "echo 'Python 3.11.5'"
 mock python --version "echo 'Python 3.11.5'"
 
 set -lx VIRTUAL_ENV
