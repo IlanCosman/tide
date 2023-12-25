@@ -153,9 +153,13 @@ if test "$tide_prompt_transient_enabled" = true
     function _tide_enter_transient
         # If the commandline will be executed, or is empty
         if commandline --is-valid || test -z "$(commandline)"
-            set -g _tide_transient
-            set -g _tide_repaint
-            commandline -f repaint
+            # Pager open usually means selecting, not running
+            # Can be untrue, but it's better than the alternative
+            if not commandline --paging-mode
+                set -g _tide_transient
+                set -g _tide_repaint
+                commandline -f repaint
+            end
         end
         commandline -f execute
     end
