@@ -5,7 +5,7 @@
 ### Features
 
 - Add a new `zig` item ([#452][] - @TheFunctionalGuy)
-- Add a new `tide_jobs_number_threshold` variable, which lets you display the number of jobs if it reaches the threshold ([#470][]).
+- Add a new `tide_jobs_number_threshold` variable, which lets you display the number of jobs if it reaches the threshold ([#470][] - @re-xyr).
   - This is disabled by default by just setting it to a very high number
 
 ### Bug fixes
