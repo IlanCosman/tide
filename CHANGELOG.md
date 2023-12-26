@@ -5,11 +5,15 @@
 ### Features
 
 - Add a new `zig` item ([#452][] - @TheFunctionalGuy)
+- Add a new `tide_jobs_number_threshold` variable, which lets you display the number of jobs if it reaches the threshold ([#470][]).
+  - This is disabled by default by just setting it to a very high number
 
 ### Bug fixes
 
 - Fix the `python` item only using `python` and not `python3` ([#459][])
 - Fix transience not working when trying to run a command during the previous command's execution ([#455][])
+- Fixed transience engaging when selecting from the pager (i.e. tab completions, history search) ([#472][])
+  - This does introduce a new bug where opening the pager but not selecting anything and instead running what you already have, will cause the prompt to not be transient.
 
 ## [v6.0.1][] (Oct 04 2023)
 
@@ -566,6 +570,8 @@
 [#452]: https://github.com/IlanCosman/tide/issues/452
 [#455]: https://github.com/IlanCosman/tide/issues/455
 [#459]: https://github.com/IlanCosman/tide/issues/459
+[#470]: https://github.com/IlanCosman/tide/issues/470
+[#472]: https://github.com/IlanCosman/tide/issues/472
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
