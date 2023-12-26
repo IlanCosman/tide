@@ -1,6 +1,6 @@
 # Changelog
 
-## [v6.1.0][] (???)
+## [v6.1.0][] (Dec 26 2023)
 
 ### Features
 
@@ -617,3 +617,4 @@
 [v5.6.0]: https://github.com/IlanCosman/tide/tree/v5.6.0
 [v6.0.0]: https://github.com/IlanCosman/tide/tree/v6.0.0
 [v6.0.1]: https://github.com/IlanCosman/tide/tree/v6.0.1
+[v6.1.0]: https://github.com/IlanCosman/tide/tree/v6.1.0
