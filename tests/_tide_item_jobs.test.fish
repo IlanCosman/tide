@@ -5,7 +5,7 @@ set _tide_jobs 0
 _tide_decolor (_tide_item_jobs) # CHECK:
 
 set -lx tide_jobs_icon 
-set -lx tide_jobs_threshold 1
+set -lx tide_jobs_number_threshold 1000
 set _tide_jobs 1
 _tide_decolor (_tide_item_jobs) # CHECK: 
 

@@ -46,7 +46,7 @@ tide_java_bg_color ED8B00
 tide_java_color 000000
 tide_jobs_bg_color 444444
 tide_jobs_color 4E9A06
-tide_jobs_threshold 1
+tide_jobs_number_threshold 1000
 tide_kubectl_bg_color 326CE5
 tide_kubectl_color 000000
 tide_left_prompt_frame_enabled true
