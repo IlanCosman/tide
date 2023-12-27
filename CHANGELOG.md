@@ -578,6 +578,7 @@
 [#459]: https://github.com/IlanCosman/tide/issues/459
 [#470]: https://github.com/IlanCosman/tide/issues/470
 [#472]: https://github.com/IlanCosman/tide/issues/472
+[#474]: https://github.com/IlanCosman/tide/issues/474
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
