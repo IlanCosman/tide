@@ -1,5 +1,11 @@
 # Changelog
 
+## [v6.1.1][] (Dec 27 2023)
+
+### Bug fixes
+
+- Set the new `tide_jobs_number_threshold` variable when updating, to prevent errors ([#474][])
+
 ## [v6.1.0][] (Dec 26 2023)
 
 ### Features
@@ -618,3 +624,4 @@
 [v6.0.0]: https://github.com/IlanCosman/tide/tree/v6.0.0
 [v6.0.1]: https://github.com/IlanCosman/tide/tree/v6.0.1
 [v6.1.0]: https://github.com/IlanCosman/tide/tree/v6.1.0
+[v6.1.1]: https://github.com/IlanCosman/tide/tree/v6.1.1
