@@ -12,10 +12,10 @@ function _tide_sub_bug-report
             string match -r --invert "^_tide_prompt_var.*" # Remove _tide_prompt_var
     else
         set -l fish_version ($fish_path --version | string match -r "fish, version (\d\.\d\.\d)")[2]
-        _tide_check_version Fish fish-shell/fish-shell "(\d\.\d\.\d)" $fish_version || return
+        _tide_check_version Fish fish-shell/fish-shell "(?<v>\d\.\d\.\d)" $fish_version || return
 
         set -l tide_version (tide --version | string match -r "tide, version (\d\.\d\.\d)")[2]
-        _tide_check_version Tide IlanCosman/tide "v(\d\.\d\.\d)" $tide_version || return
+        _tide_check_version Tide IlanCosman/tide "v(?<v>\d\.\d\.\d)" $tide_version || return
 
         if command --query git
             test (git --version | string match -r "git version ([\d\.]*)" | string replace --all . '')[2] -gt 2220
@@ -50,15 +50,14 @@ function _tide_sub_bug-report
     end
 end
 
-function _tide_check_version -a program_name repo_name regex_to_get_version current_version
-    curl --silent https://github.com/$repo_name/releases/latest |
-        string match -r ".*$repo_name/releases/tag/$regex_to_get_version.*" |
-        read --local --line __ latestVersion
+function _tide_check_version -a program_name repo_name regex_to_get_v installed_version
+    curl -sL https://github.com/$repo_name/releases/latest |
+        string match -qr "https://github.com/$repo_name/releases/tag/$regex_to_get_v"
 
-    string match --quiet -r "^$latestVersion" "$current_version"
+    string match -qr "^$v" "$installed_version" # Allow git versions, e.g 3.3.1-701-gceade1629
     _tide_check_condition \
         "Your $program_name version is out of date." \
-        "The latest is $latestVersion. You have $current_version." \
+        "The latest is $v. You have $installed_version." \
         "Please update before submitting a bug report."
 end
 
