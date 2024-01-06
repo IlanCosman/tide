@@ -18,7 +18,7 @@ function _tide_sub_bug-report
         _tide_check_version Tide IlanCosman/tide "v(?<v>\d\.\d\.\d)" $tide_version || return
 
         if command --query git
-            test (git --version | string match -r "git version ([\d\.]*)" | string replace --all . '')[2] -gt 2220
+            test (path sort (git --version) "git version 2.22.0")[1] = "git version 2.22.0"
             _tide_check_condition \
                 "Your git version is too old." \
                 "Tide requires at least version 2.22." \
