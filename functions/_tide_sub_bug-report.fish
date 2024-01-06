@@ -11,11 +11,11 @@ function _tide_sub_bug-report
         set --long | string match -r "^_?tide.*" | # Get only tide variables
             string match -r --invert "^_tide_prompt_var.*" # Remove _tide_prompt_var
     else
-        set -l fish_version ($fish_path --version | string match -r "fish, version (\d\.\d\.\d)")[2]
-        _tide_check_version Fish fish-shell/fish-shell "(?<v>\d\.\d\.\d)" $fish_version || return
+        $fish_path --version | string match -qr "fish, version (?<fish_version>.*)"
+        _tide_check_version Fish fish-shell/fish-shell "(?<v>[\d.]+)" $fish_version || return
 
-        set -l tide_version (tide --version | string match -r "tide, version (\d\.\d\.\d)")[2]
-        _tide_check_version Tide IlanCosman/tide "v(?<v>\d\.\d\.\d)" $tide_version || return
+        tide --version | string match -qr "tide, version (?<tide_version>.*)"
+        _tide_check_version Tide IlanCosman/tide "v(?<v>[\d.]+)" $tide_version || return
 
         if command --query git
             test (path sort (git --version) "git version 2.22.0")[1] = "git version 2.22.0"
@@ -32,11 +32,12 @@ function _tide_sub_bug-report
             "Please uninstall it before submitting a bug report." || return
 
         if not set -q _flag_check
-            set -l fish_startup_time ($fish_path -ic "time $fish_path -c exit" 2>|
-                string match -r "Executed in(.*)fish" | string trim)[2]
+            $fish_path -ic "time $fish_path -c exit" 2>|
+                string match -rg "Executed in(.*)fish" |
+                string trim | read -l fish_startup_time
 
-            read --local --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
-            read --local --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
+            read -l --prompt-str "What operating system are you using? (e.g Ubuntu 20.04): " os
+            read -l --prompt-str "What terminal emulator are you using? (e.g Kitty): " terminal_emulator
 
             printf '%b\n' "\nPlease copy the following information into the issue:\n" \
                 "fish version: $fish_version" \
