@@ -10,9 +10,8 @@ function _tide_detect_os
             printf %s\n  FFFFFF 00CCFF # https://answers.microsoft.com/en-us/windows/forum/all/what-is-the-official-windows-8-blue-rgb-or-hex/fd57144b-f69b-42d8-8c21-6ca911646e44
         case linux
             if test (uname -o) = Android
-                echo ﲎ # This character is evil and messes up code display, so it's put on its own line
                 # https://developer.android.com/distribute/marketing-tools/brand-guidelines
-                printf %s\n 3DDC84 3C3F41 # fg is from above link, bg is from Android Studio default dark theme
+                printf %s\n  3DDC84 3C3F41 # fg is from above link, bg is from Android Studio default dark theme
             else
                 _tide_detect_os_linux_cases /etc/os-release ID ||
                     _tide_detect_os_linux_cases /etc/os-release ID_LIKE ||
