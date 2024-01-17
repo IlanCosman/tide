@@ -19,6 +19,7 @@ tide_nix_shell_icon 
 tide_node_icon  # Actual nodejs glyph is harder to see
 tide_os_icon $os_branding_icon
 tide_php_icon 
+tide_pi_temp_icon 󰔄
 tide_private_mode_icon 󰗹
 tide_prompt_icon_connection ' '
 tide_pulumi_icon 
