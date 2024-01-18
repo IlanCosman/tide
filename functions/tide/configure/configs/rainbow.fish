@@ -64,7 +64,9 @@ tide_os_color $os_branding_color
 tide_php_bg_color 617CBE
 tide_php_color 000000
 tide_pi_temp_bg_color 2E3436
-tide_pi_temp_color green
+tide_pi_temp_lo_color 4E9A06
+tide_pi_temp_mid_color $_tide_color_gold
+tide_pi_temp_hi_color D70000
 tide_private_mode_bg_color F1F3F4
 tide_private_mode_color 000000
 tide_prompt_add_newline_before true

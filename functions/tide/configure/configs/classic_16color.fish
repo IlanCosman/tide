@@ -50,7 +50,9 @@ tide_os_color brwhite
 tide_php_bg_color black
 tide_php_color blue
 tide_pi_temp_bg_color black
-tide_pi_temp_color green
+tide_pi_temp_lo_color green
+tide_pi_temp_mid_color yellow
+tide_pi_temp_hi_color red
 tide_private_mode_bg_color black
 tide_private_mode_color brwhite
 tide_prompt_color_frame_and_connection brblack
