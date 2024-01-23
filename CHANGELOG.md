@@ -1,5 +1,11 @@
 # Changelog
 
+## [v6.2.0][] (Jan 23 2024)
+
+### Features
+
+- Add a new `bun` item.
+
 ## [v6.1.1][] (Dec 27 2023)
 
 ### Bug fixes
