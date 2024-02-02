@@ -1,5 +1,7 @@
 tide_aws_bg_color 444444
 tide_aws_color FF9900
+tide_aws_vault_bg_color FF3333
+tide_aws_vault_color 1A0000
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
 tide_cmd_duration_bg_color 444444

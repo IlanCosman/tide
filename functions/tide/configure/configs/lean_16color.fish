@@ -1,5 +1,7 @@
 tide_aws_bg_color normal
 tide_aws_color yellow
+tide_aws_vault_bg_color normal
+tide_aws_vault_color brred
 tide_character_color brgreen
 tide_character_color_failure brred
 tide_cmd_duration_bg_color normal
