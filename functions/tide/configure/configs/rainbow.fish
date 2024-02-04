@@ -1,5 +1,7 @@
 tide_aws_bg_color FF9900
 tide_aws_color 232F3E
+tide_bun_bg_color FBF0DF
+tide_bun_color 14151A
 tide_character_color $_tide_color_green
 tide_character_color_failure FF0000
 tide_cmd_duration_bg_color C4A000
@@ -77,11 +79,11 @@ tide_pwd_bg_color 3465A4
 tide_pwd_color_anchors E4E4E4
 tide_pwd_color_dirs E4E4E4
 tide_pwd_color_truncated_dirs BCBCBC
-tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform Cargo.toml composer.json CVS go.mod package.json build.zig
+tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig
 tide_python_bg_color 444444
 tide_python_color 00AFAF
 tide_right_prompt_frame_enabled true
-tide_right_prompt_items status cmd_duration context jobs direnv node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig
+tide_right_prompt_items status cmd_duration context jobs direnv bun node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig
 tide_right_prompt_prefix 
 tide_right_prompt_separator_diff_color 
 tide_right_prompt_separator_same_color 

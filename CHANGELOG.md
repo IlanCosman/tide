@@ -1,5 +1,11 @@
 # Changelog
 
+## [v6.2.0][] (???)
+
+### Features
+
+- Add a new `bun` item ([#485][] - @will-stone)
+
 ## [v6.1.1][] (Dec 27 2023)
 
 ### Bug fixes
@@ -579,6 +585,7 @@
 [#470]: https://github.com/IlanCosman/tide/issues/470
 [#472]: https://github.com/IlanCosman/tide/issues/472
 [#474]: https://github.com/IlanCosman/tide/issues/474
+[#485]: https://github.com/IlanCosman/tide/issues/485
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
