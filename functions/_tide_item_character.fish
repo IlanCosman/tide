@@ -3,7 +3,7 @@ function _tide_item_character
 
     set -q add_prefix || echo -ns ' '
 
-    if test $fish_key_bindings = fish_default_key_bindings
+    if test "$fish_key_bindings" = fish_default_key_bindings
         test $_tide_status = 0 && echo -ns $tide_character_icon || echo -ns $tide_character_icon_failure
     else
         switch $fish_bind_mode
