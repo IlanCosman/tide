@@ -21,7 +21,7 @@ set -lx tide_time_icon 
 # Only Icon
 _time '' # CHECK: 
 
-# 24 Hour With Icon 
+# 24 Hour With Icon
 _time %T # CHECK:  {{\d\d:\d\d:\d\d}}
 
 # 12 Hour With Icon
