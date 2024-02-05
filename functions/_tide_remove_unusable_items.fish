@@ -1,7 +1,7 @@
 function _tide_remove_unusable_items
     # Remove tool-specific items for tools the machine doesn't have installed
     set -l removed_items
-    for item in aws crystal direnv distrobox docker elixir gcloud git go java kubectl nix_shell node php pulumi python ruby rustc terraform toolbox zig
+    for item in aws bun crystal direnv distrobox docker elixir gcloud git go java kubectl nix_shell node php pulumi python ruby rustc terraform toolbox zig
         contains $item $tide_left_prompt_items $tide_right_prompt_items || continue
 
         set -l cli_names $item

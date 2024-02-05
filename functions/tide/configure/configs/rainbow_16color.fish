@@ -2,6 +2,8 @@ tide_aws_bg_color yellow
 tide_aws_color brblack
 tide_aws_vault_bg_color brred
 tide_aws_vault_color black
+tide_bun_bg_color white
+tide_bun_color black
 tide_character_color brgreen
 tide_character_color_failure brred
 tide_cmd_duration_bg_color yellow
