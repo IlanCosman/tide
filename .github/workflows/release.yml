@@ -31,6 +31,6 @@ jobs:
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
           body_path: /tmp/github_release.md
