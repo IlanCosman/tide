@@ -1,6 +1,7 @@
 tide_aws_icon  # Actual aws glyph is harder to see
 tide_bun_icon 󰳓
 tide_character_icon ❯
+tide_character_icon_failure ❯
 tide_character_vi_icon_default ❮
 tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
