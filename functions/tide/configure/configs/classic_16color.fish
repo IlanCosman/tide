@@ -1,5 +1,7 @@
 tide_aws_bg_color black
 tide_aws_color yellow
+tide_aws_vault_bg_color black
+tide_aws_vault_color brred
 tide_bun_bg_color black
 tide_bun_color white
 tide_character_color brgreen

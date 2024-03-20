@@ -1,5 +1,7 @@
 tide_aws_bg_color normal
 tide_aws_color FF9900
+tide_aws_vault_bg_color normal
+tide_aws_vault_color FF3333
 tide_bun_bg_color normal
 tide_bun_color FBF0DF
 tide_character_color $_tide_color_green
