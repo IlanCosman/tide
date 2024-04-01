@@ -9,6 +9,7 @@ end
 
 set -lx tide_status_icon ✔
 set -lx tide_status_icon_failure ✘
+set -lx tide_status_display 0
 
 # Without character
 set -lx _tide_left_items
@@ -58,3 +59,21 @@ _status # CHECK: ✔ 0|1
 
 not false | true
 _status # CHECK: ✘ 1|0
+
+# With display option to 1
+set -lx tide_status_display 1
+
+true
+_status # CHECK:
+
+false
+_status # CHECK: ✘ 1
+
+# With display option to 2
+set -lx tide_status_display 2
+
+true
+_status # CHECK: ✔
+
+false
+_status # CHECK: ✘ 1
