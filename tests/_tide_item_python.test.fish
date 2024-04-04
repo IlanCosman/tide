@@ -21,6 +21,9 @@ _python # CHECK:  3.11.5 (python_project)
 set -lx VIRTUAL_ENV /home/ilan/.local/share/virtualenvs/pipenv_project-EwRYuc3l
 _python # CHECK:  3.11.5 (pipenv_project)
 
+set -lx VIRTUAL_ENV /home/ilan/.local/share/virtualenvs/pipenv_project
+_python # CHECK:  3.11.5 (pipenv_project)
+
 set -l python_directory (mktemp -d)
 cd $python_directory
 
