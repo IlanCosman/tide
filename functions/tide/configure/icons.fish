@@ -12,6 +12,13 @@ tide_docker_icon 
 tide_elixir_icon 
 tide_gcloud_icon 󰊭 # Actual google cloud glyph is harder to see
 tide_git_icon
+tide_git_icon_upstream_behind ⇣
+tide_git_icon_upstream_ahead ⇡
+tide_git_icon_stash 󱉰
+tide_git_icon_conflicted 
+tide_git_icon_staged 
+tide_git_icon_dirty 
+tide_git_icon_untracked 󰩌
 tide_go_icon 
 tide_java_icon 
 tide_jobs_icon 
