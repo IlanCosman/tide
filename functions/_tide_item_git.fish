@@ -61,8 +61,17 @@ function _tide_item_git
         set -g tide_git_bg_color $tide_git_bg_color_unstable
     end
 
+    # Icon for github if remote is set as github.com
+    if git remote -v | grep "git@github.com" >/dev/null
+        set -g tide_git_remote_icon "  "
+    else if test $(git remote -v | wc -l) -eq 0
+        set -g tide_git_remote_icon " 󰅛 "
+    else
+        set -g tide_git_remote_icon ""
+    end
+
     if set -q tide_git_icon_true
-        _tide_print_item git $_tide_location_color$tide_git_icon' ' (set_color white; echo -ns $location $tide_git_icon_spacer
+        _tide_print_item git $_tide_location_color$tide_git_remote_icon$tide_git_icon' ' (set_color white; echo -ns $location $tide_git_icon_spacer
             set_color $tide_git_color_operation; echo -ns ' '$operation ' '$step/$total_steps
             set_color $tide_git_color_upstream; echo -ns $tide_git_icon_upstream_behind$behind tide_git_icon_upstream_ahead$ahead
             set_color $tide_git_color_stash; echo -ns $tide_git_icon_stash$stash
