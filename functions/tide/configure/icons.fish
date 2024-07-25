@@ -15,7 +15,7 @@ tide_git_icon
 tide_go_icon 
 tide_java_icon 
 tide_jobs_icon 
-tide_kubectl_icon 󱃾
+tide_kubectl_icon ⎈
 tide_nix_shell_icon 
 tide_node_icon  # Actual nodejs glyph is harder to see
 tide_os_icon $os_branding_icon
@@ -26,7 +26,7 @@ tide_pulumi_icon 
 tide_pwd_icon
 tide_pwd_icon_home
 tide_pwd_icon_unwritable 
-tide_python_icon 󰌠
+tide_python_icon 
 tide_ruby_icon 
 tide_rustc_icon 
 tide_shlvl_icon 
