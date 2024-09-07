@@ -16,6 +16,11 @@ function powerline_prompt_heads
     set -g fake_tide_right_prompt_prefix 
     _tide_display_prompt
 
+    _tide_option 4 Fade
+    set -g fake_tide_left_prompt_suffix ▓▒░
+    set -g fake_tide_right_prompt_prefix ░▒▓
+    _tide_display_prompt
+
     _tide_menu (status function)
     switch $_tide_selected_option
         case Sharp
@@ -27,6 +32,9 @@ function powerline_prompt_heads
         case Round
             set -g fake_tide_left_prompt_suffix 
             set -g fake_tide_right_prompt_prefix 
+        case Fade
+            set -g fake_tide_left_prompt_suffix ▓▒░
+            set -g fake_tide_right_prompt_prefix ░▒▓
     end
     _next_choice powerline/powerline_prompt_tails
 end
