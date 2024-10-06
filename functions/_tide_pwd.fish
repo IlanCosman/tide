@@ -28,8 +28,10 @@ eval "function _tide_pwd
             string match -qr \"(?<trunc>\..|.)\" \$dir_section
 
             set -l glob \$parent_dir/\$trunc*/
-            set -e glob[(contains -i \$parent_dir/\$dir_section/ \$glob)] # This is faster than inverse string match
-
+            set -l indices (contains -i $parent_dir/$dir_section/ $glob)
+            if set -q indices[1]
+                set -e glob[$indices]
+            end
             while string match -qr \"^\$parent_dir/\$(string escape --style=regex \$trunc)\" \$glob &&
                     string match -qr \"(?<trunc>\$(string escape --style=regex \$trunc).)\" \$dir_section
             end
