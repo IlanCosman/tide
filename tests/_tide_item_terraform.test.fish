@@ -10,6 +10,7 @@ set -lx tide_terraform_icon 󱁢
 set -l terraformDir (mktemp -d)
 cd $terraformDir
 
+mock which terraform "echo /usr/local/bin/terraform"
 mock terraform "workspace show" "echo default"
 _terraform # CHECK:
 
