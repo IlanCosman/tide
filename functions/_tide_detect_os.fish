@@ -32,6 +32,8 @@ function _tide_detect_os_linux_cases -a file key
     # Anything which would have pure white background has been changed to D4D4D4
     # It was just too bright otherwise
     switch (string lower $value)
+        case almalinux
+            printf %s\n  $defaultColor # logo is polychromatic
         case alpine
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
