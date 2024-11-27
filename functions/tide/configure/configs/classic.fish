@@ -1,3 +1,5 @@
+tide_rosetta_bg_color 444444
+tide_rosetta_color BE7A14
 tide_aws_bg_color 444444
 tide_aws_color FF9900
 tide_bun_bg_color 14151A

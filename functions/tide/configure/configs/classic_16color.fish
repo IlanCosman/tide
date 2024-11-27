@@ -1,3 +1,5 @@
+tide_rosetta_bg_color black
+tide_rosetta_color bryellow
 tide_aws_bg_color black
 tide_aws_color yellow
 tide_bun_bg_color black

@@ -1,3 +1,5 @@
+tide_rosetta_bg_color normal
+tide_rosetta_color DC5D12
 tide_aws_bg_color normal
 tide_aws_color FF9900
 tide_bun_bg_color normal

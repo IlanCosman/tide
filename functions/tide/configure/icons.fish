@@ -1,3 +1,4 @@
+tide_rosetta_icon 
 tide_aws_icon  # Actual aws glyph is harder to see
 tide_bun_icon 󰳓
 tide_character_icon ❯

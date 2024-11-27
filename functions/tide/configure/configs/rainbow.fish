@@ -1,3 +1,5 @@
+tide_rosetta_bg_color DC5D12
+tide_rosetta_color 000000
 tide_aws_bg_color FF9900
 tide_aws_color 232F3E
 tide_bun_bg_color FBF0DF
