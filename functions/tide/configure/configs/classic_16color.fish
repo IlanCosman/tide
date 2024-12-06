@@ -12,6 +12,8 @@ tide_context_color_root bryellow
 tide_context_color_ssh yellow
 tide_crystal_bg_color black
 tide_crystal_color brwhite
+tide_deno_bg_color black
+tide_deno_color white
 tide_direnv_bg_color black
 tide_direnv_bg_color_denied black
 tide_direnv_color bryellow

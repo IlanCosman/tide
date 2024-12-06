@@ -6,6 +6,7 @@ tide_character_vi_icon_replace ▶
 tide_character_vi_icon_visual V
 tide_cmd_duration_icon
 tide_crystal_icon 
+tide_deno_icon 
 tide_direnv_icon ▼
 tide_distrobox_icon 󰆧
 tide_docker_icon 
