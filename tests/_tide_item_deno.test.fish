@@ -8,10 +8,10 @@ end
 set -l tmpdir (mktemp -d)
 cd $tmpdir
 
-mock deno --version "echo deno 2.1.2 (stable, release, x86_64-unknown-linux-gnu)
+mock deno --version "echo 'deno 2.1.2 (stable, release, x86_64-unknown-linux-gnu)
 v8 13.0.245.12-rusty
 typescript 5.6.2
-"
+'"
 set -lx tide_deno_icon 
 
 _deno # CHECK:
