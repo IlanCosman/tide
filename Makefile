@@ -24,7 +24,7 @@ test: install littlecheck.py
 	@type -q mock || fisher install IlanCosman/clownfish
 	@fish tests/test_setup.fish
 	@_tide_remove_unusable_items
-	@_tide_cache_variables; python3 littlecheck.py --progress tests/**.test.fish
+	@python3 littlecheck.py --progress tests/**.test.fish
 
 .PHONY: clean
 clean:

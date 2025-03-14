@@ -3,7 +3,6 @@ end # In case this file gets loaded non-interactively, e.g by conda
 status is-interactive || exit
 
 _tide_remove_unusable_items
-_tide_cache_variables
 _tide_parent_dirs
 source (functions --details _tide_pwd)
 
@@ -41,7 +40,6 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-_tide_cache_variables
 PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
@@ -70,7 +68,6 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-_tide_cache_variables
 PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
@@ -103,7 +100,6 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-_tide_cache_variables
 PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
@@ -131,7 +127,6 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-_tide_cache_variables
 PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 

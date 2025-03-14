@@ -1,4 +1,6 @@
 function _tide_item_git
+    set _tide_location_color (set_color $tide_git_color_branch)
+
     if git branch --show-current 2>/dev/null | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read -l location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
         set location $_tide_location_color$location
@@ -50,7 +52,7 @@ function _tide_item_git
 (0|(?<dirty>.*))\n(0|(?<untracked>.*))(\n(0|(?<behind>.*))\t(0|(?<ahead>.*)))?' \
         "$(git $_set_dir_opt stash list 2>/dev/null | count
         string match -r ^UU $stat | count
-        string match -r ^[ADMR] $stat | count
+        string match -r ^[ADMR]. $stat | count
         string match -r ^.[ADMR] $stat | count
         string match -r '^\?\?' $stat | count
         git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)"

@@ -1,4 +1,8 @@
 function _tide_print_item -a item
+    test "$tide_prompt_pad_items" = true && set _tide_pad ' ' || set -e _tide_pad
+
+    set _tide_color_separator_same_color (set_color $tide_prompt_color_separator_same_color)
+
     v=tide_"$item"_bg_color set -f item_bg_color $$v
 
     if set -e add_prefix
