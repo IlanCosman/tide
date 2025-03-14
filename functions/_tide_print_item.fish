@@ -9,7 +9,7 @@ function _tide_print_item -a item
         set_color $item_bg_color -b normal
         v=tide_"$_tide_side"_prompt_prefix echo -ns $$v
     else if test "$item_bg_color" = "$prev_bg_color"
-        v=tide_"$_tide_side"_prompt_separator_same_color echo -ns $tide_prompt_color_separator_same_color$$v
+        v=tide_"$_tide_side"_prompt_separator_same_color echo -ns $_tide_color_separator_same_color$$v
     else if test $_tide_side = left
         set_color $prev_bg_color -b $item_bg_color
         echo -ns $tide_left_prompt_separator_diff_color
