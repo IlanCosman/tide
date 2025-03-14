@@ -1,15 +1,15 @@
 function _tide_item_git
     if git branch --show-current 2>/dev/null | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read -l location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
-        set location $_tide_location_color$location
+        set location $tide_git_color_branch$location
     else if test $pipestatus[1] != 0
         return
     else if git tag --points-at HEAD | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
-        set location '#'$_tide_location_color$location
+        set location '#'$tide_git_color_branch$location
     else
         git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL gdir in_gdir location
-        set location @$_tide_location_color$location
+        set location @$tide_git_color_branch$location
     end
 
     # Operation
@@ -61,7 +61,7 @@ function _tide_item_git
         set -g tide_git_bg_color $tide_git_bg_color_unstable
     end
 
-    _tide_print_item git $_tide_location_color$tide_git_icon' ' (set_color white; echo -ns $location
+    _tide_print_item git $tide_git_color_branch$tide_git_icon' ' (set_color white; echo -ns $location
         set_color $tide_git_color_operation; echo -ns ' '$operation ' '$step/$total_steps
         set_color $tide_git_color_upstream; echo -ns ' ⇣'$behind ' ⇡'$ahead
         set_color $tide_git_color_stash; echo -ns ' *'$stash
