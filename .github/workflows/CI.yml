@@ -23,6 +23,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v4
       - uses: fish-actions/install-fish@v1
