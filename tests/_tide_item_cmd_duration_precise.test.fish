@@ -10,11 +10,11 @@ function _cmd_duration_precise -a duration threshold decimals
 end
 
 # threshold
-_cmd_duration 2000 3000 0 # Check:
+_cmd_duration_precise 2000 3000 0 # Check:
 
 # formatting
-_cmd_duration 0567 0000 3 # CHECK: 567ms
-_cmd_duration 4567 3000 2 # CHECK: 4.57s
-_cmd_duration 4567 3000 3 # CHECK: 4.567s
-_cmd_duration 456789 3000 3 # CHECK: 7m 36s
-_cmd_duration 4567000 3000 3 # CHECK: 1h 16m
+_cmd_duration_precise 0567 0000 3 # CHECK: 567ms
+_cmd_duration_precise 4567 3000 2 # CHECK: 4.57s
+_cmd_duration_precise 4567 3000 3 # CHECK: 4.567s
+_cmd_duration_precise 456789 3000 3 # CHECK: 7m 36s
+_cmd_duration_precise 4567000 3000 3 # CHECK: 1h 16m
