@@ -1,5 +1,5 @@
 function _tide_item_status
-    if string match -q 0 $_tide_pipestatus && not contains character $_tide_left_items
+    if string match -q 0 "$_tide_pipestatus" && not contains character $_tide_left_items
         _tide_print_item status $tide_status_icon
         return
     end
