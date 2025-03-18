@@ -5,7 +5,7 @@ function _tide_parent_dirs --on-variable PWD
                 if test (string length \"$dir\") -lt 1
                     continue
                 end
-                set -a parts $dir
+                set -fa parts $dir
                 string join "" (string join / --  $parts) ""
             end))
 end
