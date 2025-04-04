@@ -22,7 +22,7 @@
 Install with [Fisher][]:
 
 ```console
-fisher install IlanCosman/tide@v6
+fisher install plttn/tide@v6
 ```
 
 <details>
