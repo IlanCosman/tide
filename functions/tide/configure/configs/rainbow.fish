@@ -116,3 +116,6 @@ tide_vi_mode_color_replace 000000
 tide_vi_mode_color_visual 000000
 tide_zig_bg_color F7A41D
 tide_zig_color 000000
+tide_battery_color e4e4e4
+tide_battery_bg_color 1a1a1a
+tide_battery_icon 
