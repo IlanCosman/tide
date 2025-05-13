@@ -8,10 +8,10 @@ function _tide_init_install --on-event _tide_init_install
     if status is-interactive
         tide bug-report --check || sleep 4
 
-        if contains ilancosman/tide (string lower $_fisher_plugins)
+        if contains plttn/tide (string lower $_fisher_plugins)
             set_color bryellow
-            echo "ilancosman/tide is a development branch. Please install from a release tag:"
-            _tide_fish_colorize "fisher install ilancosman/tide@v6"
+            echo "plttn/tide is a development branch. Please install from a release tag:"
+            _tide_fish_colorize "fisher install plttn/tide@v6"
             sleep 3
         end
 
@@ -26,10 +26,10 @@ end
 
 function _tide_init_update --on-event _tide_init_update
     # Warn users who install from main branch
-    if contains ilancosman/tide (string lower $_fisher_plugins)
+    if contains plttn/tide (string lower $_fisher_plugins)
         set_color bryellow
-        echo "ilancosman/tide is a development branch. Please install from a release tag:"
-        _tide_fish_colorize "fisher install ilancosman/tide@v6"
+        echo "plttn/tide is a development branch. Please install from a release tag:"
+        _tide_fish_colorize "fisher install plttn/tide@v6"
         sleep 3
     end
 
