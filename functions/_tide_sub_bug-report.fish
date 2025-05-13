@@ -6,7 +6,7 @@ function _tide_sub_bug-report
     if set -q _flag_clean
         HOME=(mktemp -d) $fish_path --init-command "curl --silent \
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
-        source && fisher install ilancosman/tide@v6"
+        source && fisher install plttn/tide@v6"
     else if set -q _flag_verbose
         set --long | string match -r "^_?tide.*" | # Get only tide variables
             string match -r --invert "^_tide_prompt_var.*" # Remove _tide_prompt_var
@@ -15,7 +15,7 @@ function _tide_sub_bug-report
         _tide_check_version Fish fish-shell/fish-shell "(?<v>[\d.]+)" $fish_version || return
 
         tide --version | string match -qr "tide, version (?<tide_version>.*)"
-        _tide_check_version Tide IlanCosman/tide "v(?<v>[\d.]+)" $tide_version || return
+        _tide_check_version Tide plttn/tide "v(?<v>[\d.]+)" $tide_version || return
 
         if command --query git
             test (path sort (git --version) "git version 2.22.0")[1] = "git version 2.22.0"
