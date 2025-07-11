@@ -99,6 +99,8 @@ tide_status_bg_color 2E3436
 tide_status_bg_color_failure CC0000
 tide_status_color 4E9A06
 tide_status_color_failure FFFF00
+tide_sudo_bg_color D3D7CF
+tide_sudo_color 000000
 tide_terraform_bg_color 800080
 tide_terraform_color 000000
 tide_time_bg_color D3D7CF
