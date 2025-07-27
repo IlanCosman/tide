@@ -16,4 +16,12 @@ _bun # CHECK:
 touch bun.lockb
 _bun # CHECK: 󰳓 1.0.24
 
+mock bun --version "echo 1.1.39"
+command rm bun.lockb
+
+_bun # CHECK:
+
+touch bun.lock
+_bun # CHECK: 󰳓 1.1.39
+
 command rm -r $tmpdir
