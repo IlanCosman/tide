@@ -1,4 +1,4 @@
-function _tide_remove_unusable_items
+function _tide_remove_unusable_items --on-variable PATH
     # Remove tool-specific items for tools the machine doesn't have installed
     set -l removed_items
     for item in aws bun crystal direnv distrobox docker elixir gcloud git go java kubectl nix_shell node php pulumi python ruby rustc terraform toolbox zig
