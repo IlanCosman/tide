@@ -8,7 +8,7 @@ function _rustc
 end
 
 set rustcDir (mktemp -d)
-function cleanup -p $fish_pid
+function cleanup --on-event fish_exit
     command rm -r $rustcDir
 end
 
