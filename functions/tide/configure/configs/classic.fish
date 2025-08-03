@@ -52,7 +52,7 @@ tide_jobs_number_threshold 1000
 tide_kubectl_bg_color 444444
 tide_kubectl_color 326CE5
 tide_left_prompt_frame_enabled true
-tide_left_prompt_items pwd git newline
+tide_left_prompt_items pwd git jj newline
 tide_left_prompt_prefix ''
 tide_left_prompt_separator_diff_color 
 tide_left_prompt_separator_same_color 
@@ -79,7 +79,7 @@ tide_pwd_bg_color 444444
 tide_pwd_color_anchors $_tide_color_light_blue
 tide_pwd_color_dirs $_tide_color_dark_blue
 tide_pwd_color_truncated_dirs 8787AF
-tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig
+tide_pwd_markers .bzr .citc .git .hg .jj .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig
 tide_python_bg_color 444444
 tide_python_color 00AFAF
 tide_right_prompt_frame_enabled true
