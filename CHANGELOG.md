@@ -1,10 +1,15 @@
 # Changelog
 
-## [v6.2.0][] (???)
+## [v6.2.0][] (Aug 02 2025)
 
 ### Features
 
 - Add a new `bun` item ([#485][] - @will-stone)
+
+### Bug fixes
+
+- Fix android icon ([#460][] - @huangyxi)
+- Fix path parsing on MacOS ([#566][] - @nnungest)
 
 ## [v6.1.1][] (Dec 27 2023)
 
@@ -582,10 +587,12 @@
 [#452]: https://github.com/IlanCosman/tide/issues/452
 [#455]: https://github.com/IlanCosman/tide/issues/455
 [#459]: https://github.com/IlanCosman/tide/issues/459
+[#460]: https://github.com/IlanCosman/tide/issues/460
 [#470]: https://github.com/IlanCosman/tide/issues/470
 [#472]: https://github.com/IlanCosman/tide/issues/472
 [#474]: https://github.com/IlanCosman/tide/issues/474
 [#485]: https://github.com/IlanCosman/tide/issues/485
+[#566]: https://github.com/IlanCosman/tide/issues/566
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
