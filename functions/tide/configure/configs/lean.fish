@@ -79,7 +79,7 @@ tide_pwd_bg_color normal
 tide_pwd_color_anchors $_tide_color_light_blue
 tide_pwd_color_dirs $_tide_color_dark_blue
 tide_pwd_color_truncated_dirs 8787AF
-tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lockb Cargo.toml composer.json CVS go.mod package.json build.zig
+tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version .shorten_folder_marker .svn .terraform bun.lock Cargo.toml composer.json CVS go.mod package.json build.zig
 tide_python_bg_color normal
 tide_python_color 00AFAF
 tide_right_prompt_frame_enabled false
