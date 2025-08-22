@@ -65,6 +65,10 @@ tide_os_bg_color normal
 tide_os_color normal
 tide_php_bg_color normal
 tide_php_color 617CBE
+tide_pi_temp_bg_color normal
+tide_pi_temp_lo_color $_tide_color_dark_green
+tide_pi_temp_mid_color $_tide_color_gold
+tide_pi_temp_hi_color D70000
 tide_private_mode_bg_color normal
 tide_private_mode_color FFFFFF
 tide_prompt_add_newline_before true
@@ -83,7 +87,7 @@ tide_pwd_markers .bzr .citc .git .hg .node-version .python-version .ruby-version
 tide_python_bg_color normal
 tide_python_color 00AFAF
 tide_right_prompt_frame_enabled false
-tide_right_prompt_items status cmd_duration context jobs direnv bun node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig
+tide_right_prompt_items status cmd_duration context jobs direnv bun node python rustc java php pulumi ruby go gcloud kubectl distrobox toolbox terraform aws nix_shell crystal elixir zig pi_temp
 tide_right_prompt_prefix ' '
 tide_right_prompt_separator_diff_color ' '
 tide_right_prompt_separator_same_color ' '
