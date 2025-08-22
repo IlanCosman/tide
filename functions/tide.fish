@@ -2,7 +2,7 @@ function tide --description 'Manage your Tide prompt'
     argparse --stop-nonopt v/version h/help -- $argv
 
     if set -q _flag_version
-        echo 'tide, version 6.1.1'
+        echo 'tide, version 6.2.0'
     else if set -q _flag_help
         _tide_help
     else if functions --query _tide_sub_$argv[1]

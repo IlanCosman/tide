@@ -13,7 +13,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Create higher level tags
         uses: vweevers/additional-tags-action@v2
@@ -31,6 +31,6 @@ jobs:
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
           body_path: /tmp/github_release.md
