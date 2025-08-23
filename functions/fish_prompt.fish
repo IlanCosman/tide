@@ -37,6 +37,10 @@ if contains newline $_tide_left_items # two line prompt initialization
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
+    set -lx _tide_color_separator_same_color \$_tide_color_separator_same_color
+    set -lx _tide_location_color \$_tide_location_color
+    set -lx _tide_private_mode \$_tide_private_mode
+    set -lx _tide_pad \$_tide_pad
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
@@ -65,6 +69,12 @@ end"
     else
         eval "
 function fish_prompt
+
+    set -lx _tide_color_separator_same_color \$_tide_color_separator_same_color
+    set -lx _tide_location_color \$_tide_location_color
+    set -lx _tide_private_mode \$_tide_private_mode
+    set -lx _tide_pad \$_tide_pad
+
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
@@ -96,6 +106,10 @@ else # one line prompt initialization
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
+    set -lx _tide_color_separator_same_color \$_tide_color_separator_same_color
+    set -lx _tide_location_color \$_tide_location_color
+    set -lx _tide_private_mode \$_tide_private_mode
+    set -lx _tide_pad \$_tide_pad
     set -lx _tide_status \$status
     _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
@@ -124,6 +138,10 @@ end"
     else
         eval "
 function fish_prompt
+    set -lx _tide_color_separator_same_color \$_tide_color_separator_same_color
+    set -lx _tide_location_color \$_tide_location_color
+    set -lx _tide_private_mode \$_tide_private_mode
+    set -lx _tide_pad \$_tide_pad
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
