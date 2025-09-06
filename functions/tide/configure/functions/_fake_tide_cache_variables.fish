@@ -32,6 +32,13 @@ function _fake_tide_cache_variables
         set -e _fake_tide_add_newline
     end
 
+    # newline after pwd
+    if test "$fake_tide_prompt_add_newline_after_pwd" = true
+        set -g _fake_tide_add_newline_after_pwd ''
+    else
+        set -e _fake_tide_add_newline_after_pwd
+    end
+
     # item padding
     if test "$fake_tide_prompt_pad_items" = true
         set -gx _fake_tide_pad ' '

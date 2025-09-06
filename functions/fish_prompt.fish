@@ -21,6 +21,7 @@ end
 
 if contains newline $_tide_left_items # two line prompt initialization
     test "$tide_prompt_add_newline_before" = true && set -l add_newline '\n'
+    test "$tide_prompt_add_newline_after_pwd" = true && set -l add_newline_after_pwd '\n' || set -l add_newline_after_pwd ''
 
     set_color $tide_prompt_color_frame_and_connection -b normal | read -l prompt_and_frame_color
 
@@ -54,7 +55,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
         echo -n $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
         string repeat -Nm(math max 0, \$dist_btwn_sides-\$_tide_pwd_len) '$tide_prompt_icon_connection'
 
-        echo \"\$$prompt_var[1][3]$top_right_frame\"
+        echo \"\$$prompt_var[1][3]$top_right_frame\"$add_newline_after_pwd
     end
     echo -n \e\[0J\"$bot_left_frame\$$prompt_var[1][2]$color_normal \"
 end
@@ -80,7 +81,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 
     echo -ns $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
     string repeat -Nm(math max 0, \$dist_btwn_sides-\$_tide_pwd_len) '$tide_prompt_icon_connection'
-    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"\n\"$bot_left_frame\$$prompt_var[1][2]$color_normal \"
+    echo -ns \"\$$prompt_var[1][3]$top_right_frame\"$add_newline_after_pwd\n\"$bot_left_frame\$$prompt_var[1][2]$color_normal \"
 end
 
 function fish_right_prompt

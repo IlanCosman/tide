@@ -68,6 +68,7 @@ tide_php_color 617CBE
 tide_private_mode_bg_color 444444
 tide_private_mode_color FFFFFF
 tide_prompt_add_newline_before true
+tide_prompt_add_newline_after_pwd false
 tide_prompt_color_frame_and_connection 6C6C6C
 tide_prompt_color_separator_same_color 949494
 tide_prompt_min_cols 34

@@ -53,8 +53,13 @@ tide_php_bg_color black
 tide_php_color blue
 tide_private_mode_bg_color black
 tide_private_mode_color brwhite
+tide_prompt_add_newline_before true
+tide_prompt_add_newline_after_pwd false
 tide_prompt_color_frame_and_connection brblack
 tide_prompt_color_separator_same_color brblack
+tide_prompt_min_cols 34
+tide_prompt_pad_items true
+tide_prompt_transient_enabled false
 tide_pulumi_bg_color black
 tide_pulumi_color yellow
 tide_pwd_bg_color black
