@@ -45,6 +45,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: oxsecurity/megalinter/flavors/documentation@v8
+      - uses: oxsecurity/megalinter/flavors/documentation@v9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
