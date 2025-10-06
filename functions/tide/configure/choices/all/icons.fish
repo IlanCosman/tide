@@ -13,7 +13,7 @@ function icons
         case 'Few icons'
             _disable_icons
     end
-    _next_choice all/transient
+    _next_choice all/finish
 end
 
 function _enable_icons

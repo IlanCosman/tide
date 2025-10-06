@@ -1,5 +1,11 @@
 # Changelog
 
+## [v7.0.0][] (???)
+
+### Breaking change
+
+Tide now uses the [Fish transient prompt functionality](https://fishshell.com/docs/current/prompt.html#transient-prompt), so configure now no longer includes that as a option. Made as v7 to avoid surprise changes.
+
 ## [v6.2.0][] (???)
 
 ### Features
