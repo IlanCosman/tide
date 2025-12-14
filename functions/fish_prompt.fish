@@ -34,9 +34,16 @@ if contains newline $_tide_left_items # two line prompt initialization
         set -l bot_right_frame "$prompt_and_frame_color─╯" &&
         set column_offset (math $column_offset-2)
 
+    set -l pass_cached_variables "
+        set -lx _tide_color_separator_same_color \$_tide_color_separator_same_color
+        set -lx _tide_location_color \$_tide_location_color
+        set -lx _tide_private_mode \$_tide_private_mode
+        set -lx _tide_pad \$_tide_pad;"
+
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
+    $pass_cached_variables
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
@@ -65,6 +72,7 @@ end"
     else
         eval "
 function fish_prompt
+    $pass_cached_variables
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
@@ -96,6 +104,7 @@ else # one line prompt initialization
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
+    $pass_cached_variables
     set -lx _tide_status \$status
     _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
@@ -124,6 +133,7 @@ end"
     else
         eval "
 function fish_prompt
+    $pass_cached_variables
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
