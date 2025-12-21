@@ -48,7 +48,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
         set -g _tide_last_pid \$last_pid
     end
 
-    if not set -q _tide_transient
+    if not contains -- --final-rendering \$argv
         math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
 
         echo -n $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
@@ -60,7 +60,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 end
 
 function fish_right_prompt
-    set -e _tide_transient || string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
+    contains -- --final-rendering \$argv || string unescape \"\$$prompt_var[1][4]$bot_right_frame$color_normal\"
 end"
     else
         eval "
@@ -108,7 +108,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
         set -g _tide_last_pid \$last_pid
     end
 
-    if set -q _tide_transient
+    if contains -- --final-rendering \$argv
         echo -n \e\[0J
         add_prefix= _tide_item_character
         echo -n '$color_normal '
@@ -119,7 +119,7 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 end
 
 function fish_right_prompt
-    set -e _tide_transient || string unescape \"\$$prompt_var[1][2]$color_normal\"
+    contains -- --final-rendering \$argv || string unescape \"\$$prompt_var[1][2]$color_normal\"
 end"
     else
         eval "
@@ -151,20 +151,5 @@ function _tide_on_fish_exit --on-event fish_exit --inherit-variable prompt_var
 end
 
 if test "$tide_prompt_transient_enabled" = true
-    function _tide_enter_transient
-        # If the commandline will be executed or is empty, and the pager is not open
-        # Pager open usually means selecting, not running
-        # Can be untrue, but it's better than the alternative
-        if commandline --is-valid || test -z "$(commandline)" && not commandline --paging-mode
-            set -g _tide_transient
-            set -g _tide_repaint
-            commandline -f repaint
-        end
-        commandline -f execute
-    end
-
-    bind \r _tide_enter_transient
-    bind \n _tide_enter_transient
-    bind -M insert \r _tide_enter_transient
-    bind -M insert \n _tide_enter_transient
+    set -g fish_transient_prompt 1
 end
