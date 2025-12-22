@@ -35,6 +35,7 @@ tide_git_color_staged bryellow
 tide_git_color_stash brgreen
 tide_git_color_untracked brblue
 tide_git_color_upstream brgreen
+tide_git_hide_branch false
 tide_go_bg_color normal
 tide_go_color brcyan
 tide_java_bg_color normal

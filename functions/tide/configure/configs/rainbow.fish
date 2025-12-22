@@ -42,6 +42,7 @@ tide_git_color_untracked 000000
 tide_git_color_upstream 000000
 tide_git_truncation_length 24
 tide_git_truncation_strategy
+tide_git_hide_branch false
 tide_go_bg_color 00ACD7
 tide_go_color 000000
 tide_java_bg_color ED8B00
