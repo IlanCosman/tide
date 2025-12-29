@@ -41,7 +41,7 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_key_bindings=\$fish_key_bindings fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -69,7 +69,7 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_key_bindings=\$fish_key_bindings fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -101,7 +101,7 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_key_bindings=\$fish_key_bindings fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -128,7 +128,7 @@ function fish_prompt
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_key_bindings=\$fish_key_bindings fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
