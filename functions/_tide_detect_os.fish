@@ -36,6 +36,8 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
             printf %s\n  1793D1 4D4D4D # from arch wiki header
+        case artix
+            printf %s\n  10A0CC 1A1A1A # from artix logo text color and background of wiki
         case centos
             printf %s\n  000000 D4D4D4 # https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic
         case debian
@@ -46,8 +48,14 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  000000 D4D4D4 # https://elementary.io/brand, encouraged to be monochromatic
         case fedora
             printf %s\n  FFFFFF 294172 # from logo https://fedoraproject.org/w/uploads/2/2d/Logo_fedoralogo.png
+        case freebsd
+            printf %s\n 󰣠 FFFFFF B5010F # from https://brandcolorcode.com/freebsd
         case gentoo
             printf %s\n  FFFFFF 54487A # https://wiki.gentoo.org/wiki/Project:Artwork/Colors
+        case illumos
+            printf %s\n  FFFFFF FF4106 # from the logo
+        case kubuntu
+            printf %s\n  FFFFFF 0064FF # from the logo
         case mageia
             printf %s\n  FFFFFF 262F45 # https://wiki.mageia.org/en/Artwork_guidelines
         case manjaro
@@ -56,8 +64,12 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 69B53F # extracted from https://linuxmint.com/web/img/favicon.ico
         case nixos
             printf %s\n  FFFFFF 5277C3 # https://github.com/NixOS/nixos-artwork/tree/master/logo
+        case openbsd
+            printf %s\n  F2CA30 1E1812 # from https://www.schemecolor.com/openbsd-logo-colors.php
         case opensuse-leap opensuse-tumbleweed opensuse-microos
             printf %s\n  73BA25 173f4f # https://en.opensuse.org/openSUSE:Artwork_brand
+        case popos pop_os
+            printf %s\n  46BAC8 54453F # from the official logo
         case raspbian
             printf %s\n  FFFFFF A22846 # https://static.raspberrypi.org/files/Raspberry_Pi_Visual_Guidelines_2020.pdf
         case rhel
@@ -70,6 +82,8 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  E95420 D4D4D4 # https://design.ubuntu.com/brand/
         case void
             printf %s\n  FFFFFF 478061 # from https://alpha.de.repo.voidlinux.org/logos/void.svg
+        case zorin
+            printf %s\n  FFFFFF 10A7EF # from logo on the official github page
         case '*'
             return 1
     end
