@@ -4,7 +4,7 @@
 
 <!-- Describe your changes. -->
 
-<!-- This following sections apply only to large PRs, you may disregard them for small ones. -->
+<!-- The following sections apply only to large PRs, you may disregard them for small ones. -->
 
 #### Motivation and Context
 
