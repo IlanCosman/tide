@@ -42,6 +42,8 @@ tide_git_color_untracked $_tide_color_light_blue
 tide_git_color_upstream $_tide_color_green
 tide_git_truncation_length 24
 tide_git_truncation_strategy
+tide_github_pr_bg_color normal
+tide_github_pr_color 87AFAF
 tide_go_bg_color normal
 tide_go_color 00ACD7
 tide_java_bg_color normal

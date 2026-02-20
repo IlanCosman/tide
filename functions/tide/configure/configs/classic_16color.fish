@@ -35,6 +35,8 @@ tide_git_color_staged bryellow
 tide_git_color_stash brgreen
 tide_git_color_untracked brblue
 tide_git_color_upstream brgreen
+tide_github_pr_bg_color black
+tide_github_pr_color brblack
 tide_go_bg_color black
 tide_go_color brcyan
 tide_java_bg_color black
