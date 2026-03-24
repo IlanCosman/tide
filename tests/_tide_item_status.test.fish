@@ -1,6 +1,8 @@
 # RUN: %fish %s
 _tide_parent_dirs
 
+set -e VSCODE_INJECTION tide_status_show_in_vscode
+
 function _status
     set -lx _tide_status $status
     set -lx _tide_pipestatus $pipestatus

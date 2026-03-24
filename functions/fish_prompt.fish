@@ -37,11 +37,13 @@ if contains newline $_tide_left_items # two line prompt initialization
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
-    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+    _tide_set_prompt_state
+    if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+        $fish_path -c \"set _tide_status \$_tide_status
+set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$_tide_cmd_duration fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -65,11 +67,13 @@ end"
     else
         eval "
 function fish_prompt
-    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+    _tide_set_prompt_state
+    if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+        $fish_path -c \"set _tide_status \$_tide_status
+set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$_tide_cmd_duration fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_2_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -96,12 +100,13 @@ else # one line prompt initialization
     if test "$tide_prompt_transient_enabled" = true
         eval "
 function fish_prompt
-    set -lx _tide_status \$status
-    _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+    _tide_set_prompt_state
+    if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+        $fish_path -c \"set _tide_status \$_tide_status
+set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$_tide_cmd_duration fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
@@ -124,11 +129,13 @@ end"
     else
         eval "
 function fish_prompt
-    _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
+    _tide_set_prompt_state
+    if not set -e _tide_repaint
         jobs -q && jobs -p | count | read -lx _tide_jobs
-        $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
+        $fish_path -c \"set _tide_status \$_tide_status
+set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
-PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
+PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$_tide_cmd_duration fish_bind_mode=\$fish_bind_mode set $prompt_var (_tide_1_line_prompt)\" &
         builtin disown
 
         command kill \$_tide_last_pid 2>/dev/null
