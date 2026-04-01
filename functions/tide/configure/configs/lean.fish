@@ -1,5 +1,14 @@
 tide_aws_bg_color normal
 tide_aws_color FF9900
+tide_battery_color_critical D70000
+tide_battery_color_low C4A000
+tide_battery_critical_threshold 15
+tide_battery_low_threshold 40
+tide_battery_method
+tide_hbattery_bg_color normal
+tide_hbattery_color normal
+tide_vbattery_bg_color normal
+tide_vbattery_color normal
 tide_bun_bg_color normal
 tide_bun_color FBF0DF
 tide_character_color $_tide_color_green
