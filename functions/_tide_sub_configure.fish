@@ -36,7 +36,7 @@ function _tide_sub_configure
     set -g fake_lines $LINES
 
     set -g _tide_selected_option
-    _next_choice all/style
+    _next_choice all/ascii_friendly
 end
 
 function _next_choice -a nextChoice
@@ -104,7 +104,7 @@ function _tide_menu -a func
                 set -q _flag_no_restart && continue
                 set -e _tide_symbol_list
                 set -e _tide_option_list
-                _next_choice all/style
+                _next_choice all/ascii_friendly
                 break
             case q
                 _tide_exit_configure

@@ -1,4 +1,10 @@
 function icons
+    if set -q _tide_ascii_friendly
+        _disable_icons
+        _next_choice all/transient
+        return
+    end
+
     _tide_title Icons
 
     _tide_option 1 'Few icons'

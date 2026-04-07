@@ -7,12 +7,14 @@ function prompt_colors
     _tide_option 2 '16 colors'
     _load_config "$_tide_configure_style"_16color
     set -g _tide_16color true
+    test "$_tide_configure_style" != lean && set -q _tide_ascii_friendly && _tide_apply_ascii_overrides
     _tide_display_prompt
 
     _tide_menu (status function)
     switch $_tide_selected_option
         case 'True color'
             _load_config "$_tide_configure_style"
+            test "$_tide_configure_style" != lean && set -q _tide_ascii_friendly && _tide_apply_ascii_overrides
             set -e _tide_16color
             switch $_tide_configure_style
                 case lean rainbow
