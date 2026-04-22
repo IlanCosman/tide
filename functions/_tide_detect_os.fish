@@ -66,6 +66,8 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  $defaultColor # Can't find colors, and they are rebranding anyway
         case slackware
             printf %s\n  $defaultColor # Doesn't really have a logo, and the colors are too close to PWD blue anyway
+        case solus
+            printf %s\n  F5F5F5 4C5263 # https://getsol.us/branding/
         case ubuntu
             printf %s\n  E95420 D4D4D4 # https://design.ubuntu.com/brand/
         case void
