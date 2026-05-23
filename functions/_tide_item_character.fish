@@ -3,7 +3,7 @@ function _tide_item_character
 
     set -q add_prefix || echo -ns ' '
 
-    test "$fish_key_bindings" = fish_default_key_bindings && echo -ns $tide_character_icon ||
+    test -z "$fish_key_bindings" -o "$fish_key_bindings" = fish_default_key_bindings && echo -ns $tide_character_icon ||
         switch $fish_bind_mode
             case insert
                 echo -ns $tide_character_icon
