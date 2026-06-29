@@ -3,7 +3,10 @@ function _tide_cache_variables
     set_color $tide_prompt_color_separator_same_color | read -gx _tide_color_separator_same_color
 
     # git
-    contains git $_tide_left_items $_tide_right_items && set_color $tide_git_color_branch | read -gx _tide_location_color
+    if contains git $_tide_left_items $_tide_right_items
+        set_color $tide_git_color_branch | read -gx _tide_location_color
+        set -q tide_git_color_stale && set_color $tide_git_color_stale | read -gx _tide_git_stale_color || set -e _tide_git_stale_color
+    end
 
     # private_mode
     if contains private_mode $_tide_left_items $_tide_right_items && test -n "$fish_private_mode"

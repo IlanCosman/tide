@@ -9,6 +9,13 @@ function _git_item
     _tide_decolor (_tide_item_git)
 end
 
+function _git_item_stale
+    set -lx _tide_git_stale_color (set_color brblack)
+    set -g _tide_prompt_stale
+    _tide_decolor (_tide_decolor_stale_git (_tide_item_git))
+    set -e _tide_prompt_stale
+end
+
 # Create directory
 set -l dir (mktemp -d)
 mkdir -p $dir/{normal-repo, bare-repo, submodule-repo, massive-status-repo}
@@ -24,6 +31,7 @@ _git branch -m main
 
 # Branch
 _git_item # CHECK: main
+_git_item_stale # CHECK: main
 
 # .git dir
 cd .git/

@@ -16,7 +16,11 @@ function _tide_print_item -a item
 
     v=tide_"$item"_color set_color $$v -b $item_bg_color
 
-    echo -ns $_tide_pad $argv[2..] $_tide_pad
+    if test "$item" = git; and set -q _tide_git_stale_color
+        echo -ns __tide_git_start $_tide_pad $argv[2..] $_tide_pad __tide_git_end
+    else
+        echo -ns $_tide_pad $argv[2..] $_tide_pad
+    end
 
     set -g prev_bg_color $item_bg_color
 end
