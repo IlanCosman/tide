@@ -38,7 +38,7 @@ if contains newline $_tide_left_items # two line prompt initialization
         eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
-        set -g _tide_prompt_stale
+        _tide_mark_stale_git_prompt $prompt_var
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
@@ -47,8 +47,6 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
-    else
-        set -e _tide_prompt_stale
     end
 
     set -f tide_left_top (_tide_decolor_stale_git \"\$$prompt_var[1][1]\")
@@ -73,7 +71,7 @@ end"
         eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
-        set -g _tide_prompt_stale
+        _tide_mark_stale_git_prompt $prompt_var
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
@@ -82,8 +80,6 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
-    else
-        set -e _tide_prompt_stale
     end
 
     set -f tide_left_top (_tide_decolor_stale_git \"\$$prompt_var[1][1]\")
@@ -112,7 +108,7 @@ else # one line prompt initialization
 function fish_prompt
     set -lx _tide_status \$status
     _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
-        set -g _tide_prompt_stale
+        _tide_mark_stale_git_prompt $prompt_var
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
@@ -121,8 +117,6 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
-    else
-        set -e _tide_prompt_stale
     end
 
     if set -q _tide_transient
@@ -145,7 +139,7 @@ end"
         eval "
 function fish_prompt
     _tide_status=\$status _tide_pipestatus=\$pipestatus if not set -e _tide_repaint
-        set -g _tide_prompt_stale
+        _tide_mark_stale_git_prompt $prompt_var
         jobs -q && jobs -p | count | read -lx _tide_jobs
         $fish_path -c \"set _tide_pipestatus \$_tide_pipestatus
 set _tide_parent_dirs \$_tide_parent_dirs
@@ -154,8 +148,6 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
 
         command kill \$_tide_last_pid 2>/dev/null
         set -g _tide_last_pid \$last_pid
-    else
-        set -e _tide_prompt_stale
     end
 
     set -f tide_left_prompt (_tide_decolor_stale_git \"\$$prompt_var[1][1]\")
