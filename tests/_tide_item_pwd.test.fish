@@ -110,6 +110,7 @@ _pwd "$tmpdir/tmp/has spaces/foo" # CHECK: ~/tmp/has spaces/foo
 
 mkdir -p "$tmpdir/tmp/--has dashes/foo"
 _pwd "$tmpdir/tmp/--has dashes/foo" # CHECK: ~/tmp/--has dashes/foo
+command rm -r "$tmpdir/tmp/--has dashes"
 
 mkdir -p "$tmpdir/tmp/has'quotes''/foo"
 _pwd "$tmpdir/tmp/has'quotes''/foo" # CHECK: ~/tmp/has'quotes''/foo
