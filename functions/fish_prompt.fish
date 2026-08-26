@@ -49,7 +49,10 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
         set -g _tide_last_pid \$last_pid
     end
 
-    if not set -q _tide_transient
+    if set -q _tide_transient
+        set -e _tide_at_prompt
+    else
+        set -g _tide_at_prompt
         math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][3]\")+$column_offset | read -lx dist_btwn_sides
 
         echo -n $add_newline'$top_left_frame'(string replace @PWD@ (_tide_pwd) \"\$$prompt_var[1][1]\")'$prompt_and_frame_color'
@@ -110,10 +113,12 @@ PATH=\$(string escape \"\$PATH\") CMD_DURATION=\$CMD_DURATION fish_bind_mode=\$f
     end
 
     if set -q _tide_transient
+        set -e _tide_at_prompt
         echo -n \e\[0J
         add_prefix= _tide_item_character
         echo -n '$color_normal '
     else
+        set -g _tide_at_prompt
         math \$COLUMNS-(string length -V \"\$$prompt_var[1][1]\$$prompt_var[1][2]\")$column_offset | read -lx dist_btwn_sides
         string replace @PWD@ (_tide_pwd) $add_newline \$$prompt_var[1][1]'$color_normal '
     end
@@ -153,10 +158,16 @@ end
 
 if test "$tide_prompt_transient_enabled" = true
     function _tide_enter_transient
-        # If the commandline will be executed or is empty, and the pager is not open
-        # Pager open usually means selecting, not running
+        # Only go transient if fish_prompt drew the current prompt. Anything else
+        # (a `read` inside a function, e.g. the cdh builtin) draws its own prompt,
+        # so the flag would go unused and stale, hiding the next real prompt
+        #
+        # Also require that the commandline will be executed or is empty, and that
+        # the pager is not open. Pager open usually means selecting, not running
         # Can be untrue, but it's better than the alternative
-        if commandline --is-valid || test -z "$(commandline)" && not commandline --paging-mode
+        if set -q _tide_at_prompt && begin
+                commandline --is-valid || test -z "$(commandline)"
+            end && not commandline --paging-mode
             set -g _tide_transient
             set -g _tide_repaint
             commandline -f repaint
