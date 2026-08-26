@@ -1,21 +1,21 @@
 function finish
     _tide_title Finish
 
-    echo
-    set_color red
-    _tide_option y 'Overwrite your current tide config'
-    set_color normal
-    echo
+    set -q _flag_auto || echo
+    _tide_option y 'Overwrite your current tide config' red
+    set -q _flag_auto || echo
 
     _tide_option p 'Exit and print the config you just generated'
-    echo
+    set -q _flag_auto || echo
 
     _tide_menu (status function)
     switch $_tide_selected_option
         case 'Overwrite your current tide config'
             _tide_finish
-            command -q clear && clear
-            set -q _flag_auto || _tide_print_configure_current_options
+            set -q _flag_auto || begin
+                command -q clear && clear
+                _tide_print_configure_current_options
+            end
         case 'Exit and print the config you just generated'
             _tide_exit_configure
             command -q clear && clear
