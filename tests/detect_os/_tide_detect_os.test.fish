@@ -27,6 +27,10 @@ _detect_os_linux_cases endeavouros-etc-release
 # CHECK: 1793D1
 # CHECK: 4D4D4D
 
+_detect_os_linux_cases cachyos-etc-release
+# CHECK: 
+# CHECK: 1DC7B5
+# CHECK: 4D4D4D
 # This tests spaces, e.g "opensuse suse"
 _detect_os_linux_cases opensuse-etc-release
 # CHECK: 
