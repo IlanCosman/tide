@@ -36,6 +36,8 @@ function _tide_detect_os_linux_cases -a file key
             printf %s\n  FFFFFF 0D597F # from alpine logo
         case arch
             printf %s\n  1793D1 4D4D4D # from arch wiki header
+        case cachyos
+            printf %s\n  1DC7B5 4D4D4D # from CachyOS icon color scheme
         case centos
             printf %s\n  000000 D4D4D4 # https://wiki.centos.org/ArtWork/Brand/Logo, monochromatic
         case debian
