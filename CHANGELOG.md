@@ -1,5 +1,23 @@
 # Changelog
 
+## [v6.2.1][] (Nov 01 2026)
+
+### Features
+
+- Show the `go` item in Go workspaces, i.e. directories with a `go.work` file ([#661][] - @llawn)
+- Add CachyOS and Solus OS icons ([#670][] - @thelizardway, [#657][] - @DinimixisDEMZ)
+
+### Bug fixes
+
+- Fix the prompt character showing the vi icon (`❮`), and the `vi_mode` item showing `D`, with default key bindings on Fish 4.3+ ([#619][] - @scaryrawr, [#625][] - @sstieger)
+- Fix the prompt erroring, or hanging, in long paths containing a directory that starts with a dash ([#669][] - @Frefreak)
+- Fix `set: --erase: option requires an argument` errors when the current path's case doesn't match the disk, e.g. on macOS or WSL ([#630][] - @micahkepe)
+- Fix keystrokes being lost while the prompt renders in the background ([#646][] - @LeonRein)
+- Fix Fish 4 printing a `Broken pipe` panic when resizing the terminal ([#658][])
+- Fix the prompt breaking in running shells after upgrading Fish with Homebrew ([#627][])
+- Fix `BrokenPipeError` messages from the `python` item ([#631][] - @alexander-turner)
+- Fix an error when entering a directory with a `package.json` while `node` isn't installed ([#529][])
+
 ## [v6.2.0][] (Aug 02 2025)
 
 ### Features
@@ -593,6 +611,18 @@
 [#474]: https://github.com/IlanCosman/tide/issues/474
 [#485]: https://github.com/IlanCosman/tide/issues/485
 [#566]: https://github.com/IlanCosman/tide/issues/566
+[#529]: https://github.com/IlanCosman/tide/issues/529
+[#619]: https://github.com/IlanCosman/tide/issues/619
+[#625]: https://github.com/IlanCosman/tide/issues/625
+[#627]: https://github.com/IlanCosman/tide/issues/627
+[#630]: https://github.com/IlanCosman/tide/issues/630
+[#631]: https://github.com/IlanCosman/tide/issues/631
+[#646]: https://github.com/IlanCosman/tide/issues/646
+[#657]: https://github.com/IlanCosman/tide/issues/657
+[#658]: https://github.com/IlanCosman/tide/issues/658
+[#661]: https://github.com/IlanCosman/tide/issues/661
+[#669]: https://github.com/IlanCosman/tide/issues/669
+[#670]: https://github.com/IlanCosman/tide/issues/670
 [prettier action]: https://github.com/actionsx/prettier
 [super-linter]: https://github.com/github/super-linter
 [v1.0.0]: https://github.com/IlanCosman/tide/tree/v1.0.0
@@ -640,3 +670,5 @@
 [v6.0.1]: https://github.com/IlanCosman/tide/tree/v6.0.1
 [v6.1.0]: https://github.com/IlanCosman/tide/tree/v6.1.0
 [v6.1.1]: https://github.com/IlanCosman/tide/tree/v6.1.1
+[v6.2.0]: https://github.com/IlanCosman/tide/tree/v6.2.0
+[v6.2.1]: https://github.com/IlanCosman/tide/tree/v6.2.1
