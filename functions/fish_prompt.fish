@@ -12,6 +12,8 @@ set -U $prompt_var # Set var here so if we erase $prompt_var, bg job won't set a
 
 set_color normal | read -l color_normal
 status fish-path | read -l fish_path
+# Prefer a stable PATH entry (e.g Homebrew's bin/fish symlink) over a versioned path that upgrades remove
+command -s fish | read -l path_fish && test "$(path resolve $path_fish)" = $fish_path && set fish_path $path_fish
 
 # _tide_repaint prevents us from creating a second background job
 function _tide_refresh_prompt --on-variable $prompt_var --on-variable COLUMNS
