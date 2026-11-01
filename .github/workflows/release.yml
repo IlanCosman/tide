@@ -34,6 +34,7 @@ jobs:
           sed -E 's/\[(#[0-9]*)\]\[\]/\1/g'
           >/tmp/github_release.md
 
+      # Keep this action until a gh release step is tested on a real release
       - uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
-        with:
+        with: # zizmor: ignore[superfluous-actions]
           body_path: /tmp/github_release.md
