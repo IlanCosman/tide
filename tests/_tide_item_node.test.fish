@@ -16,4 +16,8 @@ _node # CHECK:
 touch package.json
 _node # CHECK: ⬢ 16.5.0
 
+# No error when node isn't installed
+functions --erase node
+PATH= _node # CHECK:
+
 command rm -r $tmpdir
