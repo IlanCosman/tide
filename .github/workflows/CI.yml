@@ -24,6 +24,8 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: fish-actions/install-fish@4bb37a71daebb76c6fb7d83771cff31b8a78c28e # v1.2.0
       - run: make test -C "$GITHUB_WORKSPACE"
 
@@ -31,6 +33,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: fish-actions/install-fish@4bb37a71daebb76c6fb7d83771cff31b8a78c28e # v1.2.0
       - uses: fish-actions/syntax-check@dc488930e2bd67b050bb62fcf7cff980b1c0a668 # v1
 
@@ -38,6 +42,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: fish-actions/install-fish@4bb37a71daebb76c6fb7d83771cff31b8a78c28e # v1.2.0
       - uses: fish-actions/format-check@49be8b9827a2a2edb78d50ae2eeadb73e0ebb1e5 # v1
 
@@ -45,6 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: oxsecurity/megalinter/flavors/documentation@f2fe8c1cba37091848df3e524066c8c23ef353ed # v10.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

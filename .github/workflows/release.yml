@@ -13,7 +13,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      # additional-tags-action runs git push, which needs these credentials
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: true # zizmor: ignore[artipacked]
 
       - name: Create higher level tags
         uses: vweevers/additional-tags-action@3bab55b44e81186dcfef7db9f2cbca01a78eb710 # v2.0.0
