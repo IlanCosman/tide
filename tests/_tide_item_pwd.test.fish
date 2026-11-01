@@ -110,6 +110,7 @@ _pwd "$tmpdir/tmp/has spaces/foo" # CHECK: ~/tmp/has spaces/foo
 
 mkdir -p "$tmpdir/tmp/--has dashes/foo"
 _pwd "$tmpdir/tmp/--has dashes/foo" # CHECK: ~/tmp/--has dashes/foo
+command rm -r "$tmpdir/tmp/--has dashes"
 
 mkdir -p "$tmpdir/tmp/has'quotes''/foo"
 _pwd "$tmpdir/tmp/has'quotes''/foo" # CHECK: ~/tmp/has'quotes''/foo
@@ -129,6 +130,14 @@ _pwd $tmpdir/tmp/$longDirWithDot # CHECK: ~/t/[/b/c/d/e/f/golf/hotel/india/julie
 mkdir -p "$tmpdir/tmp/[hello"
 _pwd $tmpdir/tmp/$longDirWithDot # CHECK: ~/t/[t/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
 command rm -r "$tmpdir/tmp/[hello"
+
+# ---------- Truncation with a leading-dash directory ----------
+set -l longDirDash -alfa/bravo/charlie/delta/echo/foxtrot/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+_pwd $tmpdir/tmp/$longDirDash # CHECK: ~/t/-/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+
+mkdir -p $tmpdir/tmp/-alfawolf
+_pwd $tmpdir/tmp/$longDirDash # CHECK: ~/t/-alfa/b/c/d/e/f/golf/hotel/india/juliett/kilo/lima/mike/november/oscar/papa
+command rm -r $tmpdir/tmp/-alfawolf
 
 # ------------------------------------Cleanup------------------------------------
 command rm -r $tmpdir
