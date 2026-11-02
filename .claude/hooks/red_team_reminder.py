@@ -2,14 +2,14 @@
 
 Wired in `.claude/settings.json` on `Bash(gh pr create *)`. That `if` filter
 also lets through every command containing `$()`, backticks or `$VAR`, so the
-hook checks for itself that the command ran `gh pr create` and printed a Tide
-PR URL.
+hook checks for itself that the command ran `gh pr create` (not `--dry-run`)
+and that the last line it printed is a Tide PR URL, as `gh pr create` does.
 
 A subagent's tool calls carry `agent_id`. The review is then left to the
 session that launched the subagent, which has the user and reports to them.
 
 Standard library only, and Python 3.9 compatible: macOS ships 3.9 as
-`/usr/bin/python3`.
+`/usr/bin/python3`. Input it doesn't expect makes it print nothing.
 """
 
 from __future__ import annotations
@@ -18,18 +18,26 @@ import json
 import re
 import sys
 
-_CREATES_PR = re.compile(r"(?:^|[\s;&|(])gh pr create\b")
+# `gh pr create` at the start of a command, not inside an argument like `echo`'s
+_CREATES_PR = re.compile(r"(?:^|[;&|(\n])\s*gh pr create\b")
+_DRY_RUN = re.compile(r"\s--dry-run\b")
 _PR_URL = re.compile(r"https://github\.com/IlanCosman/tide/pull/\d+", re.IGNORECASE)
 
 
-def note_for(event: dict) -> str | None:
+def note_for(event: object) -> str | None:
     """Return the context to add after this Bash call, or None if no PR opened."""
-    command = event.get("tool_input", {}).get("command", "")
-    if not _CREATES_PR.search(command):
+    if not isinstance(event, dict):
+        return None
+    tool_input = event.get("tool_input")
+    command = tool_input.get("command") if isinstance(tool_input, dict) else None
+    if not isinstance(command, str) or not _CREATES_PR.search(command) or _DRY_RUN.search(command):
         return None
     response = event.get("tool_response")
-    stdout = response.get("stdout", "") if isinstance(response, dict) else ""
-    url = _PR_URL.search(stdout)
+    stdout = response.get("stdout") if isinstance(response, dict) else None
+    if not isinstance(stdout, str):
+        return None
+    lines = stdout.strip().splitlines()
+    url = _PR_URL.fullmatch(lines[-1].strip()) if lines else None
     if url is None:
         return None
     if "agent_id" in event:
@@ -47,7 +55,11 @@ def note_for(event: dict) -> str | None:
 
 
 def main() -> None:
-    note = note_for(json.load(sys.stdin))
+    try:
+        event = json.loads(sys.stdin.buffer.read().decode("utf-8"))
+    except ValueError:  # Invalid JSON or UTF-8 (UnicodeDecodeError is a ValueError)
+        return
+    note = note_for(event)
     if note is not None:
         output = {"hookEventName": "PostToolUse", "additionalContext": note}
         sys.stdout.write(json.dumps({"hookSpecificOutput": output}) + "\n")
