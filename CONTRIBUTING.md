@@ -37,13 +37,11 @@ Examples:
 
 ## Makefile
 
-Pretty self explanatory.
-
-- `make all`
-- `make fmt`
-- `make lint`
-- `make install`
-- `make test`
+- `make all` runs all of the below.
+- `make fmt` formats the code.
+- `make lint` checks the code for syntax errors.
+- `make install` installs your checkout into your fish config, so you can try your changes in a new shell.
+- `make test` installs Fisher, your checkout and Clownfish into a temporary fish config, runs the tests against it, and deletes it afterwards. Your own fish config is left alone.
 
 In general, just run `make` to do everything.
 

@@ -19,8 +19,15 @@ install:
 littlecheck.py:
 	@curl -sL https://raw.githubusercontent.com/ridiculousfish/littlecheck/HEAD/littlecheck/littlecheck.py -o littlecheck.py
 
+# Test in a throwaway fish config, deleted afterwards even on failure or Ctrl-C
 .PHONY: test
-test: install littlecheck.py
+test: littlecheck.py
+	@set -gx XDG_CONFIG_HOME (mktemp -d) || exit; set -e fisher_path; \
+	function _tide_test_cleanup --on-event fish_exit --on-signal INT; rm -rf $$XDG_CONFIG_HOME; end; \
+	$(MAKE) --no-print-directory _test
+
+.PHONY: _test
+_test: install
 	@type -q mock || fisher install IlanCosman/clownfish
 	@fish tests/test_setup.fish
 	@_tide_remove_unusable_items
