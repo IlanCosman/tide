@@ -116,3 +116,6 @@ tide_vi_mode_color_replace 87AF87
 tide_vi_mode_color_visual FF8700
 tide_zig_bg_color normal
 tide_zig_color F7A41D
+tide_battery_color e4e4e4
+tide_battery_bg_color 1a1a1a
+tide_battery_icon 
