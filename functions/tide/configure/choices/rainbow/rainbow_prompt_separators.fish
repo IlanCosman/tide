@@ -1,4 +1,10 @@
 function rainbow_prompt_separators
+    if set -q _tide_ascii_friendly
+        _tide_apply_ascii_overrides
+        _next_choice powerline/powerline_prompt_heads
+        return
+    end
+
     _tide_title 'Prompt Separators'
 
     _tide_option 1 Angled
