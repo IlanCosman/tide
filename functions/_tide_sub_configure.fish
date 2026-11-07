@@ -56,14 +56,14 @@ function _tide_title -a text
     set -g _tide_configure_first_option_after_title
 end
 
-function _tide_option -a symbol text
+function _tide_option -a symbol text color
     set -ga _tide_symbol_list $symbol
     set -ga _tide_option_list $text
 
     if not set -q _flag_auto
         set -g _tide_configure_first_prompt_after_option
 
-        set_color -o
+        set_color -o $color
         set -e _tide_configure_first_option_after_title || echo
         echo "($symbol) $text"
         set_color normal
