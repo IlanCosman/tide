@@ -15,7 +15,7 @@ If you have any questions that aren't addressed in this document, please don't h
     - Ex: `test -n "$foo" && echo "foo is not empty"`
     - Ex: `foo || bar || baz`
   - For anything more complex use `if`, `else`, and `else if`
-- Piping > command substitution (only when convenient, i.e no extra commands)
+- Piping > command substitution (only when convenient, i.e. no extra commands)
 
 ### Naming Conventions
 
@@ -37,7 +37,7 @@ Examples:
 
 ## Makefile
 
-Pretty self explanatory.
+Pretty self-explanatory.
 
 - `make all`
 - `make fmt`
@@ -67,7 +67,7 @@ All links should be in reference style, with references at the bottom of the doc
   - Show Header Bar: off
   - Padding: 12
   - Default color scheme
-- Stitches: Dont stack frames, output image quality 100
+- Stitches: Don't stack frames, output image quality 100
 
 #### Specifics
 
