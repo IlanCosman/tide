@@ -1,4 +1,8 @@
 function _tide_item_status
+    # VSCode shell integration already shows command status, so hide Tide's
+    # status item there by default unless the user explicitly opts back in.
+    test "$VSCODE_INJECTION" = 1 -a "$tide_status_show_in_vscode" != true && return
+
     if string match -qv 0 $_tide_pipestatus # If there is a failure anywhere in the pipestatus
         if test "$_tide_pipestatus" = 1 # If simple failure
             contains character $_tide_left_items || tide_status_bg_color=$tide_status_bg_color_failure \
