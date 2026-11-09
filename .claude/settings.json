@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh run list *)",
+      "Bash(gh run view *)",
+      "Bash(make fmt)",
+      "Bash(make lint)"
+    ],
+    "deny": [
+      "Bash(env)",
+      "Bash(git branch -D *)",
+      "Bash(git clean -f*)",
+      "Bash(git commit --amend*)",
+      "Bash(git push * --force*)",
+      "Bash(git push * -f*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push -uf*)",
+      "Bash(git push origin --delete*)",
+      "Bash(git reset --hard*)",
+      "Bash(printenv*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.config/gcloud/*credentials*)",
+      "Read(~/.config/gcloud/access_tokens.db)",
+      "Read(~/.config/gcloud/legacy_credentials/**)",
+      "Read(~/.config/gh/hosts.yml)",
+      "Read(~/.docker/config.json)",
+      "Read(~/.git-credentials)",
+      "Read(~/.kube/config)",
+      "Read(~/.netrc)",
+      "Read(~/.npmrc)",
+      "Read(~/.ssh/**)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(gh pr create *)",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/red_team_reminder.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
