@@ -79,27 +79,58 @@ _git_item # CHECK: 10charhere
 cd $dir/bare-repo
 _git init --bare
 _git branch -m main
-_git_item # CHECK:
+_git_item # CHECK: bare
 
 # Bare repository containing sibling worktrees
 cd $dir/worktree-repo
 _git clone --bare $dir/normal-repo .git
 _git symbolic-ref HEAD refs/heads/main
-_git_item # CHECK:
+_git_item # CHECK: bare
+set -lx tide_git_icon 
+_git_item # CHECK:  bare
+set -lx tide_git_icon
 
 cd .git
-_git_item # CHECK:
+_git_item # CHECK: bare
 
 # Detached bare HEAD, with and without a tag
 _git update-ref --no-deref HEAD main
-_git_item # CHECK:
+_git_item # CHECK: bare
 _git tag bare-tag
-_git_item # CHECK:
+_git_item # CHECK: bare
 _git symbolic-ref HEAD refs/heads/main
 cd ..
 
 _git worktree add main main
+_git_item # CHECK: bare wt:1
 _git worktree add -b topic topic main
+_git_item # CHECK: bare wt:2
+
+# Locked worktrees count; missing, prunable worktrees do not
+_git worktree lock topic
+_git_item # CHECK: bare wt:2
+_git worktree add -b removed removed main
+command rm -r removed
+_git_item # CHECK: bare wt:2
+
+# Paths with newlines cannot introduce extra porcelain fields
+_git worktree add -b unusual "unusual
+HEAD fake"
+_git_item # CHECK: bare wt:3
+_git worktree remove "unusual
+HEAD fake"
+
+# Icons are optional; the bare label and count remain readable without them
+set -lx tide_git_icon 
+_git_item # CHECK:  bare wt:2
+set -lx tide_git_icon
+_git_item # CHECK: bare wt:2
+
+# A failed worktree query must not imply zero worktrees
+mock git "worktree list --porcelain -z" "return 1"
+_git_item # CHECK: bare wt:?
+mock --erase git
+
 cd main
 _git_item # CHECK: main
 cd ../topic

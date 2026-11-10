@@ -4,7 +4,7 @@
 
 ### Features
 
-- Hide the Git prompt item in bare repositories, including containers for sibling worktrees.
+- Show a bare repository label and linked worktree count in the Git prompt item.
 
 ## [v6.2.1][] (Nov 01 2026)
 
