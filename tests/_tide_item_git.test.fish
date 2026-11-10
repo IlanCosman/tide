@@ -99,7 +99,7 @@ _git_item # CHECK: 10charhere ?1
 cd $dir/massive-status-repo
 _git init
 _git branch -m main
-mock git "--no-optional-locks status --porcelain" "string repeat -n100000 'D  some-file-name'\n"
+mock git "--no-optional-locks status --porcelain --branch" "echo '## main'; string repeat -n100000 'D  some-file-name'\n"
 _git_item # CHECK: main +100000
 
 # ------ cleanup ------
