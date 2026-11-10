@@ -11,7 +11,7 @@ end
 
 # Create directory
 set -l dir (mktemp -d)
-mkdir -p $dir/{normal-repo, bare-repo, submodule-repo, massive-status-repo}
+mkdir -p $dir/{normal-repo, bare-repo, submodule-repo, massive-status-repo, worktree-repo}
 
 # Not in git repo
 cd $dir
@@ -57,6 +57,11 @@ _git commit -am 'Append hello to foo'
 _git checkout HEAD~
 _git_item # CHECK: {{@\w*}}
 
+# Tag on a detached checkout
+_git tag detached-tag
+_git_item # CHECK: #detached-tag
+_git tag -d detached-tag
+
 # --- Long branches ---
 _git checkout main
 _git checkout -b very_long_branch_name
@@ -70,11 +75,66 @@ _git_item # CHECK: …anch_name
 _git checkout -b 10charhere
 _git_item # CHECK: 10charhere
 
-# -------- bare repo test --------
+# -------- bare repo tests --------
 cd $dir/bare-repo
 _git init --bare
 _git branch -m main
+_git_item # CHECK: bare
+
+# Bare repository containing sibling worktrees
+cd $dir/worktree-repo
+_git clone --bare $dir/normal-repo .git
+_git symbolic-ref HEAD refs/heads/main
+_git_item # CHECK: bare
+set -lx tide_git_icon 
+_git_item # CHECK:  bare
+set -lx tide_git_icon
+
+cd .git
+_git_item # CHECK: bare
+
+# Detached bare HEAD, with and without a tag
+_git update-ref --no-deref HEAD main
+_git_item # CHECK: bare
+_git tag bare-tag
+_git_item # CHECK: bare
+_git symbolic-ref HEAD refs/heads/main
+cd ..
+
+_git worktree add main main
+_git_item # CHECK: bare wt:1
+_git worktree add -b topic topic main
+_git_item # CHECK: bare wt:2
+
+# Locked worktrees count; missing, prunable worktrees do not
+_git worktree lock topic
+_git_item # CHECK: bare wt:2
+_git worktree add -b removed removed main
+command rm -r removed
+_git_item # CHECK: bare wt:2
+
+# Paths with newlines cannot introduce extra porcelain fields
+_git worktree add -b unusual "unusual
+HEAD fake"
+_git_item # CHECK: bare wt:3
+_git worktree remove "unusual
+HEAD fake"
+
+# Icons are optional; the bare label and count remain readable without them
+set -lx tide_git_icon 
+_git_item # CHECK:  bare wt:2
+set -lx tide_git_icon
+_git_item # CHECK: bare wt:2
+
+# A failed worktree query must not imply zero worktrees
+mock git "worktree list --porcelain -z" "return 1"
+_git_item # CHECK: bare wt:?
+mock --erase git
+
+cd main
 _git_item # CHECK: main
+cd ../topic
+_git_item # CHECK: topic
 
 # ------ submodule repo test ------
 cd $dir/submodule-repo

@@ -1,15 +1,28 @@
 function _tide_item_git
     if git branch --show-current 2>/dev/null | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read -l location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository | read -fL gdir in_gdir is_bare
         set location $_tide_location_color$location
     else if test $pipestatus[1] != 0
         return
     else if git tag --points-at HEAD | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository | read -fL gdir in_gdir is_bare
         set location '#'$_tide_location_color$location
     else
-        git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL gdir in_gdir location
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository --short HEAD | read -fL gdir in_gdir is_bare location
         set location @$_tide_location_color$location
+    end
+
+    if test $is_bare = true
+        set location bare
+        if set -l worktrees (git worktree list --porcelain -z 2>/dev/null | string split0)
+            set -l worktree_count (math (string match -r '^HEAD [0-9a-f]+$' -- $worktrees | count) - \
+                (string match -r '^prunable(?: |$)' -- $worktrees | count))
+            test $worktree_count -gt 0 && set location "$location wt:$worktree_count"
+        else
+            set location "$location wt:?"
+        end
+        _tide_print_item git $_tide_location_color$tide_git_icon' ' $_tide_location_color$location
+        return
     end
 
     # Operation

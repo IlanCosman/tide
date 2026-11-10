@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Features
+
+- Show a bare repository label and linked worktree count in the Git prompt item.
+
 ## [v6.2.1][] (Nov 01 2026)
 
 ### Features
