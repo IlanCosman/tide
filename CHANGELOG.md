@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Features
+
+- Hide the Git prompt item in bare repositories, including containers for sibling worktrees.
+
 ## [v6.2.1][] (Nov 01 2026)
 
 ### Features

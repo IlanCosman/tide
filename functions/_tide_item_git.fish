@@ -1,16 +1,18 @@
 function _tide_item_git
     if git branch --show-current 2>/dev/null | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read -l location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository | read -fL gdir in_gdir is_bare
         set location $_tide_location_color$location
     else if test $pipestatus[1] != 0
         return
     else if git tag --points-at HEAD | string shorten -"$tide_git_truncation_strategy"m$tide_git_truncation_length | read location
-        git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository | read -fL gdir in_gdir is_bare
         set location '#'$_tide_location_color$location
     else
-        git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL gdir in_gdir location
+        git rev-parse --git-dir --is-inside-git-dir --is-bare-repository --short HEAD | read -fL gdir in_gdir is_bare location
         set location @$_tide_location_color$location
     end
+
+    test $is_bare = true && return
 
     # Operation
     if test -d $gdir/rebase-merge
