@@ -1,4 +1,15 @@
 function prompt_connection
+    if set -q _tide_ascii_friendly
+        set -g fake_tide_prompt_icon_connection -
+        switch $_tide_configure_style
+            case lean
+                _next_choice all/prompt_connection_andor_frame_color
+            case classic rainbow
+                _next_choice powerline/powerline_right_prompt_frame
+        end
+        return
+    end
+
     _tide_title 'Prompt Connection'
 
     _tide_option 1 Disconnected
