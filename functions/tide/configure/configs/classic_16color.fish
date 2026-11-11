@@ -89,3 +89,6 @@ tide_vi_mode_color_replace green
 tide_vi_mode_color_visual yellow
 tide_zig_bg_color black
 tide_zig_color yellow
+tide_battery_color e4e4e4
+tide_battery_bg_color 1a1a1a
+tide_battery_icon 
