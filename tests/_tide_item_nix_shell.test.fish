@@ -17,3 +17,5 @@ set -lx IN_NIX_SHELL impure
 _nix_shell # CHECK:  impure
 
 set -e IN_NIX_SHELL
+set -lx PATH /nix/store/1234
+_nix_shell # CHECK:  unknown
