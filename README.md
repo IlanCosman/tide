@@ -114,6 +114,10 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 - [Starship][] - Inspired elements of Tide's documentation and community health files.
 - [Spacefish][] - Inspired some of Tide's items.
 
+## Community Themes
+
+- [Rosé Pine][] - Soho vibes for Tide
+
 [`items`]: https://github.com/IlanCosman/tide/wiki/Configuration#items
 [async]: https://github.com/IlanCosman/tide/blob/assets/animations/async.png
 [configuration_wizard]: https://github.com/IlanCosman/tide/blob/assets/animations/configuration_wizard.webp
@@ -126,6 +130,7 @@ Open each file and click "Install". This will make the `MesloLGS NF` font availa
 [meslolgs nf regular.ttf]: https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true
 [nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k/
+[rosé pine]: https://github.com/rose-pine/tide
 [spacefish]: https://github.com/matchai/spacefish
 [starship]: https://github.com/starship/starship
 [using an older version of fish?]: https://github.com/IlanCosman/tide/wiki/Fish-version-compatibility
