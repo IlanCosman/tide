@@ -14,7 +14,8 @@ function _tide_print_item -a item
         echo -ns $tide_right_prompt_separator_diff_color
     end
 
-    v=tide_"$item"_color set_color $$v -b $item_bg_color
+    set_color -b $item_bg_color
+    v=tide_"$item"_color set_color $$v
 
     echo -ns $_tide_pad $argv[2..] $_tide_pad
 
