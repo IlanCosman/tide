@@ -1,5 +1,14 @@
 tide_aws_bg_color yellow
 tide_aws_color brblack
+tide_battery_color_critical brred
+tide_battery_color_low bryellow
+tide_battery_critical_threshold 15
+tide_battery_low_threshold 40
+tide_battery_method
+tide_hbattery_bg_color brblack
+tide_hbattery_color white
+tide_vbattery_bg_color brblack
+tide_vbattery_color white
 tide_bun_bg_color white
 tide_bun_color black
 tide_character_color brgreen
