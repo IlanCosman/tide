@@ -46,13 +46,25 @@ tide_go_bg_color 444444
 tide_go_color 00ACD7
 tide_java_bg_color 444444
 tide_java_color ED8B00
+tide_jj_bg_color 444444
+tide_jj_bg_color_unstable 444444
+tide_jj_bg_color_urgent 444444
+tide_jj_color_bookmarks $_tide_color_light_blue
+tide_jj_color_change_id $_tide_color_green
+tide_jj_color_commit_id $_tide_color_dark_blue
+tide_jj_color_conflict FF0000
+tide_jj_color_description 87875F
+tide_jj_color_diff_added $_tide_color_dark_green
+tide_jj_color_diff_removed CC0000
+tide_jj_color_divergent $_tide_color_gold
+tide_jj_color_id_shadow 808080
 tide_jobs_bg_color 444444
 tide_jobs_color $_tide_color_dark_green
 tide_jobs_number_threshold 1000
 tide_kubectl_bg_color 444444
 tide_kubectl_color 326CE5
 tide_left_prompt_frame_enabled true
-tide_left_prompt_items pwd git newline
+tide_left_prompt_items pwd git jj newline
 tide_left_prompt_prefix ''
 tide_left_prompt_separator_diff_color 
 tide_left_prompt_separator_same_color 
