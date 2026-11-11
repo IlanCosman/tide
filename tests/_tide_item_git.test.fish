@@ -57,6 +57,31 @@ _git commit -am 'Append hello to foo'
 _git checkout HEAD~
 _git_item # CHECK: {{@\w*}}
 
+# --------- hide branch ---------
+_git checkout main
+echo >bar
+_git_item # CHECK: main ?1
+set -lx tide_git_hide_branch true
+_git_item # CHECK: ?1
+
+# Mixed signs with hidden branch
+_git add bar
+echo modified >foo
+_git_item # CHECK: +1 !1
+
+# Verify tags still show when branch hiding enabled
+_git reset --hard
+_git tag v1.0
+_git checkout v1.0
+_git_item # CHECK: #v1.0
+
+# Verify SHA still shows in detached HEAD
+_git checkout HEAD~
+_git_item # CHECK: {{@\w*}}
+
+_git checkout main
+set -lx tide_git_hide_branch false
+
 # --- Long branches ---
 _git checkout main
 _git checkout -b very_long_branch_name
